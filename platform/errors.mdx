@@ -1,0 +1,120 @@
+---
+title: "Parallel AI API Error Reference and Retry Strategies"
+sidebarTitle: "Errors"
+description: "Parallel AI returns standard HTTP status codes with JSON error messages. Learn what each code means and how to handle errors in your integration."
+---
+
+## Error Response Format
+
+Every error response from the Parallel AI API returns a JSON body with a single `error` field describing what went wrong:
+
+```json
+{
+  "error": "Description of what went wrong"
+}
+```
+
+Always check both the HTTP status code and the `error` message when debugging — the message provides specific context that the status code alone cannot.
+
+## HTTP Status Codes
+
+| Code  | Meaning                | Common Cause                                       |
+| ----- | ---------------------- | -------------------------------------------------- |
+| `200` | Success                | —                                                  |
+| `201` | Created                | Resource successfully created                      |
+| `400` | Bad Request            | Missing required field or invalid parameter value  |
+| `401` | Unauthorized           | Missing, invalid, or expired API key               |
+| `403` | Forbidden              | Feature not available on your current plan         |
+| `404` | Not Found              | Resource ID does not exist                         |
+| `429` | Too Many Requests      | Rate limit exceeded                                |
+| `500` | Internal Server Error  | Unexpected server-side error                       |
+
+## Common Errors and Solutions
+
+<Accordion title="401 Unauthorized — invalid or missing API key">
+  **Symptom:** You receive `{"error": "Unauthorized"}` on every request.
+
+  **Solutions:**
+  - Confirm you're sending the `X-API-Key` header (or `Authorization: Bearer ...`) with every request.
+  - Verify the key is correct — copy it fresh from the dashboard to rule out typos.
+  - If you're using a **Personal Access Key** (PAK), you must also include the `X-Company-ID` header:
+
+  ```bash
+  curl "https://api.parallellabs.app/api/v0/agents" \
+    -H "Authorization: Bearer pak_your_key" \
+    -H "X-Company-ID: your_company_id"
+  ```
+</Accordion>
+
+<Accordion title="403 Forbidden — feature not enabled on your plan">
+  **Symptom:** Your request is authenticated but returns `{"error": "Forbidden"}`.
+
+  **Solutions:**
+  - The endpoint or feature you're calling may not be included in your current Parallel AI plan.
+  - Contact [Parallel AI support](mailto:support@parallellabs.app) to confirm which features are available on your plan or to request access.
+</Accordion>
+
+<Accordion title="404 Not Found — resource does not exist">
+  **Symptom:** A resource lookup returns `{"error": "Not found"}`.
+
+  **Solutions:**
+  - Double-check the resource ID in your request path (e.g. agent ID, sequence ID).
+  - Confirm the resource belongs to the company associated with your API key — you cannot access resources from other companies.
+  - The resource may have been deleted. Use a list endpoint to verify it still exists.
+</Accordion>
+
+<Accordion title="429 Too Many Requests — rate limit exceeded">
+  **Symptom:** Requests start returning `{"error": "Too many requests"}`.
+
+  **Solutions:**
+  - Slow down the rate at which you're making requests.
+  - Implement **exponential backoff**: wait before retrying, doubling the wait time on each successive failure.
+  - Batch operations where possible, or use `pageSize=100` to retrieve more data per request.
+</Accordion>
+
+<Accordion title="500 Internal Server Error">
+  **Symptom:** The API returns a `500` status unexpectedly.
+
+  **Solutions:**
+  - This indicates an issue on Parallel AI's servers, not your request.
+  - Retry the request after a short delay — most transient errors resolve quickly.
+  - If the error persists, contact [Parallel AI support](mailto:support@parallellabs.app) with the request details and timestamp.
+</Accordion>
+
+## Retry Logic with Exponential Backoff
+
+For production integrations, implement retry logic to handle transient errors (`429` and `500`) gracefully:
+
+```python
+import requests
+import time
+
+def api_call_with_retry(url, headers, max_retries=3):
+    for attempt in range(max_retries):
+        response = requests.get(url, headers=headers)
+
+        if response.status_code == 429:
+            wait = 2 ** attempt  # 1s, 2s, 4s
+            print(f"Rate limited. Retrying in {wait}s...")
+            time.sleep(wait)
+            continue
+
+        response.raise_for_status()
+        return response.json()
+
+    raise Exception("Max retries exceeded")
+```
+
+<Tip>
+  Add jitter (a small random delay) to your backoff to prevent multiple clients from retrying simultaneously and creating a thundering-herd effect:
+
+  ```python
+  import random
+  wait = (2 ** attempt) + random.uniform(0, 1)
+  time.sleep(wait)
+  ```
+</Tip>
+
+<Warning>
+  Do not retry `400`, `401`, `403`, or `404` errors — these indicate problems with your request or credentials that will not resolve on their own.
+</Warning>

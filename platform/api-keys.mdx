@@ -1,0 +1,151 @@
+---
+title: "Manage Parallel AI Company API Keys Programmatically"
+sidebarTitle: "API Keys"
+description: "Create, list, retrieve, and delete API keys for your Parallel AI company. Use the /api/v0/api_keys endpoints to automate key provisioning at scale."
+---
+
+## Key Types
+
+Parallel AI supports two types of API keys:
+
+<Accordion title="Company API Keys">
+  Company API Keys are scoped to a specific company account. You can find and create them on the **Integrations** page in your Parallel AI dashboard. Use these for server-side integrations where all requests belong to one company.
+</Accordion>
+
+<Accordion title="Personal Access Keys (PAKs)">
+  Personal Access Keys are tied to your user account and can act on behalf of any company you belong to. Create them on your **Profile** page. Every request made with a PAK must also include an `X-Company-ID` header to identify which company context to use.
+</Accordion>
+
+## Programmatic Key Management
+
+You can manage Company API Keys via the `/api/v0/api_keys` endpoints. This is useful for automated provisioning and multi-tenant setups.
+
+### List Keys
+
+`GET /api/v0/api_keys` — Retrieve all API keys associated with a company. Pass the `companyId` as a query parameter:
+
+```bash
+curl "https://api.parallellabs.app/api/v0/api_keys?companyId=your_company_id" \
+  -H "X-API-Key: YOUR_API_KEY"
+```
+
+**Response:**
+
+```json
+{
+  "apiKey": "the_existing_api_key_value"
+}
+```
+
+### Create a Key
+
+`POST /api/v0/api_keys` — Create a new API key with a descriptive name. Both `companyId` and `name` are required:
+
+```bash
+curl -X POST "https://api.parallellabs.app/api/v0/api_keys" \
+  -H "X-API-Key: YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "companyId": "your_company_id",
+    "name": "production-integration"
+  }'
+```
+
+**Response:**
+
+```json
+{
+  "apiKey": "newly_generated_api_key_value"
+}
+```
+
+<Warning>
+  Copy the returned `apiKey` value immediately — it will not be displayed again after this response.
+</Warning>
+
+### Get a Specific Key
+
+`GET /api/v0/api_keys/{companyId}/{name}` — Retrieve a single key by company ID and key name:
+
+```bash
+curl "https://api.parallellabs.app/api/v0/api_keys/your_company_id/production-integration" \
+  -H "X-API-Key: YOUR_API_KEY"
+```
+
+**Response:**
+
+```json
+{
+  "apiKey": "the_api_key_value"
+}
+```
+
+Returns `404` if no key with that name exists for the given company.
+
+### Create or Get Existing Key (Upsert)
+
+`PUT /api/v0/api_keys` — Create a key if it doesn't exist, or return the existing one if it does. This is ideal for idempotent provisioning scripts that run on every deployment:
+
+```bash
+curl -X PUT "https://api.parallellabs.app/api/v0/api_keys" \
+  -H "X-API-Key: YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "companyId": "your_company_id",
+    "name": "production-integration"
+  }'
+```
+
+**Response:**
+
+```json
+{
+  "apiKey": "the_api_key_value"
+}
+```
+
+### Delete a Key
+
+`DELETE /api/v0/api_keys` — Permanently delete a key by passing the company ID and key name in the request body:
+
+```bash
+curl -X DELETE "https://api.parallellabs.app/api/v0/api_keys" \
+  -H "X-API-Key: YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "companyId": "your_company_id",
+    "name": "production-integration"
+  }'
+```
+
+<Warning>
+  Deleting an API key is permanent and cannot be undone. Any integration using the deleted key will immediately stop working.
+</Warning>
+
+## Security Best Practices
+
+<Accordion title="Use descriptive, purpose-specific names">
+  Name each key after its use case (e.g. `crm-sync`, `marketing-automation`, `staging-tests`). This makes it easy to audit which systems have access and revoke individual keys without disrupting others.
+</Accordion>
+
+<Accordion title="Rotate keys regularly">
+  Periodically replace active keys — especially after team member offboarding or a suspected exposure. Use the upsert endpoint to provision a new key, update your integration, then delete the old one.
+</Accordion>
+
+<Accordion title="Store keys in environment variables">
+  Never hard-code API keys in your source code. Load them from environment variables or a secrets manager at runtime:
+
+  ```python
+  import os
+  api_key = os.environ["PARALLEL_AI_API_KEY"]
+  ```
+</Accordion>
+
+<Accordion title="Never commit keys to source control">
+  Add your `.env` file to `.gitignore` and audit your repository history if you suspect a key was accidentally committed. Treat any exposed key as compromised and rotate it immediately.
+</Accordion>
+
+## Learn More
+
+- [Authentication](/authentication) — how to include your API key in requests
+- [API Keys Reference](/api-reference/keys/list) — full endpoint documentation

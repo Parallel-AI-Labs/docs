@@ -1,0 +1,76 @@
+---
+title: "Create API Key — Parallel AI Credential Management API"
+sidebarTitle: "Create Key"
+description: "POST /api/v0/api_keys — Creates a new API key for a company. The full key is shown only once on creation — copy and store it securely right away."
+---
+
+Create a new API key scoped to a specific company. The full key value is returned only once in the response — store it immediately in a secure location, as it cannot be retrieved again after this request.
+
+<Warning>
+  **Save your API key now.** The key value is returned only once at creation time. If you lose it, you will need to delete the key and create a new one. Never commit API keys to source control or expose them in client-side code.
+</Warning>
+
+## Endpoint
+
+```
+POST https://api.parallellabs.app/api/v0/api_keys
+```
+
+## Authentication
+
+Include your API key in the request header:
+
+```
+X-API-Key: YOUR_API_KEY
+```
+
+## Request Body
+
+<ParamField body="companyId" type="string" required>
+  The ID of the company this API key should be scoped to.
+</ParamField>
+
+<ParamField body="name" type="string" required>
+  A descriptive name to identify this key (e.g. `"production-server"`, `"ci-pipeline"`).
+</ParamField>
+
+## Response
+
+### 200 — Success
+
+<ResponseField name="apiKey" type="string">
+  The generated API key. This value is shown **only once** — store it securely immediately.
+</ResponseField>
+
+### Error Responses
+
+| Status | Description |
+|--------|-------------|
+| `401`  | Missing or invalid API key. |
+| `500`  | Internal server error. |
+
+Error responses follow the format:
+
+```json
+{ "error": "message" }
+```
+
+## Example Request
+
+```bash
+curl -X POST "https://api.parallellabs.app/api/v0/api_keys" \
+  -H "X-API-Key: YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "companyId": "comp_01hx8t1u5v",
+    "name": "production-server"
+  }'
+```
+
+## Example Response
+
+```json
+{
+  "apiKey": "pk_live_abc123xyz456def789"
+}
+```

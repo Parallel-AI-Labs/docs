@@ -1,0 +1,182 @@
+---
+title: "Build Your Knowledge Base with Documents"
+sidebarTitle: "Documents"
+description: "Upload documents to Parallel AI to power your agents' knowledge base. Agents can search and retrieve document content to answer user questions accurately."
+---
+
+## What Are Documents?
+
+Documents are files you upload to your Parallel AI workspace to build a **knowledge base** for your agents. When an agent has `knowledgeBaseEnabled: true`, it can search through your documents in real time and use the retrieved content to answer user questions with accuracy and context.
+
+Use your knowledge base to give agents access to:
+
+- Product documentation and FAQs
+- Internal policies and procedures
+- Support runbooks and troubleshooting guides
+- Sales materials and pricing sheets
+- Any other reference content your agents should know about
+
+<Note>
+  Documents are processed and indexed automatically after upload. Once indexed, your agents can search and retrieve relevant passages in real time during conversations.
+</Note>
+
+---
+
+## How Agents Use Documents
+
+When a conversation requires a factual answer, an agent with `knowledgeBaseEnabled: true` performs a semantic search against your document index and injects the most relevant passages into its context before responding.
+
+You can control **which documents** an agent can access using `knowledgeBaseScope`:
+
+| `knowledgeBaseScope` value | Behavior |
+|---|---|
+| `/` | Agent can search all documents in your workspace |
+| `/shared/Support` | Agent only searches documents in the `/shared/Support` folder |
+| `/products/widget` | Agent only searches documents in the `/products/widget` subfolder |
+
+This lets you run multiple specialized agents that each have access to only the documents relevant to their role.
+
+<Tip>
+  Organize your documents into folders that mirror your agent structure. For example, keep `/support` docs for your support agent and `/sales` docs for your sales agent.
+</Tip>
+
+---
+
+## Core Operations
+
+| Operation | Method | Endpoint |
+|---|---|---|
+| List documents | `GET` | `/api/v0/documents` |
+| Upload a document | `POST` | `/api/v0/documents` |
+| Get a document | `GET` | `/api/v0/documents/{id}` |
+| Delete a document | `DELETE` | `/api/v0/documents/{id}` |
+
+---
+
+## Uploading a Document
+
+<Steps>
+  <Step title="Prepare your file">
+    Supported formats typically include PDF, plain text, Markdown, and DOCX. Check that your document is well-structured for best retrieval results.
+  </Step>
+  <Step title="Upload via API">
+    Send a `POST /api/v0/documents` request with your file and optional metadata such as folder path.
+  </Step>
+  <Step title="Wait for indexing">
+    The document is processed and indexed automatically. Once complete, agents with the matching `knowledgeBaseScope` can search it immediately.
+  </Step>
+</Steps>
+
+<CodeGroup>
+
+```bash cURL
+curl -X POST "https://api.parallellabs.app/api/v0/documents" \
+  -H "X-API-Key: YOUR_API_KEY" \
+  -F "file=@/path/to/your-document.pdf" \
+  -F "name=Product FAQ" \
+  -F "folder=/shared/Support"
+```
+
+```python Python
+import requests
+
+with open("/path/to/your-document.pdf", "rb") as f:
+    response = requests.post(
+        "https://api.parallellabs.app/api/v0/documents",
+        headers={"X-API-Key": "YOUR_API_KEY"},
+        files={"file": ("your-document.pdf", f, "application/pdf")},
+        data={
+            "name": "Product FAQ",
+            "folder": "/shared/Support"
+        }
+    )
+print(response.json())
+```
+
+</CodeGroup>
+
+---
+
+## Listing Documents with Pagination
+
+Retrieve all documents in your workspace with optional pagination:
+
+```bash
+curl "https://api.parallellabs.app/api/v0/documents?page=1&pageSize=20" \
+  -H "X-API-Key: YOUR_API_KEY"
+```
+
+| Parameter | Type | Description |
+|---|---|---|
+| `page` | integer | Page number, starting from `1` |
+| `pageSize` | integer | Number of results per page |
+
+---
+
+## Retrieving a Specific Document
+
+```bash
+curl "https://api.parallellabs.app/api/v0/documents/{documentId}" \
+  -H "X-API-Key: YOUR_API_KEY"
+```
+
+---
+
+## Deleting a Document
+
+```bash
+curl -X DELETE "https://api.parallellabs.app/api/v0/documents/{documentId}" \
+  -H "X-API-Key: YOUR_API_KEY"
+```
+
+<Note>
+  Deleting a document removes it from the index. Agents will no longer be able to retrieve content from it. This action is irreversible.
+</Note>
+
+---
+
+## Enabling Knowledge Base on an Agent
+
+Once your documents are uploaded, enable knowledge base access on any agent:
+
+```bash
+curl -X PUT "https://api.parallellabs.app/api/v0/agents/{agentId}" \
+  -H "X-API-Key: YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "knowledgeBaseEnabled": true,
+    "knowledgeBaseScope": "/shared/Support"
+  }'
+```
+
+---
+
+## Best Practices
+
+<CardGroup cols={2}>
+  <Card title="Use descriptive file names" icon="tag">
+    Clear file names help with organization and make it easier to manage your knowledge base as it grows.
+  </Card>
+  <Card title="Keep documents focused" icon="bullseye">
+    Shorter, topic-focused documents tend to yield more precise retrieval results than large, multi-topic files.
+  </Card>
+  <Card title="Use folder scoping" icon="folder">
+    Segment documents into folders and use `knowledgeBaseScope` on agents to keep each agent focused on its relevant content.
+  </Card>
+  <Card title="Update regularly" icon="rotate-right">
+    Delete outdated documents and upload updated versions to ensure agents always answer with current information.
+  </Card>
+</CardGroup>
+
+---
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Documents API Reference" icon="code" href="/api-reference/documents/list">
+    Full reference for upload, list, retrieve, and delete endpoints.
+  </Card>
+  <Card title="AI Agents" icon="robot" href="/features/agents">
+    Enable knowledge base access on your agents and set scope per agent.
+  </Card>
+</CardGroup>

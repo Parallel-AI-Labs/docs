@@ -1,0 +1,128 @@
+---
+title: "List Agents — Parallel AI API (GET /api/v0/agents)"
+sidebarTitle: "List Agents"
+description: "GET /api/v0/agents — Returns a paginated list of AI agents for your company. Filter by name, email, or phone using the search parameter."
+---
+
+Returns a paginated list of all AI agents configured for your company. Use the `search` parameter to filter agents by name, email address, or phone number. Results are ordered by creation date, newest first.
+
+## Endpoint
+
+```
+GET https://api.parallellabs.app/api/v0/agents
+```
+
+## Query Parameters
+
+<ParamField query="page" type="integer" default="1">
+  The page number to retrieve. Starts at `1`.
+</ParamField>
+
+<ParamField query="pageSize" type="integer" default="10">
+  Number of agents to return per page. Maximum value is `100`.
+</ParamField>
+
+<ParamField query="search" type="string">
+  Filter agents by name, email address, or phone number. Performs a case-insensitive partial match.
+</ParamField>
+
+## Response
+
+<ResponseField name="items" type="array">
+  Array of agent objects for the current page.
+
+  <Expandable title="Agent object fields">
+    <ResponseField name="id" type="string">
+      Unique identifier for the agent (e.g. `agent_abc123`).
+    </ResponseField>
+
+    <ResponseField name="name" type="string">
+      Display name of the agent.
+    </ResponseField>
+
+    <ResponseField name="systemPrompt" type="string">
+      The system-level instructions that define the agent's persona and behavior.
+    </ResponseField>
+
+    <ResponseField name="model" type="string">
+      The AI model powering this agent (e.g. `gpt-4o-mini`).
+    </ResponseField>
+
+    <ResponseField name="isActive" type="boolean">
+      Whether the agent is currently active and able to handle conversations.
+    </ResponseField>
+
+    <ResponseField name="knowledgeBaseEnabled" type="boolean">
+      Whether the agent searches your knowledge base when answering questions.
+    </ResponseField>
+
+    <ResponseField name="shortCode" type="string">
+      A short alphanumeric code used in embeddable links and widgets.
+    </ResponseField>
+
+    <ResponseField name="created" type="integer">
+      Unix timestamp (milliseconds) when the agent was created.
+    </ResponseField>
+
+    <ResponseField name="updated" type="integer">
+      Unix timestamp (milliseconds) when the agent was last updated.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="total" type="integer">
+  Total number of agents matching the query across all pages.
+</ResponseField>
+
+<ResponseField name="pages" type="integer">
+  Total number of pages available at the current `pageSize`.
+</ResponseField>
+
+<ResponseField name="hasNext" type="boolean">
+  `true` if there is at least one more page of results after this one.
+</ResponseField>
+
+## Example Request
+
+```bash
+curl https://api.parallellabs.app/api/v0/agents \
+  -H "X-API-Key: YOUR_API_KEY"
+```
+
+With pagination and search:
+
+```bash
+curl "https://api.parallellabs.app/api/v0/agents?page=1&pageSize=25&search=support" \
+  -H "X-API-Key: YOUR_API_KEY"
+```
+
+## Example Response
+
+```json
+{
+  "items": [
+    {
+      "id": "agent_abc123",
+      "name": "Support Agent",
+      "systemPrompt": "You are a helpful customer support agent.",
+      "model": "gpt-4o-mini",
+      "isActive": true,
+      "knowledgeBaseEnabled": true,
+      "shortCode": "abc123",
+      "created": 1705312200000,
+      "updated": 1705312200000
+    }
+  ],
+  "total": 1,
+  "pages": 1,
+  "hasNext": false
+}
+```
+
+## Errors
+
+| Status | Description |
+|--------|-------------|
+| `401 Unauthorized` | Your API key is missing or invalid. |
+| `403 Forbidden` | Your plan does not have access to the Agents feature. |
+| `500 Internal Server Error` | An unexpected server error occurred. |

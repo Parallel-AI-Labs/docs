@@ -1,0 +1,159 @@
+---
+title: "Automate Browser Tasks with Parallel AI's AI Agent"
+sidebarTitle: "Browser Automation"
+description: "Submit natural language browser tasks to Parallel AI for async AI-driven execution. Supports standard, authenticated, and residential sessions."
+---
+
+## What is Browser Automation?
+
+Parallel AI can execute browser tasks described in plain natural language. You submit a task description, receive a task ID, and poll for results when they're ready. This lets you automate complex web interactions without writing brittle selectors or scripts.
+
+## Session Types
+
+Choose the session type that fits your use case:
+
+| Type            | Description                                                                          |
+| --------------- | ------------------------------------------------------------------------------------ |
+| `regular`       | Standard browser session (default). No login state or special routing.               |
+| `authenticated` | Uses a saved integration (LinkedIn, Twitter, etc.) to run tasks in a logged-in session. |
+| `residential`   | Routes traffic through a residential proxy. Specify a US ZIP code for geo-targeting. |
+
+## Submit a Task
+
+Send a `POST` request to `/api/v0/browser-task` with your task description and session type.
+
+```bash
+curl -X POST "https://api.parallellabs.app/api/v0/browser-task" \
+  -H "X-API-Key: YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "task": "Go to https://example.com and return the page title",
+    "sessionType": "regular"
+  }'
+```
+
+**Response:**
+
+```json
+{
+  "taskId": "task_abc123",
+  "status": "pending",
+  "message": "Task submitted successfully"
+}
+```
+
+<Tip>
+  Save the `taskId` from the response — you'll need it to poll for results or cancel the task.
+</Tip>
+
+## Poll for Results
+
+Retrieve the current status and result of a task by calling `GET /api/v0/browser-task/{task_id}`.
+
+```bash
+curl "https://api.parallellabs.app/api/v0/browser-task/task_abc123" \
+  -H "X-API-Key: YOUR_API_KEY"
+```
+
+**Possible status values:**
+
+| Status      | Meaning                                     |
+| ----------- | ------------------------------------------- |
+| `pending`   | Task is queued and waiting to start         |
+| `running`   | Task is actively being executed             |
+| `completed` | Task finished successfully                  |
+| `failed`    | Task encountered an unrecoverable error     |
+| `cancelled` | Task was cancelled before completion        |
+
+**Example completed response:**
+
+```json
+{
+  "taskId": "task_abc123",
+  "status": "completed",
+  "result": {
+    "success": true,
+    "result": "The page title is 'Example Domain'",
+    "creditsCharged": 5,
+    "history": [
+      { "action": "navigate", "url": "https://example.com", "timestamp": "2024-01-15T10:23:01Z" },
+      { "action": "extract", "field": "title", "value": "Example Domain", "timestamp": "2024-01-15T10:23:03Z" }
+    ]
+  }
+}
+```
+
+<Note>
+  Poll at a reasonable interval (e.g. every 2–5 seconds) to avoid unnecessary API calls. Most tasks complete within 30 seconds.
+</Note>
+
+## Cancel a Task
+
+Send a `DELETE` request to cancel a task. Cancellation is only possible while the task is in `pending` or `running` status.
+
+```bash
+curl -X DELETE "https://api.parallellabs.app/api/v0/browser-task/task_abc123" \
+  -H "X-API-Key: YOUR_API_KEY"
+```
+
+<Warning>
+  Tasks that have already reached `completed`, `failed`, or `cancelled` status cannot be cancelled again.
+</Warning>
+
+## Authenticated Sessions
+
+Use `authenticated` sessions to run tasks inside accounts you've connected via Parallel AI integrations (e.g. LinkedIn, Twitter).
+
+<Steps>
+  <Step title="List available integrations">
+    First, retrieve your saved integrations to find the correct `integrationId`:
+
+    ```bash
+    curl "https://api.parallellabs.app/api/v0/browser-integrations" \
+      -H "X-API-Key: YOUR_API_KEY"
+    ```
+  </Step>
+  <Step title="Submit with an integrationId">
+    Pass `sessionType: "authenticated"` and the `integrationId` in your task request:
+
+    ```json
+    {
+      "task": "Check my LinkedIn notifications",
+      "sessionType": "authenticated",
+      "integrationId": "integration_id_here"
+    }
+    ```
+  </Step>
+</Steps>
+
+## Residential Proxy
+
+Route your browser session through a residential IP address. Provide a US ZIP code to target a specific location:
+
+```json
+{
+  "task": "Search Amazon for laptops and return the first 5 results",
+  "sessionType": "residential",
+  "zipcode": "10001"
+}
+```
+
+<Tip>
+  Residential sessions are useful for tasks that may be geo-restricted or that require a non-datacenter IP to avoid bot detection.
+</Tip>
+
+## Vision Mode
+
+Enable `useVision: true` to switch to screenshot-driven automation. In vision mode, the browser agent perceives pages as images rather than DOM elements — useful for visually complex or canvas-based interfaces.
+
+```json
+{
+  "task": "Find and click the blue 'Sign Up' button on the homepage",
+  "sessionType": "regular",
+  "useVision": true
+}
+```
+
+<Note>
+  For the full Browser Automation API reference, see [Submit a Browser Task](/api-reference/browser/submit).
+</Note>

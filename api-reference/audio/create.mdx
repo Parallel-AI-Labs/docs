@@ -1,0 +1,102 @@
+---
+title: "Create Audio — Parallel AI Text-to-Speech REST API"
+sidebarTitle: "Create Audio"
+description: "POST /api/v0/audio — Converts text to speech using ElevenLabs. Returns an audio ID to retrieve the generated file from the audio playback endpoint."
+---
+
+Convert a text string to speech using ElevenLabs. You can choose the voice, model, and playback speed. The endpoint returns an `audioId` which you can use to retrieve the generated audio file at `/audio/p/<audioId>`.
+
+## Endpoint
+
+```
+POST https://api.parallellabs.app/api/v0/audio
+```
+
+## Authentication
+
+Include your API key in the request header:
+
+```
+X-API-Key: YOUR_API_KEY
+```
+
+## Request Body
+
+<ParamField body="text" type="string" required>
+  The text to convert to speech. Must be a non-empty string.
+</ParamField>
+
+<ParamField body="voiceId" type="string" default="pNInz6obpgDQGcFmaJgB">
+  The ElevenLabs voice ID to use for synthesis. Use the [List Voices](/api-reference/audio/voices) endpoint to discover available voice IDs.
+</ParamField>
+
+<ParamField body="model" type="string" default="eleven_flash_v2_5">
+  The ElevenLabs model to use for synthesis. Use the [List Audio Models](/api-reference/audio/models) endpoint to see all available models.
+</ParamField>
+
+<ParamField body="speed" type="number" default="1.0">
+  Playback speed multiplier. Values less than `1.0` slow down the audio; values greater than `1.0` speed it up.
+</ParamField>
+
+<ParamField body="companyId" type="string">
+  Optional company ID to associate this audio file with a specific company.
+</ParamField>
+
+## Response
+
+### 200 — Success
+
+<ResponseField name="audioId" type="string">
+  The unique ID of the generated audio file. Use this to retrieve the file at:
+  ```
+  https://api.parallellabs.app/audio/p/{audioId}
+  ```
+</ResponseField>
+
+<ResponseField name="msg" type="string">
+  A confirmation message: `"Audio created"`.
+</ResponseField>
+
+### Error Responses
+
+| Status | Description |
+|--------|-------------|
+| `400`  | The `text` field is missing or empty. |
+| `401`  | Missing or invalid API key. |
+| `403`  | Your account does not have permission to perform this action. |
+| `500`  | Internal server error. |
+
+Error responses follow the format:
+
+```json
+{ "error": "message" }
+```
+
+## Example Request
+
+```bash
+curl -X POST "https://api.parallellabs.app/api/v0/audio" \
+  -H "X-API-Key: YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "text": "Hello! Welcome to Acme support. How can I assist you today?",
+    "voiceId": "pNInz6obpgDQGcFmaJgB",
+    "model": "eleven_flash_v2_5",
+    "speed": 1.0
+  }'
+```
+
+## Example Response
+
+```json
+{
+  "audioId": "aud_01hx5q8r2s",
+  "msg": "Audio created"
+}
+```
+
+After receiving the `audioId`, retrieve or stream the generated file at:
+
+```
+https://api.parallellabs.app/audio/p/aud_01hx5q8r2s
+```

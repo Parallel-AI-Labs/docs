@@ -1,0 +1,94 @@
+---
+title: "Paginate Parallel AI List Endpoint Responses Easily"
+sidebarTitle: "Pagination"
+description: "All Parallel AI list endpoints support cursor-free pagination using page and pageSize query parameters. Learn how to iterate through large result sets."
+---
+
+## Overview
+
+Every list endpoint in the Parallel AI API uses **page-based pagination**. You control which page of results to return and how many items appear per page using two query parameters:
+
+| Parameter  | Default | Maximum | Description                          |
+| ---------- | ------- | ------- | ------------------------------------ |
+| `page`     | `1`     | —       | The page number to retrieve          |
+| `pageSize` | `10`    | `100`   | The number of items per page         |
+
+## Paginated Response Format
+
+All paginated responses include the result items alongside metadata to help you navigate through the full dataset:
+
+| Field     | Type    | Description                                              |
+| --------- | ------- | -------------------------------------------------------- |
+| `items`   | array   | The list of results for the current page                 |
+| `total`   | integer | The total number of items across all pages               |
+| `pages`   | integer | The total number of pages at the current `pageSize`      |
+| `hasNext` | boolean | `true` if there is at least one more page after this one |
+
+## Example Request
+
+Fetch the second page of agents, with 20 items per page:
+
+```bash
+curl "https://api.parallellabs.app/api/v0/agents?page=2&pageSize=20" \
+  -H "X-API-Key: YOUR_API_KEY"
+```
+
+## Example Response
+
+```json
+{
+  "items": [
+    { "id": "agent_021", "name": "Outreach Agent", "status": "active" },
+    { "id": "agent_022", "name": "Research Agent", "status": "active" }
+  ],
+  "total": 57,
+  "pages": 3,
+  "hasNext": true
+}
+```
+
+<Note>
+  Use `hasNext` rather than comparing `page` to `pages` to determine whether to continue — it accounts for edge cases where the total changes between requests.
+</Note>
+
+## Fetching All Pages
+
+To retrieve all items across every page, loop until `hasNext` is `false`. The example below uses `pageSize=100` to minimise the number of requests:
+
+```python
+import requests
+
+def get_all_agents(api_key):
+    agents = []
+    page = 1
+    while True:
+        resp = requests.get(
+            "https://api.parallellabs.app/api/v0/agents",
+            headers={"X-API-Key": api_key},
+            params={"page": page, "pageSize": 100}
+        )
+        data = resp.json()
+        agents.extend(data["items"])
+        if not data["hasNext"]:
+            break
+        page += 1
+    return agents
+```
+
+<Tip>
+  Set `pageSize` to `100` (the maximum) when fetching all pages to minimise the total number of API requests and reduce latency.
+</Tip>
+
+## Tips for Large Datasets
+
+<Accordion title="Filter before paginating">
+  Use any available filter parameters (e.g. `status`, `search`, date ranges) to narrow the result set before paginating. Fewer total items means fewer pages to traverse and faster response times.
+</Accordion>
+
+<Accordion title="Handle rate limits gracefully">
+  If you're iterating through many pages in a tight loop, add a short delay between requests and implement retry logic for `429 Too Many Requests` responses. See [Errors](/platform/errors) for a retry example.
+</Accordion>
+
+<Accordion title="Cache total counts">
+  The `total` and `pages` fields are useful for displaying progress indicators or estimating job duration. Cache them from the first response rather than re-fetching metadata on every page.
+</Accordion>

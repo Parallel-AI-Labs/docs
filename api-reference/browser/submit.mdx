@@ -1,0 +1,105 @@
+---
+title: "Submit Browser Task — Parallel AI Browser Automation"
+sidebarTitle: "Submit Task"
+description: "POST /api/v0/browser-task — Submits a natural language browser automation task for asynchronous execution. Returns a task ID for polling status."
+---
+
+Submit a natural language description of a browser automation task. Parallel AI will execute the task asynchronously in a sandboxed browser environment and return a `taskId` you can use to poll for results. Tasks can range from simple lookups to multi-step authenticated workflows.
+
+## Endpoint
+
+```
+POST https://api.parallellabs.app/api/v0/browser-task
+```
+
+## Authentication
+
+Include your API key in the request header:
+
+```
+X-API-Key: YOUR_API_KEY
+```
+
+## Request Body
+
+<ParamField body="task" type="string" required>
+  A natural language description of what the browser should do. Be as specific as possible (e.g. `"Go to https://example.com/pricing and return the price of the Pro plan"`).
+</ParamField>
+
+<ParamField body="sessionType" type="string" default="regular">
+  The type of browser session to use. Options:
+  - `"regular"` — Standard anonymous browser session.
+  - `"authenticated"` — Uses a saved login session from an integration. Requires `integrationId`.
+  - `"residential"` — Routes traffic through a residential proxy. Optionally accepts a `zipcode`.
+</ParamField>
+
+<ParamField body="integrationId" type="string">
+  The ID of a saved browser integration to use for authentication. Required when `sessionType` is `"authenticated"`. Use [List Browser Integrations](/api-reference/browser/integrations) to find available integration IDs.
+</ParamField>
+
+<ParamField body="zipcode" type="string">
+  A 5-digit US zip code to target a specific geographic location when using `sessionType: "residential"`.
+</ParamField>
+
+<ParamField body="useVision" type="boolean" default="false">
+  When `true`, enables vision-based automation mode. The agent uses screenshots to understand page layout, which can improve reliability on complex or dynamic UIs.
+</ParamField>
+
+## Response
+
+### 200 — Success
+
+<ResponseField name="taskId" type="string">
+  A unique identifier for the submitted task. Use this with the [Get Task Status](/api-reference/browser/status) endpoint to poll for results.
+</ResponseField>
+
+<ResponseField name="status" type="string">
+  The initial status of the task. Always `"pending"` immediately after submission.
+</ResponseField>
+
+<ResponseField name="message" type="string">
+  A human-readable message confirming the task was received.
+</ResponseField>
+
+### Error Responses
+
+| Status | Description |
+|--------|-------------|
+| `400`  | The `task` field is missing or invalid. |
+| `401`  | Missing or invalid API key. |
+| `500`  | Internal server error. |
+
+Error responses follow the format:
+
+```json
+{ "error": "message" }
+```
+
+## Example Request
+
+```bash
+curl -X POST "https://api.parallellabs.app/api/v0/browser-task" \
+  -H "X-API-Key: YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "task": "Go to https://news.ycombinator.com and return the titles of the top 5 stories",
+    "sessionType": "regular",
+    "useVision": false
+  }'
+```
+
+## Example Response
+
+```json
+{
+  "taskId": "btask_01hx6r9s3t",
+  "status": "pending",
+  "message": "Browser task submitted successfully. Use the taskId to poll for results."
+}
+```
+
+After submission, poll the task status using:
+
+```
+GET https://api.parallellabs.app/api/v0/browser-task/btask_01hx6r9s3t
+```

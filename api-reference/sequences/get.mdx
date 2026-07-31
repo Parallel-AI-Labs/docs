@@ -1,0 +1,126 @@
+---
+title: "Get Sequence — GET /api/v0/sequences/{sequenceId}"
+sidebarTitle: "Get"
+description: "GET /api/v0/sequences/{sequenceId} — Returns the full configuration, current status, and ordered steps for a specific outreach sequence."
+---
+
+Retrieve the complete details of a single outreach sequence, including its status and the full ordered list of steps. Use the [List Sequences](/api-reference/sequences/list) endpoint to discover available sequence IDs.
+
+**Base URL:** `https://api.parallellabs.app`
+
+**Authentication:** Include your API key in the `X-API-Key` header on every request.
+
+---
+
+## Request
+
+**`GET /api/v0/sequences/{sequenceId}`**
+
+### Path Parameters
+
+<ParamField path="sequenceId" type="string" required>
+  The unique identifier of the sequence to retrieve. This is the `id` field returned when you created the sequence or from the List Sequences endpoint.
+</ParamField>
+
+---
+
+## Response
+
+### 200 — Success
+
+Returns the full sequence object for the specified `sequenceId`.
+
+<ResponseField name="id" type="string">
+  The unique identifier of the sequence.
+</ResponseField>
+
+<ResponseField name="name" type="string">
+  The display name of the sequence.
+</ResponseField>
+
+<ResponseField name="description" type="string">
+  The optional description associated with the sequence.
+</ResponseField>
+
+<ResponseField name="status" type="string">
+  The current status of the sequence. One of `"draft"`, `"active"`, or `"paused"`.
+</ResponseField>
+
+<ResponseField name="steps" type="array">
+  The ordered array of step objects that make up the sequence.
+
+  <Expandable title="Sequence step object">
+    <ResponseField name="type" type="string">
+      The channel for this step. One of `"email"` or `"sms"`.
+    </ResponseField>
+    <ResponseField name="delayDays" type="integer">
+      The number of days to wait after the previous step (or after enrollment for the first step) before sending.
+    </ResponseField>
+    <ResponseField name="subject" type="string">
+      The email subject line. Present when `type` is `"email"`.
+    </ResponseField>
+    <ResponseField name="body" type="string">
+      The message body content.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="created" type="string">
+  ISO 8601 timestamp indicating when the sequence was created.
+</ResponseField>
+
+<ResponseField name="updated" type="string">
+  ISO 8601 timestamp indicating when the sequence was last updated.
+</ResponseField>
+
+```json Example Response
+{
+  "id": "seq_01hx9abc123",
+  "name": "Trial Onboarding",
+  "description": "Three-step onboarding sequence for new trial users.",
+  "status": "active",
+  "steps": [
+    {
+      "type": "email",
+      "delayDays": 0,
+      "subject": "Welcome to Parallel AI",
+      "body": "Thanks for signing up! Here is how to get started..."
+    },
+    {
+      "type": "email",
+      "delayDays": 3,
+      "subject": "Here are your next steps",
+      "body": "Ready to build your first agent? Follow this guide..."
+    },
+    {
+      "type": "sms",
+      "delayDays": 7,
+      "body": "Hey! Need help getting started? Reply and we will connect you with our team."
+    }
+  ],
+  "created": "2024-04-01T08:00:00Z",
+  "updated": "2024-04-05T14:20:00Z"
+}
+```
+
+### Error Responses
+
+| Status | Meaning |
+|--------|---------|
+| `401`  | Authentication failed — your `X-API-Key` is missing or invalid. |
+| `403`  | Forbidden — you do not have permission to access this sequence. |
+| `404`  | Not found — no sequence exists with the provided `sequenceId`. |
+| `500`  | Internal server error — something went wrong on our end. |
+
+All errors return a JSON body: `{"error": "descriptive message"}`
+
+---
+
+## Example
+
+### Get a Sequence (cURL)
+
+```bash
+curl https://api.parallellabs.app/api/v0/sequences/seq_01hx9abc123 \
+  -H "X-API-Key: YOUR_API_KEY"
+```

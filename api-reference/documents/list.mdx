@@ -1,0 +1,138 @@
+---
+title: "List Documents — Parallel AI Knowledge Base REST API"
+sidebarTitle: "List"
+description: "GET /api/v0/documents — Returns a paginated list of knowledge base documents for your company. These documents power your agents' responses."
+---
+
+Retrieve a paginated list of all documents in your company's knowledge base. Use the `search` parameter to filter results by name or content, and use `page` and `pageSize` to navigate through large collections.
+
+## Endpoint
+
+```
+GET https://api.parallellabs.app/api/v0/documents
+```
+
+## Authentication
+
+Include your API key in the request header:
+
+```
+X-API-Key: YOUR_API_KEY
+```
+
+## Query Parameters
+
+<ParamField query="page" type="integer" default="1">
+  The page number to retrieve. Starts at `1`.
+</ParamField>
+
+<ParamField query="pageSize" type="integer" default="10">
+  Number of documents to return per page. Maximum value is `100`.
+</ParamField>
+
+<ParamField query="search" type="string">
+  Optional search string to filter documents by name or content.
+</ParamField>
+
+## Response
+
+### 200 — Success
+
+Returns a paginated list of document objects.
+
+<ResponseField name="items" type="array">
+  Array of document objects matching the query.
+
+  <Expandable title="Document object fields">
+    <ResponseField name="id" type="string">
+      Unique identifier for the document.
+    </ResponseField>
+
+    <ResponseField name="name" type="string">
+      The display name of the document.
+    </ResponseField>
+
+    <ResponseField name="content" type="string | null">
+      The text content of the document, or `null` if the document is file-based.
+    </ResponseField>
+
+    <ResponseField name="fileUrl" type="string">
+      URL pointing to the stored file. Empty string if the document is text-only.
+    </ResponseField>
+
+    <ResponseField name="folder" type="string">
+      The folder path the document belongs to (e.g. `"/support"`). Defaults to `"/"`.
+    </ResponseField>
+
+    <ResponseField name="created" type="string">
+      ISO 8601 timestamp of when the document was created.
+    </ResponseField>
+
+    <ResponseField name="updated" type="string">
+      ISO 8601 timestamp of when the document was last updated.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="total" type="integer">
+  Total number of documents matching the query (across all pages).
+</ResponseField>
+
+<ResponseField name="pages" type="integer">
+  Total number of pages available given the current `pageSize`.
+</ResponseField>
+
+<ResponseField name="hasNext" type="boolean">
+  `true` if there is another page of results after this one.
+</ResponseField>
+
+### Error Responses
+
+| Status | Description |
+|--------|-------------|
+| `401`  | Missing or invalid API key. |
+| `403`  | Your account does not have permission to access this resource. |
+| `500`  | Internal server error. |
+
+Error responses follow the format:
+
+```json
+{ "error": "message" }
+```
+
+## Example Request
+
+```bash
+curl -X GET "https://api.parallellabs.app/api/v0/documents?page=1&pageSize=10&search=onboarding" \
+  -H "X-API-Key: YOUR_API_KEY"
+```
+
+## Example Response
+
+```json
+{
+  "items": [
+    {
+      "id": "doc_01hx3k9z2m",
+      "name": "Onboarding Guide",
+      "content": "Welcome to Acme Corp! This guide will walk you through your first week...",
+      "fileUrl": "",
+      "folder": "/hr",
+      "created": "2024-03-15T10:22:00Z",
+      "updated": "2024-04-01T08:45:00Z"
+    },
+    {
+      "id": "doc_01hx3k9z3n",
+      "name": "Onboarding Checklist",
+      "content": null,
+      "fileUrl": "https://storage.parallellabs.app/files/onboarding-checklist.pdf",
+      "folder": "/hr",
+      "created": "2024-03-20T14:10:00Z",
+      "updated": "2024-03-20T14:10:00Z"
+    }
+  ],
+  "total": 2,
+  "pages": 1,
+  "hasNext": false
+}
+```

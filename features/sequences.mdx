@@ -1,0 +1,175 @@
+---
+title: "Automate Outreach with Email and SMS Sequences"
+sidebarTitle: "Sequences"
+description: "Parallel AI sequences let you create automated multi-step email and SMS campaigns. Build drip campaigns, follow-up flows, and cold outreach at scale."
+---
+
+## What Are Sequences?
+
+Sequences are automated, multi-step outreach campaigns that send email or SMS messages to your contacts over time. Once you set up a sequence and link it to a [Smart List](/features/smart-lists), Parallel AI handles the scheduling and delivery automatically.
+
+Use sequences to:
+
+- **Drip campaigns** — nurture new leads with a series of educational or promotional messages spread over days or weeks
+- **Follow-up flows** — automatically follow up with prospects who haven't responded to an initial outreach
+- **Cold outreach** — launch high-volume, personalized email or SMS campaigns to new audiences at scale
+- **Onboarding sequences** — guide new users through setup steps with timely, contextual messages
+
+<Note>
+  Sequences work hand-in-hand with Smart Lists. When a new contact is added to a linked list — whether manually or by an agent — they automatically enter the sequence.
+</Note>
+
+---
+
+## How Sequences Work
+
+<Steps>
+  <Step title="Create a sequence">
+    Define your sequence with a name, channel (email or SMS), and a description of its purpose.
+  </Step>
+  <Step title="Add steps">
+    Build out the sequence steps — each step includes a message template and a delay (e.g., send immediately, then wait 2 days, then send again).
+  </Step>
+  <Step title="Link to a Smart List">
+    Connect the sequence to a Smart List. New contacts added to that list will automatically enter the sequence.
+  </Step>
+  <Step title="Activate">
+    Set the sequence to active. Parallel AI will begin enrolling contacts and delivering messages on schedule.
+  </Step>
+</Steps>
+
+---
+
+## Core Operations
+
+| Operation | Method | Endpoint |
+|---|---|---|
+| List all sequences | `GET` | `/api/v0/sequences` |
+| Create a sequence | `POST` | `/api/v0/sequences` |
+| Get a sequence | `GET` | `/api/v0/sequences/{id}` |
+| Update a sequence | `PUT` | `/api/v0/sequences/{id}` |
+| Delete a sequence | `DELETE` | `/api/v0/sequences/{id}` |
+
+---
+
+## Creating a Sequence
+
+<CodeGroup>
+
+```bash cURL
+curl -X POST "https://api.parallellabs.app/api/v0/sequences" \
+  -H "X-API-Key: YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "New Trial Onboarding",
+    "description": "5-day email drip for new trial signups to drive activation"
+  }'
+```
+
+```python Python
+import requests
+
+response = requests.post(
+    "https://api.parallellabs.app/api/v0/sequences",
+    headers={
+        "X-API-Key": "YOUR_API_KEY",
+        "Content-Type": "application/json"
+    },
+    json={
+        "name": "New Trial Onboarding",
+        "description": "5-day email drip for new trial signups to drive activation"
+    }
+)
+print(response.json())
+```
+
+```typescript TypeScript
+const response = await fetch(
+  "https://api.parallellabs.app/api/v0/sequences",
+  {
+    method: "POST",
+    headers: {
+      "X-API-Key": "YOUR_API_KEY",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      name: "New Trial Onboarding",
+      description: "5-day email drip for new trial signups to drive activation",
+    }),
+  }
+);
+const data = await response.json();
+console.log(data);
+```
+
+</CodeGroup>
+
+---
+
+## Linking a Sequence to a Smart List
+
+Sequences are most powerful when paired with a Smart List. As contacts are added to the list (manually or via agent capture), they automatically enroll in any linked sequences.
+
+```bash
+curl -X PUT "https://api.parallellabs.app/api/v0/sequences/{sequenceId}" \
+  -H "X-API-Key: YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "contactListId": "YOUR_SMART_LIST_ID"
+  }'
+```
+
+<Tip>
+  Combine agent-based lead capture with a linked sequence for a fully automated pipeline: a visitor chats with your agent → their contact info is captured → they're added to a Smart List → they automatically receive your onboarding sequence.
+</Tip>
+
+---
+
+## Pagination
+
+Use `page` and `pageSize` to paginate through your sequences when you have many campaigns.
+
+```bash
+curl "https://api.parallellabs.app/api/v0/sequences?page=1&pageSize=20" \
+  -H "X-API-Key: YOUR_API_KEY"
+```
+
+| Parameter | Type | Description |
+|---|---|---|
+| `page` | integer | Page number, starting from `1` |
+| `pageSize` | integer | Number of results per page |
+
+---
+
+## Use Case Examples
+
+<CardGroup cols={2}>
+  <Card title="Cold Email Outreach" icon="envelope">
+    Upload a prospect list to a Smart List, create a 3-step email sequence, and let Parallel AI send personalized follow-ups automatically.
+  </Card>
+  <Card title="SMS Follow-Up" icon="message">
+    After a demo request, enroll the lead in a 2-step SMS sequence to confirm the meeting and send a reminder.
+  </Card>
+  <Card title="Post-Purchase Drip" icon="bag-shopping">
+    Trigger a welcome sequence the moment a new customer is added to your CRM-synced Smart List.
+  </Card>
+  <Card title="Re-engagement Campaign" icon="rotate-right">
+    Target churned users in a dedicated Smart List with a win-back email sequence offering incentives.
+  </Card>
+</CardGroup>
+
+---
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Sequences API Reference" icon="code" href="/api-reference/sequences/list">
+    Full reference for list, create, update, and delete endpoints.
+  </Card>
+  <Card title="Smart Lists" icon="list" href="/features/smart-lists">
+    Set up the contact lists that power your sequences.
+  </Card>
+  <Card title="AI Agents" icon="robot" href="/features/agents">
+    Use agents to automatically fill your Smart Lists with fresh leads.
+  </Card>
+</CardGroup>

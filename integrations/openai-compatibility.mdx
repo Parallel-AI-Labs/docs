@@ -1,0 +1,148 @@
+---
+title: "Use Parallel AI as an OpenAI API Drop-In Replacement"
+sidebarTitle: "OpenAI Compatibility"
+description: "Parallel AI's chat completions endpoint is fully OpenAI-compatible. Point any OpenAI SDK at your Parallel AI endpoint and start using it immediately."
+---
+
+## Overview
+
+Parallel AI's `POST /api/v0/chat/completions` endpoint is 100% compatible with OpenAI's Chat Completions API spec. To migrate an existing integration, you only need to change the `base_url` in your client — no other code changes are required.
+
+<Tip>
+  This means any library, tool, or service built for the OpenAI API works out of
+  the box with Parallel AI. Swap the base URL and your API key, and you're done.
+</Tip>
+
+## Quick Start
+
+<CodeGroup>
+
+```python Python
+from openai import OpenAI
+
+client = OpenAI(
+    api_key="YOUR_API_KEY",
+    base_url="https://api.parallellabs.app/api/v0"
+)
+
+response = client.chat.completions.create(
+    model="gpt-4o",
+    messages=[
+        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": "What can Parallel AI help me with?"}
+    ]
+)
+
+print(response.choices[0].message.content)
+```
+
+```javascript Node.js
+import OpenAI from 'openai';
+
+const client = new OpenAI({
+  apiKey: 'YOUR_API_KEY',
+  baseURL: 'https://api.parallellabs.app/api/v0',
+});
+
+const response = await client.chat.completions.create({
+  model: 'gpt-4o',
+  messages: [
+    { role: 'system', content: 'You are a helpful assistant.' },
+    { role: 'user', content: 'What can Parallel AI help me with?' },
+  ],
+});
+
+console.log(response.choices[0].message.content);
+```
+
+```bash cURL
+curl -X POST "https://api.parallellabs.app/api/v0/chat/completions" \
+  -H "X-API-Key: YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "gpt-4o",
+    "messages": [
+      { "role": "system", "content": "You are a helpful assistant." },
+      { "role": "user", "content": "What can Parallel AI help me with?" }
+    ]
+  }'
+```
+
+</CodeGroup>
+
+## Supported Parameters
+
+The following request parameters are fully supported:
+
+| Parameter           | Type             | Description                                                    |
+| ------------------- | ---------------- | -------------------------------------------------------------- |
+| `model`             | string           | The model to use for completion                                |
+| `messages`          | array            | Array of message objects with `role` and `content`             |
+| `temperature`       | number           | Sampling temperature between 0 and 2                           |
+| `max_tokens`        | integer          | Maximum number of tokens to generate                           |
+| `stream`            | boolean          | Stream the response using Server-Sent Events (SSE)             |
+| `top_p`             | number           | Nucleus sampling probability mass                              |
+| `frequency_penalty` | number           | Penalise repeated tokens based on frequency                    |
+| `presence_penalty`  | number           | Penalise tokens based on presence in prior text                |
+| `tools`             | array            | List of tools the model may call                               |
+| `tool_choice`       | string or object | Controls which tool (if any) the model uses                    |
+| `response_format`   | object           | Set to `{ "type": "json_object" }` to force JSON output        |
+| `stop`              | string or array  | Up to 4 sequences where the API will stop generating           |
+| `seed`              | integer          | Seed for deterministic sampling                                |
+| `logit_bias`        | object           | Modify the likelihood of specific tokens appearing             |
+| `user`              | string           | A unique identifier for the end user                           |
+
+## Streaming
+
+Set `stream: true` to receive a streaming response using Server-Sent Events (SSE), identical to OpenAI's streaming format.
+
+<CodeGroup>
+
+```python Python
+from openai import OpenAI
+
+client = OpenAI(
+    api_key="YOUR_API_KEY",
+    base_url="https://api.parallellabs.app/api/v0"
+)
+
+stream = client.chat.completions.create(
+    model="gpt-4o",
+    messages=[{"role": "user", "content": "Tell me about AI for business."}],
+    stream=True,
+)
+
+for chunk in stream:
+    if chunk.choices[0].delta.content is not None:
+        print(chunk.choices[0].delta.content, end="", flush=True)
+```
+
+```javascript Node.js
+import OpenAI from 'openai';
+
+const client = new OpenAI({
+  apiKey: 'YOUR_API_KEY',
+  baseURL: 'https://api.parallellabs.app/api/v0',
+});
+
+const stream = await client.chat.completions.create({
+  model: 'gpt-4o',
+  messages: [{ role: 'user', content: 'Tell me about AI for business.' }],
+  stream: true,
+});
+
+for await (const chunk of stream) {
+  process.stdout.write(chunk.choices[0]?.delta?.content ?? '');
+}
+```
+
+</CodeGroup>
+
+<Note>
+  Each streamed chunk follows the standard OpenAI SSE format with `data:` prefixed JSON objects, ending with `data: [DONE]`.
+</Note>
+
+## Learn More
+
+- [Chat Features Overview](/features/chat) — explore Parallel AI's chat capabilities
+- [Chat Completions API Reference](/api-reference/chat/completions) — full endpoint documentation

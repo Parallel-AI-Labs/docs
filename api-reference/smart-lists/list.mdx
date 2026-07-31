@@ -1,0 +1,128 @@
+---
+title: "List Smart Lists — GET /api/v0/smart-lists Endpoint"
+sidebarTitle: "List"
+description: "GET /api/v0/smart-lists — Returns a paginated list of contact lists for your company. Supports search filtering and pagination to organize agent leads."
+---
+
+Smart lists are contact lists that help you organize the leads your agents capture during conversations. This endpoint returns all smart lists belonging to your company in a paginated response, with optional filtering by name. You can use the returned `id` values to retrieve, update, or delete individual lists.
+
+**Base URL:** `https://api.parallellabs.app`
+
+**Authentication:** Include your API key in the `X-API-Key` header on every request.
+
+---
+
+## Request
+
+**`GET /api/v0/smart-lists`**
+
+### Query Parameters
+
+<ParamField query="page" type="integer" default="1">
+  The page number to retrieve. Use this together with `pageSize` to paginate through large result sets.
+</ParamField>
+
+<ParamField query="pageSize" type="integer" default="10">
+  The number of smart lists to return per page. Maximum value is `100`.
+</ParamField>
+
+<ParamField query="search" type="string">
+  An optional search string to filter smart lists by name. The search is case-insensitive and matches any list whose name contains the provided value.
+</ParamField>
+
+---
+
+## Response
+
+### 200 — Success
+
+<ResponseField name="items" type="array">
+  An array of smart list objects for the requested page.
+
+  <Expandable title="Smart list object">
+    <ResponseField name="id" type="string">
+      The unique identifier for this smart list.
+    </ResponseField>
+    <ResponseField name="name" type="string">
+      The display name of the smart list.
+    </ResponseField>
+    <ResponseField name="description" type="string">
+      An optional description providing context for the list.
+    </ResponseField>
+    <ResponseField name="contactCount" type="integer">
+      The total number of contacts currently in this list.
+    </ResponseField>
+    <ResponseField name="created" type="string">
+      ISO 8601 timestamp indicating when the list was created.
+    </ResponseField>
+    <ResponseField name="updated" type="string">
+      ISO 8601 timestamp indicating when the list was last updated.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="total" type="integer">
+  The total number of smart lists matching the query (across all pages).
+</ResponseField>
+
+<ResponseField name="pages" type="integer">
+  The total number of pages available given the current `pageSize`.
+</ResponseField>
+
+<ResponseField name="hasNext" type="boolean">
+  `true` if there is at least one more page of results after the current page.
+</ResponseField>
+
+```json Example Response
+{
+  "items": [
+    {
+      "id": "sl_01hx9abc123",
+      "name": "Hot Leads Q1",
+      "description": "Leads captured from the Q1 marketing campaign.",
+      "contactCount": 142,
+      "created": "2024-01-15T09:00:00Z",
+      "updated": "2024-03-10T14:30:00Z"
+    },
+    {
+      "id": "sl_01hx9def456",
+      "name": "Newsletter Subscribers",
+      "description": "Users who opted in via the homepage chat widget.",
+      "contactCount": 87,
+      "created": "2024-02-01T11:00:00Z",
+      "updated": "2024-03-08T09:15:00Z"
+    }
+  ],
+  "total": 2,
+  "pages": 1,
+  "hasNext": false
+}
+```
+
+### Error Responses
+
+| Status | Meaning |
+|--------|---------|
+| `401`  | Authentication failed — your `X-API-Key` is missing or invalid. |
+| `403`  | Forbidden — you do not have permission to access this resource. |
+| `500`  | Internal server error — something went wrong on our end. |
+
+All errors return a JSON body: `{"error": "descriptive message"}`
+
+---
+
+## Example
+
+### List Smart Lists (cURL)
+
+```bash
+curl "https://api.parallellabs.app/api/v0/smart-lists?page=1&pageSize=10" \
+  -H "X-API-Key: YOUR_API_KEY"
+```
+
+### With Search Filter (cURL)
+
+```bash
+curl "https://api.parallellabs.app/api/v0/smart-lists?search=Hot+Leads&pageSize=25" \
+  -H "X-API-Key: YOUR_API_KEY"
+```

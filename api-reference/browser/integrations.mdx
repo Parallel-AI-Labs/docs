@@ -1,0 +1,103 @@
+---
+title: "List Browser Integrations — Parallel AI Browser API"
+sidebarTitle: "Integrations"
+description: "GET /api/v0/browser-integrations — Returns saved browser session integrations (LinkedIn, Twitter, etc.) available for authenticated browser tasks."
+---
+
+Retrieve all saved browser integrations for your account. Integrations represent stored login sessions for external platforms (such as LinkedIn or Twitter) that your browser agents can use when `sessionType` is set to `"authenticated"`. Use the returned `id` to reference an integration in your [browser task submissions](/api-reference/browser/submit).
+
+## Endpoint
+
+```
+GET https://api.parallellabs.app/api/v0/browser-integrations
+```
+
+## Authentication
+
+Include your API key in the request header:
+
+```
+X-API-Key: YOUR_API_KEY
+```
+
+## Response
+
+### 200 — Success
+
+<ResponseField name="integrations" type="array">
+  Array of browser integration objects.
+
+  <Expandable title="Integration object fields">
+    <ResponseField name="id" type="string">
+      The unique identifier for the integration. Pass this as `integrationId` when submitting an authenticated browser task.
+    </ResponseField>
+
+    <ResponseField name="name" type="string">
+      A human-readable label for the integration (e.g. `"My LinkedIn Account"`).
+    </ResponseField>
+
+    <ResponseField name="type" type="string">
+      The integration type describing the platform and auth method (e.g. `"linkedin_login"`, `"twitter_login"`).
+    </ResponseField>
+
+    <ResponseField name="status" type="string">
+      The current status of the integration session. Typical values include `"active"` and `"expired"`.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+### Error Responses
+
+| Status | Description |
+|--------|-------------|
+| `401`  | Missing or invalid API key. |
+| `500`  | Internal server error. |
+
+Error responses follow the format:
+
+```json
+{ "error": "message" }
+```
+
+## Example Request
+
+```bash
+curl -X GET "https://api.parallellabs.app/api/v0/browser-integrations" \
+  -H "X-API-Key: YOUR_API_KEY"
+```
+
+## Example Response
+
+```json
+{
+  "integrations": [
+    {
+      "id": "intg_01hx7s0t4u",
+      "name": "My LinkedIn Account",
+      "type": "linkedin_login",
+      "status": "active"
+    },
+    {
+      "id": "intg_01hx7s0t5v",
+      "name": "Company Twitter",
+      "type": "twitter_login",
+      "status": "active"
+    }
+  ]
+}
+```
+
+## Using Integrations in Browser Tasks
+
+To run a browser task using one of these saved sessions, set `sessionType` to `"authenticated"` and pass the integration's `id` as `integrationId`:
+
+```bash
+curl -X POST "https://api.parallellabs.app/api/v0/browser-task" \
+  -H "X-API-Key: YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "task": "Go to LinkedIn and get the job title of the first 3 results for software engineer in San Francisco",
+    "sessionType": "authenticated",
+    "integrationId": "intg_01hx7s0t4u"
+  }'
+```

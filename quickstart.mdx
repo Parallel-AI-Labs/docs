@@ -1,0 +1,123 @@
+---
+title: "Quickstart Guide: Make Your First Parallel AI API Call"
+sidebarTitle: "Quickstart"
+description: "Learn how to authenticate with Parallel AI and make your first API call to list agents, create a chat completion, and verify everything is working."
+---
+
+## Prerequisites
+
+All you need is a Parallel AI account and a terminal (or any HTTP client). No SDK installation is required to follow this guide — though we'll show you a Python example too.
+
+---
+
+<Steps>
+
+  <Step title="Create your Parallel AI account">
+    Head to [https://web.parallellabs.app/signup](https://web.parallellabs.app/signup) and sign up using your Google account or email address.
+
+    Once you're in, you'll land on your company dashboard. If this is your first time, a default company workspace is created for you automatically.
+  </Step>
+
+  <Step title="Generate a Company API Key">
+    1. In your dashboard, navigate to the **Integrations** page from the left sidebar.
+    2. Find the **API Keys** section and click **Generate New Key**.
+    3. Give your key a descriptive name (e.g. `my-first-key`).
+    4. Copy the key immediately — it **won't be shown again** after you close the dialog.
+
+    <Warning>
+      Store your API key somewhere safe, such as a password manager or secrets vault. If you lose it, you'll need to generate a new one.
+    </Warning>
+
+    You'll pass this key in the `X-API-Key` header on every request. See the [Authentication guide](/authentication) for all supported header formats.
+  </Step>
+
+  <Step title="List your agents">
+    With your key in hand, make your first live API call. This request retrieves all agents in your company:
+
+    ```bash
+    curl -X GET "https://api.parallellabs.app/api/v0/agents" \
+      -H "X-API-Key: YOUR_API_KEY" \
+      -H "Content-Type: application/json"
+    ```
+
+    If your account is brand new, you'll see an empty list — that's expected:
+
+    ```json
+    {
+      "items": [],
+      "total": 0,
+      "pages": 1,
+      "hasNext": false
+    }
+    ```
+
+    A `200 OK` response confirms that your key is valid and your connection to the API is working correctly.
+
+    <Tip>
+      Replace `YOUR_API_KEY` with the key you copied in the previous step. Keep this pattern in mind — every request to the Parallel AI API uses the same `X-API-Key` header.
+    </Tip>
+  </Step>
+
+  <Step title="Create your first chat completion">
+    Parallel AI exposes an OpenAI-compatible `/chat/completions` endpoint. Use it to run a completion against any supported model:
+
+    <Tabs>
+      <Tab title="cURL">
+        ```bash
+        curl -X POST "https://api.parallellabs.app/api/v0/chat/completions" \
+          -H "X-API-Key: YOUR_API_KEY" \
+          -H "Content-Type: application/json" \
+          -d '{
+            "model": "gpt-4o-mini",
+            "messages": [{"role": "user", "content": "Hello!"}]
+          }'
+        ```
+      </Tab>
+      <Tab title="Python (openai library)">
+        Because Parallel AI's chat completions endpoint is OpenAI-compatible, you can use the official `openai` Python package with no changes other than the `base_url`:
+
+        ```python
+        from openai import OpenAI
+
+        client = OpenAI(
+            api_key="YOUR_API_KEY",
+            base_url="https://api.parallellabs.app/api/v0",
+        )
+
+        response = client.chat.completions.create(
+            model="gpt-4o-mini",
+            messages=[{"role": "user", "content": "Hello!"}],
+        )
+
+        print(response.choices[0].message.content)
+        ```
+
+        Install the library first if you haven't already:
+
+        ```bash
+        pip install openai
+        ```
+      </Tab>
+    </Tabs>
+
+    The API returns a standard OpenAI-format response object with the model's reply inside `choices[0].message.content`.
+
+    <Note>
+      You can swap `"gpt-4o-mini"` for any model supported on the platform. Refer to the [API Reference](/api-reference/introduction) for the full list of available models.
+    </Note>
+  </Step>
+
+  <Step title="You're ready — explore what's next">
+    You've authenticated, listed your agents, and run a live chat completion. Here's where to go from here:
+
+    <CardGroup cols={2}>
+      <Card title="Build AI Agents" icon="robot" href="/features/agents">
+        Create multi-channel agents for web, email, SMS, and voice — and connect them to your Knowledge Base.
+      </Card>
+      <Card title="Full API Reference" icon="code" href="/api-reference/introduction">
+        Explore every endpoint available in the Parallel AI REST API with request and response schemas.
+      </Card>
+    </CardGroup>
+  </Step>
+
+</Steps>

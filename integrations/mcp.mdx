@@ -1,0 +1,162 @@
+---
+title: "Connect AI Assistants via Parallel AI MCP Integration"
+sidebarTitle: "MCP"
+description: "Parallel AI's MCP server lets Claude Desktop, Cursor, Windsurf, and other AI tools access your agents, sequences, documents, and more."
+---
+
+## What is MCP?
+
+Model Context Protocol (MCP) is an open standard for connecting AI assistants to external tools and data sources. With Parallel AI's MCP server, your AI assistant can:
+
+- Browse and manage your AI agents
+- Create and monitor outreach sequences
+- Search your knowledge base documents
+- Generate AI content, images, audio, and video
+- Execute browser automation tasks
+- Access every platform feature via natural language
+
+## MCP Server URL
+
+```
+https://api.parallellabs.app/api/v0/mcp
+```
+
+<Note>
+  This server implements MCP Streamable HTTP Transport (JSON-RPC 2.0). It is
+  compatible with `mcp-remote` and other standard MCP clients.
+</Note>
+
+## Available Tools
+
+| Tool                          | Description                                                      |
+| ----------------------------- | ---------------------------------------------------------------- |
+| `platform_list_capabilities`  | Browse available API endpoints by category                       |
+| `platform_get_action_details` | Get the full spec for an endpoint including required params      |
+| `platform_execute_action`     | Execute any API endpoint with automatic authentication           |
+
+## Connecting Claude Desktop
+
+<Steps>
+  <Step title="Open your Claude Desktop config file">
+    Locate the configuration file for your operating system:
+    - **macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`
+    - **Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
+  </Step>
+  <Step title="Add the MCP server">
+    Paste the following into your config file, replacing `your_api_key_here` with your actual API key:
+
+    ```json claude_desktop_config.json
+    {
+      "mcpServers": {
+        "parallel-ai": {
+          "command": "npx",
+          "args": ["-y", "mcp-remote", "https://api.parallellabs.app/api/v0/mcp"],
+          "env": {
+            "API_KEY": "your_api_key_here"
+          }
+        }
+      }
+    }
+    ```
+  </Step>
+  <Step title="Restart Claude Desktop">
+    Fully quit and relaunch Claude Desktop so it picks up the new configuration.
+  </Step>
+  <Step title="Test the connection">
+    Ask Claude something like:
+
+    - *"List my AI agents"*
+    - *"Create a new email sequence for cold outreach"*
+
+    Claude will automatically use the Parallel AI tools to fulfill your request.
+  </Step>
+</Steps>
+
+## Connecting Cursor / Windsurf
+
+<Steps>
+  <Step title="Open the MCP settings">
+    Navigate to **Settings → MCP** inside Cursor or Windsurf.
+  </Step>
+  <Step title="Add a new MCP server">
+    Fill in the following details:
+
+    - **URL:** `https://api.parallellabs.app/api/v0/mcp`
+    - **Authentication:** Bearer token using your Parallel AI API key
+  </Step>
+  <Step title="Confirm the tools are available">
+    The Parallel AI platform tools will appear in your AI assistant's tool list. You can now reference them directly in your prompts.
+  </Step>
+</Steps>
+
+## Generic mcp-remote Connection
+
+If you're using any MCP client that supports `mcp-remote`, connect with a single command:
+
+```bash
+npx mcp-remote https://api.parallellabs.app/api/v0/mcp \
+  --header "Authorization: Bearer YOUR_API_KEY"
+```
+
+## Authentication for MCP
+
+MCP authentication follows the same pattern as the REST API.
+
+**Company API Key:**
+
+```
+Authorization: Bearer YOUR_COMPANY_API_KEY
+```
+
+**Personal Access Key:**
+
+```
+Authorization: Bearer pak_your_key
+X-Company-ID: your_company_id
+```
+
+<Tip>
+  You can find your API keys on the **Integrations** page (Company API Keys) or
+  your **Profile** page (Personal Access Keys) in the Parallel AI dashboard.
+</Tip>
+
+## Example MCP Interactions
+
+The three tools work together to let your AI assistant discover and execute any platform action.
+
+<CodeGroup>
+
+```json platform_list_capabilities
+{
+  "tool": "platform_list_capabilities",
+  "input": {
+    "category": "Sequences"
+  }
+}
+```
+
+```json platform_get_action_details
+{
+  "tool": "platform_get_action_details",
+  "input": {
+    "operationId": "post_sequences.create_sequence"
+  }
+}
+```
+
+```json platform_execute_action
+{
+  "tool": "platform_execute_action",
+  "input": {
+    "operationId": "get_agents.list_agents",
+    "parameters": {}
+  }
+}
+```
+
+</CodeGroup>
+
+<Note>
+  For the full MCP API reference, including all available operation IDs and
+  response schemas, see the [MCP Overview](/api-reference/mcp/overview).
+</Note>

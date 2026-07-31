@@ -1,0 +1,238 @@
+---
+title: "Create Agent — Parallel AI API (POST /api/v0/agents)"
+sidebarTitle: "Create Agent"
+description: "POST /api/v0/agents — Creates a new AI agent with custom prompts, channel settings, knowledge base access, and branding options."
+---
+
+Creates a new AI agent for your company. You can configure every aspect of the agent at creation time — its AI model and prompts, which channels it operates on (website chat, email, SMS, voice), knowledge base access, contact capture behavior, and visual branding. Only `name` is required; all other fields use sensible defaults.
+
+## Endpoint
+
+```
+POST https://api.parallellabs.app/api/v0/agents
+```
+
+## Request Body
+
+Send a JSON object with `Content-Type: application/json`.
+
+### Required Fields
+
+<ParamField body="name" type="string" required>
+  Display name for the agent. Must be a non-empty string.
+</ParamField>
+
+### Optional Fields
+
+<ParamField body="systemPrompt" type="string">
+  System-level instructions that define the agent's overall persona, tone, and behavior. This prompt is prepended to every conversation.
+</ParamField>
+
+<ParamField body="agentPrompt" type="string">
+  Agent-specific prompt layered on top of the system prompt. Useful for channel- or use-case-specific instructions.
+</ParamField>
+
+<ParamField body="model" type="string" default="gpt-4o-mini">
+  The AI model to use for this agent (e.g. `gpt-4o`, `gpt-4o-mini`).
+</ParamField>
+
+<ParamField body="isActive" type="boolean" default="true">
+  When `false`, the agent will not accept or respond to new conversations.
+</ParamField>
+
+<ParamField body="channelSettings" type="object">
+  Configures which communication channels are enabled for the agent.
+
+  <Expandable title="channelSettings fields">
+    <ParamField body="website" type="object">
+      <Expandable title="website fields">
+        <ParamField body="enabled" type="boolean">
+          Whether the agent is available via the website chat widget.
+        </ParamField>
+      </Expandable>
+    </ParamField>
+
+    <ParamField body="email" type="object">
+      <Expandable title="email fields">
+        <ParamField body="enabled" type="boolean">
+          Whether the agent handles inbound email conversations.
+        </ParamField>
+        <ParamField body="address" type="string">
+          The email address assigned to this agent (e.g. `support@yourdomain.com`).
+        </ParamField>
+      </Expandable>
+    </ParamField>
+
+    <ParamField body="sms" type="object">
+      <Expandable title="sms fields">
+        <ParamField body="enabled" type="boolean">
+          Whether the agent handles inbound SMS conversations.
+        </ParamField>
+        <ParamField body="phoneNumber" type="string">
+          The phone number assigned to this agent in E.164 format (e.g. `+15550001234`).
+        </ParamField>
+      </Expandable>
+    </ParamField>
+
+    <ParamField body="voice" type="object">
+      <Expandable title="voice fields">
+        <ParamField body="enabled" type="boolean">
+          Whether the agent handles inbound voice calls.
+        </ParamField>
+      </Expandable>
+    </ParamField>
+  </Expandable>
+</ParamField>
+
+<ParamField body="knowledgeBaseEnabled" type="boolean">
+  When `true`, the agent searches your knowledge base documents before responding. Requires at least one document to be uploaded.
+</ParamField>
+
+<ParamField body="knowledgeBaseScope" type="string">
+  Limits knowledge base searches to a specific folder path. Use `"/"` for the entire knowledge base or a path like `"/shared/Support"` to restrict to a subdirectory.
+</ParamField>
+
+<ParamField body="multiStepToolsEnabled" type="boolean">
+  When `true`, the agent can chain multiple tool-calling turns within a single user interaction, allowing it to complete more complex tasks.
+</ParamField>
+
+<ParamField body="multiStepMaxTurns" type="integer" default="5">
+  Maximum number of tool-calling turns allowed per interaction when `multiStepToolsEnabled` is `true`. Must be between `1` and `10`.
+</ParamField>
+
+<ParamField body="aiContactCaptureEnabled" type="boolean" default="true">
+  When `true`, the agent automatically extracts and saves contact information (name, email, phone) from conversation context.
+</ParamField>
+
+<ParamField body="leadFields" type="array">
+  Custom fields to collect from contacts during a conversation. Each element is an object with the following shape:
+
+  <Expandable title="Lead field object">
+    <ParamField body="name" type="string" required>
+      The field label shown to the agent and stored on the contact record.
+    </ParamField>
+    <ParamField body="type" type="string" required>
+      Data type of the field. One of `"text"`, `"email"`, `"phone"`, or `"number"`.
+    </ParamField>
+    <ParamField body="required" type="boolean">
+      Whether the agent must collect this field before completing the interaction.
+    </ParamField>
+  </Expandable>
+</ParamField>
+
+<ParamField body="contactListId" type="string">
+  The ID of a Smart List where captured contacts are automatically added.
+</ParamField>
+
+<ParamField body="customColors" type="object">
+  Brand colors applied to the agent's chat widget. All values are hex color strings (e.g. `"#1A73E8"`).
+
+  <Expandable title="customColors fields">
+    <ParamField body="primary" type="string">
+      Primary brand color used for buttons and highlights.
+    </ParamField>
+    <ParamField body="secondary" type="string">
+      Secondary color used for accents and hover states.
+    </ParamField>
+    <ParamField body="background" type="string">
+      Widget background color.
+    </ParamField>
+  </Expandable>
+</ParamField>
+
+<ParamField body="avatarImage" type="string">
+  Avatar image for the agent. Accepts a publicly accessible URL or a base64-encoded data URI (e.g. `data:image/png;base64,...`).
+</ParamField>
+
+## Response
+
+Returns `201 Created` with the full agent object on success. The response shape matches the objects returned by [List Agents](/api-reference/agents/list).
+
+<ResponseField name="id" type="string">
+  Unique identifier assigned to the newly created agent.
+</ResponseField>
+
+<ResponseField name="name" type="string">
+  Display name of the agent.
+</ResponseField>
+
+<ResponseField name="systemPrompt" type="string">
+  The system instructions provided at creation.
+</ResponseField>
+
+<ResponseField name="model" type="string">
+  The AI model assigned to this agent.
+</ResponseField>
+
+<ResponseField name="isActive" type="boolean">
+  Whether the agent is active.
+</ResponseField>
+
+<ResponseField name="knowledgeBaseEnabled" type="boolean">
+  Whether knowledge base search is enabled for this agent.
+</ResponseField>
+
+<ResponseField name="shortCode" type="string">
+  Auto-generated short code for embeddable widgets and links.
+</ResponseField>
+
+<ResponseField name="created" type="integer">
+  Unix timestamp (milliseconds) when the agent was created.
+</ResponseField>
+
+<ResponseField name="updated" type="integer">
+  Unix timestamp (milliseconds) when the agent was last updated.
+</ResponseField>
+
+## Example Request
+
+The following example creates a customer support agent with knowledge base access enabled and a website chat channel:
+
+```bash
+curl -X POST https://api.parallellabs.app/api/v0/agents \
+  -H "X-API-Key: YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "Support Agent",
+    "systemPrompt": "You are a friendly and knowledgeable customer support agent. Always greet the user by name if you know it, and resolve issues as efficiently as possible.",
+    "model": "gpt-4o-mini",
+    "isActive": true,
+    "knowledgeBaseEnabled": true,
+    "knowledgeBaseScope": "/shared/Support",
+    "channelSettings": {
+      "website": {
+        "enabled": true
+      }
+    },
+    "aiContactCaptureEnabled": true,
+    "customColors": {
+      "primary": "#1A73E8",
+      "background": "#FFFFFF"
+    }
+  }'
+```
+
+## Example Response
+
+```json
+{
+  "id": "agent_abc123",
+  "name": "Support Agent",
+  "systemPrompt": "You are a friendly and knowledgeable customer support agent. Always greet the user by name if you know it, and resolve issues as efficiently as possible.",
+  "model": "gpt-4o-mini",
+  "isActive": true,
+  "knowledgeBaseEnabled": true,
+  "shortCode": "abc123",
+  "created": 1705312200000,
+  "updated": 1705312200000
+}
+```
+
+## Errors
+
+| Status | Description |
+|--------|-------------|
+| `400 Bad Request` | One or more request body parameters are missing or invalid. |
+| `401 Unauthorized` | Your API key is missing or invalid. |
+| `403 Forbidden` | Your plan does not have access to the Agents feature. |
+| `500 Internal Server Error` | An unexpected server error occurred. |

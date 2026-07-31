@@ -1,0 +1,88 @@
+---
+title: "Get Smart List — GET /api/v0/smart-lists/{listId}"
+sidebarTitle: "Get"
+description: "GET /api/v0/smart-lists/{listId} — Retrieves the name, description, and current contact count for a specific smart list by its unique identifier."
+---
+
+Retrieve the details of a single smart list by its unique identifier. The response includes the list's name, description, and current contact count. Use the [List Smart Lists](/api-reference/smart-lists/list) endpoint to discover available list IDs.
+
+**Base URL:** `https://api.parallellabs.app`
+
+**Authentication:** Include your API key in the `X-API-Key` header on every request.
+
+---
+
+## Request
+
+**`GET /api/v0/smart-lists/{listId}`**
+
+### Path Parameters
+
+<ParamField path="listId" type="string" required>
+  The unique identifier of the smart list to retrieve. This is the `id` field returned when you created the list or from the List Smart Lists endpoint.
+</ParamField>
+
+---
+
+## Response
+
+### 200 — Success
+
+Returns the smart list object for the specified `listId`.
+
+<ResponseField name="id" type="string">
+  The unique identifier for this smart list.
+</ResponseField>
+
+<ResponseField name="name" type="string">
+  The display name of the smart list.
+</ResponseField>
+
+<ResponseField name="description" type="string">
+  The optional description associated with the smart list.
+</ResponseField>
+
+<ResponseField name="contactCount" type="integer">
+  The total number of contacts currently stored in this list.
+</ResponseField>
+
+<ResponseField name="created" type="string">
+  ISO 8601 timestamp indicating when the list was created.
+</ResponseField>
+
+<ResponseField name="updated" type="string">
+  ISO 8601 timestamp indicating when the list was last updated.
+</ResponseField>
+
+```json Example Response
+{
+  "id": "sl_01hx9abc123",
+  "name": "Hot Leads Q1",
+  "description": "Leads captured from the Q1 marketing campaign.",
+  "contactCount": 142,
+  "created": "2024-01-15T09:00:00Z",
+  "updated": "2024-03-10T14:30:00Z"
+}
+```
+
+### Error Responses
+
+| Status | Meaning |
+|--------|---------|
+| `401`  | Authentication failed — your `X-API-Key` is missing or invalid. |
+| `403`  | Forbidden — you do not have permission to access this smart list. |
+| `404`  | Not found — no smart list exists with the provided `listId`. |
+| `500`  | Internal server error — something went wrong on our end. |
+
+All errors return a JSON body: `{"error": "descriptive message"}`
+
+---
+
+## Example
+
+### Get a Smart List (cURL)
+
+```bash
+curl https://api.parallellabs.app/api/v0/smart-lists/sl_01hx9abc123 \
+  -H "X-API-Key: YOUR_API_KEY"
+```

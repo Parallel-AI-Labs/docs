@@ -1,0 +1,68 @@
+---
+title: "Get API Key — GET /api/v0/api_keys/{companyId}/{name}"
+sidebarTitle: "Get Key"
+description: "GET /api/v0/api_keys/{companyId}/{name} — Looks up a specific API key by its company ID and key name. Returns the key value and associated metadata."
+---
+
+Retrieve metadata for a specific API key by providing both its company ID and key name. This is useful for confirming a key exists and checking its identifying details.
+
+## Endpoint
+
+```
+GET https://api.parallellabs.app/api/v0/api_keys/{companyId}/{name}
+```
+
+## Authentication
+
+Include your API key in the request header:
+
+```
+X-API-Key: YOUR_API_KEY
+```
+
+## Path Parameters
+
+<ParamField path="companyId" type="string" required>
+  The ID of the company the key belongs to.
+</ParamField>
+
+<ParamField path="name" type="string" required>
+  The name of the API key to retrieve (as set when the key was created).
+</ParamField>
+
+## Response
+
+### 200 — Success
+
+<ResponseField name="apiKey" type="string">
+  The API key value associated with the given company ID and name.
+</ResponseField>
+
+### Error Responses
+
+| Status | Description |
+|--------|-------------|
+| `401`  | Missing or invalid API key. |
+| `404`  | No API key found for the specified company ID and name combination. |
+| `500`  | Internal server error. |
+
+Error responses follow the format:
+
+```json
+{ "error": "message" }
+```
+
+## Example Request
+
+```bash
+curl -X GET "https://api.parallellabs.app/api/v0/api_keys/comp_01hx8t1u5v/production-server" \
+  -H "X-API-Key: YOUR_API_KEY"
+```
+
+## Example Response
+
+```json
+{
+  "apiKey": "pk_live_abc123xyz456def789"
+}
+```

@@ -1,0 +1,97 @@
+---
+title: "Create a New Smart List — POST /api/v0/smart-lists"
+sidebarTitle: "Create"
+description: "POST /api/v0/smart-lists — Creates a new contact list. Link the list to an agent using contactListId to automatically collect leads from conversations."
+---
+
+Use this endpoint to create a new smart list for organizing your contacts. Once created, you can link the list to an agent by passing the returned `id` as the `contactListId` in your agent configuration — the agent will then automatically add captured leads to the list during conversations.
+
+**Base URL:** `https://api.parallellabs.app`
+
+**Authentication:** Include your API key in the `X-API-Key` header on every request.
+
+---
+
+## Request
+
+**`POST /api/v0/smart-lists`**
+
+### Request Body
+
+<ParamField body="name" type="string" required>
+  The display name for the new smart list. Must be a non-empty string. Choose a descriptive name that reflects the list's purpose, such as `"Q2 Campaign Leads"` or `"Enterprise Prospects"`.
+</ParamField>
+
+<ParamField body="description" type="string">
+  An optional description providing additional context about the list, such as what type of contacts it holds or which agent or campaign it is associated with.
+</ParamField>
+
+---
+
+## Response
+
+### 201 — Created
+
+Returns the newly created smart list object.
+
+<ResponseField name="id" type="string">
+  The unique identifier for the newly created smart list. Use this value as `contactListId` when linking the list to an agent.
+</ResponseField>
+
+<ResponseField name="name" type="string">
+  The display name of the smart list, as provided in the request.
+</ResponseField>
+
+<ResponseField name="description" type="string">
+  The description of the smart list, as provided in the request.
+</ResponseField>
+
+<ResponseField name="contactCount" type="integer">
+  The number of contacts in the list. This will be `0` for a newly created list.
+</ResponseField>
+
+<ResponseField name="created" type="string">
+  ISO 8601 timestamp indicating when the list was created.
+</ResponseField>
+
+<ResponseField name="updated" type="string">
+  ISO 8601 timestamp indicating when the list was last updated.
+</ResponseField>
+
+```json Example Response
+{
+  "id": "sl_01hx9abc123",
+  "name": "Q2 Campaign Leads",
+  "description": "Leads captured during the Q2 product launch campaign.",
+  "contactCount": 0,
+  "created": "2024-04-01T08:00:00Z",
+  "updated": "2024-04-01T08:00:00Z"
+}
+```
+
+### Error Responses
+
+| Status | Meaning |
+|--------|---------|
+| `400`  | Invalid request — the `name` field is missing or malformed. |
+| `401`  | Authentication failed — your `X-API-Key` is missing or invalid. |
+| `403`  | Forbidden — you do not have permission to create smart lists. |
+| `500`  | Internal server error — something went wrong on our end. |
+
+All errors return a JSON body: `{"error": "descriptive message"}`
+
+---
+
+## Example
+
+### Create a Smart List (cURL)
+
+```bash
+curl -X POST https://api.parallellabs.app/api/v0/smart-lists \
+  -H "Content-Type: application/json" \
+  -H "X-API-Key: YOUR_API_KEY" \
+  -d '{
+    "name": "Q2 Campaign Leads",
+    "description": "Leads captured during the Q2 product launch campaign."
+  }'
+```

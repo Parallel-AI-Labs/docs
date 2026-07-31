@@ -1,0 +1,166 @@
+---
+title: "Get Agent — Parallel AI API (GET /api/v0/agents)"
+sidebarTitle: "Get Agent"
+description: "GET /api/v0/agents/{agentId} — Returns the full configuration for a specific agent including channel settings, lead fields, and branding options."
+---
+
+Returns the complete configuration for a single agent, identified by its unique `agentId`. The response includes all fields set at creation or via subsequent updates — prompts, channel settings, lead capture fields, knowledge base configuration, and branding options.
+
+## Endpoint
+
+```
+GET https://api.parallellabs.app/api/v0/agents/{agentId}
+```
+
+## Path Parameters
+
+<ParamField path="agentId" type="string" required>
+  The unique identifier of the agent to retrieve (e.g. `agent_abc123`). You can find agent IDs in the response from [List Agents](/api-reference/agents/list).
+</ParamField>
+
+## Response
+
+Returns `200 OK` with the full agent configuration object.
+
+<ResponseField name="id" type="string">
+  Unique identifier for the agent.
+</ResponseField>
+
+<ResponseField name="name" type="string">
+  Display name of the agent.
+</ResponseField>
+
+<ResponseField name="systemPrompt" type="string">
+  The system-level instructions that define the agent's persona and behavior.
+</ResponseField>
+
+<ResponseField name="agentPrompt" type="string">
+  Agent-specific prompt layered on top of the system prompt.
+</ResponseField>
+
+<ResponseField name="model" type="string">
+  The AI model powering this agent (e.g. `gpt-4o-mini`).
+</ResponseField>
+
+<ResponseField name="isActive" type="boolean">
+  Whether the agent is currently active and available for conversations.
+</ResponseField>
+
+<ResponseField name="channelSettings" type="object">
+  Enabled communication channels and their configuration.
+
+  <Expandable title="channelSettings fields">
+    <ResponseField name="website" type="object">
+      Website chat widget settings. Includes `enabled` (boolean).
+    </ResponseField>
+    <ResponseField name="email" type="object">
+      Email channel settings. Includes `enabled` (boolean) and `address` (string).
+    </ResponseField>
+    <ResponseField name="sms" type="object">
+      SMS channel settings. Includes `enabled` (boolean) and `phoneNumber` (string).
+    </ResponseField>
+    <ResponseField name="voice" type="object">
+      Voice channel settings. Includes `enabled` (boolean).
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="knowledgeBaseEnabled" type="boolean">
+  Whether the agent searches your knowledge base when composing responses.
+</ResponseField>
+
+<ResponseField name="knowledgeBaseScope" type="string">
+  The knowledge base folder path this agent is limited to.
+</ResponseField>
+
+<ResponseField name="multiStepToolsEnabled" type="boolean">
+  Whether the agent can chain multiple tool-calling turns per interaction.
+</ResponseField>
+
+<ResponseField name="multiStepMaxTurns" type="integer">
+  Maximum number of tool-calling turns allowed per interaction.
+</ResponseField>
+
+<ResponseField name="aiContactCaptureEnabled" type="boolean">
+  Whether the agent automatically extracts contact information from conversations.
+</ResponseField>
+
+<ResponseField name="leadFields" type="array">
+  Custom contact fields the agent collects during conversations. Each object contains `name` (string), `type` (string), and `required` (boolean).
+</ResponseField>
+
+<ResponseField name="contactListId" type="string">
+  The Smart List ID where captured contacts are added.
+</ResponseField>
+
+<ResponseField name="customColors" type="object">
+  Brand colors for the chat widget. Contains `primary`, `secondary`, and `background` hex color strings.
+</ResponseField>
+
+<ResponseField name="avatarImage" type="string">
+  URL or base64 data URI of the agent's avatar image.
+</ResponseField>
+
+<ResponseField name="shortCode" type="string">
+  Short alphanumeric code used in embeddable links and widgets.
+</ResponseField>
+
+<ResponseField name="created" type="integer">
+  Unix timestamp (milliseconds) when the agent was created.
+</ResponseField>
+
+<ResponseField name="updated" type="integer">
+  Unix timestamp (milliseconds) when the agent was last updated.
+</ResponseField>
+
+## Example Request
+
+```bash
+curl https://api.parallellabs.app/api/v0/agents/agent_abc123 \
+  -H "X-API-Key: YOUR_API_KEY"
+```
+
+## Example Response
+
+```json
+{
+  "id": "agent_abc123",
+  "name": "Support Agent",
+  "systemPrompt": "You are a helpful customer support agent.",
+  "agentPrompt": "Focus on resolving issues in three steps or fewer.",
+  "model": "gpt-4o-mini",
+  "isActive": true,
+  "channelSettings": {
+    "website": { "enabled": true },
+    "email": { "enabled": true, "address": "support@yourcompany.com" },
+    "sms": { "enabled": false },
+    "voice": { "enabled": false }
+  },
+  "knowledgeBaseEnabled": true,
+  "knowledgeBaseScope": "/shared/Support",
+  "multiStepToolsEnabled": true,
+  "multiStepMaxTurns": 5,
+  "aiContactCaptureEnabled": true,
+  "leadFields": [
+    { "name": "Company", "type": "text", "required": false }
+  ],
+  "contactListId": "list_xyz789",
+  "customColors": {
+    "primary": "#1A73E8",
+    "background": "#FFFFFF"
+  },
+  "avatarImage": "https://cdn.yourcompany.com/agent-avatar.png",
+  "shortCode": "abc123",
+  "created": 1705312200000,
+  "updated": 1705398600000
+}
+```
+
+## Errors
+
+| Status | Description |
+|--------|-------------|
+| `401 Unauthorized` | Your API key is missing or invalid. |
+| `403 Forbidden` | You do not have permission to access this agent. |
+| `404 Not Found` | No agent with the given `agentId` exists in your company. |
+| `500 Internal Server Error` | An unexpected server error occurred. |

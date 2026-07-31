@@ -1,0 +1,113 @@
+---
+title: "List Voices — Parallel AI Text-to-Speech REST API"
+sidebarTitle: "Voices"
+description: "GET /api/v0/audio/voices — Returns available text-to-speech voices including public ElevenLabs voices and your company's custom cloned voices."
+---
+
+Retrieve all text-to-speech voices available to your company. Results include both public ElevenLabs voices and any custom cloned voices your company has created. Use the returned `id` values in the `voiceId` field when calling [Create Audio](/api-reference/audio/create).
+
+## Endpoint
+
+```
+GET https://api.parallellabs.app/api/v0/audio/voices
+```
+
+## Authentication
+
+Include your API key in the request header:
+
+```
+X-API-Key: YOUR_API_KEY
+```
+
+## Query Parameters
+
+<ParamField query="companyId" type="string">
+  Optional company ID to include custom cloned voices for a specific company. If omitted, only public voices are returned.
+</ParamField>
+
+## Response
+
+### 200 — Success
+
+<ResponseField name="items" type="array">
+  Array of voice objects available for use.
+
+  <Expandable title="Voice object fields">
+    <ResponseField name="id" type="string">
+      The voice ID. Pass this as `voiceId` when creating audio.
+    </ResponseField>
+
+    <ResponseField name="name" type="string">
+      A human-readable name for the voice (e.g. `"Adam"`, `"Rachel"`).
+    </ResponseField>
+
+    <ResponseField name="description" type="string">
+      A short description of the voice's character and style.
+    </ResponseField>
+
+    <ResponseField name="provider" type="string">
+      The voice provider. Currently always `"elevenlabs"`.
+    </ResponseField>
+
+    <ResponseField name="isPublic" type="boolean">
+      `true` if the voice is available to all accounts. `false` if it is a custom cloned voice private to your company.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="total" type="integer">
+  Total number of voices returned.
+</ResponseField>
+
+### Error Responses
+
+| Status | Description |
+|--------|-------------|
+| `401`  | Missing or invalid API key. |
+| `403`  | Your account does not have permission to access this resource. |
+| `500`  | Internal server error. |
+
+Error responses follow the format:
+
+```json
+{ "error": "message" }
+```
+
+## Example Request
+
+```bash
+curl -X GET "https://api.parallellabs.app/api/v0/audio/voices" \
+  -H "X-API-Key: YOUR_API_KEY"
+```
+
+## Example Response
+
+```json
+{
+  "items": [
+    {
+      "id": "pNInz6obpgDQGcFmaJgB",
+      "name": "Adam",
+      "description": "A deep, authoritative male voice suited for narration and professional content.",
+      "provider": "elevenlabs",
+      "isPublic": true
+    },
+    {
+      "id": "21m00Tcm4TlvDq8ikWAM",
+      "name": "Rachel",
+      "description": "A calm, friendly female voice ideal for customer service and conversational use cases.",
+      "provider": "elevenlabs",
+      "isPublic": true
+    },
+    {
+      "id": "custom_v_9xk2m",
+      "name": "Acme Support Bot",
+      "description": "Custom cloned voice for Acme Corp support interactions.",
+      "provider": "elevenlabs",
+      "isPublic": false
+    }
+  ],
+  "total": 3
+}
+```
