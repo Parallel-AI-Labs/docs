@@ -1,22 +1,13 @@
 {
   "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
   "name": "Parallel AI",
-  "theme": "luma",
-  "logo": {
-    "light": "https://media.brand.dev/d4c4c265-30a3-405f-b8f5-4894f1d4aca6.png",
-    "dark": "https://media.brand.dev/d4c4c265-30a3-405f-b8f5-4894f1d4aca6.png"
-  },
-  "favicon": "https://icons.duckduckgo.com/ip3/web.parallellabs.app.ico",
   "colors": {
-    "primary": "#040404"
+    "primary": "#0D9373",
+    "light": "#07C983",
+    "dark": "#0D9373"
   },
-  "navbar": {
-    "primary": {
-      "type": "button",
-      "label": "Get Started",
-      "href": "https://web.parallellabs.app/signup"
-    }
-  },
+  "favicon": "/favicon.svg",
   "navigation": {
     "tabs": [
       {
@@ -31,124 +22,112 @@
             ]
           },
           {
-            "group": "Core Features",
+            "group": "Platform",
             "pages": [
-              "features/agents",
-              "features/chat",
-              "features/smart-lists",
-              "features/sequences",
-              "features/documents",
-              "features/media"
+              "platform/api-keys",
+              "platform/errors",
+              "platform/pagination"
             ]
           },
           {
             "group": "Integrations",
             "pages": [
               "integrations/mcp",
-              "integrations/browser-automation",
-              "integrations/openai-compatibility"
+              "integrations/openai-compatibility",
+              "integrations/browser-automation"
             ]
           },
           {
-            "group": "Platform",
+            "group": "User Guide",
             "pages": [
-              "platform/api-keys",
-              "platform/pagination",
-              "platform/errors"
+              "getting-started"
+            ]
+          },
+          {
+            "group": "Global Features",
+            "pages": [
+              "global-features/overview",
+              "global-features/companies",
+              "global-features/profile",
+              "global-features/support"
+            ]
+          },
+          {
+            "group": "Core Features",
+            "pages": [
+              "core-features/overview",
+              "core-features/dashboard",
+              "core-features/chat",
+              "core-features/employees",
+              "core-features/knowledge-base",
+              "core-features/agents"
+            ]
+          },
+          {
+            "group": "Workflow Features",
+            "pages": [
+              "workflow-features/overview",
+              "workflow-features/enrichment",
+              "workflow-features/smart-lists",
+              "workflow-features/sequences",
+              "workflow-features/inbox",
+              "workflow-features/marketing-campaigns",
+              "workflow-features/keyword-monitoring"
+            ]
+          },
+          {
+            "group": "Content Tools",
+            "pages": [
+              "content-tools/overview",
+              "content-tools/content-engine",
+              "content-tools/images",
+              "content-tools/brand-images",
+              "content-tools/audio",
+              "content-tools/video",
+              "content-tools/voices"
+            ]
+          },
+          {
+            "group": "Inbound & Apps",
+            "pages": [
+              "inbound-apps/overview",
+              "inbound-apps/landing-pages",
+              "inbound-apps/app-builder",
+              "inbound-apps/apps"
+            ]
+          },
+          {
+            "group": "Admin Features",
+            "pages": [
+              "admin-features/overview",
+              "admin-features/collaborators",
+              "admin-features/integrations"
             ]
           }
         ]
       },
       {
         "tab": "API Reference",
-        "groups": [
-          {
-            "group": "Overview",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Agents",
-            "pages": [
-              "api-reference/agents/list",
-              "api-reference/agents/create",
-              "api-reference/agents/get",
-              "api-reference/agents/update",
-              "api-reference/agents/delete"
-            ]
-          },
-          {
-            "group": "Chat",
-            "pages": [
-              "api-reference/chat/completions"
-            ]
-          },
-          {
-            "group": "Smart Lists",
-            "pages": [
-              "api-reference/smart-lists/list",
-              "api-reference/smart-lists/create",
-              "api-reference/smart-lists/get",
-              "api-reference/smart-lists/update",
-              "api-reference/smart-lists/delete"
-            ]
-          },
-          {
-            "group": "Sequences",
-            "pages": [
-              "api-reference/sequences/list",
-              "api-reference/sequences/create",
-              "api-reference/sequences/get",
-              "api-reference/sequences/update",
-              "api-reference/sequences/delete"
-            ]
-          },
-          {
-            "group": "Documents",
-            "pages": [
-              "api-reference/documents/list",
-              "api-reference/documents/create",
-              "api-reference/documents/get",
-              "api-reference/documents/delete"
-            ]
-          },
-          {
-            "group": "Media",
-            "pages": [
-              "api-reference/audio/list",
-              "api-reference/audio/create",
-              "api-reference/audio/voices",
-              "api-reference/audio/models",
-              "api-reference/audio/delete"
-            ]
-          },
-          {
-            "group": "Browser",
-            "pages": [
-              "api-reference/browser/submit",
-              "api-reference/browser/status",
-              "api-reference/browser/cancel",
-              "api-reference/browser/integrations"
-            ]
-          },
-          {
-            "group": "Keys",
-            "pages": [
-              "api-reference/keys/list",
-              "api-reference/keys/create",
-              "api-reference/keys/get",
-              "api-reference/keys/delete"
-            ]
-          },
-          {
-            "group": "MCP",
-            "pages": [
-              "api-reference/mcp/overview"
-            ]
-          }
+        "openapi": "https://api.parallellabs.app/docs/openapi.json",
+        "pages": [
+          "api-reference/introduction"
         ]
       }
+    ]
+  },
+  "navbar": {
+    "primary": {
+      "type": "button",
+      "label": "Dashboard",
+      "href": "https://web.parallellabs.app"
+    }
+  },
+  "contextual": {
+    "options": [
+      "copy",
+      "download-spec",
+      "chatgpt",
+      "claude"
     ]
   }
 }

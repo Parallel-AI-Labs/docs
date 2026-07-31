@@ -1,6 +1,5 @@
 ---
 title: "Automate Browser Tasks with Parallel AI's AI Agent"
-sidebarTitle: "Browser Automation"
 description: "Submit natural language browser tasks to Parallel AI for async AI-driven execution. Supports standard, authenticated, and residential sessions."
 ---
 
@@ -12,11 +11,11 @@ Parallel AI can execute browser tasks described in plain natural language. You s
 
 Choose the session type that fits your use case:
 
-| Type            | Description                                                                          |
-| --------------- | ------------------------------------------------------------------------------------ |
-| `regular`       | Standard browser session (default). No login state or special routing.               |
+| Type            | Description                                                                             |
+| --------------- | --------------------------------------------------------------------------------------- |
+| `regular`       | Standard browser session (default). No login state or special routing.                  |
 | `authenticated` | Uses a saved integration (LinkedIn, Twitter, etc.) to run tasks in a logged-in session. |
-| `residential`   | Routes traffic through a residential proxy. Specify a US ZIP code for geo-targeting. |
+| `residential`   | Routes traffic through a residential proxy. Specify a US ZIP code for geo-targeting.    |
 
 ## Submit a Task
 
@@ -57,13 +56,13 @@ curl "https://api.parallellabs.app/api/v0/browser-task/task_abc123" \
 
 **Possible status values:**
 
-| Status      | Meaning                                     |
-| ----------- | ------------------------------------------- |
-| `pending`   | Task is queued and waiting to start         |
-| `running`   | Task is actively being executed             |
-| `completed` | Task finished successfully                  |
-| `failed`    | Task encountered an unrecoverable error     |
-| `cancelled` | Task was cancelled before completion        |
+| Status      | Meaning                                 |
+| ----------- | --------------------------------------- |
+| `pending`   | Task is queued and waiting to start     |
+| `running`   | Task is actively being executed         |
+| `completed` | Task finished successfully              |
+| `failed`    | Task encountered an unrecoverable error |
+| `cancelled` | Task was cancelled before completion    |
 
 **Example completed response:**
 
@@ -113,6 +112,7 @@ Use `authenticated` sessions to run tasks inside accounts you've connected via P
       -H "X-API-Key: YOUR_API_KEY"
     ```
   </Step>
+
   <Step title="Submit with an integrationId">
     Pass `sessionType: "authenticated"` and the `integrationId` in your task request:
 
@@ -155,5 +155,5 @@ Enable `useVision: true` to switch to screenshot-driven automation. In vision mo
 ```
 
 <Note>
-  For the full Browser Automation API reference, see [Submit a Browser Task](/api-reference/browser/submit).
+  For the full Browser Automation API reference, see [Submit a Browser Task](/api-reference/introduction).
 </Note>

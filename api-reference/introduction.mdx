@@ -1,6 +1,5 @@
 ---
 title: "Parallel AI API Reference — Overview & Authentication"
-sidebarTitle: "Overview"
 description: "Complete reference for the Parallel AI API. All endpoints are under /api/v0/ and return JSON. Authenticate with a Company API Key or Personal Access Key."
 ---
 
@@ -18,7 +17,7 @@ Every endpoint path begins with `/api/v0/`. For example, to list your agents you
 GET https://api.parallellabs.app/api/v0/agents
 ```
 
----
+***
 
 ## Authentication
 
@@ -45,7 +44,7 @@ X-Company-ID: company_abc123
   Keep your API keys secret. Never expose them in client-side code or public repositories. Rotate them immediately if you suspect they have been compromised.
 </Note>
 
----
+***
 
 ## Response Format
 
@@ -61,31 +60,31 @@ When a request fails, the response body contains a single `error` field describi
 }
 ```
 
----
+***
 
 ## HTTP Status Codes
 
-| Status | Meaning |
-|--------|---------|
-| `200 OK` | The request succeeded and the response body contains the result. |
-| `201 Created` | A new resource was created successfully. |
-| `400 Bad Request` | The request body or query parameters were invalid. Check the `error` message for details. |
-| `401 Unauthorized` | Missing or invalid API key. Verify your credentials. |
-| `403 Forbidden` | Your plan or role does not have access to this feature or resource. |
-| `404 Not Found` | The requested resource does not exist. |
-| `429 Too Many Requests` | You have exceeded the rate limit. Wait before retrying. |
-| `500 Internal Server Error` | An unexpected error occurred on the server. |
+| Status                      | Meaning                                                                                   |
+| --------------------------- | ----------------------------------------------------------------------------------------- |
+| `200 OK`                    | The request succeeded and the response body contains the result.                          |
+| `201 Created`               | A new resource was created successfully.                                                  |
+| `400 Bad Request`           | The request body or query parameters were invalid. Check the `error` message for details. |
+| `401 Unauthorized`          | Missing or invalid API key. Verify your credentials.                                      |
+| `403 Forbidden`             | Your plan or role does not have access to this feature or resource.                       |
+| `404 Not Found`             | The requested resource does not exist.                                                    |
+| `429 Too Many Requests`     | You have exceeded the rate limit. Wait before retrying.                                   |
+| `500 Internal Server Error` | An unexpected error occurred on the server.                                               |
 
----
+***
 
 ## Pagination
 
 List endpoints accept `page` and `pageSize` query parameters and return a consistent envelope:
 
-| Parameter | Type | Default | Description |
-|-----------|------|---------|-------------|
-| `page` | integer | `1` | The page number to retrieve. |
-| `pageSize` | integer | `10` | Number of items per page. Maximum is `100`. |
+| Parameter  | Type    | Default | Description                                 |
+| ---------- | ------- | ------- | ------------------------------------------- |
+| `page`     | integer | `1`     | The page number to retrieve.                |
+| `pageSize` | integer | `10`    | Number of items per page. Maximum is `100`. |
 
 **Paginated response envelope:**
 
@@ -98,43 +97,51 @@ List endpoints accept `page` and `pageSize` query parameters and return a consis
 }
 ```
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `items` | array | The list of resource objects for the current page. |
-| `total` | integer | Total number of matching resources across all pages. |
-| `pages` | integer | Total number of pages at the current `pageSize`. |
+| Field     | Type    | Description                                               |
+| --------- | ------- | --------------------------------------------------------- |
+| `items`   | array   | The list of resource objects for the current page.        |
+| `total`   | integer | Total number of matching resources across all pages.      |
+| `pages`   | integer | Total number of pages at the current `pageSize`.          |
 | `hasNext` | boolean | `true` if there is at least one more page after this one. |
 
----
+***
 
 ## API Resources
 
 <CardGroup cols={3}>
-  <Card title="Agents" icon="robot" href="/api-reference/agents/list">
+  <Card title="Agents" icon="robot" href="/api-reference/agents/list-all-agents-for-the-current-company">
     Create and manage AI agents with custom prompts, channels, and branding.
   </Card>
-  <Card title="Chat" icon="messages" href="/api-reference/chat/completions">
+
+  <Card title="Chat" icon="messages" href="/api-reference/chat/create-a-chat-completion-openai-compatible">
     Send messages to agents and retrieve conversation histories.
   </Card>
-  <Card title="Smart Lists" icon="list-check" href="/api-reference/smart-lists/list">
+
+  <Card title="Smart Lists" icon="list-check" href="/api-reference/lists/list-all-smart-lists-for-the-current-company">
     Manage contact lists and the contacts within them.
   </Card>
-  <Card title="Sequences" icon="diagram-next" href="/api-reference/sequences/list">
+
+  <Card title="Sequences" icon="diagram-next" href="/api-reference/sequences/get-sequence-step-with-sender-profile-and-integration-details">
     Build and trigger multi-step automated messaging sequences.
   </Card>
-  <Card title="Documents" icon="file-lines" href="/api-reference/documents/list">
+
+  <Card title="Documents" icon="file-lines" href="/api-reference/documents/list-documents-and-folders-at-a-path">
     Upload and manage knowledge base documents for your agents.
   </Card>
-  <Card title="Audio / Media" icon="waveform" href="/api-reference/audio/list">
+
+  <Card title="Audio / Media" icon="waveform" href="/api-reference/audio/list-all-audio-files">
     Transcribe audio and manage media assets.
   </Card>
-  <Card title="Browser" icon="browser" href="/api-reference/browser/submit">
+
+  <Card title="Browser" icon="browser" href="/api-reference/browser/list-available-browser-integrations">
     Extract web content for use in agent knowledge bases.
   </Card>
-  <Card title="Keys" icon="key" href="/api-reference/keys/list">
+
+  <Card title="Keys" icon="key" href="/api-reference/keys/list-all-api-keys-for-the-current-user">
     Create and manage Company API Keys and Personal Access Keys.
   </Card>
-  <Card title="MCP" icon="plug" href="/api-reference/mcp/overview">
+
+  <Card title="MCP" icon="plug" href="/api-reference/mcp/get-mcp-server-information">
     Connect external tools and data sources via the Model Context Protocol.
   </Card>
 </CardGroup>

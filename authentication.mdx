@@ -1,6 +1,5 @@
 ---
 title: "Parallel AI REST API Authentication and Access Keys"
-sidebarTitle: "Authentication"
 description: "Parallel AI supports Company API Keys and Personal Access Keys. Learn how to generate each key type and pass it correctly in your API requests."
 ---
 
@@ -8,37 +7,39 @@ description: "Parallel AI supports Company API Keys and Personal Access Keys. Le
 
 Parallel AI offers two types of API keys to fit different use cases. Understanding which to use will keep your integrations secure and maintainable.
 
-| Use Case | Recommended Key Type |
-|---|---|
-| Single company integration | Company API Key |
-| Multi-company dashboard | Personal Access Key |
-| CI/CD pipelines | Company API Key |
-| Personal automation scripts | Personal Access Key |
-| Third-party app integration | Company API Key |
+| Use Case                    | Recommended Key Type |
+| --------------------------- | -------------------- |
+| Single company integration  | Company API Key      |
+| Multi-company dashboard     | Personal Access Key  |
+| CI/CD pipelines             | Company API Key      |
+| Personal automation scripts | Personal Access Key  |
+| Third-party app integration | Company API Key      |
 
 ### Company API Key
 
 A Company API Key is **scoped to a single company workspace**. When you use this key, all API calls automatically operate within that company's context — no extra headers needed.
 
 Best for:
-- Server-side integrations tied to one company
-- CI/CD pipelines and deployment automation
-- Third-party apps that connect to a single workspace
+
+* Server-side integrations tied to one company
+* CI/CD pipelines and deployment automation
+* Third-party apps that connect to a single workspace
 
 ### Personal Access Key (`pak_`)
 
 A Personal Access Key is tied to **your user account** and works across every company you belong to. All Personal Access Keys begin with the prefix `pak_`. Because they aren't scoped to a single company, you must specify which company you want to act on by passing a `X-Company-ID` header (or `companyId` query parameter) with each request.
 
 Best for:
-- Multi-company dashboards and admin tooling
-- Personal automation scripts
-- Local development where you switch between workspaces
+
+* Multi-company dashboards and admin tooling
+* Personal automation scripts
+* Local development where you switch between workspaces
 
 <Note>
   Personal Access Keys inherit your user-level permissions. If your account is removed from a company, your Personal Access Key will immediately lose access to that company's resources.
 </Note>
 
----
+***
 
 ## Getting a Company API Key
 
@@ -46,12 +47,15 @@ Best for:
   <Step title="Log in to your dashboard">
     Visit [https://web.parallellabs.app](https://web.parallellabs.app) and sign in to your account.
   </Step>
+
   <Step title="Navigate to the Integrations page">
     From the left sidebar, click **Integrations**.
   </Step>
+
   <Step title="Generate a new key">
     Find the **API Keys** section and click **Generate New Key**. Give it a descriptive name so you can identify it later.
   </Step>
+
   <Step title="Copy and store your key">
     Copy the key shown in the dialog. **This is the only time it will be displayed** — store it securely in a password manager, secrets vault, or environment variable before closing.
   </Step>
@@ -68,6 +72,7 @@ You can pass your Company API Key in one of two ways:
       -H "X-API-Key: YOUR_COMPANY_API_KEY"
     ```
   </Tab>
+
   <Tab title="Authorization header (OpenAI-compatible)">
     If you're using an OpenAI-compatible client that expects a Bearer token, you can pass your Company API Key as the bearer value:
 
@@ -80,7 +85,7 @@ You can pass your Company API Key in one of two ways:
   </Tab>
 </Tabs>
 
----
+***
 
 ## Getting a Personal Access Key
 
@@ -88,15 +93,19 @@ You can pass your Company API Key in one of two ways:
   <Step title="Log in to your dashboard">
     Visit [https://web.parallellabs.app](https://web.parallellabs.app) and sign in to your account.
   </Step>
+
   <Step title="Open your profile">
     Click your **avatar or profile icon** in the top-right corner and select **Profile**.
   </Step>
+
   <Step title="Find Personal Access Keys">
     Scroll to the **Personal Access Keys** section on your profile page.
   </Step>
+
   <Step title="Create a new key">
     Click **Create New Key**. Give it a descriptive name (e.g. `local-dev` or `multi-company-script`). Optionally, set an **expiration date** to automatically revoke the key after a set period.
   </Step>
+
   <Step title="Copy and store your key">
     Your new key — beginning with `pak_` — will be displayed once. Copy it now and store it securely. **It won't be shown again.**
   </Step>
@@ -133,16 +142,16 @@ curl -X GET "https://api.parallellabs.app/api/v0/agents?companyId=your_company_i
   The `X-Company-ID` header approach is preferred for production use — it keeps your company ID out of server logs and browser history that may record request URLs.
 </Tip>
 
----
+***
 
 ## Finding Your Company ID
 
 You need your Company ID when using a Personal Access Key. You can find it in two places:
 
-- **Dashboard URL** — when you're viewing a company in the dashboard, the company ID appears in the URL (e.g. `https://web.parallellabs.app/companies/YOUR_COMPANY_ID/...`).
-- **Settings page** — navigate to your company's **Settings** page; the Company ID is listed there and can be copied directly.
+* **Dashboard URL** — when you're viewing a company in the dashboard, the company ID appears in the URL (e.g. `https://web.parallellabs.app/companies/YOUR_COMPANY_ID/...`).
+* **Settings page** — navigate to your company's **Settings** page; the Company ID is listed there and can be copied directly.
 
----
+***
 
 ## SSO Login
 
@@ -150,7 +159,7 @@ Enterprise customers can authenticate through their organization's identity prov
 
 Navigate to [https://web.parallellabs.app/login/sso](https://web.parallellabs.app/login/sso) and enter your **company domain** to be redirected to your SSO provider. Contact your Parallel AI account manager to enable SSO for your organization.
 
----
+***
 
 ## Security Best Practices
 
@@ -158,9 +167,11 @@ Navigate to [https://web.parallellabs.app/login/sso](https://web.parallellabs.ap
   API keys grant access to your company's data and resources. Treat them like passwords.
 </Warning>
 
-- **Never commit API keys to source control.** Use environment variables or a secrets manager instead. Add `.env` to your `.gitignore`.
-- **Rotate keys immediately if exposed.** If a key is accidentally published or shared, revoke it in the dashboard right away and generate a replacement.
-- **Use environment variables in your code:**
+* **Never commit API keys to source control.** Use environment variables or a secrets manager instead. Add `.env` to your `.gitignore`.
+
+* **Rotate keys immediately if exposed.** If a key is accidentally published or shared, revoke it in the dashboard right away and generate a replacement.
+
+* **Use environment variables in your code:**
 
   ```bash
   export PARALLEL_API_KEY="YOUR_API_KEY"
@@ -171,6 +182,8 @@ Navigate to [https://web.parallellabs.app/login/sso](https://web.parallellabs.ap
   api_key = os.environ["PARALLEL_API_KEY"]
   ```
 
-- **Give keys descriptive names.** Names like `production-crm-integration` or `ci-deploy-pipeline` make it easy to identify the purpose of each key and safely revoke the right one if needed.
-- **Set expiration dates on Personal Access Keys** when you only need them for a limited time — for example, a temporary migration script.
-- **Apply least privilege** — use Company API Keys for integrations scoped to a single workspace rather than Personal Access Keys with broader access, wherever possible.
+* **Give keys descriptive names.** Names like `production-crm-integration` or `ci-deploy-pipeline` make it easy to identify the purpose of each key and safely revoke the right one if needed.
+
+* **Set expiration dates on Personal Access Keys** when you only need them for a limited time — for example, a temporary migration script.
+
+* **Apply least privilege** — use Company API Keys for integrations scoped to a single workspace rather than Personal Access Keys with broader access, wherever possible.

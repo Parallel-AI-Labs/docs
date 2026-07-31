@@ -1,0 +1,417 @@
+---
+title: "Integrations"
+description: "Connect your AI employees to the tools you already use. Integrations let your AI access email, CRM, social media, and other services to work more effectively."
+---
+
+Connect your AI employees to the tools you already use. Integrations let your AI access email, CRM, social media, and other services to work more effectively.
+
+---
+
+## What Are Integrations?
+
+Integrations connect your AI Employee platform to external services. Once connected, your AI employees can:
+
+- Read and send emails
+- Access your CRM contacts
+- Post to social media
+- Pull data from other tools
+- Automate across platforms
+
+---
+
+## Available Integrations
+
+The exact list you see depends on your plan and region. Common integrations include:
+
+### Communication
+
+| Integration | What It Does |
+|-------------|--------------|
+| **Slack** | Send messages and respond in channels |
+| **Microsoft Teams** | Team messaging |
+| **Discord** | Bot responses in Discord servers |
+| **Prosp**, **HeyReach**, **Salesforge** | Push contacts to outreach campaigns |
+
+### Email & Sending
+
+| Integration | What It Does |
+|-------------|--------------|
+| **Gmail** | Send and receive with a Google account |
+| **Office 365 Email** | Send and receive with Microsoft 365 |
+| **IMAP Email** | Connect any IMAP/SMTP mailbox |
+| **AWS SES**, **SendGrid** | High-volume transactional sending |
+| **Twilio** | Send SMS and voice messages |
+
+### CRM & Data Enrichment
+
+| Integration | What It Does |
+|-------------|--------------|
+| **HubSpot** | Sync contacts, deals, and companies |
+| **Salesforce** | CRM data and automation |
+| **GoHighLevel** | CRM and marketing automation |
+| **Apollo** | Enrich and reveal contact data |
+| **Findymail** | Find and verify emails |
+| **Better Contact** | Enrich contacts with emails and phones |
+
+### Social & Advertising
+
+| Integration | What It Does |
+|-------------|--------------|
+| **LinkedIn** | Profile access and messaging |
+| **Facebook**, **Instagram** | Page and profile access |
+| **Meta Ads** | Build and sync ad audiences |
+| **Google Analytics** | Pull site analytics |
+
+### Content & Knowledge
+
+| Integration | What It Does |
+|-------------|--------------|
+| **Google Drive** | Sync documents to your Knowledge Base |
+| **Notion**, **Confluence** | Sync workspace pages |
+| **Website Crawler** | Import website content |
+| **WordPress**, **Webflow** | Publish content to your site |
+
+### Other
+
+| Integration | What It Does |
+|-------------|--------------|
+| **Shopify** | Connect your store |
+| **Calendar Scheduling** | Let contacts book meetings |
+| **Thanks.io** | Send physical direct mail |
+| **HeyGen** | Generate AI video |
+| **Browser Session** | Power browser-automation tasks |
+| **Zapier** | Connect to thousands of other apps |
+| **MCP Tools** | Connect Model Context Protocol tool servers |
+
+---
+
+## Setting Up Your First Integration
+
+### Step 1: Open Integrations
+
+1. Select your company from the sidebar
+2. Click **Integrations** (under Settings)
+3. Browse available integrations
+
+### Step 2: Choose an Integration
+
+1. Find the service you want to connect
+2. Click on it to see details
+3. Click **Connect** or **Install**
+
+### Step 3: Authorize Access
+
+Most integrations use OAuth (secure authorization):
+
+1. A new window opens for the service
+2. Log in to your account (if needed)
+3. Review what permissions are requested
+4. Click **Allow** or **Authorize**
+5. The window closes and you're connected
+
+### Step 4: Configure Settings
+
+Some integrations have additional settings:
+
+- Which account to use (if you have multiple)
+- What data to access
+- Specific permissions to enable
+
+---
+
+## Managing Connected Integrations
+
+### Viewing Your Integrations
+
+1. Go to **Integrations**
+2. See all connected services
+3. Status shows if each is active or needs attention
+
+### Checking Connection Status
+
+Look for status indicators:
+
+| Status | What It Means |
+|--------|---------------|
+| **Connected** | Working normally |
+| **Needs Reauthorization** | Token expired, reconnect needed |
+| **Error** | Something went wrong |
+| **Syncing** | Data sync in progress |
+
+### Reconnecting an Integration
+
+If a connection breaks (tokens expire, password changed):
+
+1. Find the integration
+2. Click **Reconnect** or **Reauthorize**
+3. Complete the authorization flow again
+
+### Removing an Integration
+
+1. Find the integration
+2. Click the **three-dot menu** (⋮) or **Remove**
+3. Confirm removal
+
+**Note:** Removing an integration stops AI employees from accessing that service.
+
+---
+
+## API Keys
+
+Create API keys to connect external systems to your AI Employee platform.
+
+### Creating an API Key
+
+1. Go to **Integrations**
+2. Find the **API Keys** section
+3. Click **Create Key**
+4. Name your key (e.g., "Website Integration")
+5. Click **Create**
+6. **Copy the key immediately** — you won't see it again!
+
+An API key is scoped to the company it was created in and acts on behalf of that company. Create separate keys for separate systems so you can revoke one without affecting the others.
+
+### Using Your API Key
+
+Include the key in your API requests:
+
+```
+Authorization: Bearer YOUR_API_KEY
+```
+
+See the full API reference from the **API Documentation** link in the documentation sidebar.
+
+### Deleting an API Key
+
+1. Find the key in the list
+2. Click **Delete**
+3. Confirm
+
+**Warning:** Deleting a key immediately breaks any integrations using it.
+
+---
+
+## Integration-Specific Setup Guides
+
+### Slack Integration
+
+**What you can do:**
+- Send messages to channels
+- Respond to direct messages
+- Create automated notifications
+
+**Setup:**
+1. Click **Add to Slack**
+2. Select your workspace
+3. Choose which channels the bot can access
+4. Authorize
+
+**Tips:**
+- Create a dedicated channel for AI notifications
+- Configure which events trigger responses
+
+### HubSpot Integration
+
+**What you can do:**
+- Read contact information
+- Update deal stages
+- Log activities
+- Sync data with Smart Lists
+
+**Setup:**
+1. Click **Connect HubSpot**
+2. Log in to your HubSpot account
+3. Select the portal to connect
+4. Choose which objects to access (contacts, deals, companies)
+
+### Google Drive Integration
+
+**What you can do:**
+- Import documents to your Knowledge Base
+- Keep documents synced automatically
+- Access shared drive content
+
+**Setup:**
+1. Click **Connect Google Drive**
+2. Sign in with your Google account
+3. Allow the requested permissions
+4. Select folders to sync
+
+### Website Crawler
+
+**What you can do:**
+- Import content from any website
+- Add web content to Knowledge Base
+- Keep content updated
+
+**Setup:**
+1. Click **Website Crawler**
+2. Enter the website URL
+3. Configure crawl depth (how many pages)
+4. Start the import
+
+---
+
+## Using Integrations with AI Employees
+
+Once connected, your AI employees can use integrations automatically.
+
+### In Smart Lists
+
+List actions use integrations to enrich and sync your data — for example, **Apollo Enrichment**, **Sync to CRM**, or an **HTTP Request** to your own API. See [Smart Lists](/workflow-features/smart-lists) for details.
+
+### In Sequences
+
+Email sequences use integrations to:
+- Send personalized emails
+- Track opens and clicks
+- Update contact records
+
+See [Sequences](/workflow-features/sequences) for details.
+
+### In Chat
+
+Some integrations allow AI employees to:
+- Look up information during conversations
+- Take actions based on chat requests
+- Access external data to answer questions
+
+---
+
+## Calling External APIs
+
+To send data to your own systems or third-party services, use an **HTTP Request** step:
+
+- In a **Smart List**, add the **HTTP Request** action to call any API for each row
+- In a **Sequence**, add an **HTTP Request** step to fire a call at a point in the flow
+- Use **Zapier** to connect to thousands of apps without writing code
+
+These let you push events (new members, enrichment results, replies) to external endpoints, webhooks, or automation tools like Zapier and Make.
+
+---
+
+## Security and Permissions
+
+### What Access Is Granted?
+
+Each integration requests specific permissions. Review them before authorizing:
+
+- **Read access:** Can view data but not change it
+- **Write access:** Can create and modify data
+- **Full access:** Complete control (be careful!)
+
+### Who Can Manage Integrations?
+
+- Only Admins and Owners can install or remove integrations
+- All team members can use integrations in their work
+- API keys can be restricted by permission level
+
+### Revoking Access from the Service
+
+You can always revoke access from the connected service itself:
+
+1. Go to that service's settings (Google, LinkedIn, etc.)
+2. Find "Connected apps" or "Third-party access"
+3. Remove the AI Employee platform
+
+---
+
+## Troubleshooting Integrations
+
+### "Connection failed"
+
+- Try again - temporary network issues happen
+- Check if the service is experiencing outages
+- Make sure you're logging into the correct account
+
+### "Authorization expired"
+
+- Reconnect the integration
+- You may need to re-enter your password
+- Check if you changed your password on that service
+
+### "Integration not working"
+
+- Verify the connection is still active
+- Check if your account on that service is in good standing
+- Review if permissions were revoked
+
+### "Data not syncing"
+
+- Sync can take a few minutes
+- Check if there are errors in the integration status
+- Try disconnecting and reconnecting
+
+### "Rate limit reached"
+
+- Too many requests were made too quickly
+- Wait an hour and try again
+- Consider spreading out automated activities
+
+---
+
+## Best Practices
+
+### 1. Start with Essential Integrations
+
+Don't connect everything at once. Start with:
+- Your primary email
+- Your main CRM
+- Your most-used communication tool
+
+### 2. Use Dedicated Accounts When Possible
+
+For heavy automation, consider:
+- A dedicated email address for AI activities
+- Separate social accounts for automation
+- This keeps your personal accounts clean
+
+### 3. Monitor Activity
+
+Regularly check:
+- What actions your AI employees are taking
+- If integrations are working correctly
+- Any error messages or warnings
+
+### 4. Keep Credentials Secure
+
+- Don't share API keys
+- Regularly review connected apps
+- Remove integrations you no longer use
+
+### 5. Test Before Going Live
+
+- Test integrations with sample data first
+- Verify actions work as expected
+- Check that data flows correctly
+
+---
+
+## Frequently Asked Questions
+
+**Q: Are my passwords stored?**
+A: No. We use OAuth which means you authorize access without sharing your password.
+
+**Q: Can I connect multiple accounts of the same service?**
+A: Usually yes. For example, you can connect multiple email accounts.
+
+**Q: What happens if I change my password on a connected service?**
+A: You may need to reconnect the integration.
+
+**Q: Do integrations count against my subscription?**
+A: Most integrations are included. Some premium integrations may have limits.
+
+**Q: Can I limit what an integration can access?**
+A: Permissions are set by the service. You can only grant or deny the requested access level.
+
+**Q: How do I know if an integration is working?**
+A: Check the status indicator on the Integrations page. Green/Connected means it's working.
+
+---
+
+## Next Steps
+
+- [Create AI Employees →](/core-features/employees)
+- [Build Smart Lists →](/workflow-features/smart-lists)
+- [Set Up Email Sequences →](/workflow-features/sequences)
+- [Manage Your Knowledge Base →](/core-features/knowledge-base)

@@ -1,6 +1,5 @@
 ---
 title: "Quickstart Guide: Make Your First Parallel AI API Call"
-sidebarTitle: "Quickstart"
 description: "Learn how to authenticate with Parallel AI and make your first API call to list agents, create a chat completion, and verify everything is working."
 ---
 
@@ -8,10 +7,9 @@ description: "Learn how to authenticate with Parallel AI and make your first API
 
 All you need is a Parallel AI account and a terminal (or any HTTP client). No SDK installation is required to follow this guide — though we'll show you a Python example too.
 
----
+***
 
 <Steps>
-
   <Step title="Create your Parallel AI account">
     Head to [https://web.parallellabs.app/signup](https://web.parallellabs.app/signup) and sign up using your Google account or email address.
 
@@ -73,6 +71,7 @@ All you need is a Parallel AI account and a terminal (or any HTTP client). No SD
           }'
         ```
       </Tab>
+
       <Tab title="Python (openai library)">
         Because Parallel AI's chat completions endpoint is OpenAI-compatible, you can use the official `openai` Python package with no changes other than the `base_url`:
 
@@ -111,13 +110,13 @@ All you need is a Parallel AI account and a terminal (or any HTTP client). No SD
     You've authenticated, listed your agents, and run a live chat completion. Here's where to go from here:
 
     <CardGroup cols={2}>
-      <Card title="Build AI Agents" icon="robot" href="/features/agents">
+      <Card title="Build AI Agents" icon="robot" href="/core-features/agents">
         Create multi-channel agents for web, email, SMS, and voice — and connect them to your Knowledge Base.
       </Card>
+
       <Card title="Full API Reference" icon="code" href="/api-reference/introduction">
         Explore every endpoint available in the Parallel AI REST API with request and response schemas.
       </Card>
     </CardGroup>
   </Step>
-
 </Steps>
