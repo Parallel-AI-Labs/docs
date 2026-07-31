@@ -3,11 +3,16 @@
   "theme": "mint",
   "name": "Parallel AI",
   "colors": {
-    "primary": "#0D9373",
-    "light": "#07C983",
-    "dark": "#0D9373"
+    "primary": "#546FFC",
+    "light": "#FA66C6",
+    "dark": "#546FFC"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/favicon.png",
+  "logo": {
+    "light": "/logo/light.png",
+    "dark": "/logo/dark.png",
+    "href": "https://parallellabs.app"
+  },
   "navigation": {
     "tabs": [
       {
