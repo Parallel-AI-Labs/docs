@@ -1,0 +1,142 @@
+---
+title: "Use Claude Code with Parallel AI"
+description: "Parallel AI exposes an Anthropic Messages API-compatible endpoint, so Claude Code and any Anthropic SDK can use Parallel AI as their LLM provider."
+---
+
+## Overview
+
+Parallel AI's `/api/v0/claude` endpoints are compatible with the Anthropic Messages API. Point **Claude Code** — or any Anthropic SDK — at Parallel AI and it works out of the box, billed against your Parallel AI credits like any other API usage.
+
+| Endpoint | Description |
+|----------|-------------|
+| `POST /api/v0/claude/v1/messages` | Create a message (streaming and non-streaming, tool use supported) |
+| `POST /api/v0/claude/v1/messages/count_tokens` | Estimate token count for a request |
+| `GET /api/v0/claude/v1/models` | List available models |
+
+<Tip>
+  The `model` field accepts **any** Parallel AI model — not just Anthropic
+  models — so you can run Claude Code on any model the platform offers.
+</Tip>
+
+## Authentication
+
+Authentication works exactly like the rest of the API: send your API key as `Authorization: Bearer <key>` or `x-api-key: <key>`.
+
+Personal Access Keys (`pak_...`) also work but require the `X-Company-ID` header, which Claude Code cannot send by default — use a **Company API Key** for Claude Code.
+
+## Setting up Claude Code
+
+<Steps>
+  <Step title="Install Claude Code">
+    Skip this if it's already installed.
+
+    ```bash
+    # macOS / Linux / WSL — native installer
+    curl -fsSL https://claude.ai/install.sh | bash
+
+    # Or via npm (requires Node.js 18+)
+    npm install -g @anthropic-ai/claude-code
+    ```
+
+    On Windows (PowerShell):
+
+    ```powershell
+    irm https://claude.ai/install.ps1 | iex
+    ```
+
+    Verify the install with `claude --version`. See the [official docs](https://code.claude.com/docs) for more install options.
+  </Step>
+  <Step title="Get a Company API Key">
+    In the dashboard, go to **Integrations** → **API Keys** → **Generate New Key**.
+  </Step>
+  <Step title="Configure Claude Code">
+    Either export environment variables in your shell:
+
+    ```bash
+    export ANTHROPIC_BASE_URL="https://api.parallellabs.app/api/v0/claude"
+    export ANTHROPIC_AUTH_TOKEN="YOUR_COMPANY_API_KEY"
+    claude
+    ```
+
+    Or persist the settings in `~/.claude/settings.json` (applies to all projects) or `.claude/settings.local.json` in a project. Set the model variables to any Parallel AI model names — for example:
+
+    ```json
+    {
+      "env": {
+        "ANTHROPIC_BASE_URL": "https://api.parallellabs.app/api/v0/claude",
+        "ANTHROPIC_AUTH_TOKEN": "YOUR_COMPANY_API_KEY",
+        "ANTHROPIC_MODEL": "qwen3.8-max",
+        "ANTHROPIC_DEFAULT_OPUS_MODEL": "kimi-k3",
+        "ANTHROPIC_DEFAULT_SONNET_MODEL": "qwen3.8-max",
+        "ANTHROPIC_DEFAULT_HAIKU_MODEL": "deepseek-v4-flash-0731"
+      }
+    }
+    ```
+  </Step>
+  <Step title="Verify">
+    Run `/status` inside Claude Code — it should show your custom base URL — or test the endpoint directly:
+
+    ```bash
+    curl -X POST "https://api.parallellabs.app/api/v0/claude/v1/messages" \
+      -H "Authorization: Bearer YOUR_COMPANY_API_KEY" \
+      -H "anthropic-version: 2023-06-01" \
+      -H "Content-Type: application/json" \
+      -d '{"model": "qwen3.8-max", "max_tokens": 64, "messages": [{"role": "user", "content": "Hello"}]}'
+    ```
+  </Step>
+</Steps>
+
+## Model names
+
+The `model` field accepts any model name from `GET /api/v0/models` — any provider, not just Anthropic. When Claude Code sends its default Anthropic model IDs (e.g. `claude-sonnet-4-5-20250929`), they are routed by tier to Parallel AI models:
+
+- **Opus-class** requests run on the platform's highest-capability model
+- **Sonnet-class** requests run on the balanced default model
+- **Haiku-class** requests (background tasks) run on the fastest low-cost model
+
+Set `ANTHROPIC_MODEL` and the `ANTHROPIC_DEFAULT_*_MODEL` variables to exact Parallel AI model names for full control over routing.
+
+Optionally set `CLAUDE_CODE_ENABLE_GATEWAY_MODEL_DISCOVERY=1` so Claude Code lists Parallel AI's models in its `/model` picker.
+
+## Using the Anthropic SDK directly
+
+<CodeGroup>
+  ```python Python
+  import anthropic
+
+  client = anthropic.Anthropic(
+      base_url="https://api.parallellabs.app/api/v0/claude",
+      auth_token="YOUR_COMPANY_API_KEY",
+  )
+
+  response = client.messages.create(
+      model="kimi-k3",
+      max_tokens=1024,
+      messages=[{"role": "user", "content": "Hello"}],
+  )
+  print(response.content[0].text)
+  ```
+
+  ```typescript TypeScript
+  import Anthropic from "@anthropic-ai/sdk";
+
+  const client = new Anthropic({
+    baseURL: "https://api.parallellabs.app/api/v0/claude",
+    authToken: "YOUR_COMPANY_API_KEY",
+  });
+
+  const response = await client.messages.create({
+    model: "kimi-k3",
+    max_tokens: 1024,
+    messages: [{ role: "user", content: "Hello" }],
+  });
+  console.log(response.content[0].text);
+  ```
+</CodeGroup>
+
+## Notes and limitations
+
+- **Streaming** is fully supported (Anthropic SSE event format with keep-alive pings).
+- **Tool use** is supported: Claude Code's client-side tools (file edits, bash, etc.) are forwarded to the model and executed locally by Claude Code — never on Parallel AI's servers.
+- Server-side Anthropic tools (web search, code execution), extended thinking blocks, and prompt caching directives are accepted but ignored.
+- Usage is billed per request based on real token counts and appears in your usage dashboard under the chat feature.

@@ -40,6 +40,7 @@
             "pages": [
               "integrations/mcp",
               "integrations/openai-compatibility",
+              "integrations/claude-code",
               "integrations/browser-automation"
             ]
           },
