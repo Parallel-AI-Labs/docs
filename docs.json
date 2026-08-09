@@ -115,7 +115,7 @@
       },
       {
         "tab": "API Reference",
-        "openapi": "https://api.parallellabs.app/docs/openapi.json"
+        "openapi": "openapi.json"
       }
     ]
   },
