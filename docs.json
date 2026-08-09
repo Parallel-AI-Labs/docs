@@ -67,7 +67,8 @@
               "core-features/chat",
               "core-features/employees",
               "core-features/knowledge-base",
-              "core-features/agents"
+              "core-features/agents",
+              "core-features/whatsapp"
             ]
           },
           {
