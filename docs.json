@@ -127,6 +127,12 @@
       "href": "https://web.parallellabs.app"
     }
   },
+  "integrations": {
+    "posthog": {
+      "apiKey": "phc_mY2SYW6Z2XJH480qG7Ij5Dftn2OTFBhmPHseRwaWcRU",
+      "apiHost": "https://t.parallellabs.app"
+    }
+  },
   "contextual": {
     "options": [
       "copy",
