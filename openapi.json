@@ -143,6 +143,10 @@
     {
       "name": "Voices",
       "description": "Manage voice clones and text-to-speech voice options."
+    },
+    {
+      "name": "Web",
+      "description": "Real-time web tools: search the web and news, read any page, and pull jobs, local-business, and trending-topic data. Workflow: 1) web_searchWeb finds pages and web_searchNews finds recent coverage (freshness=pd/pw/pm/py); both return titles, URLs, and snippets. 2) web_scrapePage reads a URL as clean markdown (or raw HTML with responseType=html) \u2014 use it to read any result in full, including JavaScript-heavy and LinkedIn pages. 3) web_searchPlaces finds local businesses; take a result's placeId or dataId into web_getPlace for full details, web_getPlaceReviews for reviews (paginate with nextPageToken), and web_getPlacePhotos for photos. 4) web_searchJobs finds job listings and web_autocompleteTrends maps a phrase to trending topics. 5) web_screenshotPage captures a page as a PNG and returns a public image URL \u2014 useful for visual checks and reports. Every call costs 1 data credit and is only charged on success."
     }
   ],
   "paths": {
@@ -911,7 +915,7 @@
         "operationId": "documents_getDocumentContents",
         "parameters": [
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -919,7 +923,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -978,7 +982,7 @@
         "operationId": "documents_getDocument",
         "parameters": [
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -986,7 +990,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -3119,7 +3123,7 @@
         "operationId": "keys_getApiKey",
         "parameters": [
           {
-            "name": "name",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -3127,7 +3131,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "name",
             "in": "path",
             "required": true,
             "schema": {
@@ -6762,7 +6766,7 @@
         "operationId": "projects_getProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -6770,7 +6774,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -6905,7 +6909,7 @@
         "operationId": "projects_updateProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -6913,7 +6917,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -7074,7 +7078,7 @@
         "operationId": "projects_deleteProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -7082,7 +7086,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -7981,7 +7985,7 @@
         "operationId": "projects_exportProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -7989,7 +7993,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8081,7 +8085,7 @@
         "operationId": "projects_publishFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8089,7 +8093,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8236,7 +8240,7 @@
         "operationId": "projects_unpublishFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8244,7 +8248,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8678,7 +8682,7 @@
         "operationId": "memories_getMemory",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8686,7 +8690,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8784,7 +8788,7 @@
         "operationId": "memories_updateMemoryRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8792,7 +8796,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8920,7 +8924,7 @@
         "operationId": "memories_deleteMemoryRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8928,7 +8932,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8979,7 +8983,7 @@
         "operationId": "memories_toggleMemoryActiveRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8987,7 +8991,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22069,7 +22073,7 @@
         "operationId": "sequences_updateSequenceStep",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22077,7 +22081,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22351,7 +22355,7 @@
         "operationId": "sequences_deleteSequenceStep",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22359,7 +22363,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23081,7 +23085,7 @@
         "operationId": "sequences_getSequenceMemberTimeline",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23089,7 +23093,7 @@
             }
           },
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23487,7 +23491,7 @@
         "operationId": "sequences_triggerSequenceMember",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23495,7 +23499,7 @@
             }
           },
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23563,7 +23567,7 @@
         "operationId": "sequences_removeSequenceMember",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23571,7 +23575,7 @@
             }
           },
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24057,7 +24061,7 @@
         "operationId": "sequences_editSequenceExecution",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24065,7 +24069,7 @@
             }
           },
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24154,7 +24158,7 @@
         "operationId": "sequences_previewSequenceExecution",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24162,7 +24166,7 @@
             }
           },
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25717,7 +25721,7 @@
         "operationId": "sequences_testSequenceStep",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25725,7 +25729,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25779,7 +25783,7 @@
         "operationId": "sequences_sendTestEmail",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25787,7 +25791,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -39347,6 +39351,1172 @@
         "description": "Thousands of B2B/B2C segments \u2014 searched, never listed. Returns matching\nsegments; pass their externalId values (e.g. \"b2b_12636\") into the\ngenerate endpoint's segment parameter. Free \u2014 no data credits charged."
       }
     },
+    "/api/v0/web/search": {
+      "get": {
+        "tags": [
+          "Web"
+        ],
+        "operationId": "web_searchWeb",
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID whose data credits are billed for the call"
+            },
+            "description": "Company ID whose data credits are billed for the call"
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Search query, as you would type it into a search engine"
+            },
+            "description": "Search query, as you would type it into a search engine"
+          },
+          {
+            "name": "maxResults",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Maximum results to return, 1-100 (default 10)"
+            },
+            "description": "Maximum results to return, 1-100 (default 10)"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Missing/invalid parameters or companyId missing",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials, no company access, or out of credits",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Upstream web data request failed \u2014 not charged",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Matching results, best first",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "title": {
+                            "type": "string",
+                            "description": "Result title"
+                          },
+                          "url": {
+                            "type": "string",
+                            "description": "Result URL \u2014 pass to the scrape endpoint to read the page in full"
+                          },
+                          "description": {
+                            "type": "string",
+                            "description": "Result snippet (empty for news results)"
+                          },
+                          "date": {
+                            "type": "string",
+                            "description": "Result date, or 'N/A'"
+                          },
+                          "source": {
+                            "type": "string",
+                            "description": "Publisher name (news results only)"
+                          },
+                          "thumbnail": {
+                            "type": "string",
+                            "description": "Thumbnail image URL (news results only)"
+                          }
+                        },
+                        "description": "Search result"
+                      },
+                      "description": "Matching results, best first"
+                    },
+                    "count": {
+                      "type": "integer",
+                      "description": "Number of results returned"
+                    }
+                  },
+                  "description": "Search results"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Search the web",
+        "description": "Returns titles, URLs, snippets, and dates for the best-matching pages.\nPass a result URL to the scrape endpoint to read the page in full.\nCosts 1 data credit per call."
+      }
+    },
+    "/api/v0/web/news": {
+      "get": {
+        "tags": [
+          "Web"
+        ],
+        "operationId": "web_searchNews",
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID whose data credits are billed for the call"
+            },
+            "description": "Company ID whose data credits are billed for the call"
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "News search query"
+            },
+            "description": "News search query"
+          },
+          {
+            "name": "freshness",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Recency window: pd = past day, pw = past week, pm = past month, py = past year. Omit for the default ranking."
+            },
+            "description": "Recency window: pd = past day, pw = past week, pm = past month, py = past year. Omit for the default ranking."
+          },
+          {
+            "name": "maxResults",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Maximum results to return, 1-100 (default 10)"
+            },
+            "description": "Maximum results to return, 1-100 (default 10)"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Missing/invalid parameters or companyId missing",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials, no company access, or out of credits",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Upstream web data request failed \u2014 not charged",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Matching news results, best first",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "title": {
+                            "type": "string",
+                            "description": "Result title"
+                          },
+                          "url": {
+                            "type": "string",
+                            "description": "Result URL \u2014 pass to the scrape endpoint to read the page in full"
+                          },
+                          "description": {
+                            "type": "string",
+                            "description": "Result snippet (empty for news results)"
+                          },
+                          "date": {
+                            "type": "string",
+                            "description": "Result date, or 'N/A'"
+                          },
+                          "source": {
+                            "type": "string",
+                            "description": "Publisher name (news results only)"
+                          },
+                          "thumbnail": {
+                            "type": "string",
+                            "description": "Thumbnail image URL (news results only)"
+                          }
+                        },
+                        "description": "Search result"
+                      },
+                      "description": "Matching results, best first"
+                    },
+                    "count": {
+                      "type": "integer",
+                      "description": "Number of results returned"
+                    }
+                  },
+                  "description": "Search results"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Search recent news",
+        "description": "Returns titles, URLs, publishers, and dates for matching news coverage.\nNarrow the window with freshness (pd = past day, pw = past week, pm =\npast month, py = past year). Costs 1 data credit per call."
+      }
+    },
+    "/api/v0/web/scrape": {
+      "get": {
+        "tags": [
+          "Web"
+        ],
+        "operationId": "web_scrapePage",
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID whose data credits are billed for the call"
+            },
+            "description": "Company ID whose data credits are billed for the call"
+          },
+          {
+            "name": "url",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Full http(s) URL of the page to read. JavaScript-rendered pages and hard-to-scrape sites (including LinkedIn) are handled automatically."
+            },
+            "description": "Full http(s) URL of the page to read. JavaScript-rendered pages and hard-to-scrape sites (including LinkedIn) are handled automatically."
+          },
+          {
+            "name": "responseType",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "'markdown' (default, recommended for reading) or 'html' for the raw page source"
+            },
+            "description": "'markdown' (default, recommended for reading) or 'html' for the raw page source"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Missing/invalid parameters or companyId missing",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials, no company access, or out of credits",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "The page could not be read \u2014 not charged",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Page content as markdown or raw HTML",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "url": {
+                      "type": "string",
+                      "description": "The URL that was read"
+                    },
+                    "responseType": {
+                      "type": "string",
+                      "description": "'markdown' or 'html'"
+                    },
+                    "content": {
+                      "type": "string",
+                      "description": "Page content as markdown (links preserved as absolute URLs) or raw HTML"
+                    }
+                  },
+                  "description": "Page content"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Read a web page",
+        "description": "Fetches the page and returns it as clean markdown (default) or raw HTML\nvia responseType. JavaScript-rendered pages and hard-to-scrape sites,\nincluding LinkedIn, are handled automatically. Costs 1 data credit per\ncall."
+      }
+    },
+    "/api/v0/web/jobs": {
+      "get": {
+        "tags": [
+          "Web"
+        ],
+        "operationId": "web_searchJobs",
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID whose data credits are billed for the call"
+            },
+            "description": "Company ID whose data credits are billed for the call"
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Job search query, e.g. 'software engineer in New York'"
+            },
+            "description": "Job search query, e.g. 'software engineer in New York'"
+          },
+          {
+            "name": "country",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Two-letter country code (default 'us')"
+            },
+            "description": "Two-letter country code (default 'us')"
+          },
+          {
+            "name": "language",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Results language (default 'en_us')"
+            },
+            "description": "Results language (default 'en_us')"
+          },
+          {
+            "name": "nextPageToken",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Pagination token from a previous response"
+            },
+            "description": "Pagination token from a previous response"
+          },
+          {
+            "name": "chips",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Filter chips string from a previous response (e.g. date_posted:today)"
+            },
+            "description": "Filter chips string from a previous response (e.g. date_posted:today)"
+          },
+          {
+            "name": "lrad",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Search radius in kilometers"
+            },
+            "description": "Search radius in kilometers"
+          },
+          {
+            "name": "ltype",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Set to '1' to only return work-from-home jobs"
+            },
+            "description": "Set to '1' to only return work-from-home jobs"
+          },
+          {
+            "name": "uds",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Advanced filter string from a previous response"
+            },
+            "description": "Advanced filter string from a previous response"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Missing/invalid parameters or companyId missing",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials, no company access, or out of credits",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Upstream web data request failed \u2014 not charged",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Job listings payload (jobs_results) with pagination",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "description": "Job listings payload. jobs_results holds the listings (title, company_name, location, description, extensions); scroll further pages with the returned pagination token. The response body is the raw payload object."
+                }
+              }
+            }
+          }
+        },
+        "summary": "Search job listings",
+        "description": "Returns job listings (title, company, location, description) for a query\nlike 'software engineer in New York'. Paginate with nextPageToken from a\nprevious response. Costs 1 data credit per call."
+      }
+    },
+    "/api/v0/web/maps/search": {
+      "get": {
+        "tags": [
+          "Web"
+        ],
+        "operationId": "web_searchPlaces",
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID whose data credits are billed for the call"
+            },
+            "description": "Company ID whose data credits are billed for the call"
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "What to find, e.g. 'coffee shops in Austin'"
+            },
+            "description": "What to find, e.g. 'coffee shops in Austin'"
+          },
+          {
+            "name": "ll",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "GPS origin as @latitude,longitude,zoom, e.g. '@40.7455096,-74.0083012,15.1z'"
+            },
+            "description": "GPS origin as @latitude,longitude,zoom, e.g. '@40.7455096,-74.0083012,15.1z'"
+          },
+          {
+            "name": "country",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Two-letter country code (default 'us')"
+            },
+            "description": "Two-letter country code (default 'us')"
+          },
+          {
+            "name": "language",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Results language (default 'en')"
+            },
+            "description": "Results language (default 'en')"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Pagination offset: 0, 20, 40, ..."
+            },
+            "description": "Pagination offset: 0, 20, 40, ..."
+          },
+          {
+            "name": "placeId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Look up one specific place by its place ID instead of searching"
+            },
+            "description": "Look up one specific place by its place ID instead of searching"
+          },
+          {
+            "name": "data",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Advanced filter parameter from a maps URL"
+            },
+            "description": "Advanced filter parameter from a maps URL"
+          },
+          {
+            "name": "searchType",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "'search' (default) for a listing search or 'place' for a single-place lookup"
+            },
+            "description": "'search' (default) for a listing search or 'place' for a single-place lookup"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Missing/invalid parameters or companyId missing",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials, no company access, or out of credits",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Upstream web data request failed \u2014 not charged",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Business listings payload (search_results) \u2014 each result carries the place_id/data_id for the place, reviews, and photos endpoints",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "description": "Business listings payload. search_results holds the listings (title, address, rating, reviews, phone, type, gps_coordinates) \u2014 each includes the place_id and data_id needed by the place, reviews, and photos endpoints. Paginate with the page parameter (0, 20, 40, ...)."
+                }
+              }
+            }
+          }
+        },
+        "summary": "Search local businesses and places",
+        "description": "Finds businesses matching a query like 'coffee shops in Austin', with\naddress, rating, phone, and coordinates. Each result includes the\nplace_id and data_id used by the place-details, reviews, and photos\nendpoints. Paginate with page (0, 20, 40, ...). Costs 1 data credit per\ncall."
+      }
+    },
+    "/api/v0/web/maps/place": {
+      "get": {
+        "tags": [
+          "Web"
+        ],
+        "operationId": "web_getPlace",
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID whose data credits are billed for the call"
+            },
+            "description": "Company ID whose data credits are billed for the call"
+          },
+          {
+            "name": "placeId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Place ID from a places search result (provide this or dataId)"
+            },
+            "description": "Place ID from a places search result (provide this or dataId)"
+          },
+          {
+            "name": "dataId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Data ID from a places search result (provide this or placeId)"
+            },
+            "description": "Data ID from a places search result (provide this or placeId)"
+          },
+          {
+            "name": "country",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Two-letter country code (default 'us')"
+            },
+            "description": "Two-letter country code (default 'us')"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "placeId/dataId missing or companyId missing",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials, no company access, or out of credits",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Upstream web data request failed \u2014 not charged",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Full place details payload",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "description": "Full place details payload: name, address, phone, website, hours, rating, review counts, popular times, and GPS coordinates."
+                }
+              }
+            }
+          }
+        },
+        "summary": "Get full details for a place",
+        "description": "Returns name, address, phone, website, hours, rating, and coordinates\nfor one place. Provide placeId or dataId from a places search result.\nCosts 1 data credit per call."
+      }
+    },
+    "/api/v0/web/maps/reviews": {
+      "get": {
+        "tags": [
+          "Web"
+        ],
+        "operationId": "web_getPlaceReviews",
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID whose data credits are billed for the call"
+            },
+            "description": "Company ID whose data credits are billed for the call"
+          },
+          {
+            "name": "dataId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Data ID of the place, from a places search result"
+            },
+            "description": "Data ID of the place, from a places search result"
+          },
+          {
+            "name": "language",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Results language (default 'en')"
+            },
+            "description": "Results language (default 'en')"
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Sort order: 'qualityScore' (default), 'newestFirst', 'ratingHigh', or 'ratingLow'"
+            },
+            "description": "Sort order: 'qualityScore' (default), 'newestFirst', 'ratingHigh', or 'ratingLow'"
+          },
+          {
+            "name": "topicId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Filter reviews by a topic ID from a previous response"
+            },
+            "description": "Filter reviews by a topic ID from a previous response"
+          },
+          {
+            "name": "nextPageToken",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Pagination token from a previous response"
+            },
+            "description": "Pagination token from a previous response"
+          },
+          {
+            "name": "maxResults",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Reviews per page, 1-20 (default 10)"
+            },
+            "description": "Reviews per page, 1-20 (default 10)"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "dataId missing/invalid parameters or companyId missing",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials, no company access, or out of credits",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Upstream web data request failed \u2014 not charged",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Reviews payload with topics and pagination token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "description": "Reviews payload: location summary, review topics, the reviews list (rating, snippet, date, reviewer), and a pagination token for the next page."
+                }
+              }
+            }
+          }
+        },
+        "summary": "Get reviews for a place",
+        "description": "Returns reviews (rating, text, date, reviewer) for a place identified by\nthe dataId from a places search result. Sort with sortBy and paginate\nwith nextPageToken. Costs 1 data credit per call."
+      }
+    },
+    "/api/v0/web/maps/photos": {
+      "get": {
+        "tags": [
+          "Web"
+        ],
+        "operationId": "web_getPlacePhotos",
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID whose data credits are billed for the call"
+            },
+            "description": "Company ID whose data credits are billed for the call"
+          },
+          {
+            "name": "dataId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Data ID of the place, from a places search result"
+            },
+            "description": "Data ID of the place, from a places search result"
+          },
+          {
+            "name": "language",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Results language (default 'en')"
+            },
+            "description": "Results language (default 'en')"
+          },
+          {
+            "name": "categoryId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Filter by a photo category ID from a previous response"
+            },
+            "description": "Filter by a photo category ID from a previous response"
+          },
+          {
+            "name": "nextPageToken",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Pagination token from a previous response"
+            },
+            "description": "Pagination token from a previous response"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "dataId missing or companyId missing",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials, no company access, or out of credits",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Upstream web data request failed \u2014 not charged",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Photos payload with categories and pagination token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "description": "Photos payload: photo categories, the photos list (thumbnail and full-size image URLs), and a pagination token for the next page."
+                }
+              }
+            }
+          }
+        },
+        "summary": "Get photos for a place",
+        "description": "Returns photo thumbnails and full-size image URLs for a place identified\nby the dataId from a places search result. Filter by categoryId and\npaginate with nextPageToken. Costs 1 data credit per call."
+      }
+    },
+    "/api/v0/web/trends/autocomplete": {
+      "get": {
+        "tags": [
+          "Web"
+        ],
+        "operationId": "web_autocompleteTrends",
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID whose data credits are billed for the call"
+            },
+            "description": "Company ID whose data credits are billed for the call"
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Phrase to map to trending topics, e.g. 'jaguar'"
+            },
+            "description": "Phrase to map to trending topics, e.g. 'jaguar'"
+          },
+          {
+            "name": "language",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Results language (default 'en')"
+            },
+            "description": "Results language (default 'en')"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Missing/invalid parameters or companyId missing",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials, no company access, or out of credits",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Upstream web data request failed \u2014 not charged",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Topic suggestions payload",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "description": "Topic suggestions payload: each suggestion maps the phrase to a disambiguated topic (title, type, topic id)."
+                }
+              }
+            }
+          }
+        },
+        "summary": "Map a phrase to trending search topics",
+        "description": "Disambiguates a phrase into the trending topics it could refer to (e.g.\n'jaguar' the animal vs the car brand), each with a topic title and type.\nCosts 1 data credit per call."
+      }
+    },
+    "/api/v0/web/screenshot": {
+      "post": {
+        "tags": [
+          "Web"
+        ],
+        "operationId": "web_screenshotPage",
+        "parameters": [],
+        "responses": {
+          "400": {
+            "description": "Missing/invalid url or companyId missing",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials, no company access, or out of credits",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "The page could not be captured \u2014 not charged",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Saved screenshot with its public image URL",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "imageId": {
+                      "type": "string",
+                      "description": "Saved image ID \u2014 the screenshot also appears in the Images library"
+                    },
+                    "url": {
+                      "type": "string",
+                      "description": "Public URL of the PNG"
+                    },
+                    "sourceUrl": {
+                      "type": "string",
+                      "description": "The page that was captured"
+                    },
+                    "fullPage": {
+                      "type": "boolean",
+                      "description": "Whether the full scrollable page was captured"
+                    }
+                  },
+                  "description": "Captured screenshot, saved to the image library"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Capture a screenshot of a web page",
+        "description": "Renders the page, captures it as a PNG (full scrollable page by default,\nviewport only with fullPage=false), saves it to the image library, and\nreturns a public image URL. Costs 1 data credit per call.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID whose data credits are billed for the call"
+                  },
+                  "url": {
+                    "type": "string",
+                    "description": "Full http(s) URL of the page to capture"
+                  },
+                  "fullPage": {
+                    "type": "boolean",
+                    "description": "Capture the entire scrollable page (default true) or just the visible viewport (false)"
+                  }
+                },
+                "required": [
+                  "companyId",
+                  "url"
+                ],
+                "description": "Screenshot capture parameters"
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v0/support/tickets": {
       "post": {
         "tags": [
@@ -44723,7 +45893,7 @@
         "operationId": "landing_pages_getLandingPageThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -44731,7 +45901,7 @@
             }
           },
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -44770,7 +45940,7 @@
         "operationId": "landing_pages_updateLandingPageThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -44778,7 +45948,7 @@
             }
           },
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -44856,7 +46026,7 @@
         "operationId": "landing_pages_deleteLandingPageThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -44864,7 +46034,7 @@
             }
           },
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
