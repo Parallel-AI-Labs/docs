@@ -24,6 +24,10 @@
       "description": "Execute browser automation tasks with natural language."
     },
     {
+      "name": "Canvas",
+      "description": "Create canvas art as shareable images \u2014 social posts, story graphics, quote cards, announcements, link-preview art. Workflow: author a complete standalone HTML canvas (large text over a photo, color, or gradient), then canvas_createCanvas renders it at exact pixel size and returns a permanent public PNG URL. Each render costs 1 data credit and is only charged on success. Author the HTML to these design guidelines:\n\n## What You Are Making\nA canvas is a piece of visual art, not a document. Museum-quality, magazine-quality \u2014\nnever cartoony, never clip-art, never a slide. Before writing any HTML, decide a design\ndirection in one sentence (e.g. \"Swiss formalism: one monumental word, hard grid,\nred/black/paper\" or \"quiet editorial: thin serif, vast negative space, one photograph\").\nEvery choice then serves that direction.\n\n## Canvas Setup (exact rules)\n- Output one complete standalone HTML document. No external CSS/JS files; inline a\n  `<style>` block. Plain CSS preferred; `<script src=\"https://cdn.tailwindcss.com\"></script>` is allowed.\n- Size the canvas EXACTLY to the chosen format:\n  `html,body{margin:0;padding:0}` and `body{width:<W>px;height:<H>px;overflow:hidden;position:relative}`\n- Formats: square 1080x1080 (feed), portrait 1080x1350 (feed, default), story 1080x1920\n  (Stories/Reels), landscape 1200x630 (link previews).\n- Static only: no animations or transitions \u2014 the canvas is photographed the instant it loads.\n\n## Typography (the heart of the canvas)\n- Google Fonts only, loaded via `<link href=\"https://fonts.googleapis.com/css2?family=...&display=swap\" rel=\"stylesheet\">`.\n- Choose from this curated library \u2014 at most TWO fonts per canvas:\n  - Monumental display: Boldonse, Big Shoulders, Erica One, Archivo Black, Bebas Neue\n  - Elegant serif: Gloock, Italiana, Young Serif, Instrument Serif, Playfair Display, Libre Baskerville\n  - Modern sans: Bricolage Grotesque, Outfit, Work Sans, Instrument Sans, Space Grotesk\n  - Editorial body serif: Lora, Crimson Pro, IBM Plex Serif\n  - Technical mono: JetBrains Mono, IBM Plex Mono, DM Mono, Tektur, Jura\n  - Retro pixel: Silkscreen, Pixelify Sans\n  - Handwritten: Nothing You Could Do, Smooch Sans; thin deco: Poiret One\n- Text is minimal and visual-first: usually one dominant word or short phrase plus tiny\n  supporting labels. Rarely more than a dozen words on the whole canvas.\n- Make the hero text HUGE \u2014 roughly 10-25% of the canvas height. Uppercase display type\n  wants letter-spacing (0.02-0.15em); tiny labels want wide tracking (0.2-0.4em).\n- Line-height on stacked display lines: some display fonts draw far taller than their\n  em box and collide when stacked (Boldonse needs line-height ~1.3). Use 1.2-1.3 for\n  multi-line display type and only go tighter for fonts you know sit inside their box.\n- Contrast in scale is the composition: one enormous element, a few whisper-small ones.\n  Nothing in between.\n\n## Color & Background\n- A limited, intentional palette: 2-3 colors total. Pick them for the design direction,\n  not decoration. High text/background contrast is non-negotiable.\n- Backgrounds: a flat color, a subtle gradient, or a photo. For photos use\n  `background:url(...) center/cover` and ALWAYS add a scrim over photo areas behind text\n  (e.g. `background:rgba(0,0,0,.35)` or a directional gradient) so type stays legible.\n- Photo URLs must be public http(s) images. To feature a generated image, create it\n  first with an image tool and use its URL.\n\n## Composition (non-negotiable craft rules)\n- Keep a safe margin of at least 5% of the canvas on every side. NOTHING touches or\n  overflows the canvas edge, and elements never overlap illegibly.\n- Compose deliberately: strong asymmetry or a strict grid both work; accidental\n  centering of everything does not. Let negative space breathe \u2014 empty space is a\n  design element, not waste.\n- Repetition rewards attention: thin rules, small registration marks, an index number,\n  a tiny caption line \u2014 sparse, clinical details make the piece feel designed.\n- The finished canvas should look like it took a top-of-field designer hours of\n  painstaking refinement: aligned edges, consistent spacing rhythm, optically balanced.\n  Double-check every element is inside the canvas and nothing collides before finishing.\n"
+    },
+    {
       "name": "Chat",
       "description": "OpenAI-compatible chat completions API."
     },
@@ -15786,7 +15790,7 @@
         "operationId": "agents_getConversationDetails",
         "parameters": [
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -15794,7 +15798,7 @@
             }
           },
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18939,7 +18943,7 @@
         "operationId": "lists_getRowHistory",
         "parameters": [
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18947,7 +18951,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24061,7 +24065,7 @@
         "operationId": "sequences_editSequenceExecution",
         "parameters": [
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24069,7 +24073,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24158,7 +24162,7 @@
         "operationId": "sequences_previewSequenceExecution",
         "parameters": [
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24166,7 +24170,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -40511,6 +40515,115 @@
                   "url"
                 ],
                 "description": "Screenshot capture parameters"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v0/canvas": {
+      "post": {
+        "tags": [
+          "Canvas"
+        ],
+        "operationId": "canvas_createCanvas",
+        "parameters": [],
+        "responses": {
+          "400": {
+            "description": "Invalid html/format/dimensions or companyId missing",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials, no company access, or out of credits",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "The canvas could not be rendered \u2014 not charged",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "The rendered canvas with its public image URL",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "imageId": {
+                      "type": "string",
+                      "description": "ID of the saved image"
+                    },
+                    "url": {
+                      "type": "string",
+                      "description": "Permanent public URL of the rendered PNG"
+                    },
+                    "width": {
+                      "type": "integer",
+                      "description": "Rendered width in px"
+                    },
+                    "height": {
+                      "type": "integer",
+                      "description": "Rendered height in px"
+                    }
+                  },
+                  "description": "Rendered canvas"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Render a canvas art image from HTML",
+        "description": "Renders a self-contained HTML canvas at exact pixel dimensions and returns\na permanent public PNG URL \u2014 for social posts, story graphics, quote cards,\nand link preview art. Author the HTML per the design guidelines in this\ntag's description (curated Google Fonts, minimal text, exact-size body).\nCosts 1 data credit per call.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID whose data credits are billed for the call"
+                  },
+                  "html": {
+                    "type": "string",
+                    "description": "Complete standalone HTML document for the canvas. Must be fully self-contained (inline <style>; Google Fonts links and the Tailwind CDN script are allowed) with html,body{margin:0} and the body sized to EXACTLY the canvas dimensions with overflow:hidden. Static only \u2014 no animations. Follow the design guidelines in the Canvas tag description."
+                  },
+                  "format": {
+                    "type": "string",
+                    "description": "Canvas format: 'square' (1080x1080 feed), 'portrait' (1080x1350 feed, default), 'story' (1080x1920 Stories/Reels), 'landscape' (1200x630 link preview). Ignored when width/height are given."
+                  },
+                  "width": {
+                    "type": "integer",
+                    "description": "Custom canvas width in px (200-2160); requires height"
+                  },
+                  "height": {
+                    "type": "integer",
+                    "description": "Custom canvas height in px (200-2160); requires width"
+                  }
+                },
+                "required": [
+                  "companyId",
+                  "html"
+                ],
+                "description": "Canvas to render"
               }
             }
           }
