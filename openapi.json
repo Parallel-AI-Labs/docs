@@ -919,7 +919,7 @@
         "operationId": "documents_getDocumentContents",
         "parameters": [
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -927,7 +927,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -986,7 +986,7 @@
         "operationId": "documents_getDocument",
         "parameters": [
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -994,7 +994,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -3127,7 +3127,7 @@
         "operationId": "keys_getApiKey",
         "parameters": [
           {
-            "name": "name",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -3135,7 +3135,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "name",
             "in": "path",
             "required": true,
             "schema": {
@@ -19243,7 +19243,7 @@
         "operationId": "lists_getRowHistory",
         "parameters": [
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19251,7 +19251,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19463,7 +19463,7 @@
         "operationId": "lists_deleteHeader",
         "parameters": [
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19471,7 +19471,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19537,7 +19537,7 @@
         "operationId": "lists_editHeader",
         "parameters": [
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19545,7 +19545,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24365,7 +24365,7 @@
         "operationId": "sequences_editSequenceExecution",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24373,7 +24373,7 @@
             }
           },
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24462,7 +24462,7 @@
         "operationId": "sequences_previewSequenceExecution",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24470,7 +24470,7 @@
             }
           },
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30107,7 +30107,7 @@
         "operationId": "inbox_sendDraft",
         "parameters": [
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30115,7 +30115,7 @@
             }
           },
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30208,7 +30208,7 @@
         "operationId": "inbox_deleteDraft",
         "parameters": [
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30216,7 +30216,7 @@
             }
           },
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -36283,7 +36283,7 @@
                   },
                   "image": {
                     "type": "object",
-                    "description": "Brand image data object with fields: id (optional for create), name (required), description, images (array of {url, key, width, height, fileSize, mimeType, type}), imageModels (array of preferred AI image generation models), imageStylePrompt (Midjourney-style prompt for consistent generation), templates (array of {id, url, name, description, width, height} for PNG overlay templates)"
+                    "description": "Brand image data object with fields: id (optional for create), name (required), description, images (array of {url, key, width, height, fileSize, mimeType, type}), imageModels (array of preferred AI image generation models), imageStylePrompt (Midjourney-style prompt for consistent generation), imageCreationMode (how content images are produced: ai_image or canvas), canvasTools (array of imagery tools the canvas agent may use: ai_images, stock_images; empty = typography only), templates (array of {id, url, name, description, width, height} for PNG overlay templates)"
                   }
                 },
                 "required": [
@@ -36446,6 +36446,131 @@
           }
         },
         "summary": "Delete a brand image."
+      }
+    },
+    "/api/v0/content/brand-images/test": {
+      "post": {
+        "tags": [
+          "Content"
+        ],
+        "operationId": "content_testBrandImage",
+        "parameters": [],
+        "responses": {
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials or no company access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Content not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Usage limit exceeded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Generated test images",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "images": {
+                      "type": "array",
+                      "items": {
+                        "type": "object"
+                      },
+                      "description": "Generated test images: {url, width, height, prompt}"
+                    }
+                  },
+                  "description": "Generated test images"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Generate test images from a brand image configuration",
+        "description": "Runs the content-engine image pipeline (AI image or canvas agent, per the\nsupplied configuration) against sample text or an existing content piece\nand returns the generated image URLs without attaching them to any\ncontent. Charges the same credits as normal generation.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID"
+                  },
+                  "image": {
+                    "type": "object",
+                    "description": "Brand image configuration to test \u2014 same shape as the save payload image object; does not need to be saved first"
+                  },
+                  "contentId": {
+                    "type": "string",
+                    "description": "Existing content ID to test with (its title, body, and type are used; overrides title/text/contentType)"
+                  },
+                  "title": {
+                    "type": "string",
+                    "description": "Sample content title"
+                  },
+                  "text": {
+                    "type": "string",
+                    "description": "Sample content body text"
+                  },
+                  "contentType": {
+                    "type": "string",
+                    "description": "Content type used for image sizing (default blog_post)"
+                  }
+                },
+                "required": [
+                  "companyId",
+                  "image"
+                ],
+                "description": "Request body for testing a brand image configuration"
+              }
+            }
+          },
+          "description": "Brand image test request"
+        }
       }
     },
     "/api/v0/content/brand-images/generate-style-prompt": {
@@ -55647,7 +55772,7 @@
         "operationId": "marketing_campaigns_deleteCampaignRecipient",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "recipientId",
             "in": "path",
             "required": true,
             "schema": {
@@ -55655,7 +55780,7 @@
             }
           },
           {
-            "name": "recipientId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
