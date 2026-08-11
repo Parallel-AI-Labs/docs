@@ -25,7 +25,7 @@
     },
     {
       "name": "Canvas",
-      "description": "Create canvas art as shareable images \u2014 social posts, story graphics, quote cards, announcements, link-preview art. Workflow: author a complete standalone HTML canvas (large text over a photo, color, or gradient), then canvas_createCanvas renders it at exact pixel size and returns a permanent public PNG URL. Each render costs 1 data credit and is only charged on success. Author the HTML to these design guidelines:\n\n## What You Are Making\nA canvas is a piece of visual art, not a document. Museum-quality, magazine-quality \u2014\nnever cartoony, never clip-art, never a slide. Before writing any HTML, decide a design\ndirection in one sentence (e.g. \"Swiss formalism: one monumental word, hard grid,\nred/black/paper\" or \"quiet editorial: thin serif, vast negative space, one photograph\").\nEvery choice then serves that direction.\n\n## Canvas Setup (exact rules)\n- Output one complete standalone HTML document. No external CSS/JS files; inline a\n  `<style>` block. Plain CSS preferred; `<script src=\"https://cdn.tailwindcss.com\"></script>` is allowed.\n- Size the canvas EXACTLY to the chosen format:\n  `html,body{margin:0;padding:0}` and `body{width:<W>px;height:<H>px;overflow:hidden;position:relative}`\n- Formats: square 1080x1080 (feed), portrait 1080x1350 (feed, default), story 1080x1920\n  (Stories/Reels), landscape 1200x630 (link previews).\n- Static only: no animations or transitions \u2014 the canvas is photographed the instant it loads.\n\n## Typography (the heart of the canvas)\n- Google Fonts only, loaded via `<link href=\"https://fonts.googleapis.com/css2?family=...&display=swap\" rel=\"stylesheet\">`.\n- Choose from this curated library \u2014 at most TWO fonts per canvas:\n  - Monumental display: Boldonse, Big Shoulders, Erica One, Archivo Black, Bebas Neue\n  - Elegant serif: Gloock, Italiana, Young Serif, Instrument Serif, Playfair Display, Libre Baskerville\n  - Modern sans: Bricolage Grotesque, Outfit, Work Sans, Instrument Sans, Space Grotesk\n  - Editorial body serif: Lora, Crimson Pro, IBM Plex Serif\n  - Technical mono: JetBrains Mono, IBM Plex Mono, DM Mono, Tektur, Jura\n  - Retro pixel: Silkscreen, Pixelify Sans\n  - Handwritten: Nothing You Could Do, Smooch Sans; thin deco: Poiret One\n- Text is minimal and visual-first: usually one dominant word or short phrase plus tiny\n  supporting labels. Rarely more than a dozen words on the whole canvas.\n- Make the hero text HUGE \u2014 roughly 10-25% of the canvas height. Uppercase display type\n  wants letter-spacing (0.02-0.15em); tiny labels want wide tracking (0.2-0.4em).\n- Line-height on stacked display lines: some display fonts draw far taller than their\n  em box and collide when stacked (Boldonse needs line-height ~1.3). Use 1.2-1.3 for\n  multi-line display type and only go tighter for fonts you know sit inside their box.\n- Contrast in scale is the composition: one enormous element, a few whisper-small ones.\n  Nothing in between.\n\n## Color & Background\n- A limited, intentional palette: 2-3 colors total. Pick them for the design direction,\n  not decoration. High text/background contrast is non-negotiable.\n- Backgrounds: a flat color, a subtle gradient, or a photo. For photos use\n  `background:url(...) center/cover` and ALWAYS add a scrim over photo areas behind text\n  (e.g. `background:rgba(0,0,0,.35)` or a directional gradient) so type stays legible.\n- Photo URLs must be public http(s) images. To feature a generated image, create it\n  first with an image tool and use its URL.\n\n## Composition (non-negotiable craft rules)\n- Keep a safe margin of at least 5% of the canvas on every side. NOTHING touches or\n  overflows the canvas edge, and elements never overlap illegibly.\n- Compose deliberately: strong asymmetry or a strict grid both work; accidental\n  centering of everything does not. Let negative space breathe \u2014 empty space is a\n  design element, not waste.\n- Repetition rewards attention: thin rules, small registration marks, an index number,\n  a tiny caption line \u2014 sparse, clinical details make the piece feel designed.\n- The finished canvas should look like it took a top-of-field designer hours of\n  painstaking refinement: aligned edges, consistent spacing rhythm, optically balanced.\n  Double-check every element is inside the canvas and nothing collides before finishing.\n"
+      "description": "Create canvas art as shareable images \u2014 social posts, story graphics, quote cards, announcements, link-preview art. Workflow: author a complete standalone HTML canvas (large text over a photo, color, or gradient), then canvas_createCanvas renders it at exact pixel size and returns a permanent public PNG URL. Each render costs 1 data credit and is only charged on success. Author the HTML to these design guidelines:\n\n## What You Are Making\nA canvas is a piece of visual art, not a document. Museum-quality, magazine-quality \u2014\nnever cartoony, never clip-art, never a slide. Before writing any HTML, decide a design\ndirection in one sentence (e.g. \"Swiss formalism: one monumental word, hard grid,\nred/black/paper\" or \"quiet editorial: thin serif, vast negative space, one photograph\").\nEvery choice then serves that direction.\n\n## Canvas Setup (exact rules)\n- Output one complete standalone HTML document. No external CSS/JS files; inline a\n  `<style>` block. Plain CSS preferred; `<script src=\"https://cdn.tailwindcss.com\"></script>` is allowed.\n- Size the canvas EXACTLY to the chosen format:\n  `html,body{margin:0;padding:0}` and `body{width:<W>px;height:<H>px;overflow:hidden;position:relative}`\n- Formats: square 1080x1080 (feed), portrait 1080x1350 (feed, default), story 1080x1920\n  (Stories/Reels), landscape 1200x630 (link previews).\n- Static only: no animations or transitions \u2014 the canvas is photographed the instant it loads.\n\n## Typography (the heart of the canvas)\n- Google Fonts only, loaded via `<link href=\"https://fonts.googleapis.com/css2?family=...&display=swap\" rel=\"stylesheet\">`.\n- Choose from this curated library \u2014 at most TWO fonts per canvas:\n  - Monumental display: Boldonse, Big Shoulders, Erica One, Archivo Black, Bebas Neue\n  - Elegant serif: Gloock, Italiana, Young Serif, Instrument Serif, Playfair Display, Libre Baskerville\n  - Modern sans: Bricolage Grotesque, Outfit, Work Sans, Instrument Sans, Space Grotesk\n  - Editorial body serif: Lora, Crimson Pro, IBM Plex Serif\n  - Technical mono: JetBrains Mono, IBM Plex Mono, DM Mono, Tektur, Jura\n  - Retro pixel: Silkscreen, Pixelify Sans\n  - Handwritten: Nothing You Could Do, Smooch Sans; thin deco: Poiret One\n- Text is minimal and visual-first: usually one dominant word or short phrase plus tiny\n  supporting labels. Rarely more than a dozen words on the whole canvas.\n- Make the hero text HUGE \u2014 roughly 10-25% of the canvas height. Uppercase display type\n  wants letter-spacing (0.02-0.15em); tiny labels want wide tracking (0.2-0.4em).\n- Line-height on stacked display lines: some display fonts draw far taller than their\n  em box and collide when stacked (Boldonse needs line-height ~1.3). Use 1.2-1.3 for\n  multi-line display type and only go tighter for fonts you know sit inside their box.\n- Contrast in scale is the composition: one enormous element, a few whisper-small ones.\n  Nothing in between.\n\n## Color & Background\n- A limited, intentional palette: 2-3 colors total. Pick them for the design direction,\n  not decoration. High text/background contrast is non-negotiable.\n- Backgrounds: a flat color, a subtle gradient, or a photo. For photos use\n  `background:url(...) center/cover` and ALWAYS add a scrim over photo areas behind text\n  (e.g. `background:rgba(0,0,0,.35)` or a directional gradient) so type stays legible.\n- Photo URLs must be public http(s) images. Two ways to get one:\n  - Stock photography: search the stock image library (Unsplash/Pexels via the stock\n    image search \u2014 images_searchStockImages on the platform API/MCP) and use a\n    result's fullUrl.\n  - AI-generated imagery: generate an image with the platform's AI image models\n    (images_createImage on the platform API/MCP \u2014 describe the scene, pick a model,\n    and use the returned public URL). Best for imagery no stock photo can match;\n    request it WITHOUT text, since the canvas type layer supplies all text.\n\n## Composition (non-negotiable craft rules)\n- Keep a safe margin of at least 5% of the canvas on every side. NOTHING touches or\n  overflows the canvas edge, and elements never overlap illegibly.\n- Compose deliberately: strong asymmetry or a strict grid both work; accidental\n  centering of everything does not. Let negative space breathe \u2014 empty space is a\n  design element, not waste.\n- Repetition rewards attention: thin rules, small registration marks, an index number,\n  a tiny caption line \u2014 sparse, clinical details make the piece feel designed.\n- The finished canvas should look like it took a top-of-field designer hours of\n  painstaking refinement: aligned edges, consistent spacing rhythm, optically balanced.\n  Double-check every element is inside the canvas and nothing collides before finishing.\n"
     },
     {
       "name": "Chat",
@@ -6770,7 +6770,7 @@
         "operationId": "projects_getProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -6778,7 +6778,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -6913,7 +6913,7 @@
         "operationId": "projects_updateProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -6921,7 +6921,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -7082,7 +7082,7 @@
         "operationId": "projects_deleteProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -7090,7 +7090,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -7989,7 +7989,7 @@
         "operationId": "projects_exportProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -7997,7 +7997,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8089,7 +8089,7 @@
         "operationId": "projects_publishFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8097,7 +8097,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8244,7 +8244,7 @@
         "operationId": "projects_unpublishFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8252,7 +8252,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -13544,6 +13544,298 @@
         "description": "Returns a list of available image generation models with their\nIDs, names, and providers. This endpoint is public and does not\nrequire authentication."
       }
     },
+    "/api/v0/stock-images/search": {
+      "get": {
+        "tags": [
+          "Images"
+        ],
+        "operationId": "images_searchStockImages",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Search query"
+            },
+            "description": "Search query"
+          },
+          {
+            "name": "provider",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Provider filter (unsplash, pexels, or all)"
+            },
+            "description": "Provider filter (unsplash, pexels, or all)"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Page number"
+            },
+            "description": "Page number"
+          },
+          {
+            "name": "perPage",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Results per page"
+            },
+            "description": "Results per page"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Missing query",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Stock image search results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "description": "Image ID"
+                          },
+                          "provider": {
+                            "type": "string",
+                            "description": "Provider name"
+                          },
+                          "url": {
+                            "type": "string",
+                            "description": "Image URL"
+                          },
+                          "thumbnailUrl": {
+                            "type": "string",
+                            "description": "Thumbnail URL"
+                          },
+                          "width": {
+                            "type": "integer",
+                            "description": "Image width"
+                          },
+                          "height": {
+                            "type": "integer",
+                            "description": "Image height"
+                          },
+                          "photographer": {
+                            "type": "string",
+                            "description": "Photographer name"
+                          },
+                          "photographerUrl": {
+                            "type": "string",
+                            "description": "Photographer profile URL"
+                          }
+                        },
+                        "description": "Stock image"
+                      },
+                      "description": "Search results"
+                    },
+                    "total": {
+                      "type": "integer",
+                      "description": "Total results"
+                    },
+                    "page": {
+                      "type": "integer",
+                      "description": "Current page"
+                    }
+                  },
+                  "description": "Stock image search results"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Search for stock images from Unsplash and/or Pexels."
+      }
+    },
+    "/api/v0/stock-images/download": {
+      "post": {
+        "tags": [
+          "Images"
+        ],
+        "operationId": "images_downloadStockImage",
+        "parameters": [],
+        "responses": {
+          "400": {
+            "description": "Missing required fields",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Downloaded image with S3 URL",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "url": {
+                      "type": "string",
+                      "description": "S3 URL of downloaded image"
+                    },
+                    "originalUrl": {
+                      "type": "string",
+                      "description": "Original image URL"
+                    }
+                  },
+                  "description": "Downloaded stock image"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Download a stock image and save to S3.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID"
+                  },
+                  "photoId": {
+                    "type": "string",
+                    "description": "Image ID from provider"
+                  },
+                  "provider": {
+                    "type": "string",
+                    "description": "Provider name (unsplash or pexels)"
+                  }
+                },
+                "required": [
+                  "companyId",
+                  "photoId",
+                  "provider"
+                ],
+                "description": "Request body for downloading a stock image"
+              }
+            }
+          },
+          "description": "Stock image to download"
+        }
+      }
+    },
+    "/api/v0/stock-images/providers": {
+      "get": {
+        "tags": [
+          "Images"
+        ],
+        "operationId": "images_getStockImageProviders",
+        "parameters": [],
+        "responses": {
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Available providers",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "providers": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "Provider names"
+                    }
+                  },
+                  "description": "Available stock image providers"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Get list of available stock image providers."
+      }
+    },
     "/api/v0/audio": {
       "post": {
         "tags": [
@@ -15790,7 +16082,7 @@
         "operationId": "agents_getConversationDetails",
         "parameters": [
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -15798,7 +16090,7 @@
             }
           },
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18372,7 +18664,7 @@
         "operationId": "lists_deleteTableAction",
         "parameters": [
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18380,7 +18672,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18478,7 +18770,7 @@
         "operationId": "lists_getActionSummary",
         "parameters": [
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18486,7 +18778,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18606,7 +18898,7 @@
         "operationId": "lists_getActionQueueStatus",
         "parameters": [
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18614,7 +18906,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19163,7 +19455,7 @@
         "operationId": "lists_deleteHeader",
         "parameters": [
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19171,7 +19463,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19237,7 +19529,7 @@
         "operationId": "lists_editHeader",
         "parameters": [
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19245,7 +19537,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23089,7 +23381,7 @@
         "operationId": "sequences_getSequenceMemberTimeline",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23097,7 +23389,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23495,7 +23787,7 @@
         "operationId": "sequences_triggerSequenceMember",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23503,7 +23795,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23571,7 +23863,7 @@
         "operationId": "sequences_removeSequenceMember",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23579,7 +23871,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25873,7 +26165,7 @@
         "operationId": "sequences_getMemberProfile",
         "parameters": [
           {
-            "name": "memberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25881,7 +26173,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "memberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -29807,7 +30099,7 @@
         "operationId": "inbox_sendDraft",
         "parameters": [
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -29815,7 +30107,7 @@
             }
           },
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -29908,7 +30200,7 @@
         "operationId": "inbox_deleteDraft",
         "parameters": [
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -29916,7 +30208,7 @@
             }
           },
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -45278,298 +45570,6 @@
         "summary": "Upload a single web artifact image via multipart form data."
       }
     },
-    "/api/v0/stock-images/search": {
-      "get": {
-        "tags": [
-          "Landing Pages"
-        ],
-        "operationId": "landing_pages_searchStockImages",
-        "parameters": [
-          {
-            "name": "query",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "description": "Search query"
-            },
-            "description": "Search query"
-          },
-          {
-            "name": "provider",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "description": "Provider filter (unsplash, pexels, or all)"
-            },
-            "description": "Provider filter (unsplash, pexels, or all)"
-          },
-          {
-            "name": "page",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "integer",
-              "description": "Page number"
-            },
-            "description": "Page number"
-          },
-          {
-            "name": "perPage",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "integer",
-              "description": "Results per page"
-            },
-            "description": "Results per page"
-          }
-        ],
-        "responses": {
-          "400": {
-            "description": "Missing query",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Invalid credentials",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "200": {
-            "description": "Stock image search results",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "results": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "id": {
-                            "type": "string",
-                            "description": "Image ID"
-                          },
-                          "provider": {
-                            "type": "string",
-                            "description": "Provider name"
-                          },
-                          "url": {
-                            "type": "string",
-                            "description": "Image URL"
-                          },
-                          "thumbnailUrl": {
-                            "type": "string",
-                            "description": "Thumbnail URL"
-                          },
-                          "width": {
-                            "type": "integer",
-                            "description": "Image width"
-                          },
-                          "height": {
-                            "type": "integer",
-                            "description": "Image height"
-                          },
-                          "photographer": {
-                            "type": "string",
-                            "description": "Photographer name"
-                          },
-                          "photographerUrl": {
-                            "type": "string",
-                            "description": "Photographer profile URL"
-                          }
-                        },
-                        "description": "Stock image"
-                      },
-                      "description": "Search results"
-                    },
-                    "total": {
-                      "type": "integer",
-                      "description": "Total results"
-                    },
-                    "page": {
-                      "type": "integer",
-                      "description": "Current page"
-                    }
-                  },
-                  "description": "Stock image search results"
-                }
-              }
-            }
-          }
-        },
-        "summary": "Search for stock images from Unsplash and/or Pexels."
-      }
-    },
-    "/api/v0/stock-images/download": {
-      "post": {
-        "tags": [
-          "Landing Pages"
-        ],
-        "operationId": "landing_pages_downloadStockImage",
-        "parameters": [],
-        "responses": {
-          "400": {
-            "description": "Missing required fields",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Invalid credentials",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "200": {
-            "description": "Downloaded image with S3 URL",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "url": {
-                      "type": "string",
-                      "description": "S3 URL of downloaded image"
-                    },
-                    "originalUrl": {
-                      "type": "string",
-                      "description": "Original image URL"
-                    }
-                  },
-                  "description": "Downloaded stock image"
-                }
-              }
-            }
-          }
-        },
-        "summary": "Download a stock image and save to S3.",
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "companyId": {
-                    "type": "string",
-                    "description": "Company ID"
-                  },
-                  "photoId": {
-                    "type": "string",
-                    "description": "Image ID from provider"
-                  },
-                  "provider": {
-                    "type": "string",
-                    "description": "Provider name (unsplash or pexels)"
-                  }
-                },
-                "required": [
-                  "companyId",
-                  "photoId",
-                  "provider"
-                ],
-                "description": "Request body for downloading a stock image"
-              }
-            }
-          },
-          "description": "Stock image to download"
-        }
-      }
-    },
-    "/api/v0/stock-images/providers": {
-      "get": {
-        "tags": [
-          "Landing Pages"
-        ],
-        "operationId": "landing_pages_getStockImageProviders",
-        "parameters": [],
-        "responses": {
-          "401": {
-            "description": "Invalid credentials",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "200": {
-            "description": "Available providers",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "providers": {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      },
-                      "description": "Provider names"
-                    }
-                  },
-                  "description": "Available stock image providers"
-                }
-              }
-            }
-          }
-        },
-        "summary": "Get list of available stock image providers."
-      }
-    },
     "/api/v0/landing-pages/{page_id}/preview": {
       "get": {
         "tags": [
@@ -54444,7 +54444,7 @@
         "operationId": "marketing_campaigns_restoreCampaignVersion",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -54452,7 +54452,7 @@
             }
           },
           {
-            "name": "versionId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
