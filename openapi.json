@@ -12840,7 +12840,7 @@
             }
           },
           "200": {
-            "description": "Image generation initiated",
+            "description": "The generated image with its public URL",
             "content": {
               "application/json": {
                 "schema": {
@@ -12849,6 +12849,14 @@
                     "msg": {
                       "type": "string",
                       "description": "Success message"
+                    },
+                    "imageId": {
+                      "type": "string",
+                      "description": "ID of the generated image"
+                    },
+                    "url": {
+                      "type": "string",
+                      "description": "Public URL of the generated image \u2014 use this directly in HTML, canvases, and content"
                     }
                   },
                   "description": "Generated image response"
@@ -12858,7 +12866,7 @@
           }
         },
         "summary": "Generate an AI image from a text prompt.",
-        "description": "Creates an image using the specified model (GPT Image or Google).\nThe image is generated asynchronously and can be retrieved using the image ID.",
+        "description": "Creates an image using the specified model (GPT Image or Google) and\nreturns its ID and public URL when generation completes.",
         "requestBody": {
           "required": true,
           "content": {
@@ -18664,7 +18672,7 @@
         "operationId": "lists_deleteTableAction",
         "parameters": [
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18672,7 +18680,7 @@
             }
           },
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18770,7 +18778,7 @@
         "operationId": "lists_getActionSummary",
         "parameters": [
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18778,7 +18786,7 @@
             }
           },
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18898,7 +18906,7 @@
         "operationId": "lists_getActionQueueStatus",
         "parameters": [
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18906,7 +18914,7 @@
             }
           },
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22369,7 +22377,7 @@
         "operationId": "sequences_updateSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22377,7 +22385,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22651,7 +22659,7 @@
         "operationId": "sequences_deleteSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22659,7 +22667,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26017,7 +26025,7 @@
         "operationId": "sequences_testSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26025,7 +26033,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26079,7 +26087,7 @@
         "operationId": "sequences_sendTestEmail",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26087,7 +26095,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -55639,7 +55647,7 @@
         "operationId": "marketing_campaigns_deleteCampaignRecipient",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "recipientId",
             "in": "path",
             "required": true,
             "schema": {
@@ -55647,7 +55655,7 @@
             }
           },
           {
-            "name": "recipientId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
