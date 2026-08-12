@@ -3127,7 +3127,7 @@
         "operationId": "keys_getApiKey",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "name",
             "in": "path",
             "required": true,
             "schema": {
@@ -3135,7 +3135,7 @@
             }
           },
           {
-            "name": "name",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19463,7 +19463,7 @@
         "operationId": "lists_deleteHeader",
         "parameters": [
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19471,7 +19471,7 @@
             }
           },
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19537,7 +19537,7 @@
         "operationId": "lists_editHeader",
         "parameters": [
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19545,7 +19545,7 @@
             }
           },
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24365,7 +24365,7 @@
         "operationId": "sequences_editSequenceExecution",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24373,7 +24373,7 @@
             }
           },
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24462,7 +24462,7 @@
         "operationId": "sequences_previewSequenceExecution",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24470,7 +24470,7 @@
             }
           },
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -55681,7 +55681,7 @@
         "operationId": "marketing_campaigns_restoreCampaignVersion",
         "parameters": [
           {
-            "name": "versionId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -55689,7 +55689,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -56876,7 +56876,7 @@
         "operationId": "marketing_campaigns_deleteCampaignRecipient",
         "parameters": [
           {
-            "name": "recipientId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -56884,7 +56884,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "recipientId",
             "in": "path",
             "required": true,
             "schema": {
