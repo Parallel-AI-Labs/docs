@@ -919,7 +919,7 @@
         "operationId": "documents_getDocumentContents",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -927,7 +927,7 @@
             }
           },
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -986,7 +986,7 @@
         "operationId": "documents_getDocument",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -994,7 +994,7 @@
             }
           },
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8686,7 +8686,7 @@
         "operationId": "memories_getMemory",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8694,7 +8694,7 @@
             }
           },
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8792,7 +8792,7 @@
         "operationId": "memories_updateMemoryRoute",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8800,7 +8800,7 @@
             }
           },
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8928,7 +8928,7 @@
         "operationId": "memories_deleteMemoryRoute",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8936,7 +8936,7 @@
             }
           },
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8987,7 +8987,7 @@
         "operationId": "memories_toggleMemoryActiveRoute",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8995,7 +8995,7 @@
             }
           },
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18672,7 +18672,7 @@
         "operationId": "lists_deleteTableAction",
         "parameters": [
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18680,7 +18680,7 @@
             }
           },
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18778,7 +18778,7 @@
         "operationId": "lists_getActionSummary",
         "parameters": [
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18786,7 +18786,7 @@
             }
           },
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18906,7 +18906,7 @@
         "operationId": "lists_getActionQueueStatus",
         "parameters": [
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18914,7 +18914,7 @@
             }
           },
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22377,7 +22377,7 @@
         "operationId": "sequences_updateSequenceStep",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22385,7 +22385,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22659,7 +22659,7 @@
         "operationId": "sequences_deleteSequenceStep",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22667,7 +22667,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23389,7 +23389,7 @@
         "operationId": "sequences_getSequenceMemberTimeline",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23397,7 +23397,7 @@
             }
           },
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23795,7 +23795,7 @@
         "operationId": "sequences_triggerSequenceMember",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23803,7 +23803,7 @@
             }
           },
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23871,7 +23871,7 @@
         "operationId": "sequences_removeSequenceMember",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23879,7 +23879,7 @@
             }
           },
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24365,7 +24365,7 @@
         "operationId": "sequences_editSequenceExecution",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24373,7 +24373,7 @@
             }
           },
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24462,7 +24462,7 @@
         "operationId": "sequences_previewSequenceExecution",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24470,7 +24470,7 @@
             }
           },
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26025,7 +26025,7 @@
         "operationId": "sequences_testSequenceStep",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26033,7 +26033,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26087,7 +26087,7 @@
         "operationId": "sequences_sendTestEmail",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26095,7 +26095,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26173,7 +26173,7 @@
         "operationId": "sequences_getMemberProfile",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "memberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26181,7 +26181,7 @@
             }
           },
           {
-            "name": "memberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -36790,6 +36790,1110 @@
         }
       }
     },
+    "/api/v0/content/canvases": {
+      "get": {
+        "tags": [
+          "Content"
+        ],
+        "operationId": "content_listCanvasDesigns",
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID"
+            },
+            "description": "Company ID"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Page number"
+            },
+            "description": "Page number"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Items per page"
+            },
+            "description": "Items per page"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Missing companyId",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Paginated list of canvas designs",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "description": "Canvas ID"
+                          },
+                          "companyId": {
+                            "type": "string",
+                            "description": "Company ID"
+                          },
+                          "name": {
+                            "type": "string",
+                            "description": "Canvas name"
+                          },
+                          "width": {
+                            "type": "integer",
+                            "description": "Canvas width in pixels"
+                          },
+                          "height": {
+                            "type": "integer",
+                            "description": "Canvas height in pixels"
+                          },
+                          "format": {
+                            "type": "string",
+                            "description": "Named canvas format id, when the size came from one"
+                          },
+                          "htmlContent": {
+                            "type": "string",
+                            "description": "The standalone HTML document for the canvas"
+                          },
+                          "imageId": {
+                            "type": "string",
+                            "description": "Images table id of the last render"
+                          },
+                          "imageUrl": {
+                            "type": "string",
+                            "description": "Public PNG URL of the last render"
+                          }
+                        },
+                        "description": "Canvas design"
+                      },
+                      "description": "Canvas designs"
+                    },
+                    "total": {
+                      "type": "integer",
+                      "description": "Total count"
+                    },
+                    "page": {
+                      "type": "integer",
+                      "description": "Current page"
+                    },
+                    "pages": {
+                      "type": "integer",
+                      "description": "Total pages"
+                    }
+                  },
+                  "description": "Paginated list of canvas designs"
+                }
+              }
+            }
+          }
+        },
+        "summary": "List canvas designs for a company (paginated)."
+      },
+      "post": {
+        "tags": [
+          "Content"
+        ],
+        "operationId": "content_createCanvasDesign",
+        "parameters": [],
+        "responses": {
+          "400": {
+            "description": "Missing required fields or invalid dimensions",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Created canvas design",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "Canvas ID"
+                    },
+                    "companyId": {
+                      "type": "string",
+                      "description": "Company ID"
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": "Canvas name"
+                    },
+                    "width": {
+                      "type": "integer",
+                      "description": "Canvas width in pixels"
+                    },
+                    "height": {
+                      "type": "integer",
+                      "description": "Canvas height in pixels"
+                    },
+                    "format": {
+                      "type": "string",
+                      "description": "Named canvas format id, when the size came from one"
+                    },
+                    "htmlContent": {
+                      "type": "string",
+                      "description": "The standalone HTML document for the canvas"
+                    },
+                    "imageId": {
+                      "type": "string",
+                      "description": "Images table id of the last render"
+                    },
+                    "imageUrl": {
+                      "type": "string",
+                      "description": "Public PNG URL of the last render"
+                    }
+                  },
+                  "description": "Canvas design"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Create a new canvas design.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID"
+                  },
+                  "name": {
+                    "type": "string",
+                    "description": "Canvas name"
+                  },
+                  "width": {
+                    "type": "integer",
+                    "description": "Canvas width in pixels"
+                  },
+                  "height": {
+                    "type": "integer",
+                    "description": "Canvas height in pixels"
+                  },
+                  "format": {
+                    "type": "string",
+                    "description": "Named canvas format id the size came from (square, portrait, story, landscape)"
+                  }
+                },
+                "required": [
+                  "companyId",
+                  "name",
+                  "width",
+                  "height"
+                ],
+                "description": "Request body for creating a canvas design"
+              }
+            }
+          },
+          "description": "Canvas to create"
+        }
+      }
+    },
+    "/api/v0/content/canvases/{canvas_id}": {
+      "get": {
+        "tags": [
+          "Content"
+        ],
+        "operationId": "content_getCanvasDesign",
+        "parameters": [
+          {
+            "name": "canvas_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Missing companyId",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Canvas design",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "Canvas ID"
+                    },
+                    "companyId": {
+                      "type": "string",
+                      "description": "Company ID"
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": "Canvas name"
+                    },
+                    "width": {
+                      "type": "integer",
+                      "description": "Canvas width in pixels"
+                    },
+                    "height": {
+                      "type": "integer",
+                      "description": "Canvas height in pixels"
+                    },
+                    "format": {
+                      "type": "string",
+                      "description": "Named canvas format id, when the size came from one"
+                    },
+                    "htmlContent": {
+                      "type": "string",
+                      "description": "The standalone HTML document for the canvas"
+                    },
+                    "imageId": {
+                      "type": "string",
+                      "description": "Images table id of the last render"
+                    },
+                    "imageUrl": {
+                      "type": "string",
+                      "description": "Public PNG URL of the last render"
+                    }
+                  },
+                  "description": "Canvas design"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Get a canvas design (includes the current HTML for the preview)."
+      },
+      "patch": {
+        "tags": [
+          "Content"
+        ],
+        "operationId": "content_updateCanvasDesign",
+        "parameters": [
+          {
+            "name": "canvas_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid fields",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Updated canvas design",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "Canvas ID"
+                    },
+                    "companyId": {
+                      "type": "string",
+                      "description": "Company ID"
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": "Canvas name"
+                    },
+                    "width": {
+                      "type": "integer",
+                      "description": "Canvas width in pixels"
+                    },
+                    "height": {
+                      "type": "integer",
+                      "description": "Canvas height in pixels"
+                    },
+                    "format": {
+                      "type": "string",
+                      "description": "Named canvas format id, when the size came from one"
+                    },
+                    "htmlContent": {
+                      "type": "string",
+                      "description": "The standalone HTML document for the canvas"
+                    },
+                    "imageId": {
+                      "type": "string",
+                      "description": "Images table id of the last render"
+                    },
+                    "imageUrl": {
+                      "type": "string",
+                      "description": "Public PNG URL of the last render"
+                    }
+                  },
+                  "description": "Canvas design"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Update a canvas design's name or size.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID"
+                  },
+                  "name": {
+                    "type": "string",
+                    "description": "New name"
+                  },
+                  "width": {
+                    "type": "integer",
+                    "description": "New width in pixels"
+                  },
+                  "height": {
+                    "type": "integer",
+                    "description": "New height in pixels"
+                  },
+                  "format": {
+                    "type": "string",
+                    "description": "Named canvas format id the size came from"
+                  }
+                },
+                "required": [
+                  "companyId"
+                ],
+                "description": "Request body for updating a canvas design"
+              }
+            }
+          },
+          "description": "Fields to update"
+        }
+      },
+      "delete": {
+        "tags": [
+          "Content"
+        ],
+        "operationId": "content_deleteCanvasDesign",
+        "parameters": [
+          {
+            "name": "canvas_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Missing companyId",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Deleted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "msg": {
+                      "type": "string",
+                      "description": "Success message"
+                    }
+                  },
+                  "description": "Success response"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Delete a canvas design."
+      }
+    },
+    "/api/v0/content/canvases/{canvas_id}/render": {
+      "post": {
+        "tags": [
+          "Content"
+        ],
+        "operationId": "content_renderCanvasDesign",
+        "parameters": [
+          {
+            "name": "canvas_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Canvas has no design yet",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials or out of credits",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "The canvas could not be rendered \u2014 not charged",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Canvas with its rendered PNG url",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "Canvas ID"
+                    },
+                    "companyId": {
+                      "type": "string",
+                      "description": "Company ID"
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": "Canvas name"
+                    },
+                    "width": {
+                      "type": "integer",
+                      "description": "Canvas width in pixels"
+                    },
+                    "height": {
+                      "type": "integer",
+                      "description": "Canvas height in pixels"
+                    },
+                    "format": {
+                      "type": "string",
+                      "description": "Named canvas format id, when the size came from one"
+                    },
+                    "htmlContent": {
+                      "type": "string",
+                      "description": "The standalone HTML document for the canvas"
+                    },
+                    "imageId": {
+                      "type": "string",
+                      "description": "Images table id of the last render"
+                    },
+                    "imageUrl": {
+                      "type": "string",
+                      "description": "Public PNG URL of the last render"
+                    }
+                  },
+                  "description": "Canvas design"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Render the canvas's saved HTML to a permanent public PNG (1 data credit)."
+      }
+    },
+    "/api/v0/content/canvases/{canvas_id}/chat": {
+      "post": {
+        "tags": [
+          "Content"
+        ],
+        "operationId": "content_canvasDesignChat",
+        "parameters": [
+          {
+            "name": "canvas_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Missing required fields",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Chat endpoint for the AI canvas builder.",
+        "description": "Shares the app builder's agent loop and typed SSE protocol (text /\ntool_call / tool_result / files_changed / done / error). The thread is the\nsource of truth: history is loaded from the canvas's stored threads, the\nuser message is persisted immediately, and the assistant message (with its\ntool-call log) is persisted when the stream ends.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID"
+                  },
+                  "message": {
+                    "type": "string",
+                    "description": "User message"
+                  },
+                  "threadId": {
+                    "type": "string",
+                    "description": "Thread to continue (defaults to the active thread)"
+                  },
+                  "clientMessageId": {
+                    "type": "string",
+                    "description": "Client-generated id for the user message"
+                  },
+                  "attachments": {
+                    "type": "array",
+                    "items": {
+                      "type": "object"
+                    },
+                    "description": "Image attachments (design references)"
+                  }
+                },
+                "required": [
+                  "companyId"
+                ],
+                "description": "Chat message for the canvas builder agent"
+              }
+            }
+          },
+          "description": "Chat message"
+        }
+      }
+    },
+    "/api/v0/content/canvases/{canvas_id}/threads": {
+      "get": {
+        "tags": [
+          "Content"
+        ],
+        "operationId": "content_listCanvasDesignThreads",
+        "parameters": [
+          {
+            "name": "canvas_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "List chat threads for a canvas ({threads, activeThreadId})."
+      },
+      "post": {
+        "tags": [
+          "Content"
+        ],
+        "operationId": "content_createCanvasDesignThread",
+        "parameters": [
+          {
+            "name": "canvas_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Missing required fields",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Create a new chat thread (becomes the active thread).",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID"
+                  },
+                  "title": {
+                    "type": "string",
+                    "description": "Thread title"
+                  }
+                },
+                "required": [
+                  "companyId"
+                ],
+                "description": "Request body for creating a chat thread"
+              }
+            }
+          },
+          "description": "Thread to create"
+        }
+      }
+    },
+    "/api/v0/content/canvases/{canvas_id}/threads/{thread_id}": {
+      "get": {
+        "tags": [
+          "Content"
+        ],
+        "operationId": "content_getCanvasDesignThread",
+        "parameters": [
+          {
+            "name": "thread_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "canvas_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Get one thread's messages."
+      },
+      "patch": {
+        "tags": [
+          "Content"
+        ],
+        "operationId": "content_updateCanvasDesignThread",
+        "parameters": [
+          {
+            "name": "thread_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "canvas_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Missing required fields",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Rename a thread (`title`) or make it active (`active: true`).",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID"
+                  },
+                  "title": {
+                    "type": "string",
+                    "description": "New thread title"
+                  },
+                  "active": {
+                    "type": "boolean",
+                    "description": "Set true to make this the active thread"
+                  }
+                },
+                "required": [
+                  "companyId"
+                ],
+                "description": "Rename or activate a chat thread"
+              }
+            }
+          },
+          "description": "Rename or activate a thread"
+        }
+      },
+      "delete": {
+        "tags": [
+          "Content"
+        ],
+        "operationId": "content_deleteCanvasDesignThread",
+        "parameters": [
+          {
+            "name": "thread_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "canvas_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Delete a thread; returns the refreshed thread view."
+      }
+    },
+    "/api/v0/content/canvases/{canvas_id}/upload": {
+      "post": {
+        "tags": [
+          "Content"
+        ],
+        "operationId": "content_canvasDesignChatUpload",
+        "parameters": [
+          {
+            "name": "canvas_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid file",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Upload an image to attach as a design reference in the AI chat."
+      }
+    },
     "/api/v0/content/strategies": {
       "get": {
         "tags": [
@@ -46139,7 +47243,7 @@
         "operationId": "landing_pages_getLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -46147,7 +47251,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -46186,7 +47290,7 @@
         "operationId": "landing_pages_updateLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -46194,7 +47298,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -46272,7 +47376,7 @@
         "operationId": "landing_pages_deleteLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -46280,7 +47384,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -55772,7 +56876,7 @@
         "operationId": "marketing_campaigns_deleteCampaignRecipient",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "recipientId",
             "in": "path",
             "required": true,
             "schema": {
@@ -55780,7 +56884,7 @@
             }
           },
           {
-            "name": "recipientId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
