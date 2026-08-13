@@ -8686,7 +8686,7 @@
         "operationId": "memories_getMemory",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8694,7 +8694,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8792,7 +8792,7 @@
         "operationId": "memories_updateMemoryRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8800,7 +8800,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8928,7 +8928,7 @@
         "operationId": "memories_deleteMemoryRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8936,7 +8936,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8987,7 +8987,7 @@
         "operationId": "memories_toggleMemoryActiveRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8995,7 +8995,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -15167,7 +15167,7 @@
           }
         },
         "summary": "Create a new AI agent.",
-        "description": "Creates a new AI agent with the specified configuration. The agent can\nbe configured with multiple channels (website widget, email, SMS, voice)\nand custom branding.",
+        "description": "Creates a new AI agent with the specified configuration. The agent can\nbe configured with multiple channels (website widget, email, SMS, WhatsApp, voice)\nand custom branding.",
         "requestBody": {
           "required": true,
           "content": {
@@ -15201,7 +15201,7 @@
                   },
                   "channelSettings": {
                     "type": "object",
-                    "description": "Multi-channel configuration: {website?: {enabled: boolean}, email?: {enabled: boolean, address?: string}, sms?: {enabled: boolean, phoneNumber?: string}, voice?: {enabled: boolean}}"
+                    "description": "Multi-channel configuration: {website?: {enabled: boolean}, email?: {enabled: boolean, address?: string}, sms?: {enabled: boolean, phoneNumber?: string}, whatsapp?: {enabled: boolean, phoneNumber?: string (Twilio WhatsApp-enabled number, E.164), integrationId?: string (Twilio integration ID), autoReply?: boolean}, voice?: {enabled: boolean}}"
                   },
                   "leadFields": {
                     "type": "array",
@@ -15775,7 +15775,7 @@
                   },
                   "channelSettings": {
                     "type": "object",
-                    "description": "Multi-channel configuration: {website?: {enabled: boolean}, email?: {enabled: boolean, address?: string}, sms?: {enabled: boolean, phoneNumber?: string}, voice?: {enabled: boolean}}"
+                    "description": "Multi-channel configuration: {website?: {enabled: boolean}, email?: {enabled: boolean, address?: string}, sms?: {enabled: boolean, phoneNumber?: string}, whatsapp?: {enabled: boolean, phoneNumber?: string (Twilio WhatsApp-enabled number, E.164), integrationId?: string (Twilio integration ID), autoReply?: boolean}, voice?: {enabled: boolean}}"
                   },
                   "leadFields": {
                     "type": "array",
@@ -15923,9 +15923,9 @@
             "required": false,
             "schema": {
               "type": "string",
-              "description": "Filter by channel (single): website, email, sms, voice, outbound_voice"
+              "description": "Filter by channel (single): website, email, sms, whatsapp, voice, outbound_voice"
             },
-            "description": "Filter by channel (single): website, email, sms, voice, outbound_voice"
+            "description": "Filter by channel (single): website, email, sms, whatsapp, voice, outbound_voice"
           },
           {
             "name": "channels",
@@ -15936,9 +15936,9 @@
               "items": {
                 "type": "string"
               },
-              "description": "Filter by multiple channels: website, email, sms, voice, outbound_voice"
+              "description": "Filter by multiple channels: website, email, sms, whatsapp, voice, outbound_voice"
             },
-            "description": "Filter by multiple channels: website, email, sms, voice, outbound_voice"
+            "description": "Filter by multiple channels: website, email, sms, whatsapp, voice, outbound_voice"
           },
           {
             "name": "startDate",
@@ -16028,7 +16028,7 @@
                           },
                           "channel": {
                             "type": "string",
-                            "description": "Communication channel: website, email, sms, voice, outbound_voice"
+                            "description": "Communication channel: website, email, sms, whatsapp, voice, outbound_voice"
                           },
                           "contactInfo": {
                             "type": "object",
@@ -16172,7 +16172,7 @@
                     },
                     "channel": {
                       "type": "string",
-                      "description": "Communication channel: website, email, sms, voice, outbound_voice"
+                      "description": "Communication channel: website, email, sms, whatsapp, voice, outbound_voice"
                     },
                     "contactInfo": {
                       "type": "object",
@@ -19243,7 +19243,7 @@
         "operationId": "lists_getRowHistory",
         "parameters": [
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19251,7 +19251,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30107,7 +30107,7 @@
         "operationId": "inbox_sendDraft",
         "parameters": [
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30115,7 +30115,7 @@
             }
           },
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30208,7 +30208,7 @@
         "operationId": "inbox_deleteDraft",
         "parameters": [
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30216,7 +30216,7 @@
             }
           },
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -37669,7 +37669,7 @@
         "operationId": "content_getCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -37677,7 +37677,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -37716,7 +37716,7 @@
         "operationId": "content_updateCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -37724,7 +37724,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -37802,7 +37802,7 @@
         "operationId": "content_deleteCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -37810,7 +37810,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -47243,7 +47243,7 @@
         "operationId": "landing_pages_getLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -47251,7 +47251,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -47290,7 +47290,7 @@
         "operationId": "landing_pages_updateLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -47298,7 +47298,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -47376,7 +47376,7 @@
         "operationId": "landing_pages_deleteLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -47384,7 +47384,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -56876,7 +56876,7 @@
         "operationId": "marketing_campaigns_deleteCampaignRecipient",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "recipientId",
             "in": "path",
             "required": true,
             "schema": {
@@ -56884,7 +56884,7 @@
             }
           },
           {
-            "name": "recipientId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
