@@ -919,7 +919,7 @@
         "operationId": "documents_getDocumentContents",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -927,7 +927,7 @@
             }
           },
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -986,7 +986,7 @@
         "operationId": "documents_getDocument",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -994,7 +994,7 @@
             }
           },
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -6786,7 +6786,7 @@
         "operationId": "projects_getProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -6794,7 +6794,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -6929,7 +6929,7 @@
         "operationId": "projects_updateProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -6937,7 +6937,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -7098,7 +7098,7 @@
         "operationId": "projects_deleteProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -7106,7 +7106,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8005,7 +8005,7 @@
         "operationId": "projects_exportProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8013,7 +8013,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8105,7 +8105,7 @@
         "operationId": "projects_publishFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8113,7 +8113,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8260,7 +8260,7 @@
         "operationId": "projects_unpublishFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8268,7 +8268,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -16106,7 +16106,7 @@
         "operationId": "agents_checkConversationActivity",
         "parameters": [
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -16114,7 +16114,7 @@
             }
           },
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -16176,7 +16176,7 @@
         "operationId": "agents_getConversationDetails",
         "parameters": [
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -16184,7 +16184,7 @@
             }
           },
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18758,7 +18758,7 @@
         "operationId": "lists_deleteTableAction",
         "parameters": [
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18766,7 +18766,7 @@
             }
           },
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18864,7 +18864,7 @@
         "operationId": "lists_getActionSummary",
         "parameters": [
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18872,7 +18872,7 @@
             }
           },
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18992,7 +18992,7 @@
         "operationId": "lists_getActionQueueStatus",
         "parameters": [
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19000,7 +19000,7 @@
             }
           },
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19549,7 +19549,7 @@
         "operationId": "lists_deleteHeader",
         "parameters": [
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19557,7 +19557,7 @@
             }
           },
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19623,7 +19623,7 @@
         "operationId": "lists_editHeader",
         "parameters": [
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19631,7 +19631,7 @@
             }
           },
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -20112,8 +20112,8 @@
               }
             }
           },
-          "200": {
-            "description": "The matching leads",
+          "202": {
+            "description": "Search accepted \u2014 poll GET /lead-searches/{searchId} for results",
             "content": {
               "application/json": {
                 "schema": {
@@ -20121,26 +20121,15 @@
                   "properties": {
                     "status": {
                       "type": "string",
-                      "description": "Always \"ok\" for a successful search."
+                      "description": "Always 'pending' \u2014 the search has started and has not finished yet."
                     },
-                    "count": {
-                      "type": "integer",
-                      "description": "Number of leads returned."
+                    "searchId": {
+                      "type": "string",
+                      "description": "ID of the saved search. Poll GET /lead-searches/{searchId} with this to get the status and, once complete, the leads."
                     },
                     "dataCredits": {
                       "type": "number",
-                      "description": "The billing principal's data credit balance after this search was charged."
-                    },
-                    "results": {
-                      "type": "array",
-                      "items": {
-                        "type": "object"
-                      },
-                      "description": "The matching leads, each a dict of smart-list field names to values (firstName, lastName, linkedinUrl, headline, positionTitle, companyName, location, \u2026)."
-                    },
-                    "fieldLabels": {
-                      "type": "object",
-                      "description": "Display label for each field present in the results, for use as table column headers."
+                      "description": "The billing principal's data credit balance. The search has not been charged yet \u2014 leads are charged when it finishes."
                     },
                     "priorityFields": {
                       "type": "array",
@@ -20150,14 +20139,14 @@
                       "description": "Field names to show first, in order, when rendering the results as a table."
                     }
                   },
-                  "description": "The leads matching a Sales Navigator search. Each entry in `results` is a ready-to-use lead row whose keys are smart-list field names, so a selection can be posted straight to POST /lists/{listId}/rows with createColumns=true. Fields with no value are omitted from a row rather than returned empty."
+                  "description": "A Sales Navigator search that has been accepted and is now running. The leads are NOT in this response: poll GET /lead-searches/{searchId} until its status is no longer 'pending', then read them from that response's `results`. Do not call the search endpoint again while a search is pending \u2014 each call runs and charges for a new search, while polling costs nothing."
                 }
               }
             }
           }
         },
-        "summary": "Run a Sales Navigator search and return the matching leads.",
-        "description": "Nothing is written to a smart list: the caller reviews the results and adds\nthe ones it wants through `POST /lists/{listId}/rows`, which is what the\ndashboard does once the user has picked rows.\n\nThe search is specified either by a Sales Navigator people-search URL\n(`searchMode` \"url\") or by structured filters \u2014 jobTitle, location,\ncurrentCompany, school, keywords (`searchMode` \"filters\"). Each result is a\nlead row (firstName, lastName, linkedinUrl, headline, positionTitle,\ncompanyName, location, \u2026) ready to be added to a list as-is.\n\nNo LinkedIn account or session cookie is required: the search is resolved\nfrom public profile data.\n\nCosts 1 data credit per lead returned \u2014 the same balance enrichment and\nPeople Search draw from. A search that matches nobody is free, and principals\nwith Audience Builder are not charged at all.",
+        "summary": "Start a Sales Navigator search. Returns immediately with a search id.",
+        "description": "**The search runs in the background \u2014 this does NOT return the leads.** It\nresponds 202 with a `searchId`; poll `GET /lead-searches/{searchId}` until\nits `status` is no longer \"pending\", then read the leads from `results`.\nA search takes minutes, because each matching profile is enriched\nindividually upstream.\n\n**Do not retry this endpoint while a search is pending.** Every call starts\na new search and charges for it again; polling the id you already have is\nfree. If a call appears to time out, the search is still running \u2014 find it\nin `GET /lead-searches?source=sales_navigator` rather than re-running it.\n\nNothing is written to a smart list: the caller reviews the results and adds\nthe ones it wants through `POST /lists/{listId}/rows`, which is what the\ndashboard does once the user has picked rows.\n\nThe search is specified either by a Sales Navigator people-search URL\n(`searchMode` \"url\") or by structured filters \u2014 jobTitle, location,\ncurrentCompany, school, keywords (`searchMode` \"filters\"). Each result is a\nlead row (firstName, lastName, linkedinUrl, headline, positionTitle,\ncompanyName, location, \u2026) ready to be added to a list as-is.\n\nNo LinkedIn account or session cookie is required: the search is resolved\nfrom public profile data.\n\nCosts 1 data credit per lead returned, charged when the search finishes \u2014\nthe same balance enrichment and People Search draw from. A search that\nmatches nobody or fails is free, and principals with Audience Builder are\nnot charged at all. Credits are checked against the requested ceiling before\nthe search starts.",
         "requestBody": {
           "required": true,
           "content": {
@@ -20214,7 +20203,7 @@
                     "description": "Company ID that owns the list. Required when authenticating with a personal access key (pak_\u2026) \u2014 the key is not tied to a specific company so the server cannot infer it. Required when authenticating with a company API key only if the key belongs to a user who has access to multiple companies; otherwise it defaults to the key's company. Optional for JWT (dashboard) auth \u2014 defaults to the user's active company."
                   }
                 },
-                "description": "Request body for a Sales Navigator lead search. Either paste a Sales Navigator people-search URL (searchMode 'url') or supply structured filters (searchMode 'filters'). Returns the matching leads directly \u2014 nothing is written to a smart list. Add the ones you want with POST /lists/{listId}/rows. No LinkedIn account or session cookie is required. Costs 1 data credit per lead returned \u2014 the same balance enrichment and People Search draw from; a search that matches nobody is free."
+                "description": "Request body for a Sales Navigator lead search. Either paste a Sales Navigator people-search URL (searchMode 'url') or supply structured filters (searchMode 'filters'). The search runs in the background: the response carries a searchId to poll, not the leads. Nothing is written to a smart list \u2014 once the search completes, add the leads you want with POST /lists/{listId}/rows. No LinkedIn account or session cookie is required. Costs 1 data credit per lead returned, charged when the search finishes \u2014 the same balance enrichment and People Search draw from; a search that matches nobody is free."
               }
             }
           },
@@ -20324,6 +20313,19 @@
                           "query": {
                             "type": "object",
                             "description": "The search as it was submitted, in the shape that surface accepts \u2014 enough to run it again."
+                          },
+                          "status": {
+                            "type": "string",
+                            "description": "Where the search is up to. One of: pending, complete, failed. 'pending' means it is still running \u2014 poll until it changes. 'complete' means `results` is final (possibly empty, if nothing matched). 'failed' means it did not run to completion and nothing was charged; see `error`.",
+                            "enum": [
+                              "pending",
+                              "complete",
+                              "failed"
+                            ]
+                          },
+                          "error": {
+                            "type": "string",
+                            "description": "Why the search failed. Null unless status is 'failed'."
                           },
                           "resultCount": {
                             "type": "integer",
@@ -20449,6 +20451,19 @@
                       "type": "object",
                       "description": "The search as it was submitted, in the shape that surface accepts \u2014 enough to run it again."
                     },
+                    "status": {
+                      "type": "string",
+                      "description": "Where the search is up to. One of: pending, complete, failed. 'pending' means it is still running \u2014 poll until it changes. 'complete' means `results` is final (possibly empty, if nothing matched). 'failed' means it did not run to completion and nothing was charged; see `error`.",
+                      "enum": [
+                        "pending",
+                        "complete",
+                        "failed"
+                      ]
+                    },
+                    "error": {
+                      "type": "string",
+                      "description": "Why the search failed. Null unless status is 'failed'."
+                    },
                     "resultCount": {
                       "type": "integer",
                       "description": "How many results the search returned. May exceed the number of rows stored for very large searches."
@@ -20470,10 +20485,21 @@
                       "items": {
                         "type": "object"
                       },
-                      "description": "The stored result rows."
+                      "description": "The stored result rows. Empty while status is 'pending'."
+                    },
+                    "fieldLabels": {
+                      "type": "object",
+                      "description": "Display label for each field present in the results, for use as table column headers."
+                    },
+                    "priorityFields": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "Field names to show first, in order, when rendering the results as a table."
                     }
                   },
-                  "description": "A saved lead search and the rows it returned, exactly as returned. Each row's keys are smart-list field names, so a selection can be posted straight to POST /lists/{listId}/rows with createColumns=true \u2014 no need to pay to run the search again."
+                  "description": "A saved lead search and the rows it returned, exactly as returned. Each row's keys are smart-list field names, so a selection can be posted straight to POST /lists/{listId}/rows with createColumns=true \u2014 no need to pay to run the search again. This is also the endpoint to poll while a search is running: check `status`, and treat `results` as final only once it is 'complete'."
                 }
               }
             }
@@ -25078,7 +25104,7 @@
         "operationId": "sequences_editSequenceExecution",
         "parameters": [
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25086,7 +25112,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25175,7 +25201,7 @@
         "operationId": "sequences_previewSequenceExecution",
         "parameters": [
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25183,7 +25209,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26886,7 +26912,7 @@
         "operationId": "sequences_getMemberProfile",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "memberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26894,7 +26920,7 @@
             }
           },
           {
-            "name": "memberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -47956,7 +47982,7 @@
         "operationId": "landing_pages_getLandingPageThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -47964,7 +47990,7 @@
             }
           },
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -48003,7 +48029,7 @@
         "operationId": "landing_pages_updateLandingPageThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -48011,7 +48037,7 @@
             }
           },
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -48089,7 +48115,7 @@
         "operationId": "landing_pages_deleteLandingPageThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -48097,7 +48123,7 @@
             }
           },
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -56406,7 +56432,7 @@
         "operationId": "marketing_campaigns_restoreCampaignVersion",
         "parameters": [
           {
-            "name": "versionId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -56414,7 +56440,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -57601,7 +57627,7 @@
         "operationId": "marketing_campaigns_deleteCampaignRecipient",
         "parameters": [
           {
-            "name": "recipientId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -57609,7 +57635,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "recipientId",
             "in": "path",
             "required": true,
             "schema": {
