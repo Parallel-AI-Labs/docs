@@ -3,9 +3,9 @@
   "theme": "mint",
   "name": "Parallel AI",
   "colors": {
-    "primary": "#FA66C6",
-    "light": "#FA66C6",
-    "dark": "#FA66C6"
+    "primary": "#027BA6",
+    "light": "#027BA6",
+    "dark": "#027BA6"
   },
   "favicon": "/favicon.png",
   "logo": {
