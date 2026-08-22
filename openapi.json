@@ -72,7 +72,8 @@
       "description": "Manage incoming messages and communications across channels."
     },
     {
-      "name": "Integrations"
+      "name": "Integrations",
+      "description": "Look up IDs from connected third-party accounts (HeyReach, Salesforge, Twilio, Meta Ads, CRMs). These are discovery endpoints: call them to resolve the campaignId, workspaceId, sequenceId, audienceId, phone number, or crmIntegrationId that other actions require. Start with integrations_getIntegrationsByType to find a valid integration ID, then call the provider-specific endpoint with it."
     },
     {
       "name": "Keys",
@@ -111,10 +112,12 @@
       "description": "Track keywords across social media platforms (Reddit, Hacker News, LinkedIn, X, Quora) and discover relevant conversations. Create monitors to track specific keywords, receive notifications when mentions are found, and generate AI-powered reply suggestions to engage with your audience."
     },
     {
-      "name": "Organizations"
+      "name": "Organizations",
+      "description": "List the organizations the authenticated user belongs to. An organization is the top-level grouping above companies \u2014 use it to discover which company workspaces are reachable before calling platform_list_companies."
     },
     {
-      "name": "People"
+      "name": "People",
+      "description": "Identity graph for finding people in the system. One resolved profile per real human, merged across sequence members, list rows, agent conversations, and marketing campaign recipients, so the same person found in four places is one result instead of four. Start with people_peopleSearch \u2014 a name, email, or phone in one call, resolved through the graph rather than scanning each source separately. It returns a `people` array of resolved profiles plus the matching records bucketed by source (sequenceMembers, listRows, agentConversations, marketingCampaignRecipients). Search works even before the graph is populated: it falls back to a direct scan. From a search hit, people_getPerson returns one person\u2019s full profile (every identifier, touchpoints grouped by source) and people_getPersonActivity returns their behavioural timeline (opens, clicks, bookings, calls), newest first, with bot traffic excluded by default. people_getPeople browses and filters the whole graph, and people_getPeopleStats summarizes it. The graph is rebuilt by a nightly background job \u2014 there is no API to trigger it."
     },
     {
       "name": "Projects",
@@ -919,7 +922,7 @@
         "operationId": "documents_getDocumentContents",
         "parameters": [
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -927,7 +930,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -986,7 +989,7 @@
         "operationId": "documents_getDocument",
         "parameters": [
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -994,7 +997,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -3133,7 +3136,7 @@
         "operationId": "keys_getApiKey",
         "parameters": [
           {
-            "name": "name",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -3141,7 +3144,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "name",
             "in": "path",
             "required": true,
             "schema": {
@@ -8708,7 +8711,7 @@
         "operationId": "memories_getMemory",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8716,7 +8719,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8814,7 +8817,7 @@
         "operationId": "memories_updateMemoryRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8822,7 +8825,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8950,7 +8953,7 @@
         "operationId": "memories_deleteMemoryRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8958,7 +8961,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -9009,7 +9012,7 @@
         "operationId": "memories_toggleMemoryActiveRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -9017,7 +9020,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18764,7 +18767,7 @@
         "operationId": "lists_deleteTableAction",
         "parameters": [
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18772,7 +18775,7 @@
             }
           },
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18870,7 +18873,7 @@
         "operationId": "lists_getActionSummary",
         "parameters": [
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18878,7 +18881,7 @@
             }
           },
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18998,7 +19001,7 @@
         "operationId": "lists_getActionQueueStatus",
         "parameters": [
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19006,7 +19009,7 @@
             }
           },
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19335,7 +19338,7 @@
         "operationId": "lists_getRowHistory",
         "parameters": [
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19343,7 +19346,7 @@
             }
           },
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19555,7 +19558,7 @@
         "operationId": "lists_deleteHeader",
         "parameters": [
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19563,7 +19566,7 @@
             }
           },
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19629,7 +19632,7 @@
         "operationId": "lists_editHeader",
         "parameters": [
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19637,7 +19640,7 @@
             }
           },
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23122,7 +23125,7 @@
         "operationId": "sequences_updateSequenceStep",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23130,7 +23133,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23404,7 +23407,7 @@
         "operationId": "sequences_deleteSequenceStep",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23412,7 +23415,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24134,7 +24137,7 @@
         "operationId": "sequences_getSequenceMemberTimeline",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24142,7 +24145,7 @@
             }
           },
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24540,7 +24543,7 @@
         "operationId": "sequences_triggerSequenceMember",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24548,7 +24551,7 @@
             }
           },
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24616,7 +24619,7 @@
         "operationId": "sequences_removeSequenceMember",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24624,7 +24627,7 @@
             }
           },
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25110,7 +25113,7 @@
         "operationId": "sequences_editSequenceExecution",
         "parameters": [
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25118,7 +25121,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25207,7 +25210,7 @@
         "operationId": "sequences_previewSequenceExecution",
         "parameters": [
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25215,7 +25218,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26770,7 +26773,7 @@
         "operationId": "sequences_testSequenceStep",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26778,7 +26781,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26832,7 +26835,7 @@
         "operationId": "sequences_sendTestEmail",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26840,7 +26843,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27932,7 +27935,7 @@
           }
         },
         "summary": "Search for people by name, email, or phone across every source in one call.",
-        "description": "Resolves matches through the identity graph, so records that belong to the\nsame human are attributed to one person rather than returned as unrelated\nhits. Each per-source match carries the `personId` it resolved to, and the\n`people` array holds the resolved profiles.\n\nFalls back to a direct per-source scan for companies that have not yet built\ntheir identity graph (see POST /people/backfill)."
+        "description": "Resolves matches through the identity graph, so records that belong to the\nsame human are attributed to one person rather than returned as unrelated\nhits. Each per-source match carries the `personId` it resolved to, and the\n`people` array holds the resolved profiles.\n\nFalls back to a direct per-source scan for companies that have not yet built\ntheir identity graph (populated by a nightly background job)."
       }
     },
     "/api/v0/people": {
@@ -28254,224 +28257,6 @@
           }
         },
         "summary": "Summary of the company's identity graph, plus its most recent backfill run."
-      }
-    },
-    "/api/v0/people/backfill": {
-      "post": {
-        "tags": [
-          "People"
-        ],
-        "operationId": "people_startPeopleBackfill",
-        "parameters": [],
-        "responses": {
-          "400": {
-            "description": "Missing companyId",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Invalid credentials",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "200": {
-            "description": "The queued (or already running) backfill run",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "id": {
-                      "type": "string",
-                      "description": "Run ID"
-                    },
-                    "status": {
-                      "type": "string",
-                      "description": "queued, running, completed, or failed"
-                    },
-                    "personsCreated": {
-                      "type": "integer",
-                      "description": "People created by this run"
-                    },
-                    "personsUpdated": {
-                      "type": "integer",
-                      "description": "People merged by this run"
-                    },
-                    "linksCreated": {
-                      "type": "integer",
-                      "description": "Touchpoints created"
-                    },
-                    "recordsScanned": {
-                      "type": "integer",
-                      "description": "Source records scanned"
-                    },
-                    "sourceStats": {
-                      "type": "object",
-                      "description": "Records scanned per source type"
-                    },
-                    "error": {
-                      "type": "string",
-                      "description": "Failure reason when status is failed"
-                    },
-                    "startedDate": {
-                      "type": "string",
-                      "description": "When the run started (ISO 8601)"
-                    },
-                    "completedDate": {
-                      "type": "string",
-                      "description": "When the run finished (ISO 8601)"
-                    },
-                    "created_date": {
-                      "type": "string",
-                      "description": "When the run was queued (ISO 8601)"
-                    }
-                  },
-                  "description": "An identity graph backfill run"
-                }
-              }
-            }
-          }
-        },
-        "summary": "Update the company's identity graph from every source.",
-        "description": "Incremental by default: only records changed since the last successful run\nare scanned, which is the common case once the graph exists. Pass\n`mode=full` to force a complete rebuild -- that re-reads every source record\nand takes hours at scale.\n\nRuns in the background and is idempotent, so re-running converges rather\nthan duplicating. If a run is already in flight, that run is returned\ninstead of starting a second one."
-      }
-    },
-    "/api/v0/people/backfill/{runId}": {
-      "get": {
-        "tags": [
-          "People"
-        ],
-        "operationId": "people_getPeopleBackfillRun",
-        "parameters": [
-          {
-            "name": "runId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "400": {
-            "description": "Missing companyId",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Invalid credentials",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Run not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "200": {
-            "description": "A backfill run",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "id": {
-                      "type": "string",
-                      "description": "Run ID"
-                    },
-                    "status": {
-                      "type": "string",
-                      "description": "queued, running, completed, or failed"
-                    },
-                    "personsCreated": {
-                      "type": "integer",
-                      "description": "People created by this run"
-                    },
-                    "personsUpdated": {
-                      "type": "integer",
-                      "description": "People merged by this run"
-                    },
-                    "linksCreated": {
-                      "type": "integer",
-                      "description": "Touchpoints created"
-                    },
-                    "recordsScanned": {
-                      "type": "integer",
-                      "description": "Source records scanned"
-                    },
-                    "sourceStats": {
-                      "type": "object",
-                      "description": "Records scanned per source type"
-                    },
-                    "error": {
-                      "type": "string",
-                      "description": "Failure reason when status is failed"
-                    },
-                    "startedDate": {
-                      "type": "string",
-                      "description": "When the run started (ISO 8601)"
-                    },
-                    "completedDate": {
-                      "type": "string",
-                      "description": "When the run finished (ISO 8601)"
-                    },
-                    "created_date": {
-                      "type": "string",
-                      "description": "When the run was queued (ISO 8601)"
-                    }
-                  },
-                  "description": "An identity graph backfill run"
-                }
-              }
-            }
-          }
-        },
-        "summary": "Poll a backfill run's progress."
       }
     },
     "/api/v0/people/{personId}/activity": {
@@ -56797,7 +56582,7 @@
         "operationId": "marketing_campaigns_restoreCampaignVersion",
         "parameters": [
           {
-            "name": "versionId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -56805,7 +56590,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -57992,7 +57777,7 @@
         "operationId": "marketing_campaigns_deleteCampaignRecipient",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "recipientId",
             "in": "path",
             "required": true,
             "schema": {
@@ -58000,7 +57785,7 @@
             }
           },
           {
-            "name": "recipientId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
