@@ -1,0 +1,175 @@
+{
+  "guide": [
+    {
+      "group": "Welcome",
+      "icon": "hand-wave",
+      "pages": [
+        "getting-started"
+      ]
+    },
+    {
+      "group": "Overview",
+      "icon": "compass",
+      "pages": [
+        "overview/overview",
+        "overview/employees",
+        "overview/chat",
+        "overview/scheduled",
+        "overview/knowledge-base",
+        "overview/dashboard"
+      ]
+    },
+    {
+      "group": "Find & Enrich",
+      "icon": "magnifying-glass",
+      "pages": [
+        "find-enrich/overview",
+        "find-enrich/people",
+        "find-enrich/smart-lists",
+        {
+          "group": "Lead Data",
+          "icon": "user-magnifying-glass",
+          "pages": [
+            "find-enrich/lead-data",
+            "find-enrich/lead-data/enrichment",
+            "find-enrich/lead-data/people-search",
+            "find-enrich/lead-data/sales-navigator",
+            "find-enrich/lead-data/lead-credits"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "Engage",
+      "icon": "paper-plane",
+      "pages": [
+        "engage/overview",
+        "engage/sequences",
+        "engage/inbox",
+        {
+          "group": "Content Engine",
+          "icon": "bullhorn",
+          "pages": [
+            "engage/content-engine",
+            "engage/content-engine/icp",
+            "engage/content-engine/content-strategy",
+            "engage/content-engine/brand-voice",
+            "engage/content-engine/brand-images",
+            "engage/content-engine/content-campaigns",
+            "engage/content-engine/content",
+            "engage/content-engine/seo-keyword-research",
+            "engage/content-engine/seo-domain-overview",
+            "engage/content-engine/seo-keywords",
+            "engage/content-engine/seo-site-audit",
+            "engage/content-engine/seo-opportunities",
+            "engage/content-engine/images",
+            "engage/content-engine/canvas",
+            "engage/content-engine/audio",
+            "engage/content-engine/video",
+            "engage/content-engine/voices"
+          ]
+        },
+        {
+          "group": "Marketing Campaigns",
+          "icon": "envelopes-bulk",
+          "pages": [
+            "engage/marketing-campaigns",
+            "engage/marketing-campaigns/campaign-templates"
+          ]
+        },
+        "engage/keyword-monitoring"
+      ]
+    },
+    {
+      "group": "Inbound",
+      "icon": "door-open",
+      "pages": [
+        "inbound/overview",
+        {
+          "group": "Agents",
+          "icon": "robot",
+          "pages": [
+            "inbound/agents",
+            "inbound/agents/whatsapp"
+          ]
+        },
+        {
+          "group": "Websites",
+          "icon": "browser",
+          "pages": [
+            "inbound/websites",
+            "inbound/websites/website-domains"
+          ]
+        },
+        {
+          "group": "Landing Pages",
+          "icon": "file",
+          "pages": [
+            "inbound/landing-pages",
+            "inbound/landing-pages/brand-kit",
+            "inbound/landing-pages/tracking-domains"
+          ]
+        },
+        "inbound/app-builder"
+      ]
+    },
+    {
+      "group": "Apps",
+      "icon": "grid-2",
+      "pages": [
+        "apps"
+      ]
+    },
+    {
+      "group": "Settings",
+      "icon": "gear",
+      "pages": [
+        "settings/overview",
+        "settings/integrations",
+        "settings/collaborators"
+      ]
+    },
+    {
+      "group": "Account",
+      "icon": "circle-user",
+      "pages": [
+        "account/overview",
+        "account/companies",
+        "account/profile",
+        "account/support",
+        "account/admin"
+      ]
+    }
+  ],
+  "developer": [
+    {
+      "group": "Get Started",
+      "icon": "rocket",
+      "pages": [
+        "introduction",
+        "quickstart",
+        "authentication",
+        "api-reference/introduction"
+      ]
+    },
+    {
+      "group": "Platform",
+      "icon": "server",
+      "pages": [
+        "platform/api-keys",
+        "platform/errors",
+        "platform/pagination"
+      ]
+    },
+    {
+      "group": "Integrations",
+      "icon": "plug",
+      "pages": [
+        "integrations/mcp",
+        "integrations/openai-compatibility",
+        "integrations/claude-code",
+        "integrations/browser-automation"
+      ]
+    }
+  ]
+}
