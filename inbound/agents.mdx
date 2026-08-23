@@ -1,0 +1,471 @@
+---
+title: "Agents"
+description: "Deploy chatbots on your website, by phone, and in messaging apps to answer questions and capture leads."
+icon: "robot"
+---
+
+Build AI-powered chatbots that you can add to your website. Agents handle visitor questions, capture leads, and provide instant support 24/7.
+
+> **Agents vs. AI Employees:** An [AI Employee](/overview/employees) is the assistant you configure and chat with inside the app. An **Agent** is a public-facing chatbot you embed on your website — each agent is *powered by* one of your AI employees but has its own system prompt, appearance, and lead-capture settings.
+
+## What Are Agents?
+
+Agents are customer-facing assistants powered by your AI employees. Unlike Chat — which is for you and your team — an agent talks to the outside world. They:
+
+- Answer visitor questions automatically
+- Use your knowledge base to give accurate responses
+- Capture leads and contact information
+- Provide instant support without human intervention
+- Work around the clock
+
+## Channels
+
+One agent can answer on several channels at once. Each channel is a tab in the agent editor, and each is enabled independently.
+
+| Channel | What it does |
+|---------|--------------|
+| **Widget** | A chat bubble embedded on your website |
+| **Webpage** | A standalone, shareable chat page — no embedding required |
+| **SMS** | Replies to text messages sent to a connected number |
+| **WhatsApp** | Replies to WhatsApp messages — see [WhatsApp](/inbound/agents/whatsapp) |
+| **Voice** | Answers phone calls with a spoken voice, and can place outbound test calls |
+| **Email** | Replies to messages sent to a connected mailbox |
+
+The other tabs configure the agent rather than adding a channel:
+
+- **General** — name, system prompt, knowledge base access, contact capture, and response delay
+- **Integrations** *(Beta)* — let the agent use connected tools while it talks
+- **Handoff** — hand a conversation to a human when the agent can't help
+- **Notifications** — who gets told about new conversations and captured leads
+
+### Voice agents
+
+Voice agents answer a phone number on a connected telephony integration. You choose the voice and language, and can let the agent collect contact details during the call, send an SMS mid-call, or hand off to a person. Use **Test Call** on the agent row to have it call you so you can hear it before going live.
+
+## Conversations
+
+The **Conversations** item under Agents shows every conversation your agents have had, across all channels, in a two-panel reader: the list on the left, the full transcript on the right. Use it to check answer quality, find captured leads, and spot questions the agent handled badly.
+
+## Creating Your First Agent
+
+### Step 1: Open Agents
+
+1. Select your company from the sidebar
+2. Click **Agents** (under Inbound)
+3. Click **Create Agent** (or the **+** button)
+
+### Step 2: Basic Settings
+
+Fill in the essentials:
+
+- **Name:** What you'll call this agent internally
+- **Avatar:** Upload an image for your agent
+- **Employee:** Select which AI employee powers this agent
+
+### Step 3: Choose a System Prompt Template
+
+Select how your agent should behave:
+
+**Support Agent:**
+- Answers questions based on your training data
+- Stays focused on helping customers
+- Professional and helpful tone
+
+**Sales Assistant:**
+- Qualifies prospects with questions
+- Collects contact information
+- Guides visitors toward next steps
+
+**Custom:**
+- Write your own instructions from scratch
+- Full control over behavior
+
+### Step 4: Configure Responses
+
+- **Fallback Response:** What to say when the agent doesn't know the answer
+- **Welcome Message:** The first message visitors see
+
+**Example Welcome Message:**
+```
+Hi! I'm here to help answer your questions.
+What can I assist you with today?
+```
+
+### Step 5: Save and Test
+
+1. Click **Save** or **Create**
+2. Use the **Preview** to test your agent
+3. Refine settings as needed
+
+## Adding the Agent to Your Website
+
+### Getting the Embed Code
+
+1. Go to your agent in the list
+2. Click the **three-dot menu** (⋮)
+3. Select **Get Embed Code**
+4. Copy the code snippet
+
+### Installing on Your Website
+
+Paste the code before the `</body>` tag on your website:
+
+```html
+<script>
+  window.agentConfig = &#123;
+    agentId: 'your-agent-id',
+    position: 'bottom-right',
+    theme: 'light'
+  &#125;;
+</script>
+<script src="https://yourplatform.com/widget.js"></script>
+```
+
+### Platform-Specific Instructions
+
+**WordPress:**
+1. Go to Appearance → Theme Editor
+2. Edit footer.php
+3. Paste the code before `</body>`
+
+Or use a plugin like "Insert Headers and Footers"
+
+**Shopify:**
+1. Go to Online Store → Themes
+2. Click Actions → Edit code
+3. Find theme.liquid
+4. Paste before `</body>`
+
+**Wix:**
+1. Go to Settings → Custom Code
+2. Add new custom code
+3. Paste the embed code
+4. Set to load on all pages
+
+**Squarespace:**
+1. Go to Settings → Advanced → Code Injection
+2. Paste in the Footer section
+3. Save
+
+**Other Platforms:**
+Look for "Custom Code," "Footer Scripts," or "Code Injection" in your platform's settings.
+
+## Customizing Your Agent's Appearance
+
+### Widget Options
+
+| Setting | Options | Description |
+|---------|---------|-------------|
+| **Position** | bottom-right, bottom-left | Where the chat button appears |
+| **Theme** | light, dark, auto | Color scheme |
+| **Primary Color** | Any hex color | Your brand color |
+| **Greeting** | Custom text | Initial message shown |
+| **Placeholder** | Custom text | Text in input field |
+
+### Updating Appearance
+
+1. Edit your agent
+2. Find the appearance settings
+3. Customize colors, position, and messages
+4. Save changes
+5. Get new embed code if needed
+
+## Connecting to Your Knowledge Base
+
+Your agent can use your [Knowledge Base](/overview/knowledge-base) to answer questions accurately.
+
+### How It Works
+
+1. A visitor asks a question
+2. The AI searches your knowledge base
+3. Finds relevant information
+4. Generates an accurate response based on your content
+
+### Setting Up Knowledge Access
+
+1. Make sure your AI employee has access to the knowledge base
+2. Upload relevant documents to your knowledge base
+3. The agent automatically uses this information
+
+### Tips for Better Responses
+
+- Add FAQ documents to your knowledge base
+- Include product information and pricing
+- Upload support articles and guides
+- Keep information up to date
+
+## Lead Capture
+
+Collect visitor information to follow up later.
+
+### Setting Up Lead Capture
+
+1. Edit your agent
+2. Find **Lead Capture** settings
+3. Enable lead capture
+4. Configure required fields
+
+### Fields You Can Collect
+
+- Name
+- Email address
+- Phone number
+- Company name
+- Custom fields
+
+### When to Ask for Information
+
+- At the start of the conversation
+- After answering initial questions
+- When visitor asks for a callback
+- Before providing detailed information
+
+### What Happens to Leads
+
+Captured leads are saved and can:
+- Appear in your conversations list
+- Trigger workflows
+- Sync to your CRM via integrations
+- Generate notifications
+
+## Viewing Agent Conversations
+
+See all interactions your agent has with visitors.
+
+### Accessing Conversations
+
+1. Go to **Agents**
+2. Click the **Conversations** tab
+3. Browse all visitor chats
+
+### What You Can See
+
+- Full conversation history
+- Visitor information (if collected)
+- When conversations happened
+- How the agent responded
+
+### Using Conversations to Improve
+
+- Find questions the agent couldn't answer
+- Add missing information to your knowledge base
+- Update your agent's instructions
+- Identify common visitor needs
+
+## System Prompt Best Practices
+
+Your system prompt tells the agent how to behave.
+
+### What to Include
+
+**Role Definition:**
+```
+You are a helpful customer support assistant for [Company Name].
+Your job is to answer questions about our products and services.
+```
+
+**Tone and Style:**
+```
+Be friendly and professional. Use simple language.
+If you don't know something, say so honestly.
+```
+
+**Boundaries:**
+```
+Only answer questions about our company and products.
+Don't discuss competitors or unrelated topics.
+Never share confidential information.
+```
+
+**Fallback Behavior:**
+```
+If you can't answer a question, offer to connect the
+visitor with a human representative.
+```
+
+### Example Support Agent Prompt
+
+```
+### Role
+You are a customer support agent for [Company Name].
+Your job is to help visitors with questions about
+our products and services.
+
+### Guidelines
+- Be friendly, helpful, and professional
+- Answer questions based on the knowledge provided
+- Keep responses concise and clear
+- If you don't know something, say so
+
+### Boundaries
+- Only discuss our company and products
+- Don't make promises about pricing or availability
+- Offer to connect with humans for complex issues
+
+### Collecting Information
+When appropriate, ask for the visitor's name and
+email so we can follow up.
+```
+
+## Testing Your Agent
+
+### Preview Mode
+
+1. Go to your agent settings
+2. Click **Preview** or **Test**
+3. Chat with your agent as a visitor would
+
+### What to Test
+
+- Does the welcome message appear correctly?
+- Are responses accurate and helpful?
+- Does it handle unknown questions gracefully?
+- Is lead capture working?
+- Does the design look right?
+
+### Testing on Your Website
+
+After installing:
+1. Visit your website in a new browser/incognito window
+2. Click the chat button
+3. Have a conversation
+4. Check that everything works as expected
+
+## Managing Multiple Agents
+
+Create different agents for different purposes.
+
+### Use Cases for Multiple Agents
+
+- **Support Agent:** Answer product questions
+- **Sales Agent:** Qualify leads and book demos
+- **FAQ Agent:** Handle common questions
+- **Different Languages:** Separate agents for each language
+- **Different Products:** Specialized agents per product line
+
+### Managing Your Agents
+
+1. Go to **Agents**
+2. See all your agents in the list
+3. Each shows:
+   - Name and avatar
+   - Linked employee
+   - Status (active/inactive)
+   - Conversation count
+
+### Duplicating an Agent
+
+To create a similar agent:
+1. Find the agent to copy
+2. Click the **three-dot menu** (⋮)
+3. Select **Duplicate**
+4. Edit the copy as needed
+
+## Troubleshooting
+
+### "Agent not appearing on website"
+
+- Verify the embed code is installed correctly
+- Check for JavaScript errors in browser console (F12)
+- Make sure the code is before `</body>`
+- Clear your website's cache
+- Check if ad blockers are interfering
+
+### "Agent looks wrong"
+
+- Check appearance settings in your agent config
+- Look for CSS conflicts with your website
+- Try adjusting z-index if elements overlap
+- Verify the embed code is current
+
+### "Responses are incorrect"
+
+- Review and update your knowledge base
+- Adjust the AI employee's instructions
+- Add more relevant documents
+- Refine the system prompt
+
+### "Lead capture not working"
+
+- Check lead capture settings are enabled
+- Verify required fields are configured
+- Test in preview mode first
+- Check for form validation errors
+
+### "Agent is slow to respond"
+
+- This is normal - AI takes a moment to generate responses
+- Longer responses take more time
+- Complex knowledge base searches may be slower
+- Response times vary with server load
+
+## Best Practices
+
+### 1. Write a Clear Welcome Message
+
+- Be friendly and brief
+- Tell visitors what the agent can help with
+- Set expectations
+
+**Good:** "Hi! I can help with product questions, pricing, and support. What can I assist with?"
+
+**Too Long:** "Welcome to our website! This is an AI-powered assistant that can help you with a wide variety of questions about our products, services, pricing, shipping, returns, and more. Please feel free to type your question below."
+
+### 2. Keep Knowledge Base Updated
+
+Your agent is only as good as its knowledge:
+- Add new information regularly
+- Remove outdated content
+- Include FAQs and common questions
+- Update when products or pricing change
+
+### 3. Monitor and Improve
+
+Review conversations weekly:
+- Note questions the agent couldn't answer
+- Find patterns in what visitors ask
+- Update based on real visitor needs
+- Adjust the system prompt as needed
+
+### 4. Set Realistic Expectations
+
+- The agent can't do everything
+- Have a way for visitors to reach humans
+- Be clear about limitations in your welcome message
+
+### 5. Test Regularly
+
+- Test after any changes
+- Try different types of questions
+- Check on different devices
+- Verify embed code still works after website updates
+
+## Frequently Asked Questions
+
+**Q: Can visitors talk to a human instead?**
+A: Configure your agent to offer human handoff. You can connect to your [Inbox](/engage/inbox) or other support systems.
+
+**Q: How many agents can I create?**
+A: Check your subscription for limits. Most plans allow multiple agents.
+
+**Q: Does it work on mobile?**
+A: Yes! Agents are fully responsive and work on all devices.
+
+**Q: Can I see who my visitors are?**
+A: You can see information visitors provide through lead capture. Anonymous visitors show limited details.
+
+**Q: Is there a limit to conversations?**
+A: Conversations use your subscription's message allowance.
+
+**Q: Can I use different AI employees for different agents?**
+A: Yes! Each agent can be powered by a different [AI Employee](/overview/employees).
+
+**Q: Can I have the agent only appear on certain pages?**
+A: Yes, only add the embed code to pages where you want the agent.
+
+## Next Steps
+
+- [Create AI Employees](/overview/employees)
+- [Build Your Knowledge Base](/overview/knowledge-base)
+- [Set Up Integrations](/settings/integrations)
+- [Manage Your Inbox](/engage/inbox)

@@ -1,5 +1,7 @@
 ---
 title: "Parallel AI API Reference — Overview & Authentication"
+sidebarTitle: "API Overview"
+icon: "code"
 description: "Complete reference for the Parallel AI API. All endpoints are under /api/v0/ and return JSON. Authenticate with a Company API Key or Personal Access Key."
 ---
 
@@ -16,8 +18,6 @@ Every endpoint path begins with `/api/v0/`. For example, to list your agents you
 ```
 GET https://api.parallellabs.app/api/v0/agents
 ```
-
-***
 
 ## Authentication
 
@@ -44,8 +44,6 @@ X-Company-ID: company_abc123
   Keep your API keys secret. Never expose them in client-side code or public repositories. Rotate them immediately if you suspect they have been compromised.
 </Note>
 
-***
-
 ## Response Format
 
 All responses — including errors — are JSON. Successful responses return the requested resource or a confirmation message. The HTTP status code indicates whether the request succeeded.
@@ -60,8 +58,6 @@ When a request fails, the response body contains a single `error` field describi
 }
 ```
 
-***
-
 ## HTTP Status Codes
 
 | Status                      | Meaning                                                                                   |
@@ -74,8 +70,6 @@ When a request fails, the response body contains a single `error` field describi
 | `404 Not Found`             | The requested resource does not exist.                                                    |
 | `429 Too Many Requests`     | You have exceeded the rate limit. Wait before retrying.                                   |
 | `500 Internal Server Error` | An unexpected error occurred on the server.                                               |
-
-***
 
 ## Pagination
 
@@ -103,8 +97,6 @@ List endpoints accept `page` and `pageSize` query parameters and return a consis
 | `total`   | integer | Total number of matching resources across all pages.      |
 | `pages`   | integer | Total number of pages at the current `pageSize`.          |
 | `hasNext` | boolean | `true` if there is at least one more page after this one. |
-
-***
 
 ## API Resources
 

@@ -1,0 +1,57 @@
+---
+title: "Domains"
+description: "Serve your published websites from your own branded URL."
+icon: "link"
+---
+
+By default a published site lives on a platform URL. Adding a custom domain serves it from your own address instead — `www.yourbrand.com` rather than a generated link.
+
+## Adding a Domain
+
+1. Select your company from the sidebar
+2. Go to **Websites** → **Domains**
+3. Click **Add Domain**
+4. Enter the domain you want to use
+5. Copy the **A Record (IP Address)** shown in the table
+
+Then, at your domain registrar or DNS provider:
+
+1. Open your domain's DNS settings
+2. Create an **A record**
+3. Point it at the IP address shown in the table
+4. Save, and wait for DNS to propagate — this can take 24–48 hours
+5. Back in the platform, click the refresh icon to **Verify DNS & SSL**
+
+SSL certificates are provisioned automatically once DNS is pointing correctly. You don't need to buy or upload one.
+
+## Domain Status
+
+| Status | Meaning |
+|--------|---------|
+| **Pending** | Waiting for DNS to point at the IP address |
+| **Verified** | DNS is correct |
+| **SSL Active** | DNS is correct and HTTPS is live — ready to use |
+| **Failed** | Something went wrong; hover the status for the reason |
+
+**SSL Active** is the state you want. Until then, the site is still reachable at its platform URL.
+
+## Publish First
+
+A domain can only be attached to a site that has been **published**. Publish the site, then attach the domain.
+
+## Limits
+
+Each company can have a set number of custom domains. When you reach it, the add button is disabled and a message tells you the maximum.
+
+## Troubleshooting
+
+**Still Pending after a day.** DNS propagation is genuinely slow sometimes. Confirm the A record points at exactly the IP shown, with no typos, and that you created an **A** record rather than a CNAME.
+
+**Failed status.** Hover it for the specific error. The most common causes are a record pointing at the wrong address, or a conflicting record for the same hostname left over from a previous host.
+
+**Works without www but not with it (or the reverse).** Each hostname needs its own record. `example.com` and `www.example.com` are separate.
+
+## Next Steps
+
+- [Publish a website](/inbound/websites)
+- [Set up domains for landing pages](/inbound/landing-pages/tracking-domains)

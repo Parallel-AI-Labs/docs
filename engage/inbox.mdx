@@ -1,0 +1,301 @@
+---
+title: "Inbox"
+description: "Connect sending mailboxes, warm them up, and manage replies with automatic classification."
+icon: "inbox"
+---
+
+The Inbox feature lets you connect and manage email accounts for sending sequences and campaigns. You can add multiple inboxes, set up custom domains, and warm up new accounts to improve deliverability.
+
+## Why Do You Need an Inbox?
+
+To send emails through sequences, you need to connect an email account. The Inbox feature:
+
+- Connects your email accounts
+- Manages sending limits
+- Tracks email performance
+- Warms up new accounts for better deliverability
+
+## Connecting Your First Inbox
+
+### Step 1: Add an Inbox
+
+1. Select your company from the sidebar
+2. Click **Inbox**
+3. Click **Add Inbox** (or the **+** button)
+4. Choose your email provider:
+   - **Gmail/Google Workspace**
+   - **Outlook/Microsoft 365**
+   - **Other (SMTP/IMAP)**
+
+### Step 2: Authorize Access
+
+For Gmail or Outlook:
+1. Click to connect
+2. Sign in to your email account
+3. Grant permission for the platform to send on your behalf
+4. You're connected!
+
+For SMTP/IMAP:
+1. Enter your email address
+2. Enter SMTP server details (your email provider can give you these)
+3. Enter your password or app password
+4. Test the connection
+5. Save
+
+### Step 3: Configure Settings
+
+After connecting:
+- Set your daily sending limit (start low, increase over time)
+- Add your email signature
+- Configure reply-to address if different
+
+## Understanding Your Inbox Dashboard
+
+When you view your inboxes, you'll see:
+
+| Column | What It Shows |
+|--------|---------------|
+| **Email** | The connected email address |
+| **Status** | Connected, Disconnected, or Error |
+| **Sent** | Emails sent recently |
+| **Health** | Deliverability score |
+| **Warming** | Warming status (if enabled) |
+
+### Status Indicators
+
+- **Green checkmark:** Connected and working
+- **Yellow warning:** Needs attention
+- **Red error:** Disconnected or problem
+
+## Email Warming
+
+New email accounts or domains need to build reputation before sending at scale. Email warming sends small amounts of email gradually to establish trust.
+
+### Why Warm Up?
+
+If you send too many emails from a new account:
+- Emails may go to spam
+- Your account could get flagged
+- Deliverability suffers
+
+Warming prevents these issues.
+
+### Enabling Warming
+
+1. Click on your inbox
+2. Find **Warming** settings
+3. Turn warming **On**
+4. Configure:
+   - **Daily limit:** Start with 5-10 emails/day
+   - **Ramp rate:** How quickly to increase
+5. Save
+
+### How Warming Works
+
+1. The system sends emails to other warming accounts
+2. Those accounts open, read, and sometimes reply
+3. This builds positive engagement signals
+4. Your sender reputation improves
+5. Gradually increase your limits
+
+### Warming Timeline
+
+| Week | Recommended Daily Volume |
+|------|--------------------------|
+| 1-2 | 5-10 emails |
+| 3-4 | 15-25 emails |
+| 5-6 | 30-50 emails |
+| 7+ | 50-100+ emails |
+
+**Note:** These are guidelines. Monitor your deliverability and adjust.
+
+## Setting Up a Custom Domain
+
+Using your own domain (you@yourcompany.com) looks more professional and builds your brand reputation.
+
+### Step 1: Add Your Domain
+
+1. Click **Domains** in the Inbox section
+2. Click **Add Domain**
+3. Enter your domain name (e.g., yourcompany.com)
+4. Click **Add**
+
+### Step 2: Configure DNS Records
+
+You'll need to add DNS records to verify ownership and improve deliverability:
+
+**SPF Record:** Authorizes the platform to send on your behalf
+```
+Type: TXT
+Host: @
+Value: (provided in the setup wizard)
+```
+
+**DKIM Record:** Adds a digital signature to your emails
+```
+Type: TXT
+Host: (provided, usually something._domainkey)
+Value: (provided in the setup wizard)
+```
+
+**DMARC Record:** Tells receiving servers how to handle failed authentication
+```
+Type: TXT
+Host: _dmarc
+Value: v=DMARC1; p=none; (or as provided)
+```
+
+### Step 3: Add Records to Your DNS
+
+1. Log into your domain registrar (GoDaddy, Namecheap, Cloudflare, etc.)
+2. Find DNS settings
+3. Add each record as specified
+4. Save changes
+
+### Step 4: Verify
+
+1. Return to the platform
+2. Click **Verify Domain**
+3. Wait for verification (can take up to 48 hours, usually faster)
+4. Green checkmark = verified!
+
+## Viewing and Managing Messages
+
+### Checking Your Inbox
+
+1. Click on an inbox to view messages
+2. Use filters to see:
+   - **Received:** Incoming emails
+   - **Sent:** Outgoing emails
+   - **Bounced:** Failed deliveries
+   - **Replies:** Responses to your sequences
+
+### Reading a Message
+
+1. Click on any message in the list
+2. The full content appears in a preview
+3. See the full conversation thread
+
+### Composing a New Email
+
+1. Click **Compose** or the compose button
+2. Enter the recipient
+3. Write your subject and message
+4. Click **Send**
+
+### Replying to Messages
+
+1. Open a received message
+2. Click **Reply**
+3. Write your response
+4. Click **Send**
+
+## Managing Multiple Inboxes
+
+You can connect multiple email accounts:
+
+### When to Use Multiple Inboxes
+
+- **Different team members:** Each person has their own inbox
+- **Different purposes:** Sales vs. support vs. marketing
+- **Higher volume:** Spread sending across accounts
+- **A/B testing:** Test which sender gets better results
+
+### Best Practices
+
+1. **Don't over-send from one account** - Stay under provider limits
+2. **Use consistent domains** - Build reputation for your domain
+3. **Monitor each inbox** - Watch for issues in any account
+4. **Rotate if needed** - Spread campaigns across inboxes
+
+## Troubleshooting
+
+### "Inbox disconnected"
+
+1. Click on the inbox
+2. Click **Reconnect** or **Reauthorize**
+3. Sign in again to your email
+4. Grant permissions
+
+This happens when passwords change or permissions expire.
+
+### "Emails going to spam"
+
+- Enable and continue warming
+- Check DNS records are correct
+- Reduce sending volume
+- Improve email content (less spammy language)
+- Remove unengaged contacts from lists
+
+### "High bounce rate"
+
+- Clean your contact lists
+- Verify email addresses before importing
+- Remove invalid addresses
+- Check for typos in email addresses
+
+### "Not receiving replies"
+
+- Check spam/junk folder
+- Verify reply-to address is correct
+- Make sure inbox is connected and syncing
+
+## Daily Sending Limits
+
+Email providers have limits on how many emails you can send:
+
+| Provider | Typical Daily Limit |
+|----------|---------------------|
+| Gmail (free) | 500/day |
+| Google Workspace | 2,000/day |
+| Outlook (free) | 300/day |
+| Microsoft 365 | 10,000/day |
+
+**Our recommendation:** Stay well under these limits. Send 50-100/day per inbox for best deliverability.
+
+## Tips for Better Email Deliverability
+
+### 1. Warm Up New Accounts
+
+Always warm up new inboxes for 2-4 weeks before campaigns.
+
+### 2. Maintain Good Hygiene
+
+- Remove bounced addresses immediately
+- Clean inactive contacts regularly
+- Honor unsubscribe requests
+
+### 3. Write Quality Emails
+
+- Avoid spam trigger words
+- Don't use all caps or excessive punctuation
+- Include a clear unsubscribe option
+- Balance text and images
+
+### 4. Monitor Your Metrics
+
+Watch open rates and bounce rates. If they drop suddenly, investigate.
+
+### 5. Use Authentication
+
+Set up SPF, DKIM, and DMARC for your domain.
+
+## Frequently Asked Questions
+
+**Q: How many inboxes do I need?**
+A: Start with one. Add more as your volume grows or you need different senders.
+
+**Q: Can I use my personal Gmail?**
+A: Yes, but a professional email (you@company.com) looks more credible.
+
+**Q: What happens if I exceed sending limits?**
+A: Your email provider may temporarily block sending. Emails in sequences will queue until limits reset.
+
+**Q: How long does domain verification take?**
+A: Usually 15 minutes to 24 hours. Sometimes up to 48 hours for DNS propagation.
+
+## Next Steps
+
+- [Create Sequences](/engage/sequences)
+- [Build Smart Lists](/find-enrich/smart-lists)
+- [View Your Dashboard](/overview/dashboard)

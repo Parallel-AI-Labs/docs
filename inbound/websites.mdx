@@ -1,0 +1,91 @@
+---
+title: "Websites"
+description: "Build a complete marketing website — pages, copy, images, and a built-in content management system — by describing it."
+icon: "browser"
+---
+
+Describe the site you want and it gets built: pages, navigation, copy, and images, with a content management system behind it for anything that repeats, like blog posts or case studies. No coding necessary.
+
+> **Beta.** Websites is a newer feature and is still being refined.
+
+## Creating a Website
+
+1. Select your company from the sidebar
+2. Go to **Websites**
+3. Click **New website** (or use the prompt box on the first-run screen)
+4. Describe the site you want — for example, "A site for my coffee shop with a menu and events"
+5. Decide whether to leave **Use company context** on
+6. Click **Create**
+
+The AI names the site, builds the pages, and wires up the navigation.
+
+**Use company context** gives the builder your company name, website, and description so it writes real copy about your actual business. Turn it **off** when you're building a site for a client, so it doesn't write about you instead of them.
+
+## The Editor
+
+Opening a site puts you in a full-screen editor: a chat panel on the left and your site on the right.
+
+Describe changes in the chat and watch them appear. The top bar switches the right-hand panel between:
+
+- **Preview** — the site as visitors see it
+- **Code** — the underlying files
+- **Dashboard** — settings, content, and domains
+
+You'll also find **File history**, **Refresh preview**, and a **Company context** switch in the top bar.
+
+## The Content Management System
+
+The CMS is what separates a website from a landing page. It's for content that repeats — blog posts, case studies, team members, products.
+
+### Collections and entries
+
+A **collection** is a type of repeating content. Each item in it is an **entry**.
+
+Open **Dashboard** → **Content** to manage them. If you have no collections yet, you can create one, or use **Ask AI to build a blog** to have the builder create a blog with its templates and index page for you.
+
+### Creating a collection
+
+A collection has:
+
+- **Name** — what the content is, e.g. `posts`
+- **Route prefix** — where entries are served, so `/blog` gives you `/blog/<slug>`
+- **Item template** — the project file each entry renders through
+- **Description**
+
+If the item template doesn't exist yet, ask the AI in the chat to create it.
+
+Templates refer to a collection by its **Name**, not its route prefix — a collection named `posts` is looped over as `{% for post in collections.posts %}`. Using the route prefix instead is the usual reason a listing page renders empty. The collection dialog shows the exact syntax for the name you've typed.
+
+### Creating an entry
+
+Each entry has a **Title**, **Slug**, **Body**, **Excerpt**, **Meta description**, **Hero image URL**, **Author**, **Tags**, and **Status**.
+
+The body can be written in Markdown — toggle the Markdown option and it's converted to HTML when you save.
+
+Entries are listed with their **Title**, **Status**, and **Route**, so you can see exactly where each one is published.
+
+## Publishing
+
+From a site's menu, choose **Publish**. This builds the site and hosts it publicly. Later changes need **Publish a new version**, which rebuilds every page and updates the live site — editing alone doesn't change what visitors see.
+
+Sites show a **Published** or **Draft** chip, and a published site has a live URL you can open. If a publish fails, the menu shows the error with a **Copy error** button.
+
+## Custom Domains
+
+Published sites can be served from your own domain. Use **Add custom domain** from a site's menu, or manage them all under **Websites** → **Domains**.
+
+You must publish a site before attaching a domain to it. See [Domains](/inbound/websites/website-domains) for the DNS setup.
+
+## Tips
+
+1. **Describe the whole site up front.** "A five-page site for a dental practice with services, team, and booking" gives the builder more to work with than "a website."
+2. **Turn off company context for client work**, or the copy will be about your business.
+3. **Use a collection for anything repeating.** Ten hand-built blog pages become unmaintainable; a collection with ten entries doesn't.
+4. **Remember to republish.** Edits are not live until you publish a new version.
+5. **Iterate in small steps** in the chat — one change at a time is easier to judge and undo.
+
+## Next Steps
+
+- [Set up a custom domain](/inbound/websites/website-domains)
+- [Build a single landing page instead](/inbound/landing-pages)
+- [Create a custom app](/inbound/app-builder)

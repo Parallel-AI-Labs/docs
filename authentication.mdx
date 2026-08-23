@@ -1,5 +1,7 @@
 ---
 title: "Parallel AI REST API Authentication and Access Keys"
+sidebarTitle: "Authentication"
+icon: "key"
 description: "Parallel AI supports Company API Keys and Personal Access Keys. Learn how to generate each key type and pass it correctly in your API requests."
 ---
 
@@ -38,8 +40,6 @@ Best for:
 <Note>
   Personal Access Keys inherit your user-level permissions. If your account is removed from a company, your Personal Access Key will immediately lose access to that company's resources.
 </Note>
-
-***
 
 ## Getting a Company API Key
 
@@ -84,8 +84,6 @@ You can pass your Company API Key in one of two ways:
     This is especially useful when configuring the `openai` Python or Node.js library, which sets `Authorization: Bearer <api_key>` automatically.
   </Tab>
 </Tabs>
-
-***
 
 ## Getting a Personal Access Key
 
@@ -142,8 +140,6 @@ curl -X GET "https://api.parallellabs.app/api/v0/agents?companyId=your_company_i
   The `X-Company-ID` header approach is preferred for production use — it keeps your company ID out of server logs and browser history that may record request URLs.
 </Tip>
 
-***
-
 ## Finding Your Company ID
 
 You need your Company ID when using a Personal Access Key. You can find it in two places:
@@ -151,15 +147,11 @@ You need your Company ID when using a Personal Access Key. You can find it in tw
 * **Dashboard URL** — when you're viewing a company in the dashboard, the company ID appears in the URL (e.g. `https://web.parallellabs.app/companies/YOUR_COMPANY_ID/...`).
 * **Settings page** — navigate to your company's **Settings** page; the Company ID is listed there and can be copied directly.
 
-***
-
 ## SSO Login
 
 Enterprise customers can authenticate through their organization's identity provider using Single Sign-On (SSO).
 
 Navigate to [https://web.parallellabs.app/login/sso](https://web.parallellabs.app/login/sso) and enter your **company domain** to be redirected to your SSO provider. Contact your Parallel AI account manager to enable SSO for your organization.
-
-***
 
 ## Security Best Practices
 

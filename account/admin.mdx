@@ -1,0 +1,50 @@
+---
+title: "Admin"
+description: "Platform-wide administration: usage, costs, users, companies, and feature flags."
+icon: "shield-halved"
+---
+
+The **Admin** area is for operating the platform itself rather than working inside one company. It sits at the bottom of the sidebar and covers every company and user on the instance.
+
+> **Super users only.** Admin is visible only to super users, and the page itself refuses to render for anyone else. Super user status is set directly in the database — there is deliberately no way to grant or revoke it through the interface.
+
+Unlike everything else in the sidebar, Admin is not scoped to a company.
+
+## Sections
+
+| Section | What it covers |
+|---------|----------------|
+| **Analytics** | Platform usage — companies, users, logins, and breakdowns by feature, model, and method, with credits, errors, average duration, and last-month comparisons |
+| **Costs** | Cost breakdowns by company, organization, user, feature, and model, including input and output token detail |
+| **Users** | Every user, with subscription, credits, limits, created date, and last login; display name, data credits, credit limit, and company limit are editable |
+| **Companies** | Every company, with owner, members, and credits; edit the name, credit limit, and whether MFA is required, and manage members |
+| **Terminations** | Companies scheduled for termination, with reason, scheduled date, days until cutoff, and status — and the option to cancel one |
+| **Audiences** | Saved audiences across companies, with refresh interval, last refresh, and notification settings, plus a manual refresh |
+| **Pixels** | Tracking pixels, with their website, company, list, tags, and status |
+| **Mailbox Orders** | Mailbox provisioning orders, with domains, mailbox counts, totals, and status; orders can be cancelled |
+| **Notifications** | Platform notifications — announcements, maintenance notices, new feature notes, info, and errors — filterable by type and scope |
+| **Feature Flags** | Feature availability, enabled for everyone or targeted at specific companies or users |
+
+**Analytics** is the default view.
+
+## Common Tasks
+
+**Adjusting a user's limits.** Open **Users**, find the user, and edit their data credits, credit limit, or company limit directly in the row.
+
+**Investigating cost.** **Costs** breaks spend down by company, user, feature, and model — the fastest way to find what's driving an unexpected bill.
+
+**Rolling out a feature gradually.** In **Feature Flags**, target specific companies or users first, then enable for everyone once it holds up.
+
+**Stopping a scheduled deletion.** **Terminations** lists companies heading for cutoff, with the days remaining and a cancel action.
+
+## Cautions
+
+1. **Changes here affect real customers immediately.** There's no staging copy of this data.
+2. **Credit and limit edits take effect at once**, including mid-billing-period.
+3. **Feature flags are the safer lever.** Prefer targeting a few accounts over enabling something for everyone.
+4. **Terminations are time-sensitive.** Once past cutoff, cancelling is no longer the remedy.
+
+## Next Steps
+
+- [Manage a single company](/account/companies)
+- [Manage team access](/settings/collaborators)

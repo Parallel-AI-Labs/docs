@@ -1,0 +1,70 @@
+---
+title: "People"
+description: "One profile per human being, merged from every place they appear in your account."
+icon: "address-book"
+---
+
+The same person often shows up in several places — a row in a Smart List, a recipient in a sequence, someone who replied in your inbox, a visitor who chatted with an agent. **People** stitches those together into a single profile so you can see everything you know about someone in one view.
+
+> **Availability:** People is currently limited to super users while the identity graph is being proven out. Profiles merge records across every feature, so a bad merge would be visible to the whole company.
+
+## How Profiles Are Built
+
+Profiles are assembled by a background job that runs nightly. It looks for **identifiers** shared between records and merges the records that match.
+
+Identifiers come in two strengths:
+
+| Identifier | Strength | Why |
+|------------|----------|-----|
+| **Email** | Strong | Unique to one person |
+| **Phone** | Strong | Unique to one person |
+| **LinkedIn** | Strong | Unique to one person |
+| **Name + Company** | Weak | Names collide — two people called Chris Taylor at the same firm are indistinguishable |
+
+Strong identifiers merge records with confidence. A **Name + Company** match is treated as low confidence: the profile is flagged **Needs review**, and the touchpoints it contributed are marked `low confidence` so you can judge them yourself.
+
+The graph is read-only — you can't merge or split profiles by hand. Corrections come from fixing the underlying records, which the next nightly run picks up.
+
+## Browsing People
+
+1. Select your company from the sidebar
+2. Click **People** (under Find & Enrich)
+
+The table shows **Name** (with job title beneath), **Email**, **Phone**, **Company**, **Appears in**, and **Last seen**. Above it, a summary line counts the people, their total touchpoints, and how many need review.
+
+- **Search** matches name, email, phone, or company
+- **Source** filters to people who appear in a given place: Smart List, Sequence, Campaign, Conversation, or Inbox
+- **Appears in** shows one chip per source with a count, so you can see at a glance where someone came from
+- A warning triangle beside a name means a weak match contributed to the profile
+
+If a nightly run is still in progress, a banner tells you how many records have been scanned so far.
+
+## Reading a Profile
+
+Click any row to open the person's profile. It shows:
+
+- **Identity** — name, job title, company, website, and the identifier chips that built the profile
+- **First seen** and **Last seen** dates
+- **Activity** — a timeline of what this person actually did
+- **Touchpoints** — one panel per source, listing the records they appear in
+
+### The Activity Timeline
+
+The timeline records real events: **Opens**, **Clicks**, **Scheduling views**, **Bookings**, **Status changes**, and **Calls**. Use the filter chips to narrow it to the kind of event you care about.
+
+Automated traffic — email scanners and image proxies that open a message without a human reading it — is hidden by default. Toggle **Automated** to show it; those rows carry an **Automated** chip so you never mistake a scanner for a prospect.
+
+Only the most recent touchpoints are shown on a busy profile.
+
+## What People Is Good For
+
+- Checking whether you're already talking to someone before starting fresh
+- Seeing every prior touch before a sales call
+- Spotting the same person sitting in three different lists under two email addresses
+- Understanding which channel a lead actually engages with
+
+## Next Steps
+
+- [Build a Smart List](/find-enrich/smart-lists)
+- [Enrich a contact](/find-enrich/lead-data/enrichment)
+- [Run a sequence](/engage/sequences)

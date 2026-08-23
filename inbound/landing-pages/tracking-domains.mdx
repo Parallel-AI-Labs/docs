@@ -1,0 +1,56 @@
+---
+title: "Domains"
+description: "Publish your landing pages to your own branded URL."
+icon: "link"
+---
+
+Landing pages are served from a platform URL unless you attach a custom domain. Using your own — something like `pages.yourbrand.com` — keeps the link consistent with your brand, which matters when the URL appears in an ad or an email.
+
+## Adding a Domain
+
+1. Select your company from the sidebar
+2. Go to **Landing Pages** → **Domains**
+3. Click **Add Domain**
+4. Enter the domain or subdomain you want to use
+5. Copy the **A Record (IP Address)** from the table
+
+Then, at your DNS provider:
+
+1. Open your domain's DNS settings
+2. Create an **A record**
+3. Point it at the IP address shown
+4. Save and wait for DNS to propagate — up to 24–48 hours
+5. Return here and click the refresh icon to **Verify DNS & SSL**
+
+SSL is provisioned automatically once DNS resolves correctly.
+
+## Domain Status
+
+| Status | Meaning |
+|--------|---------|
+| **Pending** | Waiting for DNS |
+| **Verified** | DNS is correct |
+| **SSL Active** | Live and secured over HTTPS |
+| **Failed** | Hover the status to see why |
+
+## Using a Subdomain
+
+A subdomain such as `pages.yourbrand.com` or `go.yourbrand.com` is usually the right choice. It leaves your main site untouched, and you can add the record without touching the DNS your primary website depends on.
+
+## Limits
+
+There's a per-company limit on custom domains. At the cap, the add button is disabled and the limit is shown.
+
+## Troubleshooting
+
+**Stuck on Pending.** Check the A record points at exactly the IP in the table, and that it's an A record rather than a CNAME.
+
+**Failed.** Hover for the error. Usually a wrong IP or a leftover conflicting record for the same hostname.
+
+**Certificate warnings.** These resolve once the status reaches **SSL Active**. If DNS only just propagated, give provisioning a few minutes.
+
+## Next Steps
+
+- [Build a landing page](/inbound/landing-pages)
+- [Set up a Brand Kit](/inbound/landing-pages/brand-kit)
+- [Domains for full websites](/inbound/websites/website-domains)
