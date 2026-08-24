@@ -4500,10 +4500,6 @@
                         "type": "boolean",
                         "description": "Include long-term memories in context. Default: false"
                       },
-                      "includePreviousToolCalls": {
-                        "type": "boolean",
-                        "description": "Include previous tool calls in context. Default: true"
-                      },
                       "documents": {
                         "type": "boolean",
                         "description": "Enable document retrieval from knowledge base. Default: true"
@@ -4790,10 +4786,6 @@
                       "longTermMemories": {
                         "type": "boolean",
                         "description": "Include long-term memories in context. Default: false"
-                      },
-                      "includePreviousToolCalls": {
-                        "type": "boolean",
-                        "description": "Include previous tool calls in context. Default: true"
                       },
                       "documents": {
                         "type": "boolean",
@@ -19338,7 +19330,7 @@
         "operationId": "lists_getRowHistory",
         "parameters": [
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19346,7 +19338,7 @@
             }
           },
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30637,7 +30629,7 @@
         "operationId": "inbox_sendDraft",
         "parameters": [
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30645,7 +30637,7 @@
             }
           },
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30738,7 +30730,7 @@
         "operationId": "inbox_deleteDraft",
         "parameters": [
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30746,7 +30738,7 @@
             }
           },
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -38422,7 +38414,7 @@
         "operationId": "content_getCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -38430,7 +38422,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -38469,7 +38461,7 @@
         "operationId": "content_updateCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -38477,7 +38469,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -38555,7 +38547,7 @@
         "operationId": "content_deleteCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -38563,7 +38555,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -38604,7 +38596,7 @@
         "operationId": "content_stopCanvasDesignThreadRun",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -38612,7 +38604,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -48076,7 +48068,7 @@
         "operationId": "landing_pages_getLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -48084,7 +48076,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -48123,7 +48115,7 @@
         "operationId": "landing_pages_updateLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -48131,7 +48123,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -48209,7 +48201,7 @@
         "operationId": "landing_pages_deleteLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -48217,7 +48209,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -48258,7 +48250,7 @@
         "operationId": "landing_pages_stopLandingPageThreadRun",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -48266,7 +48258,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -55683,6 +55675,103 @@
           }
         },
         "summary": "Per-run backlink totals + new/lost counts over time."
+      }
+    },
+    "/api/v0/seo/projects/{projectId}/competitors": {
+      "get": {
+        "tags": [
+          "SEO"
+        ],
+        "operationId": "seo_projectCompetitorsRoute",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "summary": "Latest organic competitor set and backlink gap for a project."
+      }
+    },
+    "/api/v0/seo/projects/{projectId}/link-profile": {
+      "get": {
+        "tags": [
+          "SEO"
+        ],
+        "operationId": "seo_projectLinkProfileRoute",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "summary": "Latest anchor text, referring domains, and vendor backlink history."
+      }
+    },
+    "/api/v0/seo/projects/{projectId}/ai-visibility": {
+      "get": {
+        "tags": [
+          "SEO"
+        ],
+        "operationId": "seo_projectAiVisibilityRoute",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "summary": "Paginated AEO answers, filterable by platform/prompt.",
+        "description": "Each row is one AI platform's answer to one tracked prompt, already scored\nfor brand mention and citation."
+      }
+    },
+    "/api/v0/seo/projects/{projectId}/ai-visibility/trend": {
+      "get": {
+        "tags": [
+          "SEO"
+        ],
+        "operationId": "seo_projectAiVisibilityTrendRoute",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "summary": "Per-run AI visibility / citation / share-of-voice scores over time."
       }
     },
     "/api/v0/marketing-campaigns": {
