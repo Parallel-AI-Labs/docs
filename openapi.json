@@ -125,7 +125,7 @@
     },
     {
       "name": "SEO",
-      "description": "On-demand SEO lookups: keyword demand, domain authority and a saved keyword list. These are single-question tools, as opposed to the scored, scheduled analysis in Content Research. Workflow: 1) seo_researchKeywordsRoute expands a seed keyword into related terms and returns search volume, CPC and competition for each, optionally with the live SERP. 2) seo_domainOverviewRoute returns domain rating, estimated organic traffic, backlinks and referring domains for any domain; seo_compareDomainsRoute does the same for several at once, for putting a domain next to its competitors. 3) seo_saveKeywordsRoute keeps interesting keywords on a list that seo_listSavedKeywordsRoute reads back with fresh metrics joined on. Cost: results are served from a shared cache whenever possible, and every response reports `purchased` and `creditCost` \u2014 a cache hit costs nothing. Only set refresh=true when the data is known to be stale, since it forces a re-purchase."
+      "description": "SEO toolkit: on-demand lookups, site audits, scheduled per-domain monitoring, and a raw DataForSEO passthrough. Content Research is the separate scored opportunity engine. Every purchase reports `creditCost` (credits at the vendor's actual charge); cached reads cost nothing and only refresh=true forces a re-purchase. Lookups: seo_researchKeywordsRoute expands a seed keyword into related terms with volume, CPC and competition (optionally the live SERP); seo_domainOverviewRoute returns domain rating, organic traffic, backlinks and referring domains for one domain and seo_compareDomainsRoute for several. seo_saveKeywordsRoute flags keywords, seo_listKeywordsRoute reads them back with fresh metrics, seo_updateKeywordRoute edits tags/notes and seo_unsaveKeywordRoute removes one. Site audits (one-off crawls): seo_startAuditRoute queues a crawl of a domain up to maxPages; poll seo_getAuditRoute for progress and the issue summary, seo_listAuditPagesRoute for per-page checks, seo_runAiReadinessRoute for the AI/answer-engine readiness score, seo_cancelAuditRoute to stop, seo_listAuditsRoute and seo_deleteAuditRoute to manage. Monitored projects (scheduled): seo_createProjectRoute or seo_ensureProjectRoute registers a domain with a schedule, tracked keywords and enabled modules (rank tracking, backlinks, competitors, AI visibility); seo_getProjectRoute returns the latest per-module results, seo_updateProjectRoute changes schedule/keywords/modules, seo_runProjectRoute runs now, seo_pauseProjectRoute/seo_resumeProjectRoute control the schedule, seo_listProjectsRoute/seo_deleteProjectRoute manage. History and detail per project: seo_projectRankHistoryRoute (rank snapshots, optionally one keyword), seo_listProjectBacklinksRoute and seo_projectBacklinkHistoryRoute (individual backlinks; totals with new/lost per run), seo_projectLinkProfileRoute (anchors, referring domains), seo_projectCompetitorsRoute (organic competitors and backlink gap), seo_projectAiVisibilityRoute and seo_projectAiVisibilityTrendRoute (AEO answers and visibility/citation/share-of-voice over time). Search Console: seo_searchConsoleConnectionsRoute lists connected properties and seo_searchConsolePreviewRoute pulls the queries a site already ranks for, to seed tracked keywords. Passthrough: seo_dataforseoProxyRoute forwards a task array to any DataForSEO v3 *live* endpoint for anything the tools above do not cover (backlinks, SERP, domain analytics, keyword data, technologies, content analysis, on_page/instant_pages). Pass `path` without the /v3/ prefix, e.g. \"backlinks/backlinks/live\", \"serp/google/organic/live/advanced\" or \"domain_analytics/technologies/domains_by_html_terms/live\", and `tasks` exactly as https://docs.dataforseo.com/v3/<path>/ documents for that endpoint. Only live endpoints are accepted (task_post/task_get/tasks_ready, on_page crawls and appendix are rejected). The response is the vendor body verbatim plus `creditCost`; per-row endpoints cost more the larger `limit` is, and a 100-row response can exceed the tool result size, so keep `limit` at 10-50."
     },
     {
       "name": "Sequences",
@@ -922,7 +922,7 @@
         "operationId": "documents_getDocumentContents",
         "parameters": [
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -930,7 +930,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -989,7 +989,7 @@
         "operationId": "documents_getDocument",
         "parameters": [
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -997,7 +997,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -3136,7 +3136,7 @@
         "operationId": "keys_getApiKey",
         "parameters": [
           {
-            "name": "name",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -3144,7 +3144,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "name",
             "in": "path",
             "required": true,
             "schema": {
@@ -6787,7 +6787,7 @@
         "operationId": "projects_getProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -6795,7 +6795,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -6930,7 +6930,7 @@
         "operationId": "projects_updateProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -6938,7 +6938,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -7099,7 +7099,7 @@
         "operationId": "projects_deleteProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -7107,7 +7107,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8006,7 +8006,7 @@
         "operationId": "projects_exportProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8014,7 +8014,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8106,7 +8106,7 @@
         "operationId": "projects_publishFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8114,7 +8114,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8261,7 +8261,7 @@
         "operationId": "projects_unpublishFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8269,7 +8269,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8703,7 +8703,7 @@
         "operationId": "memories_getMemory",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8711,7 +8711,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8809,7 +8809,7 @@
         "operationId": "memories_updateMemoryRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8817,7 +8817,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8945,7 +8945,7 @@
         "operationId": "memories_deleteMemoryRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8953,7 +8953,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -9004,7 +9004,7 @@
         "operationId": "memories_toggleMemoryActiveRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -9012,7 +9012,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18759,7 +18759,7 @@
         "operationId": "lists_deleteTableAction",
         "parameters": [
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18767,7 +18767,7 @@
             }
           },
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18865,7 +18865,7 @@
         "operationId": "lists_getActionSummary",
         "parameters": [
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18873,7 +18873,7 @@
             }
           },
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18993,7 +18993,7 @@
         "operationId": "lists_getActionQueueStatus",
         "parameters": [
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19001,7 +19001,7 @@
             }
           },
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19330,7 +19330,7 @@
         "operationId": "lists_getRowHistory",
         "parameters": [
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19338,7 +19338,7 @@
             }
           },
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23117,7 +23117,7 @@
         "operationId": "sequences_updateSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23125,7 +23125,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23399,7 +23399,7 @@
         "operationId": "sequences_deleteSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23407,7 +23407,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25105,7 +25105,7 @@
         "operationId": "sequences_editSequenceExecution",
         "parameters": [
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25113,7 +25113,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25202,7 +25202,7 @@
         "operationId": "sequences_previewSequenceExecution",
         "parameters": [
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25210,7 +25210,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26765,7 +26765,7 @@
         "operationId": "sequences_testSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26773,7 +26773,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26827,7 +26827,7 @@
         "operationId": "sequences_sendTestEmail",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26835,7 +26835,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30629,7 +30629,7 @@
         "operationId": "inbox_sendDraft",
         "parameters": [
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30637,7 +30637,7 @@
             }
           },
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30730,7 +30730,7 @@
         "operationId": "inbox_deleteDraft",
         "parameters": [
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30738,7 +30738,7 @@
             }
           },
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -38414,7 +38414,7 @@
         "operationId": "content_getCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -38422,7 +38422,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -38461,7 +38461,7 @@
         "operationId": "content_updateCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -38469,7 +38469,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -38547,7 +38547,7 @@
         "operationId": "content_deleteCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -38555,7 +38555,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -38596,7 +38596,7 @@
         "operationId": "content_stopCanvasDesignThreadRun",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -38604,7 +38604,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -47955,7 +47955,7 @@
         "operationId": "landing_pages_getLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -47963,7 +47963,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -48002,7 +48002,7 @@
         "operationId": "landing_pages_updateLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -48010,7 +48010,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -48088,7 +48088,7 @@
         "operationId": "landing_pages_deleteLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -48096,7 +48096,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -48137,7 +48137,7 @@
         "operationId": "landing_pages_stopLandingPageThreadRun",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -48145,7 +48145,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -55756,6 +55756,135 @@
         "summary": "Per-run AI visibility / citation / share-of-voice scores over time."
       }
     },
+    "/api/v0/seo/dataforseo": {
+      "post": {
+        "tags": [
+          "SEO"
+        ],
+        "operationId": "seo_dataforseoProxyRoute",
+        "parameters": [],
+        "responses": {
+          "400": {
+            "description": "Path must be a live endpoint and tasks a list",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Exceeded usage quota",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Vendor request failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Vendor response and credits charged",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "tasks": {
+                      "type": "array",
+                      "items": {
+                        "type": "object"
+                      },
+                      "description": "DataForSEO task results, verbatim"
+                    },
+                    "status_code": {
+                      "type": "integer",
+                      "description": "DataForSEO top-level status code (20000 = OK)"
+                    },
+                    "status_message": {
+                      "type": "string",
+                      "description": "DataForSEO top-level status message"
+                    },
+                    "creditCost": {
+                      "type": "number",
+                      "description": "Credits charged for this call (actual vendor cost)"
+                    }
+                  },
+                  "description": "The DataForSEO response body plus the credits charged"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Call any DataForSEO v3 live endpoint with our credentials.",
+        "description": "Endpoint reference: https://docs.dataforseo.com/v3/ - find the endpoint\nthere, then pass its path without the /v3/ prefix (e.g.\n\"backlinks/backlinks/live\" for\nhttps://docs.dataforseo.com/v3/backlinks/backlinks/live/) and the task\narray exactly as that page documents it.\nOnly synchronous `live` endpoints are forwarded (plus on_page/instant_pages);\ntask-based, on_page and appendix endpoints are account-wide and rejected.\nBilled at what the vendor actually charged for the call, converted to\ncredits. Failed or rejected tasks cost nothing and bill nothing.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID"
+                  },
+                  "path": {
+                    "type": "string",
+                    "description": "DataForSEO v3 endpoint path without the /v3/ prefix, e.g. \"backlinks/backlinks/live\" or \"serp/google/organic/live/advanced\". Endpoint reference: https://docs.dataforseo.com/v3/ (the docs URL for a path is https://docs.dataforseo.com/v3/<path>/)"
+                  },
+                  "tasks": {
+                    "type": "array",
+                    "items": {
+                      "type": "object"
+                    },
+                    "description": "Task array exactly as the endpoint's page on https://docs.dataforseo.com/v3/ documents it"
+                  }
+                },
+                "required": [
+                  "companyId",
+                  "path",
+                  "tasks"
+                ],
+                "description": "Forward a task array to any DataForSEO v3 live endpoint"
+              }
+            }
+          },
+          "description": "Endpoint path and task array"
+        }
+      }
+    },
     "/api/v0/marketing-campaigns": {
       "get": {
         "tags": [
@@ -58092,7 +58221,7 @@
         "operationId": "marketing_campaigns_deleteCampaignRecipient",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "recipientId",
             "in": "path",
             "required": true,
             "schema": {
@@ -58100,7 +58229,7 @@
             }
           },
           {
-            "name": "recipientId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
