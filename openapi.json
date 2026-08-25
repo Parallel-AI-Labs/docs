@@ -8703,7 +8703,7 @@
         "operationId": "memories_getMemory",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8711,7 +8711,7 @@
             }
           },
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8809,7 +8809,7 @@
         "operationId": "memories_updateMemoryRoute",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8817,7 +8817,7 @@
             }
           },
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8945,7 +8945,7 @@
         "operationId": "memories_deleteMemoryRoute",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8953,7 +8953,7 @@
             }
           },
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -9004,7 +9004,7 @@
         "operationId": "memories_toggleMemoryActiveRoute",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -9012,7 +9012,7 @@
             }
           },
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24129,7 +24129,7 @@
         "operationId": "sequences_getSequenceMemberTimeline",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24137,7 +24137,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24535,7 +24535,7 @@
         "operationId": "sequences_triggerSequenceMember",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24543,7 +24543,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24611,7 +24611,7 @@
         "operationId": "sequences_removeSequenceMember",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24619,7 +24619,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30629,7 +30629,7 @@
         "operationId": "inbox_sendDraft",
         "parameters": [
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30637,7 +30637,7 @@
             }
           },
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30730,7 +30730,7 @@
         "operationId": "inbox_deleteDraft",
         "parameters": [
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30738,7 +30738,7 @@
             }
           },
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -52756,8 +52756,8 @@
                       "description": "How many keywords were purchased"
                     },
                     "creditCost": {
-                      "type": "integer",
-                      "description": "Credits charged. Zero on a cache hit."
+                      "type": "number",
+                      "description": "Credits charged (actual vendor cost). Zero on a cache hit."
                     }
                   },
                   "description": "Demand metrics for the seed keyword and its related terms"
@@ -52859,7 +52859,7 @@
                         },
                         "domainRating": {
                           "type": "integer",
-                          "description": "Domain authority rating, 0-100"
+                          "description": "Domain rank (link authority), 0-1000"
                         },
                         "backlinks": {
                           "type": "integer",
@@ -52873,13 +52873,17 @@
                           "type": "integer",
                           "description": "Estimated average monthly organic visits"
                         },
+                        "details": {
+                          "type": "object",
+                          "description": "Full breakdown: organic {keywords, top3, top10, top20, top50, newKeywords, upKeywords, downKeywords, lostKeywords, trafficValue}, paid {keywords, traffic}, links {domainRank, referringMainDomains, referringIps, referringPages, brokenBacklinks, brokenPages, nofollowReferringDomains, dofollowShare, spamScore, firstSeen, crawledPages, linkTypes, linkAttributes, topTlds, topCountries}, site {cms, server, ip, platformTypes, spamScore}"
+                        },
                         "purchased": {
                           "type": "boolean",
                           "description": "Whether this lookup bought new data"
                         },
                         "creditCost": {
-                          "type": "integer",
-                          "description": "Credits charged. Zero on a cache hit."
+                          "type": "number",
+                          "description": "Credits charged (actual vendor cost). Zero on a cache hit."
                         }
                       },
                       "description": "Authority, traffic and link counts for a domain"
@@ -52955,7 +52959,7 @@
                           },
                           "domainRating": {
                             "type": "integer",
-                            "description": "Domain authority rating, 0-100"
+                            "description": "Domain rank (link authority), 0-1000"
                           },
                           "backlinks": {
                             "type": "integer",
@@ -52969,13 +52973,17 @@
                             "type": "integer",
                             "description": "Estimated average monthly organic visits"
                           },
+                          "details": {
+                            "type": "object",
+                            "description": "Full breakdown: organic {keywords, top3, top10, top20, top50, newKeywords, upKeywords, downKeywords, lostKeywords, trafficValue}, paid {keywords, traffic}, links {domainRank, referringMainDomains, referringIps, referringPages, brokenBacklinks, brokenPages, nofollowReferringDomains, dofollowShare, spamScore, firstSeen, crawledPages, linkTypes, linkAttributes, topTlds, topCountries}, site {cms, server, ip, platformTypes, spamScore}"
+                          },
                           "purchased": {
                             "type": "boolean",
                             "description": "Whether this lookup bought new data"
                           },
                           "creditCost": {
-                            "type": "integer",
-                            "description": "Credits charged. Zero on a cache hit."
+                            "type": "number",
+                            "description": "Credits charged (actual vendor cost). Zero on a cache hit."
                           }
                         },
                         "description": "Authority, traffic and link counts for a domain"
@@ -54058,6 +54066,16 @@
               "description": "Rows per page, max 100"
             },
             "description": "Rows per page, max 100"
+          },
+          {
+            "name": "projectId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Only audits of this monitored site"
+            },
+            "description": "Only audits of this monitored site"
           }
         ],
         "responses": {
@@ -54290,6 +54308,16 @@
               "description": "Rows per page, max 100"
             },
             "description": "Rows per page, max 100"
+          },
+          {
+            "name": "projectId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Only audits of this monitored site"
+            },
+            "description": "Only audits of this monitored site"
           }
         ],
         "responses": {
@@ -54523,6 +54551,16 @@
               "description": "Rows per page, max 100"
             },
             "description": "Rows per page, max 100"
+          },
+          {
+            "name": "projectId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Only audits of this monitored site"
+            },
+            "description": "Only audits of this monitored site"
           }
         ],
         "responses": {
@@ -55066,6 +55104,10 @@
                   "pageSize": {
                     "type": "integer",
                     "description": "Rows per page, max 100"
+                  },
+                  "projectId": {
+                    "type": "string",
+                    "description": "Only audits of this monitored site"
                   }
                 },
                 "required": [
@@ -55311,6 +55353,10 @@
                   "pageSize": {
                     "type": "integer",
                     "description": "Rows per page, max 100"
+                  },
+                  "projectId": {
+                    "type": "string",
+                    "description": "Only audits of this monitored site"
                   }
                 },
                 "required": [
@@ -55350,6 +55396,22 @@
           }
         },
         "summary": "Add a website to monitor and set its schedule + enabled modules."
+      }
+    },
+    "/api/v0/seo/projects/ensure": {
+      "post": {
+        "tags": [
+          "SEO"
+        ],
+        "operationId": "seo_ensureProjectRoute",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "summary": "Get or create the project for a domain.",
+        "description": "Module pages call this when a site is typed freeform: the domain gets a\nblank project (manual schedule, no modules enabled) so the module can run\nagainst it, without the user first setting up monitoring."
       }
     },
     "/api/v0/seo/projects/{projectId}": {
@@ -55489,7 +55551,8 @@
             "description": "Successful response"
           }
         },
-        "summary": "Run a project's enabled modules now. Does not advance the schedule."
+        "summary": "Run a project's modules now. Does not advance the schedule.",
+        "description": "Body may carry `modules: [...]` (SEO_MODULE_* keys) to run only those -\nenabled or not - so one report can be refreshed without re-running the\nwhole project. Without it, every enabled module runs."
       }
     },
     "/api/v0/seo/projects/{projectId}/backlinks": {
@@ -56802,7 +56865,7 @@
         "operationId": "marketing_campaigns_restoreCampaignVersion",
         "parameters": [
           {
-            "name": "versionId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -56810,7 +56873,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -57997,7 +58060,7 @@
         "operationId": "marketing_campaigns_deleteCampaignRecipient",
         "parameters": [
           {
-            "name": "recipientId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -58005,7 +58068,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "recipientId",
             "in": "path",
             "required": true,
             "schema": {
