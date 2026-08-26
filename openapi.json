@@ -125,7 +125,7 @@
     },
     {
       "name": "SEO",
-      "description": "SEO toolkit: on-demand lookups, site audits, scheduled per-domain monitoring, and a raw DataForSEO passthrough. Content Research is the separate scored opportunity engine. Every purchase reports `creditCost` (credits at the vendor's actual charge); cached reads cost nothing and only refresh=true forces a re-purchase. Lookups: seo_researchKeywordsRoute expands a seed keyword into related terms with volume, CPC and competition (optionally the live SERP); seo_domainOverviewRoute returns domain rating, organic traffic, backlinks and referring domains for one domain and seo_compareDomainsRoute for several. seo_saveKeywordsRoute flags keywords, seo_listKeywordsRoute reads them back with fresh metrics, seo_updateKeywordRoute edits tags/notes and seo_unsaveKeywordRoute removes one. Site audits (one-off crawls): seo_startAuditRoute queues a crawl of a domain up to maxPages; poll seo_getAuditRoute for progress and the issue summary, seo_listAuditPagesRoute for per-page checks, seo_runAiReadinessRoute for the AI/answer-engine readiness score, seo_cancelAuditRoute to stop, seo_listAuditsRoute and seo_deleteAuditRoute to manage. Monitored projects (scheduled): seo_createProjectRoute or seo_ensureProjectRoute registers a domain with a schedule, tracked keywords and enabled modules (rank tracking, backlinks, competitors, AI visibility); seo_getProjectRoute returns the latest per-module results, seo_updateProjectRoute changes schedule/keywords/modules, seo_runProjectRoute runs now, seo_pauseProjectRoute/seo_resumeProjectRoute control the schedule, seo_listProjectsRoute/seo_deleteProjectRoute manage. History and detail per project: seo_projectRankHistoryRoute (rank snapshots, optionally one keyword), seo_listProjectBacklinksRoute and seo_projectBacklinkHistoryRoute (individual backlinks; totals with new/lost per run), seo_projectLinkProfileRoute (anchors, referring domains), seo_projectCompetitorsRoute (organic competitors and backlink gap), seo_projectAiVisibilityRoute and seo_projectAiVisibilityTrendRoute (AEO answers and visibility/citation/share-of-voice over time). Search Console: seo_searchConsoleConnectionsRoute lists connected properties and seo_searchConsolePreviewRoute pulls the queries a site already ranks for, to seed tracked keywords. Passthrough: seo_dataforseoProxyRoute forwards a task array to any DataForSEO v3 *live* endpoint for anything the tools above do not cover (backlinks, SERP, domain analytics, keyword data, technologies, content analysis, on_page/instant_pages). Pass `path` without the /v3/ prefix, e.g. \"backlinks/backlinks/live\", \"serp/google/organic/live/advanced\" or \"domain_analytics/technologies/domains_by_html_terms/live\", and `tasks` exactly as https://docs.dataforseo.com/v3/<path>/ documents for that endpoint. Only live endpoints are accepted (task_post/task_get/tasks_ready, on_page crawls and appendix are rejected). The response is the vendor body verbatim plus `creditCost`; per-row endpoints cost more the larger `limit` is, and a 100-row response can exceed the tool result size, so keep `limit` at 10-50."
+      "description": "SEO toolkit: on-demand lookups, site audits, scheduled per-domain monitoring, and a raw DataForSEO passthrough. Content Research is the separate scored opportunity engine. Every purchase reports `creditCost` (credits at the vendor's actual charge); cached reads cost nothing and only refresh=true forces a re-purchase. Lookups: seo_researchKeywordsRoute expands a seed keyword into related terms with volume, CPC and competition (optionally the live SERP); seo_domainOverviewRoute returns domain rating, organic traffic, backlinks and referring domains for one domain and seo_compareDomainsRoute for several. seo_saveKeywordsRoute flags keywords, seo_listKeywordsRoute reads them back with fresh metrics, seo_updateKeywordRoute edits tags/notes and seo_unsaveKeywordRoute removes one. Site audits (one-off crawls): seo_startAuditRoute queues a crawl of a domain up to maxPages; poll seo_getAuditRoute for progress and the issue summary, seo_listAuditPagesRoute for per-page checks, seo_runAiReadinessRoute for the AI/answer-engine readiness score, seo_cancelAuditRoute to stop, seo_listAuditsRoute and seo_deleteAuditRoute to manage. Monitored projects (scheduled): seo_createProjectRoute or seo_ensureProjectRoute registers a domain with a schedule, tracked keywords and enabled modules (rank tracking, backlinks, competitors, AI visibility); seo_getProjectRoute returns the latest per-module results, seo_updateProjectRoute changes schedule/keywords/modules, seo_runProjectRoute runs now, seo_pauseProjectRoute/seo_resumeProjectRoute control the schedule, seo_listProjectsRoute/seo_deleteProjectRoute manage. History and detail per project: seo_projectRankHistoryRoute (rank snapshots, optionally one keyword), seo_listProjectBacklinksRoute and seo_projectBacklinkHistoryRoute (individual backlinks; totals with new/lost per run), seo_projectLinkProfileRoute (anchors, referring domains), seo_projectCompetitorsRoute (organic competitors and backlink gap), seo_projectLighthouseRoute (latest Lighthouse scores, Core Web Vitals and scan history) and seo_projectLighthouseSnapshotRoute (one earlier scan in full), seo_projectAiVisibilityRoute and seo_projectAiVisibilityTrendRoute (AEO answers and visibility/citation/share-of-voice over time). Search Console: seo_searchConsoleConnectionsRoute lists connected properties and seo_searchConsolePreviewRoute pulls the queries a site already ranks for, to seed tracked keywords. Passthrough: seo_dataforseoProxyRoute forwards a task array to any DataForSEO v3 *live* endpoint for anything the tools above do not cover (backlinks, SERP, domain analytics, keyword data, technologies, content analysis, on_page/instant_pages). Pass `path` without the /v3/ prefix, e.g. \"backlinks/backlinks/live\", \"serp/google/organic/live/advanced\" or \"domain_analytics/technologies/domains_by_html_terms/live\", and `tasks` exactly as https://docs.dataforseo.com/v3/<path>/ documents for that endpoint. Only live endpoints are accepted (task_post/task_get/tasks_ready, on_page crawls and appendix are rejected). The response is the vendor body verbatim plus `creditCost`; per-row endpoints cost more the larger `limit` is, and a 100-row response can exceed the tool result size, so keep `limit` at 10-50."
     },
     {
       "name": "Sequences",
@@ -922,7 +922,7 @@
         "operationId": "documents_getDocumentContents",
         "parameters": [
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -930,7 +930,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -989,7 +989,7 @@
         "operationId": "documents_getDocument",
         "parameters": [
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -997,7 +997,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -3136,7 +3136,7 @@
         "operationId": "keys_getApiKey",
         "parameters": [
           {
-            "name": "name",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -3144,7 +3144,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "name",
             "in": "path",
             "required": true,
             "schema": {
@@ -6787,7 +6787,7 @@
         "operationId": "projects_getProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -6795,7 +6795,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -6930,7 +6930,7 @@
         "operationId": "projects_updateProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -6938,7 +6938,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -7099,7 +7099,7 @@
         "operationId": "projects_deleteProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -7107,7 +7107,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8006,7 +8006,7 @@
         "operationId": "projects_exportProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8014,7 +8014,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8106,7 +8106,7 @@
         "operationId": "projects_publishFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8114,7 +8114,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8261,7 +8261,7 @@
         "operationId": "projects_unpublishFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8269,7 +8269,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8703,7 +8703,7 @@
         "operationId": "memories_getMemory",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8711,7 +8711,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8809,7 +8809,7 @@
         "operationId": "memories_updateMemoryRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8817,7 +8817,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8945,7 +8945,7 @@
         "operationId": "memories_deleteMemoryRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8953,7 +8953,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -9004,7 +9004,7 @@
         "operationId": "memories_toggleMemoryActiveRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -9012,7 +9012,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -16107,7 +16107,7 @@
         "operationId": "agents_checkConversationActivity",
         "parameters": [
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -16115,7 +16115,7 @@
             }
           },
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -16177,7 +16177,7 @@
         "operationId": "agents_getConversationDetails",
         "parameters": [
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -16185,7 +16185,7 @@
             }
           },
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23117,7 +23117,7 @@
         "operationId": "sequences_updateSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23125,7 +23125,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23399,7 +23399,7 @@
         "operationId": "sequences_deleteSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23407,7 +23407,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24129,7 +24129,7 @@
         "operationId": "sequences_getSequenceMemberTimeline",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24137,7 +24137,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24535,7 +24535,7 @@
         "operationId": "sequences_triggerSequenceMember",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24543,7 +24543,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24611,7 +24611,7 @@
         "operationId": "sequences_removeSequenceMember",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24619,7 +24619,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25105,7 +25105,7 @@
         "operationId": "sequences_editSequenceExecution",
         "parameters": [
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25113,7 +25113,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25202,7 +25202,7 @@
         "operationId": "sequences_previewSequenceExecution",
         "parameters": [
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25210,7 +25210,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26765,7 +26765,7 @@
         "operationId": "sequences_testSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26773,7 +26773,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26827,7 +26827,7 @@
         "operationId": "sequences_sendTestEmail",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26835,7 +26835,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26913,7 +26913,7 @@
         "operationId": "sequences_getMemberProfile",
         "parameters": [
           {
-            "name": "memberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26921,7 +26921,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "memberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30629,7 +30629,7 @@
         "operationId": "inbox_sendDraft",
         "parameters": [
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30637,7 +30637,7 @@
             }
           },
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30730,7 +30730,7 @@
         "operationId": "inbox_deleteDraft",
         "parameters": [
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30738,7 +30738,7 @@
             }
           },
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -54285,39 +54285,9 @@
             "required": true,
             "schema": {
               "type": "string",
-              "description": "Company ID"
+              "description": "Company ID that owns the SEO data"
             },
-            "description": "Company ID"
-          },
-          {
-            "name": "page",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "integer",
-              "description": "1-indexed page number"
-            },
-            "description": "1-indexed page number"
-          },
-          {
-            "name": "pageSize",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "integer",
-              "description": "Rows per page, max 100"
-            },
-            "description": "Rows per page, max 100"
-          },
-          {
-            "name": "projectId",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "description": "Only audits of this monitored site"
-            },
-            "description": "Only audits of this monitored site"
+            "description": "Company ID that owns the SEO data"
           }
         ],
         "responses": {
@@ -54528,39 +54498,9 @@
             "required": true,
             "schema": {
               "type": "string",
-              "description": "Company ID"
+              "description": "Company ID that owns the SEO data"
             },
-            "description": "Company ID"
-          },
-          {
-            "name": "page",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "integer",
-              "description": "1-indexed page number"
-            },
-            "description": "1-indexed page number"
-          },
-          {
-            "name": "pageSize",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "integer",
-              "description": "Rows per page, max 100"
-            },
-            "description": "Rows per page, max 100"
-          },
-          {
-            "name": "projectId",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "description": "Only audits of this monitored site"
-            },
-            "description": "Only audits of this monitored site"
+            "description": "Company ID that owns the SEO data"
           }
         ],
         "responses": {
@@ -55095,25 +55035,13 @@
                 "properties": {
                   "companyId": {
                     "type": "string",
-                    "description": "Company ID"
-                  },
-                  "page": {
-                    "type": "integer",
-                    "description": "1-indexed page number"
-                  },
-                  "pageSize": {
-                    "type": "integer",
-                    "description": "Rows per page, max 100"
-                  },
-                  "projectId": {
-                    "type": "string",
-                    "description": "Only audits of this monitored site"
+                    "description": "Company ID that owns the SEO data"
                   }
                 },
                 "required": [
                   "companyId"
                 ],
-                "description": "List the company's site audits"
+                "description": "Company scope for the request"
               }
             }
           },
@@ -55344,25 +55272,13 @@
                 "properties": {
                   "companyId": {
                     "type": "string",
-                    "description": "Company ID"
-                  },
-                  "page": {
-                    "type": "integer",
-                    "description": "1-indexed page number"
-                  },
-                  "pageSize": {
-                    "type": "integer",
-                    "description": "Rows per page, max 100"
-                  },
-                  "projectId": {
-                    "type": "string",
-                    "description": "Only audits of this monitored site"
+                    "description": "Company ID that owns the SEO data"
                   }
                 },
                 "required": [
                   "companyId"
                 ],
-                "description": "List the company's site audits"
+                "description": "Company scope for the request"
               }
             }
           },
@@ -55376,10 +55292,220 @@
           "SEO"
         ],
         "operationId": "seo_listProjectsRoute",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID"
+            },
+            "description": "Company ID"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "1-indexed page number"
+            },
+            "description": "1-indexed page number"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Rows per page, max 100"
+            },
+            "description": "Rows per page, max 100"
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Filter by domain or name"
+            },
+            "description": "Filter by domain or name"
+          }
+        ],
         "responses": {
+          "400": {
+            "description": "Company ID required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
           "200": {
-            "description": "Successful response"
+            "description": "One page of monitored websites",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "description": "Project ID (UUID)"
+                          },
+                          "companyId": {
+                            "type": "string",
+                            "description": "Company ID"
+                          },
+                          "domain": {
+                            "type": "string",
+                            "description": "Monitored host, lowercased"
+                          },
+                          "name": {
+                            "type": "string",
+                            "description": "Display name"
+                          },
+                          "status": {
+                            "type": "string",
+                            "description": "active or paused",
+                            "enum": [
+                              "active",
+                              "paused"
+                            ]
+                          },
+                          "frequency": {
+                            "type": "string",
+                            "description": "manual, daily, weekly or monthly",
+                            "enum": [
+                              "manual",
+                              "daily",
+                              "weekly",
+                              "monthly"
+                            ]
+                          },
+                          "timezone": {
+                            "type": "string",
+                            "description": "Schedule timezone"
+                          },
+                          "nextRunAt": {
+                            "type": "string",
+                            "format": "date-time",
+                            "description": "Next scheduled run (null when manual/paused)"
+                          },
+                          "lastRunAt": {
+                            "type": "string",
+                            "format": "date-time",
+                            "description": "Last run"
+                          },
+                          "runCount": {
+                            "type": "integer",
+                            "description": "Runs so far"
+                          },
+                          "enabledModules": {
+                            "type": "object",
+                            "description": "Module key -> enabled. Keys: keyword_research, domain_overview, opportunities, backlinks, link_profile, rank_tracking, competitors, ai_visibility, site_audit, lighthouse"
+                          },
+                          "trackedKeywords": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            },
+                            "description": "Keywords for rank tracking and keyword research"
+                          },
+                          "competitorDomains": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            },
+                            "description": "Pinned competitor domains"
+                          },
+                          "trackedPrompts": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            },
+                            "description": "Questions asked of AI platforms (AEO)"
+                          },
+                          "brandNames": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            },
+                            "description": "Strings that count as a brand mention"
+                          },
+                          "aiPlatforms": {
+                            "type": "object",
+                            "description": "AI platform key -> enabled (chatgpt, claude, gemini, perplexity)"
+                          },
+                          "trackAiOverview": {
+                            "type": "boolean",
+                            "description": "Also check Google AI Overview"
+                          },
+                          "backlinksMaxLinks": {
+                            "type": "integer",
+                            "description": "Backlinks pulled per run (billed per link)"
+                          },
+                          "auditMaxPages": {
+                            "type": "integer",
+                            "description": "Pages crawled per scheduled site audit"
+                          },
+                          "country": {
+                            "type": "string",
+                            "description": "Market country code, e.g. us"
+                          },
+                          "language": {
+                            "type": "string",
+                            "description": "Language code, e.g. en"
+                          },
+                          "created_date": {
+                            "type": "string",
+                            "format": "date-time"
+                          },
+                          "updated_date": {
+                            "type": "string",
+                            "format": "date-time"
+                          }
+                        },
+                        "description": "A monitored website. `enabledModules` maps each SEO/AEO module key to whether it runs on the schedule; any module can also be run on demand with seo_runProjectRoute."
+                      }
+                    },
+                    "total": {
+                      "type": "integer",
+                      "description": "Total projects"
+                    }
+                  },
+                  "description": "One page of monitored websites"
+                }
+              }
+            }
           }
         },
         "summary": "Paginated list of a company's monitored SEO projects."
@@ -55391,11 +55517,267 @@
         "operationId": "seo_createProjectRoute",
         "parameters": [],
         "responses": {
-          "200": {
-            "description": "Successful response"
+          "400": {
+            "description": "A valid domain is required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "The new project",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "Project ID (UUID)"
+                    },
+                    "companyId": {
+                      "type": "string",
+                      "description": "Company ID"
+                    },
+                    "domain": {
+                      "type": "string",
+                      "description": "Monitored host, lowercased"
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": "Display name"
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "active or paused",
+                      "enum": [
+                        "active",
+                        "paused"
+                      ]
+                    },
+                    "frequency": {
+                      "type": "string",
+                      "description": "manual, daily, weekly or monthly",
+                      "enum": [
+                        "manual",
+                        "daily",
+                        "weekly",
+                        "monthly"
+                      ]
+                    },
+                    "timezone": {
+                      "type": "string",
+                      "description": "Schedule timezone"
+                    },
+                    "nextRunAt": {
+                      "type": "string",
+                      "format": "date-time",
+                      "description": "Next scheduled run (null when manual/paused)"
+                    },
+                    "lastRunAt": {
+                      "type": "string",
+                      "format": "date-time",
+                      "description": "Last run"
+                    },
+                    "runCount": {
+                      "type": "integer",
+                      "description": "Runs so far"
+                    },
+                    "enabledModules": {
+                      "type": "object",
+                      "description": "Module key -> enabled. Keys: keyword_research, domain_overview, opportunities, backlinks, link_profile, rank_tracking, competitors, ai_visibility, site_audit, lighthouse"
+                    },
+                    "trackedKeywords": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "Keywords for rank tracking and keyword research"
+                    },
+                    "competitorDomains": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "Pinned competitor domains"
+                    },
+                    "trackedPrompts": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "Questions asked of AI platforms (AEO)"
+                    },
+                    "brandNames": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "Strings that count as a brand mention"
+                    },
+                    "aiPlatforms": {
+                      "type": "object",
+                      "description": "AI platform key -> enabled (chatgpt, claude, gemini, perplexity)"
+                    },
+                    "trackAiOverview": {
+                      "type": "boolean",
+                      "description": "Also check Google AI Overview"
+                    },
+                    "backlinksMaxLinks": {
+                      "type": "integer",
+                      "description": "Backlinks pulled per run (billed per link)"
+                    },
+                    "auditMaxPages": {
+                      "type": "integer",
+                      "description": "Pages crawled per scheduled site audit"
+                    },
+                    "country": {
+                      "type": "string",
+                      "description": "Market country code, e.g. us"
+                    },
+                    "language": {
+                      "type": "string",
+                      "description": "Language code, e.g. en"
+                    },
+                    "created_date": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "updated_date": {
+                      "type": "string",
+                      "format": "date-time"
+                    }
+                  },
+                  "description": "A monitored website. `enabledModules` maps each SEO/AEO module key to whether it runs on the schedule; any module can also be run on demand with seo_runProjectRoute."
+                }
+              }
+            }
           }
         },
-        "summary": "Add a website to monitor and set its schedule + enabled modules."
+        "summary": "Add a website to monitor and set its schedule + enabled modules.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "Display name; defaults to the domain"
+                  },
+                  "frequency": {
+                    "type": "string",
+                    "description": "manual (run-now only), daily, weekly or monthly",
+                    "enum": [
+                      "manual",
+                      "daily",
+                      "weekly",
+                      "monthly"
+                    ]
+                  },
+                  "enabledModules": {
+                    "type": "object",
+                    "description": "Module key -> true/false. Keys: keyword_research, domain_overview, opportunities, backlinks, link_profile, rank_tracking, competitors, ai_visibility, site_audit, lighthouse"
+                  },
+                  "trackedKeywords": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Keywords to rank-track"
+                  },
+                  "competitorDomains": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Competitor domains to pin"
+                  },
+                  "trackedPrompts": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Questions to ask AI platforms"
+                  },
+                  "brandNames": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Strings that count as a brand mention"
+                  },
+                  "aiPlatforms": {
+                    "type": "object",
+                    "description": "AI platform key -> true/false"
+                  },
+                  "trackAiOverview": {
+                    "type": "boolean",
+                    "description": "Also check Google AI Overview"
+                  },
+                  "backlinksMaxLinks": {
+                    "type": "integer",
+                    "description": "Backlinks pulled per run"
+                  },
+                  "auditMaxPages": {
+                    "type": "integer",
+                    "description": "Pages per scheduled site audit"
+                  },
+                  "country": {
+                    "type": "string",
+                    "description": "Market country code, default us"
+                  },
+                  "language": {
+                    "type": "string",
+                    "description": "Language code, default en"
+                  },
+                  "timezone": {
+                    "type": "string",
+                    "description": "Schedule timezone, default UTC"
+                  },
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID"
+                  },
+                  "domain": {
+                    "type": "string",
+                    "description": "Domain or URL to monitor"
+                  }
+                },
+                "required": [
+                  "companyId",
+                  "domain"
+                ],
+                "description": "Add a website to monitor"
+              }
+            }
+          },
+          "description": "Website, schedule and modules"
+        }
       }
     },
     "/api/v0/seo/projects/ensure": {
@@ -55406,12 +55788,198 @@
         "operationId": "seo_ensureProjectRoute",
         "parameters": [],
         "responses": {
+          "400": {
+            "description": "A valid domain is required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
           "200": {
-            "description": "Successful response"
+            "description": "The existing or new project",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "Project ID (UUID)"
+                    },
+                    "companyId": {
+                      "type": "string",
+                      "description": "Company ID"
+                    },
+                    "domain": {
+                      "type": "string",
+                      "description": "Monitored host, lowercased"
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": "Display name"
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "active or paused",
+                      "enum": [
+                        "active",
+                        "paused"
+                      ]
+                    },
+                    "frequency": {
+                      "type": "string",
+                      "description": "manual, daily, weekly or monthly",
+                      "enum": [
+                        "manual",
+                        "daily",
+                        "weekly",
+                        "monthly"
+                      ]
+                    },
+                    "timezone": {
+                      "type": "string",
+                      "description": "Schedule timezone"
+                    },
+                    "nextRunAt": {
+                      "type": "string",
+                      "format": "date-time",
+                      "description": "Next scheduled run (null when manual/paused)"
+                    },
+                    "lastRunAt": {
+                      "type": "string",
+                      "format": "date-time",
+                      "description": "Last run"
+                    },
+                    "runCount": {
+                      "type": "integer",
+                      "description": "Runs so far"
+                    },
+                    "enabledModules": {
+                      "type": "object",
+                      "description": "Module key -> enabled. Keys: keyword_research, domain_overview, opportunities, backlinks, link_profile, rank_tracking, competitors, ai_visibility, site_audit, lighthouse"
+                    },
+                    "trackedKeywords": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "Keywords for rank tracking and keyword research"
+                    },
+                    "competitorDomains": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "Pinned competitor domains"
+                    },
+                    "trackedPrompts": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "Questions asked of AI platforms (AEO)"
+                    },
+                    "brandNames": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "Strings that count as a brand mention"
+                    },
+                    "aiPlatforms": {
+                      "type": "object",
+                      "description": "AI platform key -> enabled (chatgpt, claude, gemini, perplexity)"
+                    },
+                    "trackAiOverview": {
+                      "type": "boolean",
+                      "description": "Also check Google AI Overview"
+                    },
+                    "backlinksMaxLinks": {
+                      "type": "integer",
+                      "description": "Backlinks pulled per run (billed per link)"
+                    },
+                    "auditMaxPages": {
+                      "type": "integer",
+                      "description": "Pages crawled per scheduled site audit"
+                    },
+                    "country": {
+                      "type": "string",
+                      "description": "Market country code, e.g. us"
+                    },
+                    "language": {
+                      "type": "string",
+                      "description": "Language code, e.g. en"
+                    },
+                    "created_date": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "updated_date": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "created": {
+                      "type": "boolean",
+                      "description": "True when the project was created by this call"
+                    }
+                  },
+                  "description": "The project, with whether it was just created"
+                }
+              }
+            }
           }
         },
         "summary": "Get or create the project for a domain.",
-        "description": "Module pages call this when a site is typed freeform: the domain gets a\nblank project (manual schedule, no modules enabled) so the module can run\nagainst it, without the user first setting up monitoring."
+        "description": "Module pages call this when a site is typed freeform: the domain gets a\nblank project (manual schedule, no modules enabled) so the module can run\nagainst it, without the user first setting up monitoring.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID"
+                  },
+                  "domain": {
+                    "type": "string",
+                    "description": "Domain or URL"
+                  }
+                },
+                "required": [
+                  "companyId",
+                  "domain"
+                ],
+                "description": "Get or create the project for a domain"
+              }
+            }
+          },
+          "description": "Company and domain"
+        }
       }
     },
     "/api/v0/seo/projects/{projectId}": {
@@ -55428,11 +55996,686 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID that owns the SEO data"
+            },
+            "description": "Company ID that owns the SEO data"
           }
         ],
         "responses": {
+          "400": {
+            "description": "Invalid project ID",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Project not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
           "200": {
-            "description": "Successful response"
+            "description": "The project and every module's latest result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "Project ID (UUID)"
+                    },
+                    "companyId": {
+                      "type": "string",
+                      "description": "Company ID"
+                    },
+                    "domain": {
+                      "type": "string",
+                      "description": "Monitored host, lowercased"
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": "Display name"
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "active or paused",
+                      "enum": [
+                        "active",
+                        "paused"
+                      ]
+                    },
+                    "frequency": {
+                      "type": "string",
+                      "description": "manual, daily, weekly or monthly",
+                      "enum": [
+                        "manual",
+                        "daily",
+                        "weekly",
+                        "monthly"
+                      ]
+                    },
+                    "timezone": {
+                      "type": "string",
+                      "description": "Schedule timezone"
+                    },
+                    "nextRunAt": {
+                      "type": "string",
+                      "format": "date-time",
+                      "description": "Next scheduled run (null when manual/paused)"
+                    },
+                    "lastRunAt": {
+                      "type": "string",
+                      "format": "date-time",
+                      "description": "Last run"
+                    },
+                    "runCount": {
+                      "type": "integer",
+                      "description": "Runs so far"
+                    },
+                    "enabledModules": {
+                      "type": "object",
+                      "description": "Module key -> enabled. Keys: keyword_research, domain_overview, opportunities, backlinks, link_profile, rank_tracking, competitors, ai_visibility, site_audit, lighthouse"
+                    },
+                    "trackedKeywords": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "Keywords for rank tracking and keyword research"
+                    },
+                    "competitorDomains": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "Pinned competitor domains"
+                    },
+                    "trackedPrompts": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "Questions asked of AI platforms (AEO)"
+                    },
+                    "brandNames": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "Strings that count as a brand mention"
+                    },
+                    "aiPlatforms": {
+                      "type": "object",
+                      "description": "AI platform key -> enabled (chatgpt, claude, gemini, perplexity)"
+                    },
+                    "trackAiOverview": {
+                      "type": "boolean",
+                      "description": "Also check Google AI Overview"
+                    },
+                    "backlinksMaxLinks": {
+                      "type": "integer",
+                      "description": "Backlinks pulled per run (billed per link)"
+                    },
+                    "auditMaxPages": {
+                      "type": "integer",
+                      "description": "Pages crawled per scheduled site audit"
+                    },
+                    "country": {
+                      "type": "string",
+                      "description": "Market country code, e.g. us"
+                    },
+                    "language": {
+                      "type": "string",
+                      "description": "Language code, e.g. en"
+                    },
+                    "created_date": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "updated_date": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "latestAudit": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "description": "Audit ID (UUID)"
+                        },
+                        "domain": {
+                          "type": "string",
+                          "description": "Domain that was crawled"
+                        },
+                        "startUrl": {
+                          "type": "string",
+                          "description": "URL the crawl started from"
+                        },
+                        "status": {
+                          "type": "string",
+                          "description": "queued, running, complete or failed",
+                          "enum": [
+                            "queued",
+                            "running",
+                            "cancelling",
+                            "cancelled",
+                            "complete",
+                            "failed"
+                          ]
+                        },
+                        "error": {
+                          "type": "string",
+                          "description": "Failure reason when status is failed"
+                        },
+                        "maxPages": {
+                          "type": "integer",
+                          "description": "Page ceiling for this crawl"
+                        },
+                        "pagesCrawled": {
+                          "type": "integer",
+                          "description": "Pages crawled so far"
+                        },
+                        "healthScore": {
+                          "type": "integer",
+                          "description": "0-100, starts at 100 and drops per weighted issue"
+                        },
+                        "issueCounts": {
+                          "type": "object",
+                          "description": "Issue totals by severity"
+                        },
+                        "issueSummary": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "string",
+                                "description": "Check id"
+                              },
+                              "severity": {
+                                "type": "string",
+                                "description": "critical, warning or notice"
+                              },
+                              "label": {
+                                "type": "string",
+                                "description": "Human-readable issue name"
+                              },
+                              "pageCount": {
+                                "type": "integer",
+                                "description": "Pages carrying this issue"
+                              }
+                            },
+                            "description": "Per-check rollup across the crawl"
+                          },
+                          "description": "Per-check rollup, worst severity first"
+                        },
+                        "linksChecked": {
+                          "type": "integer",
+                          "description": "Distinct URLs probed across the crawl"
+                        },
+                        "brokenLinkCount": {
+                          "type": "integer",
+                          "description": "Distinct broken URLs found"
+                        },
+                        "avgResponseMs": {
+                          "type": "integer",
+                          "description": "Mean time to first response, ms"
+                        },
+                        "aiReadinessScore": {
+                          "type": "integer",
+                          "description": "AI readiness 0-100, or null if the check did not run"
+                        },
+                        "aiReadinessGrade": {
+                          "type": "string",
+                          "description": "Letter grade for AI readiness"
+                        },
+                        "aiReadinessChecks": {
+                          "type": "object",
+                          "description": "Per-check AI readiness detail (robots.txt, llms.txt, sitemap, Schema.org, extractability, TTFB, HTTPS)"
+                        },
+                        "aiReadinessRecommendations": {
+                          "type": "array",
+                          "items": {
+                            "type": "object"
+                          },
+                          "description": "Prioritized AI readiness fixes"
+                        },
+                        "aiReadinessCheckedAt": {
+                          "type": "string",
+                          "format": "date-time",
+                          "description": "When AI readiness was scored"
+                        },
+                        "aiReadinessError": {
+                          "type": "string",
+                          "description": "Why the AI readiness check failed, when it did"
+                        },
+                        "startedAt": {
+                          "type": "string",
+                          "format": "date-time",
+                          "description": "When the crawl began"
+                        },
+                        "completedAt": {
+                          "type": "string",
+                          "format": "date-time",
+                          "description": "When the crawl finished"
+                        },
+                        "created_date": {
+                          "type": "string",
+                          "format": "date-time",
+                          "description": "When the audit was queued"
+                        }
+                      },
+                      "description": "Latest scheduled site audit, or null"
+                    },
+                    "backlinkHistory": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "runId": {
+                            "type": "string"
+                          },
+                          "totalBacklinks": {
+                            "type": "integer"
+                          },
+                          "referringDomains": {
+                            "type": "integer"
+                          },
+                          "referringMainDomains": {
+                            "type": "integer"
+                          },
+                          "domainRank": {
+                            "type": "integer"
+                          },
+                          "newCount": {
+                            "type": "integer"
+                          },
+                          "lostCount": {
+                            "type": "integer"
+                          },
+                          "brokenCount": {
+                            "type": "integer"
+                          },
+                          "fullPull": {
+                            "type": "boolean",
+                            "description": "Whole profile pulled (vs. delta since last run)"
+                          },
+                          "checkedAt": {
+                            "type": "string",
+                            "format": "date-time"
+                          }
+                        },
+                        "description": "Backlink totals on one run, with new/lost counts"
+                      },
+                      "description": "Newest first"
+                    },
+                    "rankHistory": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "runId": {
+                            "type": "string"
+                          },
+                          "keyword": {
+                            "type": "string"
+                          },
+                          "country": {
+                            "type": "string"
+                          },
+                          "language": {
+                            "type": "string"
+                          },
+                          "position": {
+                            "type": "integer",
+                            "description": "Null when not ranked in the checked depth"
+                          },
+                          "url": {
+                            "type": "string",
+                            "description": "Ranking URL"
+                          },
+                          "previousPosition": {
+                            "type": "integer"
+                          },
+                          "checkedAt": {
+                            "type": "string",
+                            "format": "date-time"
+                          }
+                        },
+                        "description": "One keyword's Google position on one run"
+                      },
+                      "description": "Newest first"
+                    },
+                    "opportunities": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "runId": {
+                          "type": "string"
+                        },
+                        "rankedKeywords": {
+                          "type": "array",
+                          "items": {
+                            "type": "object"
+                          },
+                          "description": "[{keyword, position, volume, cpc, url}]"
+                        },
+                        "keywordIdeas": {
+                          "type": "array",
+                          "items": {
+                            "type": "object"
+                          },
+                          "description": "[{keyword, volume, cpc, competition}]"
+                        },
+                        "rankedCount": {
+                          "type": "integer"
+                        },
+                        "ideaCount": {
+                          "type": "integer"
+                        },
+                        "checkedAt": {
+                          "type": "string",
+                          "format": "date-time"
+                        }
+                      },
+                      "description": "Keywords the domain ranks for plus new ideas, on one run"
+                    },
+                    "competitors": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "runId": {
+                          "type": "string"
+                        },
+                        "competitors": {
+                          "type": "array",
+                          "items": {
+                            "type": "object"
+                          },
+                          "description": "Discovered competitor domains with overlap metrics"
+                        },
+                        "competitorCount": {
+                          "type": "integer"
+                        },
+                        "linkGap": {
+                          "type": "array",
+                          "items": {
+                            "type": "object"
+                          },
+                          "description": "Domains linking to pinned competitors but not to us"
+                        },
+                        "linkGapCount": {
+                          "type": "integer"
+                        },
+                        "checkedAt": {
+                          "type": "string",
+                          "format": "date-time"
+                        }
+                      },
+                      "description": "Organic competitors and backlink gap on one run"
+                    },
+                    "linkProfile": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "runId": {
+                          "type": "string"
+                        },
+                        "anchors": {
+                          "type": "array",
+                          "items": {
+                            "type": "object"
+                          },
+                          "description": "[{anchor, backlinks, referringDomains, nofollowPages, firstSeen}]"
+                        },
+                        "referringDomains": {
+                          "type": "array",
+                          "items": {
+                            "type": "object"
+                          },
+                          "description": "[{domain, rank, backlinks, firstSeen, isNew, isLost, brokenBacklinks}]"
+                        },
+                        "backlinkHistory": {
+                          "type": "array",
+                          "items": {
+                            "type": "object"
+                          },
+                          "description": "Monthly series [{date, backlinks, referringDomains, ...}]"
+                        },
+                        "anchorCount": {
+                          "type": "integer"
+                        },
+                        "referringDomainCount": {
+                          "type": "integer"
+                        },
+                        "checkedAt": {
+                          "type": "string",
+                          "format": "date-time"
+                        }
+                      },
+                      "description": "Anchor text, referring domains and vendor backlink history on one run"
+                    },
+                    "lighthouse": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "runId": {
+                          "type": "string"
+                        },
+                        "url": {
+                          "type": "string",
+                          "description": "Audited URL"
+                        },
+                        "device": {
+                          "type": "string",
+                          "description": "mobile or desktop"
+                        },
+                        "performanceScore": {
+                          "type": "integer"
+                        },
+                        "accessibilityScore": {
+                          "type": "integer"
+                        },
+                        "bestPracticesScore": {
+                          "type": "integer"
+                        },
+                        "seoScore": {
+                          "type": "integer"
+                        },
+                        "agenticBrowsingScore": {
+                          "type": "integer",
+                          "description": "Agentic Browsing (AEO) score 0-100"
+                        },
+                        "vitals": {
+                          "type": "object",
+                          "description": "{FCP, LCP, TBT, CLS, SI, TTI, TTFB} -> {value, rating, displayValue}"
+                        },
+                        "failingAudits": {
+                          "type": "array",
+                          "items": {
+                            "type": "object"
+                          },
+                          "description": "[{id, title, description, score, displayValue}], worst first"
+                        },
+                        "opportunities": {
+                          "type": "array",
+                          "items": {
+                            "type": "object"
+                          },
+                          "description": "Performance opportunities [{id, title, description, score, displayValue}]"
+                        },
+                        "lighthouseVersion": {
+                          "type": "string"
+                        },
+                        "error": {
+                          "type": "string",
+                          "description": "Why the scan failed, when it did"
+                        },
+                        "checkedAt": {
+                          "type": "string",
+                          "format": "date-time"
+                        }
+                      },
+                      "description": "One Lighthouse scan of the home page: category scores 0-100 (including agenticBrowsingScore, Lighthouse's AI-agent readiness / AEO category: llms.txt, agent accessibility tree, WebMCP), Core Web Vitals lab metrics (ms except CLS) and the audits that did not pass."
+                    },
+                    "aiVisibility": {
+                      "type": "object",
+                      "properties": {
+                        "summary": {
+                          "type": "object",
+                          "properties": {
+                            "answers": {
+                              "type": "integer"
+                            },
+                            "visibilityScore": {
+                              "type": "number",
+                              "description": "% of answers naming the brand"
+                            },
+                            "citationScore": {
+                              "type": "number",
+                              "description": "% of answers citing the domain"
+                            },
+                            "shareOfVoice": {
+                              "type": "number"
+                            },
+                            "brandMentions": {
+                              "type": "integer"
+                            },
+                            "domainCitations": {
+                              "type": "integer"
+                            },
+                            "competitorMentions": {
+                              "type": "integer"
+                            }
+                          },
+                          "description": "Aggregate AEO scores for one run"
+                        },
+                        "topCitedDomains": {
+                          "type": "array",
+                          "items": {
+                            "type": "object"
+                          },
+                          "description": "[{domain, answers}]"
+                        },
+                        "answers": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "string"
+                              },
+                              "runId": {
+                                "type": "string"
+                              },
+                              "platform": {
+                                "type": "string",
+                                "description": "chatgpt, claude, gemini, perplexity or google_ai_overview"
+                              },
+                              "model": {
+                                "type": "string"
+                              },
+                              "prompt": {
+                                "type": "string"
+                              },
+                              "brandMentioned": {
+                                "type": "boolean"
+                              },
+                              "brandPosition": {
+                                "type": "integer",
+                                "description": "Character offset of the first brand mention"
+                              },
+                              "domainCited": {
+                                "type": "boolean"
+                              },
+                              "citationCount": {
+                                "type": "integer"
+                              },
+                              "competitorsMentioned": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                }
+                              },
+                              "citations": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object"
+                                },
+                                "description": "[{url, domain}]"
+                              },
+                              "answerExcerpt": {
+                                "type": "string"
+                              },
+                              "error": {
+                                "type": "string"
+                              },
+                              "checkedAt": {
+                                "type": "string",
+                                "format": "date-time"
+                              }
+                            },
+                            "description": "One AI platform's answer to one tracked prompt, scored"
+                          }
+                        }
+                      },
+                      "description": "Latest AEO run"
+                    }
+                  },
+                  "description": "The project plus the latest result of every module"
+                }
+              }
+            }
           }
         },
         "summary": "One project plus its latest per-module results."
@@ -55453,11 +56696,272 @@
           }
         ],
         "responses": {
+          "400": {
+            "description": "Invalid project ID",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Project not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
           "200": {
-            "description": "Successful response"
+            "description": "The updated project",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "Project ID (UUID)"
+                    },
+                    "companyId": {
+                      "type": "string",
+                      "description": "Company ID"
+                    },
+                    "domain": {
+                      "type": "string",
+                      "description": "Monitored host, lowercased"
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": "Display name"
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "active or paused",
+                      "enum": [
+                        "active",
+                        "paused"
+                      ]
+                    },
+                    "frequency": {
+                      "type": "string",
+                      "description": "manual, daily, weekly or monthly",
+                      "enum": [
+                        "manual",
+                        "daily",
+                        "weekly",
+                        "monthly"
+                      ]
+                    },
+                    "timezone": {
+                      "type": "string",
+                      "description": "Schedule timezone"
+                    },
+                    "nextRunAt": {
+                      "type": "string",
+                      "format": "date-time",
+                      "description": "Next scheduled run (null when manual/paused)"
+                    },
+                    "lastRunAt": {
+                      "type": "string",
+                      "format": "date-time",
+                      "description": "Last run"
+                    },
+                    "runCount": {
+                      "type": "integer",
+                      "description": "Runs so far"
+                    },
+                    "enabledModules": {
+                      "type": "object",
+                      "description": "Module key -> enabled. Keys: keyword_research, domain_overview, opportunities, backlinks, link_profile, rank_tracking, competitors, ai_visibility, site_audit, lighthouse"
+                    },
+                    "trackedKeywords": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "Keywords for rank tracking and keyword research"
+                    },
+                    "competitorDomains": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "Pinned competitor domains"
+                    },
+                    "trackedPrompts": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "Questions asked of AI platforms (AEO)"
+                    },
+                    "brandNames": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "Strings that count as a brand mention"
+                    },
+                    "aiPlatforms": {
+                      "type": "object",
+                      "description": "AI platform key -> enabled (chatgpt, claude, gemini, perplexity)"
+                    },
+                    "trackAiOverview": {
+                      "type": "boolean",
+                      "description": "Also check Google AI Overview"
+                    },
+                    "backlinksMaxLinks": {
+                      "type": "integer",
+                      "description": "Backlinks pulled per run (billed per link)"
+                    },
+                    "auditMaxPages": {
+                      "type": "integer",
+                      "description": "Pages crawled per scheduled site audit"
+                    },
+                    "country": {
+                      "type": "string",
+                      "description": "Market country code, e.g. us"
+                    },
+                    "language": {
+                      "type": "string",
+                      "description": "Language code, e.g. en"
+                    },
+                    "created_date": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "updated_date": {
+                      "type": "string",
+                      "format": "date-time"
+                    }
+                  },
+                  "description": "A monitored website. `enabledModules` maps each SEO/AEO module key to whether it runs on the schedule; any module can also be run on demand with seo_runProjectRoute."
+                }
+              }
+            }
           }
         },
-        "summary": "Update a project's schedule, modules, tracked keywords, or caps."
+        "summary": "Update a project's schedule, modules, tracked keywords, or caps.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "Display name; defaults to the domain"
+                  },
+                  "frequency": {
+                    "type": "string",
+                    "description": "manual (run-now only), daily, weekly or monthly",
+                    "enum": [
+                      "manual",
+                      "daily",
+                      "weekly",
+                      "monthly"
+                    ]
+                  },
+                  "enabledModules": {
+                    "type": "object",
+                    "description": "Module key -> true/false. Keys: keyword_research, domain_overview, opportunities, backlinks, link_profile, rank_tracking, competitors, ai_visibility, site_audit, lighthouse"
+                  },
+                  "trackedKeywords": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Keywords to rank-track"
+                  },
+                  "competitorDomains": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Competitor domains to pin"
+                  },
+                  "trackedPrompts": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Questions to ask AI platforms"
+                  },
+                  "brandNames": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Strings that count as a brand mention"
+                  },
+                  "aiPlatforms": {
+                    "type": "object",
+                    "description": "AI platform key -> true/false"
+                  },
+                  "trackAiOverview": {
+                    "type": "boolean",
+                    "description": "Also check Google AI Overview"
+                  },
+                  "backlinksMaxLinks": {
+                    "type": "integer",
+                    "description": "Backlinks pulled per run"
+                  },
+                  "auditMaxPages": {
+                    "type": "integer",
+                    "description": "Pages per scheduled site audit"
+                  },
+                  "country": {
+                    "type": "string",
+                    "description": "Market country code, default us"
+                  },
+                  "language": {
+                    "type": "string",
+                    "description": "Language code, default en"
+                  },
+                  "timezone": {
+                    "type": "string",
+                    "description": "Schedule timezone, default UTC"
+                  },
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID"
+                  }
+                },
+                "required": [
+                  "companyId"
+                ],
+                "description": "Change a monitored website's schedule, modules, keywords or caps"
+              }
+            }
+          },
+          "description": "Fields to change"
+        }
       },
       "delete": {
         "tags": [
@@ -55472,11 +56976,75 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID that owns the SEO data"
+            },
+            "description": "Company ID that owns the SEO data"
           }
         ],
         "responses": {
+          "400": {
+            "description": "Invalid project ID",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Project not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
           "200": {
-            "description": "Successful response"
+            "description": "Deleted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Whether the operation succeeded"
+                    }
+                  },
+                  "description": "Success response"
+                }
+              }
+            }
           }
         },
         "summary": "Remove a monitored project."
@@ -55531,11 +57099,198 @@
           }
         ],
         "responses": {
+          "400": {
+            "description": "Invalid project ID",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Project not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
           "200": {
-            "description": "Successful response"
+            "description": "The paused project",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "Project ID (UUID)"
+                    },
+                    "companyId": {
+                      "type": "string",
+                      "description": "Company ID"
+                    },
+                    "domain": {
+                      "type": "string",
+                      "description": "Monitored host, lowercased"
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": "Display name"
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "active or paused",
+                      "enum": [
+                        "active",
+                        "paused"
+                      ]
+                    },
+                    "frequency": {
+                      "type": "string",
+                      "description": "manual, daily, weekly or monthly",
+                      "enum": [
+                        "manual",
+                        "daily",
+                        "weekly",
+                        "monthly"
+                      ]
+                    },
+                    "timezone": {
+                      "type": "string",
+                      "description": "Schedule timezone"
+                    },
+                    "nextRunAt": {
+                      "type": "string",
+                      "format": "date-time",
+                      "description": "Next scheduled run (null when manual/paused)"
+                    },
+                    "lastRunAt": {
+                      "type": "string",
+                      "format": "date-time",
+                      "description": "Last run"
+                    },
+                    "runCount": {
+                      "type": "integer",
+                      "description": "Runs so far"
+                    },
+                    "enabledModules": {
+                      "type": "object",
+                      "description": "Module key -> enabled. Keys: keyword_research, domain_overview, opportunities, backlinks, link_profile, rank_tracking, competitors, ai_visibility, site_audit, lighthouse"
+                    },
+                    "trackedKeywords": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "Keywords for rank tracking and keyword research"
+                    },
+                    "competitorDomains": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "Pinned competitor domains"
+                    },
+                    "trackedPrompts": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "Questions asked of AI platforms (AEO)"
+                    },
+                    "brandNames": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "Strings that count as a brand mention"
+                    },
+                    "aiPlatforms": {
+                      "type": "object",
+                      "description": "AI platform key -> enabled (chatgpt, claude, gemini, perplexity)"
+                    },
+                    "trackAiOverview": {
+                      "type": "boolean",
+                      "description": "Also check Google AI Overview"
+                    },
+                    "backlinksMaxLinks": {
+                      "type": "integer",
+                      "description": "Backlinks pulled per run (billed per link)"
+                    },
+                    "auditMaxPages": {
+                      "type": "integer",
+                      "description": "Pages crawled per scheduled site audit"
+                    },
+                    "country": {
+                      "type": "string",
+                      "description": "Market country code, e.g. us"
+                    },
+                    "language": {
+                      "type": "string",
+                      "description": "Language code, e.g. en"
+                    },
+                    "created_date": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "updated_date": {
+                      "type": "string",
+                      "format": "date-time"
+                    }
+                  },
+                  "description": "A monitored website. `enabledModules` maps each SEO/AEO module key to whether it runs on the schedule; any module can also be run on demand with seo_runProjectRoute."
+                }
+              }
+            }
           }
         },
-        "summary": "Pause a project's schedule (no runs fire until resumed)."
+        "summary": "Pause a project's schedule (no runs fire until resumed).",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID that owns the SEO data"
+                  }
+                },
+                "required": [
+                  "companyId"
+                ],
+                "description": "Company scope for the request"
+              }
+            }
+          },
+          "description": "Company context"
+        }
       }
     },
     "/api/v0/seo/projects/{projectId}/resume": {
@@ -55555,11 +57310,198 @@
           }
         ],
         "responses": {
+          "400": {
+            "description": "Invalid project ID",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Project not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
           "200": {
-            "description": "Successful response"
+            "description": "The resumed project",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "Project ID (UUID)"
+                    },
+                    "companyId": {
+                      "type": "string",
+                      "description": "Company ID"
+                    },
+                    "domain": {
+                      "type": "string",
+                      "description": "Monitored host, lowercased"
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": "Display name"
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "active or paused",
+                      "enum": [
+                        "active",
+                        "paused"
+                      ]
+                    },
+                    "frequency": {
+                      "type": "string",
+                      "description": "manual, daily, weekly or monthly",
+                      "enum": [
+                        "manual",
+                        "daily",
+                        "weekly",
+                        "monthly"
+                      ]
+                    },
+                    "timezone": {
+                      "type": "string",
+                      "description": "Schedule timezone"
+                    },
+                    "nextRunAt": {
+                      "type": "string",
+                      "format": "date-time",
+                      "description": "Next scheduled run (null when manual/paused)"
+                    },
+                    "lastRunAt": {
+                      "type": "string",
+                      "format": "date-time",
+                      "description": "Last run"
+                    },
+                    "runCount": {
+                      "type": "integer",
+                      "description": "Runs so far"
+                    },
+                    "enabledModules": {
+                      "type": "object",
+                      "description": "Module key -> enabled. Keys: keyword_research, domain_overview, opportunities, backlinks, link_profile, rank_tracking, competitors, ai_visibility, site_audit, lighthouse"
+                    },
+                    "trackedKeywords": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "Keywords for rank tracking and keyword research"
+                    },
+                    "competitorDomains": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "Pinned competitor domains"
+                    },
+                    "trackedPrompts": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "Questions asked of AI platforms (AEO)"
+                    },
+                    "brandNames": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "Strings that count as a brand mention"
+                    },
+                    "aiPlatforms": {
+                      "type": "object",
+                      "description": "AI platform key -> enabled (chatgpt, claude, gemini, perplexity)"
+                    },
+                    "trackAiOverview": {
+                      "type": "boolean",
+                      "description": "Also check Google AI Overview"
+                    },
+                    "backlinksMaxLinks": {
+                      "type": "integer",
+                      "description": "Backlinks pulled per run (billed per link)"
+                    },
+                    "auditMaxPages": {
+                      "type": "integer",
+                      "description": "Pages crawled per scheduled site audit"
+                    },
+                    "country": {
+                      "type": "string",
+                      "description": "Market country code, e.g. us"
+                    },
+                    "language": {
+                      "type": "string",
+                      "description": "Language code, e.g. en"
+                    },
+                    "created_date": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "updated_date": {
+                      "type": "string",
+                      "format": "date-time"
+                    }
+                  },
+                  "description": "A monitored website. `enabledModules` maps each SEO/AEO module key to whether it runs on the schedule; any module can also be run on demand with seo_runProjectRoute."
+                }
+              }
+            }
           }
         },
-        "summary": "Resume a paused project (recomputes its next run)."
+        "summary": "Resume a paused project (recomputes its next run).",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID that owns the SEO data"
+                  }
+                },
+                "required": [
+                  "companyId"
+                ],
+                "description": "Company scope for the request"
+              }
+            }
+          },
+          "description": "Company context"
+        }
       }
     },
     "/api/v0/seo/projects/{projectId}/run": {
@@ -55579,12 +57521,115 @@
           }
         ],
         "responses": {
+          "400": {
+            "description": "Invalid project ID or unknown modules",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Project not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
           "200": {
-            "description": "Successful response"
+            "description": "Run queued",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "queued": {
+                      "type": "boolean"
+                    },
+                    "modules": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "Modules requested, or null for all enabled"
+                    }
+                  },
+                  "description": "The run was queued"
+                }
+              }
+            }
           }
         },
         "summary": "Run a project's modules now. Does not advance the schedule.",
-        "description": "Body may carry `modules: [...]` (SEO_MODULE_* keys) to run only those -\nenabled or not - so one report can be refreshed without re-running the\nwhole project. Without it, every enabled module runs."
+        "description": "Body may carry `modules: [...]` (SEO_MODULE_* keys) to run only those -\nenabled or not - so one report can be refreshed without re-running the\nwhole project. Without it, every enabled module runs.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID"
+                  },
+                  "modules": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "keyword_research",
+                        "domain_overview",
+                        "opportunities",
+                        "backlinks",
+                        "link_profile",
+                        "rank_tracking",
+                        "competitors",
+                        "ai_visibility",
+                        "site_audit",
+                        "lighthouse"
+                      ]
+                    },
+                    "description": "Only run these modules (enabled or not): keyword_research, domain_overview, opportunities, backlinks, link_profile, rank_tracking, competitors, ai_visibility, site_audit, lighthouse. Omit to run every enabled module."
+                  }
+                },
+                "required": [
+                  "companyId"
+                ],
+                "description": "Run a project's modules now. Runs in the background; read the results from the per-module routes once the run completes."
+              }
+            }
+          },
+          "description": "Which modules to run"
+        }
       }
     },
     "/api/v0/seo/projects/{projectId}/backlinks": {
@@ -55601,11 +57646,163 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID"
+            },
+            "description": "Company ID"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "1-indexed page number"
+            },
+            "description": "1-indexed page number"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Rows per page, max 100"
+            },
+            "description": "Rows per page, max 100"
+          },
+          {
+            "name": "includeLost",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "description": "Also return links that have dropped"
+            },
+            "description": "Also return links that have dropped"
           }
         ],
         "responses": {
+          "400": {
+            "description": "Invalid project ID",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Project not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
           "200": {
-            "description": "Successful response"
+            "description": "One page of backlinks",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "sourceUrl": {
+                            "type": "string",
+                            "description": "Referring page"
+                          },
+                          "sourceDomain": {
+                            "type": "string"
+                          },
+                          "targetUrl": {
+                            "type": "string",
+                            "description": "Page on the monitored domain"
+                          },
+                          "anchor": {
+                            "type": "string"
+                          },
+                          "dofollow": {
+                            "type": "boolean"
+                          },
+                          "linkType": {
+                            "type": "string"
+                          },
+                          "domainRank": {
+                            "type": "integer",
+                            "description": "Referring page rank"
+                          },
+                          "rankOfReferringDomain": {
+                            "type": "integer"
+                          },
+                          "firstSeen": {
+                            "type": "string",
+                            "format": "date-time"
+                          },
+                          "lastSeen": {
+                            "type": "string",
+                            "format": "date-time"
+                          },
+                          "firstSeenRunAt": {
+                            "type": "string",
+                            "format": "date-time",
+                            "description": "First monitor run that saw the link"
+                          },
+                          "lostAt": {
+                            "type": "string",
+                            "format": "date-time"
+                          },
+                          "isLost": {
+                            "type": "boolean"
+                          }
+                        },
+                        "description": "One backlink pointing at the monitored domain"
+                      }
+                    },
+                    "total": {
+                      "type": "integer"
+                    }
+                  },
+                  "description": "One page of backlinks"
+                }
+              }
+            }
           }
         },
         "summary": "Paginated individual backlinks for a project's domain."
@@ -55625,11 +57822,120 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID"
+            },
+            "description": "Company ID"
+          },
+          {
+            "name": "keyword",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Only this keyword"
+            },
+            "description": "Only this keyword"
           }
         ],
         "responses": {
+          "400": {
+            "description": "Invalid project ID",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Project not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
           "200": {
-            "description": "Successful response"
+            "description": "Rank snapshots",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "runId": {
+                            "type": "string"
+                          },
+                          "keyword": {
+                            "type": "string"
+                          },
+                          "country": {
+                            "type": "string"
+                          },
+                          "language": {
+                            "type": "string"
+                          },
+                          "position": {
+                            "type": "integer",
+                            "description": "Null when not ranked in the checked depth"
+                          },
+                          "url": {
+                            "type": "string",
+                            "description": "Ranking URL"
+                          },
+                          "previousPosition": {
+                            "type": "integer"
+                          },
+                          "checkedAt": {
+                            "type": "string",
+                            "format": "date-time"
+                          }
+                        },
+                        "description": "One keyword's Google position on one run"
+                      }
+                    }
+                  },
+                  "description": "Rank snapshots, newest first"
+                }
+              }
+            }
           }
         },
         "summary": "Rank snapshots over time, optionally filtered to one keyword."
@@ -55649,11 +57955,115 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID that owns the SEO data"
+            },
+            "description": "Company ID that owns the SEO data"
           }
         ],
         "responses": {
+          "400": {
+            "description": "Invalid project ID",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Project not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
           "200": {
-            "description": "Successful response"
+            "description": "Backlink totals per run",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "runId": {
+                            "type": "string"
+                          },
+                          "totalBacklinks": {
+                            "type": "integer"
+                          },
+                          "referringDomains": {
+                            "type": "integer"
+                          },
+                          "referringMainDomains": {
+                            "type": "integer"
+                          },
+                          "domainRank": {
+                            "type": "integer"
+                          },
+                          "newCount": {
+                            "type": "integer"
+                          },
+                          "lostCount": {
+                            "type": "integer"
+                          },
+                          "brokenCount": {
+                            "type": "integer"
+                          },
+                          "fullPull": {
+                            "type": "boolean",
+                            "description": "Whole profile pulled (vs. delta since last run)"
+                          },
+                          "checkedAt": {
+                            "type": "string",
+                            "format": "date-time"
+                          }
+                        },
+                        "description": "Backlink totals on one run, with new/lost counts"
+                      }
+                    }
+                  },
+                  "description": "Backlink totals per run, newest first"
+                }
+              }
+            }
           }
         },
         "summary": "Per-run backlink totals + new/lost counts over time."
@@ -55673,11 +58083,101 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID that owns the SEO data"
+            },
+            "description": "Company ID that owns the SEO data"
           }
         ],
         "responses": {
+          "400": {
+            "description": "Invalid project ID",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Project not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
           "200": {
-            "description": "Successful response"
+            "description": "Latest competitor snapshot (empty lists when none yet)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "runId": {
+                      "type": "string"
+                    },
+                    "competitors": {
+                      "type": "array",
+                      "items": {
+                        "type": "object"
+                      },
+                      "description": "Discovered competitor domains with overlap metrics"
+                    },
+                    "competitorCount": {
+                      "type": "integer"
+                    },
+                    "linkGap": {
+                      "type": "array",
+                      "items": {
+                        "type": "object"
+                      },
+                      "description": "Domains linking to pinned competitors but not to us"
+                    },
+                    "linkGapCount": {
+                      "type": "integer"
+                    },
+                    "checkedAt": {
+                      "type": "string",
+                      "format": "date-time"
+                    }
+                  },
+                  "description": "Organic competitors and backlink gap on one run"
+                }
+              }
+            }
           }
         },
         "summary": "Latest organic competitor set and backlink gap for a project."
@@ -55697,14 +58197,445 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID that owns the SEO data"
+            },
+            "description": "Company ID that owns the SEO data"
           }
         ],
         "responses": {
+          "400": {
+            "description": "Invalid project ID",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Project not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
           "200": {
-            "description": "Successful response"
+            "description": "Latest link profile snapshot (empty lists when none yet)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "runId": {
+                      "type": "string"
+                    },
+                    "anchors": {
+                      "type": "array",
+                      "items": {
+                        "type": "object"
+                      },
+                      "description": "[{anchor, backlinks, referringDomains, nofollowPages, firstSeen}]"
+                    },
+                    "referringDomains": {
+                      "type": "array",
+                      "items": {
+                        "type": "object"
+                      },
+                      "description": "[{domain, rank, backlinks, firstSeen, isNew, isLost, brokenBacklinks}]"
+                    },
+                    "backlinkHistory": {
+                      "type": "array",
+                      "items": {
+                        "type": "object"
+                      },
+                      "description": "Monthly series [{date, backlinks, referringDomains, ...}]"
+                    },
+                    "anchorCount": {
+                      "type": "integer"
+                    },
+                    "referringDomainCount": {
+                      "type": "integer"
+                    },
+                    "checkedAt": {
+                      "type": "string",
+                      "format": "date-time"
+                    }
+                  },
+                  "description": "Anchor text, referring domains and vendor backlink history on one run"
+                }
+              }
+            }
           }
         },
         "summary": "Latest anchor text, referring domains, and vendor backlink history."
+      }
+    },
+    "/api/v0/seo/projects/{projectId}/lighthouse": {
+      "get": {
+        "tags": [
+          "SEO"
+        ],
+        "operationId": "seo_projectLighthouseRoute",
+        "parameters": [
+          {
+            "name": "projectId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID"
+            },
+            "description": "Company ID"
+          },
+          {
+            "name": "days",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "History window in days: 7, 30, 90, 365. Defaults to 90.",
+              "enum": [
+                7,
+                30,
+                90,
+                365
+              ]
+            },
+            "description": "History window in days: 7, 30, 90, 365. Defaults to 90."
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid project ID",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Project not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Latest scan, history and recent scans",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "latest": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "runId": {
+                          "type": "string"
+                        },
+                        "url": {
+                          "type": "string",
+                          "description": "Audited URL"
+                        },
+                        "device": {
+                          "type": "string",
+                          "description": "mobile or desktop"
+                        },
+                        "performanceScore": {
+                          "type": "integer"
+                        },
+                        "accessibilityScore": {
+                          "type": "integer"
+                        },
+                        "bestPracticesScore": {
+                          "type": "integer"
+                        },
+                        "seoScore": {
+                          "type": "integer"
+                        },
+                        "agenticBrowsingScore": {
+                          "type": "integer",
+                          "description": "Agentic Browsing (AEO) score 0-100"
+                        },
+                        "vitals": {
+                          "type": "object",
+                          "description": "{FCP, LCP, TBT, CLS, SI, TTI, TTFB} -> {value, rating, displayValue}"
+                        },
+                        "failingAudits": {
+                          "type": "array",
+                          "items": {
+                            "type": "object"
+                          },
+                          "description": "[{id, title, description, score, displayValue}], worst first"
+                        },
+                        "opportunities": {
+                          "type": "array",
+                          "items": {
+                            "type": "object"
+                          },
+                          "description": "Performance opportunities [{id, title, description, score, displayValue}]"
+                        },
+                        "lighthouseVersion": {
+                          "type": "string"
+                        },
+                        "error": {
+                          "type": "string",
+                          "description": "Why the scan failed, when it did"
+                        },
+                        "checkedAt": {
+                          "type": "string",
+                          "format": "date-time"
+                        }
+                      },
+                      "description": "Newest successful scan, or null"
+                    },
+                    "history": {
+                      "type": "array",
+                      "items": {
+                        "type": "object"
+                      },
+                      "description": "Oldest -> newest [{checkedAt, performanceScore, accessibilityScore, bestPracticesScore, seoScore, agenticBrowsingScore, error}]"
+                    },
+                    "scans": {
+                      "type": "array",
+                      "items": {
+                        "type": "object"
+                      },
+                      "description": "Newest first [{id, checkedAt, device, ...scores, error}]; fetch one with seo_projectLighthouseSnapshotRoute"
+                    },
+                    "days": {
+                      "type": "integer"
+                    }
+                  },
+                  "description": "Latest successful scan, per-scan scores over the window, and recent scans"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Latest Lighthouse report (category scores, Core Web Vitals, failing",
+        "description": "audits) plus per-scan scores over the last `days` for the trend chart."
+      }
+    },
+    "/api/v0/seo/projects/{projectId}/lighthouse/{snapshotId}": {
+      "get": {
+        "tags": [
+          "SEO"
+        ],
+        "operationId": "seo_projectLighthouseSnapshotRoute",
+        "parameters": [
+          {
+            "name": "snapshotId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "projectId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID that owns the SEO data"
+            },
+            "description": "Company ID that owns the SEO data"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid ID",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Scan not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "The scan in full",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "runId": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string",
+                      "description": "Audited URL"
+                    },
+                    "device": {
+                      "type": "string",
+                      "description": "mobile or desktop"
+                    },
+                    "performanceScore": {
+                      "type": "integer"
+                    },
+                    "accessibilityScore": {
+                      "type": "integer"
+                    },
+                    "bestPracticesScore": {
+                      "type": "integer"
+                    },
+                    "seoScore": {
+                      "type": "integer"
+                    },
+                    "agenticBrowsingScore": {
+                      "type": "integer",
+                      "description": "Agentic Browsing (AEO) score 0-100"
+                    },
+                    "vitals": {
+                      "type": "object",
+                      "description": "{FCP, LCP, TBT, CLS, SI, TTI, TTFB} -> {value, rating, displayValue}"
+                    },
+                    "failingAudits": {
+                      "type": "array",
+                      "items": {
+                        "type": "object"
+                      },
+                      "description": "[{id, title, description, score, displayValue}], worst first"
+                    },
+                    "opportunities": {
+                      "type": "array",
+                      "items": {
+                        "type": "object"
+                      },
+                      "description": "Performance opportunities [{id, title, description, score, displayValue}]"
+                    },
+                    "lighthouseVersion": {
+                      "type": "string"
+                    },
+                    "error": {
+                      "type": "string",
+                      "description": "Why the scan failed, when it did"
+                    },
+                    "checkedAt": {
+                      "type": "string",
+                      "format": "date-time"
+                    }
+                  },
+                  "description": "One Lighthouse scan of the home page: category scores 0-100 (including agenticBrowsingScore, Lighthouse's AI-agent readiness / AEO category: llms.txt, agent accessibility tree, WebMCP), Core Web Vitals lab metrics (ms except CLS) and the audits that did not pass."
+                }
+              }
+            }
+          }
+        },
+        "summary": "One Lighthouse scan in full, so an earlier snapshot can be inspected."
       }
     },
     "/api/v0/seo/projects/{projectId}/ai-visibility": {
@@ -55721,11 +58652,175 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID"
+            },
+            "description": "Company ID"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "1-indexed page number"
+            },
+            "description": "1-indexed page number"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Rows per page, max 100"
+            },
+            "description": "Rows per page, max 100"
+          },
+          {
+            "name": "platform",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Only this platform"
+            },
+            "description": "Only this platform"
+          },
+          {
+            "name": "prompt",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Only this prompt"
+            },
+            "description": "Only this prompt"
           }
         ],
         "responses": {
+          "400": {
+            "description": "Invalid project ID",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Project not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
           "200": {
-            "description": "Successful response"
+            "description": "One page of scored answers",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "runId": {
+                            "type": "string"
+                          },
+                          "platform": {
+                            "type": "string",
+                            "description": "chatgpt, claude, gemini, perplexity or google_ai_overview"
+                          },
+                          "model": {
+                            "type": "string"
+                          },
+                          "prompt": {
+                            "type": "string"
+                          },
+                          "brandMentioned": {
+                            "type": "boolean"
+                          },
+                          "brandPosition": {
+                            "type": "integer",
+                            "description": "Character offset of the first brand mention"
+                          },
+                          "domainCited": {
+                            "type": "boolean"
+                          },
+                          "citationCount": {
+                            "type": "integer"
+                          },
+                          "competitorsMentioned": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "citations": {
+                            "type": "array",
+                            "items": {
+                              "type": "object"
+                            },
+                            "description": "[{url, domain}]"
+                          },
+                          "answerExcerpt": {
+                            "type": "string"
+                          },
+                          "error": {
+                            "type": "string"
+                          },
+                          "checkedAt": {
+                            "type": "string",
+                            "format": "date-time"
+                          }
+                        },
+                        "description": "One AI platform's answer to one tracked prompt, scored"
+                      }
+                    },
+                    "total": {
+                      "type": "integer"
+                    }
+                  },
+                  "description": "One page of scored AI answers"
+                }
+              }
+            }
           }
         },
         "summary": "Paginated AEO answers, filterable by platform/prompt.",
@@ -55746,11 +58841,103 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID that owns the SEO data"
+            },
+            "description": "Company ID that owns the SEO data"
           }
         ],
         "responses": {
+          "400": {
+            "description": "Invalid project ID",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Project not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
           "200": {
-            "description": "Successful response"
+            "description": "Per-run AEO summaries",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "answers": {
+                            "type": "integer"
+                          },
+                          "visibilityScore": {
+                            "type": "number",
+                            "description": "% of answers naming the brand"
+                          },
+                          "citationScore": {
+                            "type": "number",
+                            "description": "% of answers citing the domain"
+                          },
+                          "shareOfVoice": {
+                            "type": "number"
+                          },
+                          "brandMentions": {
+                            "type": "integer"
+                          },
+                          "domainCitations": {
+                            "type": "integer"
+                          },
+                          "competitorMentions": {
+                            "type": "integer"
+                          }
+                        },
+                        "description": "Aggregate AEO scores for one run"
+                      }
+                    }
+                  },
+                  "description": "Per-run AEO summary, oldest first"
+                }
+              }
+            }
           }
         },
         "summary": "Per-run AI visibility / citation / share-of-voice scores over time."
@@ -57026,7 +60213,7 @@
         "operationId": "marketing_campaigns_restoreCampaignVersion",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -57034,7 +60221,7 @@
             }
           },
           {
-            "name": "versionId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -58221,7 +61408,7 @@
         "operationId": "marketing_campaigns_deleteCampaignRecipient",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "recipientId",
             "in": "path",
             "required": true,
             "schema": {
@@ -58229,7 +61416,7 @@
             }
           },
           {
-            "name": "recipientId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
