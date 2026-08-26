@@ -6787,7 +6787,7 @@
         "operationId": "projects_getProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -6795,7 +6795,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -6930,7 +6930,7 @@
         "operationId": "projects_updateProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -6938,7 +6938,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -7099,7 +7099,7 @@
         "operationId": "projects_deleteProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -7107,7 +7107,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8006,7 +8006,7 @@
         "operationId": "projects_exportProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8014,7 +8014,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8106,7 +8106,7 @@
         "operationId": "projects_publishFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8114,7 +8114,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8261,7 +8261,7 @@
         "operationId": "projects_unpublishFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8269,7 +8269,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -16107,7 +16107,7 @@
         "operationId": "agents_checkConversationActivity",
         "parameters": [
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -16115,7 +16115,7 @@
             }
           },
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -16177,7 +16177,7 @@
         "operationId": "agents_getConversationDetails",
         "parameters": [
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -16185,7 +16185,7 @@
             }
           },
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18759,7 +18759,7 @@
         "operationId": "lists_deleteTableAction",
         "parameters": [
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18767,7 +18767,7 @@
             }
           },
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18865,7 +18865,7 @@
         "operationId": "lists_getActionSummary",
         "parameters": [
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18873,7 +18873,7 @@
             }
           },
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18993,7 +18993,7 @@
         "operationId": "lists_getActionQueueStatus",
         "parameters": [
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19001,7 +19001,7 @@
             }
           },
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19550,7 +19550,7 @@
         "operationId": "lists_deleteHeader",
         "parameters": [
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19558,7 +19558,7 @@
             }
           },
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19624,7 +19624,7 @@
         "operationId": "lists_editHeader",
         "parameters": [
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19632,7 +19632,7 @@
             }
           },
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24129,7 +24129,7 @@
         "operationId": "sequences_getSequenceMemberTimeline",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24137,7 +24137,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24535,7 +24535,7 @@
         "operationId": "sequences_triggerSequenceMember",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24543,7 +24543,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24611,7 +24611,7 @@
         "operationId": "sequences_removeSequenceMember",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24619,7 +24619,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25105,7 +25105,7 @@
         "operationId": "sequences_editSequenceExecution",
         "parameters": [
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25113,7 +25113,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25202,7 +25202,7 @@
         "operationId": "sequences_previewSequenceExecution",
         "parameters": [
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25210,7 +25210,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26913,7 +26913,7 @@
         "operationId": "sequences_getMemberProfile",
         "parameters": [
           {
-            "name": "memberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26921,7 +26921,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "memberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -56545,14 +56545,21 @@
                           "items": {
                             "type": "object"
                           },
-                          "description": "[{id, title, description, score, displayValue}], worst first"
+                          "description": "[{id, title, description, score, displayValue, category}], worst first. category is the Lighthouse category id (performance, accessibility, best-practices, seo, agentic-browsing)"
                         },
                         "opportunities": {
                           "type": "array",
                           "items": {
                             "type": "object"
                           },
-                          "description": "Performance opportunities [{id, title, description, score, displayValue}]"
+                          "description": "Performance opportunities [{id, title, description, score, displayValue, category}]"
+                        },
+                        "passingAudits": {
+                          "type": "array",
+                          "items": {
+                            "type": "object"
+                          },
+                          "description": "Audits that passed [{id, title, description, score, displayValue, category}]"
                         },
                         "lighthouseVersion": {
                           "type": "string"
@@ -58436,14 +58443,21 @@
                           "items": {
                             "type": "object"
                           },
-                          "description": "[{id, title, description, score, displayValue}], worst first"
+                          "description": "[{id, title, description, score, displayValue, category}], worst first. category is the Lighthouse category id (performance, accessibility, best-practices, seo, agentic-browsing)"
                         },
                         "opportunities": {
                           "type": "array",
                           "items": {
                             "type": "object"
                           },
-                          "description": "Performance opportunities [{id, title, description, score, displayValue}]"
+                          "description": "Performance opportunities [{id, title, description, score, displayValue, category}]"
+                        },
+                        "passingAudits": {
+                          "type": "array",
+                          "items": {
+                            "type": "object"
+                          },
+                          "description": "Audits that passed [{id, title, description, score, displayValue, category}]"
                         },
                         "lighthouseVersion": {
                           "type": "string"
@@ -58495,7 +58509,7 @@
         "operationId": "seo_projectLighthouseSnapshotRoute",
         "parameters": [
           {
-            "name": "snapshotId",
+            "name": "projectId",
             "in": "path",
             "required": true,
             "schema": {
@@ -58503,7 +58517,7 @@
             }
           },
           {
-            "name": "projectId",
+            "name": "snapshotId",
             "in": "path",
             "required": true,
             "schema": {
@@ -58608,14 +58622,21 @@
                       "items": {
                         "type": "object"
                       },
-                      "description": "[{id, title, description, score, displayValue}], worst first"
+                      "description": "[{id, title, description, score, displayValue, category}], worst first. category is the Lighthouse category id (performance, accessibility, best-practices, seo, agentic-browsing)"
                     },
                     "opportunities": {
                       "type": "array",
                       "items": {
                         "type": "object"
                       },
-                      "description": "Performance opportunities [{id, title, description, score, displayValue}]"
+                      "description": "Performance opportunities [{id, title, description, score, displayValue, category}]"
+                    },
+                    "passingAudits": {
+                      "type": "array",
+                      "items": {
+                        "type": "object"
+                      },
+                      "description": "Audits that passed [{id, title, description, score, displayValue, category}]"
                     },
                     "lighthouseVersion": {
                       "type": "string"
