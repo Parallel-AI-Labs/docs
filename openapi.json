@@ -922,7 +922,7 @@
         "operationId": "documents_getDocumentContents",
         "parameters": [
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -930,7 +930,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -989,7 +989,7 @@
         "operationId": "documents_getDocument",
         "parameters": [
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -997,7 +997,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -3136,7 +3136,7 @@
         "operationId": "keys_getApiKey",
         "parameters": [
           {
-            "name": "name",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -3144,7 +3144,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "name",
             "in": "path",
             "required": true,
             "schema": {
@@ -8703,7 +8703,7 @@
         "operationId": "memories_getMemory",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8711,7 +8711,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8809,7 +8809,7 @@
         "operationId": "memories_updateMemoryRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8817,7 +8817,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8945,7 +8945,7 @@
         "operationId": "memories_deleteMemoryRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8953,7 +8953,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -9004,7 +9004,7 @@
         "operationId": "memories_toggleMemoryActiveRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -9012,7 +9012,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -16444,6 +16444,13 @@
                             "type": "string",
                             "description": "Sharing visibility: \"Private\", \"Shared\", or \"Public\""
                           },
+                          "departmentIds": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            },
+                            "description": "Department IDs this shared list is restricted to (null/empty = no restriction). Also used to group lists into folders in the UI."
+                          },
                           "count": {
                             "type": "integer",
                             "description": "Total number of non-deleted rows in the list"
@@ -16638,7 +16645,7 @@
                 "properties": {
                   "listDict": {
                     "type": "object",
-                    "description": "List properties. Required: name (string). Optional: type (string, one of \"leads\" | \"companies\" | \"custom\"; default \"custom\"), sharing (string controlling visibility \u2014 see below; default \"Private\"), fields (object of column definitions, only when not using a template), templateId (string, when creating from a template).\n\nsharing values:\n  - \"Private\" (default): only the creating user can view or modify the list.\n  - \"Shared\": any user in the same company can view and modify the list.\n  - \"Public\": anyone with the list ID can read the list and its rows via the public endpoints (GET /public/lists/<listId> and GET /public/lists/<listId>/rows). Only the list owner can change sharing afterward."
+                    "description": "List properties. Required: name (string). Optional: type (string, one of \"leads\" | \"companies\" | \"custom\"; default \"custom\"), sharing (string controlling visibility \u2014 see below; default \"Private\"), fields (object of column definitions, only when not using a template), templateId (string, when creating from a template).\n\nsharing values:\n  - \"Private\" (default): only the creating user can view or modify the list.\n  - \"Shared\": any user in the same company can view and modify the list.\n  - \"Public\": anyone with the list ID can read the list and its rows via the public endpoints (GET /public/lists/<listId> and GET /public/lists/<listId>/rows). Only the list owner can change sharing afterward.\n\ndepartmentIds (array of department ID strings, optional): only applies when sharing is \"Shared\". When set, only company members assigned to one of these departments (plus admins/owners and the list owner) can see the list. Leave empty/omitted for no department restriction. Also drives the folder grouping in the UI."
                   },
                   "companyId": {
                     "type": "string",
@@ -16724,6 +16731,13 @@
                   "sharing": {
                     "type": "string",
                     "description": "Visibility of the list. Only the list owner can change this value. Allowed values:\n  - \"Private\": only the owner can view or modify the list.\n  - \"Shared\": any user in the owner's company can view and modify the list.\n  - \"Public\": anyone (no auth required) can read the list and its rows via GET /public/lists/<listId> and GET /public/lists/<listId>/rows. Other endpoints still require auth."
+                  },
+                  "departmentIds": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Department IDs restricting who can see this list (only applies when sharing is \"Shared\"). Only company members assigned to one of these departments \u2014 plus admins/owners and the list owner \u2014 can see it. Empty array or omitted means no restriction. Only the list owner can change this."
                   }
                 },
                 "required": [
@@ -17001,6 +17015,13 @@
                         "sharing": {
                           "type": "string",
                           "description": "Sharing visibility: \"Private\", \"Shared\", or \"Public\""
+                        },
+                        "departmentIds": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          },
+                          "description": "Department IDs this shared list is restricted to (null/empty = no restriction)."
                         },
                         "headers": {
                           "type": "array",
@@ -25105,7 +25126,7 @@
         "operationId": "sequences_editSequenceExecution",
         "parameters": [
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25113,7 +25134,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25202,7 +25223,7 @@
         "operationId": "sequences_previewSequenceExecution",
         "parameters": [
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25210,7 +25231,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30629,7 +30650,7 @@
         "operationId": "inbox_sendDraft",
         "parameters": [
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30637,7 +30658,7 @@
             }
           },
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30730,7 +30751,7 @@
         "operationId": "inbox_deleteDraft",
         "parameters": [
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30738,7 +30759,7 @@
             }
           },
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -38414,7 +38435,7 @@
         "operationId": "content_getCanvasDesignThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -38422,7 +38443,7 @@
             }
           },
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -38461,7 +38482,7 @@
         "operationId": "content_updateCanvasDesignThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -38469,7 +38490,7 @@
             }
           },
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -38547,7 +38568,7 @@
         "operationId": "content_deleteCanvasDesignThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -38555,7 +38576,7 @@
             }
           },
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -38596,7 +38617,7 @@
         "operationId": "content_stopCanvasDesignThreadRun",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -38604,7 +38625,7 @@
             }
           },
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -47955,7 +47976,7 @@
         "operationId": "landing_pages_getLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -47963,7 +47984,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -48002,7 +48023,7 @@
         "operationId": "landing_pages_updateLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -48010,7 +48031,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -48088,7 +48109,7 @@
         "operationId": "landing_pages_deleteLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -48096,7 +48117,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -48137,7 +48158,7 @@
         "operationId": "landing_pages_stopLandingPageThreadRun",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -48145,7 +48166,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -58675,7 +58696,7 @@
         "operationId": "seo_projectLighthouseSnapshotRoute",
         "parameters": [
           {
-            "name": "snapshotId",
+            "name": "projectId",
             "in": "path",
             "required": true,
             "schema": {
@@ -58683,7 +58704,7 @@
             }
           },
           {
-            "name": "projectId",
+            "name": "snapshotId",
             "in": "path",
             "required": true,
             "schema": {
