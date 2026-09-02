@@ -93,7 +93,7 @@
     },
     {
       "name": "Marketing Campaigns",
-      "description": "Create, schedule, and send one-shot marketing email campaigns to a smart list, and track open/click performance."
+      "description": "Create, schedule, and send one-shot marketing email campaigns to a smart list, and track open/click performance. Reusable templates live at /marketing-campaign-templates; to create a campaign from one, fetch the template and pass its fields to the create endpoint."
     },
     {
       "name": "Mcp",
@@ -8703,7 +8703,7 @@
         "operationId": "memories_getMemory",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8711,7 +8711,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8809,7 +8809,7 @@
         "operationId": "memories_updateMemoryRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8817,7 +8817,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8945,7 +8945,7 @@
         "operationId": "memories_deleteMemoryRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8953,7 +8953,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -9004,7 +9004,7 @@
         "operationId": "memories_toggleMemoryActiveRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -9012,7 +9012,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -16107,7 +16107,7 @@
         "operationId": "agents_checkConversationActivity",
         "parameters": [
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -16115,7 +16115,7 @@
             }
           },
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -16177,7 +16177,7 @@
         "operationId": "agents_getConversationDetails",
         "parameters": [
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -16185,7 +16185,7 @@
             }
           },
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18780,7 +18780,7 @@
         "operationId": "lists_deleteTableAction",
         "parameters": [
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18788,7 +18788,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18886,7 +18886,7 @@
         "operationId": "lists_getActionSummary",
         "parameters": [
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18894,7 +18894,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19014,7 +19014,7 @@
         "operationId": "lists_getActionQueueStatus",
         "parameters": [
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19022,7 +19022,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19351,7 +19351,7 @@
         "operationId": "lists_getRowHistory",
         "parameters": [
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19359,7 +19359,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19571,7 +19571,7 @@
         "operationId": "lists_deleteHeader",
         "parameters": [
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19579,7 +19579,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19645,7 +19645,7 @@
         "operationId": "lists_editHeader",
         "parameters": [
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19653,7 +19653,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25126,7 +25126,7 @@
         "operationId": "sequences_editSequenceExecution",
         "parameters": [
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25134,7 +25134,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25223,7 +25223,7 @@
         "operationId": "sequences_previewSequenceExecution",
         "parameters": [
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25231,7 +25231,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -48234,7 +48234,7 @@
         "operationId": "landing_pages_getLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -48242,7 +48242,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -48281,7 +48281,7 @@
         "operationId": "landing_pages_updateLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -48289,7 +48289,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -48367,7 +48367,7 @@
         "operationId": "landing_pages_deleteLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -48375,7 +48375,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -48416,7 +48416,7 @@
         "operationId": "landing_pages_stopLandingPageThreadRun",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -48424,7 +48424,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -58954,7 +58954,7 @@
         "operationId": "seo_projectLighthouseSnapshotRoute",
         "parameters": [
           {
-            "name": "projectId",
+            "name": "snapshotId",
             "in": "path",
             "required": true,
             "schema": {
@@ -58962,7 +58962,7 @@
             }
           },
           {
-            "name": "snapshotId",
+            "name": "projectId",
             "in": "path",
             "required": true,
             "schema": {
@@ -60117,7 +60117,7 @@
           }
         },
         "summary": "Create a new marketing campaign in draft status.",
-        "description": "A newly created campaign is always in draft status and does not send anything\nuntil you call /schedule (to queue it for a future time) or /send-now\n(to begin sending immediately). You can keep editing the campaign with PATCH\nuntil it enters sending or sent status.",
+        "description": "A newly created campaign is always in draft status and does not send anything\nuntil you call /schedule (to queue it for a future time) or /send-now\n(to begin sending immediately). You can keep editing the campaign with PATCH\nuntil it enters sending or sent status.\n\nTo create a campaign from a template, GET /api/v0/marketing-campaign-templates/{templateId}\nand pass its subject, replyTo, bodyHtml, bodyDocument, senderProfileId, listId,\nand fieldMappings here.",
         "requestBody": {
           "required": true,
           "content": {
@@ -60867,7 +60867,7 @@
         "operationId": "marketing_campaigns_restoreCampaignVersion",
         "parameters": [
           {
-            "name": "versionId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -60875,7 +60875,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -62062,7 +62062,7 @@
         "operationId": "marketing_campaigns_deleteCampaignRecipient",
         "parameters": [
           {
-            "name": "recipientId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -62070,7 +62070,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "recipientId",
             "in": "path",
             "required": true,
             "schema": {
@@ -62361,6 +62361,1219 @@
         },
         "summary": "Return per-hour sent, opened, and clicked counts for the last N days",
         "description": "(default 7, max 90). Optionally restrict to a single campaign with\n?campaignId=\u2026"
+      }
+    },
+    "/api/v0/marketing-campaign-templates": {
+      "get": {
+        "tags": [
+          "Marketing Campaigns"
+        ],
+        "operationId": "marketing_campaigns_listTemplates",
+        "parameters": [
+          {
+            "name": "search",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Case-insensitive substring match against template name and description"
+            },
+            "description": "Case-insensitive substring match against template name and description"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid request parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Feature not enabled",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Marketing campaign templates in the company (optionally filtered by ?search=), most recently updated first",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "description": "Template ID"
+                          },
+                          "companyId": {
+                            "type": "string",
+                            "description": "Company this template belongs to"
+                          },
+                          "uid": {
+                            "type": "string",
+                            "description": "User ID that created the template"
+                          },
+                          "name": {
+                            "type": "string",
+                            "description": "Template name"
+                          },
+                          "description": {
+                            "type": "string",
+                            "description": "Optional note describing when to use this template"
+                          },
+                          "subject": {
+                            "type": "string",
+                            "description": "Default email subject line"
+                          },
+                          "replyTo": {
+                            "type": "string",
+                            "description": "Default Reply-To email address"
+                          },
+                          "bodyHtml": {
+                            "type": "string",
+                            "description": "HTML body of the email"
+                          },
+                          "bodyDocument": {
+                            "type": "string",
+                            "description": "Visual-builder JSON document for the email body"
+                          },
+                          "senderProfileId": {
+                            "type": "string",
+                            "description": "Default sender profile ID"
+                          },
+                          "listId": {
+                            "type": "string",
+                            "description": "Default smart list ID"
+                          },
+                          "fieldMappings": {
+                            "type": "object",
+                            "description": "Field mapping for resolving recipient email from a list row"
+                          },
+                          "scheduleSettings": {
+                            "type": "string",
+                            "description": "Optional sending-window settings"
+                          },
+                          "chatHistory": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            },
+                            "description": "Saved AI chat history for this template (reserved for a future AI edit mode)"
+                          },
+                          "created_date": {
+                            "type": "string",
+                            "description": "ISO timestamp when the template was created"
+                          },
+                          "updated_date": {
+                            "type": "string",
+                            "description": "ISO timestamp when the template was last updated"
+                          },
+                          "smartList": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "description": "Summary of the default smart list"
+                          },
+                          "senderProfile": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "email": {
+                                "type": "string"
+                              },
+                              "integrationId": {
+                                "type": "string"
+                              }
+                            },
+                            "description": "Summary of the default sender profile"
+                          }
+                        },
+                        "description": "A reusable marketing campaign template"
+                      }
+                    }
+                  },
+                  "description": "List of marketing campaign templates, most recently updated first"
+                }
+              }
+            }
+          }
+        },
+        "summary": "List marketing campaign templates.",
+        "description": "Templates are reusable email designs (subject, HTML body, default sender\nprofile, smart list, and field mappings). To start a campaign from one,\npass its id as templateId when creating a campaign via\nPOST /api/v0/marketing-campaigns."
+      },
+      "post": {
+        "tags": [
+          "Marketing Campaigns"
+        ],
+        "operationId": "marketing_campaigns_createTemplate",
+        "parameters": [],
+        "responses": {
+          "400": {
+            "description": "Invalid request parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Feature not enabled",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "The created template",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "Template ID"
+                    },
+                    "companyId": {
+                      "type": "string",
+                      "description": "Company this template belongs to"
+                    },
+                    "uid": {
+                      "type": "string",
+                      "description": "User ID that created the template"
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": "Template name"
+                    },
+                    "description": {
+                      "type": "string",
+                      "description": "Optional note describing when to use this template"
+                    },
+                    "subject": {
+                      "type": "string",
+                      "description": "Default email subject line"
+                    },
+                    "replyTo": {
+                      "type": "string",
+                      "description": "Default Reply-To email address"
+                    },
+                    "bodyHtml": {
+                      "type": "string",
+                      "description": "HTML body of the email"
+                    },
+                    "bodyDocument": {
+                      "type": "string",
+                      "description": "Visual-builder JSON document for the email body"
+                    },
+                    "senderProfileId": {
+                      "type": "string",
+                      "description": "Default sender profile ID"
+                    },
+                    "listId": {
+                      "type": "string",
+                      "description": "Default smart list ID"
+                    },
+                    "fieldMappings": {
+                      "type": "object",
+                      "description": "Field mapping for resolving recipient email from a list row"
+                    },
+                    "scheduleSettings": {
+                      "type": "string",
+                      "description": "Optional sending-window settings"
+                    },
+                    "chatHistory": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "Saved AI chat history for this template (reserved for a future AI edit mode)"
+                    },
+                    "created_date": {
+                      "type": "string",
+                      "description": "ISO timestamp when the template was created"
+                    },
+                    "updated_date": {
+                      "type": "string",
+                      "description": "ISO timestamp when the template was last updated"
+                    },
+                    "smartList": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        }
+                      },
+                      "description": "Summary of the default smart list"
+                    },
+                    "senderProfile": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "email": {
+                          "type": "string"
+                        },
+                        "integrationId": {
+                          "type": "string"
+                        }
+                      },
+                      "description": "Summary of the default sender profile"
+                    }
+                  },
+                  "description": "A reusable marketing campaign template"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Create a marketing campaign template.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "Template name"
+                  },
+                  "description": {
+                    "type": "string",
+                    "description": "Optional note describing when to use this template"
+                  },
+                  "subject": {
+                    "type": "string",
+                    "description": "Default email subject line applied to campaigns created from this template"
+                  },
+                  "replyTo": {
+                    "type": "string",
+                    "description": "Optional default Reply-To email address. Must be a valid email if provided."
+                  },
+                  "bodyHtml": {
+                    "type": "string",
+                    "description": "HTML body of the email. Use the {{content}} token to mark where content-engine output is inserted; it is stripped when a campaign is created from the template."
+                  },
+                  "bodyDocument": {
+                    "type": "string",
+                    "description": "Visual-builder JSON document for the email body (optional; bodyHtml is what gets sent)"
+                  },
+                  "senderProfileId": {
+                    "type": "string",
+                    "description": "Default sender profile ID for campaigns created from this template"
+                  },
+                  "listId": {
+                    "type": "string",
+                    "description": "Default smart list ID whose rows become recipients"
+                  },
+                  "fieldMappings": {
+                    "type": "object",
+                    "description": "Field mapping for resolving recipient email from a list row, e.g. {\"email\": [\"Email\", \"Work Email\"]}"
+                  },
+                  "scheduleSettings": {
+                    "type": "string",
+                    "description": "Optional sending-window settings copied onto campaigns created from this template"
+                  },
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID (falls back to the authenticated user's current company)"
+                  }
+                },
+                "required": [
+                  "name"
+                ],
+                "description": "Request body for creating a marketing campaign template. Only name is required; everything else can be filled in later via PATCH."
+              }
+            }
+          },
+          "description": "Template fields. Only name is required up front."
+        }
+      }
+    },
+    "/api/v0/marketing-campaign-templates/{templateId}": {
+      "get": {
+        "tags": [
+          "Marketing Campaigns"
+        ],
+        "operationId": "marketing_campaigns_getTemplate",
+        "parameters": [
+          {
+            "name": "templateId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid request parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Feature not enabled",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Template not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "The requested template",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "Template ID"
+                    },
+                    "companyId": {
+                      "type": "string",
+                      "description": "Company this template belongs to"
+                    },
+                    "uid": {
+                      "type": "string",
+                      "description": "User ID that created the template"
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": "Template name"
+                    },
+                    "description": {
+                      "type": "string",
+                      "description": "Optional note describing when to use this template"
+                    },
+                    "subject": {
+                      "type": "string",
+                      "description": "Default email subject line"
+                    },
+                    "replyTo": {
+                      "type": "string",
+                      "description": "Default Reply-To email address"
+                    },
+                    "bodyHtml": {
+                      "type": "string",
+                      "description": "HTML body of the email"
+                    },
+                    "bodyDocument": {
+                      "type": "string",
+                      "description": "Visual-builder JSON document for the email body"
+                    },
+                    "senderProfileId": {
+                      "type": "string",
+                      "description": "Default sender profile ID"
+                    },
+                    "listId": {
+                      "type": "string",
+                      "description": "Default smart list ID"
+                    },
+                    "fieldMappings": {
+                      "type": "object",
+                      "description": "Field mapping for resolving recipient email from a list row"
+                    },
+                    "scheduleSettings": {
+                      "type": "string",
+                      "description": "Optional sending-window settings"
+                    },
+                    "chatHistory": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "Saved AI chat history for this template (reserved for a future AI edit mode)"
+                    },
+                    "created_date": {
+                      "type": "string",
+                      "description": "ISO timestamp when the template was created"
+                    },
+                    "updated_date": {
+                      "type": "string",
+                      "description": "ISO timestamp when the template was last updated"
+                    },
+                    "smartList": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        }
+                      },
+                      "description": "Summary of the default smart list"
+                    },
+                    "senderProfile": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "email": {
+                          "type": "string"
+                        },
+                        "integrationId": {
+                          "type": "string"
+                        }
+                      },
+                      "description": "Summary of the default sender profile"
+                    }
+                  },
+                  "description": "A reusable marketing campaign template"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Get a single marketing campaign template, including its full HTML body."
+      },
+      "patch": {
+        "tags": [
+          "Marketing Campaigns"
+        ],
+        "operationId": "marketing_campaigns_updateTemplate",
+        "parameters": [
+          {
+            "name": "templateId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid request parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Feature not enabled",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Template not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "The updated template",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "Template ID"
+                    },
+                    "companyId": {
+                      "type": "string",
+                      "description": "Company this template belongs to"
+                    },
+                    "uid": {
+                      "type": "string",
+                      "description": "User ID that created the template"
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": "Template name"
+                    },
+                    "description": {
+                      "type": "string",
+                      "description": "Optional note describing when to use this template"
+                    },
+                    "subject": {
+                      "type": "string",
+                      "description": "Default email subject line"
+                    },
+                    "replyTo": {
+                      "type": "string",
+                      "description": "Default Reply-To email address"
+                    },
+                    "bodyHtml": {
+                      "type": "string",
+                      "description": "HTML body of the email"
+                    },
+                    "bodyDocument": {
+                      "type": "string",
+                      "description": "Visual-builder JSON document for the email body"
+                    },
+                    "senderProfileId": {
+                      "type": "string",
+                      "description": "Default sender profile ID"
+                    },
+                    "listId": {
+                      "type": "string",
+                      "description": "Default smart list ID"
+                    },
+                    "fieldMappings": {
+                      "type": "object",
+                      "description": "Field mapping for resolving recipient email from a list row"
+                    },
+                    "scheduleSettings": {
+                      "type": "string",
+                      "description": "Optional sending-window settings"
+                    },
+                    "chatHistory": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "Saved AI chat history for this template (reserved for a future AI edit mode)"
+                    },
+                    "created_date": {
+                      "type": "string",
+                      "description": "ISO timestamp when the template was created"
+                    },
+                    "updated_date": {
+                      "type": "string",
+                      "description": "ISO timestamp when the template was last updated"
+                    },
+                    "smartList": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        }
+                      },
+                      "description": "Summary of the default smart list"
+                    },
+                    "senderProfile": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "email": {
+                          "type": "string"
+                        },
+                        "integrationId": {
+                          "type": "string"
+                        }
+                      },
+                      "description": "Summary of the default sender profile"
+                    }
+                  },
+                  "description": "A reusable marketing campaign template"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Update a marketing campaign template.",
+        "description": "Changing bodyHtml or bodyDocument saves a new version in the template's\nhistory. An empty body value is ignored rather than clearing the design.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "Template name"
+                  },
+                  "description": {
+                    "type": "string",
+                    "description": "Optional note describing when to use this template"
+                  },
+                  "subject": {
+                    "type": "string",
+                    "description": "Default email subject line"
+                  },
+                  "replyTo": {
+                    "type": "string",
+                    "description": "Default Reply-To email address. Must be a valid email if provided."
+                  },
+                  "bodyHtml": {
+                    "type": "string",
+                    "description": "HTML body of the email"
+                  },
+                  "bodyDocument": {
+                    "type": "string",
+                    "description": "Visual-builder JSON document for the email body"
+                  },
+                  "senderProfileId": {
+                    "type": "string",
+                    "description": "Default sender profile ID"
+                  },
+                  "listId": {
+                    "type": "string",
+                    "description": "Default smart list ID"
+                  },
+                  "fieldMappings": {
+                    "type": "object",
+                    "description": "Field mapping for resolving recipient email from a list row"
+                  },
+                  "scheduleSettings": {
+                    "type": "string",
+                    "description": "Optional sending-window settings"
+                  }
+                },
+                "description": "Request body for updating a template (only include fields to change). An empty bodyHtml or bodyDocument is ignored so saved designs are never wiped."
+              }
+            }
+          },
+          "description": "Fields to update (include only fields you want to change)"
+        }
+      },
+      "delete": {
+        "tags": [
+          "Marketing Campaigns"
+        ],
+        "operationId": "marketing_campaigns_deleteTemplate",
+        "parameters": [
+          {
+            "name": "templateId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid request parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Feature not enabled",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Template not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Deletion confirmation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    }
+                  },
+                  "description": "Result of deleting a template"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Delete a marketing campaign template. Campaigns already created from it are unaffected."
+      }
+    },
+    "/api/v0/marketing-campaign-templates/{templateId}/versions": {
+      "get": {
+        "tags": [
+          "Marketing Campaigns"
+        ],
+        "operationId": "marketing_campaigns_listTemplateVersions",
+        "parameters": [
+          {
+            "name": "templateId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid request parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Feature not enabled",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Template not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "The template's saved content versions, newest first",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "description": "Version ID"
+                          },
+                          "templateId": {
+                            "type": "string",
+                            "description": "The template this version belongs to"
+                          },
+                          "data": {
+                            "type": "string",
+                            "description": "Full snapshot of the template at this point in time (includes bodyDocument)"
+                          },
+                          "bodyHtml": {
+                            "type": "string",
+                            "description": "Rendered email HTML for this version"
+                          },
+                          "uid": {
+                            "type": "string",
+                            "description": "User who saved this version"
+                          },
+                          "created_date": {
+                            "type": "string",
+                            "format": "date-time",
+                            "description": "When this version was captured"
+                          }
+                        },
+                        "description": "A saved version of a template's content"
+                      }
+                    }
+                  },
+                  "description": "A template's saved content versions, newest first"
+                }
+              }
+            }
+          }
+        },
+        "summary": "List a template's saved content versions.",
+        "description": "A version is captured whenever the HTML body or visual document changes."
+      }
+    },
+    "/api/v0/marketing-campaign-templates/{templateId}/versions/{versionId}/restore": {
+      "post": {
+        "tags": [
+          "Marketing Campaigns"
+        ],
+        "operationId": "marketing_campaigns_restoreTemplateVersion",
+        "parameters": [
+          {
+            "name": "versionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "templateId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid request parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Feature not enabled",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Template or version not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "The template after restoring the selected version",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "Template ID"
+                    },
+                    "companyId": {
+                      "type": "string",
+                      "description": "Company this template belongs to"
+                    },
+                    "uid": {
+                      "type": "string",
+                      "description": "User ID that created the template"
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": "Template name"
+                    },
+                    "description": {
+                      "type": "string",
+                      "description": "Optional note describing when to use this template"
+                    },
+                    "subject": {
+                      "type": "string",
+                      "description": "Default email subject line"
+                    },
+                    "replyTo": {
+                      "type": "string",
+                      "description": "Default Reply-To email address"
+                    },
+                    "bodyHtml": {
+                      "type": "string",
+                      "description": "HTML body of the email"
+                    },
+                    "bodyDocument": {
+                      "type": "string",
+                      "description": "Visual-builder JSON document for the email body"
+                    },
+                    "senderProfileId": {
+                      "type": "string",
+                      "description": "Default sender profile ID"
+                    },
+                    "listId": {
+                      "type": "string",
+                      "description": "Default smart list ID"
+                    },
+                    "fieldMappings": {
+                      "type": "object",
+                      "description": "Field mapping for resolving recipient email from a list row"
+                    },
+                    "scheduleSettings": {
+                      "type": "string",
+                      "description": "Optional sending-window settings"
+                    },
+                    "chatHistory": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "Saved AI chat history for this template (reserved for a future AI edit mode)"
+                    },
+                    "created_date": {
+                      "type": "string",
+                      "description": "ISO timestamp when the template was created"
+                    },
+                    "updated_date": {
+                      "type": "string",
+                      "description": "ISO timestamp when the template was last updated"
+                    },
+                    "smartList": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        }
+                      },
+                      "description": "Summary of the default smart list"
+                    },
+                    "senderProfile": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "email": {
+                          "type": "string"
+                        },
+                        "integrationId": {
+                          "type": "string"
+                        }
+                      },
+                      "description": "Summary of the default sender profile"
+                    }
+                  },
+                  "description": "A reusable marketing campaign template"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Restore a previous version of a template's content.",
+        "description": "The restore is itself saved as a new version, so it can always be undone."
       }
     }
   },
