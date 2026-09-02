@@ -922,7 +922,7 @@
         "operationId": "documents_getDocumentContents",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -930,7 +930,7 @@
             }
           },
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -989,7 +989,7 @@
         "operationId": "documents_getDocument",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -997,7 +997,7 @@
             }
           },
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30670,7 +30670,7 @@
         "operationId": "inbox_sendDraft",
         "parameters": [
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30678,7 +30678,7 @@
             }
           },
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30771,7 +30771,7 @@
         "operationId": "inbox_deleteDraft",
         "parameters": [
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30779,7 +30779,7 @@
             }
           },
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -48234,7 +48234,7 @@
         "operationId": "landing_pages_getLandingPageThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -48242,7 +48242,7 @@
             }
           },
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -48281,7 +48281,7 @@
         "operationId": "landing_pages_updateLandingPageThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -48289,7 +48289,7 @@
             }
           },
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -48367,7 +48367,7 @@
         "operationId": "landing_pages_deleteLandingPageThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -48375,7 +48375,7 @@
             }
           },
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -48416,7 +48416,7 @@
         "operationId": "landing_pages_stopLandingPageThreadRun",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -48424,7 +48424,7 @@
             }
           },
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -51902,7 +51902,7 @@
                           },
                           "brief": {
                             "type": "object",
-                            "description": "Generation brief: angle, outline, questionsToAnswer, aeoRecommendations"
+                            "description": "Generation brief: angle, outline, questionsToAnswer"
                           },
                           "evidence": {
                             "type": "object",
@@ -52113,7 +52113,7 @@
                         },
                         "brief": {
                           "type": "object",
-                          "description": "Generation brief: angle, outline, questionsToAnswer, aeoRecommendations"
+                          "description": "Generation brief: angle, outline, questionsToAnswer"
                         },
                         "evidence": {
                           "type": "object",
@@ -52302,7 +52302,7 @@
                         },
                         "brief": {
                           "type": "object",
-                          "description": "Generation brief: angle, outline, questionsToAnswer, aeoRecommendations"
+                          "description": "Generation brief: angle, outline, questionsToAnswer"
                         },
                         "evidence": {
                           "type": "object",
@@ -52512,7 +52512,7 @@
                         },
                         "brief": {
                           "type": "object",
-                          "description": "Generation brief: angle, outline, questionsToAnswer, aeoRecommendations"
+                          "description": "Generation brief: angle, outline, questionsToAnswer"
                         },
                         "evidence": {
                           "type": "object",
@@ -60867,7 +60867,7 @@
         "operationId": "marketing_campaigns_restoreCampaignVersion",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -60875,7 +60875,7 @@
             }
           },
           {
-            "name": "versionId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -62062,7 +62062,7 @@
         "operationId": "marketing_campaigns_deleteCampaignRecipient",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "recipientId",
             "in": "path",
             "required": true,
             "schema": {
@@ -62070,7 +62070,7 @@
             }
           },
           {
-            "name": "recipientId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
