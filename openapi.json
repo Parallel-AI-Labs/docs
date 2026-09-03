@@ -8703,7 +8703,7 @@
         "operationId": "memories_getMemory",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8711,7 +8711,7 @@
             }
           },
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8809,7 +8809,7 @@
         "operationId": "memories_updateMemoryRoute",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8817,7 +8817,7 @@
             }
           },
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8945,7 +8945,7 @@
         "operationId": "memories_deleteMemoryRoute",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8953,7 +8953,7 @@
             }
           },
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -9004,7 +9004,7 @@
         "operationId": "memories_toggleMemoryActiveRoute",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -9012,7 +9012,7 @@
             }
           },
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21682,7 +21682,7 @@
                               },
                               "content": {
                                 "type": "string",
-                                "description": "Step content/message body. For auto_agent steps, this is the messaging guidance."
+                                "description": "Step content/message body. For auto_agent steps, this is the messaging guidance. For cold outreach sequences, avoid any URL or booking link in the first email: links in the first touch to a cold contact lower deliverability, so ask for a reply instead and save links for later steps."
                               },
                               "actionParameters": {
                                 "type": "object",
@@ -21735,11 +21735,11 @@
                               },
                               "aiPersonalizedInstructions": {
                                 "type": "string",
-                                "description": "AI personalization instructions"
+                                "description": "AI personalization instructions. For cold outreach sequences, avoid any URL or booking link in the first email: links in the first touch to a cold contact lower deliverability, so ask for a reply instead and save links for later steps."
                               },
                               "trackCalendarBooking": {
                                 "type": "boolean",
-                                "description": "Whether to track calendar booking via unique schedule links"
+                                "description": "Whether to track calendar booking via unique schedule links. For cold outreach sequences, leave false on the first email: a booking link in the first touch to a cold contact lowers deliverability."
                               },
                               "schedulingIntegrationId": {
                                 "type": "string",
@@ -22076,7 +22076,7 @@
                               },
                               "content": {
                                 "type": "string",
-                                "description": "Step content/message body. For auto_agent steps, this is the messaging guidance."
+                                "description": "Step content/message body. For auto_agent steps, this is the messaging guidance. For cold outreach sequences, avoid any URL or booking link in the first email: links in the first touch to a cold contact lower deliverability, so ask for a reply instead and save links for later steps."
                               },
                               "actionParameters": {
                                 "type": "object",
@@ -22129,11 +22129,11 @@
                               },
                               "aiPersonalizedInstructions": {
                                 "type": "string",
-                                "description": "AI personalization instructions"
+                                "description": "AI personalization instructions. For cold outreach sequences, avoid any URL or booking link in the first email: links in the first touch to a cold contact lower deliverability, so ask for a reply instead and save links for later steps."
                               },
                               "trackCalendarBooking": {
                                 "type": "boolean",
-                                "description": "Whether to track calendar booking via unique schedule links"
+                                "description": "Whether to track calendar booking via unique schedule links. For cold outreach sequences, leave false on the first email: a booking link in the first touch to a cold contact lowers deliverability."
                               },
                               "schedulingIntegrationId": {
                                 "type": "string",
@@ -22431,7 +22431,7 @@
                                 },
                                 "content": {
                                   "type": "string",
-                                  "description": "Step content/message body. For auto_agent steps, this is the messaging guidance."
+                                  "description": "Step content/message body. For auto_agent steps, this is the messaging guidance. For cold outreach sequences, avoid any URL or booking link in the first email: links in the first touch to a cold contact lower deliverability, so ask for a reply instead and save links for later steps."
                                 },
                                 "actionParameters": {
                                   "type": "object",
@@ -22484,11 +22484,11 @@
                                 },
                                 "aiPersonalizedInstructions": {
                                   "type": "string",
-                                  "description": "AI personalization instructions"
+                                  "description": "AI personalization instructions. For cold outreach sequences, avoid any URL or booking link in the first email: links in the first touch to a cold contact lower deliverability, so ask for a reply instead and save links for later steps."
                                 },
                                 "trackCalendarBooking": {
                                   "type": "boolean",
-                                  "description": "Whether to track calendar booking via unique schedule links"
+                                  "description": "Whether to track calendar booking via unique schedule links. For cold outreach sequences, leave false on the first email: a booking link in the first touch to a cold contact lowers deliverability."
                                 },
                                 "schedulingIntegrationId": {
                                   "type": "string",
@@ -22751,7 +22751,7 @@
                               },
                               "content": {
                                 "type": "string",
-                                "description": "Step content/message body. For auto_agent steps, this is the messaging guidance."
+                                "description": "Step content/message body. For auto_agent steps, this is the messaging guidance. For cold outreach sequences, avoid any URL or booking link in the first email: links in the first touch to a cold contact lower deliverability, so ask for a reply instead and save links for later steps."
                               },
                               "actionParameters": {
                                 "type": "object",
@@ -22804,11 +22804,11 @@
                               },
                               "aiPersonalizedInstructions": {
                                 "type": "string",
-                                "description": "AI personalization instructions"
+                                "description": "AI personalization instructions. For cold outreach sequences, avoid any URL or booking link in the first email: links in the first touch to a cold contact lower deliverability, so ask for a reply instead and save links for later steps."
                               },
                               "trackCalendarBooking": {
                                 "type": "boolean",
-                                "description": "Whether to track calendar booking via unique schedule links"
+                                "description": "Whether to track calendar booking via unique schedule links. For cold outreach sequences, leave false on the first email: a booking link in the first touch to a cold contact lowers deliverability."
                               },
                               "schedulingIntegrationId": {
                                 "type": "string",
@@ -22950,7 +22950,7 @@
                         },
                         "content": {
                           "type": "string",
-                          "description": "Step content/message body. For auto_agent steps, this is the messaging guidance."
+                          "description": "Step content/message body. For auto_agent steps, this is the messaging guidance. For cold outreach sequences, avoid any URL or booking link in the first email: links in the first touch to a cold contact lower deliverability, so ask for a reply instead and save links for later steps."
                         },
                         "actionParameters": {
                           "type": "object",
@@ -23003,11 +23003,11 @@
                         },
                         "aiPersonalizedInstructions": {
                           "type": "string",
-                          "description": "AI personalization instructions"
+                          "description": "AI personalization instructions. For cold outreach sequences, avoid any URL or booking link in the first email: links in the first touch to a cold contact lower deliverability, so ask for a reply instead and save links for later steps."
                         },
                         "trackCalendarBooking": {
                           "type": "boolean",
-                          "description": "Whether to track calendar booking via unique schedule links"
+                          "description": "Whether to track calendar booking via unique schedule links. For cold outreach sequences, leave false on the first email: a booking link in the first touch to a cold contact lowers deliverability."
                         },
                         "schedulingIntegrationId": {
                           "type": "string",
@@ -23096,11 +23096,11 @@
                   },
                   "aiPersonalizedInstructions": {
                     "type": "string",
-                    "description": "AI personalization instructions"
+                    "description": "AI personalization instructions. For cold outreach sequences, avoid any URL or booking link in the first email: links in the first touch to a cold contact lower deliverability, so ask for a reply instead and save links for later steps."
                   },
                   "trackCalendarBooking": {
                     "type": "boolean",
-                    "description": "Whether to track calendar booking via unique schedule links"
+                    "description": "Whether to track calendar booking via unique schedule links. For cold outreach sequences, leave false on the first email: a booking link in the first touch to a cold contact lowers deliverability."
                   },
                   "schedulingIntegrationId": {
                     "type": "string",
@@ -23138,7 +23138,7 @@
         "operationId": "sequences_updateSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23146,7 +23146,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23233,7 +23233,7 @@
                         },
                         "content": {
                           "type": "string",
-                          "description": "Step content/message body. For auto_agent steps, this is the messaging guidance."
+                          "description": "Step content/message body. For auto_agent steps, this is the messaging guidance. For cold outreach sequences, avoid any URL or booking link in the first email: links in the first touch to a cold contact lower deliverability, so ask for a reply instead and save links for later steps."
                         },
                         "actionParameters": {
                           "type": "object",
@@ -23286,11 +23286,11 @@
                         },
                         "aiPersonalizedInstructions": {
                           "type": "string",
-                          "description": "AI personalization instructions"
+                          "description": "AI personalization instructions. For cold outreach sequences, avoid any URL or booking link in the first email: links in the first touch to a cold contact lower deliverability, so ask for a reply instead and save links for later steps."
                         },
                         "trackCalendarBooking": {
                           "type": "boolean",
-                          "description": "Whether to track calendar booking via unique schedule links"
+                          "description": "Whether to track calendar booking via unique schedule links. For cold outreach sequences, leave false on the first email: a booking link in the first touch to a cold contact lowers deliverability."
                         },
                         "schedulingIntegrationId": {
                           "type": "string",
@@ -23380,11 +23380,11 @@
                   },
                   "aiPersonalizedInstructions": {
                     "type": "string",
-                    "description": "AI personalization instructions"
+                    "description": "AI personalization instructions. For cold outreach sequences, avoid any URL or booking link in the first email: links in the first touch to a cold contact lower deliverability, so ask for a reply instead and save links for later steps."
                   },
                   "trackCalendarBooking": {
                     "type": "boolean",
-                    "description": "Whether to track calendar booking via unique schedule links"
+                    "description": "Whether to track calendar booking via unique schedule links. For cold outreach sequences, leave false on the first email: a booking link in the first touch to a cold contact lowers deliverability."
                   },
                   "schedulingIntegrationId": {
                     "type": "string",
@@ -23420,7 +23420,7 @@
         "operationId": "sequences_deleteSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23428,7 +23428,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23677,7 +23677,7 @@
                               },
                               "content": {
                                 "type": "string",
-                                "description": "Step content/message body. For auto_agent steps, this is the messaging guidance."
+                                "description": "Step content/message body. For auto_agent steps, this is the messaging guidance. For cold outreach sequences, avoid any URL or booking link in the first email: links in the first touch to a cold contact lower deliverability, so ask for a reply instead and save links for later steps."
                               },
                               "actionParameters": {
                                 "type": "object",
@@ -23730,11 +23730,11 @@
                               },
                               "aiPersonalizedInstructions": {
                                 "type": "string",
-                                "description": "AI personalization instructions"
+                                "description": "AI personalization instructions. For cold outreach sequences, avoid any URL or booking link in the first email: links in the first touch to a cold contact lower deliverability, so ask for a reply instead and save links for later steps."
                               },
                               "trackCalendarBooking": {
                                 "type": "boolean",
-                                "description": "Whether to track calendar booking via unique schedule links"
+                                "description": "Whether to track calendar booking via unique schedule links. For cold outreach sequences, leave false on the first email: a booking link in the first touch to a cold contact lowers deliverability."
                               },
                               "schedulingIntegrationId": {
                                 "type": "string",
@@ -24150,7 +24150,7 @@
         "operationId": "sequences_getSequenceMemberTimeline",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24158,7 +24158,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24556,7 +24556,7 @@
         "operationId": "sequences_triggerSequenceMember",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24564,7 +24564,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24632,7 +24632,7 @@
         "operationId": "sequences_removeSequenceMember",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24640,7 +24640,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25126,7 +25126,7 @@
         "operationId": "sequences_editSequenceExecution",
         "parameters": [
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25134,7 +25134,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25223,7 +25223,7 @@
         "operationId": "sequences_previewSequenceExecution",
         "parameters": [
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25231,7 +25231,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26806,7 +26806,7 @@
         "operationId": "sequences_testSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26814,7 +26814,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26868,7 +26868,7 @@
         "operationId": "sequences_sendTestEmail",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26876,7 +26876,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26954,7 +26954,7 @@
         "operationId": "sequences_getMemberProfile",
         "parameters": [
           {
-            "name": "memberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26962,7 +26962,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "memberId",
             "in": "path",
             "required": true,
             "schema": {
