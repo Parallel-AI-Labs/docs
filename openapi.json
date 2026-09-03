@@ -154,6 +154,9 @@
     {
       "name": "Web",
       "description": "Real-time web tools: search the web and news, read any page, and pull jobs, local-business, and trending-topic data. Workflow: 1) web_searchWeb finds pages and web_searchNews finds recent coverage (freshness=pd/pw/pm/py); both return titles, URLs, and snippets. 2) web_scrapePage reads a URL as clean markdown (or raw HTML with responseType=html) \u2014 use it to read any result in full, including JavaScript-heavy and LinkedIn pages. 3) web_searchPlaces finds local businesses; take a result's placeId or dataId into web_getPlace for full details, web_getPlaceReviews for reviews (paginate with nextPageToken), and web_getPlacePhotos for photos. 4) web_searchJobs finds job listings and web_autocompleteTrends maps a phrase to trending topics. 5) web_screenshotPage captures a page as a PNG and returns a public image URL \u2014 useful for visual checks and reports. Every call costs 1 data credit and is only charged on success."
+    },
+    {
+      "name": "Websites"
     }
   ],
   "paths": {
@@ -922,7 +925,7 @@
         "operationId": "documents_getDocumentContents",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -930,7 +933,7 @@
             }
           },
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -989,7 +992,7 @@
         "operationId": "documents_getDocument",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -997,7 +1000,7 @@
             }
           },
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -6787,7 +6790,7 @@
         "operationId": "projects_getProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -6795,7 +6798,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -6930,7 +6933,7 @@
         "operationId": "projects_updateProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -6938,7 +6941,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -7099,7 +7102,7 @@
         "operationId": "projects_deleteProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -7107,7 +7110,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8006,7 +8009,7 @@
         "operationId": "projects_exportProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8014,7 +8017,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8106,7 +8109,7 @@
         "operationId": "projects_publishFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8114,7 +8117,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8261,7 +8264,7 @@
         "operationId": "projects_unpublishFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8269,7 +8272,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -19351,7 +19354,7 @@
         "operationId": "lists_getRowHistory",
         "parameters": [
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19359,7 +19362,7 @@
             }
           },
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23138,7 +23141,7 @@
         "operationId": "sequences_updateSequenceStep",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23146,7 +23149,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23420,7 +23423,7 @@
         "operationId": "sequences_deleteSequenceStep",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23428,7 +23431,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24150,7 +24153,7 @@
         "operationId": "sequences_getSequenceMemberTimeline",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24158,7 +24161,7 @@
             }
           },
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24556,7 +24559,7 @@
         "operationId": "sequences_triggerSequenceMember",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24564,7 +24567,7 @@
             }
           },
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24632,7 +24635,7 @@
         "operationId": "sequences_removeSequenceMember",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24640,7 +24643,7 @@
             }
           },
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25126,7 +25129,7 @@
         "operationId": "sequences_editSequenceExecution",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25134,7 +25137,7 @@
             }
           },
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25223,7 +25226,7 @@
         "operationId": "sequences_previewSequenceExecution",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25231,7 +25234,7 @@
             }
           },
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26806,7 +26809,7 @@
         "operationId": "sequences_testSequenceStep",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26814,7 +26817,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26868,7 +26871,7 @@
         "operationId": "sequences_sendTestEmail",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26876,7 +26879,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26954,7 +26957,7 @@
         "operationId": "sequences_getMemberProfile",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "memberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26962,7 +26965,7 @@
             }
           },
           {
-            "name": "memberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30670,7 +30673,7 @@
         "operationId": "inbox_sendDraft",
         "parameters": [
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30678,7 +30681,7 @@
             }
           },
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30771,7 +30774,7 @@
         "operationId": "inbox_deleteDraft",
         "parameters": [
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30779,7 +30782,7 @@
             }
           },
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -38582,7 +38585,7 @@
         "operationId": "content_getCanvasDesignThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -38590,7 +38593,7 @@
             }
           },
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -38629,7 +38632,7 @@
         "operationId": "content_updateCanvasDesignThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -38637,7 +38640,7 @@
             }
           },
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -38715,7 +38718,7 @@
         "operationId": "content_deleteCanvasDesignThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -38723,7 +38726,7 @@
             }
           },
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -38764,7 +38767,7 @@
         "operationId": "content_stopCanvasDesignThreadRun",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -38772,7 +38775,7 @@
             }
           },
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -48234,7 +48237,7 @@
         "operationId": "landing_pages_getLandingPageThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -48242,7 +48245,7 @@
             }
           },
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -48281,7 +48284,7 @@
         "operationId": "landing_pages_updateLandingPageThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -48289,7 +48292,7 @@
             }
           },
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -48367,7 +48370,7 @@
         "operationId": "landing_pages_deleteLandingPageThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -48375,7 +48378,7 @@
             }
           },
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -48416,7 +48419,7 @@
         "operationId": "landing_pages_stopLandingPageThreadRun",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -48424,7 +48427,7 @@
             }
           },
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -60883,7 +60886,7 @@
         "operationId": "marketing_campaigns_restoreCampaignVersion",
         "parameters": [
           {
-            "name": "versionId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -60891,7 +60894,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -62094,7 +62097,7 @@
         "operationId": "marketing_campaigns_deleteCampaignRecipient",
         "parameters": [
           {
-            "name": "recipientId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -62102,7 +62105,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "recipientId",
             "in": "path",
             "required": true,
             "schema": {
@@ -63599,6 +63602,1042 @@
         },
         "summary": "Restore a previous version of a template's content.",
         "description": "The restore is itself saved as a new version, so it can always be undone."
+      }
+    },
+    "/api/v0/websites": {
+      "get": {
+        "tags": [
+          "Websites"
+        ],
+        "operationId": "site_builder_apiListWebsites",
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID that owns the website"
+            },
+            "description": "Company ID that owns the website"
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Optional name filter"
+            },
+            "description": "Optional name filter"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Max websites to return, 1-100 (default 24)"
+            },
+            "description": "Max websites to return, 1-100 (default 24)"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Pagination offset (default 0)"
+            },
+            "description": "Pagination offset (default 0)"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "companyId missing",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "No company access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Websites owned by the company, with branch counts",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "websites": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "Websites with id, name, branchCount"
+                    },
+                    "total": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "List the company's websites",
+        "description": "Start here: returns each website's id and name so you can audit or optimize\none. branchCount is how many review branches already have unmerged changes."
+      }
+    },
+    "/api/v0/websites/{websiteId}/pages": {
+      "get": {
+        "tags": [
+          "Websites"
+        ],
+        "operationId": "site_builder_apiListWebsitePages",
+        "parameters": [
+          {
+            "name": "websiteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID that owns the website"
+            },
+            "description": "Company ID that owns the website"
+          },
+          {
+            "name": "branch",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Review branch to read from or write to. Omit (or \"main\") to read the live site. To propose fixes, write files to a NEW branch name (e.g. \"seo-optimizer-2026-09-03\") \u2014 the branch is created on first write and is reviewed and approved by the owner. Writing to \"main\" is refused."
+            },
+            "description": "Review branch to read from or write to. Omit (or \"main\") to read the live site. To propose fixes, write files to a NEW branch name (e.g. \"seo-optimizer-2026-09-03\") \u2014 the branch is created on first write and is reviewed and approved by the owner. Writing to \"main\" is refused."
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "companyId or branch invalid",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "No company access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Website not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Pages (route -> file path)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "pages": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "Pages with route -> file path"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "List a website's pages",
+        "description": "Each entry maps a public route (e.g. /about) to the file that renders it,\nso you know which files to read and where fixes belong."
+      }
+    },
+    "/api/v0/websites/{websiteId}/file": {
+      "get": {
+        "tags": [
+          "Websites"
+        ],
+        "operationId": "site_builder_apiReadWebsiteFile",
+        "parameters": [
+          {
+            "name": "websiteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID that owns the website"
+            },
+            "description": "Company ID that owns the website"
+          },
+          {
+            "name": "path",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Absolute file path within the site, e.g. /pages/about.html"
+            },
+            "description": "Absolute file path within the site, e.g. /pages/about.html"
+          },
+          {
+            "name": "branch",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Review branch to read from or write to. Omit (or \"main\") to read the live site. To propose fixes, write files to a NEW branch name (e.g. \"seo-optimizer-2026-09-03\") \u2014 the branch is created on first write and is reviewed and approved by the owner. Writing to \"main\" is refused."
+            },
+            "description": "Review branch to read from or write to. Omit (or \"main\") to read the live site. To propose fixes, write files to a NEW branch name (e.g. \"seo-optimizer-2026-09-03\") \u2014 the branch is created on first write and is reviewed and approved by the owner. Writing to \"main\" is refused."
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "companyId/path/branch invalid",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "No company access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "File not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "The file content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "path": {
+                      "type": "string"
+                    },
+                    "content": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Read one website file",
+        "description": "Returns the full content of a file so you can inspect it before proposing a\nchange. Pass a branch to read your in-progress version, or omit it for the\nlive file."
+      },
+      "put": {
+        "tags": [
+          "Websites"
+        ],
+        "operationId": "site_builder_apiWriteWebsiteFile",
+        "parameters": [
+          {
+            "name": "websiteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "invalid path/branch, or branch is main",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "No company access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Website not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "{ok: true}",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "ok": {
+                      "type": "boolean"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Write a website file onto a review branch",
+        "description": "Applies a fix. The branch is REQUIRED and must not be \"main\": the change\nlands on a review branch the owner approves, never the live site. The branch\nis created automatically on the first write. The site cannot be published\nfrom the API \u2014 draft-only.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID that owns the website"
+                  },
+                  "path": {
+                    "type": "string",
+                    "description": "Absolute file path within the site, e.g. /pages/about.html"
+                  },
+                  "content": {
+                    "type": "string",
+                    "description": "Full new file content"
+                  },
+                  "branch": {
+                    "type": "string",
+                    "description": "Review branch to read from or write to. Omit (or \"main\") to read the live site. To propose fixes, write files to a NEW branch name (e.g. \"seo-optimizer-2026-09-03\") \u2014 the branch is created on first write and is reviewed and approved by the owner. Writing to \"main\" is refused. Required here and must not be \"main\"."
+                  }
+                },
+                "required": [
+                  "companyId",
+                  "path",
+                  "content",
+                  "branch"
+                ],
+                "description": "Write a website file"
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Websites"
+        ],
+        "operationId": "site_builder_apiDeleteWebsiteFile",
+        "parameters": [
+          {
+            "name": "websiteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID that owns the website"
+            },
+            "description": "Company ID that owns the website"
+          },
+          {
+            "name": "path",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Absolute file path within the site to delete"
+            },
+            "description": "Absolute file path within the site to delete"
+          },
+          {
+            "name": "branch",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Review branch to read from or write to. Omit (or \"main\") to read the live site. To propose fixes, write files to a NEW branch name (e.g. \"seo-optimizer-2026-09-03\") \u2014 the branch is created on first write and is reviewed and approved by the owner. Writing to \"main\" is refused. Required here and must not be \"main\"."
+            },
+            "description": "Review branch to read from or write to. Omit (or \"main\") to read the live site. To propose fixes, write files to a NEW branch name (e.g. \"seo-optimizer-2026-09-03\") \u2014 the branch is created on first write and is reviewed and approved by the owner. Writing to \"main\" is refused. Required here and must not be \"main\"."
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "invalid path/branch, or branch is main",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "No company access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Website not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "{ok: true}",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "ok": {
+                      "type": "boolean"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Delete a website file on a review branch",
+        "description": "Removes a file on a review branch (a branch tombstone). The branch is\nREQUIRED and must not be \"main\"."
+      }
+    },
+    "/api/v0/websites/{websiteId}/validate": {
+      "get": {
+        "tags": [
+          "Websites"
+        ],
+        "operationId": "site_builder_apiValidateWebsite",
+        "parameters": [
+          {
+            "name": "websiteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID that owns the website"
+            },
+            "description": "Company ID that owns the website"
+          },
+          {
+            "name": "branch",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Review branch to read from or write to. Omit (or \"main\") to read the live site. To propose fixes, write files to a NEW branch name (e.g. \"seo-optimizer-2026-09-03\") \u2014 the branch is created on first write and is reviewed and approved by the owner. Writing to \"main\" is refused."
+            },
+            "description": "Review branch to read from or write to. Omit (or \"main\") to read the live site. To propose fixes, write files to a NEW branch name (e.g. \"seo-optimizer-2026-09-03\") \u2014 the branch is created on first write and is reviewed and approved by the owner. Writing to \"main\" is refused."
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "companyId or branch invalid",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "No company access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Website not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "{ok, problems[]}",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "ok": {
+                      "type": "boolean"
+                    },
+                    "problems": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Validate a website renders cleanly",
+        "description": "Reports broken includes, missing layouts, template cycles and invalid\nsite.json. Run this after writing fixes to a branch to confirm nothing broke."
+      }
+    },
+    "/api/v0/websites/{websiteId}/seo-audit": {
+      "get": {
+        "tags": [
+          "Websites"
+        ],
+        "operationId": "site_builder_apiSeoAuditWebsite",
+        "parameters": [
+          {
+            "name": "websiteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID that owns the website"
+            },
+            "description": "Company ID that owns the website"
+          },
+          {
+            "name": "branch",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Review branch to read from or write to. Omit (or \"main\") to read the live site. To propose fixes, write files to a NEW branch name (e.g. \"seo-optimizer-2026-09-03\") \u2014 the branch is created on first write and is reviewed and approved by the owner. Writing to \"main\" is refused."
+            },
+            "description": "Review branch to read from or write to. Omit (or \"main\") to read the live site. To propose fixes, write files to a NEW branch name (e.g. \"seo-optimizer-2026-09-03\") \u2014 the branch is created on first write and is reviewed and approved by the owner. Writing to \"main\" is refused."
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "companyId or branch invalid",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "No company access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Website not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Full technical SEO/AEO report",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "description": "Full technical SEO/AEO report \u2014 score, per-page state, and issues worst-first"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Audit a website's SEO and AEO",
+        "description": "Returns a score plus per-page state and issues (worst first): titles, meta\ndescriptions, canonical/robots, alt text, heading hierarchy, structured data,\nOpen Graph, broken internal links, orphan pages, and FAQ-schema opportunities.\nRead-only \u2014 pass no branch to audit the live site."
+      }
+    },
+    "/api/v0/websites/{websiteId}/lighthouse": {
+      "get": {
+        "tags": [
+          "Websites"
+        ],
+        "operationId": "site_builder_apiLighthouseWebsite",
+        "parameters": [
+          {
+            "name": "websiteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID that owns the website"
+            },
+            "description": "Company ID that owns the website"
+          },
+          {
+            "name": "route",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Route of the page to score, e.g. '/' or '/about' (default '/')"
+            },
+            "description": "Route of the page to score, e.g. '/' or '/about' (default '/')"
+          },
+          {
+            "name": "device",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "'mobile' (default) or 'desktop'"
+            },
+            "description": "'mobile' (default) or 'desktop'"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "companyId missing",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "No company access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Website not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Lighthouse scores + Core Web Vitals",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "description": "Full technical SEO/AEO report \u2014 score, per-page state, and issues worst-first"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Lighthouse-score a published page",
+        "description": "Returns performance, accessibility, best-practices and SEO scores plus Core\nWeb Vitals for one live page. Only works after the site is published; for a\npre-publish check use the seo-audit endpoint instead."
+      }
+    },
+    "/api/v0/websites/{websiteId}/branches": {
+      "get": {
+        "tags": [
+          "Websites"
+        ],
+        "operationId": "site_builder_apiListWebsiteBranches",
+        "parameters": [
+          {
+            "name": "websiteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID that owns the website"
+            },
+            "description": "Company ID that owns the website"
+          },
+          {
+            "name": "branch",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Review branch to read from or write to. Omit (or \"main\") to read the live site. To propose fixes, write files to a NEW branch name (e.g. \"seo-optimizer-2026-09-03\") \u2014 the branch is created on first write and is reviewed and approved by the owner. Writing to \"main\" is refused."
+            },
+            "description": "Review branch to read from or write to. Omit (or \"main\") to read the live site. To propose fixes, write files to a NEW branch name (e.g. \"seo-optimizer-2026-09-03\") \u2014 the branch is created on first write and is reviewed and approved by the owner. Writing to \"main\" is refused."
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "companyId missing",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "No company access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Website not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Review branches with unmerged changes",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "branches": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "Review branches with unmerged changes"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "List a website's review branches",
+        "description": "Shows the review branches you (or the owner) have created and how many files\neach changes, so you can see what is already staged before you audit again."
+      }
+    },
+    "/api/v0/websites/{websiteId}/branches/{branch}/diff": {
+      "get": {
+        "tags": [
+          "Websites"
+        ],
+        "operationId": "site_builder_apiWebsiteBranchDiff",
+        "parameters": [
+          {
+            "name": "branch",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "websiteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID that owns the website"
+            },
+            "description": "Company ID that owns the website"
+          },
+          {
+            "name": "branch",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Review branch to read from or write to. Omit (or \"main\") to read the live site. To propose fixes, write files to a NEW branch name (e.g. \"seo-optimizer-2026-09-03\") \u2014 the branch is created on first write and is reviewed and approved by the owner. Writing to \"main\" is refused."
+            },
+            "description": "Review branch to read from or write to. Omit (or \"main\") to read the live site. To propose fixes, write files to a NEW branch name (e.g. \"seo-optimizer-2026-09-03\") \u2014 the branch is created on first write and is reviewed and approved by the owner. Writing to \"main\" is refused."
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "companyId missing",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "No company access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Website not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Per-file diff of the branch against main",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "description": "Full technical SEO/AEO report \u2014 score, per-page state, and issues worst-first"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Diff a review branch against the live site",
+        "description": "Returns the changed files and their before/after, i.e. exactly what the\nowner will review before approving."
       }
     }
   },
