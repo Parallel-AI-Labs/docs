@@ -25,7 +25,7 @@
     },
     {
       "name": "Canvas",
-      "description": "Create canvas art as shareable images or looping videos \u2014 social posts, story graphics, quote cards, announcements, link-preview art. Workflow: author a complete standalone HTML canvas (large text over a photo, color, or gradient, optionally with Lucide icons), then canvas_createCanvas renders it at exact pixel size and returns a permanent public URL. Pass animated=true to record the canvas as a looping MP4 instead of a still PNG \u2014 animate it with infinite CSS keyframes per the animation guidelines below, and the response returns videoId and an MP4 url. A still render costs 1 data credit and an animated recording 3; both are only charged on success. Author the HTML to these design guidelines:\n\n## What You Are Making\nA canvas is a piece of visual art, not a document. Museum-quality, magazine-quality \u2014\nnever cartoony, never clip-art, never a slide. Before writing any HTML, decide a design\ndirection in one sentence (e.g. \"Swiss formalism: one monumental word, hard grid,\nred/black/paper\" or \"quiet editorial: thin serif, vast negative space, one photograph\").\nEvery choice then serves that direction.\n\n## Brand Style (check first)\n- Before choosing a direction, check whether the company has brand images saved in\n  the content engine (GET /content/brand-images \u2014 content_listBrandImages on the platform\n  API/MCP). Do this BEFORE the first render, not after.\n- If a brand image exists, its `imageStylePrompt` is the company's established visual\n  style (palette, mood, typography feel, photographic treatment) and its `images` list\n  holds brand assets (logos, product shots, approved photography) with public URLs.\n  Treat these as the source of truth: derive the palette and type choices from the\n  style prompt, and embed brand assets by their exact URL instead of stock or\n  AI-generated stand-ins when a suitable one exists. Never alter, recolor, or\n  distort a logo.\n- If no brand images exist, or the session already supplies brand context in its\n  instructions, skip the lookup and design from the brief.\n\n## Canvas Setup (exact rules)\n- Output one complete standalone HTML document. No external CSS/JS files; inline a\n  `<style>` block. Plain CSS preferred, but these shared platform libraries may be loaded\n  from their CDNs:\n  - Tailwind CSS: `<script src=\"https://cdn.tailwindcss.com\"></script>` \u2014 utility classes; no build step\n  - Lucide Icons: `<script src=\"https://unpkg.com/lucide@1.33.0/dist/umd/lucide.min.js\"></script>` \u2014 place `<i data-lucide=\"arrow-right\"></i>`, then call `lucide.createIcons();` after the last icon\n  - Google Fonts: `<link href=\"https://fonts.googleapis.com/css2?family=...&display=swap\" rel=\"stylesheet\">` \u2014 pick faces that match the brand\n- Size the canvas EXACTLY to the chosen format:\n  `html,body{margin:0;padding:0}` and `body{width:<W>px;height:<H>px;overflow:hidden;position:relative}`\n- Named formats include: square 1080x1080 (feed), portrait 1080x1350 (feed, default), story\n  1080x1920 (Stories/Reels), landscape 1200x630 (link previews), slide 1920x1080 (16:9\n  presentation slide background \u2014 decorative art only, no text; editable text is layered on\n  later), plus profile covers (linkedin_banner, twitter_header, facebook_cover),\n  youtube_thumb, email_header, print pages (a4_portrait, a4_landscape, letter_portrait) and\n  business_card. When none fits, an exact custom width/height (200-2160px each) can be\n  supplied instead \u2014 size the body to whatever exact dimensions the session gives you.\n- A canvas is rendered one of two ways, and you are told which one this session wants:\n  - STILL (default): the canvas is photographed the instant it loads. Design it static \u2014\n    no animations or transitions, since only the first frame is ever seen.\n  - ANIMATED: the canvas is recorded to a short MP4. Follow the animation rules below.\n\n## Typography (the heart of the canvas)\n- Google Fonts only, loaded via `<link href=\"https://fonts.googleapis.com/css2?family=...&display=swap\" rel=\"stylesheet\">`.\n- Choose from this curated library \u2014 at most TWO fonts per canvas:\n  - Monumental display: Boldonse, Big Shoulders, Erica One, Archivo Black, Bebas Neue\n  - Elegant serif: Gloock, Italiana, Young Serif, Instrument Serif, Playfair Display, Libre Baskerville\n  - Modern sans: Bricolage Grotesque, Outfit, Work Sans, Instrument Sans, Space Grotesk\n  - Editorial body serif: Lora, Crimson Pro, IBM Plex Serif\n  - Technical mono: JetBrains Mono, IBM Plex Mono, DM Mono, Tektur, Jura\n  - Retro pixel: Silkscreen, Pixelify Sans\n  - Handwritten: Nothing You Could Do, Smooch Sans; thin deco: Poiret One\n- Text is minimal and visual-first: usually one dominant word or short phrase plus tiny\n  supporting labels. Rarely more than a dozen words on the whole canvas.\n- Make the hero text HUGE \u2014 roughly 10-25% of the canvas height. Uppercase display type\n  wants letter-spacing (0.02-0.15em); tiny labels want wide tracking (0.2-0.4em).\n- Line-height on stacked display lines: some display fonts draw far taller than their\n  em box and collide when stacked (Boldonse needs line-height ~1.3). Use 1.2-1.3 for\n  multi-line display type and only go tighter for fonts you know sit inside their box.\n- Contrast in scale is the composition: one enormous element, a few whisper-small ones.\n  Nothing in between.\n\n## Icons (Lucide)\n- When the design calls for an icon \u2014 a directional arrow, a play glyph, a small\n  functional mark next to a label \u2014 use Lucide, never emoji and never clip-art.\n- Load it once, at the END of the body, then render the icons:\n  `<script src=\"https://unpkg.com/lucide@1.33.0/dist/umd/lucide.min.js\"></script>` followed by `<script>lucide.createIcons();</script>`\n- Place an icon with `<i data-lucide=\"arrow-right\"></i>`. Size and color it through CSS on\n  the element \u2014 Lucide SVGs inherit `currentColor` and take `width`/`height`:\n  `i[data-lucide]{width:64px;height:64px;stroke-width:1.5}` (the stroke weight matters as\n  much as the size \u2014 hairline strokes read as refined, thick ones as cartoonish).\n- Use real Lucide names (arrow-right, arrow-up-right, sparkles, zap, check, star, play,\n  quote, trending-up, circle-dot). A misspelled name renders nothing at all.\n- Icons are accents, not the subject: one or two per canvas, small against the hero type.\n  An icon never substitutes for a real design idea.\n\n## Animation (ANIMATED canvases only)\nOnly when the session asks for an animated canvas. A still canvas must have no animation\nat all \u2014 it is photographed on the first frame.\n- Animate with CSS `@keyframes` on the elements themselves. The recording seeks the page's\n  animation timeline frame by frame, so what is recorded is exactly your CSS timeline.\n- Every animation MUST be `infinite` and MUST tile seamlessly: the state at the end of one\n  iteration has to match the state at the start, or the loop visibly jumps. The cleanest\n  way is a single cycle that returns home (`0%` and `100%` identical).\n- Give the whole piece ONE shared cycle length \u2014 set every animation to the same\n  `animation-duration` (or an exact divisor of it, e.g. 2s inside an 8s piece) so the\n  composition repeats as a whole rather than drifting out of phase.\n- Stagger with `animation-delay` (negative delays start an element mid-cycle), never by\n  giving elements unrelated durations.\n- Animate `transform` and `opacity` above all \u2014 they are what animates smoothly. Also fine:\n  `filter`, `clip-path`, gradient positions, `stroke-dashoffset` on SVG.\n- Keep it restrained and slow: a drifting gradient, a slow parallax push, type that breathes,\n  a single element sliding through. Elegant motion is subtle \u2014 nothing bouncing, spinning\n  fast, or flashing. The canvas must still look composed in any single frozen frame.\n\n### What the recorder can and cannot capture\nThe recording pauses the browser's animation timeline and steps through it \u2014 it does NOT\nwatch the page play in real time. Only animations the browser itself drives are captured:\n- CAPTURED: CSS `@keyframes`, CSS transitions, SVG SMIL, and the Web Animations API\n  (`element.animate(...)`) \u2014 everything that appears in `document.getAnimations()`.\n- NOT CAPTURED (records as a frozen video, with no error): anything driven by JavaScript\n  frame by frame \u2014 `requestAnimationFrame`, `setInterval`/`setTimeout` loops, canvas 2D/WebGL\n  draw loops, and scroll-triggered libraries. Also no `<video>` and no animated GIFs.\n- This is the ONE rule that differs from the landing page builder, whose pages play live in\n  a real browser and can use anything. Do not carry those habits over.\n\n### Animation libraries\nCSS keyframes are the default and are always enough for a canvas \u2014 reach for a library only\nwhen the motion genuinely needs orchestration (staggered sequences, timelines).\n- The ONLY animation library available here is Anime.js, and ONLY through its WAAPI entry\n  point, which puts animations on the browser timeline:\n  - Anime.js (advanced animation): `<script src=\"https://cdn.jsdelivr.net/npm/animejs/dist/bundles/anime.umd.min.js\"></script>` \u2014 staggered reveals, timelines, kinetic type. `anime.waapi.animate(...)` puts the animation on the browser timeline; `anime.animate(...)` / `anime.Timeline` drive it from JS frame by frame\n  Call it as `anime.waapi.animate('.el', { translateX: 300, duration: 2000, loop: true })`.\n  Its classic `anime.animate(...)` / `anime.Timeline` API is JS-driven and records as a\n  FROZEN video \u2014 if you use Anime.js at all, every animation must go through\n  `anime.waapi.animate`.\n- AOS (used by the landing page builder) is scroll-triggered and USELESS here: a canvas is a\n  fixed viewport with nothing to scroll, so its animations never fire. Never load it.\n- Whatever you use, the seamless-loop and shared-cycle rules above still apply.\n\n## Color & Background\n- A limited, intentional palette: 2-3 colors total. Pick them for the design direction,\n  not decoration. High text/background contrast is non-negotiable.\n- Backgrounds: a flat color, a subtle gradient, or a photo. For photos use\n  `background:url(...) center/cover` and ALWAYS add a scrim over photo areas behind text\n  (e.g. `background:rgba(0,0,0,.35)` or a directional gradient) so type stays legible.\n  The scrim serves the text, not the whole canvas: keep it light (\u2264 ~0.5 opacity) or\n  directional so the photo stays clearly visible \u2014 a photo buried under a near-opaque\n  overlay reads as a plain dark field and wastes the imagery.\n- Photo URLs must be public http(s) images. Two ways to get one:\n  - Stock photography: search the stock image library (Unsplash/Pexels via the stock\n    image search \u2014 images_searchStockImages on the platform API/MCP) and use a\n    result's fullUrl.\n  - AI-generated imagery: generate an image with the platform's AI image models\n    (images_createImage on the platform API/MCP \u2014 describe the scene, pick a model,\n    and use the returned public URL). Best for imagery no stock photo can match;\n    request it WITHOUT text, since the canvas type layer supplies all text.\n\n## Composition (non-negotiable craft rules)\n- Keep a safe margin of at least 5% of the canvas on every side. NOTHING touches or\n  overflows the canvas edge, and elements never overlap illegibly.\n- Compose deliberately: strong asymmetry or a strict grid both work; accidental\n  centering of everything does not. Let negative space breathe \u2014 empty space is a\n  design element, not waste.\n- Repetition rewards attention: thin rules, small registration marks, an index number,\n  a tiny caption line \u2014 sparse, clinical details make the piece feel designed.\n- The finished canvas should look like it took a top-of-field designer hours of\n  painstaking refinement: aligned edges, consistent spacing rhythm, optically balanced.\n  Double-check every element is inside the canvas and nothing collides before finishing.\n"
+      "description": "Render a standalone HTML canvas into shareable art \u2014 a still PNG or a looping MP4 \u2014 and return a permanent public URL."
     },
     {
       "name": "Chat",
@@ -45,7 +45,7 @@
     },
     {
       "name": "Content Research",
-      "description": "SEO/AEO opportunity engine: scores a domain against competitors, SERPs and AI answers, returning content opportunities with volumes and a ready brief. Flow: createResearchProject (one domain+ICP per project) \u2192 runResearchProject (charges up front, no refund on failure, one active run per project) \u2192 poll listResearchRuns \u2192 listOpportunities (by projectId) \u2192 act via generateFromOpportunity / trackOpportunity / dismissOpportunity."
+      "description": "SEO/AEO opportunity engine: score a domain against competitors and AI answers, then generate/track scored content opportunities."
     },
     {
       "name": "Departments",
@@ -53,7 +53,7 @@
     },
     {
       "name": "Documentation",
-      "description": "Browse and search platform docs. listDocumentationCategories \u2192 listDocumentationPages?parentId= \u2192 getDocumentationPage (full Markdown); searchDocumentation for keyword search (snippets). If the doc is missing or incomplete, file submitDocumentationRequest."
+      "description": "Browse and search platform documentation, and request docs that are missing."
     },
     {
       "name": "Documents",
@@ -61,7 +61,7 @@
     },
     {
       "name": "Employees",
-      "description": "AI employees are customizable personas you can chat with. To chat with an employee: 1) Use platform_list_companies to find your company ID, 2) List employees with employees_listEmployeesApi or employees_getEmployees, 3) Chat using employees_chatEmployee with the employeeId and your message."
+      "description": "Customizable AI personas you can list and chat with."
     },
     {
       "name": "Images",
@@ -73,7 +73,7 @@
     },
     {
       "name": "Integrations",
-      "description": "Look up IDs from connected third-party accounts (HeyReach, Salesforge, Twilio, Meta Ads, CRMs). These are discovery endpoints: call them to resolve the campaignId, workspaceId, sequenceId, audienceId, phone number, or crmIntegrationId that other actions require. Start with integrations_getIntegrationsByType to find a valid integration ID, then call the provider-specific endpoint with it."
+      "description": "Discovery endpoints that resolve IDs from connected third-party accounts (HeyReach, Salesforge, Twilio, Meta Ads, CRMs) for other actions to use."
     },
     {
       "name": "Keys",
@@ -85,7 +85,7 @@
     },
     {
       "name": "Leads",
-      "description": "Lead generation and contact enrichment from filters, premade intent segments, and buyer-intent keywords. Flow: leads_listFieldOptions (describe=true, then field=/group= for valid enums \u2014 never guess) \u2192 leads_searchSegments for segment externalIds (e.g. \"b2b_12636\") \u2192 leads_generateLeads (filters/segments/keywords) \u2192 leads_enrichContact for full details (~75 fields; prefer over web search) \u2192 leads_importLeadsToList (same criteria + existing destination listId from lists_saveList; runs in background, returns a taskId). Costs: generate 1/call, matched enrich 2, import 1/contact \u2014 gated on the FULL match count, so check totalAvailable before importing; field-options and segments are free."
+      "description": "Generate leads from filters, intent segments and buyer-intent keywords, enrich contacts, and import them into a smart list."
     },
     {
       "name": "Lists",
@@ -93,7 +93,7 @@
     },
     {
       "name": "Marketing Campaigns",
-      "description": "Create, schedule, and send one-shot marketing email campaigns to a smart list, and track open/click performance. Reusable templates live at /marketing-campaign-templates; to create a campaign from one, fetch the template and pass its fields to the create endpoint."
+      "description": "Create, schedule, and send one-shot marketing email campaigns to a smart list, and track open/click performance."
     },
     {
       "name": "Mcp",
@@ -109,15 +109,15 @@
     },
     {
       "name": "Monitors",
-      "description": "Track keywords across social media platforms (Reddit, Hacker News, LinkedIn, X, Quora) and discover relevant conversations. Create monitors to track specific keywords, receive notifications when mentions are found, and generate AI-powered reply suggestions to engage with your audience."
+      "description": "Track keywords across social platforms (Reddit, Hacker News, LinkedIn, X, Quora) to discover relevant conversations and get AI reply suggestions."
     },
     {
       "name": "Organizations",
-      "description": "List the organizations the authenticated user belongs to. An organization is the top-level grouping above companies \u2014 use it to discover which company workspaces are reachable before calling platform_list_companies."
+      "description": "List the organizations the authenticated user belongs to \u2014 the top-level grouping above companies."
     },
     {
       "name": "People",
-      "description": "Identity graph: one resolved profile per real human, merged across sequence members, list rows, agent conversations, and marketing recipients. people_peopleSearch (name/email/phone, one call) returns resolved `people` plus matching records bucketed by source; falls back to a direct scan before the graph is populated. people_getPerson = one full profile, people_getPersonActivity = behavioural timeline (opens/clicks/bookings/calls, newest first, bots excluded), people_getPeople browses/filters the graph, people_getPeopleStats summarizes. Rebuilt nightly; no API to trigger."
+      "description": "Identity graph: search and browse one resolved profile per person (merged across sequences, lists, conversations and campaigns) with their activity timeline."
     },
     {
       "name": "Projects",
@@ -125,11 +125,11 @@
     },
     {
       "name": "SEO",
-      "description": "SEO toolkit: on-demand lookups, site audits, scheduled per-domain monitoring, and a raw DataForSEO passthrough. Content Research is the separate scored opportunity engine. Every purchase reports `creditCost` (credits at the vendor's actual charge); cached reads cost nothing and only refresh=true forces a re-purchase. Lookups: seo_researchKeywordsRoute expands a seed keyword into related terms with volume, CPC and competition (optionally the live SERP); seo_domainOverviewRoute returns domain rating, organic traffic, backlinks and referring domains for one domain and seo_compareDomainsRoute for several. seo_saveKeywordsRoute flags keywords, seo_listKeywordsRoute reads them back with fresh metrics, seo_updateKeywordRoute edits tags/notes and seo_unsaveKeywordRoute removes one. Site audits (one-off crawls): seo_startAuditRoute queues a crawl of a domain up to maxPages; poll seo_getAuditRoute for progress and the issue summary, seo_listAuditPagesRoute for per-page checks, seo_runAiReadinessRoute for the AI/answer-engine readiness score, seo_cancelAuditRoute to stop, seo_listAuditsRoute and seo_deleteAuditRoute to manage. Monitored projects (scheduled): seo_createProjectRoute or seo_ensureProjectRoute registers a domain with a schedule, tracked keywords and enabled modules (rank tracking, backlinks, competitors, AI visibility); seo_getProjectRoute returns the latest per-module results, seo_updateProjectRoute changes schedule/keywords/modules, seo_runProjectRoute runs now, seo_pauseProjectRoute/seo_resumeProjectRoute control the schedule, seo_listProjectsRoute/seo_deleteProjectRoute manage. History and detail per project: seo_projectRankHistoryRoute (rank snapshots, optionally one keyword), seo_listProjectBacklinksRoute and seo_projectBacklinkHistoryRoute (individual backlinks; totals with new/lost per run), seo_projectLinkProfileRoute (anchors, referring domains), seo_projectCompetitorsRoute (organic competitors and backlink gap), seo_projectLighthouseRoute (latest Lighthouse scores, Core Web Vitals and scan history) and seo_projectLighthouseSnapshotRoute (one earlier scan in full), seo_projectAiVisibilityRoute and seo_projectAiVisibilityTrendRoute (AEO answers and visibility/citation/share-of-voice over time). Search Console: seo_searchConsoleConnectionsRoute lists connected properties and seo_searchConsolePreviewRoute pulls the queries a site already ranks for, to seed tracked keywords. Passthrough: seo_dataforseoProxyRoute forwards a task array to any DataForSEO v3 *live* endpoint for anything the tools above do not cover (backlinks, SERP, domain analytics, keyword data, technologies, content analysis, on_page/instant_pages). Pass `path` without the /v3/ prefix, e.g. \"backlinks/backlinks/live\", \"serp/google/organic/live/advanced\" or \"domain_analytics/technologies/domains_by_html_terms/live\", and `tasks` exactly as https://docs.dataforseo.com/v3/<path>/ documents for that endpoint. Only live endpoints are accepted (task_post/task_get/tasks_ready, on_page crawls and appendix are rejected). The response is the vendor body verbatim plus `creditCost`; per-row endpoints cost more the larger `limit` is, and a 100-row response can exceed the tool result size, so keep `limit` at 10-50."
+      "description": "SEO toolkit: keyword and domain lookups, site audits, scheduled per-domain monitoring (rank, backlinks, competitors, AI visibility), Search Console, and a raw DataForSEO passthrough."
     },
     {
       "name": "Scheduled Tasks",
-      "description": "Create and manage scheduled runs of AI employees: one-time, recurring (daily/weekly/monthly), or heartbeat (every few minutes/hours inside a working schedule). List tasks, read run history and heartbeat daily logs, pause/resume, trigger a run now, and grade a run with a suggested prompt rewrite. Workflow: find the employeeId with employees_getEmployees, then scheduled_tasks_createScheduledTask."
+      "description": "Schedule AI employee runs \u2014 one-time, recurring, or heartbeat \u2014 and manage their history, status, and grading."
     },
     {
       "name": "Sequences",
@@ -160,11 +160,11 @@
     },
     {
       "name": "Web",
-      "description": "Real-time web tools: search the web and news, read any page, and pull jobs, local-business, and trending-topic data. Workflow: 1) web_searchWeb finds pages and web_searchNews finds recent coverage (freshness=pd/pw/pm/py); both return titles, URLs, and snippets. 2) web_scrapePage reads a URL as clean markdown (or raw HTML with responseType=html) \u2014 use it to read any result in full, including JavaScript-heavy and LinkedIn pages. 3) web_searchPlaces finds local businesses; take a result's placeId or dataId into web_getPlace for full details, web_getPlaceReviews for reviews (paginate with nextPageToken), and web_getPlacePhotos for photos. 4) web_searchJobs finds job listings and web_autocompleteTrends maps a phrase to trending topics. 5) web_screenshotPage captures a page as a PNG and returns a public image URL \u2014 useful for visual checks and reports. Every call costs 1 data credit and is only charged on success."
+      "description": "Real-time web tools: search the web and news, read/screenshot any page, and pull jobs, local-business and trending-topic data."
     },
     {
       "name": "Websites",
-      "description": "Read, audit and edit the company's websites (multi-page Jinja/HTML sites). List sites, read pages and files, run SEO/AEO and Lighthouse audits and validation, and stage edits on a review branch for the owner to approve (writes require a non-main branch; there is no publish). Edits go to site.json and page templates \u2014 read the related skill first to learn what is auto-generated and must not be hand-written.",
+      "description": "Read, audit and edit the company's multi-page Jinja/HTML websites, staging edits on a review branch for the owner to approve.",
       "x-relatedSkills": [
         "website-editing"
       ]
@@ -936,7 +936,7 @@
         "operationId": "documents_getDocumentContents",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -944,7 +944,7 @@
             }
           },
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -1003,7 +1003,7 @@
         "operationId": "documents_getDocument",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -1011,7 +1011,7 @@
             }
           },
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -3150,7 +3150,7 @@
         "operationId": "keys_getApiKey",
         "parameters": [
           {
-            "name": "name",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -3158,7 +3158,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "name",
             "in": "path",
             "required": true,
             "schema": {
@@ -24164,7 +24164,7 @@
         "operationId": "sequences_getSequenceMemberTimeline",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24172,7 +24172,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24570,7 +24570,7 @@
         "operationId": "sequences_triggerSequenceMember",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24578,7 +24578,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24646,7 +24646,7 @@
         "operationId": "sequences_removeSequenceMember",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24654,7 +24654,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30684,7 +30684,7 @@
         "operationId": "inbox_sendDraft",
         "parameters": [
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30692,7 +30692,7 @@
             }
           },
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30785,7 +30785,7 @@
         "operationId": "inbox_deleteDraft",
         "parameters": [
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30793,7 +30793,7 @@
             }
           },
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -43219,7 +43219,7 @@
           }
         },
         "summary": "Render a canvas art image or animation from HTML",
-        "description": "Renders a self-contained HTML canvas at exact pixel dimensions and returns\na permanent public URL \u2014 for social posts, story graphics, quote cards,\nand link preview art. Author the HTML per the design guidelines in this\ntag's description (curated Google Fonts, Lucide icons, minimal text,\nexact-size body). Costs 1 data credit per call.\n\nPass animated=true to record the canvas as a looping MP4 instead of a\nstill PNG (animate with infinite CSS keyframes); that returns videoId and\nan MP4 url, and costs 3 data credits.",
+        "description": "Renders a self-contained HTML canvas at exact pixel dimensions and returns a permanent public URL \u2014 for social posts, story graphics, quote cards, and link preview art. Costs 1 data credit per call.\n\nPass animated=true to record the canvas as a looping MP4 instead of a still PNG (animate with infinite CSS keyframes); that returns videoId and an MP4 url, and costs 3 data credits.\n\nAuthor the HTML to these design guidelines:\n\n## What You Are Making\nA canvas is a piece of visual art, not a document. Museum-quality, magazine-quality \u2014\nnever cartoony, never clip-art, never a slide. Before writing any HTML, decide a design\ndirection in one sentence (e.g. \"Swiss formalism: one monumental word, hard grid,\nred/black/paper\" or \"quiet editorial: thin serif, vast negative space, one photograph\").\nEvery choice then serves that direction.\n\n## Brand Style (check first)\n- Before choosing a direction, check whether the company has brand images saved in\n  the content engine (GET /content/brand-images \u2014 content_listBrandImages on the platform\n  API/MCP). Do this BEFORE the first render, not after.\n- If a brand image exists, its `imageStylePrompt` is the company's established visual\n  style (palette, mood, typography feel, photographic treatment) and its `images` list\n  holds brand assets (logos, product shots, approved photography) with public URLs.\n  Treat these as the source of truth: derive the palette and type choices from the\n  style prompt, and embed brand assets by their exact URL instead of stock or\n  AI-generated stand-ins when a suitable one exists. Never alter, recolor, or\n  distort a logo.\n- If no brand images exist, or the session already supplies brand context in its\n  instructions, skip the lookup and design from the brief.\n\n## Canvas Setup (exact rules)\n- Output one complete standalone HTML document. No external CSS/JS files; inline a\n  `<style>` block. Plain CSS preferred, but these shared platform libraries may be loaded\n  from their CDNs:\n  - Tailwind CSS: `<script src=\"https://cdn.tailwindcss.com\"></script>` \u2014 utility classes; no build step\n  - Lucide Icons: `<script src=\"https://unpkg.com/lucide@1.33.0/dist/umd/lucide.min.js\"></script>` \u2014 place `<i data-lucide=\"arrow-right\"></i>`, then call `lucide.createIcons();` after the last icon\n  - Google Fonts: `<link href=\"https://fonts.googleapis.com/css2?family=...&display=swap\" rel=\"stylesheet\">` \u2014 pick faces that match the brand\n- Size the canvas EXACTLY to the chosen format:\n  `html,body{margin:0;padding:0}` and `body{width:<W>px;height:<H>px;overflow:hidden;position:relative}`\n- Named formats include: square 1080x1080 (feed), portrait 1080x1350 (feed, default), story\n  1080x1920 (Stories/Reels), landscape 1200x630 (link previews), slide 1920x1080 (16:9\n  presentation slide background \u2014 decorative art only, no text; editable text is layered on\n  later), plus profile covers (linkedin_banner, twitter_header, facebook_cover),\n  youtube_thumb, email_header, print pages (a4_portrait, a4_landscape, letter_portrait) and\n  business_card. When none fits, an exact custom width/height (200-2160px each) can be\n  supplied instead \u2014 size the body to whatever exact dimensions the session gives you.\n- A canvas is rendered one of two ways, and you are told which one this session wants:\n  - STILL (default): the canvas is photographed the instant it loads. Design it static \u2014\n    no animations or transitions, since only the first frame is ever seen.\n  - ANIMATED: the canvas is recorded to a short MP4. Follow the animation rules below.\n\n## Typography (the heart of the canvas)\n- Google Fonts only, loaded via `<link href=\"https://fonts.googleapis.com/css2?family=...&display=swap\" rel=\"stylesheet\">`.\n- Choose from this curated library \u2014 at most TWO fonts per canvas:\n  - Monumental display: Boldonse, Big Shoulders, Erica One, Archivo Black, Bebas Neue\n  - Elegant serif: Gloock, Italiana, Young Serif, Instrument Serif, Playfair Display, Libre Baskerville\n  - Modern sans: Bricolage Grotesque, Outfit, Work Sans, Instrument Sans, Space Grotesk\n  - Editorial body serif: Lora, Crimson Pro, IBM Plex Serif\n  - Technical mono: JetBrains Mono, IBM Plex Mono, DM Mono, Tektur, Jura\n  - Retro pixel: Silkscreen, Pixelify Sans\n  - Handwritten: Nothing You Could Do, Smooch Sans; thin deco: Poiret One\n- Text is minimal and visual-first: usually one dominant word or short phrase plus tiny\n  supporting labels. Rarely more than a dozen words on the whole canvas.\n- Make the hero text HUGE \u2014 roughly 10-25% of the canvas height. Uppercase display type\n  wants letter-spacing (0.02-0.15em); tiny labels want wide tracking (0.2-0.4em).\n- Line-height on stacked display lines: some display fonts draw far taller than their\n  em box and collide when stacked (Boldonse needs line-height ~1.3). Use 1.2-1.3 for\n  multi-line display type and only go tighter for fonts you know sit inside their box.\n- Contrast in scale is the composition: one enormous element, a few whisper-small ones.\n  Nothing in between.\n\n## Icons (Lucide)\n- When the design calls for an icon \u2014 a directional arrow, a play glyph, a small\n  functional mark next to a label \u2014 use Lucide, never emoji and never clip-art.\n- Load it once, at the END of the body, then render the icons:\n  `<script src=\"https://unpkg.com/lucide@1.33.0/dist/umd/lucide.min.js\"></script>` followed by `<script>lucide.createIcons();</script>`\n- Place an icon with `<i data-lucide=\"arrow-right\"></i>`. Size and color it through CSS on\n  the element \u2014 Lucide SVGs inherit `currentColor` and take `width`/`height`:\n  `i[data-lucide]{width:64px;height:64px;stroke-width:1.5}` (the stroke weight matters as\n  much as the size \u2014 hairline strokes read as refined, thick ones as cartoonish).\n- Use real Lucide names (arrow-right, arrow-up-right, sparkles, zap, check, star, play,\n  quote, trending-up, circle-dot). A misspelled name renders nothing at all.\n- Icons are accents, not the subject: one or two per canvas, small against the hero type.\n  An icon never substitutes for a real design idea.\n\n## Animation (ANIMATED canvases only)\nOnly when the session asks for an animated canvas. A still canvas must have no animation\nat all \u2014 it is photographed on the first frame.\n- Animate with CSS `@keyframes` on the elements themselves. The recording seeks the page's\n  animation timeline frame by frame, so what is recorded is exactly your CSS timeline.\n- Every animation MUST be `infinite` and MUST tile seamlessly: the state at the end of one\n  iteration has to match the state at the start, or the loop visibly jumps. The cleanest\n  way is a single cycle that returns home (`0%` and `100%` identical).\n- Give the whole piece ONE shared cycle length \u2014 set every animation to the same\n  `animation-duration` (or an exact divisor of it, e.g. 2s inside an 8s piece) so the\n  composition repeats as a whole rather than drifting out of phase.\n- Stagger with `animation-delay` (negative delays start an element mid-cycle), never by\n  giving elements unrelated durations.\n- Animate `transform` and `opacity` above all \u2014 they are what animates smoothly. Also fine:\n  `filter`, `clip-path`, gradient positions, `stroke-dashoffset` on SVG.\n- Keep it restrained and slow: a drifting gradient, a slow parallax push, type that breathes,\n  a single element sliding through. Elegant motion is subtle \u2014 nothing bouncing, spinning\n  fast, or flashing. The canvas must still look composed in any single frozen frame.\n\n### What the recorder can and cannot capture\nThe recording pauses the browser's animation timeline and steps through it \u2014 it does NOT\nwatch the page play in real time. Only animations the browser itself drives are captured:\n- CAPTURED: CSS `@keyframes`, CSS transitions, SVG SMIL, and the Web Animations API\n  (`element.animate(...)`) \u2014 everything that appears in `document.getAnimations()`.\n- NOT CAPTURED (records as a frozen video, with no error): anything driven by JavaScript\n  frame by frame \u2014 `requestAnimationFrame`, `setInterval`/`setTimeout` loops, canvas 2D/WebGL\n  draw loops, and scroll-triggered libraries. Also no `<video>` and no animated GIFs.\n- This is the ONE rule that differs from the landing page builder, whose pages play live in\n  a real browser and can use anything. Do not carry those habits over.\n\n### Animation libraries\nCSS keyframes are the default and are always enough for a canvas \u2014 reach for a library only\nwhen the motion genuinely needs orchestration (staggered sequences, timelines).\n- The ONLY animation library available here is Anime.js, and ONLY through its WAAPI entry\n  point, which puts animations on the browser timeline:\n  - Anime.js (advanced animation): `<script src=\"https://cdn.jsdelivr.net/npm/animejs/dist/bundles/anime.umd.min.js\"></script>` \u2014 staggered reveals, timelines, kinetic type. `anime.waapi.animate(...)` puts the animation on the browser timeline; `anime.animate(...)` / `anime.Timeline` drive it from JS frame by frame\n  Call it as `anime.waapi.animate('.el', { translateX: 300, duration: 2000, loop: true })`.\n  Its classic `anime.animate(...)` / `anime.Timeline` API is JS-driven and records as a\n  FROZEN video \u2014 if you use Anime.js at all, every animation must go through\n  `anime.waapi.animate`.\n- AOS (used by the landing page builder) is scroll-triggered and USELESS here: a canvas is a\n  fixed viewport with nothing to scroll, so its animations never fire. Never load it.\n- Whatever you use, the seamless-loop and shared-cycle rules above still apply.\n\n## Color & Background\n- A limited, intentional palette: 2-3 colors total. Pick them for the design direction,\n  not decoration. High text/background contrast is non-negotiable.\n- Backgrounds: a flat color, a subtle gradient, or a photo. For photos use\n  `background:url(...) center/cover` and ALWAYS add a scrim over photo areas behind text\n  (e.g. `background:rgba(0,0,0,.35)` or a directional gradient) so type stays legible.\n  The scrim serves the text, not the whole canvas: keep it light (\u2264 ~0.5 opacity) or\n  directional so the photo stays clearly visible \u2014 a photo buried under a near-opaque\n  overlay reads as a plain dark field and wastes the imagery.\n- Photo URLs must be public http(s) images. Two ways to get one:\n  - Stock photography: search the stock image library (Unsplash/Pexels via the stock\n    image search \u2014 images_searchStockImages on the platform API/MCP) and use a\n    result's fullUrl.\n  - AI-generated imagery: generate an image with the platform's AI image models\n    (images_createImage on the platform API/MCP \u2014 describe the scene, pick a model,\n    and use the returned public URL). Best for imagery no stock photo can match;\n    request it WITHOUT text, since the canvas type layer supplies all text.\n\n## Composition (non-negotiable craft rules)\n- Keep a safe margin of at least 5% of the canvas on every side. NOTHING touches or\n  overflows the canvas edge, and elements never overlap illegibly.\n- Compose deliberately: strong asymmetry or a strict grid both work; accidental\n  centering of everything does not. Let negative space breathe \u2014 empty space is a\n  design element, not waste.\n- Repetition rewards attention: thin rules, small registration marks, an index number,\n  a tiny caption line \u2014 sparse, clinical details make the piece feel designed.\n- The finished canvas should look like it took a top-of-field designer hours of\n  painstaking refinement: aligned edges, consistent spacing rhythm, optically balanced.\n  Double-check every element is inside the canvas and nothing collides before finishing.\n",
         "requestBody": {
           "required": true,
           "content": {
@@ -63794,7 +63794,7 @@
         "operationId": "marketing_campaigns_restoreCampaignVersion",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -63802,7 +63802,7 @@
             }
           },
           {
-            "name": "versionId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -65005,7 +65005,7 @@
         "operationId": "marketing_campaigns_deleteCampaignRecipient",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "recipientId",
             "in": "path",
             "required": true,
             "schema": {
@@ -65013,7 +65013,7 @@
             }
           },
           {
-            "name": "recipientId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -66330,7 +66330,7 @@
         "operationId": "marketing_campaigns_restoreTemplateVersion",
         "parameters": [
           {
-            "name": "templateId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -66338,7 +66338,7 @@
             }
           },
           {
-            "name": "versionId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
