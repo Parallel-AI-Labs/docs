@@ -45,7 +45,7 @@
     },
     {
       "name": "Content Research",
-      "description": "SEO/AEO opportunity engine. Analyzes a domain against its competitors, search results, and AI assistant answers (ChatGPT, Google AI) to surface scored content opportunities, each with search volumes and a ready-to-generate brief. Workflow: 1) Create a project per ideal customer profile with content_research_createResearchProject \u2014 each project researches one domain against one ICP, so separate audiences stay separated rather than being blended into one result set. 2) Start a run with content_research_runResearchProject (charges credits up front, not refunded on failure; only one run per project can be active at a time). 3) Poll content_research_listResearchRuns until the newest run reports completed or failed. 4) Read results with content_research_listOpportunities, scoped by projectId. 5) Act on one with content_research_generateFromOpportunity to write the piece, content_research_trackOpportunity to monitor its keywords, or content_research_dismissOpportunity to hide it."
+      "description": "SEO/AEO opportunity engine: scores a domain against competitors, SERPs and AI answers, returning content opportunities with volumes and a ready brief. Flow: createResearchProject (one domain+ICP per project) \u2192 runResearchProject (charges up front, no refund on failure, one active run per project) \u2192 poll listResearchRuns \u2192 listOpportunities (by projectId) \u2192 act via generateFromOpportunity / trackOpportunity / dismissOpportunity."
     },
     {
       "name": "Departments",
@@ -53,7 +53,7 @@
     },
     {
       "name": "Documentation",
-      "description": "Browse and search platform documentation. Workflow: 1) Call documentation_listDocumentationCategories to see the top-level categories. 2) Drill into one with documentation_listDocumentationPages?parentId={id} to see its child pages. 3) Call documentation_getDocumentationPage with a page id to read the full Markdown content. 4) Use documentation_searchDocumentation for keyword search across pages \u2014 it returns short snippets so you can decide which page to open in full. IMPORTANT: If the documentation you need does not exist or is incomplete after you browse and search, call documentation_submitDocumentationRequest to file a request so the docs team can add it."
+      "description": "Browse and search platform docs. listDocumentationCategories \u2192 listDocumentationPages?parentId= \u2192 getDocumentationPage (full Markdown); searchDocumentation for keyword search (snippets). If the doc is missing or incomplete, file submitDocumentationRequest."
     },
     {
       "name": "Documents",
@@ -85,7 +85,7 @@
     },
     {
       "name": "Leads",
-      "description": "Lead generation and contact enrichment. Generate leads from demographic/firmographic filters, premade intent segments, and buyer-intent keywords, and enrich a person or company from any identifiers (name, email, company, domain, LinkedIn URL). Workflow: 1) Call leads_listFieldOptions with describe=true to learn the filter surface, then re-call with field= or group= for valid enum values \u2014 never guess enum strings. 2) Call leads_searchSegments to find premade segment externalIds (e.g. \"b2b_12636\") for interest/intent targeting. 3) Call leads_generateLeads with filters, segment ids, and/or audience buyer-intent keywords to fetch leads. 4) Call leads_enrichContact to get full contact details (emails, phones, ~75 fields) for a specific person or company \u2014 prefer it over web search for contact lookups. 5) To keep the leads, call leads_importLeadsToList with the same criteria plus a destination listId: it builds the full audience and writes every matching contact into that smart list as rows. The list must already exist (create one with lists_saveList first), and the import runs in the background \u2014 it returns a taskId immediately. Generating leads costs 1 data credit per call and a matched enrichment costs 2; importing costs 1 per contact imported and is gated on the FULL match count (the whole audience is built regardless of how many rows you import), so check totalAvailable with leads_generateLeads before importing; the field-options and segments endpoints are free."
+      "description": "Lead generation and contact enrichment from filters, premade intent segments, and buyer-intent keywords. Flow: leads_listFieldOptions (describe=true, then field=/group= for valid enums \u2014 never guess) \u2192 leads_searchSegments for segment externalIds (e.g. \"b2b_12636\") \u2192 leads_generateLeads (filters/segments/keywords) \u2192 leads_enrichContact for full details (~75 fields; prefer over web search) \u2192 leads_importLeadsToList (same criteria + existing destination listId from lists_saveList; runs in background, returns a taskId). Costs: generate 1/call, matched enrich 2, import 1/contact \u2014 gated on the FULL match count, so check totalAvailable before importing; field-options and segments are free."
     },
     {
       "name": "Lists",
@@ -117,7 +117,7 @@
     },
     {
       "name": "People",
-      "description": "Identity graph for finding people in the system. One resolved profile per real human, merged across sequence members, list rows, agent conversations, and marketing campaign recipients, so the same person found in four places is one result instead of four. Start with people_peopleSearch \u2014 a name, email, or phone in one call, resolved through the graph rather than scanning each source separately. It returns a `people` array of resolved profiles plus the matching records bucketed by source (sequenceMembers, listRows, agentConversations, marketingCampaignRecipients). Search works even before the graph is populated: it falls back to a direct scan. From a search hit, people_getPerson returns one person\u2019s full profile (every identifier, touchpoints grouped by source) and people_getPersonActivity returns their behavioural timeline (opens, clicks, bookings, calls), newest first, with bot traffic excluded by default. people_getPeople browses and filters the whole graph, and people_getPeopleStats summarizes it. The graph is rebuilt by a nightly background job \u2014 there is no API to trigger it."
+      "description": "Identity graph: one resolved profile per real human, merged across sequence members, list rows, agent conversations, and marketing recipients. people_peopleSearch (name/email/phone, one call) returns resolved `people` plus matching records bucketed by source; falls back to a direct scan before the graph is populated. people_getPerson = one full profile, people_getPersonActivity = behavioural timeline (opens/clicks/bookings/calls, newest first, bots excluded), people_getPeople browses/filters the graph, people_getPeopleStats summarizes. Rebuilt nightly; no API to trigger."
     },
     {
       "name": "Projects",
@@ -126,6 +126,10 @@
     {
       "name": "SEO",
       "description": "SEO toolkit: on-demand lookups, site audits, scheduled per-domain monitoring, and a raw DataForSEO passthrough. Content Research is the separate scored opportunity engine. Every purchase reports `creditCost` (credits at the vendor's actual charge); cached reads cost nothing and only refresh=true forces a re-purchase. Lookups: seo_researchKeywordsRoute expands a seed keyword into related terms with volume, CPC and competition (optionally the live SERP); seo_domainOverviewRoute returns domain rating, organic traffic, backlinks and referring domains for one domain and seo_compareDomainsRoute for several. seo_saveKeywordsRoute flags keywords, seo_listKeywordsRoute reads them back with fresh metrics, seo_updateKeywordRoute edits tags/notes and seo_unsaveKeywordRoute removes one. Site audits (one-off crawls): seo_startAuditRoute queues a crawl of a domain up to maxPages; poll seo_getAuditRoute for progress and the issue summary, seo_listAuditPagesRoute for per-page checks, seo_runAiReadinessRoute for the AI/answer-engine readiness score, seo_cancelAuditRoute to stop, seo_listAuditsRoute and seo_deleteAuditRoute to manage. Monitored projects (scheduled): seo_createProjectRoute or seo_ensureProjectRoute registers a domain with a schedule, tracked keywords and enabled modules (rank tracking, backlinks, competitors, AI visibility); seo_getProjectRoute returns the latest per-module results, seo_updateProjectRoute changes schedule/keywords/modules, seo_runProjectRoute runs now, seo_pauseProjectRoute/seo_resumeProjectRoute control the schedule, seo_listProjectsRoute/seo_deleteProjectRoute manage. History and detail per project: seo_projectRankHistoryRoute (rank snapshots, optionally one keyword), seo_listProjectBacklinksRoute and seo_projectBacklinkHistoryRoute (individual backlinks; totals with new/lost per run), seo_projectLinkProfileRoute (anchors, referring domains), seo_projectCompetitorsRoute (organic competitors and backlink gap), seo_projectLighthouseRoute (latest Lighthouse scores, Core Web Vitals and scan history) and seo_projectLighthouseSnapshotRoute (one earlier scan in full), seo_projectAiVisibilityRoute and seo_projectAiVisibilityTrendRoute (AEO answers and visibility/citation/share-of-voice over time). Search Console: seo_searchConsoleConnectionsRoute lists connected properties and seo_searchConsolePreviewRoute pulls the queries a site already ranks for, to seed tracked keywords. Passthrough: seo_dataforseoProxyRoute forwards a task array to any DataForSEO v3 *live* endpoint for anything the tools above do not cover (backlinks, SERP, domain analytics, keyword data, technologies, content analysis, on_page/instant_pages). Pass `path` without the /v3/ prefix, e.g. \"backlinks/backlinks/live\", \"serp/google/organic/live/advanced\" or \"domain_analytics/technologies/domains_by_html_terms/live\", and `tasks` exactly as https://docs.dataforseo.com/v3/<path>/ documents for that endpoint. Only live endpoints are accepted (task_post/task_get/tasks_ready, on_page crawls and appendix are rejected). The response is the vendor body verbatim plus `creditCost`; per-row endpoints cost more the larger `limit` is, and a 100-row response can exceed the tool result size, so keep `limit` at 10-50."
+    },
+    {
+      "name": "Scheduled Tasks",
+      "description": "Create and manage scheduled runs of AI employees: one-time, recurring (daily/weekly/monthly), or heartbeat (every few minutes/hours inside a working schedule). List tasks, read run history and heartbeat daily logs, pause/resume, trigger a run now, and grade a run with a suggested prompt rewrite. Workflow: find the employeeId with employees_getEmployees, then scheduled_tasks_createScheduledTask."
     },
     {
       "name": "Sequences",
@@ -3146,7 +3150,7 @@
         "operationId": "keys_getApiKey",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "name",
             "in": "path",
             "required": true,
             "schema": {
@@ -3154,7 +3158,7 @@
             }
           },
           {
-            "name": "name",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8713,7 +8717,7 @@
         "operationId": "memories_getMemory",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8721,7 +8725,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8819,7 +8823,7 @@
         "operationId": "memories_updateMemoryRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8827,7 +8831,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8955,7 +8959,7 @@
         "operationId": "memories_deleteMemoryRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8963,7 +8967,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -9014,7 +9018,7 @@
         "operationId": "memories_toggleMemoryActiveRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -9022,7 +9026,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -16117,7 +16121,7 @@
         "operationId": "agents_checkConversationActivity",
         "parameters": [
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -16125,7 +16129,7 @@
             }
           },
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -16187,7 +16191,7 @@
         "operationId": "agents_getConversationDetails",
         "parameters": [
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -16195,7 +16199,7 @@
             }
           },
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18790,7 +18794,7 @@
         "operationId": "lists_deleteTableAction",
         "parameters": [
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18798,7 +18802,7 @@
             }
           },
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18896,7 +18900,7 @@
         "operationId": "lists_getActionSummary",
         "parameters": [
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18904,7 +18908,7 @@
             }
           },
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19024,7 +19028,7 @@
         "operationId": "lists_getActionQueueStatus",
         "parameters": [
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19032,7 +19036,7 @@
             }
           },
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19361,7 +19365,7 @@
         "operationId": "lists_getRowHistory",
         "parameters": [
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19369,7 +19373,7 @@
             }
           },
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19581,7 +19585,7 @@
         "operationId": "lists_deleteHeader",
         "parameters": [
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19589,7 +19593,7 @@
             }
           },
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19655,7 +19659,7 @@
         "operationId": "lists_editHeader",
         "parameters": [
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19663,7 +19667,7 @@
             }
           },
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -48529,6 +48533,2903 @@
         "summary": "Upload an image to attach as a design reference in the AI chat."
       }
     },
+    "/api/v0/scheduled-tasks": {
+      "get": {
+        "tags": [
+          "Scheduled Tasks"
+        ],
+        "operationId": "scheduled_tasks_listScheduledTasks",
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Company ID. Optional when the API key is a company key; required for personal access keys unless X-Company-ID is set."
+            },
+            "description": "Company ID. Optional when the API key is a company key; required for personal access keys unless X-Company-ID is set."
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Page number, 1-indexed (default: 1)"
+            },
+            "description": "Page number, 1-indexed (default: 1)"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Tasks per page (default: 20)"
+            },
+            "description": "Tasks per page (default: 20)"
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Filter by status: active, paused, or completed",
+              "enum": [
+                "active",
+                "paused",
+                "completed"
+              ]
+            },
+            "description": "Filter by status: active, paused, or completed"
+          },
+          {
+            "name": "includeCompleted",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "description": "Include completed one-time tasks (default: false)"
+            },
+            "description": "Include completed one-time tasks (default: false)"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Paged list of scheduled tasks",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "tasks": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "companyId": {
+                            "type": "string"
+                          },
+                          "userId": {
+                            "type": "string",
+                            "description": "User who owns the task"
+                          },
+                          "employeeId": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "prompt": {
+                            "type": "string"
+                          },
+                          "scheduleType": {
+                            "type": "string",
+                            "description": "one_time, recurring, or heartbeat"
+                          },
+                          "scheduledAt": {
+                            "type": "string",
+                            "description": "One-time tasks: ISO 8601 run time"
+                          },
+                          "recurringConfig": {
+                            "type": "object",
+                            "description": "Recurring or heartbeat schedule details"
+                          },
+                          "contextSettings": {
+                            "type": "object",
+                            "description": "Tool and context settings for runs"
+                          },
+                          "timezone": {
+                            "type": "string"
+                          },
+                          "nextRunAt": {
+                            "type": "string",
+                            "description": "ISO 8601 time of the next run, null when none"
+                          },
+                          "lastRunAt": {
+                            "type": "string",
+                            "description": "ISO 8601 time of the last run, null when never run"
+                          },
+                          "status": {
+                            "type": "string",
+                            "description": "active, paused, or completed"
+                          },
+                          "runCount": {
+                            "type": "integer"
+                          },
+                          "templateId": {
+                            "type": "string"
+                          },
+                          "templateVersion": {
+                            "type": "integer"
+                          },
+                          "createdDate": {
+                            "type": "string"
+                          },
+                          "updatedDate": {
+                            "type": "string"
+                          }
+                        },
+                        "description": "Scheduled task"
+                      }
+                    },
+                    "total": {
+                      "type": "integer"
+                    },
+                    "page": {
+                      "type": "integer"
+                    },
+                    "pageSize": {
+                      "type": "integer"
+                    },
+                    "totalPages": {
+                      "type": "integer"
+                    }
+                  },
+                  "description": "Paged list of scheduled tasks"
+                }
+              }
+            }
+          }
+        },
+        "summary": "List scheduled tasks for a company."
+      },
+      "post": {
+        "tags": [
+          "Scheduled Tasks"
+        ],
+        "operationId": "scheduled_tasks_createScheduledTask",
+        "parameters": [],
+        "responses": {
+          "400": {
+            "description": "Missing or invalid fields",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "The created task",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "companyId": {
+                      "type": "string"
+                    },
+                    "userId": {
+                      "type": "string",
+                      "description": "User who owns the task"
+                    },
+                    "employeeId": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "prompt": {
+                      "type": "string"
+                    },
+                    "scheduleType": {
+                      "type": "string",
+                      "description": "one_time, recurring, or heartbeat"
+                    },
+                    "scheduledAt": {
+                      "type": "string",
+                      "description": "One-time tasks: ISO 8601 run time"
+                    },
+                    "recurringConfig": {
+                      "type": "object",
+                      "description": "Recurring or heartbeat schedule details"
+                    },
+                    "contextSettings": {
+                      "type": "object",
+                      "description": "Tool and context settings for runs"
+                    },
+                    "timezone": {
+                      "type": "string"
+                    },
+                    "nextRunAt": {
+                      "type": "string",
+                      "description": "ISO 8601 time of the next run, null when none"
+                    },
+                    "lastRunAt": {
+                      "type": "string",
+                      "description": "ISO 8601 time of the last run, null when never run"
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "active, paused, or completed"
+                    },
+                    "runCount": {
+                      "type": "integer"
+                    },
+                    "templateId": {
+                      "type": "string"
+                    },
+                    "templateVersion": {
+                      "type": "integer"
+                    },
+                    "createdDate": {
+                      "type": "string"
+                    },
+                    "updatedDate": {
+                      "type": "string"
+                    }
+                  },
+                  "description": "Scheduled task"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Create a scheduled task for an AI employee.",
+        "description": "scheduleType is one_time (needs scheduledAt), recurring (needs\nrecurringConfig.frequency and time) or heartbeat (needs\nrecurringConfig.interval, optionally activeHoursStart/activeHoursEnd and\ndaysOfWeek). The task runs with the employee's chat settings unless\ncontextSettings is given.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID. Optional when the API key is a company key."
+                  },
+                  "employeeId": {
+                    "type": "string",
+                    "description": "ID of the AI employee that runs the task"
+                  },
+                  "name": {
+                    "type": "string",
+                    "description": "Short descriptive name"
+                  },
+                  "prompt": {
+                    "type": "string",
+                    "description": "The instruction the employee executes on every run. Be specific."
+                  },
+                  "scheduleType": {
+                    "type": "string",
+                    "description": "one_time (default), recurring, or heartbeat",
+                    "enum": [
+                      "one_time",
+                      "recurring",
+                      "heartbeat"
+                    ]
+                  },
+                  "scheduledAt": {
+                    "type": "string",
+                    "description": "One-time tasks: ISO 8601 datetime to run at"
+                  },
+                  "recurringConfig": {
+                    "type": "object",
+                    "properties": {
+                      "frequency": {
+                        "type": "string",
+                        "description": "Recurring tasks: daily, weekly, or monthly",
+                        "enum": [
+                          "daily",
+                          "weekly",
+                          "monthly"
+                        ]
+                      },
+                      "time": {
+                        "type": "string",
+                        "description": "Recurring tasks: time of day to run, HH:MM in the task timezone"
+                      },
+                      "daysOfWeek": {
+                        "type": "array",
+                        "items": {
+                          "type": "integer"
+                        },
+                        "description": "Weekly recurring and heartbeat tasks: days the task may run, 0=Sunday .. 6=Saturday. Heartbeat tasks run every day when omitted."
+                      },
+                      "dayOfMonth": {
+                        "type": "integer",
+                        "description": "Monthly recurring tasks: day of the month (1-31)"
+                      },
+                      "interval": {
+                        "type": "string",
+                        "description": "Heartbeat tasks: how often to run. One of 5m, 15m, 30m, 1h, 2h, 4h, 8h, 12h, 24h",
+                        "enum": [
+                          "5m",
+                          "15m",
+                          "30m",
+                          "1h",
+                          "2h",
+                          "4h",
+                          "8h",
+                          "12h",
+                          "24h"
+                        ]
+                      },
+                      "activeHoursStart": {
+                        "type": "string",
+                        "description": "Heartbeat tasks: start of the daily active window, HH:MM. Omit for 24/7."
+                      },
+                      "activeHoursEnd": {
+                        "type": "string",
+                        "description": "Heartbeat tasks: end of the daily active window, HH:MM. Omit for 24/7."
+                      }
+                    },
+                    "description": "Schedule details for recurring and heartbeat tasks"
+                  },
+                  "timezone": {
+                    "type": "string",
+                    "description": "IANA timezone the schedule is expressed in (default: UTC)"
+                  },
+                  "contextSettings": {
+                    "type": "object",
+                    "properties": {
+                      "model": {
+                        "type": "string",
+                        "description": "AI model to use (e.g., gpt-5-nano, claude-sonnet-5)"
+                      },
+                      "temperature": {
+                        "type": "number",
+                        "description": "Temperature for model variation (0.0-1.0). Default: 0.7"
+                      },
+                      "reasoningEffort": {
+                        "type": "string",
+                        "description": "Reasoning effort for models that support reasoning tokens. Valid values: \"none\", \"minimal\", \"low\", \"medium\", \"high\", \"xhigh\". Empty string means use model default.",
+                        "enum": [
+                          "",
+                          "none",
+                          "minimal",
+                          "low",
+                          "medium",
+                          "high",
+                          "xhigh"
+                        ]
+                      },
+                      "strategy": {
+                        "type": "string",
+                        "description": "Response strategy. Valid values: \"one-shot\", \"chain\", \"function-chain\", \"langchain\". Default: \"function-chain\"",
+                        "enum": [
+                          "one-shot",
+                          "chain",
+                          "function-chain",
+                          "langchain"
+                        ]
+                      },
+                      "memoryScope": {
+                        "type": "string",
+                        "description": "Memory scope for context retrieval. Valid values: \"chat\", \"company\", \"global\". Default: \"chat\"",
+                        "enum": [
+                          "chat",
+                          "company",
+                          "global"
+                        ]
+                      },
+                      "shortTermMemories": {
+                        "type": "boolean",
+                        "description": "Include short-term memories in context. Default: true"
+                      },
+                      "longTermMemories": {
+                        "type": "boolean",
+                        "description": "Include long-term memories in context. Default: false"
+                      },
+                      "documents": {
+                        "type": "boolean",
+                        "description": "Enable document retrieval from knowledge base. Default: true"
+                      },
+                      "documentScope": {
+                        "type": "string",
+                        "description": "Document scope for retrieval. Valid values: \"root\", \"folder\", \"file\", \"tags\". Default: \"root\"",
+                        "enum": [
+                          "root",
+                          "folder",
+                          "file",
+                          "tags"
+                        ]
+                      },
+                      "documentStrategy": {
+                        "type": "string",
+                        "description": "Document retrieval strategy. Default: \"similarity-ranking\""
+                      },
+                      "documentPath": {
+                        "type": "string",
+                        "description": "Document path for scoping retrieval. Default: \"/\""
+                      },
+                      "requestDocuments": {
+                        "type": "array",
+                        "items": {
+                          "type": "object"
+                        },
+                        "description": "Specific documents to include in context. Array of {id: string, name?: string, path?: string} objects"
+                      },
+                      "searchEngine": {
+                        "type": "boolean",
+                        "description": "Enable web search via search engine. Default: false"
+                      },
+                      "websites": {
+                        "type": "boolean",
+                        "description": "Enable website content retrieval. Default: false"
+                      },
+                      "websitesJs": {
+                        "type": "boolean",
+                        "description": "Enable JavaScript-rendered website reading. Default: false"
+                      },
+                      "news": {
+                        "type": "boolean",
+                        "description": "Enable online news search. Default: false"
+                      },
+                      "company": {
+                        "type": "boolean",
+                        "description": "Include company context. Default: true"
+                      },
+                      "employee": {
+                        "type": "boolean",
+                        "description": "Include employee context. Default: true"
+                      },
+                      "responseInstructions": {
+                        "type": "boolean",
+                        "description": "Include response instructions in context. Default: true"
+                      },
+                      "image": {
+                        "type": "string",
+                        "description": "Image URL for vision models"
+                      },
+                      "lists": {
+                        "type": "boolean",
+                        "description": "Enable access to lists feature. Default: false"
+                      },
+                      "browserTask": {
+                        "type": "object",
+                        "description": "Browser task configuration: {integrationId: string, task: string, useVision?: boolean} for web automation"
+                      },
+                      "researchTask": {
+                        "type": "boolean",
+                        "description": "Enable research task tool. Default: false"
+                      },
+                      "documentCreation": {
+                        "type": "boolean",
+                        "description": "Enable document creation tool. Default: false"
+                      },
+                      "sleepTool": {
+                        "type": "boolean",
+                        "description": "Enable the sleep tool, which pauses briefly mid-run. Default: true"
+                      },
+                      "canvasTool": {
+                        "type": "boolean",
+                        "description": "Enable the create_canvas tool, which renders an HTML canvas into a shareable image. Default: true"
+                      },
+                      "mcpServers": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "description": "Array of MCP server IDs to enable"
+                      },
+                      "composioTools": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "description": "Array of Composio integration IDs to enable as tools"
+                      },
+                      "toolRouter": {
+                        "type": "boolean",
+                        "description": "Enable Composio tool router for dynamic tool discovery across 1000+ apps. Default: false"
+                      },
+                      "audienceTools": {
+                        "type": "boolean",
+                        "description": "Enable the lead tools: enrich, leads, lead_field_options, lead_segments. Default: false"
+                      },
+                      "voiceId": {
+                        "type": "string",
+                        "description": "ElevenLabs voice ID to override employee default for TTS"
+                      }
+                    },
+                    "description": "Tool and context settings for the run. Defaults to the employee's own chat settings when omitted."
+                  },
+                  "templateId": {
+                    "type": "string",
+                    "description": "Template this task was created from, if any"
+                  },
+                  "templateVersion": {
+                    "type": "integer",
+                    "description": "Version of that template"
+                  }
+                },
+                "required": [
+                  "employeeId",
+                  "name",
+                  "prompt"
+                ],
+                "description": "Request body for creating a scheduled task"
+              }
+            }
+          },
+          "description": "Scheduled task to create"
+        }
+      }
+    },
+    "/api/v0/scheduled-task-templates": {
+      "get": {
+        "tags": [
+          "Scheduled Tasks"
+        ],
+        "operationId": "scheduled_tasks_listScheduledTaskTemplates",
+        "parameters": [],
+        "responses": {
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Available task templates",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "templates": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "version": {
+                            "type": "integer"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "description": {
+                            "type": "string"
+                          },
+                          "task": {
+                            "type": "object",
+                            "description": "Prefilled task fields (name, prompt, schedule, settings)"
+                          }
+                        },
+                        "description": "Predefined task template that prefills a new task"
+                      }
+                    }
+                  },
+                  "description": "Available task templates"
+                }
+              }
+            }
+          }
+        },
+        "summary": "List predefined task templates that prefill a new scheduled task."
+      }
+    },
+    "/api/v0/scheduled-tasks/summary": {
+      "get": {
+        "tags": [
+          "Scheduled Tasks"
+        ],
+        "operationId": "scheduled_tasks_scheduledTasksSummary",
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Company ID. Optional when the API key is a company key; required for personal access keys unless X-Company-ID is set."
+            },
+            "description": "Company ID. Optional when the API key is a company key; required for personal access keys unless X-Company-ID is set."
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Page number, 1-indexed (default: 1)"
+            },
+            "description": "Page number, 1-indexed (default: 1)"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Tasks per page (default: 25)"
+            },
+            "description": "Tasks per page (default: 25)"
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Filter tasks by name"
+            },
+            "description": "Filter tasks by name"
+          },
+          {
+            "name": "includeCompleted",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "description": "Include completed one-time tasks (default: false)"
+            },
+            "description": "Include completed one-time tasks (default: false)"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Summary stats and a page of tasks",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "stats": {
+                      "type": "object",
+                      "description": "Headline counts and averages across the company"
+                    },
+                    "tasks": {
+                      "type": "array",
+                      "items": {
+                        "type": "object"
+                      },
+                      "description": "Tasks with run counts, average score and recent score trend"
+                    },
+                    "total": {
+                      "type": "integer"
+                    },
+                    "page": {
+                      "type": "integer"
+                    },
+                    "pageSize": {
+                      "type": "integer"
+                    },
+                    "totalPages": {
+                      "type": "integer"
+                    }
+                  },
+                  "description": "Company-wide headline stats plus a page of tasks with run counts, average scores and score trends"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Company-wide scheduled task stats plus a page of tasks with run quality.",
+        "description": "Headline stats across the company, then a page of tasks with their run\ncounts, average quality scores and score trends.\n\nOpen to any company member: the in-chat Scheduled dialog renders the same\npanel, and members could already list and manage their scheduled tasks\nbefore this endpoint existed. The Scheduled *page* is super-user gated in\nthe UI, but that gate is about surfacing a new nav destination, not about\nprotecting this data."
+      }
+    },
+    "/api/v0/scheduled-tasks/{task_id}": {
+      "get": {
+        "tags": [
+          "Scheduled Tasks"
+        ],
+        "operationId": "scheduled_tasks_getScheduledTask",
+        "parameters": [
+          {
+            "name": "task_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Company ID. Optional when the API key is a company key; required for personal access keys unless X-Company-ID is set."
+            },
+            "description": "Company ID. Optional when the API key is a company key; required for personal access keys unless X-Company-ID is set."
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Task not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "The scheduled task",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "companyId": {
+                      "type": "string"
+                    },
+                    "userId": {
+                      "type": "string",
+                      "description": "User who owns the task"
+                    },
+                    "employeeId": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "prompt": {
+                      "type": "string"
+                    },
+                    "scheduleType": {
+                      "type": "string",
+                      "description": "one_time, recurring, or heartbeat"
+                    },
+                    "scheduledAt": {
+                      "type": "string",
+                      "description": "One-time tasks: ISO 8601 run time"
+                    },
+                    "recurringConfig": {
+                      "type": "object",
+                      "description": "Recurring or heartbeat schedule details"
+                    },
+                    "contextSettings": {
+                      "type": "object",
+                      "description": "Tool and context settings for runs"
+                    },
+                    "timezone": {
+                      "type": "string"
+                    },
+                    "nextRunAt": {
+                      "type": "string",
+                      "description": "ISO 8601 time of the next run, null when none"
+                    },
+                    "lastRunAt": {
+                      "type": "string",
+                      "description": "ISO 8601 time of the last run, null when never run"
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "active, paused, or completed"
+                    },
+                    "runCount": {
+                      "type": "integer"
+                    },
+                    "templateId": {
+                      "type": "string"
+                    },
+                    "templateVersion": {
+                      "type": "integer"
+                    },
+                    "createdDate": {
+                      "type": "string"
+                    },
+                    "updatedDate": {
+                      "type": "string"
+                    }
+                  },
+                  "description": "Scheduled task"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Get a single scheduled task."
+      },
+      "put": {
+        "tags": [
+          "Scheduled Tasks"
+        ],
+        "operationId": "scheduled_tasks_updateScheduledTask",
+        "parameters": [
+          {
+            "name": "task_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid fields",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Task not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "The updated task",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "companyId": {
+                      "type": "string"
+                    },
+                    "userId": {
+                      "type": "string",
+                      "description": "User who owns the task"
+                    },
+                    "employeeId": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "prompt": {
+                      "type": "string"
+                    },
+                    "scheduleType": {
+                      "type": "string",
+                      "description": "one_time, recurring, or heartbeat"
+                    },
+                    "scheduledAt": {
+                      "type": "string",
+                      "description": "One-time tasks: ISO 8601 run time"
+                    },
+                    "recurringConfig": {
+                      "type": "object",
+                      "description": "Recurring or heartbeat schedule details"
+                    },
+                    "contextSettings": {
+                      "type": "object",
+                      "description": "Tool and context settings for runs"
+                    },
+                    "timezone": {
+                      "type": "string"
+                    },
+                    "nextRunAt": {
+                      "type": "string",
+                      "description": "ISO 8601 time of the next run, null when none"
+                    },
+                    "lastRunAt": {
+                      "type": "string",
+                      "description": "ISO 8601 time of the last run, null when never run"
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "active, paused, or completed"
+                    },
+                    "runCount": {
+                      "type": "integer"
+                    },
+                    "templateId": {
+                      "type": "string"
+                    },
+                    "templateVersion": {
+                      "type": "integer"
+                    },
+                    "createdDate": {
+                      "type": "string"
+                    },
+                    "updatedDate": {
+                      "type": "string"
+                    }
+                  },
+                  "description": "Scheduled task"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Update a scheduled task. Only the supplied fields change.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID. Optional when the API key is a company key."
+                  },
+                  "name": {
+                    "type": "string",
+                    "description": "Short descriptive name"
+                  },
+                  "prompt": {
+                    "type": "string",
+                    "description": "The instruction the employee executes on every run"
+                  },
+                  "scheduleType": {
+                    "type": "string",
+                    "description": "one_time, recurring, or heartbeat",
+                    "enum": [
+                      "one_time",
+                      "recurring",
+                      "heartbeat"
+                    ]
+                  },
+                  "scheduledAt": {
+                    "type": "string",
+                    "description": "One-time tasks: ISO 8601 datetime to run at"
+                  },
+                  "recurringConfig": {
+                    "type": "object",
+                    "properties": {
+                      "frequency": {
+                        "type": "string",
+                        "description": "Recurring tasks: daily, weekly, or monthly",
+                        "enum": [
+                          "daily",
+                          "weekly",
+                          "monthly"
+                        ]
+                      },
+                      "time": {
+                        "type": "string",
+                        "description": "Recurring tasks: time of day to run, HH:MM in the task timezone"
+                      },
+                      "daysOfWeek": {
+                        "type": "array",
+                        "items": {
+                          "type": "integer"
+                        },
+                        "description": "Weekly recurring and heartbeat tasks: days the task may run, 0=Sunday .. 6=Saturday. Heartbeat tasks run every day when omitted."
+                      },
+                      "dayOfMonth": {
+                        "type": "integer",
+                        "description": "Monthly recurring tasks: day of the month (1-31)"
+                      },
+                      "interval": {
+                        "type": "string",
+                        "description": "Heartbeat tasks: how often to run. One of 5m, 15m, 30m, 1h, 2h, 4h, 8h, 12h, 24h",
+                        "enum": [
+                          "5m",
+                          "15m",
+                          "30m",
+                          "1h",
+                          "2h",
+                          "4h",
+                          "8h",
+                          "12h",
+                          "24h"
+                        ]
+                      },
+                      "activeHoursStart": {
+                        "type": "string",
+                        "description": "Heartbeat tasks: start of the daily active window, HH:MM. Omit for 24/7."
+                      },
+                      "activeHoursEnd": {
+                        "type": "string",
+                        "description": "Heartbeat tasks: end of the daily active window, HH:MM. Omit for 24/7."
+                      }
+                    },
+                    "description": "Schedule details for recurring and heartbeat tasks"
+                  },
+                  "timezone": {
+                    "type": "string",
+                    "description": "IANA timezone the schedule is expressed in"
+                  },
+                  "contextSettings": {
+                    "type": "object",
+                    "properties": {
+                      "model": {
+                        "type": "string",
+                        "description": "AI model to use (e.g., gpt-5-nano, claude-sonnet-5)"
+                      },
+                      "temperature": {
+                        "type": "number",
+                        "description": "Temperature for model variation (0.0-1.0). Default: 0.7"
+                      },
+                      "reasoningEffort": {
+                        "type": "string",
+                        "description": "Reasoning effort for models that support reasoning tokens. Valid values: \"none\", \"minimal\", \"low\", \"medium\", \"high\", \"xhigh\". Empty string means use model default.",
+                        "enum": [
+                          "",
+                          "none",
+                          "minimal",
+                          "low",
+                          "medium",
+                          "high",
+                          "xhigh"
+                        ]
+                      },
+                      "strategy": {
+                        "type": "string",
+                        "description": "Response strategy. Valid values: \"one-shot\", \"chain\", \"function-chain\", \"langchain\". Default: \"function-chain\"",
+                        "enum": [
+                          "one-shot",
+                          "chain",
+                          "function-chain",
+                          "langchain"
+                        ]
+                      },
+                      "memoryScope": {
+                        "type": "string",
+                        "description": "Memory scope for context retrieval. Valid values: \"chat\", \"company\", \"global\". Default: \"chat\"",
+                        "enum": [
+                          "chat",
+                          "company",
+                          "global"
+                        ]
+                      },
+                      "shortTermMemories": {
+                        "type": "boolean",
+                        "description": "Include short-term memories in context. Default: true"
+                      },
+                      "longTermMemories": {
+                        "type": "boolean",
+                        "description": "Include long-term memories in context. Default: false"
+                      },
+                      "documents": {
+                        "type": "boolean",
+                        "description": "Enable document retrieval from knowledge base. Default: true"
+                      },
+                      "documentScope": {
+                        "type": "string",
+                        "description": "Document scope for retrieval. Valid values: \"root\", \"folder\", \"file\", \"tags\". Default: \"root\"",
+                        "enum": [
+                          "root",
+                          "folder",
+                          "file",
+                          "tags"
+                        ]
+                      },
+                      "documentStrategy": {
+                        "type": "string",
+                        "description": "Document retrieval strategy. Default: \"similarity-ranking\""
+                      },
+                      "documentPath": {
+                        "type": "string",
+                        "description": "Document path for scoping retrieval. Default: \"/\""
+                      },
+                      "requestDocuments": {
+                        "type": "array",
+                        "items": {
+                          "type": "object"
+                        },
+                        "description": "Specific documents to include in context. Array of {id: string, name?: string, path?: string} objects"
+                      },
+                      "searchEngine": {
+                        "type": "boolean",
+                        "description": "Enable web search via search engine. Default: false"
+                      },
+                      "websites": {
+                        "type": "boolean",
+                        "description": "Enable website content retrieval. Default: false"
+                      },
+                      "websitesJs": {
+                        "type": "boolean",
+                        "description": "Enable JavaScript-rendered website reading. Default: false"
+                      },
+                      "news": {
+                        "type": "boolean",
+                        "description": "Enable online news search. Default: false"
+                      },
+                      "company": {
+                        "type": "boolean",
+                        "description": "Include company context. Default: true"
+                      },
+                      "employee": {
+                        "type": "boolean",
+                        "description": "Include employee context. Default: true"
+                      },
+                      "responseInstructions": {
+                        "type": "boolean",
+                        "description": "Include response instructions in context. Default: true"
+                      },
+                      "image": {
+                        "type": "string",
+                        "description": "Image URL for vision models"
+                      },
+                      "lists": {
+                        "type": "boolean",
+                        "description": "Enable access to lists feature. Default: false"
+                      },
+                      "browserTask": {
+                        "type": "object",
+                        "description": "Browser task configuration: {integrationId: string, task: string, useVision?: boolean} for web automation"
+                      },
+                      "researchTask": {
+                        "type": "boolean",
+                        "description": "Enable research task tool. Default: false"
+                      },
+                      "documentCreation": {
+                        "type": "boolean",
+                        "description": "Enable document creation tool. Default: false"
+                      },
+                      "sleepTool": {
+                        "type": "boolean",
+                        "description": "Enable the sleep tool, which pauses briefly mid-run. Default: true"
+                      },
+                      "canvasTool": {
+                        "type": "boolean",
+                        "description": "Enable the create_canvas tool, which renders an HTML canvas into a shareable image. Default: true"
+                      },
+                      "mcpServers": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "description": "Array of MCP server IDs to enable"
+                      },
+                      "composioTools": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "description": "Array of Composio integration IDs to enable as tools"
+                      },
+                      "toolRouter": {
+                        "type": "boolean",
+                        "description": "Enable Composio tool router for dynamic tool discovery across 1000+ apps. Default: false"
+                      },
+                      "audienceTools": {
+                        "type": "boolean",
+                        "description": "Enable the lead tools: enrich, leads, lead_field_options, lead_segments. Default: false"
+                      },
+                      "voiceId": {
+                        "type": "string",
+                        "description": "ElevenLabs voice ID to override employee default for TTS"
+                      }
+                    },
+                    "description": "Tool and context settings for the run"
+                  },
+                  "status": {
+                    "type": "string",
+                    "description": "active or paused",
+                    "enum": [
+                      "active",
+                      "paused",
+                      "completed"
+                    ]
+                  }
+                },
+                "description": "Request body for updating a scheduled task. Only supplied fields change."
+              }
+            }
+          },
+          "description": "Fields to change"
+        }
+      },
+      "delete": {
+        "tags": [
+          "Scheduled Tasks"
+        ],
+        "operationId": "scheduled_tasks_deleteScheduledTask",
+        "parameters": [
+          {
+            "name": "task_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Company ID. Optional when the API key is a company key; required for personal access keys unless X-Company-ID is set."
+            },
+            "description": "Company ID. Optional when the API key is a company key; required for personal access keys unless X-Company-ID is set."
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Task not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Task deleted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  },
+                  "description": "Simple message response"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Delete a scheduled task."
+      }
+    },
+    "/api/v0/scheduled-tasks/{task_id}/upgrade-template": {
+      "post": {
+        "tags": [
+          "Scheduled Tasks"
+        ],
+        "operationId": "scheduled_tasks_upgradeScheduledTaskTemplate",
+        "parameters": [
+          {
+            "name": "task_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Task not found or not from a known template",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "The upgraded task",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "companyId": {
+                      "type": "string"
+                    },
+                    "userId": {
+                      "type": "string",
+                      "description": "User who owns the task"
+                    },
+                    "employeeId": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "prompt": {
+                      "type": "string"
+                    },
+                    "scheduleType": {
+                      "type": "string",
+                      "description": "one_time, recurring, or heartbeat"
+                    },
+                    "scheduledAt": {
+                      "type": "string",
+                      "description": "One-time tasks: ISO 8601 run time"
+                    },
+                    "recurringConfig": {
+                      "type": "object",
+                      "description": "Recurring or heartbeat schedule details"
+                    },
+                    "contextSettings": {
+                      "type": "object",
+                      "description": "Tool and context settings for runs"
+                    },
+                    "timezone": {
+                      "type": "string"
+                    },
+                    "nextRunAt": {
+                      "type": "string",
+                      "description": "ISO 8601 time of the next run, null when none"
+                    },
+                    "lastRunAt": {
+                      "type": "string",
+                      "description": "ISO 8601 time of the last run, null when never run"
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "active, paused, or completed"
+                    },
+                    "runCount": {
+                      "type": "integer"
+                    },
+                    "templateId": {
+                      "type": "string"
+                    },
+                    "templateVersion": {
+                      "type": "integer"
+                    },
+                    "createdDate": {
+                      "type": "string"
+                    },
+                    "updatedDate": {
+                      "type": "string"
+                    }
+                  },
+                  "description": "Scheduled task"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Re-apply the task's source template at its latest version.",
+        "description": "Overwrites the prompt and tool settings with the template's latest, keeping\nthe task's schedule, employee and name.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID. Optional when the API key is a company key."
+                  }
+                },
+                "description": "Company scoping"
+              }
+            }
+          },
+          "description": "Company scoping"
+        }
+      }
+    },
+    "/api/v0/scheduled-tasks/{task_id}/pause": {
+      "post": {
+        "tags": [
+          "Scheduled Tasks"
+        ],
+        "operationId": "scheduled_tasks_pauseScheduledTask",
+        "parameters": [
+          {
+            "name": "task_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Task not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "The paused task",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "companyId": {
+                      "type": "string"
+                    },
+                    "userId": {
+                      "type": "string",
+                      "description": "User who owns the task"
+                    },
+                    "employeeId": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "prompt": {
+                      "type": "string"
+                    },
+                    "scheduleType": {
+                      "type": "string",
+                      "description": "one_time, recurring, or heartbeat"
+                    },
+                    "scheduledAt": {
+                      "type": "string",
+                      "description": "One-time tasks: ISO 8601 run time"
+                    },
+                    "recurringConfig": {
+                      "type": "object",
+                      "description": "Recurring or heartbeat schedule details"
+                    },
+                    "contextSettings": {
+                      "type": "object",
+                      "description": "Tool and context settings for runs"
+                    },
+                    "timezone": {
+                      "type": "string"
+                    },
+                    "nextRunAt": {
+                      "type": "string",
+                      "description": "ISO 8601 time of the next run, null when none"
+                    },
+                    "lastRunAt": {
+                      "type": "string",
+                      "description": "ISO 8601 time of the last run, null when never run"
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "active, paused, or completed"
+                    },
+                    "runCount": {
+                      "type": "integer"
+                    },
+                    "templateId": {
+                      "type": "string"
+                    },
+                    "templateVersion": {
+                      "type": "integer"
+                    },
+                    "createdDate": {
+                      "type": "string"
+                    },
+                    "updatedDate": {
+                      "type": "string"
+                    }
+                  },
+                  "description": "Scheduled task"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Pause a scheduled task so no runs fire until it is resumed.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID. Optional when the API key is a company key."
+                  }
+                },
+                "description": "Company scoping"
+              }
+            }
+          },
+          "description": "Company scoping"
+        }
+      }
+    },
+    "/api/v0/scheduled-tasks/{task_id}/resume": {
+      "post": {
+        "tags": [
+          "Scheduled Tasks"
+        ],
+        "operationId": "scheduled_tasks_resumeScheduledTask",
+        "parameters": [
+          {
+            "name": "task_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Task not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "The resumed task",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "companyId": {
+                      "type": "string"
+                    },
+                    "userId": {
+                      "type": "string",
+                      "description": "User who owns the task"
+                    },
+                    "employeeId": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "prompt": {
+                      "type": "string"
+                    },
+                    "scheduleType": {
+                      "type": "string",
+                      "description": "one_time, recurring, or heartbeat"
+                    },
+                    "scheduledAt": {
+                      "type": "string",
+                      "description": "One-time tasks: ISO 8601 run time"
+                    },
+                    "recurringConfig": {
+                      "type": "object",
+                      "description": "Recurring or heartbeat schedule details"
+                    },
+                    "contextSettings": {
+                      "type": "object",
+                      "description": "Tool and context settings for runs"
+                    },
+                    "timezone": {
+                      "type": "string"
+                    },
+                    "nextRunAt": {
+                      "type": "string",
+                      "description": "ISO 8601 time of the next run, null when none"
+                    },
+                    "lastRunAt": {
+                      "type": "string",
+                      "description": "ISO 8601 time of the last run, null when never run"
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "active, paused, or completed"
+                    },
+                    "runCount": {
+                      "type": "integer"
+                    },
+                    "templateId": {
+                      "type": "string"
+                    },
+                    "templateVersion": {
+                      "type": "integer"
+                    },
+                    "createdDate": {
+                      "type": "string"
+                    },
+                    "updatedDate": {
+                      "type": "string"
+                    }
+                  },
+                  "description": "Scheduled task"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Resume a paused scheduled task (recomputes its next run).",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID. Optional when the API key is a company key."
+                  }
+                },
+                "description": "Company scoping"
+              }
+            }
+          },
+          "description": "Company scoping"
+        }
+      }
+    },
+    "/api/v0/scheduled-tasks/{task_id}/reset": {
+      "post": {
+        "tags": [
+          "Scheduled Tasks"
+        ],
+        "operationId": "scheduled_tasks_resetScheduledTask",
+        "parameters": [
+          {
+            "name": "task_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Task not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "The reset task",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "companyId": {
+                      "type": "string"
+                    },
+                    "userId": {
+                      "type": "string",
+                      "description": "User who owns the task"
+                    },
+                    "employeeId": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "prompt": {
+                      "type": "string"
+                    },
+                    "scheduleType": {
+                      "type": "string",
+                      "description": "one_time, recurring, or heartbeat"
+                    },
+                    "scheduledAt": {
+                      "type": "string",
+                      "description": "One-time tasks: ISO 8601 run time"
+                    },
+                    "recurringConfig": {
+                      "type": "object",
+                      "description": "Recurring or heartbeat schedule details"
+                    },
+                    "contextSettings": {
+                      "type": "object",
+                      "description": "Tool and context settings for runs"
+                    },
+                    "timezone": {
+                      "type": "string"
+                    },
+                    "nextRunAt": {
+                      "type": "string",
+                      "description": "ISO 8601 time of the next run, null when none"
+                    },
+                    "lastRunAt": {
+                      "type": "string",
+                      "description": "ISO 8601 time of the last run, null when never run"
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "active, paused, or completed"
+                    },
+                    "runCount": {
+                      "type": "integer"
+                    },
+                    "templateId": {
+                      "type": "string"
+                    },
+                    "templateVersion": {
+                      "type": "integer"
+                    },
+                    "createdDate": {
+                      "type": "string"
+                    },
+                    "updatedDate": {
+                      "type": "string"
+                    }
+                  },
+                  "description": "Scheduled task"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Reset a task's history.",
+        "description": "Soft-deletes its executions, evaluations and daily logs/notes and zeroes\nits run counters. The task's settings are untouched.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID. Optional when the API key is a company key."
+                  }
+                },
+                "description": "Company scoping"
+              }
+            }
+          },
+          "description": "Company scoping"
+        }
+      }
+    },
+    "/api/v0/scheduled-tasks/{task_id}/duplicate": {
+      "post": {
+        "tags": [
+          "Scheduled Tasks"
+        ],
+        "operationId": "scheduled_tasks_duplicateScheduledTask",
+        "parameters": [
+          {
+            "name": "task_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Task not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "The new (paused) copy",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "companyId": {
+                      "type": "string"
+                    },
+                    "userId": {
+                      "type": "string",
+                      "description": "User who owns the task"
+                    },
+                    "employeeId": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "prompt": {
+                      "type": "string"
+                    },
+                    "scheduleType": {
+                      "type": "string",
+                      "description": "one_time, recurring, or heartbeat"
+                    },
+                    "scheduledAt": {
+                      "type": "string",
+                      "description": "One-time tasks: ISO 8601 run time"
+                    },
+                    "recurringConfig": {
+                      "type": "object",
+                      "description": "Recurring or heartbeat schedule details"
+                    },
+                    "contextSettings": {
+                      "type": "object",
+                      "description": "Tool and context settings for runs"
+                    },
+                    "timezone": {
+                      "type": "string"
+                    },
+                    "nextRunAt": {
+                      "type": "string",
+                      "description": "ISO 8601 time of the next run, null when none"
+                    },
+                    "lastRunAt": {
+                      "type": "string",
+                      "description": "ISO 8601 time of the last run, null when never run"
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "active, paused, or completed"
+                    },
+                    "runCount": {
+                      "type": "integer"
+                    },
+                    "templateId": {
+                      "type": "string"
+                    },
+                    "templateVersion": {
+                      "type": "integer"
+                    },
+                    "createdDate": {
+                      "type": "string"
+                    },
+                    "updatedDate": {
+                      "type": "string"
+                    }
+                  },
+                  "description": "Scheduled task"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Duplicate a task's settings into a new task (no history).",
+        "description": "The copy starts paused so it can be renamed and reviewed before it begins\nrunning.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID. Optional when the API key is a company key."
+                  }
+                },
+                "description": "Company scoping"
+              }
+            }
+          },
+          "description": "Company scoping"
+        }
+      }
+    },
+    "/api/v0/scheduled-tasks/{task_id}/run": {
+      "post": {
+        "tags": [
+          "Scheduled Tasks"
+        ],
+        "operationId": "scheduled_tasks_runScheduledTaskNow",
+        "parameters": [
+          {
+            "name": "task_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Task not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "Run started in the background",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  },
+                  "description": "Simple message response"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Run a scheduled task immediately.",
+        "description": "Runs the same executor the scheduler uses (so it records an execution with\nblocks/response the same way), in the background. A manual run executes even\nif the task is paused and does NOT alter the task's normal schedule. Poll\nthe executions endpoint for the result.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID. Optional when the API key is a company key."
+                  }
+                },
+                "description": "Company scoping"
+              }
+            }
+          },
+          "description": "Company scoping"
+        }
+      }
+    },
+    "/api/v0/scheduled-tasks/{task_id}/evaluate": {
+      "post": {
+        "tags": [
+          "Scheduled Tasks"
+        ],
+        "operationId": "scheduled_tasks_evaluateScheduledTask",
+        "parameters": [
+          {
+            "name": "task_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Task not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "Evaluation started; poll the GET endpoint",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "scheduledTaskId": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "running, completed, or failed"
+                    },
+                    "executionId": {
+                      "type": "string",
+                      "description": "The run that was graded"
+                    },
+                    "score": {
+                      "type": "integer"
+                    },
+                    "scoreReason": {
+                      "type": "string"
+                    },
+                    "suggestedPrompt": {
+                      "type": "string"
+                    },
+                    "suggestionReason": {
+                      "type": "string"
+                    },
+                    "notes": {
+                      "type": "string"
+                    },
+                    "errorMessage": {
+                      "type": "string"
+                    },
+                    "createdDate": {
+                      "type": "string"
+                    },
+                    "updatedDate": {
+                      "type": "string"
+                    }
+                  },
+                  "description": "A run of the task graded 0-100, plus a proposed more efficient prompt"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Grade a run of this task and propose a more efficient prompt.",
+        "description": "By default this triggers a fresh run. Pass executionId to evaluate a run\nthat already happened instead - these tasks take real actions, so re-running\njust to get a score is often not what the user wants.\n\nPass notes to steer the rewrite (\"stop it posting twice\", \"keep the tone\").\nThe run shows what happened, not which parts the owner considers wrong.\n\nA real run can take minutes, so this returns 202 immediately and the client\npolls GET /scheduled-tasks/<task_id>/evaluate for the result.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID. Optional when the API key is a company key."
+                  },
+                  "executionId": {
+                    "type": "string",
+                    "description": "Grade this past run instead of triggering a fresh one"
+                  },
+                  "notes": {
+                    "type": "string",
+                    "description": "Free-text guidance for the prompt rewrite, e.g. \"stop it posting twice\""
+                  }
+                },
+                "description": "Request body for evaluating a scheduled task"
+              }
+            }
+          },
+          "description": "What to evaluate and how to steer the rewrite"
+        }
+      },
+      "get": {
+        "tags": [
+          "Scheduled Tasks"
+        ],
+        "operationId": "scheduled_tasks_getScheduledTaskEvaluation",
+        "parameters": [
+          {
+            "name": "task_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Company ID. Optional when the API key is a company key; required for personal access keys unless X-Company-ID is set."
+            },
+            "description": "Company ID. Optional when the API key is a company key; required for personal access keys unless X-Company-ID is set."
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Latest evaluation, or null",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "evaluation": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "scheduledTaskId": {
+                          "type": "string"
+                        },
+                        "status": {
+                          "type": "string",
+                          "description": "running, completed, or failed"
+                        },
+                        "executionId": {
+                          "type": "string",
+                          "description": "The run that was graded"
+                        },
+                        "score": {
+                          "type": "integer"
+                        },
+                        "scoreReason": {
+                          "type": "string"
+                        },
+                        "suggestedPrompt": {
+                          "type": "string"
+                        },
+                        "suggestionReason": {
+                          "type": "string"
+                        },
+                        "notes": {
+                          "type": "string"
+                        },
+                        "errorMessage": {
+                          "type": "string"
+                        },
+                        "createdDate": {
+                          "type": "string"
+                        },
+                        "updatedDate": {
+                          "type": "string"
+                        }
+                      },
+                      "description": "A run of the task graded 0-100, plus a proposed more efficient prompt"
+                    }
+                  },
+                  "description": "Latest evaluation for a task; evaluation is null when none has been run"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Latest evaluation for a task, including its status and any suggestion."
+      }
+    },
+    "/api/v0/scheduled-tasks/{task_id}/executions": {
+      "get": {
+        "tags": [
+          "Scheduled Tasks"
+        ],
+        "operationId": "scheduled_tasks_listTaskExecutions",
+        "parameters": [
+          {
+            "name": "task_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Company ID. Optional when the API key is a company key; required for personal access keys unless X-Company-ID is set."
+            },
+            "description": "Company ID. Optional when the API key is a company key; required for personal access keys unless X-Company-ID is set."
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Page number, 1-indexed (default: 1)"
+            },
+            "description": "Page number, 1-indexed (default: 1)"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Items per page"
+            },
+            "description": "Items per page"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Paged execution history, newest first",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "executions": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "scheduledTaskId": {
+                            "type": "string"
+                          },
+                          "companyId": {
+                            "type": "string"
+                          },
+                          "userId": {
+                            "type": "string"
+                          },
+                          "employeeId": {
+                            "type": "string"
+                          },
+                          "status": {
+                            "type": "string",
+                            "description": "pending, running, completed, or failed"
+                          },
+                          "scheduledTime": {
+                            "type": "string"
+                          },
+                          "startedAt": {
+                            "type": "string"
+                          },
+                          "completedAt": {
+                            "type": "string"
+                          },
+                          "durationMs": {
+                            "type": "integer"
+                          },
+                          "promptSent": {
+                            "type": "string"
+                          },
+                          "response": {
+                            "type": "string",
+                            "description": "The employee's final response"
+                          },
+                          "toolCalls": {
+                            "type": "array",
+                            "items": {
+                              "type": "object"
+                            }
+                          },
+                          "blocks": {
+                            "type": "array",
+                            "items": {
+                              "type": "object"
+                            }
+                          },
+                          "errorMessage": {
+                            "type": "string"
+                          },
+                          "tokensUsed": {
+                            "type": "integer"
+                          },
+                          "score": {
+                            "type": "integer",
+                            "description": "0-100 quality grade of the run, null until graded"
+                          },
+                          "scoreReason": {
+                            "type": "string"
+                          },
+                          "scoredAt": {
+                            "type": "string"
+                          },
+                          "createdDate": {
+                            "type": "string"
+                          }
+                        },
+                        "description": "One run of a scheduled task"
+                      }
+                    },
+                    "total": {
+                      "type": "integer"
+                    },
+                    "page": {
+                      "type": "integer"
+                    },
+                    "pageSize": {
+                      "type": "integer"
+                    },
+                    "totalPages": {
+                      "type": "integer"
+                    }
+                  },
+                  "description": "Paged execution history"
+                }
+              }
+            }
+          }
+        },
+        "summary": "List execution history for a specific task."
+      }
+    },
+    "/api/v0/scheduled-tasks/{task_id}/daily-logs": {
+      "get": {
+        "tags": [
+          "Scheduled Tasks"
+        ],
+        "operationId": "scheduled_tasks_listTaskDailyLogs",
+        "parameters": [
+          {
+            "name": "task_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Company ID. Optional when the API key is a company key; required for personal access keys unless X-Company-ID is set."
+            },
+            "description": "Company ID. Optional when the API key is a company key; required for personal access keys unless X-Company-ID is set."
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Page number, 1-indexed (default: 1)"
+            },
+            "description": "Page number, 1-indexed (default: 1)"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Items per page"
+            },
+            "description": "Items per page"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Paged daily logs, newest first",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "logs": {
+                      "type": "array",
+                      "items": {
+                        "type": "object"
+                      },
+                      "description": "One entry per day the task ran: date and the notes it recorded"
+                    },
+                    "total": {
+                      "type": "integer"
+                    },
+                    "page": {
+                      "type": "integer"
+                    },
+                    "pageSize": {
+                      "type": "integer"
+                    },
+                    "totalPages": {
+                      "type": "integer"
+                    }
+                  },
+                  "description": "Paged heartbeat daily logs, newest first"
+                }
+              }
+            }
+          }
+        },
+        "summary": "List the daily logs (heartbeat status timeline) for a scheduled task."
+      }
+    },
+    "/api/v0/scheduled-task-executions": {
+      "get": {
+        "tags": [
+          "Scheduled Tasks"
+        ],
+        "operationId": "scheduled_tasks_listAllExecutions",
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Company ID. Optional when the API key is a company key; required for personal access keys unless X-Company-ID is set."
+            },
+            "description": "Company ID. Optional when the API key is a company key; required for personal access keys unless X-Company-ID is set."
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Page number, 1-indexed (default: 1)"
+            },
+            "description": "Page number, 1-indexed (default: 1)"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Items per page"
+            },
+            "description": "Items per page"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Paged execution history across all tasks",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "executions": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "scheduledTaskId": {
+                            "type": "string"
+                          },
+                          "companyId": {
+                            "type": "string"
+                          },
+                          "userId": {
+                            "type": "string"
+                          },
+                          "employeeId": {
+                            "type": "string"
+                          },
+                          "status": {
+                            "type": "string",
+                            "description": "pending, running, completed, or failed"
+                          },
+                          "scheduledTime": {
+                            "type": "string"
+                          },
+                          "startedAt": {
+                            "type": "string"
+                          },
+                          "completedAt": {
+                            "type": "string"
+                          },
+                          "durationMs": {
+                            "type": "integer"
+                          },
+                          "promptSent": {
+                            "type": "string"
+                          },
+                          "response": {
+                            "type": "string",
+                            "description": "The employee's final response"
+                          },
+                          "toolCalls": {
+                            "type": "array",
+                            "items": {
+                              "type": "object"
+                            }
+                          },
+                          "blocks": {
+                            "type": "array",
+                            "items": {
+                              "type": "object"
+                            }
+                          },
+                          "errorMessage": {
+                            "type": "string"
+                          },
+                          "tokensUsed": {
+                            "type": "integer"
+                          },
+                          "score": {
+                            "type": "integer",
+                            "description": "0-100 quality grade of the run, null until graded"
+                          },
+                          "scoreReason": {
+                            "type": "string"
+                          },
+                          "scoredAt": {
+                            "type": "string"
+                          },
+                          "createdDate": {
+                            "type": "string"
+                          }
+                        },
+                        "description": "One run of a scheduled task"
+                      }
+                    },
+                    "total": {
+                      "type": "integer"
+                    },
+                    "page": {
+                      "type": "integer"
+                    },
+                    "pageSize": {
+                      "type": "integer"
+                    },
+                    "totalPages": {
+                      "type": "integer"
+                    }
+                  },
+                  "description": "Paged execution history"
+                }
+              }
+            }
+          }
+        },
+        "summary": "List execution history across every scheduled task in a company."
+      }
+    },
     "/api/v0/monitors": {
       "post": {
         "tags": [
@@ -60893,7 +63794,7 @@
         "operationId": "marketing_campaigns_restoreCampaignVersion",
         "parameters": [
           {
-            "name": "versionId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -60901,7 +63802,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -62104,7 +65005,7 @@
         "operationId": "marketing_campaigns_deleteCampaignRecipient",
         "parameters": [
           {
-            "name": "recipientId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -62112,7 +65013,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "recipientId",
             "in": "path",
             "required": true,
             "schema": {
@@ -64553,7 +67454,7 @@
         "operationId": "site_builder_apiWebsiteBranchDiff",
         "parameters": [
           {
-            "name": "websiteId",
+            "name": "branch",
             "in": "path",
             "required": true,
             "schema": {
@@ -64561,7 +67462,7 @@
             }
           },
           {
-            "name": "branch",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
