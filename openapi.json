@@ -940,7 +940,7 @@
         "operationId": "documents_getDocumentContents",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -948,7 +948,7 @@
             }
           },
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -1007,7 +1007,7 @@
         "operationId": "documents_getDocument",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -1015,7 +1015,7 @@
             }
           },
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -6797,7 +6797,7 @@
         "operationId": "projects_getProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -6805,7 +6805,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -6940,7 +6940,7 @@
         "operationId": "projects_updateProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -6948,7 +6948,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -7109,7 +7109,7 @@
         "operationId": "projects_deleteProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -7117,7 +7117,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8016,7 +8016,7 @@
         "operationId": "projects_exportProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8024,7 +8024,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8116,7 +8116,7 @@
         "operationId": "projects_publishFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8124,7 +8124,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8271,7 +8271,7 @@
         "operationId": "projects_unpublishFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8279,7 +8279,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9279,6 +9279,10 @@
                   "id": {
                     "type": "string",
                     "description": "Company ID (omit for new company)"
+                  },
+                  "organizationId": {
+                    "type": "string",
+                    "description": "Organization to create the company in; it is billed to that organization and counts against its company limit. You must be a member. Ignored on update \u2014 omit to use your account organization."
                   },
                   "name": {
                     "type": "string",
@@ -10757,6 +10761,16 @@
             "description": "Company ID to get usage for"
           },
           {
+            "name": "organizationId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Report this organization's plan, limits and balances instead of the caller's own funding. The caller must belong to the organization."
+            },
+            "description": "Report this organization's plan, limits and balances instead of the caller's own funding. The caller must belong to the organization."
+          },
+          {
             "name": "whitelabelId",
             "in": "query",
             "required": false,
@@ -10770,6 +10784,26 @@
         "responses": {
           "401": {
             "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "No access to the named organization",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Organization not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -10814,6 +10848,26 @@
                           "type": "number",
                           "description": "Credits used"
                         },
+                        "topupCredits": {
+                          "type": "number",
+                          "description": "Never-expiring platform credit balance"
+                        },
+                        "dataCreditLimit": {
+                          "type": "integer",
+                          "description": "Monthly data credit allowance"
+                        },
+                        "dataCreditUsage": {
+                          "type": "number",
+                          "description": "Data credits used this month"
+                        },
+                        "dataCredits": {
+                          "type": "number",
+                          "description": "Total spendable data credits"
+                        },
+                        "enrichmentIncluded": {
+                          "type": "boolean",
+                          "description": "Whether enrichment is included at no charge"
+                        },
                         "seats": {
                           "type": "integer",
                           "description": "Number of seats"
@@ -10829,6 +10883,10 @@
                         "companiesUsed": {
                           "type": "integer",
                           "description": "Companies used"
+                        },
+                        "domainLimit": {
+                          "type": "integer",
+                          "description": "Max custom tracking domains"
                         },
                         "linkedinAccountLimit": {
                           "type": "integer",
@@ -11322,6 +11380,26 @@
               "description": "Pagination offset, default 0"
             },
             "description": "Pagination offset, default 0"
+          },
+          {
+            "name": "userUid",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Only rows for this user (organization history only)"
+            },
+            "description": "Only rows for this user (organization history only)"
+          },
+          {
+            "name": "feature",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Only rows for this feature key (organization history only)"
+            },
+            "description": "Only rows for this feature key (organization history only)"
           }
         ],
         "responses": {
@@ -11406,6 +11484,26 @@
                           "outputTokens": {
                             "type": "number",
                             "description": "Output tokens"
+                          },
+                          "userDisplayName": {
+                            "type": "string",
+                            "description": "Display name of the user (organization history only)"
+                          },
+                          "userEmail": {
+                            "type": "string",
+                            "description": "Email of the user (organization history only)"
+                          },
+                          "userPhoto": {
+                            "type": "string",
+                            "description": "Photo URL of the user (organization history only)"
+                          },
+                          "companyName": {
+                            "type": "string",
+                            "description": "Name of the company (organization history only)"
+                          },
+                          "companyLogoUrl": {
+                            "type": "string",
+                            "description": "Logo URL of the company (organization history only)"
                           }
                         },
                         "description": "Usage history entry"
@@ -11481,6 +11579,26 @@
               "description": "Pagination offset, default 0"
             },
             "description": "Pagination offset, default 0"
+          },
+          {
+            "name": "userUid",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Only rows for this user (organization history only)"
+            },
+            "description": "Only rows for this user (organization history only)"
+          },
+          {
+            "name": "feature",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Only rows for this feature key (organization history only)"
+            },
+            "description": "Only rows for this feature key (organization history only)"
           }
         ],
         "responses": {
@@ -11652,6 +11770,26 @@
               "description": "Pagination offset, default 0"
             },
             "description": "Pagination offset, default 0"
+          },
+          {
+            "name": "userUid",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Only rows for this user (organization history only)"
+            },
+            "description": "Only rows for this user (organization history only)"
+          },
+          {
+            "name": "feature",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Only rows for this feature key (organization history only)"
+            },
+            "description": "Only rows for this feature key (organization history only)"
           }
         ],
         "responses": {
@@ -11756,6 +11894,26 @@
                           "outputTokens": {
                             "type": "number",
                             "description": "Output tokens"
+                          },
+                          "userDisplayName": {
+                            "type": "string",
+                            "description": "Display name of the user (organization history only)"
+                          },
+                          "userEmail": {
+                            "type": "string",
+                            "description": "Email of the user (organization history only)"
+                          },
+                          "userPhoto": {
+                            "type": "string",
+                            "description": "Photo URL of the user (organization history only)"
+                          },
+                          "companyName": {
+                            "type": "string",
+                            "description": "Name of the company (organization history only)"
+                          },
+                          "companyLogoUrl": {
+                            "type": "string",
+                            "description": "Logo URL of the company (organization history only)"
                           }
                         },
                         "description": "Usage history entry"
@@ -11782,7 +11940,7 @@
           }
         },
         "summary": "Get paginated usage history rows across all companies in an organization.",
-        "description": "Caller must be the organization owner or listed in `owners`. Optional\n`userUid` query parameter narrows results to one user within the org."
+        "description": "Caller must be an organization owner or admin. Optional `userUid` and\n`feature` query parameters narrow results within the org."
       }
     },
     "/api/v0/organizations/{orgId}/usage/history/summary": {
@@ -11839,6 +11997,26 @@
               "description": "Pagination offset, default 0"
             },
             "description": "Pagination offset, default 0"
+          },
+          {
+            "name": "userUid",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Only rows for this user (organization history only)"
+            },
+            "description": "Only rows for this user (organization history only)"
+          },
+          {
+            "name": "feature",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Only rows for this feature key (organization history only)"
+            },
+            "description": "Only rows for this feature key (organization history only)"
           }
         ],
         "responses": {
@@ -11975,6 +12153,277 @@
         "summary": "Get aggregate usage totals across all companies in an organization."
       }
     },
+    "/api/v0/organizations/{orgId}/usage/activity": {
+      "get": {
+        "tags": [
+          "Usage"
+        ],
+        "operationId": "usage_getOrgUsageActivity",
+        "parameters": [
+          {
+            "name": "orgId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "startDate",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "ISO 8601 start datetime (inclusive)"
+            },
+            "description": "ISO 8601 start datetime (inclusive)"
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "ISO 8601 end datetime (inclusive)"
+            },
+            "description": "ISO 8601 end datetime (inclusive)"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Page size, default 100, max 1000"
+            },
+            "description": "Page size, default 100, max 1000"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Pagination offset, default 0"
+            },
+            "description": "Pagination offset, default 0"
+          },
+          {
+            "name": "userUid",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Only rows for this user (organization history only)"
+            },
+            "description": "Only rows for this user (organization history only)"
+          },
+          {
+            "name": "feature",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Only rows for this feature key (organization history only)"
+            },
+            "description": "Only rows for this feature key (organization history only)"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "No access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Organization not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Usage activity bucketed over the requested range",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "buckets": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "bucket": {
+                            "type": "string",
+                            "description": "ISO timestamp of the bucket start"
+                          },
+                          "credits": {
+                            "type": "number",
+                            "description": "Credits used in this bucket"
+                          },
+                          "requests": {
+                            "type": "integer",
+                            "description": "Billable requests in this bucket"
+                          }
+                        },
+                        "description": "Usage activity bucket"
+                      },
+                      "description": "Buckets, oldest first"
+                    },
+                    "unit": {
+                      "type": "string",
+                      "description": "Bucket width: minute, hour, day, week or month"
+                    },
+                    "startDate": {
+                      "type": "string",
+                      "description": "ISO start of the charted range"
+                    },
+                    "endDate": {
+                      "type": "string",
+                      "description": "ISO end of the charted range"
+                    }
+                  },
+                  "description": "Usage activity bucketed over the requested range"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Get organization usage bucketed over a time range, for the chart above the log.",
+        "description": "Takes the same `startDate`, `endDate`, `userUid` and `feature` filters as\nthe usage history endpoint, so the chart always describes the same rows the\nlog is showing. The bucket width adapts to the range."
+      }
+    },
+    "/api/v0/organizations/{orgId}/usage/histogram": {
+      "get": {
+        "tags": [
+          "Usage"
+        ],
+        "operationId": "usage_getOrgUsageHistogram",
+        "parameters": [
+          {
+            "name": "orgId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "No access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Organization not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Daily credit usage for an organization, one series per user",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "histogram": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "date": {
+                            "type": "string",
+                            "description": "Date string"
+                          },
+                          "usage": {
+                            "type": "number",
+                            "description": "Usage value for this date"
+                          }
+                        },
+                        "description": "Usage histogram data point"
+                      },
+                      "description": "Histogram data points"
+                    }
+                  },
+                  "description": "Usage histogram for last 30 days"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Daily credit usage across an organization for the last N days (default 30, max 90), stacked by user."
+      }
+    },
     "/api/v0/organizations": {
       "get": {
         "tags": [
@@ -12073,7 +12522,722 @@
           }
         },
         "summary": "List organizations the authenticated user has access to.",
-        "description": "Each entry includes a `role` indicating the caller's relationship:\n- \"owner\": user is `Organization.ownerUid`\n- \"admin\": user is in `Organization.owners`\n- \"member\": user belongs to a company within the organization"
+        "description": "Each entry includes a `role` indicating the caller's relationship:\n- the caller's organization_users role, when they have a membership row\n- otherwise \"owner\": user is `Organization.ownerUid`\n- otherwise \"admin\": user is in `Organization.owners`\n- otherwise \"member\": user belongs to a company within the organization"
+      },
+      "post": {
+        "tags": [
+          "Organizations"
+        ],
+        "operationId": "organizations_createMyOrganization",
+        "parameters": [],
+        "responses": {
+          "400": {
+            "description": "Invalid name",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Company API keys not allowed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "The created organization",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "Organization ID"
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": "Organization name"
+                    },
+                    "role": {
+                      "type": "string",
+                      "description": "Caller's relationship: 'owner', 'admin', or 'member'"
+                    },
+                    "subscriptionType": {
+                      "type": "string",
+                      "description": "Organization subscription tier"
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "Organization status"
+                    },
+                    "creditLimit": {
+                      "type": "number",
+                      "description": "Monthly credit limit"
+                    },
+                    "creditUsage": {
+                      "type": "number",
+                      "description": "Current month credit usage"
+                    },
+                    "seats": {
+                      "type": "integer",
+                      "description": "Seat limit"
+                    },
+                    "companyLimit": {
+                      "type": "integer",
+                      "description": "Company limit"
+                    }
+                  },
+                  "description": "Organization summary entry"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Create a new organization owned by the authenticated user.",
+        "description": "The organization starts on the free tier; the caller is its first owner.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "Organization name (1-100 characters)"
+                  }
+                },
+                "required": [
+                  "name"
+                ],
+                "description": "New organization"
+              }
+            }
+          },
+          "description": "New organization"
+        }
+      }
+    },
+    "/api/v0/organizations/{orgId}": {
+      "put": {
+        "tags": [
+          "Organizations"
+        ],
+        "operationId": "organizations_updateMyOrganization",
+        "parameters": [
+          {
+            "name": "orgId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid name",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "No access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Organization not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "The updated organization",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "Organization ID"
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": "Organization name"
+                    },
+                    "role": {
+                      "type": "string",
+                      "description": "Caller's relationship: 'owner', 'admin', or 'member'"
+                    },
+                    "subscriptionType": {
+                      "type": "string",
+                      "description": "Organization subscription tier"
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "Organization status"
+                    },
+                    "creditLimit": {
+                      "type": "number",
+                      "description": "Monthly credit limit"
+                    },
+                    "creditUsage": {
+                      "type": "number",
+                      "description": "Current month credit usage"
+                    },
+                    "seats": {
+                      "type": "integer",
+                      "description": "Seat limit"
+                    },
+                    "companyLimit": {
+                      "type": "integer",
+                      "description": "Company limit"
+                    }
+                  },
+                  "description": "Organization summary entry"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Rename an organization. Caller must be an owner or admin.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "Organization name (1-100 characters)"
+                  }
+                },
+                "required": [
+                  "name"
+                ],
+                "description": "Organization changes"
+              }
+            }
+          },
+          "description": "Organization changes"
+        }
+      }
+    },
+    "/api/v0/organizations/{orgId}/members": {
+      "get": {
+        "tags": [
+          "Organizations"
+        ],
+        "operationId": "organizations_listOrganizationMembers",
+        "parameters": [
+          {
+            "name": "orgId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "No access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Organization not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Members of the organization",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "members": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "uid": {
+                            "type": "string",
+                            "description": "User ID"
+                          },
+                          "email": {
+                            "type": "string",
+                            "description": "User email"
+                          },
+                          "displayName": {
+                            "type": "string",
+                            "description": "User display name"
+                          },
+                          "photo": {
+                            "type": "string",
+                            "description": "User photo URL"
+                          },
+                          "role": {
+                            "type": "string",
+                            "description": "'owner', 'admin' or 'member'"
+                          },
+                          "createdDate": {
+                            "type": "string",
+                            "description": "When the membership was created"
+                          }
+                        },
+                        "description": "Organization member"
+                      }
+                    }
+                  },
+                  "description": "Members of an organization"
+                }
+              }
+            }
+          }
+        },
+        "summary": "List an organization's members. Caller must be an owner or admin."
+      },
+      "post": {
+        "tags": [
+          "Organizations"
+        ],
+        "operationId": "organizations_addOrganizationMember",
+        "parameters": [
+          {
+            "name": "orgId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "No access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Organization or user not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "The added member",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "uid": {
+                      "type": "string",
+                      "description": "User ID"
+                    },
+                    "email": {
+                      "type": "string",
+                      "description": "User email"
+                    },
+                    "displayName": {
+                      "type": "string",
+                      "description": "User display name"
+                    },
+                    "photo": {
+                      "type": "string",
+                      "description": "User photo URL"
+                    },
+                    "role": {
+                      "type": "string",
+                      "description": "'owner', 'admin' or 'member'"
+                    },
+                    "createdDate": {
+                      "type": "string",
+                      "description": "When the membership was created"
+                    }
+                  },
+                  "description": "Organization member"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Add an existing account to an organization by email.",
+        "description": "Caller must be an owner or admin. Only owners may grant the owner role.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "description": "Email of an existing account"
+                  },
+                  "role": {
+                    "type": "string",
+                    "description": "'owner', 'admin' or 'member' (default 'member')"
+                  }
+                },
+                "required": [
+                  "email"
+                ],
+                "description": "Member to add"
+              }
+            }
+          },
+          "description": "Member to add"
+        }
+      }
+    },
+    "/api/v0/organizations/{orgId}/members/{memberUid}": {
+      "put": {
+        "tags": [
+          "Organizations"
+        ],
+        "operationId": "organizations_updateOrganizationMember",
+        "parameters": [
+          {
+            "name": "memberUid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "orgId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "No access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Organization or member not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "The updated member",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "uid": {
+                      "type": "string",
+                      "description": "User ID"
+                    },
+                    "email": {
+                      "type": "string",
+                      "description": "User email"
+                    },
+                    "displayName": {
+                      "type": "string",
+                      "description": "User display name"
+                    },
+                    "photo": {
+                      "type": "string",
+                      "description": "User photo URL"
+                    },
+                    "role": {
+                      "type": "string",
+                      "description": "'owner', 'admin' or 'member'"
+                    },
+                    "createdDate": {
+                      "type": "string",
+                      "description": "When the membership was created"
+                    }
+                  },
+                  "description": "Organization member"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Change a member's role. Only owners may grant or revoke the owner role.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "role": {
+                    "type": "string",
+                    "description": "'owner', 'admin' or 'member'"
+                  }
+                },
+                "required": [
+                  "role"
+                ],
+                "description": "Role change"
+              }
+            }
+          },
+          "description": "Role change"
+        }
+      },
+      "delete": {
+        "tags": [
+          "Organizations"
+        ],
+        "operationId": "organizations_removeOrganizationMember",
+        "parameters": [
+          {
+            "name": "memberUid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "orgId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Cannot remove the last owner",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "No access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Organization or member not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Remove a member. Only owners may remove other owners."
       }
     },
     "/api/v0/models": {
@@ -16175,7 +17339,7 @@
             }
           }
         },
-        "summary": "Cheap polling probe: has this conversation changed?",
+        "summary": "Cheap polling probe for whether a conversation has changed.",
         "description": "Returns when the conversation last changed, without loading any message\ncontent. Clients compare the values to what they already have and only\nrefetch the full conversation when they differ."
       }
     },
@@ -25136,7 +26300,7 @@
         "operationId": "sequences_editSequenceExecution",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25144,7 +26308,7 @@
             }
           },
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25233,7 +26397,7 @@
         "operationId": "sequences_previewSequenceExecution",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25241,7 +26405,7 @@
             }
           },
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30680,7 +31844,7 @@
         "operationId": "inbox_sendDraft",
         "parameters": [
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30688,7 +31852,7 @@
             }
           },
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30781,7 +31945,7 @@
         "operationId": "inbox_deleteDraft",
         "parameters": [
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30789,7 +31953,7 @@
             }
           },
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -37904,7 +39068,7 @@
         "operationId": "content_getCanvasDesignThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -37912,7 +39076,7 @@
             }
           },
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -37951,7 +39115,7 @@
         "operationId": "content_updateCanvasDesignThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -37959,7 +39123,7 @@
             }
           },
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -38037,7 +39201,7 @@
         "operationId": "content_deleteCanvasDesignThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -38045,7 +39209,7 @@
             }
           },
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -38086,7 +39250,7 @@
         "operationId": "content_stopCanvasDesignThreadRun",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -38094,7 +39258,7 @@
             }
           },
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -61616,7 +62780,7 @@
         "operationId": "seo_projectLighthouseSnapshotRoute",
         "parameters": [
           {
-            "name": "snapshotId",
+            "name": "projectId",
             "in": "path",
             "required": true,
             "schema": {
@@ -61624,7 +62788,7 @@
             }
           },
           {
-            "name": "projectId",
+            "name": "snapshotId",
             "in": "path",
             "required": true,
             "schema": {
@@ -66081,7 +67245,7 @@
         "operationId": "marketing_campaigns_restoreTemplateVersion",
         "parameters": [
           {
-            "name": "templateId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -66089,7 +67253,7 @@
             }
           },
           {
-            "name": "versionId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
