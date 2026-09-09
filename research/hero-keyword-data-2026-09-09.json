@@ -1,0 +1,4701 @@
+{
+  "retrievedAt": "2026-09-09",
+  "country": "us",
+  "language": "en",
+  "operationId": "seo_researchKeywordsRoute",
+  "results": [
+    {
+      "status": 200,
+      "success": true,
+      "data": {
+        "country": "us",
+        "creditCost": 11.25,
+        "fromCache": 0,
+        "keywords": [
+          {
+            "competition": "MEDIUM",
+            "competitionIndex": 55,
+            "cpc": 15.35,
+            "isSeed": true,
+            "keyword": "ai employees",
+            "momChangePct": null,
+            "monthlySearches": [
+              {
+                "month": 7,
+                "search_volume": 1000,
+                "year": 2026
+              },
+              {
+                "month": 6,
+                "search_volume": 1000,
+                "year": 2026
+              },
+              {
+                "month": 5,
+                "search_volume": 1300,
+                "year": 2026
+              },
+              {
+                "month": 4,
+                "search_volume": 1600,
+                "year": 2026
+              },
+              {
+                "month": 3,
+                "search_volume": 1600,
+                "year": 2026
+              },
+              {
+                "month": 2,
+                "search_volume": 1600,
+                "year": 2026
+              },
+              {
+                "month": 1,
+                "search_volume": 1300,
+                "year": 2026
+              },
+              {
+                "month": 12,
+                "search_volume": 1600,
+                "year": 2025
+              },
+              {
+                "month": 11,
+                "search_volume": 1900,
+                "year": 2025
+              },
+              {
+                "month": 10,
+                "search_volume": 2900,
+                "year": 2025
+              },
+              {
+                "month": 9,
+                "search_volume": 2400,
+                "year": 2025
+              },
+              {
+                "month": 8,
+                "search_volume": 2900,
+                "year": 2025
+              }
+            ],
+            "saved": false,
+            "trend": null,
+            "volume": 1900,
+            "volumeSource": "dataforseo"
+          },
+          {
+            "competition": "MEDIUM",
+            "competitionIndex": 55,
+            "cpc": 20.62,
+            "isSeed": false,
+            "keyword": "best ai employees",
+            "momChangePct": null,
+            "monthlySearches": [
+              {
+                "month": 7,
+                "search_volume": 50,
+                "year": 2026
+              },
+              {
+                "month": 6,
+                "search_volume": 50,
+                "year": 2026
+              },
+              {
+                "month": 5,
+                "search_volume": 30,
+                "year": 2026
+              },
+              {
+                "month": 4,
+                "search_volume": 30,
+                "year": 2026
+              },
+              {
+                "month": 3,
+                "search_volume": 50,
+                "year": 2026
+              },
+              {
+                "month": 2,
+                "search_volume": 50,
+                "year": 2026
+              },
+              {
+                "month": 1,
+                "search_volume": 50,
+                "year": 2026
+              },
+              {
+                "month": 12,
+                "search_volume": 50,
+                "year": 2025
+              },
+              {
+                "month": 11,
+                "search_volume": 90,
+                "year": 2025
+              },
+              {
+                "month": 10,
+                "search_volume": 90,
+                "year": 2025
+              },
+              {
+                "month": 9,
+                "search_volume": 90,
+                "year": 2025
+              },
+              {
+                "month": 8,
+                "search_volume": 140,
+                "year": 2025
+              }
+            ],
+            "saved": false,
+            "trend": null,
+            "volume": 70,
+            "volumeSource": "dataforseo"
+          },
+          {
+            "competition": "MEDIUM",
+            "competitionIndex": 56,
+            "cpc": 27.61,
+            "isSeed": false,
+            "keyword": "free ai employees",
+            "momChangePct": null,
+            "monthlySearches": [
+              {
+                "month": 7,
+                "search_volume": 20,
+                "year": 2026
+              },
+              {
+                "month": 6,
+                "search_volume": 10,
+                "year": 2026
+              },
+              {
+                "month": 5,
+                "search_volume": 30,
+                "year": 2026
+              },
+              {
+                "month": 4,
+                "search_volume": 40,
+                "year": 2026
+              },
+              {
+                "month": 3,
+                "search_volume": 30,
+                "year": 2026
+              },
+              {
+                "month": 2,
+                "search_volume": 20,
+                "year": 2026
+              },
+              {
+                "month": 1,
+                "search_volume": 20,
+                "year": 2026
+              },
+              {
+                "month": 12,
+                "search_volume": 30,
+                "year": 2025
+              },
+              {
+                "month": 11,
+                "search_volume": 70,
+                "year": 2025
+              },
+              {
+                "month": 10,
+                "search_volume": 90,
+                "year": 2025
+              },
+              {
+                "month": 9,
+                "search_volume": 50,
+                "year": 2025
+              },
+              {
+                "month": 8,
+                "search_volume": 50,
+                "year": 2025
+              }
+            ],
+            "saved": false,
+            "trend": null,
+            "volume": 40,
+            "volumeSource": "dataforseo"
+          },
+          {
+            "competition": "MEDIUM",
+            "competitionIndex": 41,
+            "cpc": 18.08,
+            "isSeed": false,
+            "keyword": "ai employees review",
+            "momChangePct": null,
+            "monthlySearches": [
+              {
+                "month": 7,
+                "search_volume": 20,
+                "year": 2026
+              },
+              {
+                "month": 6,
+                "search_volume": 10,
+                "year": 2026
+              },
+              {
+                "month": 5,
+                "search_volume": 10,
+                "year": 2026
+              },
+              {
+                "month": 4,
+                "search_volume": 10,
+                "year": 2026
+              },
+              {
+                "month": 3,
+                "search_volume": 20,
+                "year": 2026
+              },
+              {
+                "month": 2,
+                "search_volume": 30,
+                "year": 2026
+              },
+              {
+                "month": 1,
+                "search_volume": 20,
+                "year": 2026
+              },
+              {
+                "month": 12,
+                "search_volume": 30,
+                "year": 2025
+              },
+              {
+                "month": 11,
+                "search_volume": 30,
+                "year": 2025
+              },
+              {
+                "month": 10,
+                "search_volume": 40,
+                "year": 2025
+              },
+              {
+                "month": 9,
+                "search_volume": 20,
+                "year": 2025
+              },
+              {
+                "month": 8,
+                "search_volume": 50,
+                "year": 2025
+              }
+            ],
+            "saved": false,
+            "trend": null,
+            "volume": 30,
+            "volumeSource": "dataforseo"
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "top ai employees",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "how to ai employees",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "what is ai employees",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "why ai employees",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai employees vs",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai employees alternatives",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai employees pricing",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai employees cost",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai employees reviews",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai employees examples",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai employees template",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai employees software",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai employees tools",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai employees services",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai employees for small business",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai employees near me",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai employees guide",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai employees tutorial",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai employees checklist",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai employees comparison",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          }
+        ],
+        "language": "en",
+        "purchased": true,
+        "requested": 24,
+        "seed": "ai employees",
+        "serp": []
+      }
+    },
+    {
+      "status": 200,
+      "success": true,
+      "data": {
+        "country": "us",
+        "creditCost": 11.25,
+        "fromCache": 1,
+        "keywords": [
+          {
+            "competition": "MEDIUM",
+            "competitionIndex": 55,
+            "cpc": 15.33,
+            "isSeed": true,
+            "keyword": "ai employee",
+            "momChangePct": -31.2,
+            "monthlySearches": [
+              {
+                "month": 8,
+                "search_volume": 2900,
+                "year": 2025
+              },
+              {
+                "month": 9,
+                "search_volume": 2400,
+                "year": 2025
+              },
+              {
+                "month": 10,
+                "search_volume": 2900,
+                "year": 2025
+              },
+              {
+                "month": 11,
+                "search_volume": 1900,
+                "year": 2025
+              },
+              {
+                "month": 12,
+                "search_volume": 1600,
+                "year": 2025
+              },
+              {
+                "month": 1,
+                "search_volume": 1300,
+                "year": 2026
+              },
+              {
+                "month": 2,
+                "search_volume": 1600,
+                "year": 2026
+              },
+              {
+                "month": 3,
+                "search_volume": 1600,
+                "year": 2026
+              },
+              {
+                "month": 4,
+                "search_volume": 1600,
+                "year": 2026
+              },
+              {
+                "month": 5,
+                "search_volume": 1300,
+                "year": 2026
+              },
+              {
+                "month": 6,
+                "search_volume": 1000,
+                "year": 2026
+              },
+              {
+                "month": 7,
+                "search_volume": 1000,
+                "year": 2026
+              }
+            ],
+            "saved": false,
+            "trend": "declining",
+            "volume": 1900,
+            "volumeSource": "google"
+          },
+          {
+            "competition": "MEDIUM",
+            "competitionIndex": 55,
+            "cpc": 20.62,
+            "isSeed": false,
+            "keyword": "best ai employee",
+            "momChangePct": null,
+            "monthlySearches": [
+              {
+                "month": 7,
+                "search_volume": 50,
+                "year": 2026
+              },
+              {
+                "month": 6,
+                "search_volume": 50,
+                "year": 2026
+              },
+              {
+                "month": 5,
+                "search_volume": 30,
+                "year": 2026
+              },
+              {
+                "month": 4,
+                "search_volume": 30,
+                "year": 2026
+              },
+              {
+                "month": 3,
+                "search_volume": 50,
+                "year": 2026
+              },
+              {
+                "month": 2,
+                "search_volume": 50,
+                "year": 2026
+              },
+              {
+                "month": 1,
+                "search_volume": 50,
+                "year": 2026
+              },
+              {
+                "month": 12,
+                "search_volume": 50,
+                "year": 2025
+              },
+              {
+                "month": 11,
+                "search_volume": 90,
+                "year": 2025
+              },
+              {
+                "month": 10,
+                "search_volume": 90,
+                "year": 2025
+              },
+              {
+                "month": 9,
+                "search_volume": 90,
+                "year": 2025
+              },
+              {
+                "month": 8,
+                "search_volume": 140,
+                "year": 2025
+              }
+            ],
+            "saved": false,
+            "trend": null,
+            "volume": 70,
+            "volumeSource": "dataforseo"
+          },
+          {
+            "competition": "MEDIUM",
+            "competitionIndex": 56,
+            "cpc": 27.61,
+            "isSeed": false,
+            "keyword": "free ai employee",
+            "momChangePct": null,
+            "monthlySearches": [
+              {
+                "month": 7,
+                "search_volume": 20,
+                "year": 2026
+              },
+              {
+                "month": 6,
+                "search_volume": 10,
+                "year": 2026
+              },
+              {
+                "month": 5,
+                "search_volume": 30,
+                "year": 2026
+              },
+              {
+                "month": 4,
+                "search_volume": 40,
+                "year": 2026
+              },
+              {
+                "month": 3,
+                "search_volume": 30,
+                "year": 2026
+              },
+              {
+                "month": 2,
+                "search_volume": 20,
+                "year": 2026
+              },
+              {
+                "month": 1,
+                "search_volume": 20,
+                "year": 2026
+              },
+              {
+                "month": 12,
+                "search_volume": 30,
+                "year": 2025
+              },
+              {
+                "month": 11,
+                "search_volume": 70,
+                "year": 2025
+              },
+              {
+                "month": 10,
+                "search_volume": 90,
+                "year": 2025
+              },
+              {
+                "month": 9,
+                "search_volume": 50,
+                "year": 2025
+              },
+              {
+                "month": 8,
+                "search_volume": 50,
+                "year": 2025
+              }
+            ],
+            "saved": false,
+            "trend": null,
+            "volume": 40,
+            "volumeSource": "dataforseo"
+          },
+          {
+            "competition": "MEDIUM",
+            "competitionIndex": 41,
+            "cpc": 18.08,
+            "isSeed": false,
+            "keyword": "ai employee review",
+            "momChangePct": null,
+            "monthlySearches": [
+              {
+                "month": 7,
+                "search_volume": 20,
+                "year": 2026
+              },
+              {
+                "month": 6,
+                "search_volume": 10,
+                "year": 2026
+              },
+              {
+                "month": 5,
+                "search_volume": 10,
+                "year": 2026
+              },
+              {
+                "month": 4,
+                "search_volume": 10,
+                "year": 2026
+              },
+              {
+                "month": 3,
+                "search_volume": 20,
+                "year": 2026
+              },
+              {
+                "month": 2,
+                "search_volume": 30,
+                "year": 2026
+              },
+              {
+                "month": 1,
+                "search_volume": 20,
+                "year": 2026
+              },
+              {
+                "month": 12,
+                "search_volume": 30,
+                "year": 2025
+              },
+              {
+                "month": 11,
+                "search_volume": 30,
+                "year": 2025
+              },
+              {
+                "month": 10,
+                "search_volume": 40,
+                "year": 2025
+              },
+              {
+                "month": 9,
+                "search_volume": 20,
+                "year": 2025
+              },
+              {
+                "month": 8,
+                "search_volume": 50,
+                "year": 2025
+              }
+            ],
+            "saved": false,
+            "trend": null,
+            "volume": 30,
+            "volumeSource": "dataforseo"
+          },
+          {
+            "competition": "LOW",
+            "competitionIndex": 15,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai employee software",
+            "momChangePct": null,
+            "monthlySearches": [
+              {
+                "month": 7,
+                "search_volume": 40,
+                "year": 2026
+              },
+              {
+                "month": 6,
+                "search_volume": 20,
+                "year": 2026
+              },
+              {
+                "month": 5,
+                "search_volume": 10,
+                "year": 2026
+              },
+              {
+                "month": 4,
+                "search_volume": 10,
+                "year": 2026
+              },
+              {
+                "month": 3,
+                "search_volume": 10,
+                "year": 2026
+              },
+              {
+                "month": 2,
+                "search_volume": 10,
+                "year": 2026
+              },
+              {
+                "month": 1,
+                "search_volume": 10,
+                "year": 2026
+              },
+              {
+                "month": 12,
+                "search_volume": 30,
+                "year": 2025
+              },
+              {
+                "month": 11,
+                "search_volume": 70,
+                "year": 2025
+              },
+              {
+                "month": 10,
+                "search_volume": 90,
+                "year": 2025
+              },
+              {
+                "month": 9,
+                "search_volume": 30,
+                "year": 2025
+              },
+              {
+                "month": 8,
+                "search_volume": 50,
+                "year": 2025
+              }
+            ],
+            "saved": false,
+            "trend": null,
+            "volume": 30,
+            "volumeSource": "dataforseo"
+          },
+          {
+            "competition": "LOW",
+            "competitionIndex": 0,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai employee pricing",
+            "momChangePct": null,
+            "monthlySearches": [
+              {
+                "month": 7,
+                "search_volume": 10,
+                "year": 2026
+              },
+              {
+                "month": 6,
+                "search_volume": 10,
+                "year": 2026
+              },
+              {
+                "month": 5,
+                "search_volume": 10,
+                "year": 2026
+              },
+              {
+                "month": 4,
+                "search_volume": 30,
+                "year": 2026
+              },
+              {
+                "month": 3,
+                "search_volume": 10,
+                "year": 2026
+              },
+              {
+                "month": 2,
+                "search_volume": 10,
+                "year": 2026
+              },
+              {
+                "month": 1,
+                "search_volume": 20,
+                "year": 2026
+              },
+              {
+                "month": 12,
+                "search_volume": 20,
+                "year": 2025
+              },
+              {
+                "month": 11,
+                "search_volume": 20,
+                "year": 2025
+              },
+              {
+                "month": 10,
+                "search_volume": 30,
+                "year": 2025
+              },
+              {
+                "month": 9,
+                "search_volume": 20,
+                "year": 2025
+              },
+              {
+                "month": 8,
+                "search_volume": 30,
+                "year": 2025
+              }
+            ],
+            "saved": false,
+            "trend": null,
+            "volume": 20,
+            "volumeSource": "dataforseo"
+          },
+          {
+            "competition": "LOW",
+            "competitionIndex": 0,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "what is ai employee",
+            "momChangePct": null,
+            "monthlySearches": [
+              {
+                "month": 7,
+                "search_volume": 10,
+                "year": 2026
+              },
+              {
+                "month": 6,
+                "search_volume": 10,
+                "year": 2026
+              },
+              {
+                "month": 5,
+                "search_volume": 10,
+                "year": 2026
+              },
+              {
+                "month": 4,
+                "search_volume": 10,
+                "year": 2026
+              },
+              {
+                "month": 3,
+                "search_volume": 10,
+                "year": 2026
+              },
+              {
+                "month": 2,
+                "search_volume": 10,
+                "year": 2026
+              },
+              {
+                "month": 1,
+                "search_volume": 10,
+                "year": 2026
+              },
+              {
+                "month": 12,
+                "search_volume": 10,
+                "year": 2025
+              },
+              {
+                "month": 11,
+                "search_volume": 10,
+                "year": 2025
+              },
+              {
+                "month": 10,
+                "search_volume": 10,
+                "year": 2025
+              },
+              {
+                "month": 9,
+                "search_volume": 10,
+                "year": 2025
+              },
+              {
+                "month": 8,
+                "search_volume": 10,
+                "year": 2025
+              }
+            ],
+            "saved": false,
+            "trend": null,
+            "volume": 10,
+            "volumeSource": "dataforseo"
+          },
+          {
+            "competition": "LOW",
+            "competitionIndex": 5,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai employee near me",
+            "momChangePct": null,
+            "monthlySearches": [
+              {
+                "month": 7,
+                "search_volume": 40,
+                "year": 2026
+              },
+              {
+                "month": 6,
+                "search_volume": 40,
+                "year": 2026
+              },
+              {
+                "month": 5,
+                "search_volume": 10,
+                "year": 2026
+              },
+              {
+                "month": 4,
+                "search_volume": 10,
+                "year": 2026
+              },
+              {
+                "month": 3,
+                "search_volume": 10,
+                "year": 2026
+              },
+              {
+                "month": 2,
+                "search_volume": 20,
+                "year": 2026
+              },
+              {
+                "month": 1,
+                "search_volume": 50,
+                "year": 2026
+              },
+              {
+                "month": 12,
+                "search_volume": 10,
+                "year": 2025
+              },
+              {
+                "month": 11,
+                "search_volume": 0,
+                "year": 2025
+              },
+              {
+                "month": 10,
+                "search_volume": 0,
+                "year": 2025
+              },
+              {
+                "month": 9,
+                "search_volume": 0,
+                "year": 2025
+              },
+              {
+                "month": 8,
+                "search_volume": 0,
+                "year": 2025
+              }
+            ],
+            "saved": false,
+            "trend": null,
+            "volume": 10,
+            "volumeSource": "dataforseo"
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "top ai employee",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "how to ai employee",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "why ai employee",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai employee vs",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai employee alternatives",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai employee cost",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai employee reviews",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai employee examples",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai employee template",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai employee tools",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai employee services",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai employee for small business",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai employee guide",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai employee tutorial",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai employee checklist",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai employee comparison",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          }
+        ],
+        "language": "en",
+        "purchased": true,
+        "requested": 23,
+        "seed": "ai employee"
+      }
+    },
+    {
+      "status": 200,
+      "success": true,
+      "data": {
+        "country": "us",
+        "creditCost": 11.25,
+        "fromCache": 0,
+        "keywords": [
+          {
+            "competition": "MEDIUM",
+            "competitionIndex": 45,
+            "cpc": 15.75,
+            "isSeed": true,
+            "keyword": "ai workforce",
+            "momChangePct": null,
+            "monthlySearches": [
+              {
+                "month": 7,
+                "search_volume": 720,
+                "year": 2026
+              },
+              {
+                "month": 6,
+                "search_volume": 880,
+                "year": 2026
+              },
+              {
+                "month": 5,
+                "search_volume": 1300,
+                "year": 2026
+              },
+              {
+                "month": 4,
+                "search_volume": 1300,
+                "year": 2026
+              },
+              {
+                "month": 3,
+                "search_volume": 1600,
+                "year": 2026
+              },
+              {
+                "month": 2,
+                "search_volume": 1300,
+                "year": 2026
+              },
+              {
+                "month": 1,
+                "search_volume": 880,
+                "year": 2026
+              },
+              {
+                "month": 12,
+                "search_volume": 880,
+                "year": 2025
+              },
+              {
+                "month": 11,
+                "search_volume": 1000,
+                "year": 2025
+              },
+              {
+                "month": 10,
+                "search_volume": 1000,
+                "year": 2025
+              },
+              {
+                "month": 9,
+                "search_volume": 1600,
+                "year": 2025
+              },
+              {
+                "month": 8,
+                "search_volume": 720,
+                "year": 2025
+              }
+            ],
+            "saved": false,
+            "trend": null,
+            "volume": 1000,
+            "volumeSource": "dataforseo"
+          },
+          {
+            "competition": "MEDIUM",
+            "competitionIndex": 43,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "what is ai workforce",
+            "momChangePct": null,
+            "monthlySearches": [
+              {
+                "month": 7,
+                "search_volume": 10,
+                "year": 2026
+              },
+              {
+                "month": 6,
+                "search_volume": 10,
+                "year": 2026
+              },
+              {
+                "month": 5,
+                "search_volume": 10,
+                "year": 2026
+              },
+              {
+                "month": 4,
+                "search_volume": 10,
+                "year": 2026
+              },
+              {
+                "month": 3,
+                "search_volume": 10,
+                "year": 2026
+              },
+              {
+                "month": 2,
+                "search_volume": 10,
+                "year": 2026
+              },
+              {
+                "month": 1,
+                "search_volume": 10,
+                "year": 2026
+              },
+              {
+                "month": 12,
+                "search_volume": 10,
+                "year": 2025
+              },
+              {
+                "month": 11,
+                "search_volume": 0,
+                "year": 2025
+              },
+              {
+                "month": 10,
+                "search_volume": 0,
+                "year": 2025
+              },
+              {
+                "month": 9,
+                "search_volume": 0,
+                "year": 2025
+              },
+              {
+                "month": 8,
+                "search_volume": 0,
+                "year": 2025
+              }
+            ],
+            "saved": false,
+            "trend": null,
+            "volume": 10,
+            "volumeSource": "dataforseo"
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "best ai workforce",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "top ai workforce",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "how to ai workforce",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "why ai workforce",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai workforce vs",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai workforce alternatives",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai workforce pricing",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai workforce cost",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai workforce review",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai workforce reviews",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai workforce examples",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai workforce template",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai workforce software",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai workforce tools",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai workforce services",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai workforce for small business",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai workforce near me",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "free ai workforce",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai workforce guide",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai workforce tutorial",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai workforce checklist",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai workforce comparison",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          }
+        ],
+        "language": "en",
+        "purchased": true,
+        "requested": 24,
+        "seed": "ai workforce",
+        "serp": [
+          {
+            "date": "N/A",
+            "description": "The AI Workforce is a platform where you can hire AI-powered assistants to perform specific tasks, improve team efficiency, and enhance business performance.",
+            "title": "AI Workforce",
+            "url": "https://ai-workforce.com/"
+          },
+          {
+            "date": "N/A",
+            "description": "Our new AI-Ready Workforce Framework analyzes tasks and skills based on how much or how little AI-driven automation may impact them and the nature of that ...",
+            "title": "The AI-Ready Workforce - Jobs for the Future (JFF)",
+            "url": "https://info.jff.org/ai-ready"
+          },
+          {
+            "date": "N/A",
+            "description": "What are AI Agents? · Creating an AI workforce · Building the business case for...",
+            "title": "What is the AI Workforce? - Relevance AI",
+            "url": "https://relevanceai.com/learn/what-is-the-ai-workforce"
+          },
+          {
+            "date": "Feb 27, 2026",
+            "description": "Workforce transformation in the age of AI is an imperative – but it must be systemically implemented. Here's how to target five key areas.",
+            "title": "The AI-driven workforce is here. How should your industry transform?",
+            "url": "https://www.weforum.org/stories/education-and-skills/workforce-transformation-ai-jobs/"
+          },
+          {
+            "date": "N/A",
+            "description": "One platform for instant workforce insights, talent movements, and hiring trends—no more spreadsheet drudgery or endless LinkedIn tabs.",
+            "title": "Workforce.ai - Instantly Gain Competitive Talent Intelligence",
+            "url": "https://www.workforce.ai/"
+          },
+          {
+            "date": "N/A",
+            "description": "The AI Workforce Consortium mission is to prepare today's and tomorrow's workforce with actionable insights and scalable frameworks",
+            "title": "The AI Workforce Consortium - Cisco",
+            "url": "https://www.cisco.com/site/m/ai-workforce-consortium/index.html"
+          },
+          {
+            "date": "Apr 22, 2026",
+            "description": "AI can make work feel less meaningful, even when it improves productivity. The impact of AI on workers goes beyond changes to tasks and skills, ...",
+            "title": "AI and the Workforce: Impacts on Jobs, Workers, and Employers",
+            "url": "https://bipartisanpolicy.org/issue-brief/ai-and-the-workforce-impacts-on-jobs-workers-and-employers/"
+          },
+          {
+            "date": "N/A",
+            "description": "Types Of Ai Agents In The... · How To Create Ai Agents That... · Use Case: Train Ai For...",
+            "title": "AI Workforce: How Artificial Intelligence Is Transforming Teams - Slack",
+            "url": "https://slack.com/blog/productivity/ai-workforce-what-it-is-and-how-it-can-help-your-team"
+          },
+          {
+            "date": "N/A",
+            "description": "Ai And The Future Of... · Executive Summary · Download Full Report",
+            "title": "AI and the Future of Workforce Training - CSET",
+            "url": "https://cset.georgetown.edu/publication/ai-and-the-future-of-workforce-training/"
+          }
+        ]
+      }
+    },
+    {
+      "status": 200,
+      "success": true,
+      "data": {
+        "country": "us",
+        "creditCost": 11.25,
+        "fromCache": 0,
+        "keywords": [
+          {
+            "competition": "LOW",
+            "competitionIndex": 13,
+            "cpc": 67.09,
+            "isSeed": true,
+            "keyword": "ai platform for business",
+            "momChangePct": null,
+            "monthlySearches": [
+              {
+                "month": 7,
+                "search_volume": 720,
+                "year": 2026
+              },
+              {
+                "month": 6,
+                "search_volume": 720,
+                "year": 2026
+              },
+              {
+                "month": 5,
+                "search_volume": 720,
+                "year": 2026
+              },
+              {
+                "month": 4,
+                "search_volume": 390,
+                "year": 2026
+              },
+              {
+                "month": 3,
+                "search_volume": 1000,
+                "year": 2026
+              },
+              {
+                "month": 2,
+                "search_volume": 720,
+                "year": 2026
+              },
+              {
+                "month": 1,
+                "search_volume": 4400,
+                "year": 2026
+              },
+              {
+                "month": 12,
+                "search_volume": 1300,
+                "year": 2025
+              },
+              {
+                "month": 11,
+                "search_volume": 880,
+                "year": 2025
+              },
+              {
+                "month": 10,
+                "search_volume": 720,
+                "year": 2025
+              },
+              {
+                "month": 9,
+                "search_volume": 1300,
+                "year": 2025
+              },
+              {
+                "month": 8,
+                "search_volume": 390,
+                "year": 2025
+              }
+            ],
+            "saved": false,
+            "trend": null,
+            "volume": 1000,
+            "volumeSource": "dataforseo"
+          },
+          {
+            "competition": "HIGH",
+            "competitionIndex": 69,
+            "cpc": 57.96,
+            "isSeed": false,
+            "keyword": "best ai platform for business",
+            "momChangePct": null,
+            "monthlySearches": [
+              {
+                "month": 7,
+                "search_volume": 260,
+                "year": 2026
+              },
+              {
+                "month": 6,
+                "search_volume": 390,
+                "year": 2026
+              },
+              {
+                "month": 5,
+                "search_volume": 480,
+                "year": 2026
+              },
+              {
+                "month": 4,
+                "search_volume": 480,
+                "year": 2026
+              },
+              {
+                "month": 3,
+                "search_volume": 390,
+                "year": 2026
+              },
+              {
+                "month": 2,
+                "search_volume": 320,
+                "year": 2026
+              },
+              {
+                "month": 1,
+                "search_volume": 320,
+                "year": 2026
+              },
+              {
+                "month": 12,
+                "search_volume": 170,
+                "year": 2025
+              },
+              {
+                "month": 11,
+                "search_volume": 170,
+                "year": 2025
+              },
+              {
+                "month": 10,
+                "search_volume": 170,
+                "year": 2025
+              },
+              {
+                "month": 9,
+                "search_volume": 140,
+                "year": 2025
+              },
+              {
+                "month": 8,
+                "search_volume": 170,
+                "year": 2025
+              }
+            ],
+            "saved": false,
+            "trend": null,
+            "volume": 320,
+            "volumeSource": "dataforseo"
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "top ai platform for business",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "how to ai platform for business",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "what is ai platform for business",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "why ai platform for business",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai platform for business vs",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai platform for business alternatives",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai platform for business pricing",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai platform for business cost",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai platform for business review",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai platform for business reviews",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai platform for business examples",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai platform for business template",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai platform for business software",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai platform for business tools",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai platform for business services",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai platform for business for small business",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai platform for business near me",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "free ai platform for business",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai platform for business guide",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai platform for business tutorial",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai platform for business checklist",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai platform for business comparison",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          }
+        ],
+        "language": "en",
+        "purchased": true,
+        "requested": 24,
+        "seed": "ai platform for business",
+        "serp": [
+          {
+            "date": "May 13, 2026",
+            "description": "Learn the best AI for business operations tools you can start using today to seriously improve productivity and improve your bottom line.",
+            "title": "9 Best AI Business Tools in 2026: Tested Manually | Lindy",
+            "url": "https://www.lindy.ai/blog/best-ai-business-ops"
+          },
+          {
+            "date": "N/A",
+            "description": "Discover the best AI tools for business to streamline sales, marketing, and operations. Compare top-rated software and find your competitive edge.",
+            "title": "20+ Best AI Tools for Business to Automate and Scale | Salesforce",
+            "url": "https://www.salesforce.com/artificial-intelligence/business/best-ai-tools-for-business/"
+          },
+          {
+            "date": "Sep 20, 2025",
+            "description": "ChatGPT for brainstorming, content creation, marketing, and even general knowledge on tax, accounting, deep market research and of course, email ...",
+            "title": "What are the best AI tools for business owners ? : r/ChatGPTPro",
+            "url": "https://www.reddit.com/r/ChatGPTPro/comments/1nlngy5/what_are_the_best_ai_tools_for_business_owners/"
+          },
+          {
+            "date": "Apr 2, 2026",
+            "description": "... AI analyze my financials and tell me where money was leaking, or using it to build detailed prompts that I feed into other AI platforms. If ...",
+            "title": "Top 5 AI Tools Every Business Owner Should Be Using (2026 Edition)",
+            "url": "https://www.youtube.com/watch?v=uF9wm7BquKQ"
+          },
+          {
+            "date": "Aug 31, 2026",
+            "description": "Creatio Studio is a no-code AI platform for building business applications, automating workflows, and designing AI agents using visual drag ...",
+            "title": "20 Best AI Platforms for 2026 (Free + Paid Options)",
+            "url": "https://peoplemanagingpeople.com/tools/best-ai-platforms/"
+          },
+          {
+            "date": "Dec 1, 2025",
+            "description": "Zapier is the most connected AI orchestration platform—integrating with thousands of apps from partners like Google, Salesforce, and Microsoft.",
+            "title": "The best AI productivity tools in 2026 - Zapier",
+            "url": "https://zapier.com/blog/best-ai-productivity-tools/"
+          },
+          {
+            "date": "N/A",
+            "description": "The best AI platforms for business, by category · 1. Moveworks — Best for unified IT, HR, and finance automation · 2. ServiceNow AI — Best for enterprises ...",
+            "title": "6 Best AI Platforms for Business: IT, HR, and Finance Compared",
+            "url": "https://www.moveworks.com/us/en/resources/blog/best-ai-platform-for-business-it-hr-finance"
+          },
+          {
+            "date": "N/A",
+            "description": "Resources · Pricing · Company",
+            "title": "AI Business Plan Generator | Business Plan Maker | PrometAI",
+            "url": "https://prometai.app/"
+          },
+          {
+            "date": "Apr 30, 2026",
+            "description": "1. Asana. Asana is a popular project management platform that helps teams plan, organize, and track work efficiently. With AI-powered task ...",
+            "title": "Best AI Tools for Business Efficiency in 2026 - ThoughtSpot",
+            "url": "https://www.thoughtspot.com/data-trends/ai/best-ai-tools-for-business"
+          }
+        ]
+      }
+    },
+    {
+      "status": 200,
+      "success": true,
+      "data": {
+        "country": "us",
+        "creditCost": 11.25,
+        "fromCache": 1,
+        "keywords": [
+          {
+            "competition": "LOW",
+            "competitionIndex": 2,
+            "cpc": 45,
+            "isSeed": true,
+            "keyword": "ai agents for business",
+            "momChangePct": 240.2,
+            "monthlySearches": [
+              {
+                "month": 8,
+                "search_volume": 320,
+                "year": 2025
+              },
+              {
+                "month": 9,
+                "search_volume": 720,
+                "year": 2025
+              },
+              {
+                "month": 10,
+                "search_volume": 1300,
+                "year": 2025
+              },
+              {
+                "month": 11,
+                "search_volume": 480,
+                "year": 2025
+              },
+              {
+                "month": 12,
+                "search_volume": 320,
+                "year": 2025
+              },
+              {
+                "month": 1,
+                "search_volume": 320,
+                "year": 2026
+              },
+              {
+                "month": 2,
+                "search_volume": 480,
+                "year": 2026
+              },
+              {
+                "month": 3,
+                "search_volume": 1300,
+                "year": 2026
+              },
+              {
+                "month": 4,
+                "search_volume": 2400,
+                "year": 2026
+              },
+              {
+                "month": 5,
+                "search_volume": 720,
+                "year": 2026
+              },
+              {
+                "month": 6,
+                "search_volume": 3600,
+                "year": 2026
+              },
+              {
+                "month": 7,
+                "search_volume": 9900,
+                "year": 2026
+              }
+            ],
+            "saved": false,
+            "trend": "rising",
+            "volume": 1600,
+            "volumeSource": "google"
+          },
+          {
+            "competition": "MEDIUM",
+            "competitionIndex": 62,
+            "cpc": 78.85,
+            "isSeed": false,
+            "keyword": "best ai agents for business",
+            "momChangePct": null,
+            "monthlySearches": [
+              {
+                "month": 7,
+                "search_volume": 90,
+                "year": 2026
+              },
+              {
+                "month": 6,
+                "search_volume": 140,
+                "year": 2026
+              },
+              {
+                "month": 5,
+                "search_volume": 210,
+                "year": 2026
+              },
+              {
+                "month": 4,
+                "search_volume": 210,
+                "year": 2026
+              },
+              {
+                "month": 3,
+                "search_volume": 260,
+                "year": 2026
+              },
+              {
+                "month": 2,
+                "search_volume": 210,
+                "year": 2026
+              },
+              {
+                "month": 1,
+                "search_volume": 110,
+                "year": 2026
+              },
+              {
+                "month": 12,
+                "search_volume": 70,
+                "year": 2025
+              },
+              {
+                "month": 11,
+                "search_volume": 90,
+                "year": 2025
+              },
+              {
+                "month": 10,
+                "search_volume": 90,
+                "year": 2025
+              },
+              {
+                "month": 9,
+                "search_volume": 70,
+                "year": 2025
+              },
+              {
+                "month": 8,
+                "search_volume": 70,
+                "year": 2025
+              }
+            ],
+            "saved": false,
+            "trend": null,
+            "volume": 140,
+            "volumeSource": "dataforseo"
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "top ai agents for business",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "how to ai agents for business",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "what is ai agents for business",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "why ai agents for business",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai agents for business vs",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai agents for business alternatives",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai agents for business pricing",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai agents for business cost",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai agents for business review",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai agents for business reviews",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai agents for business examples",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai agents for business template",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai agents for business software",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai agents for business tools",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai agents for business services",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai agents for business for small business",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai agents for business near me",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "free ai agents for business",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai agents for business guide",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai agents for business tutorial",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai agents for business checklist",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai agents for business comparison",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          }
+        ],
+        "language": "en",
+        "purchased": true,
+        "requested": 23,
+        "seed": "ai agents for business",
+        "serp": [
+          {
+            "date": "N/A",
+            "description": "How we ranked these AI... · The 12 best AI agent platforms...",
+            "title": "Best AI Agents for Business 2026: 12 Platforms Ranked",
+            "url": "https://arahi.ai/blog/best-ai-agents-for-business"
+          },
+          {
+            "date": "N/A",
+            "description": "Deliver maximum ROI through optimized specialist agents. Build agents for sales, customer success, marketing and HR, and run millions of daily tasks on one ...",
+            "title": "Relevance AI: Specialist AI Agents for Every Task",
+            "url": "https://relevanceai.com/"
+          },
+          {
+            "date": "N/A",
+            "description": "AI agents automate tasks, analyze data, and collaborate with humans. Discover their components, how they work, and how they're transforming businesses ...",
+            "title": "AI Agents: What They Are and Their Business Impact | BCG",
+            "url": "https://www.bcg.com/capabilities/artificial-intelligence/ai-agents"
+          },
+          {
+            "date": "N/A",
+            "description": "Compare the best AI agents for small business across support, operations, and finance, with pricing checks and a practical eesel CLI pilot for a small team.",
+            "title": "Best AI agents for small business: 7 options in 2026",
+            "url": "https://www.eesel.ai/blog/best-ai-agents-for-small-business"
+          },
+          {
+            "date": "Nov 16, 2025",
+            "description": "Lindy, Zapier Agents, Fin, and Agentforce are some of the best AI agents for business in 2026. See all 13 picks and which one fits your ...",
+            "title": "13 AI Agents for Business in 2026 for Every Kind of Work | Lindy",
+            "url": "https://www.lindy.ai/blog/best-ai-agents"
+          },
+          {
+            "date": "Oct 16, 2025",
+            "description": "AI agents, but no one's using them correctly. I found a way to have five AI agents running for me 24 seven, building me an online business ...",
+            "title": "How I Use 5 AI Agents To Build Me A Business 24/7 (No Code)",
+            "url": "https://www.youtube.com/watch?v=BPwhEth_32g"
+          },
+          {
+            "date": "Aug 17, 2026",
+            "description": "TL;DR: The best AI agents for business in 2026 are TinyAgents (no-code, $49/month, best for SMBs), Claude (advanced reasoning), ...",
+            "title": "Best AI Agents for Business in 2026 (Ranked by Use Case)",
+            "url": "https://tinycommand.com/blogs/best-ai-agents-for-business"
+          },
+          {
+            "date": "N/A",
+            "description": "The 10 Best Ai Agents For... · 7. Zapier · What Ai Agents Still Cannot...",
+            "title": "The 10 Best AI Agents for Small Business - Siit.io",
+            "url": "https://www.siit.io/blog/best-ai-agent-platforms-small-business"
+          },
+          {
+            "date": "Feb 4, 2026",
+            "description": "Here are my top picks for the best AI agent platforms: Gumloop; Relay.app; Claude Code; Cofounder; Make; HockeyStack; Stack AI; Voiceflow ...",
+            "title": "13 best AI agent platforms & builders I'm using in 2026 | Marketer Milk",
+            "url": "https://www.marketermilk.com/blog/best-ai-agent-platforms"
+          }
+        ]
+      }
+    },
+    {
+      "status": 200,
+      "success": true,
+      "data": {
+        "country": "us",
+        "creditCost": 11.25,
+        "fromCache": 0,
+        "keywords": [
+          {
+            "competition": "LOW",
+            "competitionIndex": 0,
+            "cpc": null,
+            "isSeed": true,
+            "keyword": "ai sales and marketing",
+            "momChangePct": null,
+            "monthlySearches": [
+              {
+                "month": 7,
+                "search_volume": 10,
+                "year": 2026
+              },
+              {
+                "month": 6,
+                "search_volume": 10,
+                "year": 2026
+              },
+              {
+                "month": 5,
+                "search_volume": 30,
+                "year": 2026
+              },
+              {
+                "month": 4,
+                "search_volume": 50,
+                "year": 2026
+              },
+              {
+                "month": 3,
+                "search_volume": 90,
+                "year": 2026
+              },
+              {
+                "month": 2,
+                "search_volume": 20,
+                "year": 2026
+              },
+              {
+                "month": 1,
+                "search_volume": 30,
+                "year": 2026
+              },
+              {
+                "month": 12,
+                "search_volume": 20,
+                "year": 2025
+              },
+              {
+                "month": 11,
+                "search_volume": 10,
+                "year": 2025
+              },
+              {
+                "month": 10,
+                "search_volume": 10,
+                "year": 2025
+              },
+              {
+                "month": 9,
+                "search_volume": 170,
+                "year": 2025
+              },
+              {
+                "month": 8,
+                "search_volume": 30,
+                "year": 2025
+              }
+            ],
+            "saved": false,
+            "trend": null,
+            "volume": 40,
+            "volumeSource": "dataforseo"
+          },
+          {
+            "competition": "LOW",
+            "competitionIndex": 6,
+            "cpc": 62.18,
+            "isSeed": false,
+            "keyword": "ai sales and marketing tools",
+            "momChangePct": null,
+            "monthlySearches": [
+              {
+                "month": 7,
+                "search_volume": 30,
+                "year": 2026
+              },
+              {
+                "month": 6,
+                "search_volume": 10,
+                "year": 2026
+              },
+              {
+                "month": 5,
+                "search_volume": 20,
+                "year": 2026
+              },
+              {
+                "month": 4,
+                "search_volume": 20,
+                "year": 2026
+              },
+              {
+                "month": 3,
+                "search_volume": 20,
+                "year": 2026
+              },
+              {
+                "month": 2,
+                "search_volume": 10,
+                "year": 2026
+              },
+              {
+                "month": 1,
+                "search_volume": 20,
+                "year": 2026
+              },
+              {
+                "month": 12,
+                "search_volume": 10,
+                "year": 2025
+              },
+              {
+                "month": 11,
+                "search_volume": 10,
+                "year": 2025
+              },
+              {
+                "month": 10,
+                "search_volume": 10,
+                "year": 2025
+              },
+              {
+                "month": 9,
+                "search_volume": 10,
+                "year": 2025
+              },
+              {
+                "month": 8,
+                "search_volume": 10,
+                "year": 2025
+              }
+            ],
+            "saved": false,
+            "trend": null,
+            "volume": 10,
+            "volumeSource": "dataforseo"
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "best ai sales and marketing",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "top ai sales and marketing",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "how to ai sales and marketing",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "what is ai sales and marketing",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "why ai sales and marketing",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai sales and marketing vs",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai sales and marketing alternatives",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai sales and marketing pricing",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai sales and marketing cost",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai sales and marketing review",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai sales and marketing reviews",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai sales and marketing examples",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai sales and marketing template",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai sales and marketing software",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai sales and marketing services",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai sales and marketing for small business",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai sales and marketing near me",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "free ai sales and marketing",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai sales and marketing guide",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai sales and marketing tutorial",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai sales and marketing checklist",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "ai sales and marketing comparison",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          }
+        ],
+        "language": "en",
+        "purchased": true,
+        "requested": 24,
+        "seed": "ai sales and marketing",
+        "serp": [
+          {
+            "date": "Feb 26, 2026",
+            "description": "Some of the biggest brands like Shopify, Instacart, and Airbnb are using AI marketing tools internally to gain a competitive edge.",
+            "title": "30 best AI marketing tools I'm using to get ahead in 2026",
+            "url": "https://www.marketermilk.com/blog/ai-marketing-tools"
+          },
+          {
+            "date": "Feb 1, 2026",
+            "description": "In marketing, AI delivers actionable insights to personalize campaigns, optimize ad spend, and predict buyer behavior. Thanks to advanced AI ...",
+            "title": "AI for sales and marketing: strategies, examples, and top tools",
+            "url": "https://monday.com/blog/crm-and-sales/ai-for-sales-and-marketing/"
+          },
+          {
+            "date": "N/A",
+            "description": "Use AI to automate prospecting, optimize every conversation, accelerate decisions in the flow of work, and take the right actions with the help of better data.",
+            "title": "AI for Sales | Salesforce",
+            "url": "https://www.salesforce.com/sales/ai/"
+          },
+          {
+            "date": "N/A",
+            "description": "Overview · Types of AI in sales",
+            "title": "AI for Sales - IBM",
+            "url": "https://www.ibm.com/think/topics/ai-for-sales"
+          },
+          {
+            "date": "Jul 9, 2026",
+            "description": "When you have tools and technology that allows us to find and reach prospects more efficiently, more people will do it, so eventually, the ...",
+            "title": "The future of sales - and why AI outreach is a hiding to nothing.",
+            "url": "https://www.reddit.com/r/sales/comments/1urlb80/the_future_of_sales_and_why_ai_outreach_is_a/"
+          },
+          {
+            "date": "Aug 4, 2026",
+            "description": "AI in sales helps unify activity across systems, enabling teams to manage complexity, standardize workflows, and maintain clarity when handling ...",
+            "title": "AI in Sales Examples: 15 Proven Use Cases for Reps - Highspot",
+            "url": "https://www.highspot.com/blog/ai-in-sales-examples/"
+          },
+          {
+            "date": "N/A",
+            "description": "Key Takeaways · What Are AI Tools for Sales... · How Much Do AI Sales and...",
+            "title": "15+ AI Tools for Marketing and Sales in 2026 | Mixmax",
+            "url": "https://www.mixmax.com/blog/ai-tools-for-sales-marketing"
+          },
+          {
+            "date": "N/A",
+            "description": "Personalization At Scale · Predictive Analytics And... · Generative Ai For Marketing",
+            "title": "AI Will Shape the Future of Marketing - Professional & Executive ...",
+            "url": "https://professional.dce.harvard.edu/blog/ai-will-shape-the-future-of-marketing/"
+          },
+          {
+            "date": "N/A",
+            "description": "Key Takeaways · Trends/Disruptions Impact · Market Dynamics · Market Segments",
+            "title": "AI for Sales and Marketing Market Report 2025-2030, by ...",
+            "url": "https://www.marketsandmarkets.com/Market-Reports/ai-for-sales-and-marketing-market-45678598.html"
+          }
+        ]
+      }
+    },
+    {
+      "status": 200,
+      "success": true,
+      "data": {
+        "country": "us",
+        "creditCost": 11.25,
+        "fromCache": 0,
+        "keywords": [
+          {
+            "competition": "LOW",
+            "competitionIndex": 17,
+            "cpc": 12.63,
+            "isSeed": true,
+            "keyword": "all in one ai platform",
+            "momChangePct": null,
+            "monthlySearches": [
+              {
+                "month": 7,
+                "search_volume": 720,
+                "year": 2026
+              },
+              {
+                "month": 6,
+                "search_volume": 480,
+                "year": 2026
+              },
+              {
+                "month": 5,
+                "search_volume": 390,
+                "year": 2026
+              },
+              {
+                "month": 4,
+                "search_volume": 320,
+                "year": 2026
+              },
+              {
+                "month": 3,
+                "search_volume": 480,
+                "year": 2026
+              },
+              {
+                "month": 2,
+                "search_volume": 480,
+                "year": 2026
+              },
+              {
+                "month": 1,
+                "search_volume": 390,
+                "year": 2026
+              },
+              {
+                "month": 12,
+                "search_volume": 1000,
+                "year": 2025
+              },
+              {
+                "month": 11,
+                "search_volume": 480,
+                "year": 2025
+              },
+              {
+                "month": 10,
+                "search_volume": 320,
+                "year": 2025
+              },
+              {
+                "month": 9,
+                "search_volume": 320,
+                "year": 2025
+              },
+              {
+                "month": 8,
+                "search_volume": 390,
+                "year": 2025
+              }
+            ],
+            "saved": false,
+            "trend": null,
+            "volume": 480,
+            "volumeSource": "dataforseo"
+          },
+          {
+            "competition": "MEDIUM",
+            "competitionIndex": 59,
+            "cpc": 11.44,
+            "isSeed": false,
+            "keyword": "best all in one ai platform",
+            "momChangePct": null,
+            "monthlySearches": [
+              {
+                "month": 7,
+                "search_volume": 170,
+                "year": 2026
+              },
+              {
+                "month": 6,
+                "search_volume": 210,
+                "year": 2026
+              },
+              {
+                "month": 5,
+                "search_volume": 170,
+                "year": 2026
+              },
+              {
+                "month": 4,
+                "search_volume": 260,
+                "year": 2026
+              },
+              {
+                "month": 3,
+                "search_volume": 260,
+                "year": 2026
+              },
+              {
+                "month": 2,
+                "search_volume": 210,
+                "year": 2026
+              },
+              {
+                "month": 1,
+                "search_volume": 170,
+                "year": 2026
+              },
+              {
+                "month": 12,
+                "search_volume": 140,
+                "year": 2025
+              },
+              {
+                "month": 11,
+                "search_volume": 140,
+                "year": 2025
+              },
+              {
+                "month": 10,
+                "search_volume": 90,
+                "year": 2025
+              },
+              {
+                "month": 9,
+                "search_volume": 110,
+                "year": 2025
+              },
+              {
+                "month": 8,
+                "search_volume": 140,
+                "year": 2025
+              }
+            ],
+            "saved": false,
+            "trend": null,
+            "volume": 170,
+            "volumeSource": "dataforseo"
+          },
+          {
+            "competition": "HIGH",
+            "competitionIndex": 80,
+            "cpc": 7.56,
+            "isSeed": false,
+            "keyword": "free all in one ai platform",
+            "momChangePct": null,
+            "monthlySearches": [
+              {
+                "month": 7,
+                "search_volume": 10,
+                "year": 2026
+              },
+              {
+                "month": 6,
+                "search_volume": 10,
+                "year": 2026
+              },
+              {
+                "month": 5,
+                "search_volume": 10,
+                "year": 2026
+              },
+              {
+                "month": 4,
+                "search_volume": 10,
+                "year": 2026
+              },
+              {
+                "month": 3,
+                "search_volume": 10,
+                "year": 2026
+              },
+              {
+                "month": 2,
+                "search_volume": 0,
+                "year": 2026
+              },
+              {
+                "month": 1,
+                "search_volume": 0,
+                "year": 2026
+              },
+              {
+                "month": 12,
+                "search_volume": 0,
+                "year": 2025
+              },
+              {
+                "month": 11,
+                "search_volume": 0,
+                "year": 2025
+              },
+              {
+                "month": 10,
+                "search_volume": 0,
+                "year": 2025
+              },
+              {
+                "month": 9,
+                "search_volume": 0,
+                "year": 2025
+              },
+              {
+                "month": 8,
+                "search_volume": 0,
+                "year": 2025
+              }
+            ],
+            "saved": false,
+            "trend": null,
+            "volume": 10,
+            "volumeSource": "dataforseo"
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "top all in one ai platform",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "how to all in one ai platform",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "what is all in one ai platform",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "why all in one ai platform",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "all in one ai platform vs",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "all in one ai platform alternatives",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "all in one ai platform pricing",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "all in one ai platform cost",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "all in one ai platform review",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "all in one ai platform reviews",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "all in one ai platform examples",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "all in one ai platform template",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "all in one ai platform software",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "all in one ai platform tools",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "all in one ai platform services",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "all in one ai platform for small business",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "all in one ai platform near me",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "all in one ai platform guide",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "all in one ai platform tutorial",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "all in one ai platform checklist",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "all in one ai platform comparison",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          }
+        ],
+        "language": "en",
+        "purchased": true,
+        "requested": 24,
+        "seed": "all in one ai platform"
+      }
+    },
+    {
+      "status": 200,
+      "success": true,
+      "data": {
+        "country": "us",
+        "creditCost": 11.25,
+        "fromCache": 3,
+        "keywords": [
+          {
+            "competition": "LOW",
+            "competitionIndex": 1,
+            "cpc": 18.11,
+            "isSeed": true,
+            "keyword": "white label ai platform",
+            "momChangePct": 7160,
+            "monthlySearches": [
+              {
+                "month": 8,
+                "search_volume": 10,
+                "year": 2025
+              },
+              {
+                "month": 9,
+                "search_volume": 20,
+                "year": 2025
+              },
+              {
+                "month": 10,
+                "search_volume": 10,
+                "year": 2025
+              },
+              {
+                "month": 11,
+                "search_volume": 10,
+                "year": 2025
+              },
+              {
+                "month": 12,
+                "search_volume": 10,
+                "year": 2025
+              },
+              {
+                "month": 1,
+                "search_volume": 70,
+                "year": 2026
+              },
+              {
+                "month": 2,
+                "search_volume": 30,
+                "year": 2026
+              },
+              {
+                "month": 3,
+                "search_volume": 10,
+                "year": 2026
+              },
+              {
+                "month": 4,
+                "search_volume": 10,
+                "year": 2026
+              },
+              {
+                "month": 5,
+                "search_volume": 20,
+                "year": 2026
+              },
+              {
+                "month": 6,
+                "search_volume": 10,
+                "year": 2026
+              },
+              {
+                "month": 7,
+                "search_volume": 3600,
+                "year": 2026
+              }
+            ],
+            "saved": false,
+            "trend": "rising",
+            "volume": 320,
+            "volumeSource": "google"
+          },
+          {
+            "competition": null,
+            "competitionIndex": 0,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "best white label ai platform",
+            "momChangePct": null,
+            "monthlySearches": [],
+            "saved": false,
+            "trend": "unknown",
+            "volume": 0,
+            "volumeSource": "google"
+          },
+          {
+            "competition": null,
+            "competitionIndex": 0,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "white label ai platform comparison",
+            "momChangePct": null,
+            "monthlySearches": [
+              {
+                "month": 6,
+                "search_volume": null,
+                "year": 2026
+              },
+              {
+                "month": 5,
+                "search_volume": null,
+                "year": 2026
+              },
+              {
+                "month": 4,
+                "search_volume": null,
+                "year": 2026
+              },
+              {
+                "month": 3,
+                "search_volume": null,
+                "year": 2026
+              },
+              {
+                "month": 2,
+                "search_volume": null,
+                "year": 2026
+              },
+              {
+                "month": 1,
+                "search_volume": null,
+                "year": 2026
+              },
+              {
+                "month": 12,
+                "search_volume": null,
+                "year": 2025
+              },
+              {
+                "month": 11,
+                "search_volume": null,
+                "year": 2025
+              },
+              {
+                "month": 10,
+                "search_volume": null,
+                "year": 2025
+              },
+              {
+                "month": 9,
+                "search_volume": null,
+                "year": 2025
+              },
+              {
+                "month": 8,
+                "search_volume": null,
+                "year": 2025
+              },
+              {
+                "month": 7,
+                "search_volume": null,
+                "year": 2025
+              }
+            ],
+            "saved": false,
+            "trend": "unknown",
+            "volume": 0,
+            "volumeSource": "google"
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "top white label ai platform",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "how to white label ai platform",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "what is white label ai platform",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "why white label ai platform",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "white label ai platform vs",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "white label ai platform alternatives",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "white label ai platform pricing",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "white label ai platform cost",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "white label ai platform review",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "white label ai platform reviews",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "white label ai platform examples",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "white label ai platform template",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "white label ai platform software",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "white label ai platform tools",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "white label ai platform services",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "white label ai platform for small business",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "white label ai platform near me",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "free white label ai platform",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "white label ai platform guide",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "white label ai platform tutorial",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "white label ai platform checklist",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          }
+        ],
+        "language": "en",
+        "purchased": true,
+        "requested": 21,
+        "seed": "white label ai platform"
+      }
+    },
+    {
+      "status": 200,
+      "success": true,
+      "data": {
+        "country": "us",
+        "creditCost": 11.25,
+        "fromCache": 0,
+        "keywords": [
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": true,
+            "keyword": "headless gtm",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "best headless gtm",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "top headless gtm",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "how to headless gtm",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "what is headless gtm",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "why headless gtm",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "headless gtm vs",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "headless gtm alternatives",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "headless gtm pricing",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "headless gtm cost",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "headless gtm review",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "headless gtm reviews",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "headless gtm examples",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "headless gtm template",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "headless gtm software",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "headless gtm tools",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "headless gtm services",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "headless gtm for small business",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "headless gtm near me",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "free headless gtm",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "headless gtm guide",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "headless gtm tutorial",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "headless gtm checklist",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          },
+          {
+            "competition": null,
+            "competitionIndex": null,
+            "cpc": null,
+            "isSeed": false,
+            "keyword": "headless gtm comparison",
+            "momChangePct": null,
+            "monthlySearches": null,
+            "saved": false,
+            "trend": null,
+            "volume": null,
+            "volumeSource": null
+          }
+        ],
+        "language": "en",
+        "purchased": true,
+        "requested": 24,
+        "seed": "headless gtm"
+      }
+    }
+  ]
+}
