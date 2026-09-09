@@ -196,9 +196,792 @@
       },
       {
         "tab": "API Reference",
-        "openapi": "openapi.json"
+        "openapi": "openapi.json",
+        "pages": [
+          {
+            "group": "Agents",
+            "expanded": false,
+            "pages": [
+              "DELETE /api/v0/agents/{agentId}",
+              "GET /api/v0/agents",
+              "GET /api/v0/agents/{agentId}",
+              "GET /api/v0/conversations",
+              "GET /api/v0/conversations/{agentId}/{sessionId}",
+              "GET /api/v0/conversations/{agentId}/{sessionId}/check",
+              "POST /api/v0/agents",
+              "PUT /api/v0/agents/{agentId}"
+            ]
+          },
+          {
+            "group": "Audio",
+            "expanded": false,
+            "pages": [
+              "DELETE /api/v0/audio/{audioId}",
+              "GET /api/v0/audio",
+              "GET /api/v0/audio/models",
+              "GET /api/v0/audio/voices",
+              "POST /api/v0/audio"
+            ]
+          },
+          {
+            "group": "Brand Kit",
+            "expanded": false,
+            "pages": [
+              "DELETE /api/v0/brand-kits/{brandKitId}",
+              "GET /api/v0/brand-kits",
+              "GET /api/v0/brand-kits/{brandKitId}",
+              "POST /api/v0/brand-kits",
+              "POST /api/v0/brand-kits/build",
+              "POST /api/v0/brand-kits/create",
+              "POST /api/v0/brand-kits/test",
+              "POST /api/v0/brand-kits/upload",
+              "PUT /api/v0/brand-kits"
+            ]
+          },
+          {
+            "group": "Browser",
+            "expanded": false,
+            "pages": [
+              "DELETE /api/v0/browser-task/{task_id}",
+              "GET /api/v0/browser-integrations",
+              "GET /api/v0/browser-task/{task_id}",
+              "POST /api/v0/browser-task"
+            ]
+          },
+          {
+            "group": "Canvas",
+            "expanded": false,
+            "pages": [
+              "GET /api/v0/stock-music/search",
+              "GET /api/v0/stock-videos/search",
+              "POST /api/v0/audio/music",
+              "POST /api/v0/canvas",
+              "POST /api/v0/stock-music/import"
+            ]
+          },
+          {
+            "group": "Chat",
+            "expanded": false,
+            "pages": [
+              "GET /api/v0/claude/v1/models",
+              "POST /api/v0/chat/completions",
+              "POST /api/v0/claude/v1/messages",
+              "POST /api/v0/claude/v1/messages/count_tokens"
+            ]
+          },
+          {
+            "group": "Companies",
+            "expanded": false,
+            "pages": [
+              "DELETE /api/v0/companies/{companyId}",
+              "GET /api/v0/companies",
+              "GET /api/v0/companies/{companyId}",
+              "GET /api/v0/companies/{companyId}/tags",
+              "POST /api/v0/companies",
+              "POST /api/v0/companies/order",
+              "POST /api/v0/companies/{companyId}/leave",
+              "PUT /api/v0/companies/{companyId}/features",
+              "PUT /api/v0/companies/{companyId}/transfer-ownership"
+            ]
+          },
+          {
+            "group": "Company Users",
+            "expanded": false,
+            "pages": [
+              "DELETE /api/v0/company_users/{memberId}",
+              "GET /api/v0/company_users/{companyId}",
+              "GET /api/v0/company_users/{companyId}/my-role",
+              "GET /api/v0/company_users/{memberId}/subscription-type",
+              "POST /api/v0/company_users",
+              "POST /api/v0/company_users/{memberId}/resend-invite",
+              "PUT /api/v0/company_users/{memberId}",
+              "PUT /api/v0/company_users/{memberId}/features"
+            ]
+          },
+          {
+            "group": "Content",
+            "expanded": false,
+            "pages": [
+              "DELETE /api/v0/content/brand-voices/{voiceId}",
+              "DELETE /api/v0/content/campaigns/{contentCampaignId}",
+              "DELETE /api/v0/content/canvases/{canvas_id}",
+              "DELETE /api/v0/content/canvases/{canvas_id}/threads/{thread_id}",
+              "DELETE /api/v0/content/profiles/{profileId}",
+              "DELETE /api/v0/content/prompts/{promptId}",
+              "DELETE /api/v0/content/strategy/{strategyId}",
+              "DELETE /api/v0/content/{contentId}",
+              "GET /api/v0/content",
+              "GET /api/v0/content/assigned",
+              "GET /api/v0/content/brand-voices",
+              "GET /api/v0/content/brand-voices/{voiceId}",
+              "GET /api/v0/content/campaigns",
+              "GET /api/v0/content/canvases",
+              "GET /api/v0/content/canvases/{canvas_id}",
+              "GET /api/v0/content/canvases/{canvas_id}/threads",
+              "GET /api/v0/content/canvases/{canvas_id}/threads/{thread_id}",
+              "GET /api/v0/content/profiles",
+              "GET /api/v0/content/profiles/{profileId}",
+              "GET /api/v0/content/prompts",
+              "GET /api/v0/content/prompts/public",
+              "GET /api/v0/content/prompts/{promptId}",
+              "GET /api/v0/content/statistics",
+              "GET /api/v0/content/strategies",
+              "GET /api/v0/content/strategy",
+              "GET /api/v0/content/strategy/{strategyId}",
+              "GET /api/v0/content/{contentId}/images",
+              "GET /api/v0/content/{contentId}/pdf",
+              "PATCH /api/v0/content/canvases/{canvas_id}",
+              "PATCH /api/v0/content/canvases/{canvas_id}/threads/{thread_id}",
+              "POST /api/v0/content",
+              "POST /api/v0/content/ai-snippet",
+              "POST /api/v0/content/brand-voices",
+              "POST /api/v0/content/brand-voices/generate",
+              "POST /api/v0/content/brand-voices/generate-from-linkedin",
+              "POST /api/v0/content/bulk-schedule",
+              "POST /api/v0/content/campaigns",
+              "POST /api/v0/content/campaigns/{contentCampaignId}/trigger",
+              "POST /api/v0/content/canvases",
+              "POST /api/v0/content/canvases/{canvas_id}/chat",
+              "POST /api/v0/content/canvases/{canvas_id}/render",
+              "POST /api/v0/content/canvases/{canvas_id}/render-video",
+              "POST /api/v0/content/canvases/{canvas_id}/threads",
+              "POST /api/v0/content/canvases/{canvas_id}/threads/{thread_id}/stop",
+              "POST /api/v0/content/canvases/{canvas_id}/upload",
+              "POST /api/v0/content/export",
+              "POST /api/v0/content/generate",
+              "POST /api/v0/content/generate-from-idea",
+              "POST /api/v0/content/humanize",
+              "POST /api/v0/content/import",
+              "POST /api/v0/content/profiles",
+              "POST /api/v0/content/profiles/generate",
+              "POST /api/v0/content/prompts",
+              "POST /api/v0/content/prompts/{promptId}/clone",
+              "POST /api/v0/content/seo-score",
+              "POST /api/v0/content/spam-check",
+              "POST /api/v0/content/spintax",
+              "POST /api/v0/content/strategy",
+              "POST /api/v0/content/strategy/generate",
+              "POST /api/v0/content/{contentId}",
+              "POST /api/v0/content/{contentId}/assign",
+              "POST /api/v0/content/{contentId}/publish",
+              "POST /api/v0/content/{contentId}/select-hook",
+              "PUT /api/v0/content/{contentId}/assignment-status",
+              "PUT /api/v0/content/{contentId}/schedule",
+              "PUT /api/v0/content/{contentId}/status"
+            ]
+          },
+          {
+            "group": "Content Research",
+            "expanded": false,
+            "pages": [
+              "DELETE /api/v0/research/projects/{projectId}",
+              "GET /api/v0/research/opportunities",
+              "GET /api/v0/research/opportunities/{opportunityId}",
+              "GET /api/v0/research/prefill",
+              "GET /api/v0/research/projects",
+              "GET /api/v0/research/projects/{projectId}/runs",
+              "PATCH /api/v0/research/projects/{projectId}",
+              "POST /api/v0/research/opportunities/{opportunityId}/dismiss",
+              "POST /api/v0/research/opportunities/{opportunityId}/generate",
+              "POST /api/v0/research/opportunities/{opportunityId}/restore",
+              "POST /api/v0/research/opportunities/{opportunityId}/track",
+              "POST /api/v0/research/projects",
+              "POST /api/v0/research/projects/{projectId}/run"
+            ]
+          },
+          {
+            "group": "Departments",
+            "expanded": false,
+            "pages": [
+              "DELETE /api/v0/departments/{department_id}",
+              "GET /api/v0/company-users/{company_user_id}/departments",
+              "GET /api/v0/departments",
+              "GET /api/v0/employees/{employee_id}/departments",
+              "POST /api/v0/departments",
+              "PUT /api/v0/company-users/{company_user_id}/departments",
+              "PUT /api/v0/departments/{department_id}",
+              "PUT /api/v0/employees/{employee_id}/departments"
+            ]
+          },
+          {
+            "group": "Documentation",
+            "expanded": false,
+            "pages": [
+              "GET /api/v0/documentation",
+              "GET /api/v0/documentation/categories",
+              "GET /api/v0/documentation/search",
+              "GET /api/v0/documentation/{pageId}",
+              "POST /api/v0/documentation/requests"
+            ]
+          },
+          {
+            "group": "Documents",
+            "expanded": false,
+            "pages": [
+              "DELETE /api/v0/documents/folders/{folderId}",
+              "DELETE /api/v0/documents/{documentId}",
+              "GET /api/v0/documents",
+              "GET /api/v0/documents/folders",
+              "GET /api/v0/documents/recently-deleted",
+              "GET /api/v0/documents/search",
+              "GET /api/v0/documents/{companyId}/document/{documentId}",
+              "GET /api/v0/documents/{companyId}/{documentId}",
+              "GET /api/v0/documents/{documentId}/content",
+              "GET /api/v0/documents/{documentId}/details",
+              "POST /api/v0/documents",
+              "POST /api/v0/documents/convert",
+              "POST /api/v0/documents/copy",
+              "POST /api/v0/documents/create",
+              "POST /api/v0/documents/folders",
+              "POST /api/v0/documents/move",
+              "POST /api/v0/documents/search",
+              "POST /api/v0/documents/upload",
+              "POST /api/v0/documents/{documentId}/restore",
+              "PUT /api/v0/documents/folders/{folderId}/move",
+              "PUT /api/v0/documents/folders/{folderId}/rename",
+              "PUT /api/v0/documents/folders/{folderId}/tags",
+              "PUT /api/v0/documents/{documentId}/update"
+            ]
+          },
+          {
+            "group": "Employees",
+            "expanded": false,
+            "pages": [
+              "DELETE /api/v0/employees/{employeeId}",
+              "GET /api/v0/companies/{companyId}/employees",
+              "GET /api/v0/employee-personas",
+              "GET /api/v0/employee-personas/categories",
+              "GET /api/v0/employee-personas/search",
+              "GET /api/v0/employee-personas/{personaId}",
+              "GET /api/v0/employees",
+              "GET /api/v0/employees/chat/async/{chat_id}",
+              "GET /api/v0/employees/{employeeId}",
+              "POST /api/v0/employees",
+              "POST /api/v0/employees/chat",
+              "POST /api/v0/employees/chat/async",
+              "POST /api/v0/employees/create-from-persona",
+              "POST /api/v0/employees/{employeeId}"
+            ]
+          },
+          {
+            "group": "Images",
+            "expanded": false,
+            "pages": [
+              "DELETE /api/v0/images/{imageId}",
+              "GET /api/v0/images",
+              "GET /api/v0/images/models",
+              "GET /api/v0/images/{imageId}",
+              "GET /api/v0/stock-images/providers",
+              "GET /api/v0/stock-images/search",
+              "POST /api/v0/images",
+              "POST /api/v0/images/apply-template",
+              "POST /api/v0/images/upload",
+              "POST /api/v0/stock-images/download"
+            ]
+          },
+          {
+            "group": "Inbox",
+            "expanded": false,
+            "pages": [
+              "DELETE /api/v0/inboxes/{inboxId}",
+              "DELETE /api/v0/inboxes/{inboxId}/drafts/{draftId}",
+              "DELETE /api/v0/inboxes/{inboxId}/warmup",
+              "GET /api/v0/inboxes",
+              "GET /api/v0/inboxes/for-selection",
+              "GET /api/v0/inboxes/messages",
+              "GET /api/v0/inboxes/messages/{messageId}",
+              "GET /api/v0/inboxes/statistics",
+              "GET /api/v0/inboxes/warmup/list",
+              "GET /api/v0/inboxes/{inboxId}/drafts",
+              "GET /api/v0/inboxes/{inboxId}/messages",
+              "POST /api/v0/inbox/compose/generate",
+              "POST /api/v0/inbox/messages/{messageId}/edit-reply",
+              "POST /api/v0/inbox/messages/{messageId}/generate-reply",
+              "POST /api/v0/inbox/messages/{messageId}/reply",
+              "POST /api/v0/inbox/{inboxId}/compose",
+              "POST /api/v0/inboxes",
+              "POST /api/v0/inboxes/bulk-import",
+              "POST /api/v0/inboxes/warmup/analytics",
+              "POST /api/v0/inboxes/warmup/filter-tag",
+              "POST /api/v0/inboxes/{inboxId}/drafts/{draftId}/send",
+              "POST /api/v0/inboxes/{inboxId}/transfer",
+              "POST /api/v0/inboxes/{inboxId}/warmup",
+              "PUT /api/v0/inboxes/{inboxId}"
+            ]
+          },
+          {
+            "group": "Integrations",
+            "expanded": false,
+            "pages": [
+              "GET /api/v0/crm/integrations",
+              "GET /api/v0/integrations/by-type/{integration_type}",
+              "GET /api/v0/integrations/heyreach/campaigns",
+              "GET /api/v0/integrations/meta-ads/{integration_id}/audiences",
+              "GET /api/v0/integrations/twilio/{integration_id}/phone-numbers",
+              "POST /api/v0/integrations/salesforge/sequences",
+              "POST /api/v0/integrations/salesforge/workspaces"
+            ]
+          },
+          {
+            "group": "Keys",
+            "expanded": false,
+            "pages": [
+              "DELETE /api/v0/api_keys",
+              "GET /api/v0/api_keys",
+              "GET /api/v0/api_keys/{companyId}/{name}",
+              "POST /api/v0/api_keys",
+              "PUT /api/v0/api_keys"
+            ]
+          },
+          {
+            "group": "Landing Pages",
+            "expanded": false,
+            "pages": [
+              "DELETE /api/v0/landing-pages/{page_id}",
+              "DELETE /api/v0/landing-pages/{page_id}/threads/{thread_id}",
+              "GET /api/v0/landing-pages",
+              "GET /api/v0/landing-pages/{page_id}",
+              "GET /api/v0/landing-pages/{page_id}/preview",
+              "GET /api/v0/landing-pages/{page_id}/threads",
+              "GET /api/v0/landing-pages/{page_id}/threads/{thread_id}",
+              "PATCH /api/v0/landing-pages/{page_id}",
+              "PATCH /api/v0/landing-pages/{page_id}/threads/{thread_id}",
+              "POST /api/v0/landing-pages",
+              "POST /api/v0/landing-pages/{page_id}/chat",
+              "POST /api/v0/landing-pages/{page_id}/publish",
+              "POST /api/v0/landing-pages/{page_id}/threads",
+              "POST /api/v0/landing-pages/{page_id}/threads/{thread_id}/stop",
+              "POST /api/v0/landing-pages/{page_id}/unpublish",
+              "POST /api/v0/landing-pages/{page_id}/upload",
+              "PUT /api/v0/landing-pages/{page_id}/chat-history",
+              "PUT /api/v0/landing-pages/{page_id}/content"
+            ]
+          },
+          {
+            "group": "Leads",
+            "expanded": false,
+            "pages": [
+              "GET /api/v0/leads/field-options",
+              "GET /api/v0/leads/segments",
+              "POST /api/v0/leads",
+              "POST /api/v0/leads/enrich",
+              "POST /api/v0/leads/import"
+            ]
+          },
+          {
+            "group": "Lists",
+            "expanded": false,
+            "pages": [
+              "DELETE /api/v0/lead-searches/{searchId}",
+              "DELETE /api/v0/lists/{listId}",
+              "DELETE /api/v0/lists/{listId}/action/{actionId}",
+              "DELETE /api/v0/lists/{listId}/header/{headerId}",
+              "GET /api/v0/lead-searches",
+              "GET /api/v0/lead-searches/{searchId}",
+              "GET /api/v0/lists",
+              "GET /api/v0/lists/actions",
+              "GET /api/v0/lists/tasks/{taskId}",
+              "GET /api/v0/lists/{listId}",
+              "GET /api/v0/lists/{listId}/action/{actionId}/queue-status",
+              "GET /api/v0/lists/{listId}/action/{actionId}/summary",
+              "GET /api/v0/lists/{listId}/export",
+              "GET /api/v0/lists/{listId}/row/{rowId}/history",
+              "GET /api/v0/lists/{listId}/rows",
+              "GET /api/v0/lists/{listId}/rows/new",
+              "GET /api/v0/lists/{listId}/schema",
+              "GET /api/v0/public/lists/{listId}",
+              "GET /api/v0/public/lists/{listId}/rows",
+              "POST /api/v0/lead-searches/sales-navigator",
+              "POST /api/v0/lead-searches/{searchId}/import",
+              "POST /api/v0/lists",
+              "POST /api/v0/lists/{listId}/action",
+              "POST /api/v0/lists/{listId}/action/run",
+              "POST /api/v0/lists/{listId}/action/stop",
+              "POST /api/v0/lists/{listId}/deduplicate",
+              "POST /api/v0/lists/{listId}/delete",
+              "POST /api/v0/lists/{listId}/duplicate",
+              "POST /api/v0/lists/{listId}/header",
+              "POST /api/v0/lists/{listId}/import/linkedin-post",
+              "POST /api/v0/lists/{listId}/lookup",
+              "POST /api/v0/lists/{listId}/move-to-list",
+              "POST /api/v0/lists/{listId}/move-to-sequence",
+              "POST /api/v0/lists/{listId}/row",
+              "POST /api/v0/lists/{listId}/rows",
+              "PUT /api/v0/lists",
+              "PUT /api/v0/lists/{listId}/header/{headerId}",
+              "PUT /api/v0/lists/{listId}/row",
+              "PUT /api/v0/lists/{listId}/rows"
+            ]
+          },
+          {
+            "group": "Marketing Campaigns",
+            "expanded": false,
+            "pages": [
+              "DELETE /api/v0/marketing-campaign-templates/{templateId}",
+              "DELETE /api/v0/marketing-campaigns/{campaignId}",
+              "DELETE /api/v0/marketing-campaigns/{campaignId}/recipients/{recipientId}",
+              "GET /api/v0/marketing-campaign-templates",
+              "GET /api/v0/marketing-campaign-templates/{templateId}",
+              "GET /api/v0/marketing-campaign-templates/{templateId}/versions",
+              "GET /api/v0/marketing-campaigns",
+              "GET /api/v0/marketing-campaigns/statistics",
+              "GET /api/v0/marketing-campaigns/timeseries",
+              "GET /api/v0/marketing-campaigns/{campaignId}",
+              "GET /api/v0/marketing-campaigns/{campaignId}/recipients",
+              "GET /api/v0/marketing-campaigns/{campaignId}/versions",
+              "PATCH /api/v0/marketing-campaign-templates/{templateId}",
+              "PATCH /api/v0/marketing-campaigns/{campaignId}",
+              "POST /api/v0/marketing-campaign-templates",
+              "POST /api/v0/marketing-campaign-templates/{templateId}/versions/{versionId}/restore",
+              "POST /api/v0/marketing-campaigns",
+              "POST /api/v0/marketing-campaigns/{campaignId}/cancel",
+              "POST /api/v0/marketing-campaigns/{campaignId}/schedule",
+              "POST /api/v0/marketing-campaigns/{campaignId}/send-now",
+              "POST /api/v0/marketing-campaigns/{campaignId}/test-send",
+              "POST /api/v0/marketing-campaigns/{campaignId}/versions/{versionId}/restore"
+            ]
+          },
+          {
+            "group": "Mcp",
+            "expanded": false,
+            "pages": [
+              "GET /api/v0/mcp/info",
+              "GET /api/v0/mcp/tools/list",
+              "POST /api/v0/mcp/tools/call"
+            ]
+          },
+          {
+            "group": "Memories",
+            "expanded": false,
+            "pages": [
+              "DELETE /api/v0/companies/{companyId}/memories/{memoryId}",
+              "GET /api/v0/companies/{companyId}/memories",
+              "GET /api/v0/companies/{companyId}/memories/{memoryId}",
+              "PATCH /api/v0/companies/{companyId}/memories/{memoryId}/toggle",
+              "POST /api/v0/companies/{companyId}/memories",
+              "PUT /api/v0/companies/{companyId}/memories/{memoryId}"
+            ]
+          },
+          {
+            "group": "Models",
+            "expanded": false,
+            "pages": [
+              "GET /api/v0/models"
+            ]
+          },
+          {
+            "group": "Monitors",
+            "expanded": false,
+            "pages": [
+              "DELETE /api/v0/monitors/{monitor_id}",
+              "GET /api/v0/mentions",
+              "GET /api/v0/mentions/stats",
+              "GET /api/v0/mentions/stats/timeseries",
+              "GET /api/v0/mentions/{mention_id}",
+              "GET /api/v0/monitors",
+              "GET /api/v0/monitors/{monitor_id}",
+              "POST /api/v0/mentions/{mention_id}/dismiss",
+              "POST /api/v0/mentions/{mention_id}/generate-replies",
+              "POST /api/v0/monitors",
+              "POST /api/v0/monitors/{monitor_id}/pause",
+              "POST /api/v0/monitors/{monitor_id}/resume",
+              "POST /api/v0/monitors/{monitor_id}/run",
+              "PUT /api/v0/monitors/{monitor_id}"
+            ]
+          },
+          {
+            "group": "Organizations",
+            "expanded": false,
+            "pages": [
+              "DELETE /api/v0/organizations/{orgId}/members/{memberUid}",
+              "GET /api/v0/organizations",
+              "GET /api/v0/organizations/{orgId}/members",
+              "POST /api/v0/organizations",
+              "POST /api/v0/organizations/{orgId}/members",
+              "PUT /api/v0/organizations/{orgId}",
+              "PUT /api/v0/organizations/{orgId}/members/{memberUid}"
+            ]
+          },
+          {
+            "group": "People",
+            "expanded": false,
+            "pages": [
+              "GET /api/v0/people",
+              "GET /api/v0/people/search",
+              "GET /api/v0/people/stats",
+              "GET /api/v0/people/{personId}",
+              "GET /api/v0/people/{personId}/activity"
+            ]
+          },
+          {
+            "group": "Projects",
+            "expanded": false,
+            "pages": [
+              "DELETE /api/v0/chats/{chat_id}/project",
+              "DELETE /api/v0/projects/{project_id}",
+              "DELETE /api/v0/projects/{project_id}/files/{file_id}",
+              "GET /api/v0/chats/{chat_id}/project",
+              "GET /api/v0/projects",
+              "GET /api/v0/projects/{project_id}",
+              "GET /api/v0/projects/{project_id}/files",
+              "GET /api/v0/projects/{project_id}/files/{file_id}",
+              "GET /api/v0/projects/{project_id}/files/{file_id}/export",
+              "GET /api/v0/projects/{project_id}/tree",
+              "PATCH /api/v0/projects/{project_id}",
+              "POST /api/v0/chats/{chat_id}/project",
+              "POST /api/v0/projects",
+              "POST /api/v0/projects/{project_id}/files",
+              "POST /api/v0/projects/{project_id}/files/cp",
+              "POST /api/v0/projects/{project_id}/files/mkdir",
+              "POST /api/v0/projects/{project_id}/files/mv",
+              "POST /api/v0/projects/{project_id}/files/{file_id}/publish",
+              "POST /api/v0/projects/{project_id}/files/{file_id}/unpublish",
+              "PUT /api/v0/projects/{project_id}/files/{file_id}"
+            ]
+          },
+          {
+            "group": "SEO",
+            "expanded": false,
+            "pages": [
+              "DELETE /api/v0/seo/audits/{auditId}",
+              "DELETE /api/v0/seo/keywords/{keywordId}/saved",
+              "DELETE /api/v0/seo/projects/{projectId}",
+              "GET /api/v0/seo/audits",
+              "GET /api/v0/seo/audits/{auditId}",
+              "GET /api/v0/seo/audits/{auditId}/pages",
+              "GET /api/v0/seo/domain/overview",
+              "GET /api/v0/seo/keywords",
+              "GET /api/v0/seo/keywords/research",
+              "GET /api/v0/seo/projects",
+              "GET /api/v0/seo/projects/{projectId}",
+              "GET /api/v0/seo/projects/{projectId}/ai-visibility",
+              "GET /api/v0/seo/projects/{projectId}/ai-visibility/trend",
+              "GET /api/v0/seo/projects/{projectId}/backlink-history",
+              "GET /api/v0/seo/projects/{projectId}/backlinks",
+              "GET /api/v0/seo/projects/{projectId}/competitors",
+              "GET /api/v0/seo/projects/{projectId}/lighthouse",
+              "GET /api/v0/seo/projects/{projectId}/lighthouse/{snapshotId}",
+              "GET /api/v0/seo/projects/{projectId}/link-profile",
+              "GET /api/v0/seo/projects/{projectId}/rank-history",
+              "GET /api/v0/seo/search-console/connections",
+              "PATCH /api/v0/seo/keywords/{keywordId}",
+              "PATCH /api/v0/seo/projects/{projectId}",
+              "POST /api/v0/seo/audits",
+              "POST /api/v0/seo/audits/{auditId}/ai-readiness",
+              "POST /api/v0/seo/audits/{auditId}/cancel",
+              "POST /api/v0/seo/dataforseo",
+              "POST /api/v0/seo/domain/compare",
+              "POST /api/v0/seo/domains-by-html-terms",
+              "POST /api/v0/seo/keywords/saved",
+              "POST /api/v0/seo/projects",
+              "POST /api/v0/seo/projects/ensure",
+              "POST /api/v0/seo/projects/estimate",
+              "POST /api/v0/seo/projects/{projectId}/pause",
+              "POST /api/v0/seo/projects/{projectId}/resume",
+              "POST /api/v0/seo/projects/{projectId}/run",
+              "POST /api/v0/seo/search-console/preview"
+            ]
+          },
+          {
+            "group": "Scheduled Tasks",
+            "expanded": false,
+            "pages": [
+              "DELETE /api/v0/scheduled-tasks/{task_id}",
+              "GET /api/v0/scheduled-task-executions",
+              "GET /api/v0/scheduled-task-templates",
+              "GET /api/v0/scheduled-task-templates/{template_id}/setup",
+              "GET /api/v0/scheduled-tasks",
+              "GET /api/v0/scheduled-tasks/summary",
+              "GET /api/v0/scheduled-tasks/{task_id}",
+              "GET /api/v0/scheduled-tasks/{task_id}/daily-logs",
+              "GET /api/v0/scheduled-tasks/{task_id}/evaluate",
+              "GET /api/v0/scheduled-tasks/{task_id}/executions",
+              "POST /api/v0/scheduled-tasks",
+              "POST /api/v0/scheduled-tasks/{task_id}/duplicate",
+              "POST /api/v0/scheduled-tasks/{task_id}/evaluate",
+              "POST /api/v0/scheduled-tasks/{task_id}/pause",
+              "POST /api/v0/scheduled-tasks/{task_id}/reset",
+              "POST /api/v0/scheduled-tasks/{task_id}/resume",
+              "POST /api/v0/scheduled-tasks/{task_id}/run",
+              "POST /api/v0/scheduled-tasks/{task_id}/upgrade-template",
+              "PUT /api/v0/scheduled-tasks/{task_id}"
+            ]
+          },
+          {
+            "group": "Sequences",
+            "expanded": false,
+            "pages": [
+              "DELETE /api/v0/sequences/profiles/{profileId}",
+              "DELETE /api/v0/sequences/{sequenceId}",
+              "DELETE /api/v0/sequences/{sequenceId}/steps/{stepId}",
+              "DELETE /api/v0/unsubscribes/{unsubscribeId}",
+              "GET /api/v0/sequence-steps/{stepId}/details",
+              "GET /api/v0/sequences",
+              "GET /api/v0/sequences/executions/all",
+              "GET /api/v0/sequences/executions/{executionId}",
+              "GET /api/v0/sequences/hourly-metrics",
+              "GET /api/v0/sequences/metrics",
+              "GET /api/v0/sequences/profiles",
+              "GET /api/v0/sequences/step-types",
+              "GET /api/v0/sequences/{sequenceId}",
+              "GET /api/v0/sequences/{sequenceId}/activity",
+              "GET /api/v0/sequences/{sequenceId}/activity/export",
+              "GET /api/v0/sequences/{sequenceId}/available-fields",
+              "GET /api/v0/sequences/{sequenceId}/executions",
+              "GET /api/v0/sequences/{sequenceId}/executions/{executionId}/preview",
+              "GET /api/v0/sequences/{sequenceId}/hourly-metrics",
+              "GET /api/v0/sequences/{sequenceId}/members",
+              "GET /api/v0/sequences/{sequenceId}/members/{memberId}/profile",
+              "GET /api/v0/sequences/{sequenceId}/members/{sequenceMemberId}/timeline",
+              "GET /api/v0/sequences/{sequenceId}/step-metrics",
+              "GET /api/v0/sequences/{sequenceId}/steps/member-counts",
+              "GET /api/v0/unsubscribes",
+              "PATCH /api/v0/sequences/{sequenceId}/steps/{stepId}",
+              "POST /api/v0/sequences",
+              "POST /api/v0/sequences/executions/approve",
+              "POST /api/v0/sequences/executions/delete",
+              "POST /api/v0/sequences/executions/execute",
+              "POST /api/v0/sequences/executions/skip",
+              "POST /api/v0/sequences/executions/{executionId}/rebuild",
+              "POST /api/v0/sequences/executions/{executionId}/rerun",
+              "POST /api/v0/sequences/generate",
+              "POST /api/v0/sequences/profiles",
+              "POST /api/v0/sequences/profiles/bulk-update",
+              "POST /api/v0/sequences/profiles/bulk-update-signature",
+              "POST /api/v0/sequences/{sequenceId}/duplicate",
+              "POST /api/v0/sequences/{sequenceId}/executions/approve",
+              "POST /api/v0/sequences/{sequenceId}/executions/delete",
+              "POST /api/v0/sequences/{sequenceId}/executions/execute",
+              "POST /api/v0/sequences/{sequenceId}/executions/{executionId}",
+              "POST /api/v0/sequences/{sequenceId}/import-from-list",
+              "POST /api/v0/sequences/{sequenceId}/manual-metric",
+              "POST /api/v0/sequences/{sequenceId}/members",
+              "POST /api/v0/sequences/{sequenceId}/members/{sequenceMemberId}/remove",
+              "POST /api/v0/sequences/{sequenceId}/members/{sequenceMemberId}/trigger",
+              "POST /api/v0/sequences/{sequenceId}/steps",
+              "POST /api/v0/sequences/{sequenceId}/steps/{stepId}/test",
+              "POST /api/v0/sequences/{sequenceId}/steps/{stepId}/test/send",
+              "POST /api/v0/unsubscribes",
+              "POST /api/v0/unsubscribes/bulk",
+              "POST /api/v0/unsubscribes/check",
+              "PUT /api/v0/sequences/profiles/{profileId}"
+            ]
+          },
+          {
+            "group": "Skills",
+            "expanded": false,
+            "pages": [
+              "GET /api/v0/skills",
+              "GET /api/v0/skills/{slug}"
+            ]
+          },
+          {
+            "group": "Support",
+            "expanded": false,
+            "pages": [
+              "GET /api/v0/support/tickets",
+              "GET /api/v0/support/tickets/{ticketId}",
+              "GET /api/v0/support/tickets/{ticketId}/messages",
+              "POST /api/v0/support/tickets",
+              "POST /api/v0/support/tickets/{ticketId}/messages",
+              "PUT /api/v0/support/tickets/{ticketId}"
+            ]
+          },
+          {
+            "group": "Tags",
+            "expanded": false,
+            "pages": [
+              "DELETE /api/v0/tags/{tag_id}",
+              "GET /api/v0/tags",
+              "POST /api/v0/tags",
+              "PUT /api/v0/tags/{tag_id}"
+            ]
+          },
+          {
+            "group": "Usage",
+            "expanded": false,
+            "pages": [
+              "GET /api/v0/organizations/{orgId}/usage/activity",
+              "GET /api/v0/organizations/{orgId}/usage/histogram",
+              "GET /api/v0/organizations/{orgId}/usage/history",
+              "GET /api/v0/organizations/{orgId}/usage/history/summary",
+              "GET /api/v0/usage",
+              "GET /api/v0/usage/features/last_30_days",
+              "GET /api/v0/usage/histogram/last_30_days",
+              "GET /api/v0/usage/history",
+              "GET /api/v0/usage/history/summary",
+              "GET /api/v0/usage/hours-saved",
+              "GET /api/v0/usage/leaderboard"
+            ]
+          },
+          {
+            "group": "Video",
+            "expanded": false,
+            "pages": [
+              "DELETE /api/v0/videos/{videoId}",
+              "GET /api/v0/videos",
+              "GET /api/v0/videos/models",
+              "GET /api/v0/videos/styles",
+              "GET /api/v0/videos/{videoId}",
+              "GET /api/v0/videos/{videoId}/status",
+              "POST /api/v0/videos"
+            ]
+          },
+          {
+            "group": "Voices",
+            "expanded": false,
+            "pages": [
+              "DELETE /api/v0/voices/{voice_id}",
+              "GET /api/v0/voices",
+              "GET /api/v0/voices/elevenlabs/library",
+              "GET /api/v0/voices/{voice_id}",
+              "POST /api/v0/voices",
+              "POST /api/v0/voices/{voice_id}/test",
+              "PUT /api/v0/voices/{voice_id}"
+            ]
+          },
+          {
+            "group": "Web",
+            "expanded": false,
+            "pages": [
+              "GET /api/v0/web/jobs",
+              "GET /api/v0/web/maps/photos",
+              "GET /api/v0/web/maps/place",
+              "GET /api/v0/web/maps/reviews",
+              "GET /api/v0/web/maps/search",
+              "GET /api/v0/web/news",
+              "GET /api/v0/web/scrape",
+              "GET /api/v0/web/search",
+              "GET /api/v0/web/trends/autocomplete",
+              "POST /api/v0/web/screenshot",
+              "POST /api/v0/web/view"
+            ]
+          },
+          {
+            "group": "Websites",
+            "expanded": false,
+            "pages": [
+              "DELETE /api/v0/websites/{websiteId}/file",
+              "GET /api/v0/websites",
+              "GET /api/v0/websites/{websiteId}/branches",
+              "GET /api/v0/websites/{websiteId}/branches/{branch}/diff",
+              "GET /api/v0/websites/{websiteId}/file",
+              "GET /api/v0/websites/{websiteId}/lighthouse",
+              "GET /api/v0/websites/{websiteId}/pages",
+              "GET /api/v0/websites/{websiteId}/seo-audit",
+              "GET /api/v0/websites/{websiteId}/validate",
+              "PUT /api/v0/websites/{websiteId}/file"
+            ]
+          }
+        ]
       }
     ]
+  },
+  "api": {
+    "openapi": "openapi.json",
+    "params": {
+      "expanded": "closed"
+    }
   },
   "navbar": {
     "primary": {
