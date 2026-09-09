@@ -17333,7 +17333,7 @@
         "operationId": "agents_checkConversationActivity",
         "parameters": [
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -17341,7 +17341,7 @@
             }
           },
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -17403,7 +17403,7 @@
         "operationId": "agents_getConversationDetails",
         "parameters": [
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -17411,7 +17411,7 @@
             }
           },
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18076,6 +18076,215 @@
         },
         "summary": "List the available smart-list table actions (the action catalog).",
         "description": "Returns every action (and lookup column) that can be attached to a list \u2014\nits title, description, icon, and a template of default parameters. This is\nthe source of truth for the \"Add action\" menu and for AI agents deciding\nwhich action to configure on a column.\n\nAudience actions (Audience Enrichment, Find Leads at Company) are omitted\nwhen the company does not have the Audience Builder feature enabled."
+      }
+    },
+    "/api/v0/lists/{listId}/duplicate": {
+      "post": {
+        "tags": [
+          "Lists"
+        ],
+        "operationId": "lists_duplicateList",
+        "parameters": [
+          {
+            "name": "listId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Company ID that owns the list. Required when authenticating with a personal access key (pak_\u2026) \u2014 the key is not tied to a specific company so the server cannot infer it. Required when authenticating with a company API key only if the key belongs to a user who has access to multiple companies; otherwise it defaults to the key's company. Optional for JWT (dashboard) auth \u2014 defaults to the user's active company."
+            },
+            "description": "Company ID that owns the list. Required when authenticating with a personal access key (pak_\u2026) \u2014 the key is not tied to a specific company so the server cannot infer it. Required when authenticating with a company API key only if the key belongs to a user who has access to multiple companies; otherwise it defaults to the key's company. Optional for JWT (dashboard) auth \u2014 defaults to the user's active company."
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid list ID or name",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "List access denied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "List not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Independent list copy with headers and copied row count",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "ID (UUID) of the newly created list"
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": "Name of the newly created list"
+                    },
+                    "type": {
+                      "type": "string",
+                      "description": "List type: \"leads\", \"companies\", or \"custom\""
+                    },
+                    "headers": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "description": "Column ID (UUID)"
+                          },
+                          "listId": {
+                            "type": "string",
+                            "description": "Parent list ID (UUID)"
+                          },
+                          "name": {
+                            "type": "string",
+                            "description": "Column name"
+                          },
+                          "type": {
+                            "type": "string",
+                            "description": "Column type. Data types: text, long_text, url, image, email, phone, linkedin_url. Action types (server-managed): action, lookup, etc."
+                          },
+                          "dataType": {
+                            "type": "string",
+                            "description": "Underlying data type used for storage and validation (e.g., string, number, boolean, json)"
+                          },
+                          "order": {
+                            "type": "number",
+                            "description": "Display order within the list (smaller values appear first)"
+                          },
+                          "actionParameters": {
+                            "type": "object",
+                            "description": "Parameters for action/lookup columns. Null for plain data columns."
+                          },
+                          "autoRunEnabled": {
+                            "type": "boolean",
+                            "description": "For action/lookup columns: whether the action runs automatically on new rows."
+                          },
+                          "autoRunEnabledDate": {
+                            "type": "string",
+                            "description": "Timestamp (ISO 8601) when autoRun was last enabled. Null if autoRun has never been enabled."
+                          },
+                          "conditions": {
+                            "type": "object",
+                            "description": "Optional run conditions for action/lookup columns (free-form JSON). Null when no conditions are configured."
+                          },
+                          "loading": {
+                            "type": "boolean",
+                            "description": "True while a column-wide action is currently executing for this column."
+                          },
+                          "created_date": {
+                            "type": "string",
+                            "description": "Creation timestamp (ISO 8601)"
+                          },
+                          "updated_date": {
+                            "type": "string",
+                            "description": "Last update timestamp (ISO 8601)"
+                          },
+                          "deleted_date": {
+                            "type": "string",
+                            "description": "Soft-delete timestamp (ISO 8601). Null for active columns."
+                          }
+                        },
+                        "description": "Column (header) on a list"
+                      },
+                      "description": "Ordered column definitions created for the list. Use these column names when adding or updating rows."
+                    },
+                    "count": {
+                      "type": "integer",
+                      "description": "Number of active rows copied, including rows with empty cells."
+                    },
+                    "sharing": {
+                      "type": "string",
+                      "description": "Sharing visibility retained from the source list."
+                    },
+                    "departmentIds": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "Department restrictions retained from the source list."
+                    }
+                  },
+                  "description": "Response returned after creating a list. Includes the list's column headers so callers know the exact column names/types to read or write rows against \u2014 no follow-up request is needed."
+                }
+              }
+            }
+          }
+        },
+        "summary": "Duplicate a smart list and all its active row data.",
+        "description": "Copies every active row, column definition, cell value, cell research and\ntimestamp, and table action configuration/results. New list, header, and\nrow IDs make the copy independent. Deleted rows/columns are excluded.\nThe caller owns the copy; sharing and department restrictions are retained.\nCopied automations start disabled. Running jobs, execution history, campaign\nrecipients, and sequence memberships remain attached to the original list.\nComputed lookup columns recalculate for the new list. The entire copy is\ncommitted atomically; an error leaves no partial list.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "Name of the copy (1\u2013100 characters). Defaults to the source name followed by \" (copy)\"."
+                  },
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID that owns the list. Required when authenticating with a personal access key (pak_\u2026) \u2014 the key is not tied to a specific company so the server cannot infer it. Required when authenticating with a company API key only if the key belongs to a user who has access to multiple companies; otherwise it defaults to the key's company. Optional for JWT (dashboard) auth \u2014 defaults to the user's active company."
+                  }
+                }
+              }
+            }
+          },
+          "description": "Optional copy name; send {} to use the default"
+        }
       }
     },
     "/api/v0/lists/{listId}": {
@@ -20577,7 +20786,7 @@
         "operationId": "lists_getRowHistory",
         "parameters": [
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -20585,7 +20794,7 @@
             }
           },
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -20797,7 +21006,7 @@
         "operationId": "lists_deleteHeader",
         "parameters": [
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -20805,7 +21014,7 @@
             }
           },
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -20871,7 +21080,7 @@
         "operationId": "lists_editHeader",
         "parameters": [
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -20879,7 +21088,7 @@
             }
           },
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24364,7 +24573,7 @@
         "operationId": "sequences_updateSequenceStep",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24372,7 +24581,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24646,7 +24855,7 @@
         "operationId": "sequences_deleteSequenceStep",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24654,7 +24863,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28032,7 +28241,7 @@
         "operationId": "sequences_testSequenceStep",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28040,7 +28249,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28094,7 +28303,7 @@
         "operationId": "sequences_sendTestEmail",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28102,7 +28311,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28180,7 +28389,7 @@
         "operationId": "sequences_getMemberProfile",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "memberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28188,7 +28397,7 @@
             }
           },
           {
-            "name": "memberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -39120,7 +39329,7 @@
         "operationId": "content_getCanvasDesignThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -39128,7 +39337,7 @@
             }
           },
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -39167,7 +39376,7 @@
         "operationId": "content_updateCanvasDesignThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -39175,7 +39384,7 @@
             }
           },
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -39253,7 +39462,7 @@
         "operationId": "content_deleteCanvasDesignThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -39261,7 +39470,7 @@
             }
           },
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -39302,7 +39511,7 @@
         "operationId": "content_stopCanvasDesignThreadRun",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -39310,7 +39519,7 @@
             }
           },
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -62832,7 +63041,7 @@
         "operationId": "seo_projectLighthouseSnapshotRoute",
         "parameters": [
           {
-            "name": "snapshotId",
+            "name": "projectId",
             "in": "path",
             "required": true,
             "schema": {
@@ -62840,7 +63049,7 @@
             }
           },
           {
-            "name": "projectId",
+            "name": "snapshotId",
             "in": "path",
             "required": true,
             "schema": {
@@ -64769,7 +64978,7 @@
         "operationId": "marketing_campaigns_restoreCampaignVersion",
         "parameters": [
           {
-            "name": "versionId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -64777,7 +64986,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -67305,7 +67514,7 @@
         "operationId": "marketing_campaigns_restoreTemplateVersion",
         "parameters": [
           {
-            "name": "versionId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -67313,7 +67522,7 @@
             }
           },
           {
-            "name": "templateId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
