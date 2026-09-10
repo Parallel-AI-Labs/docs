@@ -796,6 +796,7 @@
               "GET /api/v0/scheduled-tasks/{task_id}/daily-logs",
               "GET /api/v0/scheduled-tasks/{task_id}/evaluate",
               "GET /api/v0/scheduled-tasks/{task_id}/executions",
+              "POST /api/v0/scheduled-task-templates/{template_id}/employee",
               "POST /api/v0/scheduled-tasks",
               "POST /api/v0/scheduled-tasks/{task_id}/duplicate",
               "POST /api/v0/scheduled-tasks/{task_id}/evaluate",
