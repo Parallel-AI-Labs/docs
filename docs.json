@@ -799,6 +799,7 @@
               "POST /api/v0/scheduled-tasks",
               "POST /api/v0/scheduled-tasks/{task_id}/duplicate",
               "POST /api/v0/scheduled-tasks/{task_id}/evaluate",
+              "POST /api/v0/scheduled-tasks/{task_id}/executions/{execution_id}/chat",
               "POST /api/v0/scheduled-tasks/{task_id}/pause",
               "POST /api/v0/scheduled-tasks/{task_id}/reset",
               "POST /api/v0/scheduled-tasks/{task_id}/resume",
