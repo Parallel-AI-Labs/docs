@@ -707,6 +707,7 @@
             "expanded": false,
             "pages": [
               "GET /api/v0/people",
+              "GET /api/v0/people/graph",
               "GET /api/v0/people/search",
               "GET /api/v0/people/stats",
               "GET /api/v0/people/{personId}",
