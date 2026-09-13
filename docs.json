@@ -711,7 +711,8 @@
               "GET /api/v0/people/search",
               "GET /api/v0/people/stats",
               "GET /api/v0/people/{personId}",
-              "GET /api/v0/people/{personId}/activity"
+              "GET /api/v0/people/{personId}/activity",
+              "POST /api/v0/people/sync"
             ]
           },
           {
