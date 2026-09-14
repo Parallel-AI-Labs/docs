@@ -64,6 +64,10 @@
       "description": "Manage your knowledge base documents for AI training and reference."
     },
     {
+      "name": "Domains",
+      "description": "Two distinct services: branded-domain connections use an owned domain or subdomain for SSL termination and routing to tracking links, landing pages, and published websites ($5/month per additional connection); domain registration is a separate one-time purchase. Read pricing and availability before confirming a registration or DNS change."
+    },
+    {
       "name": "Employees",
       "description": "Customizable AI personas you can list and chat with."
     },
@@ -940,7 +944,7 @@
         "operationId": "documents_getDocumentContents",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -948,7 +952,7 @@
             }
           },
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -1007,7 +1011,7 @@
         "operationId": "documents_getDocument",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -1015,7 +1019,7 @@
             }
           },
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -3154,7 +3158,7 @@
         "operationId": "keys_getApiKey",
         "parameters": [
           {
-            "name": "name",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -3162,7 +3166,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "name",
             "in": "path",
             "required": true,
             "schema": {
@@ -6813,7 +6817,7 @@
         "operationId": "projects_getProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -6821,7 +6825,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -6956,7 +6960,7 @@
         "operationId": "projects_updateProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -6964,7 +6968,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -7125,7 +7129,7 @@
         "operationId": "projects_deleteProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -7133,7 +7137,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8032,7 +8036,7 @@
         "operationId": "projects_exportProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8040,7 +8044,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8132,7 +8136,7 @@
         "operationId": "projects_publishFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8140,7 +8144,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8287,7 +8291,7 @@
         "operationId": "projects_unpublishFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8295,7 +8299,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8729,7 +8733,7 @@
         "operationId": "memories_getMemory",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8737,7 +8741,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8835,7 +8839,7 @@
         "operationId": "memories_updateMemoryRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8843,7 +8847,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8971,7 +8975,7 @@
         "operationId": "memories_deleteMemoryRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8979,7 +8983,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -9030,7 +9034,7 @@
         "operationId": "memories_toggleMemoryActiveRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -9038,7 +9042,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -13112,7 +13116,7 @@
         "operationId": "organizations_updateOrganizationMember",
         "parameters": [
           {
-            "name": "memberUid",
+            "name": "orgId",
             "in": "path",
             "required": true,
             "schema": {
@@ -13120,7 +13124,7 @@
             }
           },
           {
-            "name": "orgId",
+            "name": "memberUid",
             "in": "path",
             "required": true,
             "schema": {
@@ -13247,7 +13251,7 @@
         "operationId": "organizations_removeOrganizationMember",
         "parameters": [
           {
-            "name": "memberUid",
+            "name": "orgId",
             "in": "path",
             "required": true,
             "schema": {
@@ -13255,7 +13259,7 @@
             }
           },
           {
-            "name": "orgId",
+            "name": "memberUid",
             "in": "path",
             "required": true,
             "schema": {
@@ -17383,7 +17387,7 @@
         "operationId": "agents_checkConversationActivity",
         "parameters": [
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -17391,7 +17395,7 @@
             }
           },
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -17453,7 +17457,7 @@
         "operationId": "agents_getConversationDetails",
         "parameters": [
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -17461,7 +17465,7 @@
             }
           },
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21056,7 +21060,7 @@
         "operationId": "lists_deleteHeader",
         "parameters": [
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21064,7 +21068,7 @@
             }
           },
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21130,7 +21134,7 @@
         "operationId": "lists_editHeader",
         "parameters": [
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21138,7 +21142,7 @@
             }
           },
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25635,7 +25639,7 @@
         "operationId": "sequences_getSequenceMemberTimeline",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25643,7 +25647,7 @@
             }
           },
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26041,7 +26045,7 @@
         "operationId": "sequences_triggerSequenceMember",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26049,7 +26053,7 @@
             }
           },
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26117,7 +26121,7 @@
         "operationId": "sequences_removeSequenceMember",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26125,7 +26129,7 @@
             }
           },
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28439,7 +28443,7 @@
         "operationId": "sequences_getMemberProfile",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "memberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28447,7 +28451,7 @@
             }
           },
           {
-            "name": "memberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33156,6 +33160,668 @@
             }
           },
           "description": "Bulk import inbox data"
+        }
+      }
+    },
+    "/api/v0/domains/check-availability": {
+      "post": {
+        "tags": [
+          "Domains"
+        ],
+        "operationId": "inbox_apiCheckDomainAvailability",
+        "parameters": [],
+        "responses": {
+          "400": {
+            "description": "Invalid domain or missing companyId",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "No company access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Domain availability check failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Check a root-domain registration's availability and price.",
+        "description": "This read-only endpoint is only for a domain registration purchase. It does\nnot connect a domain the customer already owns; use domain-connections for\nSSL termination and routing instead.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company that will own the registered domain"
+                  },
+                  "domain": {
+                    "type": "string",
+                    "description": "Root domain to check, e.g. example.com. Do not include https:// or a subdomain."
+                  }
+                },
+                "required": [
+                  "companyId",
+                  "domain"
+                ],
+                "description": "Read-only availability check for a root-domain registration; it does not connect an existing domain"
+              }
+            }
+          },
+          "description": "Root domain to check before requesting purchase approval"
+        }
+      }
+    },
+    "/api/v0/domains/pricing": {
+      "get": {
+        "tags": [
+          "Domains"
+        ],
+        "operationId": "inbox_apiGetDomainPricing",
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company that will own the registered domain"
+            },
+            "description": "Company that will own the registered domain"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "companyId is required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "No company access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Get the current one-time price to register one root domain.",
+        "description": "The returned customerPrice applies the same request-scoped whitelabel add-on\nmultiplier as mailbox orders. It is not the $5/month branded-domain\nconnection add-on price. Use it before asking the user to approve a purchase."
+      }
+    },
+    "/api/v0/domains/purchase": {
+      "post": {
+        "tags": [
+          "Domains"
+        ],
+        "operationId": "inbox_apiPurchaseDomain",
+        "parameters": [],
+        "responses": {
+          "400": {
+            "description": "Invalid domain, registration details, or missing purchase confirmation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "No company access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Domain purchase could not be completed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Registered domain and its pending branded-domain connection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "domain": {
+                      "type": "object",
+                      "description": "The pending branded-domain connection created for the newly registered domain"
+                    },
+                    "pricing": {
+                      "type": "object",
+                      "description": "Registration quote: basePrice, priceMultiplier, and customerPrice in USD. This is not the monthly connection add-on price."
+                    },
+                    "dnsRecord": {
+                      "type": "object",
+                      "description": "A record used by the branded-domain connection for SSL termination and routing"
+                    },
+                    "providerStatus": {
+                      "type": "string",
+                      "description": "Registration status from the managed domain service"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Purchase a root-domain registration and create its pending connection.",
+        "description": "This is a financial, non-idempotent action. First call the pricing endpoint,\nobtain approval, then set purchaseConfirmed to true. Never blindly retry a\ntimeout; check the domain list first to avoid a duplicate purchase. This is\nseparate from connecting a customer-owned domain for SSL termination and routing.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company that will own the registered domain and connection"
+                  },
+                  "domain": {
+                    "type": "string",
+                    "description": "Available root domain to purchase, e.g. example.com. Do not include https:// or a subdomain."
+                  },
+                  "contactDetails": {
+                    "type": "object",
+                    "description": "Registrant data: firstName, lastName, email, phone, address1, city, province, postalCode, and country; organization is optional. The registrant email is reused for DMARC reports, and its root domain is used for reply forwarding."
+                  },
+                  "purchaseConfirmed": {
+                    "type": "boolean",
+                    "description": "Must be true. This confirms the quoted customer price and authorizes the irreversible purchase."
+                  }
+                },
+                "required": [
+                  "companyId",
+                  "domain",
+                  "contactDetails",
+                  "purchaseConfirmed"
+                ],
+                "description": "One-time root-domain registration for email infrastructure. This is separate from the $5/month branded-domain connection add-on for SSL termination and routing."
+              }
+            }
+          },
+          "description": "Confirmed one-time root-domain registration purchase"
+        }
+      }
+    },
+    "/api/v0/domains/{domain_id}/dns": {
+      "get": {
+        "tags": [
+          "Domains"
+        ],
+        "operationId": "inbox_apiGetDomainDns",
+        "parameters": [
+          {
+            "name": "domain_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company that owns the domain"
+            },
+            "description": "Company that owns the domain"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "companyId missing or domain is not provider-managed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Domain not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "DNS provider unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Current DNS records",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "records": {
+                      "type": "array",
+                      "items": {
+                        "type": "object"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "List DNS records for a domain registered through this platform.",
+        "description": "Customer-owned domains connected for SSL termination keep DNS at their\nexisting DNS host. Read records before proposing any change."
+      },
+      "put": {
+        "tags": [
+          "Domains"
+        ],
+        "operationId": "inbox_apiUpdateDomainDns",
+        "parameters": [
+          {
+            "name": "domain_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid records, missing confirmation, or domain is not provider-managed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Domain not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "DNS update failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Submitted DNS records",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "records": {
+                      "type": "array",
+                      "items": {
+                        "type": "object"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Update DNS records for a domain registered through this platform.",
+        "description": "This is an irreversible infrastructure change. Read the current records,\npreserve records you are not intentionally changing, obtain approval, and\nset dnsChangeConfirmed to true. Never blindly retry a timeout.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company that owns the domain"
+                  },
+                  "records": {
+                    "type": "array",
+                    "items": {
+                      "type": "object"
+                    },
+                    "description": "DNS records to update. Each record needs name, type, and value; include editable: true for editable records."
+                  },
+                  "dnsChangeConfirmed": {
+                    "type": "boolean",
+                    "description": "Must be true. DNS changes can interrupt website and email delivery."
+                  }
+                },
+                "required": [
+                  "companyId",
+                  "records",
+                  "dnsChangeConfirmed"
+                ],
+                "description": "Confirmed DNS record update for a domain registered through this platform. Customer-owned external domains keep DNS at their existing DNS host."
+              }
+            }
+          },
+          "description": "Confirmed DNS update"
+        }
+      }
+    },
+    "/api/v0/domain-connections": {
+      "get": {
+        "tags": [
+          "Domains"
+        ],
+        "operationId": "inbox_apiListDomainConnections",
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company that owns the connections"
+            },
+            "description": "Company that owns the connections"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "One-indexed page number (default: 1)",
+              "default": 1
+            },
+            "description": "One-indexed page number (default: 1)"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Items per page (default: 20)",
+              "default": 20
+            },
+            "description": "Items per page (default: 20)"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "companyId is required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "No company access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Paginated branded-domain connections and the available connection-slot limit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "object"
+                      },
+                      "description": "Branded-domain connections for this page"
+                    },
+                    "total": {
+                      "type": "integer",
+                      "description": "Total number of branded-domain connections"
+                    },
+                    "page": {
+                      "type": "integer",
+                      "description": "Current one-indexed page"
+                    },
+                    "pages": {
+                      "type": "integer",
+                      "description": "Total pages"
+                    },
+                    "has_next": {
+                      "type": "boolean",
+                      "description": "Whether another page is available"
+                    },
+                    "domainLimit": {
+                      "type": "integer",
+                      "description": "Number of branded-domain connection slots available to the company"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "List branded-domain connections and the connection-slot limit.",
+        "description": "A connection attaches a domain or subdomain the customer already owns to\nSSL termination and routing for tracking links, landing pages, and published\nwebsites. It does not purchase or register a domain."
+      },
+      "post": {
+        "tags": [
+          "Domains"
+        ],
+        "operationId": "inbox_apiCreateDomainConnection",
+        "parameters": [],
+        "responses": {
+          "400": {
+            "description": "Invalid hostname, missing companyId, or connection limit reached",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "No company access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Branded-domain connection and DNS A-record instructions",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "domain": {
+                      "type": "object",
+                      "description": "Created branded-domain connection"
+                    },
+                    "dnsRecord": {
+                      "type": "object",
+                      "description": "A record to create at the customer\u2019s existing DNS host"
+                    },
+                    "approximatedRegistered": {
+                      "type": "boolean",
+                      "description": "Whether SSL-routing provisioning was accepted"
+                    },
+                    "approximatedError": {
+                      "type": "string",
+                      "description": "Provisioning warning, if any. The connection remains available for DNS setup."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Connect a customer-owned domain or subdomain for SSL termination.",
+        "description": "This consumes one branded-domain connection slot. Additional slots are a\n$5/month add-on. It does not purchase, register, or move DNS for the domain;\ncreate the returned A record at the domain's existing DNS host.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company that owns the connection slot"
+                  },
+                  "subdomain": {
+                    "type": "string",
+                    "description": "Customer-owned domain or subdomain to connect, e.g. track.example.com. Do not include https://."
+                  }
+                },
+                "required": [
+                  "companyId",
+                  "subdomain"
+                ],
+                "description": "Create a branded-domain connection for a domain or subdomain you already own. This uses one domain-connection slot; additional slots are available as a $5/month add-on. It does not purchase or register a domain."
+              }
+            }
+          },
+          "description": "Connect a customer-owned domain or subdomain for SSL termination and routing"
         }
       }
     },
@@ -39691,7 +40357,7 @@
         "operationId": "content_getCanvasDesignThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -39699,7 +40365,7 @@
             }
           },
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -39738,7 +40404,7 @@
         "operationId": "content_updateCanvasDesignThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -39746,7 +40412,7 @@
             }
           },
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -39824,7 +40490,7 @@
         "operationId": "content_deleteCanvasDesignThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -39832,7 +40498,7 @@
             }
           },
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -39873,7 +40539,7 @@
         "operationId": "content_stopCanvasDesignThreadRun",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -39881,7 +40547,7 @@
             }
           },
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -50132,7 +50798,7 @@
         "operationId": "landing_pages_getLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -50140,7 +50806,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -50179,7 +50845,7 @@
         "operationId": "landing_pages_updateLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -50187,7 +50853,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -50265,7 +50931,7 @@
         "operationId": "landing_pages_deleteLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -50273,7 +50939,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -50314,7 +50980,7 @@
         "operationId": "landing_pages_stopLandingPageThreadRun",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -50322,7 +50988,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -65862,7 +66528,7 @@
         "operationId": "marketing_campaigns_restoreCampaignVersion",
         "parameters": [
           {
-            "name": "versionId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -65870,7 +66536,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -67096,7 +67762,7 @@
         "operationId": "marketing_campaigns_deleteCampaignRecipient",
         "parameters": [
           {
-            "name": "recipientId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -67104,7 +67770,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "recipientId",
             "in": "path",
             "required": true,
             "schema": {
@@ -69545,7 +70211,7 @@
         "operationId": "site_builder_apiWebsiteBranchDiff",
         "parameters": [
           {
-            "name": "branch",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -69553,7 +70219,7 @@
             }
           },
           {
-            "name": "websiteId",
+            "name": "branch",
             "in": "path",
             "required": true,
             "schema": {

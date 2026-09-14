@@ -444,6 +444,19 @@
             ]
           },
           {
+            "group": "Domains",
+            "expanded": false,
+            "pages": [
+              "GET /api/v0/domain-connections",
+              "GET /api/v0/domains/pricing",
+              "GET /api/v0/domains/{domain_id}/dns",
+              "POST /api/v0/domain-connections",
+              "POST /api/v0/domains/check-availability",
+              "POST /api/v0/domains/purchase",
+              "PUT /api/v0/domains/{domain_id}/dns"
+            ]
+          },
+          {
             "group": "Employees",
             "expanded": false,
             "pages": [
