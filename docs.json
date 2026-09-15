@@ -363,6 +363,7 @@
               "POST /api/v0/content/strategy/generate",
               "POST /api/v0/content/{contentId}",
               "POST /api/v0/content/{contentId}/assign",
+              "POST /api/v0/content/{contentId}/canvas",
               "POST /api/v0/content/{contentId}/publish",
               "POST /api/v0/content/{contentId}/select-hook",
               "PUT /api/v0/content/{contentId}/assignment-status",
