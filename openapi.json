@@ -944,7 +944,7 @@
         "operationId": "documents_getDocumentContents",
         "parameters": [
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -952,7 +952,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -1011,7 +1011,7 @@
         "operationId": "documents_getDocument",
         "parameters": [
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -1019,7 +1019,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8733,7 +8733,7 @@
         "operationId": "memories_getMemory",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8741,7 +8741,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8839,7 +8839,7 @@
         "operationId": "memories_updateMemoryRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8847,7 +8847,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8975,7 +8975,7 @@
         "operationId": "memories_deleteMemoryRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8983,7 +8983,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -9034,7 +9034,7 @@
         "operationId": "memories_toggleMemoryActiveRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -9042,7 +9042,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -17387,7 +17387,7 @@
         "operationId": "agents_checkConversationActivity",
         "parameters": [
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -17395,7 +17395,7 @@
             }
           },
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -17457,7 +17457,7 @@
         "operationId": "agents_getConversationDetails",
         "parameters": [
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -17465,7 +17465,7 @@
             }
           },
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21064,7 +21064,7 @@
         "operationId": "lists_deleteHeader",
         "parameters": [
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21072,7 +21072,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21138,7 +21138,7 @@
         "operationId": "lists_editHeader",
         "parameters": [
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21146,7 +21146,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24641,7 +24641,7 @@
         "operationId": "sequences_updateSequenceStep",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24649,7 +24649,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24923,7 +24923,7 @@
         "operationId": "sequences_deleteSequenceStep",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24931,7 +24931,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26629,7 +26629,7 @@
         "operationId": "sequences_editSequenceExecution",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26637,7 +26637,7 @@
             }
           },
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26726,7 +26726,7 @@
         "operationId": "sequences_previewSequenceExecution",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26734,7 +26734,7 @@
             }
           },
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28309,7 +28309,7 @@
         "operationId": "sequences_testSequenceStep",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28317,7 +28317,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28371,7 +28371,7 @@
         "operationId": "sequences_sendTestEmail",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28379,7 +28379,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28457,7 +28457,7 @@
         "operationId": "sequences_getMemberProfile",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "memberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28465,7 +28465,7 @@
             }
           },
           {
-            "name": "memberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30231,6 +30231,513 @@
         },
         "summary": "What this person actually did, newest first, to the microsecond.",
         "description": "Where the profile's touchpoints say where a person *appears*, this says how\nthey *behaved*: opens, link clicks, scheduling-page views, bookings, calls\nand sequence status changes, merged into one time-ordered stream.\n\nCurrently covers sequence engagement. Marketing campaigns record only\nfirst/last open and click counters rather than individual events, and the\nwebsite pixel keeps one row per person rather than one per visit, so\nneither can contribute a real event stream yet.\n\nEvents attributed to scanners and mail-proxy prefetchers (Microsoft Safe\nLinks, GoogleImageProxy) are excluded by default -- they are not human\nactions, and counting them would overstate engagement. `botCount` reports\nhow many were held back; pass `includeBots=true` to see them, each flagged\nwith `isBot` and the provider that was identified."
+      }
+    },
+    "/api/v0/people/{personId}/activities": {
+      "get": {
+        "tags": [
+          "People"
+        ],
+        "operationId": "people_getPersonActivities",
+        "parameters": [
+          {
+            "name": "personId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Company ID. Required for PAK/API key auth; optional for JWT auth."
+            },
+            "description": "Company ID. Required for PAK/API key auth; optional for JWT auth."
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "1-indexed page number",
+              "default": 1
+            },
+            "description": "1-indexed page number"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Activities per page. Default 50, max 200.",
+              "default": 50
+            },
+            "description": "Activities per page. Default 50, max 200."
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Missing companyId",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Person not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Paginated unified activity timeline for one person",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "object"
+                      },
+                      "description": "Chronological activity entries. Every item has kind, type, and occurredAt; custom entries also include text, data, source, and externalId."
+                    },
+                    "total": {
+                      "type": "integer",
+                      "description": "Activities available in this bounded timeline scan"
+                    },
+                    "page": {
+                      "type": "integer",
+                      "description": "Current page"
+                    },
+                    "pageSize": {
+                      "type": "integer",
+                      "description": "Activities per page"
+                    },
+                    "botCount": {
+                      "type": "integer",
+                      "description": "Bot-attributed engagement events excluded from the feed"
+                    },
+                    "truncated": {
+                      "type": "boolean",
+                      "description": "True when an activity source exceeded its bounded timeline scan"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "List every available person activity: engagement events and custom entries."
+      },
+      "post": {
+        "tags": [
+          "People"
+        ],
+        "operationId": "people_createPersonActivity",
+        "parameters": [
+          {
+            "name": "personId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Missing companyId or invalid activity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Person not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Custom activity added to the person",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "Activity ID"
+                    },
+                    "personId": {
+                      "type": "string",
+                      "description": "Resolved person ID"
+                    },
+                    "activityType": {
+                      "type": "string",
+                      "description": "Activity category; can be a recommended or custom value"
+                    },
+                    "text": {
+                      "type": "string",
+                      "description": "Human-readable activity text"
+                    },
+                    "url": {
+                      "type": "string",
+                      "description": "Related URL, when supplied"
+                    },
+                    "externalId": {
+                      "type": "string",
+                      "description": "Source-system activity ID, when supplied"
+                    },
+                    "source": {
+                      "type": "string",
+                      "description": "Source-system name, when supplied"
+                    },
+                    "data": {
+                      "type": "object",
+                      "description": "Source-specific JSON object"
+                    },
+                    "createdAt": {
+                      "type": "string",
+                      "description": "UTC ISO-8601 creation timestamp"
+                    },
+                    "updatedAt": {
+                      "type": "string",
+                      "description": "UTC ISO-8601 update timestamp"
+                    }
+                  },
+                  "description": "A custom activity attached to a resolved person"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Append a text activity to a resolved person.",
+        "description": "When both ``source`` and ``externalId`` are supplied, repeated requests are\nidempotent and return the original activity instead of adding a duplicate.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID. Required for PAK/API key auth; optional for JWT auth."
+                  },
+                  "activityType": {
+                    "type": "string",
+                    "description": "Activity category used for display. Recommended values: note, call, meeting, email, message, task, event, research; custom values are allowed."
+                  },
+                  "text": {
+                    "type": "string",
+                    "description": "Human-readable activity text"
+                  },
+                  "url": {
+                    "type": "string",
+                    "description": "Optional related URL"
+                  },
+                  "externalId": {
+                    "type": "string",
+                    "description": "Optional source-system activity ID. Deduplicates when source is also supplied."
+                  },
+                  "source": {
+                    "type": "string",
+                    "description": "Optional source-system name. Used with externalId as an idempotency key."
+                  },
+                  "data": {
+                    "type": "object",
+                    "description": "Optional source-specific JSON object, such as accountId or provider metadata"
+                  }
+                },
+                "required": [
+                  "activityType",
+                  "text"
+                ],
+                "description": "A custom person activity"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v0/people/{personId}/activities/{activityId}": {
+      "patch": {
+        "tags": [
+          "People"
+        ],
+        "operationId": "people_updatePersonActivity",
+        "parameters": [
+          {
+            "name": "activityId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "personId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Missing companyId or invalid update",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Person or activity not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Updated custom person activity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "Activity ID"
+                    },
+                    "personId": {
+                      "type": "string",
+                      "description": "Resolved person ID"
+                    },
+                    "activityType": {
+                      "type": "string",
+                      "description": "Activity category; can be a recommended or custom value"
+                    },
+                    "text": {
+                      "type": "string",
+                      "description": "Human-readable activity text"
+                    },
+                    "url": {
+                      "type": "string",
+                      "description": "Related URL, when supplied"
+                    },
+                    "externalId": {
+                      "type": "string",
+                      "description": "Source-system activity ID, when supplied"
+                    },
+                    "source": {
+                      "type": "string",
+                      "description": "Source-system name, when supplied"
+                    },
+                    "data": {
+                      "type": "object",
+                      "description": "Source-specific JSON object"
+                    },
+                    "createdAt": {
+                      "type": "string",
+                      "description": "UTC ISO-8601 creation timestamp"
+                    },
+                    "updatedAt": {
+                      "type": "string",
+                      "description": "UTC ISO-8601 update timestamp"
+                    }
+                  },
+                  "description": "A custom activity attached to a resolved person"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Update display and content fields without changing source idempotency.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "activityType": {
+                    "type": "string",
+                    "description": "Activity category. Recommended values: note, call, meeting, email, message, task, event, research; custom values are allowed."
+                  },
+                  "text": {
+                    "type": "string",
+                    "description": "Human-readable activity text"
+                  },
+                  "url": {
+                    "type": "string",
+                    "description": "Related URL; null clears it"
+                  },
+                  "data": {
+                    "type": "object",
+                    "description": "Source-specific JSON object; null clears it"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "People"
+        ],
+        "operationId": "people_deletePersonActivity",
+        "parameters": [
+          {
+            "name": "activityId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "personId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Missing companyId",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Person or activity not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Delete one authored/imported activity; source events are read-only."
       }
     },
     "/api/v0/people/{personId}": {
@@ -50968,7 +51475,7 @@
         "operationId": "landing_pages_getLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -50976,7 +51483,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -51015,7 +51522,7 @@
         "operationId": "landing_pages_updateLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -51023,7 +51530,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -51101,7 +51608,7 @@
         "operationId": "landing_pages_deleteLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -51109,7 +51616,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -51150,7 +51657,7 @@
         "operationId": "landing_pages_stopLandingPageThreadRun",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -51158,7 +51665,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -66698,7 +67205,7 @@
         "operationId": "marketing_campaigns_restoreCampaignVersion",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -66706,7 +67213,7 @@
             }
           },
           {
-            "name": "versionId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -67932,7 +68439,7 @@
         "operationId": "marketing_campaigns_deleteCampaignRecipient",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "recipientId",
             "in": "path",
             "required": true,
             "schema": {
@@ -67940,7 +68447,7 @@
             }
           },
           {
-            "name": "recipientId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -69257,7 +69764,7 @@
         "operationId": "marketing_campaigns_restoreTemplateVersion",
         "parameters": [
           {
-            "name": "versionId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -69265,7 +69772,7 @@
             }
           },
           {
-            "name": "templateId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {

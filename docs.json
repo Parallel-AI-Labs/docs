@@ -720,13 +720,17 @@
             "group": "People",
             "expanded": false,
             "pages": [
+              "DELETE /api/v0/people/{personId}/activities/{activityId}",
               "GET /api/v0/people",
               "GET /api/v0/people/graph",
               "GET /api/v0/people/search",
               "GET /api/v0/people/stats",
               "GET /api/v0/people/{personId}",
+              "GET /api/v0/people/{personId}/activities",
               "GET /api/v0/people/{personId}/activity",
-              "POST /api/v0/people/sync"
+              "PATCH /api/v0/people/{personId}/activities/{activityId}",
+              "POST /api/v0/people/sync",
+              "POST /api/v0/people/{personId}/activities"
             ]
           },
           {
