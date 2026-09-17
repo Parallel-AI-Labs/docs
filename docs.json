@@ -892,8 +892,12 @@
             "group": "Skills",
             "expanded": false,
             "pages": [
+              "DELETE /api/v0/skills/{slug}",
               "GET /api/v0/skills",
-              "GET /api/v0/skills/{slug}"
+              "GET /api/v0/skills/{slug}",
+              "POST /api/v0/skills",
+              "POST /api/v0/skills/{slug}/sync",
+              "PUT /api/v0/skills/{slug}"
             ]
           },
           {
