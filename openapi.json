@@ -21078,7 +21078,7 @@
         "operationId": "lists_deleteHeader",
         "parameters": [
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21086,7 +21086,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21152,7 +21152,7 @@
         "operationId": "lists_editHeader",
         "parameters": [
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21160,7 +21160,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24659,7 +24659,7 @@
         "operationId": "sequences_updateSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24667,7 +24667,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24941,7 +24941,7 @@
         "operationId": "sequences_deleteSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24949,7 +24949,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25671,7 +25671,7 @@
         "operationId": "sequences_getSequenceMemberTimeline",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25679,7 +25679,7 @@
             }
           },
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26077,7 +26077,7 @@
         "operationId": "sequences_triggerSequenceMember",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26085,7 +26085,7 @@
             }
           },
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26153,7 +26153,7 @@
         "operationId": "sequences_removeSequenceMember",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26161,7 +26161,7 @@
             }
           },
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26647,7 +26647,7 @@
         "operationId": "sequences_editSequenceExecution",
         "parameters": [
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26655,7 +26655,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26744,7 +26744,7 @@
         "operationId": "sequences_previewSequenceExecution",
         "parameters": [
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26752,7 +26752,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28327,7 +28327,7 @@
         "operationId": "sequences_testSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28335,7 +28335,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28389,7 +28389,7 @@
         "operationId": "sequences_sendTestEmail",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28397,7 +28397,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30557,7 +30557,7 @@
         "operationId": "people_updatePersonActivity",
         "parameters": [
           {
-            "name": "activityId",
+            "name": "personId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30565,7 +30565,7 @@
             }
           },
           {
-            "name": "personId",
+            "name": "activityId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30713,7 +30713,7 @@
         "operationId": "people_deletePersonActivity",
         "parameters": [
           {
-            "name": "activityId",
+            "name": "personId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30721,7 +30721,7 @@
             }
           },
           {
-            "name": "personId",
+            "name": "activityId",
             "in": "path",
             "required": true,
             "schema": {
@@ -32929,7 +32929,7 @@
         "operationId": "inbox_sendDraft",
         "parameters": [
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -32937,7 +32937,7 @@
             }
           },
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33030,7 +33030,7 @@
         "operationId": "inbox_deleteDraft",
         "parameters": [
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33038,7 +33038,7 @@
             }
           },
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -51943,6 +51943,9 @@
                           "runCount": {
                             "type": "integer"
                           },
+                          "dailyCreditLimit": {
+                            "type": "number"
+                          },
                           "templateId": {
                             "type": "string"
                           },
@@ -52076,6 +52079,9 @@
                     },
                     "runCount": {
                       "type": "integer"
+                    },
+                    "dailyCreditLimit": {
+                      "type": "number"
                     },
                     "templateId": {
                       "type": "string"
@@ -52367,6 +52373,10 @@
                   "templateVersion": {
                     "type": "integer",
                     "description": "Version of that template"
+                  },
+                  "dailyCreditLimit": {
+                    "type": "number",
+                    "description": "Daily credit budget for this task; null uses the platform default"
                   }
                 },
                 "required": [
@@ -52818,6 +52828,9 @@
                     "runCount": {
                       "type": "integer"
                     },
+                    "dailyCreditLimit": {
+                      "type": "number"
+                    },
                     "templateId": {
                       "type": "string"
                     },
@@ -52954,6 +52967,9 @@
                     },
                     "runCount": {
                       "type": "integer"
+                    },
+                    "dailyCreditLimit": {
+                      "type": "number"
                     },
                     "templateId": {
                       "type": "string"
@@ -53241,6 +53257,10 @@
                       "paused",
                       "completed"
                     ]
+                  },
+                  "dailyCreditLimit": {
+                    "type": "number",
+                    "description": "Daily credit budget for this task; null uses the platform default"
                   }
                 },
                 "description": "Request body for updating a scheduled task. Only supplied fields change."
@@ -53433,6 +53453,9 @@
                     "runCount": {
                       "type": "integer"
                     },
+                    "dailyCreditLimit": {
+                      "type": "number"
+                    },
                     "templateId": {
                       "type": "string"
                     },
@@ -53581,6 +53604,9 @@
                     "runCount": {
                       "type": "integer"
                     },
+                    "dailyCreditLimit": {
+                      "type": "number"
+                    },
                     "templateId": {
                       "type": "string"
                     },
@@ -53727,6 +53753,9 @@
                     },
                     "runCount": {
                       "type": "integer"
+                    },
+                    "dailyCreditLimit": {
+                      "type": "number"
                     },
                     "templateId": {
                       "type": "string"
@@ -53875,6 +53904,9 @@
                     "runCount": {
                       "type": "integer"
                     },
+                    "dailyCreditLimit": {
+                      "type": "number"
+                    },
                     "templateId": {
                       "type": "string"
                     },
@@ -54022,6 +54054,9 @@
                     },
                     "runCount": {
                       "type": "integer"
+                    },
+                    "dailyCreditLimit": {
+                      "type": "number"
                     },
                     "templateId": {
                       "type": "string"
@@ -54520,6 +54555,10 @@
                           "tokensUsed": {
                             "type": "integer"
                           },
+                          "creditsUsed": {
+                            "type": "number",
+                            "description": "Credits charged by this run"
+                          },
                           "score": {
                             "type": "integer",
                             "description": "0-100 quality grade of the run, null until graded"
@@ -54788,6 +54827,10 @@
                           },
                           "tokensUsed": {
                             "type": "integer"
+                          },
+                          "creditsUsed": {
+                            "type": "number",
+                            "description": "Credits charged by this run"
                           },
                           "score": {
                             "type": "integer",
@@ -68513,7 +68556,7 @@
         "operationId": "marketing_campaigns_deleteCampaignRecipient",
         "parameters": [
           {
-            "name": "recipientId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -68521,7 +68564,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "recipientId",
             "in": "path",
             "required": true,
             "schema": {
@@ -69838,7 +69881,7 @@
         "operationId": "marketing_campaigns_restoreTemplateVersion",
         "parameters": [
           {
-            "name": "versionId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -69846,7 +69889,7 @@
             }
           },
           {
-            "name": "templateId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
