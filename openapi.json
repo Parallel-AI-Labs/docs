@@ -17401,7 +17401,7 @@
         "operationId": "agents_checkConversationActivity",
         "parameters": [
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -17409,7 +17409,7 @@
             }
           },
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -17471,7 +17471,7 @@
         "operationId": "agents_getConversationDetails",
         "parameters": [
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -17479,7 +17479,7 @@
             }
           },
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -20858,7 +20858,7 @@
         "operationId": "lists_getRowHistory",
         "parameters": [
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -20866,7 +20866,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28630,7 +28630,7 @@
         "operationId": "sequences_getMemberProfile",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "memberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28638,7 +28638,7 @@
             }
           },
           {
-            "name": "memberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30712,7 +30712,7 @@
         "operationId": "people_updatePersonActivity",
         "parameters": [
           {
-            "name": "activityId",
+            "name": "personId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30720,7 +30720,7 @@
             }
           },
           {
-            "name": "personId",
+            "name": "activityId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30868,7 +30868,7 @@
         "operationId": "people_deletePersonActivity",
         "parameters": [
           {
-            "name": "activityId",
+            "name": "personId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30876,7 +30876,7 @@
             }
           },
           {
-            "name": "personId",
+            "name": "activityId",
             "in": "path",
             "required": true,
             "schema": {
@@ -41227,7 +41227,7 @@
         "operationId": "content_getCanvasDesignThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -41235,7 +41235,7 @@
             }
           },
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -41274,7 +41274,7 @@
         "operationId": "content_updateCanvasDesignThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -41282,7 +41282,7 @@
             }
           },
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -41360,7 +41360,7 @@
         "operationId": "content_deleteCanvasDesignThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -41368,7 +41368,7 @@
             }
           },
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -41409,7 +41409,7 @@
         "operationId": "content_stopCanvasDesignThreadRun",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -41417,7 +41417,7 @@
             }
           },
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -65584,7 +65584,7 @@
         "operationId": "seo_projectLighthouseSnapshotRoute",
         "parameters": [
           {
-            "name": "projectId",
+            "name": "snapshotId",
             "in": "path",
             "required": true,
             "schema": {
@@ -65592,7 +65592,7 @@
             }
           },
           {
-            "name": "snapshotId",
+            "name": "projectId",
             "in": "path",
             "required": true,
             "schema": {
