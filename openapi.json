@@ -954,7 +954,7 @@
         "operationId": "documents_getDocumentContents",
         "parameters": [
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -962,7 +962,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -1021,7 +1021,7 @@
         "operationId": "documents_getDocument",
         "parameters": [
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -1029,7 +1029,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -17401,7 +17401,7 @@
         "operationId": "agents_checkConversationActivity",
         "parameters": [
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -17409,7 +17409,7 @@
             }
           },
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -17471,7 +17471,7 @@
         "operationId": "agents_getConversationDetails",
         "parameters": [
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -17479,7 +17479,7 @@
             }
           },
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24659,7 +24659,7 @@
         "operationId": "sequences_updateSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24667,7 +24667,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24941,7 +24941,7 @@
         "operationId": "sequences_deleteSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24949,7 +24949,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26639,6 +26639,88 @@
         }
       }
     },
+    "/api/v0/sequences/{sequenceId}/executions/regenerate": {
+      "post": {
+        "tags": [
+          "Sequences"
+        ],
+        "operationId": "sequences_regenerateSequenceExecutions",
+        "parameters": [
+          {
+            "name": "sequenceId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Failed executions regenerated as drafts",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "msg": {
+                      "type": "string",
+                      "description": "Success message"
+                    }
+                  },
+                  "description": "Success response"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Regenerate failed executions for a sequence as unapproved drafts.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "executionIds": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Array of execution IDs"
+                  }
+                },
+                "required": [
+                  "executionIds"
+                ],
+                "description": "Request body for bulk execution operations"
+              }
+            }
+          },
+          "description": "Failed execution IDs to regenerate"
+        }
+      }
+    },
     "/api/v0/sequences/{sequenceId}/executions/{executionId}": {
       "post": {
         "tags": [
@@ -27097,6 +27179,79 @@
             }
           },
           "description": "Execution IDs to execute"
+        }
+      }
+    },
+    "/api/v0/sequences/executions/regenerate": {
+      "post": {
+        "tags": [
+          "Sequences"
+        ],
+        "operationId": "sequences_regenerateAllCompanyExecutions",
+        "parameters": [],
+        "responses": {
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Failed executions regenerated as drafts",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "msg": {
+                      "type": "string",
+                      "description": "Success message"
+                    }
+                  },
+                  "description": "Success response"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Regenerate failed executions across sequences as unapproved drafts.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "executionIds": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Array of execution IDs"
+                  }
+                },
+                "required": [
+                  "executionIds"
+                ],
+                "description": "Request body for bulk execution operations"
+              }
+            }
+          },
+          "description": "Failed execution IDs to regenerate"
         }
       }
     },
@@ -28327,7 +28482,7 @@
         "operationId": "sequences_testSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28335,7 +28490,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28389,7 +28544,7 @@
         "operationId": "sequences_sendTestEmail",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28397,7 +28552,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28475,7 +28630,7 @@
         "operationId": "sequences_getMemberProfile",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "memberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28483,7 +28638,7 @@
             }
           },
           {
-            "name": "memberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33967,7 +34122,7 @@
           }
         },
         "summary": "Purchase a root-domain registration and create its pending connection.",
-        "description": "This is a financial, non-idempotent action. First call the pricing endpoint,\nobtain approval, then set purchaseConfirmed to true. Never blindly retry a\ntimeout; check the domain list first to avoid a duplicate purchase. This is\nseparate from connecting a customer-owned domain for SSL termination and routing.",
+        "description": "This is a financial action and requires a successful Stripe PaymentIntent\ncreated for the same user, company, and domain. Never blindly retry a provider\ntimeout; check the domain list first to avoid a duplicate purchase.",
         "requestBody": {
           "required": true,
           "content": {
@@ -33985,18 +34140,22 @@
                   },
                   "contactDetails": {
                     "type": "object",
-                    "description": "Registrant data: firstName, lastName, email, phone, address1, city, province, postalCode, and country; organization is optional. The registrant email is reused for DMARC reports, and its root domain is used for reply forwarding."
+                    "description": "Registrant data: firstName, lastName, email, phone, address1, city, province, postalCode, and country; organization is optional. The registrant email is reused for DMARC reports. Domain forwarding is not configured by this purchase path."
                   },
-                  "purchaseConfirmed": {
-                    "type": "boolean",
-                    "description": "Must be true. This confirms the quoted customer price and authorizes the irreversible purchase."
+                  "paymentIntentId": {
+                    "type": "string",
+                    "description": "Successful Stripe PaymentIntent created for this exact company and domain."
+                  },
+                  "connectedAccount": {
+                    "type": "string",
+                    "description": "Stripe connected account returned when the payment was created, if applicable."
                   }
                 },
                 "required": [
                   "companyId",
                   "domain",
                   "contactDetails",
-                  "purchaseConfirmed"
+                  "paymentIntentId"
                 ],
                 "description": "One-time root-domain registration for email infrastructure. This is separate from the $5/month branded-domain connection add-on for SSL termination and routing."
               }
@@ -41068,7 +41227,7 @@
         "operationId": "content_getCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -41076,7 +41235,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -41115,7 +41274,7 @@
         "operationId": "content_updateCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -41123,7 +41282,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -41201,7 +41360,7 @@
         "operationId": "content_deleteCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -41209,7 +41368,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -41250,7 +41409,7 @@
         "operationId": "content_stopCanvasDesignThreadRun",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -41258,7 +41417,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -51509,7 +51668,7 @@
         "operationId": "landing_pages_getLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -51517,7 +51676,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -51556,7 +51715,7 @@
         "operationId": "landing_pages_updateLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -51564,7 +51723,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -51642,7 +51801,7 @@
         "operationId": "landing_pages_deleteLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -51650,7 +51809,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -51691,7 +51850,7 @@
         "operationId": "landing_pages_stopLandingPageThreadRun",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -51699,7 +51858,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
