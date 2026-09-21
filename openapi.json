@@ -954,7 +954,7 @@
         "operationId": "documents_getDocumentContents",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -962,7 +962,7 @@
             }
           },
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -1021,7 +1021,7 @@
         "operationId": "documents_getDocument",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -1029,7 +1029,7 @@
             }
           },
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -3168,7 +3168,7 @@
         "operationId": "keys_getApiKey",
         "parameters": [
           {
-            "name": "name",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -3176,7 +3176,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "name",
             "in": "path",
             "required": true,
             "schema": {
@@ -21078,7 +21078,7 @@
         "operationId": "lists_deleteHeader",
         "parameters": [
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21086,7 +21086,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21152,7 +21152,7 @@
         "operationId": "lists_editHeader",
         "parameters": [
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21160,7 +21160,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28630,7 +28630,7 @@
         "operationId": "sequences_getMemberProfile",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "memberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28638,7 +28638,7 @@
             }
           },
           {
-            "name": "memberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30712,7 +30712,7 @@
         "operationId": "people_updatePersonActivity",
         "parameters": [
           {
-            "name": "personId",
+            "name": "activityId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30720,7 +30720,7 @@
             }
           },
           {
-            "name": "activityId",
+            "name": "personId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30868,7 +30868,7 @@
         "operationId": "people_deletePersonActivity",
         "parameters": [
           {
-            "name": "personId",
+            "name": "activityId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30876,7 +30876,7 @@
             }
           },
           {
-            "name": "activityId",
+            "name": "personId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33477,6 +33477,26 @@
               "description": "Company ID"
             },
             "description": "Company ID"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Page number"
+            },
+            "description": "Page number"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Items per page"
+            },
+            "description": "Items per page"
           }
         ],
         "responses": {
@@ -33536,6 +33556,10 @@
                         "description": "Warmup inbox information"
                       },
                       "description": "List of inboxes"
+                    },
+                    "total": {
+                      "type": "integer",
+                      "description": "Total count"
                     }
                   },
                   "description": "List of warmup-capable inboxes"
@@ -41227,7 +41251,7 @@
         "operationId": "content_getCanvasDesignThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -41235,7 +41259,7 @@
             }
           },
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -41274,7 +41298,7 @@
         "operationId": "content_updateCanvasDesignThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -41282,7 +41306,7 @@
             }
           },
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -41360,7 +41384,7 @@
         "operationId": "content_deleteCanvasDesignThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -41368,7 +41392,7 @@
             }
           },
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -41409,7 +41433,7 @@
         "operationId": "content_stopCanvasDesignThreadRun",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -41417,7 +41441,7 @@
             }
           },
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -51668,7 +51692,7 @@
         "operationId": "landing_pages_getLandingPageThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -51676,7 +51700,7 @@
             }
           },
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -51715,7 +51739,7 @@
         "operationId": "landing_pages_updateLandingPageThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -51723,7 +51747,7 @@
             }
           },
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -51801,7 +51825,7 @@
         "operationId": "landing_pages_deleteLandingPageThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -51809,7 +51833,7 @@
             }
           },
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -51850,7 +51874,7 @@
         "operationId": "landing_pages_stopLandingPageThreadRun",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -51858,7 +51882,7 @@
             }
           },
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -67545,7 +67569,7 @@
         "operationId": "marketing_campaigns_restoreCampaignVersion",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -67553,7 +67577,7 @@
             }
           },
           {
-            "name": "versionId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -68795,7 +68819,7 @@
         "operationId": "marketing_campaigns_deleteCampaignRecipient",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "recipientId",
             "in": "path",
             "required": true,
             "schema": {
@@ -68803,7 +68827,7 @@
             }
           },
           {
-            "name": "recipientId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -70120,7 +70144,7 @@
         "operationId": "marketing_campaigns_restoreTemplateVersion",
         "parameters": [
           {
-            "name": "versionId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -70128,7 +70152,7 @@
             }
           },
           {
-            "name": "templateId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -71244,7 +71268,7 @@
         "operationId": "site_builder_apiWebsiteBranchDiff",
         "parameters": [
           {
-            "name": "branch",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -71252,7 +71276,7 @@
             }
           },
           {
-            "name": "websiteId",
+            "name": "branch",
             "in": "path",
             "required": true,
             "schema": {
