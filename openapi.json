@@ -954,7 +954,7 @@
         "operationId": "documents_getDocumentContents",
         "parameters": [
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -962,7 +962,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -1021,7 +1021,7 @@
         "operationId": "documents_getDocument",
         "parameters": [
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -1029,7 +1029,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -3168,7 +3168,7 @@
         "operationId": "keys_getApiKey",
         "parameters": [
           {
-            "name": "name",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -3176,7 +3176,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "name",
             "in": "path",
             "required": true,
             "schema": {
@@ -17401,7 +17401,7 @@
         "operationId": "agents_checkConversationActivity",
         "parameters": [
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -17409,7 +17409,7 @@
             }
           },
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -17471,7 +17471,7 @@
         "operationId": "agents_getConversationDetails",
         "parameters": [
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -17479,7 +17479,7 @@
             }
           },
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -20858,7 +20858,7 @@
         "operationId": "lists_getRowHistory",
         "parameters": [
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -20866,7 +20866,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26729,7 +26729,7 @@
         "operationId": "sequences_editSequenceExecution",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26737,7 +26737,7 @@
             }
           },
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26826,7 +26826,7 @@
         "operationId": "sequences_previewSequenceExecution",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26834,7 +26834,7 @@
             }
           },
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28630,7 +28630,7 @@
         "operationId": "sequences_getMemberProfile",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "memberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28638,7 +28638,7 @@
             }
           },
           {
-            "name": "memberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33111,7 +33111,7 @@
         "operationId": "inbox_sendDraft",
         "parameters": [
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33119,7 +33119,7 @@
             }
           },
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33212,7 +33212,7 @@
         "operationId": "inbox_deleteDraft",
         "parameters": [
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33220,7 +33220,7 @@
             }
           },
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -51719,7 +51719,7 @@
         "operationId": "landing_pages_getLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -51727,7 +51727,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -51766,7 +51766,7 @@
         "operationId": "landing_pages_updateLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -51774,7 +51774,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -51852,7 +51852,7 @@
         "operationId": "landing_pages_deleteLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -51860,7 +51860,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -51901,7 +51901,7 @@
         "operationId": "landing_pages_stopLandingPageThreadRun",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -51909,7 +51909,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -60913,31 +60913,31 @@
                         },
                         "aiReadinessScore": {
                           "type": "integer",
-                          "description": "AI readiness 0-100, or null if the check did not run"
+                          "description": "Internal technical GEO readiness score, 0-100"
                         },
                         "aiReadinessGrade": {
                           "type": "string",
-                          "description": "Letter grade for AI readiness"
+                          "description": "Letter grade for technical GEO readiness"
                         },
                         "aiReadinessChecks": {
                           "type": "object",
-                          "description": "Per-check AI readiness detail (robots.txt, llms.txt, sitemap, Schema.org, extractability, TTFB, HTTPS)"
+                          "description": "Evidence-backed technical GEO checks (robots.txt, llms.txt, sitemap, Schema.org, extractability, TTFB, HTTPS)"
                         },
                         "aiReadinessRecommendations": {
                           "type": "array",
                           "items": {
                             "type": "object"
                           },
-                          "description": "Prioritized AI readiness fixes"
+                          "description": "Prioritized technical GEO fixes"
                         },
                         "aiReadinessCheckedAt": {
                           "type": "string",
                           "format": "date-time",
-                          "description": "When AI readiness was scored"
+                          "description": "When technical GEO readiness was scored"
                         },
                         "aiReadinessError": {
                           "type": "string",
-                          "description": "Why the AI readiness check failed, when it did"
+                          "description": "Why the technical GEO check failed, when it did"
                         },
                         "startedAt": {
                           "type": "string",
@@ -60987,7 +60987,7 @@
                   },
                   "checkAiReadiness": {
                     "type": "boolean",
-                    "description": "Also score AI crawler readiness. Billed separately. Defaults to true."
+                    "description": "Deprecated compatibility field. Technical GEO checks are included automatically for every completed audit."
                   }
                 },
                 "required": [
@@ -61175,31 +61175,31 @@
                           },
                           "aiReadinessScore": {
                             "type": "integer",
-                            "description": "AI readiness 0-100, or null if the check did not run"
+                            "description": "Internal technical GEO readiness score, 0-100"
                           },
                           "aiReadinessGrade": {
                             "type": "string",
-                            "description": "Letter grade for AI readiness"
+                            "description": "Letter grade for technical GEO readiness"
                           },
                           "aiReadinessChecks": {
                             "type": "object",
-                            "description": "Per-check AI readiness detail (robots.txt, llms.txt, sitemap, Schema.org, extractability, TTFB, HTTPS)"
+                            "description": "Evidence-backed technical GEO checks (robots.txt, llms.txt, sitemap, Schema.org, extractability, TTFB, HTTPS)"
                           },
                           "aiReadinessRecommendations": {
                             "type": "array",
                             "items": {
                               "type": "object"
                             },
-                            "description": "Prioritized AI readiness fixes"
+                            "description": "Prioritized technical GEO fixes"
                           },
                           "aiReadinessCheckedAt": {
                             "type": "string",
                             "format": "date-time",
-                            "description": "When AI readiness was scored"
+                            "description": "When technical GEO readiness was scored"
                           },
                           "aiReadinessError": {
                             "type": "string",
-                            "description": "Why the AI readiness check failed, when it did"
+                            "description": "Why the technical GEO check failed, when it did"
                           },
                           "startedAt": {
                             "type": "string",
@@ -61395,31 +61395,31 @@
                         },
                         "aiReadinessScore": {
                           "type": "integer",
-                          "description": "AI readiness 0-100, or null if the check did not run"
+                          "description": "Internal technical GEO readiness score, 0-100"
                         },
                         "aiReadinessGrade": {
                           "type": "string",
-                          "description": "Letter grade for AI readiness"
+                          "description": "Letter grade for technical GEO readiness"
                         },
                         "aiReadinessChecks": {
                           "type": "object",
-                          "description": "Per-check AI readiness detail (robots.txt, llms.txt, sitemap, Schema.org, extractability, TTFB, HTTPS)"
+                          "description": "Evidence-backed technical GEO checks (robots.txt, llms.txt, sitemap, Schema.org, extractability, TTFB, HTTPS)"
                         },
                         "aiReadinessRecommendations": {
                           "type": "array",
                           "items": {
                             "type": "object"
                           },
-                          "description": "Prioritized AI readiness fixes"
+                          "description": "Prioritized technical GEO fixes"
                         },
                         "aiReadinessCheckedAt": {
                           "type": "string",
                           "format": "date-time",
-                          "description": "When AI readiness was scored"
+                          "description": "When technical GEO readiness was scored"
                         },
                         "aiReadinessError": {
                           "type": "string",
-                          "description": "Why the AI readiness check failed, when it did"
+                          "description": "Why the technical GEO check failed, when it did"
                         },
                         "startedAt": {
                           "type": "string",
@@ -61943,31 +61943,31 @@
                         },
                         "aiReadinessScore": {
                           "type": "integer",
-                          "description": "AI readiness 0-100, or null if the check did not run"
+                          "description": "Internal technical GEO readiness score, 0-100"
                         },
                         "aiReadinessGrade": {
                           "type": "string",
-                          "description": "Letter grade for AI readiness"
+                          "description": "Letter grade for technical GEO readiness"
                         },
                         "aiReadinessChecks": {
                           "type": "object",
-                          "description": "Per-check AI readiness detail (robots.txt, llms.txt, sitemap, Schema.org, extractability, TTFB, HTTPS)"
+                          "description": "Evidence-backed technical GEO checks (robots.txt, llms.txt, sitemap, Schema.org, extractability, TTFB, HTTPS)"
                         },
                         "aiReadinessRecommendations": {
                           "type": "array",
                           "items": {
                             "type": "object"
                           },
-                          "description": "Prioritized AI readiness fixes"
+                          "description": "Prioritized technical GEO fixes"
                         },
                         "aiReadinessCheckedAt": {
                           "type": "string",
                           "format": "date-time",
-                          "description": "When AI readiness was scored"
+                          "description": "When technical GEO readiness was scored"
                         },
                         "aiReadinessError": {
                           "type": "string",
-                          "description": "Why the AI readiness check failed, when it did"
+                          "description": "Why the technical GEO check failed, when it did"
                         },
                         "startedAt": {
                           "type": "string",
@@ -61994,8 +61994,8 @@
             }
           }
         },
-        "summary": "Run (or re-run) the AI readiness check for an audit.",
-        "description": "Scores AI crawler access, llms.txt, Schema.org and response speed. Billed\nseparately from the crawl, and runs in the background.",
+        "summary": "Run (or re-run) the internal technical GEO check for an audit.",
+        "description": "Scores AI crawler access, llms.txt, Schema.org and response speed in the\nbackground. The same check runs automatically after every site crawl.",
         "requestBody": {
           "required": true,
           "content": {
@@ -62180,31 +62180,31 @@
                         },
                         "aiReadinessScore": {
                           "type": "integer",
-                          "description": "AI readiness 0-100, or null if the check did not run"
+                          "description": "Internal technical GEO readiness score, 0-100"
                         },
                         "aiReadinessGrade": {
                           "type": "string",
-                          "description": "Letter grade for AI readiness"
+                          "description": "Letter grade for technical GEO readiness"
                         },
                         "aiReadinessChecks": {
                           "type": "object",
-                          "description": "Per-check AI readiness detail (robots.txt, llms.txt, sitemap, Schema.org, extractability, TTFB, HTTPS)"
+                          "description": "Evidence-backed technical GEO checks (robots.txt, llms.txt, sitemap, Schema.org, extractability, TTFB, HTTPS)"
                         },
                         "aiReadinessRecommendations": {
                           "type": "array",
                           "items": {
                             "type": "object"
                           },
-                          "description": "Prioritized AI readiness fixes"
+                          "description": "Prioritized technical GEO fixes"
                         },
                         "aiReadinessCheckedAt": {
                           "type": "string",
                           "format": "date-time",
-                          "description": "When AI readiness was scored"
+                          "description": "When technical GEO readiness was scored"
                         },
                         "aiReadinessError": {
                           "type": "string",
-                          "description": "Why the AI readiness check failed, when it did"
+                          "description": "Why the technical GEO check failed, when it did"
                         },
                         "startedAt": {
                           "type": "string",
@@ -63385,31 +63385,31 @@
                         },
                         "aiReadinessScore": {
                           "type": "integer",
-                          "description": "AI readiness 0-100, or null if the check did not run"
+                          "description": "Internal technical GEO readiness score, 0-100"
                         },
                         "aiReadinessGrade": {
                           "type": "string",
-                          "description": "Letter grade for AI readiness"
+                          "description": "Letter grade for technical GEO readiness"
                         },
                         "aiReadinessChecks": {
                           "type": "object",
-                          "description": "Per-check AI readiness detail (robots.txt, llms.txt, sitemap, Schema.org, extractability, TTFB, HTTPS)"
+                          "description": "Evidence-backed technical GEO checks (robots.txt, llms.txt, sitemap, Schema.org, extractability, TTFB, HTTPS)"
                         },
                         "aiReadinessRecommendations": {
                           "type": "array",
                           "items": {
                             "type": "object"
                           },
-                          "description": "Prioritized AI readiness fixes"
+                          "description": "Prioritized technical GEO fixes"
                         },
                         "aiReadinessCheckedAt": {
                           "type": "string",
                           "format": "date-time",
-                          "description": "When AI readiness was scored"
+                          "description": "When technical GEO readiness was scored"
                         },
                         "aiReadinessError": {
                           "type": "string",
-                          "description": "Why the AI readiness check failed, when it did"
+                          "description": "Why the technical GEO check failed, when it did"
                         },
                         "startedAt": {
                           "type": "string",
@@ -65635,7 +65635,7 @@
         "operationId": "seo_projectLighthouseSnapshotRoute",
         "parameters": [
           {
-            "name": "projectId",
+            "name": "snapshotId",
             "in": "path",
             "required": true,
             "schema": {
@@ -65643,7 +65643,7 @@
             }
           },
           {
-            "name": "snapshotId",
+            "name": "projectId",
             "in": "path",
             "required": true,
             "schema": {
@@ -67596,7 +67596,7 @@
         "operationId": "marketing_campaigns_restoreCampaignVersion",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -67604,7 +67604,7 @@
             }
           },
           {
-            "name": "versionId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -68846,7 +68846,7 @@
         "operationId": "marketing_campaigns_deleteCampaignRecipient",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "recipientId",
             "in": "path",
             "required": true,
             "schema": {
@@ -68854,7 +68854,7 @@
             }
           },
           {
-            "name": "recipientId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -71302,7 +71302,7 @@
         "operationId": "site_builder_apiWebsiteBranchDiff",
         "parameters": [
           {
-            "name": "websiteId",
+            "name": "branch",
             "in": "path",
             "required": true,
             "schema": {
@@ -71310,7 +71310,7 @@
             }
           },
           {
-            "name": "branch",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
