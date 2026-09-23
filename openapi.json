@@ -3168,7 +3168,7 @@
         "operationId": "keys_getApiKey",
         "parameters": [
           {
-            "name": "name",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -3176,7 +3176,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "name",
             "in": "path",
             "required": true,
             "schema": {
@@ -6827,7 +6827,7 @@
         "operationId": "projects_getProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -6835,7 +6835,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -6970,7 +6970,7 @@
         "operationId": "projects_updateProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -6978,7 +6978,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -7139,7 +7139,7 @@
         "operationId": "projects_deleteProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -7147,7 +7147,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8046,7 +8046,7 @@
         "operationId": "projects_exportProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8054,7 +8054,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8146,7 +8146,7 @@
         "operationId": "projects_publishFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8154,7 +8154,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8301,7 +8301,7 @@
         "operationId": "projects_unpublishFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8309,7 +8309,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -10920,10 +10920,6 @@
                           "type": "number",
                           "description": "Total spendable data credits"
                         },
-                        "enrichmentIncluded": {
-                          "type": "boolean",
-                          "description": "Whether enrichment is included at no charge"
-                        },
                         "seats": {
                           "type": "integer",
                           "description": "Number of seats"
@@ -13126,7 +13122,7 @@
         "operationId": "organizations_updateOrganizationMember",
         "parameters": [
           {
-            "name": "memberUid",
+            "name": "orgId",
             "in": "path",
             "required": true,
             "schema": {
@@ -13134,7 +13130,7 @@
             }
           },
           {
-            "name": "orgId",
+            "name": "memberUid",
             "in": "path",
             "required": true,
             "schema": {
@@ -13261,7 +13257,7 @@
         "operationId": "organizations_removeOrganizationMember",
         "parameters": [
           {
-            "name": "memberUid",
+            "name": "orgId",
             "in": "path",
             "required": true,
             "schema": {
@@ -13269,7 +13265,7 @@
             }
           },
           {
-            "name": "orgId",
+            "name": "memberUid",
             "in": "path",
             "required": true,
             "schema": {
@@ -17401,7 +17397,7 @@
         "operationId": "agents_checkConversationActivity",
         "parameters": [
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -17409,7 +17405,7 @@
             }
           },
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -17471,7 +17467,7 @@
         "operationId": "agents_getConversationDetails",
         "parameters": [
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -17479,7 +17475,7 @@
             }
           },
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18140,14 +18136,14 @@
                       "description": "Ordered list of available actions, in the order they should appear in the \"Add action\" menu."
                     }
                   },
-                  "description": "The catalog of available smart-list table actions \u2014 the source of truth for which actions can be attached to a list, their descriptions, and their default parameters. Audience actions are omitted when the company does not have the Audience Builder feature enabled."
+                  "description": "The catalog of available smart-list table actions \u2014 the source of truth for which actions can be attached to a list, their descriptions, and their default parameters. Lead search and enrichment actions are funded by data credits."
                 }
               }
             }
           }
         },
         "summary": "List the available smart-list table actions (the action catalog).",
-        "description": "Returns every action (and lookup column) that can be attached to a list \u2014\nits title, description, icon, and a template of default parameters. This is\nthe source of truth for the \"Add action\" menu and for AI agents deciding\nwhich action to configure on a column.\n\nAudience actions (Audience Enrichment, Find Leads at Company) are omitted\nwhen the company does not have the Audience Builder feature enabled."
+        "description": "Returns every action (and lookup column) that can be attached to a list \u2014\nits title, description, icon, and a template of default parameters. This is\nthe source of truth for the \"Add action\" menu and for AI agents deciding\nwhich action to configure on a column.\n\nLead search and enrichment actions are available to every smart-list user."
       }
     },
     "/api/v0/lists/{listId}/duplicate": {
@@ -19752,16 +19748,6 @@
               }
             }
           },
-          "403": {
-            "description": "Action requires a feature not enabled for this company",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
           "500": {
             "description": "Server error",
             "content": {
@@ -20082,16 +20068,6 @@
         "responses": {
           "401": {
             "description": "Invalid credentials",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Action requires a feature not enabled for this company",
             "content": {
               "application/json": {
                 "schema": {
@@ -20858,7 +20834,7 @@
         "operationId": "lists_getRowHistory",
         "parameters": [
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -20866,7 +20842,7 @@
             }
           },
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21675,7 +21651,7 @@
           }
         },
         "summary": "Start a Sales Navigator search. Returns immediately with a search id.",
-        "description": "**The search runs in the background \u2014 this does NOT return the leads.** It\nresponds 202 with a `searchId`; poll `GET /lead-searches/{searchId}` until\nits `status` is no longer \"pending\", then read the leads from `results`.\nA search takes minutes, because each matching profile is enriched\nindividually upstream.\n\n**Do not retry this endpoint while a search is pending.** Every call starts\na new search and charges for it again; polling the id you already have is\nfree. If a call appears to time out, the search is still running \u2014 find it\nin `GET /lead-searches?source=sales_navigator` rather than re-running it.\n\nNothing is written to a smart list: the caller reviews the results and adds\nthe ones it wants through `POST /lists/{listId}/rows`, which is what the\ndashboard does once the user has picked rows.\n\nThe search is specified either by a Sales Navigator people-search URL\n(`searchMode` \"url\") or by structured filters \u2014 jobTitle, location,\ncurrentCompany, school, keywords (`searchMode` \"filters\"). Each result is a\nlead row (firstName, lastName, linkedinUrl, headline, positionTitle,\ncompanyName, location, \u2026) ready to be added to a list as-is.\n\nNo LinkedIn account or session cookie is required: the search is resolved\nfrom public profile data.\n\nCosts 1 data credit per lead returned, charged when the search finishes \u2014\nthe same balance enrichment and People Search draw from. A search that\nmatches nobody or fails is free, and principals with Audience Builder are\nnot charged at all. Credits are checked against the requested ceiling before\nthe search starts.",
+        "description": "**The search runs in the background \u2014 this does NOT return the leads.** It\nresponds 202 with a `searchId`; poll `GET /lead-searches/{searchId}` until\nits `status` is no longer \"pending\", then read the leads from `results`.\nA search takes minutes, because each matching profile is enriched\nindividually upstream.\n\n**Do not retry this endpoint while a search is pending.** Every call starts\na new search and charges for it again; polling the id you already have is\nfree. If a call appears to time out, the search is still running \u2014 find it\nin `GET /lead-searches?source=sales_navigator` rather than re-running it.\n\nNothing is written to a smart list: the caller reviews the results and adds\nthe ones it wants through `POST /lists/{listId}/rows`, which is what the\ndashboard does once the user has picked rows.\n\nThe search is specified either by a Sales Navigator people-search URL\n(`searchMode` \"url\") or by structured filters \u2014 jobTitle, location,\ncurrentCompany, school, keywords (`searchMode` \"filters\"). Each result is a\nlead row (firstName, lastName, linkedinUrl, headline, positionTitle,\ncompanyName, location, \u2026) ready to be added to a list as-is.\n\nNo LinkedIn account or session cookie is required: the search is resolved\nfrom public profile data.\n\nCosts 1 data credit per lead returned, charged when the search finishes \u2014\nthe same balance enrichment and People Search draw from. A search that\nmatches nobody or fails is free. Credits are checked against the requested\nceiling before the search starts.",
         "requestBody": {
           "required": true,
           "content": {
@@ -30712,7 +30688,7 @@
         "operationId": "people_updatePersonActivity",
         "parameters": [
           {
-            "name": "activityId",
+            "name": "personId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30720,7 +30696,7 @@
             }
           },
           {
-            "name": "personId",
+            "name": "activityId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30868,7 +30844,7 @@
         "operationId": "people_deletePersonActivity",
         "parameters": [
           {
-            "name": "activityId",
+            "name": "personId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30876,7 +30852,7 @@
             }
           },
           {
-            "name": "personId",
+            "name": "activityId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33111,7 +33087,7 @@
         "operationId": "inbox_sendDraft",
         "parameters": [
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33119,7 +33095,7 @@
             }
           },
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33212,7 +33188,7 @@
         "operationId": "inbox_deleteDraft",
         "parameters": [
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33220,7 +33196,7 @@
             }
           },
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -45199,7 +45175,7 @@
                   },
                   "filters": {
                     "type": "object",
-                    "description": "Attribute filters (each a string[] unless noted), in the exact audience-builder shape. Location: city, state, personalState (person's home state), zip. Person: age {minAge,maxAge}, gender. profile (nested object): incomeRange, netWorth, homeowner, married, children. attributes (nested object): credit_rating, credit_range_new_credit, credit_card_user, investment, cra_code, mortgage_amount {min,max}, occupation_group, ethnic_code, language_code, education, excludeEducation, smoker, single_parent, dwelling_type, estimated_home_value, home_year_built {min,max}, home_purchase_price {min,max}, home_purchase_year {min,max}. Contact quality: notNulls (fields that must be present). businessProfile (nested object): industry, seniority, department, jobTitle, excludeJobTitle, jobTitleMatchMode (string, \"contains\" default or \"exact\"), companyName, companyDomain, companyDescription, employeeCount, companyRevenue, sic, companyNaics. Use lead_field_options for the enumerated fields' valid values."
+                    "description": "Attribute filters (each a string[] unless noted), in the exact lead-search shape. Location: city, state, personalState (person's home state), zip. Person: age {minAge,maxAge}, gender. profile (nested object): incomeRange, netWorth, homeowner, married, children. attributes (nested object): credit_rating, credit_range_new_credit, credit_card_user, investment, cra_code, mortgage_amount {min,max}, occupation_group, ethnic_code, language_code, education, excludeEducation, smoker, single_parent, dwelling_type, estimated_home_value, home_year_built {min,max}, home_purchase_price {min,max}, home_purchase_year {min,max}. Contact quality: notNulls (fields that must be present). businessProfile (nested object): industry, seniority, department, jobTitle, excludeJobTitle, jobTitleMatchMode (string, \"contains\" default or \"exact\"), companyName, companyDomain, companyDescription, employeeCount, companyRevenue, sic, companyNaics. Use lead_field_options for the enumerated fields' valid values."
                   },
                   "segment": {
                     "type": "array",
@@ -45338,7 +45314,7 @@
                   },
                   "filters": {
                     "type": "object",
-                    "description": "Attribute filters (each a string[] unless noted), in the exact audience-builder shape. Location: city, state, personalState (person's home state), zip. Person: age {minAge,maxAge}, gender. profile (nested object): incomeRange, netWorth, homeowner, married, children. attributes (nested object): credit_rating, credit_range_new_credit, credit_card_user, investment, cra_code, mortgage_amount {min,max}, occupation_group, ethnic_code, language_code, education, excludeEducation, smoker, single_parent, dwelling_type, estimated_home_value, home_year_built {min,max}, home_purchase_price {min,max}, home_purchase_year {min,max}. Contact quality: notNulls (fields that must be present). businessProfile (nested object): industry, seniority, department, jobTitle, excludeJobTitle, jobTitleMatchMode (string, \"contains\" default or \"exact\"), companyName, companyDomain, companyDescription, employeeCount, companyRevenue, sic, companyNaics. Use lead_field_options for the enumerated fields' valid values."
+                    "description": "Attribute filters (each a string[] unless noted), in the exact lead-search shape. Location: city, state, personalState (person's home state), zip. Person: age {minAge,maxAge}, gender. profile (nested object): incomeRange, netWorth, homeowner, married, children. attributes (nested object): credit_rating, credit_range_new_credit, credit_card_user, investment, cra_code, mortgage_amount {min,max}, occupation_group, ethnic_code, language_code, education, excludeEducation, smoker, single_parent, dwelling_type, estimated_home_value, home_year_built {min,max}, home_purchase_price {min,max}, home_purchase_year {min,max}. Contact quality: notNulls (fields that must be present). businessProfile (nested object): industry, seniority, department, jobTitle, excludeJobTitle, jobTitleMatchMode (string, \"contains\" default or \"exact\"), companyName, companyDomain, companyDescription, employeeCount, companyRevenue, sic, companyNaics. Use lead_field_options for the enumerated fields' valid values."
                   },
                   "segment": {
                     "type": "array",
@@ -51719,7 +51695,7 @@
         "operationId": "landing_pages_getLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -51727,7 +51703,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -51766,7 +51742,7 @@
         "operationId": "landing_pages_updateLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -51774,7 +51750,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -51852,7 +51828,7 @@
         "operationId": "landing_pages_deleteLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -51860,7 +51836,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -51901,7 +51877,7 @@
         "operationId": "landing_pages_stopLandingPageThreadRun",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -51909,7 +51885,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -65635,7 +65611,7 @@
         "operationId": "seo_projectLighthouseSnapshotRoute",
         "parameters": [
           {
-            "name": "snapshotId",
+            "name": "projectId",
             "in": "path",
             "required": true,
             "schema": {
@@ -65643,7 +65619,7 @@
             }
           },
           {
-            "name": "projectId",
+            "name": "snapshotId",
             "in": "path",
             "required": true,
             "schema": {
@@ -67596,7 +67572,7 @@
         "operationId": "marketing_campaigns_restoreCampaignVersion",
         "parameters": [
           {
-            "name": "versionId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -67604,7 +67580,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -68846,7 +68822,7 @@
         "operationId": "marketing_campaigns_deleteCampaignRecipient",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "recipientId",
             "in": "path",
             "required": true,
             "schema": {
@@ -68854,7 +68830,7 @@
             }
           },
           {
-            "name": "recipientId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
