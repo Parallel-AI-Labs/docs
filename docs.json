@@ -754,6 +754,7 @@
               "POST /api/v0/projects/{project_id}/files/cp",
               "POST /api/v0/projects/{project_id}/files/mkdir",
               "POST /api/v0/projects/{project_id}/files/mv",
+              "POST /api/v0/projects/{project_id}/files/{file_id}/export",
               "POST /api/v0/projects/{project_id}/files/{file_id}/publish",
               "POST /api/v0/projects/{project_id}/files/{file_id}/unpublish",
               "PUT /api/v0/projects/{project_id}/files/{file_id}"
