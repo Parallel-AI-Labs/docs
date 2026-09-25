@@ -954,7 +954,7 @@
         "operationId": "documents_getDocumentContents",
         "parameters": [
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -962,7 +962,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -1021,7 +1021,7 @@
         "operationId": "documents_getDocument",
         "parameters": [
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -1029,7 +1029,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -6827,7 +6827,7 @@
         "operationId": "projects_getProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -6835,7 +6835,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -6970,7 +6970,7 @@
         "operationId": "projects_updateProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -6978,7 +6978,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -7143,7 +7143,7 @@
         "operationId": "projects_deleteProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -7151,7 +7151,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8043,14 +8043,14 @@
       }
     },
     "/api/v0/projects/{project_id}/files/{file_id}/export": {
-      "get": {
+      "post": {
         "tags": [
           "Projects"
         ],
         "operationId": "projects_exportProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8058,7 +8058,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8161,14 +8161,14 @@
           "description": "POST exports current editor content without saving; GET exports the saved file"
         }
       },
-      "post": {
+      "get": {
         "tags": [
           "Projects"
         ],
         "operationId": "projects_exportProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8176,7 +8176,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8288,7 +8288,7 @@
         "operationId": "projects_publishFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8296,7 +8296,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8443,7 +8443,7 @@
         "operationId": "projects_unpublishFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8451,7 +8451,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -13274,7 +13274,7 @@
         "operationId": "organizations_updateOrganizationMember",
         "parameters": [
           {
-            "name": "memberUid",
+            "name": "orgId",
             "in": "path",
             "required": true,
             "schema": {
@@ -13282,7 +13282,7 @@
             }
           },
           {
-            "name": "orgId",
+            "name": "memberUid",
             "in": "path",
             "required": true,
             "schema": {
@@ -13409,7 +13409,7 @@
         "operationId": "organizations_removeOrganizationMember",
         "parameters": [
           {
-            "name": "memberUid",
+            "name": "orgId",
             "in": "path",
             "required": true,
             "schema": {
@@ -13417,7 +13417,7 @@
             }
           },
           {
-            "name": "orgId",
+            "name": "memberUid",
             "in": "path",
             "required": true,
             "schema": {
@@ -20415,7 +20415,7 @@
         "operationId": "lists_deleteTableAction",
         "parameters": [
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -20423,7 +20423,7 @@
             }
           },
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -20521,7 +20521,7 @@
         "operationId": "lists_getActionSummary",
         "parameters": [
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -20529,7 +20529,7 @@
             }
           },
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -20649,7 +20649,7 @@
         "operationId": "lists_getActionQueueStatus",
         "parameters": [
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -20657,7 +20657,7 @@
             }
           },
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -20986,7 +20986,7 @@
         "operationId": "lists_getRowHistory",
         "parameters": [
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -20994,7 +20994,7 @@
             }
           },
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21206,7 +21206,7 @@
         "operationId": "lists_deleteHeader",
         "parameters": [
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21214,7 +21214,7 @@
             }
           },
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21280,7 +21280,7 @@
         "operationId": "lists_editHeader",
         "parameters": [
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21288,7 +21288,7 @@
             }
           },
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28942,7 +28942,7 @@
         "operationId": "sequences_getMemberProfile",
         "parameters": [
           {
-            "name": "memberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28950,7 +28950,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "memberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -31016,7 +31016,7 @@
         "operationId": "people_updatePersonActivity",
         "parameters": [
           {
-            "name": "activityId",
+            "name": "personId",
             "in": "path",
             "required": true,
             "schema": {
@@ -31024,7 +31024,7 @@
             }
           },
           {
-            "name": "personId",
+            "name": "activityId",
             "in": "path",
             "required": true,
             "schema": {
@@ -31172,7 +31172,7 @@
         "operationId": "people_deletePersonActivity",
         "parameters": [
           {
-            "name": "activityId",
+            "name": "personId",
             "in": "path",
             "required": true,
             "schema": {
@@ -31180,7 +31180,7 @@
             }
           },
           {
-            "name": "personId",
+            "name": "activityId",
             "in": "path",
             "required": true,
             "schema": {
@@ -41592,7 +41592,7 @@
         "operationId": "content_getCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -41600,7 +41600,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -41639,7 +41639,7 @@
         "operationId": "content_updateCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -41647,7 +41647,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -41725,7 +41725,7 @@
         "operationId": "content_deleteCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -41733,7 +41733,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -41774,7 +41774,7 @@
         "operationId": "content_stopCanvasDesignThreadRun",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -41782,7 +41782,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -65959,7 +65959,7 @@
         "operationId": "seo_projectLighthouseSnapshotRoute",
         "parameters": [
           {
-            "name": "projectId",
+            "name": "snapshotId",
             "in": "path",
             "required": true,
             "schema": {
@@ -65967,7 +65967,7 @@
             }
           },
           {
-            "name": "snapshotId",
+            "name": "projectId",
             "in": "path",
             "required": true,
             "schema": {
@@ -67138,7 +67138,7 @@
           }
         },
         "summary": "Create a new marketing campaign in draft status.",
-        "description": "A newly created campaign is always in draft status and does not send anything\nuntil you call /schedule (to queue it for a future time) or /send-now\n(to begin sending immediately). You can keep editing the campaign with PATCH\nuntil it enters sending or sent status.\n\nTo create a campaign from a template, GET /api/v0/marketing-campaign-templates/{templateId}\nand pass its subject, replyTo, bodyHtml, bodyDocument, senderProfileId, listId,\nand fieldMappings here.\n\nFor an HTML-only inline poll, provide poll plus bodyHtml containing styled\nanchors with href=\"{{pollUrl0}}\", href=\"{{pollUrl1}}\", etc. for every option.\nUse {{pollQuestion}} and {{pollOption0}} text tokens to keep labels synchronized.\nSee the poll field description for validation, ordering, and removal rules.",
+        "description": "A newly created campaign is always in draft status and does not send anything\nuntil you call /schedule (to queue it for a future time) or /send-now\n(to begin sending immediately). You can keep editing the campaign with PATCH\nuntil it enters sending status, when content, sender, and sending windows remain editable for remaining recipients.\n\nTo create a campaign from a template, GET /api/v0/marketing-campaign-templates/{templateId}\nand pass its subject, replyTo, bodyHtml, bodyDocument, senderProfileId, listId,\nand fieldMappings here.\n\nFor an HTML-only inline poll, provide poll plus bodyHtml containing styled\nanchors with href=\"{{pollUrl0}}\", href=\"{{pollUrl1}}\", etc. for every option.\nUse {{pollQuestion}} and {{pollOption0}} text tokens to keep labels synchronized.\nSee the poll field description for validation, ordering, and removal rules.",
         "requestBody": {
           "required": true,
           "content": {
@@ -67444,7 +67444,7 @@
         ],
         "responses": {
           "400": {
-            "description": "Invalid request parameters or campaign is already sending/sent",
+            "description": "Invalid parameters, edits to locked recipient/poll fields, or campaign already sent",
             "content": {
               "application/json": {
                 "schema": {
@@ -67637,8 +67637,8 @@
             }
           }
         },
-        "summary": "Update a marketing campaign. Editable only while the campaign is in draft,",
-        "description": "scheduled, cancelled, or failed status. Editing a scheduled campaign drops\nit back to draft until you re-schedule it.",
+        "summary": "Update a marketing campaign. While sending, content, sender and sending",
+        "description": "windows can change for remaining recipients. Recipient targeting, launch\ntime and poll definitions are locked; delivery keeps its existing progress.\nFull editing is available in draft, scheduled, cancelled, or failed status.\nEditing a scheduled campaign drops it back to draft until re-scheduled.\nSent campaigns cannot be edited.",
         "requestBody": {
           "required": true,
           "content": {
@@ -67697,9 +67697,13 @@
                   "timezone": {
                     "type": "string",
                     "description": "IANA timezone name"
+                  },
+                  "scheduleSettings": {
+                    "type": "object",
+                    "description": "Sending windows: timezone (IANA name), plus monday through sunday, each with enabled, startTime and endTime (HH:MM). May be updated while sending; changes apply on the next sending cycle."
                   }
                 },
-                "description": "Request body for updating a marketing campaign (only include fields to change). Editable only while the campaign is in draft, scheduled, cancelled, or failed status."
+                "description": "Request body for updating a marketing campaign (only include fields to change). While sending, name, subject, fromName, replyTo, bodyHtml, bodyDocument, senderProfileId, timezone, and scheduleSettings are editable; recipients and poll definitions are locked. Full editing is available in draft, scheduled, cancelled, or failed status. Sent campaigns are locked."
               }
             }
           },
@@ -68133,6 +68137,221 @@
         },
         "summary": "Restore a campaign's body to a previously saved version. The restore is",
         "description": "itself captured as a new version, so it is always reversible. Only allowed\nwhile the campaign is editable (draft, scheduled, cancelled, or failed)."
+      }
+    },
+    "/api/v0/marketing-campaigns/{campaignId}/duplicate": {
+      "post": {
+        "tags": [
+          "Marketing Campaigns"
+        ],
+        "operationId": "marketing_campaigns_duplicateCampaign",
+        "parameters": [
+          {
+            "name": "campaignId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Access denied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Campaign not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "A new draft campaign with copied content and targeting",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "Campaign ID"
+                    },
+                    "companyId": {
+                      "type": "string",
+                      "description": "Company this campaign belongs to"
+                    },
+                    "uid": {
+                      "type": "string",
+                      "description": "User ID that created the campaign"
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": "Internal campaign name"
+                    },
+                    "subject": {
+                      "type": "string",
+                      "description": "Email subject line"
+                    },
+                    "fromName": {
+                      "type": "string",
+                      "description": "Display name shown in the From: header"
+                    },
+                    "replyTo": {
+                      "type": "string",
+                      "description": "Reply-To email address used on outgoing emails"
+                    },
+                    "bodyHtml": {
+                      "type": "string",
+                      "description": "HTML body of the email; rendered from bodyDocument when a document is supplied"
+                    },
+                    "bodyDocument": {
+                      "type": "string",
+                      "description": "Visual-builder JSON document for the email body. When supplied, the server renders bodyHtml from this document and it takes precedence over HTML input. Alternatively, supply bodyHtml without a document. Envelope: {\"subject\": string, \"subTitle\": string, \"content\": <page node>}. Every node is {\"type\": string, \"attributes\": {MJML attributes as string values, e.g. \"padding\": \"10px 25px 10px 25px\", \"background-color\": \"#ffffff\", \"color\": \"#333333\", \"font-size\": \"16px\", \"align\": \"center\", \"width\": \"600px\", \"href\", \"src\"}, \"data\": {\"value\": {...}}, \"children\": [...]}; attribute values must be strings (numbers are dropped). Tree: page -> (wrapper | section) -> section -> column -> content blocks. Content block types: \"text\" (data.value.content = inline HTML string), \"image\" (attributes.src, alt, href, width), \"button\" (data.value.content = label, attributes.href), \"divider\", \"spacer\" (attributes.height), \"social\" (data.value.elements = [{src, href, content, target}]), \"navbar\" (data.value.links = [{href, content}]), \"raw\" (data.value.content = raw MJML/HTML), plus \"hero\", \"group\", \"accordion\", \"carousel\" and \"table\". Each also has an \"advanced_<type>\" variant (e.g. \"advanced_text\"), which is what the builder palette inserts; advanced content blocks placed directly under the page or a wrapper are auto-wrapped in a section/column. For a visual poll, insert one marketing_poll block: {\"type\": \"marketing_poll\", \"data\": {\"value\": {\"question\": \"Your question?\", \"options\": [\"Answer one\", \"Answer two\"]}}, \"attributes\": {}, \"children\": []}. Its attributes support padding, font-family, font-size, font-weight, color, background-color, button-background-color, button-text-color, button-font-size, and border-radius. The server derives the campaign poll from this block; do not maintain a separate poll definition. Page node: {\"type\": \"page\", \"attributes\": {\"background-color\": \"#efeeea\", \"width\": \"600px\"}, \"data\": {\"value\": {\"breakpoint\": \"480px\", \"font-family\": string, \"font-size\": \"14px\", \"line-height\": \"1.7\", \"font-weight\": \"400\", \"text-color\": \"#000000\", \"content-background-color\": string (optional), \"headStyles\": [{\"content\": css, \"inline\": bool}], \"fonts\": [{\"name\", \"href\"}], \"headAttributes\": \"\", \"responsive\": true}}}. Always set \"responsive\": true \u2014 a missing flag renders a fixed-width layout. Merge tokens pass through rendering untouched: {{content}} inside a text block marks where content-engine output is inserted when content is published as a campaign from this template; Smart-list merge tokens use the matching header normalized to camelCase: for example, `First Name` becomes {{firstName}} and `Company Name` becomes {{companyName}}. Tokens are replaced per recipient from the smart-list row; {{unsubscribe}} becomes the per-recipient unsubscribe link."
+                    },
+                    "poll": {
+                      "type": "string",
+                      "description": "Optional one-click email poll definition and current response totals."
+                    },
+                    "senderProfileId": {
+                      "type": "string",
+                      "description": "Sender profile ID"
+                    },
+                    "listId": {
+                      "type": "string",
+                      "description": "Smart list ID whose rows become recipients"
+                    },
+                    "fieldMappings": {
+                      "type": "object",
+                      "description": "Field mapping for resolving recipient email from a list row"
+                    },
+                    "scheduleType": {
+                      "type": "string",
+                      "description": "Schedule type (now, scheduled)"
+                    },
+                    "scheduledAt": {
+                      "type": "string",
+                      "description": "ISO timestamp at which sending begins (for scheduled campaigns)"
+                    },
+                    "timezone": {
+                      "type": "string",
+                      "description": "IANA timezone used to interpret scheduledAt"
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "Campaign status (draft, scheduled, sending, sent, failed, cancelled)"
+                    },
+                    "sentCount": {
+                      "type": "integer",
+                      "description": "Number of recipients the email has been sent to"
+                    },
+                    "failedCount": {
+                      "type": "integer",
+                      "description": "Number of recipients that failed to send"
+                    },
+                    "skippedCount": {
+                      "type": "integer",
+                      "description": "Number of list rows skipped (missing email, duplicate, etc.)"
+                    },
+                    "totalRecipients": {
+                      "type": "integer",
+                      "description": "Total rows in the associated smart list at read time"
+                    },
+                    "startedAt": {
+                      "type": "string",
+                      "description": "ISO timestamp when sending started"
+                    },
+                    "completedAt": {
+                      "type": "string",
+                      "description": "ISO timestamp when sending completed"
+                    },
+                    "created_date": {
+                      "type": "string",
+                      "description": "ISO timestamp when the campaign was created"
+                    },
+                    "updated_date": {
+                      "type": "string",
+                      "description": "ISO timestamp when the campaign was last updated"
+                    },
+                    "smartList": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        }
+                      },
+                      "description": "Summary of the associated smart list"
+                    },
+                    "senderProfile": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "email": {
+                          "type": "string"
+                        },
+                        "integrationId": {
+                          "type": "string"
+                        }
+                      },
+                      "description": "Summary of the sender profile"
+                    }
+                  },
+                  "description": "Marketing campaign object"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Duplicate a campaign into a fresh draft. Copies content, sender, list,",
+        "description": "and sending windows, but never recipients, statistics, or scheduled launch.\nThe copy must be explicitly sent or scheduled before it delivers emails."
       }
     },
     "/api/v0/marketing-campaigns/{campaignId}/send-now": {
@@ -68913,6 +69132,10 @@
                     "type": "string",
                     "description": "Override HTML body to test with the current (unsaved) form value instead of the persisted campaign body"
                   },
+                  "fromName": {
+                    "type": "string",
+                    "description": "Override sender display name for the test email"
+                  },
                   "senderProfileId": {
                     "type": "string",
                     "description": "Override sender profile to test with the current (unsaved) form selection instead of the persisted campaign sender"
@@ -69174,7 +69397,7 @@
         "operationId": "marketing_campaigns_deleteCampaignRecipient",
         "parameters": [
           {
-            "name": "recipientId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -69182,7 +69405,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "recipientId",
             "in": "path",
             "required": true,
             "schema": {
@@ -70499,7 +70722,7 @@
         "operationId": "marketing_campaigns_restoreTemplateVersion",
         "parameters": [
           {
-            "name": "templateId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -70507,7 +70730,7 @@
             }
           },
           {
-            "name": "versionId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -71630,7 +71853,7 @@
         "operationId": "site_builder_apiWebsiteBranchDiff",
         "parameters": [
           {
-            "name": "websiteId",
+            "name": "branch",
             "in": "path",
             "required": true,
             "schema": {
@@ -71638,7 +71861,7 @@
             }
           },
           {
-            "name": "branch",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
