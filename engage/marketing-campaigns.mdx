@@ -50,6 +50,54 @@ Reuse a proven layout instead of starting from scratch:
 
 See [Templates](/engage/marketing-campaigns/campaign-templates) for the full details.
 
+## Adding a Poll
+
+In the Visual Builder, drag a **Poll** block to the desired position. Select it to
+edit the question, two to six answers, fonts, and button colors in the right panel.
+The saved `bodyDocument` owns the poll definition and styling; the server derives
+the campaign's `poll` and rendered `bodyHtml` from it.
+
+### HTML campaigns through the API or MCP
+
+Supply `bodyHtml` without `bodyDocument`. The campaign's `poll` field owns the
+question and answers; `bodyHtml` owns their placement and appearance. Use text
+tokens so labels stay synchronized with the poll definition.
+
+For example, create a draft with `POST /api/v0/marketing-campaigns`, or use the
+same fields through MCP's campaign creation endpoint:
+
+```json
+{
+  "name": "Newsletter topic poll",
+  "subject": "What should we cover next?",
+  "poll": {
+    "question": "What should we cover next?",
+    "options": ["Product tips", "Customer stories"]
+  },
+  "bodyHtml": "<h1>Our newsletter</h1><p>Help shape our next issue.</p><h2 style=\"font-family:Arial,sans-serif;color:#222222\">{{pollQuestion}}</h2><p><a href=\"{{pollUrl0}}\" style=\"display:inline-block;padding:12px 20px;background-color:#006699;color:#ffffff;font-family:Arial,sans-serif;text-decoration:none\">{{pollOption0}}</a></p><p><a href=\"{{pollUrl1}}\" style=\"display:inline-block;padding:12px 20px;background-color:#006699;color:#ffffff;font-family:Arial,sans-serif;text-decoration:none\">{{pollOption1}}</a></p><p>Thanks for reading!</p>"
+}
+```
+
+Configure the campaign's sender profile, Smart List, and any required field mappings
+before sending. Creating a draft does not send email.
+
+- `{{pollQuestion}}` inserts the question as escaped text.
+- `{{pollOption0}}`, `{{pollOption1}}`, and subsequent indices insert escaped answer text in `poll.options` order.
+- `{{pollUrl0}}`, `{{pollUrl1}}`, and subsequent indices become recipient-specific voting links at send time. Keep these tokens intact; do not construct or reuse voting URLs yourself.
+- If you use any poll token, include an anchor with a quoted `href="{{pollUrlN}}"` for **every** configured answer. Missing links or out-of-range indices are rejected.
+- With inline poll tokens, the server does **not** append another poll. With a `poll` definition but no poll tokens, it appends the default poll at the end.
+- Test emails let you check appearance; their poll links do not record votes.
+
+To change the number or order of answers, PATCH `poll` and `bodyHtml` together so
+the links and labels remain aligned. Literal labels in HTML do not automatically
+change when `poll` changes. To remove the poll, send `"poll": null` and HTML with
+all poll tokens removed in the same PATCH.
+
+On update, nonblank `bodyHtml` without `bodyDocument` clears the previous visual
+document and switches the campaign to HTML editing. If you supply a visual
+document containing a Poll block, edit that block instead: its definition takes
+precedence over a separately supplied `poll` field.
+
 ## Campaign Statuses
 
 | Status | What It Means |

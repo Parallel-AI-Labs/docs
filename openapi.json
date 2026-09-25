@@ -954,7 +954,7 @@
         "operationId": "documents_getDocumentContents",
         "parameters": [
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -962,7 +962,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -1021,7 +1021,7 @@
         "operationId": "documents_getDocument",
         "parameters": [
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -1029,7 +1029,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -3168,7 +3168,7 @@
         "operationId": "keys_getApiKey",
         "parameters": [
           {
-            "name": "name",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -3176,7 +3176,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "name",
             "in": "path",
             "required": true,
             "schema": {
@@ -13274,7 +13274,7 @@
         "operationId": "organizations_updateOrganizationMember",
         "parameters": [
           {
-            "name": "orgId",
+            "name": "memberUid",
             "in": "path",
             "required": true,
             "schema": {
@@ -13282,7 +13282,7 @@
             }
           },
           {
-            "name": "memberUid",
+            "name": "orgId",
             "in": "path",
             "required": true,
             "schema": {
@@ -13409,7 +13409,7 @@
         "operationId": "organizations_removeOrganizationMember",
         "parameters": [
           {
-            "name": "orgId",
+            "name": "memberUid",
             "in": "path",
             "required": true,
             "schema": {
@@ -13417,7 +13417,7 @@
             }
           },
           {
-            "name": "memberUid",
+            "name": "orgId",
             "in": "path",
             "required": true,
             "schema": {
@@ -17549,7 +17549,7 @@
         "operationId": "agents_checkConversationActivity",
         "parameters": [
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -17557,7 +17557,7 @@
             }
           },
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -17619,7 +17619,7 @@
         "operationId": "agents_getConversationDetails",
         "parameters": [
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -17627,7 +17627,7 @@
             }
           },
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -20415,7 +20415,7 @@
         "operationId": "lists_deleteTableAction",
         "parameters": [
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -20423,7 +20423,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -20521,7 +20521,7 @@
         "operationId": "lists_getActionSummary",
         "parameters": [
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -20529,7 +20529,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -20649,7 +20649,7 @@
         "operationId": "lists_getActionQueueStatus",
         "parameters": [
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -20657,7 +20657,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -20986,7 +20986,7 @@
         "operationId": "lists_getRowHistory",
         "parameters": [
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -20994,7 +20994,7 @@
             }
           },
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24787,7 +24787,7 @@
         "operationId": "sequences_updateSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24795,7 +24795,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25069,7 +25069,7 @@
         "operationId": "sequences_deleteSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25077,7 +25077,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25799,7 +25799,7 @@
         "operationId": "sequences_getSequenceMemberTimeline",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25807,7 +25807,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26205,7 +26205,7 @@
         "operationId": "sequences_triggerSequenceMember",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26213,7 +26213,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26281,7 +26281,7 @@
         "operationId": "sequences_removeSequenceMember",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26289,7 +26289,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27041,7 +27041,7 @@
         "operationId": "sequences_editSequenceExecution",
         "parameters": [
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27049,7 +27049,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27138,7 +27138,7 @@
         "operationId": "sequences_previewSequenceExecution",
         "parameters": [
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27146,7 +27146,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28794,7 +28794,7 @@
         "operationId": "sequences_testSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28802,7 +28802,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28856,7 +28856,7 @@
         "operationId": "sequences_sendTestEmail",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28864,7 +28864,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -31016,7 +31016,7 @@
         "operationId": "people_updatePersonActivity",
         "parameters": [
           {
-            "name": "personId",
+            "name": "activityId",
             "in": "path",
             "required": true,
             "schema": {
@@ -31024,7 +31024,7 @@
             }
           },
           {
-            "name": "activityId",
+            "name": "personId",
             "in": "path",
             "required": true,
             "schema": {
@@ -31172,7 +31172,7 @@
         "operationId": "people_deletePersonActivity",
         "parameters": [
           {
-            "name": "personId",
+            "name": "activityId",
             "in": "path",
             "required": true,
             "schema": {
@@ -31180,7 +31180,7 @@
             }
           },
           {
-            "name": "activityId",
+            "name": "personId",
             "in": "path",
             "required": true,
             "schema": {
@@ -52043,7 +52043,7 @@
         "operationId": "landing_pages_getLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -52051,7 +52051,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -52090,7 +52090,7 @@
         "operationId": "landing_pages_updateLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -52098,7 +52098,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -52176,7 +52176,7 @@
         "operationId": "landing_pages_deleteLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -52184,7 +52184,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -52225,7 +52225,7 @@
         "operationId": "landing_pages_stopLandingPageThreadRun",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -52233,7 +52233,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -65959,7 +65959,7 @@
         "operationId": "seo_projectLighthouseSnapshotRoute",
         "parameters": [
           {
-            "name": "snapshotId",
+            "name": "projectId",
             "in": "path",
             "required": true,
             "schema": {
@@ -65967,7 +65967,7 @@
             }
           },
           {
-            "name": "projectId",
+            "name": "snapshotId",
             "in": "path",
             "required": true,
             "schema": {
@@ -66836,7 +66836,7 @@
                           },
                           "bodyDocument": {
                             "type": "string",
-                            "description": "Visual-builder JSON document for the email body. When supplied, the server renders bodyHtml from this document and it takes precedence over HTML input. Alternatively, supply bodyHtml without a document. Envelope: {\"subject\": string, \"subTitle\": string, \"content\": <page node>}. Every node is {\"type\": string, \"attributes\": {MJML attributes as string values, e.g. \"padding\": \"10px 25px 10px 25px\", \"background-color\": \"#ffffff\", \"color\": \"#333333\", \"font-size\": \"16px\", \"align\": \"center\", \"width\": \"600px\", \"href\", \"src\"}, \"data\": {\"value\": {...}}, \"children\": [...]}; attribute values must be strings (numbers are dropped). Tree: page -> (wrapper | section) -> section -> column -> content blocks. Content block types: \"text\" (data.value.content = inline HTML string), \"image\" (attributes.src, alt, href, width), \"button\" (data.value.content = label, attributes.href), \"divider\", \"spacer\" (attributes.height), \"social\" (data.value.elements = [{src, href, content, target}]), \"navbar\" (data.value.links = [{href, content}]), \"raw\" (data.value.content = raw MJML/HTML), plus \"hero\", \"group\", \"accordion\", \"carousel\" and \"table\". Each also has an \"advanced_<type>\" variant (e.g. \"advanced_text\"), which is what the builder palette inserts; advanced content blocks placed directly under the page or a wrapper are auto-wrapped in a section/column. Page node: {\"type\": \"page\", \"attributes\": {\"background-color\": \"#efeeea\", \"width\": \"600px\"}, \"data\": {\"value\": {\"breakpoint\": \"480px\", \"font-family\": string, \"font-size\": \"14px\", \"line-height\": \"1.7\", \"font-weight\": \"400\", \"text-color\": \"#000000\", \"content-background-color\": string (optional), \"headStyles\": [{\"content\": css, \"inline\": bool}], \"fonts\": [{\"name\", \"href\"}], \"headAttributes\": \"\", \"responsive\": true}}}. Always set \"responsive\": true \u2014 a missing flag renders a fixed-width layout. Merge tokens pass through rendering untouched: {{content}} inside a text block marks where content-engine output is inserted when content is published as a campaign from this template; Smart-list merge tokens use the matching header normalized to camelCase: for example, `First Name` becomes {{firstName}} and `Company Name` becomes {{companyName}}. Tokens are replaced per recipient from the smart-list row; {{unsubscribe}} becomes the per-recipient unsubscribe link."
+                            "description": "Visual-builder JSON document for the email body. When supplied, the server renders bodyHtml from this document and it takes precedence over HTML input. Alternatively, supply bodyHtml without a document. Envelope: {\"subject\": string, \"subTitle\": string, \"content\": <page node>}. Every node is {\"type\": string, \"attributes\": {MJML attributes as string values, e.g. \"padding\": \"10px 25px 10px 25px\", \"background-color\": \"#ffffff\", \"color\": \"#333333\", \"font-size\": \"16px\", \"align\": \"center\", \"width\": \"600px\", \"href\", \"src\"}, \"data\": {\"value\": {...}}, \"children\": [...]}; attribute values must be strings (numbers are dropped). Tree: page -> (wrapper | section) -> section -> column -> content blocks. Content block types: \"text\" (data.value.content = inline HTML string), \"image\" (attributes.src, alt, href, width), \"button\" (data.value.content = label, attributes.href), \"divider\", \"spacer\" (attributes.height), \"social\" (data.value.elements = [{src, href, content, target}]), \"navbar\" (data.value.links = [{href, content}]), \"raw\" (data.value.content = raw MJML/HTML), plus \"hero\", \"group\", \"accordion\", \"carousel\" and \"table\". Each also has an \"advanced_<type>\" variant (e.g. \"advanced_text\"), which is what the builder palette inserts; advanced content blocks placed directly under the page or a wrapper are auto-wrapped in a section/column. For a visual poll, insert one marketing_poll block: {\"type\": \"marketing_poll\", \"data\": {\"value\": {\"question\": \"Your question?\", \"options\": [\"Answer one\", \"Answer two\"]}}, \"attributes\": {}, \"children\": []}. Its attributes support padding, font-family, font-size, font-weight, color, background-color, button-background-color, button-text-color, button-font-size, and border-radius. The server derives the campaign poll from this block; do not maintain a separate poll definition. Page node: {\"type\": \"page\", \"attributes\": {\"background-color\": \"#efeeea\", \"width\": \"600px\"}, \"data\": {\"value\": {\"breakpoint\": \"480px\", \"font-family\": string, \"font-size\": \"14px\", \"line-height\": \"1.7\", \"font-weight\": \"400\", \"text-color\": \"#000000\", \"content-background-color\": string (optional), \"headStyles\": [{\"content\": css, \"inline\": bool}], \"fonts\": [{\"name\", \"href\"}], \"headAttributes\": \"\", \"responsive\": true}}}. Always set \"responsive\": true \u2014 a missing flag renders a fixed-width layout. Merge tokens pass through rendering untouched: {{content}} inside a text block marks where content-engine output is inserted when content is published as a campaign from this template; Smart-list merge tokens use the matching header normalized to camelCase: for example, `First Name` becomes {{firstName}} and `Company Name` becomes {{companyName}}. Tokens are replaced per recipient from the smart-list row; {{unsubscribe}} becomes the per-recipient unsubscribe link."
                           },
                           "poll": {
                             "type": "string",
@@ -67034,7 +67034,7 @@
                     },
                     "bodyDocument": {
                       "type": "string",
-                      "description": "Visual-builder JSON document for the email body. When supplied, the server renders bodyHtml from this document and it takes precedence over HTML input. Alternatively, supply bodyHtml without a document. Envelope: {\"subject\": string, \"subTitle\": string, \"content\": <page node>}. Every node is {\"type\": string, \"attributes\": {MJML attributes as string values, e.g. \"padding\": \"10px 25px 10px 25px\", \"background-color\": \"#ffffff\", \"color\": \"#333333\", \"font-size\": \"16px\", \"align\": \"center\", \"width\": \"600px\", \"href\", \"src\"}, \"data\": {\"value\": {...}}, \"children\": [...]}; attribute values must be strings (numbers are dropped). Tree: page -> (wrapper | section) -> section -> column -> content blocks. Content block types: \"text\" (data.value.content = inline HTML string), \"image\" (attributes.src, alt, href, width), \"button\" (data.value.content = label, attributes.href), \"divider\", \"spacer\" (attributes.height), \"social\" (data.value.elements = [{src, href, content, target}]), \"navbar\" (data.value.links = [{href, content}]), \"raw\" (data.value.content = raw MJML/HTML), plus \"hero\", \"group\", \"accordion\", \"carousel\" and \"table\". Each also has an \"advanced_<type>\" variant (e.g. \"advanced_text\"), which is what the builder palette inserts; advanced content blocks placed directly under the page or a wrapper are auto-wrapped in a section/column. Page node: {\"type\": \"page\", \"attributes\": {\"background-color\": \"#efeeea\", \"width\": \"600px\"}, \"data\": {\"value\": {\"breakpoint\": \"480px\", \"font-family\": string, \"font-size\": \"14px\", \"line-height\": \"1.7\", \"font-weight\": \"400\", \"text-color\": \"#000000\", \"content-background-color\": string (optional), \"headStyles\": [{\"content\": css, \"inline\": bool}], \"fonts\": [{\"name\", \"href\"}], \"headAttributes\": \"\", \"responsive\": true}}}. Always set \"responsive\": true \u2014 a missing flag renders a fixed-width layout. Merge tokens pass through rendering untouched: {{content}} inside a text block marks where content-engine output is inserted when content is published as a campaign from this template; Smart-list merge tokens use the matching header normalized to camelCase: for example, `First Name` becomes {{firstName}} and `Company Name` becomes {{companyName}}. Tokens are replaced per recipient from the smart-list row; {{unsubscribe}} becomes the per-recipient unsubscribe link."
+                      "description": "Visual-builder JSON document for the email body. When supplied, the server renders bodyHtml from this document and it takes precedence over HTML input. Alternatively, supply bodyHtml without a document. Envelope: {\"subject\": string, \"subTitle\": string, \"content\": <page node>}. Every node is {\"type\": string, \"attributes\": {MJML attributes as string values, e.g. \"padding\": \"10px 25px 10px 25px\", \"background-color\": \"#ffffff\", \"color\": \"#333333\", \"font-size\": \"16px\", \"align\": \"center\", \"width\": \"600px\", \"href\", \"src\"}, \"data\": {\"value\": {...}}, \"children\": [...]}; attribute values must be strings (numbers are dropped). Tree: page -> (wrapper | section) -> section -> column -> content blocks. Content block types: \"text\" (data.value.content = inline HTML string), \"image\" (attributes.src, alt, href, width), \"button\" (data.value.content = label, attributes.href), \"divider\", \"spacer\" (attributes.height), \"social\" (data.value.elements = [{src, href, content, target}]), \"navbar\" (data.value.links = [{href, content}]), \"raw\" (data.value.content = raw MJML/HTML), plus \"hero\", \"group\", \"accordion\", \"carousel\" and \"table\". Each also has an \"advanced_<type>\" variant (e.g. \"advanced_text\"), which is what the builder palette inserts; advanced content blocks placed directly under the page or a wrapper are auto-wrapped in a section/column. For a visual poll, insert one marketing_poll block: {\"type\": \"marketing_poll\", \"data\": {\"value\": {\"question\": \"Your question?\", \"options\": [\"Answer one\", \"Answer two\"]}}, \"attributes\": {}, \"children\": []}. Its attributes support padding, font-family, font-size, font-weight, color, background-color, button-background-color, button-text-color, button-font-size, and border-radius. The server derives the campaign poll from this block; do not maintain a separate poll definition. Page node: {\"type\": \"page\", \"attributes\": {\"background-color\": \"#efeeea\", \"width\": \"600px\"}, \"data\": {\"value\": {\"breakpoint\": \"480px\", \"font-family\": string, \"font-size\": \"14px\", \"line-height\": \"1.7\", \"font-weight\": \"400\", \"text-color\": \"#000000\", \"content-background-color\": string (optional), \"headStyles\": [{\"content\": css, \"inline\": bool}], \"fonts\": [{\"name\", \"href\"}], \"headAttributes\": \"\", \"responsive\": true}}}. Always set \"responsive\": true \u2014 a missing flag renders a fixed-width layout. Merge tokens pass through rendering untouched: {{content}} inside a text block marks where content-engine output is inserted when content is published as a campaign from this template; Smart-list merge tokens use the matching header normalized to camelCase: for example, `First Name` becomes {{firstName}} and `Company Name` becomes {{companyName}}. Tokens are replaced per recipient from the smart-list row; {{unsubscribe}} becomes the per-recipient unsubscribe link."
                     },
                     "poll": {
                       "type": "string",
@@ -67138,7 +67138,7 @@
           }
         },
         "summary": "Create a new marketing campaign in draft status.",
-        "description": "A newly created campaign is always in draft status and does not send anything\nuntil you call /schedule (to queue it for a future time) or /send-now\n(to begin sending immediately). You can keep editing the campaign with PATCH\nuntil it enters sending or sent status.\n\nTo create a campaign from a template, GET /api/v0/marketing-campaign-templates/{templateId}\nand pass its subject, replyTo, bodyHtml, bodyDocument, senderProfileId, listId,\nand fieldMappings here.",
+        "description": "A newly created campaign is always in draft status and does not send anything\nuntil you call /schedule (to queue it for a future time) or /send-now\n(to begin sending immediately). You can keep editing the campaign with PATCH\nuntil it enters sending or sent status.\n\nTo create a campaign from a template, GET /api/v0/marketing-campaign-templates/{templateId}\nand pass its subject, replyTo, bodyHtml, bodyDocument, senderProfileId, listId,\nand fieldMappings here.\n\nFor an HTML-only inline poll, provide poll plus bodyHtml containing styled\nanchors with href=\"{{pollUrl0}}\", href=\"{{pollUrl1}}\", etc. for every option.\nUse {{pollQuestion}} and {{pollOption0}} text tokens to keep labels synchronized.\nSee the poll field description for validation, ordering, and removal rules.",
         "requestBody": {
           "required": true,
           "content": {
@@ -67164,15 +67164,15 @@
                   },
                   "bodyHtml": {
                     "type": "string",
-                    "description": "HTML email body. Supply without bodyDocument for HTML-based campaigns. On update, nonblank HTML replaces the previous body and clears the previous visual-builder document. Empty HTML preserves existing content. "
+                    "description": "HTML email body. Supply without bodyDocument for HTML-based campaigns. On update, nonblank HTML replaces the previous body and clears the previous visual-builder document. Empty HTML preserves existing content. For an inline poll, supply the poll field and style anchors with href=\"{{pollUrl0}}\", href=\"{{pollUrl1}}\", etc., one for every option. Use {{pollQuestion}} and {{pollOption0}} etc. for text. See poll for the complete contract. "
                   },
                   "bodyDocument": {
                     "type": "string",
-                    "description": "Visual-builder JSON document for the email body. When supplied, the server renders bodyHtml from this document and it takes precedence over HTML input. Alternatively, supply bodyHtml without a document. Envelope: {\"subject\": string, \"subTitle\": string, \"content\": <page node>}. Every node is {\"type\": string, \"attributes\": {MJML attributes as string values, e.g. \"padding\": \"10px 25px 10px 25px\", \"background-color\": \"#ffffff\", \"color\": \"#333333\", \"font-size\": \"16px\", \"align\": \"center\", \"width\": \"600px\", \"href\", \"src\"}, \"data\": {\"value\": {...}}, \"children\": [...]}; attribute values must be strings (numbers are dropped). Tree: page -> (wrapper | section) -> section -> column -> content blocks. Content block types: \"text\" (data.value.content = inline HTML string), \"image\" (attributes.src, alt, href, width), \"button\" (data.value.content = label, attributes.href), \"divider\", \"spacer\" (attributes.height), \"social\" (data.value.elements = [{src, href, content, target}]), \"navbar\" (data.value.links = [{href, content}]), \"raw\" (data.value.content = raw MJML/HTML), plus \"hero\", \"group\", \"accordion\", \"carousel\" and \"table\". Each also has an \"advanced_<type>\" variant (e.g. \"advanced_text\"), which is what the builder palette inserts; advanced content blocks placed directly under the page or a wrapper are auto-wrapped in a section/column. Page node: {\"type\": \"page\", \"attributes\": {\"background-color\": \"#efeeea\", \"width\": \"600px\"}, \"data\": {\"value\": {\"breakpoint\": \"480px\", \"font-family\": string, \"font-size\": \"14px\", \"line-height\": \"1.7\", \"font-weight\": \"400\", \"text-color\": \"#000000\", \"content-background-color\": string (optional), \"headStyles\": [{\"content\": css, \"inline\": bool}], \"fonts\": [{\"name\", \"href\"}], \"headAttributes\": \"\", \"responsive\": true}}}. Always set \"responsive\": true \u2014 a missing flag renders a fixed-width layout. Merge tokens pass through rendering untouched: {{content}} inside a text block marks where content-engine output is inserted when content is published as a campaign from this template; Smart-list merge tokens use the matching header normalized to camelCase: for example, `First Name` becomes {{firstName}} and `Company Name` becomes {{companyName}}. Tokens are replaced per recipient from the smart-list row; {{unsubscribe}} becomes the per-recipient unsubscribe link."
+                    "description": "Visual-builder JSON document for the email body. When supplied, the server renders bodyHtml from this document and it takes precedence over HTML input. Alternatively, supply bodyHtml without a document. Envelope: {\"subject\": string, \"subTitle\": string, \"content\": <page node>}. Every node is {\"type\": string, \"attributes\": {MJML attributes as string values, e.g. \"padding\": \"10px 25px 10px 25px\", \"background-color\": \"#ffffff\", \"color\": \"#333333\", \"font-size\": \"16px\", \"align\": \"center\", \"width\": \"600px\", \"href\", \"src\"}, \"data\": {\"value\": {...}}, \"children\": [...]}; attribute values must be strings (numbers are dropped). Tree: page -> (wrapper | section) -> section -> column -> content blocks. Content block types: \"text\" (data.value.content = inline HTML string), \"image\" (attributes.src, alt, href, width), \"button\" (data.value.content = label, attributes.href), \"divider\", \"spacer\" (attributes.height), \"social\" (data.value.elements = [{src, href, content, target}]), \"navbar\" (data.value.links = [{href, content}]), \"raw\" (data.value.content = raw MJML/HTML), plus \"hero\", \"group\", \"accordion\", \"carousel\" and \"table\". Each also has an \"advanced_<type>\" variant (e.g. \"advanced_text\"), which is what the builder palette inserts; advanced content blocks placed directly under the page or a wrapper are auto-wrapped in a section/column. For a visual poll, insert one marketing_poll block: {\"type\": \"marketing_poll\", \"data\": {\"value\": {\"question\": \"Your question?\", \"options\": [\"Answer one\", \"Answer two\"]}}, \"attributes\": {}, \"children\": []}. Its attributes support padding, font-family, font-size, font-weight, color, background-color, button-background-color, button-text-color, button-font-size, and border-radius. The server derives the campaign poll from this block; do not maintain a separate poll definition. Page node: {\"type\": \"page\", \"attributes\": {\"background-color\": \"#efeeea\", \"width\": \"600px\"}, \"data\": {\"value\": {\"breakpoint\": \"480px\", \"font-family\": string, \"font-size\": \"14px\", \"line-height\": \"1.7\", \"font-weight\": \"400\", \"text-color\": \"#000000\", \"content-background-color\": string (optional), \"headStyles\": [{\"content\": css, \"inline\": bool}], \"fonts\": [{\"name\", \"href\"}], \"headAttributes\": \"\", \"responsive\": true}}}. Always set \"responsive\": true \u2014 a missing flag renders a fixed-width layout. Merge tokens pass through rendering untouched: {{content}} inside a text block marks where content-engine output is inserted when content is published as a campaign from this template; Smart-list merge tokens use the matching header normalized to camelCase: for example, `First Name` becomes {{firstName}} and `Company Name` becomes {{companyName}}. Tokens are replaced per recipient from the smart-list row; {{unsubscribe}} becomes the per-recipient unsubscribe link."
                   },
                   "poll": {
                     "type": "object",
-                    "description": "Optional email poll: {\"question\": string, \"options\": [string, string, ...]}. Two to six non-empty options are required."
+                    "description": "For HTML-only campaigns, this field is the source of truth for the poll: {\"question\": \"Your question?\", \"options\": [\"Answer one\", \"Answer two\"]}. Require a non-empty question and two to six non-empty option strings. In bodyHtml, place {{pollQuestion}} and anchors such as <a href=\"{{pollUrl0}}\" style=\"background-color:#414141;color:#ffffff\">{{pollOption0}}</a>. Indices are zero-based and follow options order. Include a quoted href=\"{{pollUrlN}}\" for every option when using any poll token; partial inline polls are rejected. Question/option tokens are replaced with escaped text; URL tokens become per-recipient voting links when sending. Leave tokens intact: never invent or reuse recipient voting URLs. Inline polls suppress the default footer poll. With no poll tokens, a default poll is appended. Update poll and bodyHtml together when changing option count/order; literal HTML labels are not synchronized, so prefer text tokens. Set poll to null and remove all poll tokens from bodyHtml in the same update to remove an HTML poll. A poll-managed bodyDocument takes precedence and derives this field automatically; edit its marketing_poll block instead. Test-email links do not record votes."
                   },
                   "senderProfileId": {
                     "type": "string",
@@ -67322,7 +67322,7 @@
                     },
                     "bodyDocument": {
                       "type": "string",
-                      "description": "Visual-builder JSON document for the email body. When supplied, the server renders bodyHtml from this document and it takes precedence over HTML input. Alternatively, supply bodyHtml without a document. Envelope: {\"subject\": string, \"subTitle\": string, \"content\": <page node>}. Every node is {\"type\": string, \"attributes\": {MJML attributes as string values, e.g. \"padding\": \"10px 25px 10px 25px\", \"background-color\": \"#ffffff\", \"color\": \"#333333\", \"font-size\": \"16px\", \"align\": \"center\", \"width\": \"600px\", \"href\", \"src\"}, \"data\": {\"value\": {...}}, \"children\": [...]}; attribute values must be strings (numbers are dropped). Tree: page -> (wrapper | section) -> section -> column -> content blocks. Content block types: \"text\" (data.value.content = inline HTML string), \"image\" (attributes.src, alt, href, width), \"button\" (data.value.content = label, attributes.href), \"divider\", \"spacer\" (attributes.height), \"social\" (data.value.elements = [{src, href, content, target}]), \"navbar\" (data.value.links = [{href, content}]), \"raw\" (data.value.content = raw MJML/HTML), plus \"hero\", \"group\", \"accordion\", \"carousel\" and \"table\". Each also has an \"advanced_<type>\" variant (e.g. \"advanced_text\"), which is what the builder palette inserts; advanced content blocks placed directly under the page or a wrapper are auto-wrapped in a section/column. Page node: {\"type\": \"page\", \"attributes\": {\"background-color\": \"#efeeea\", \"width\": \"600px\"}, \"data\": {\"value\": {\"breakpoint\": \"480px\", \"font-family\": string, \"font-size\": \"14px\", \"line-height\": \"1.7\", \"font-weight\": \"400\", \"text-color\": \"#000000\", \"content-background-color\": string (optional), \"headStyles\": [{\"content\": css, \"inline\": bool}], \"fonts\": [{\"name\", \"href\"}], \"headAttributes\": \"\", \"responsive\": true}}}. Always set \"responsive\": true \u2014 a missing flag renders a fixed-width layout. Merge tokens pass through rendering untouched: {{content}} inside a text block marks where content-engine output is inserted when content is published as a campaign from this template; Smart-list merge tokens use the matching header normalized to camelCase: for example, `First Name` becomes {{firstName}} and `Company Name` becomes {{companyName}}. Tokens are replaced per recipient from the smart-list row; {{unsubscribe}} becomes the per-recipient unsubscribe link."
+                      "description": "Visual-builder JSON document for the email body. When supplied, the server renders bodyHtml from this document and it takes precedence over HTML input. Alternatively, supply bodyHtml without a document. Envelope: {\"subject\": string, \"subTitle\": string, \"content\": <page node>}. Every node is {\"type\": string, \"attributes\": {MJML attributes as string values, e.g. \"padding\": \"10px 25px 10px 25px\", \"background-color\": \"#ffffff\", \"color\": \"#333333\", \"font-size\": \"16px\", \"align\": \"center\", \"width\": \"600px\", \"href\", \"src\"}, \"data\": {\"value\": {...}}, \"children\": [...]}; attribute values must be strings (numbers are dropped). Tree: page -> (wrapper | section) -> section -> column -> content blocks. Content block types: \"text\" (data.value.content = inline HTML string), \"image\" (attributes.src, alt, href, width), \"button\" (data.value.content = label, attributes.href), \"divider\", \"spacer\" (attributes.height), \"social\" (data.value.elements = [{src, href, content, target}]), \"navbar\" (data.value.links = [{href, content}]), \"raw\" (data.value.content = raw MJML/HTML), plus \"hero\", \"group\", \"accordion\", \"carousel\" and \"table\". Each also has an \"advanced_<type>\" variant (e.g. \"advanced_text\"), which is what the builder palette inserts; advanced content blocks placed directly under the page or a wrapper are auto-wrapped in a section/column. For a visual poll, insert one marketing_poll block: {\"type\": \"marketing_poll\", \"data\": {\"value\": {\"question\": \"Your question?\", \"options\": [\"Answer one\", \"Answer two\"]}}, \"attributes\": {}, \"children\": []}. Its attributes support padding, font-family, font-size, font-weight, color, background-color, button-background-color, button-text-color, button-font-size, and border-radius. The server derives the campaign poll from this block; do not maintain a separate poll definition. Page node: {\"type\": \"page\", \"attributes\": {\"background-color\": \"#efeeea\", \"width\": \"600px\"}, \"data\": {\"value\": {\"breakpoint\": \"480px\", \"font-family\": string, \"font-size\": \"14px\", \"line-height\": \"1.7\", \"font-weight\": \"400\", \"text-color\": \"#000000\", \"content-background-color\": string (optional), \"headStyles\": [{\"content\": css, \"inline\": bool}], \"fonts\": [{\"name\", \"href\"}], \"headAttributes\": \"\", \"responsive\": true}}}. Always set \"responsive\": true \u2014 a missing flag renders a fixed-width layout. Merge tokens pass through rendering untouched: {{content}} inside a text block marks where content-engine output is inserted when content is published as a campaign from this template; Smart-list merge tokens use the matching header normalized to camelCase: for example, `First Name` becomes {{firstName}} and `Company Name` becomes {{companyName}}. Tokens are replaced per recipient from the smart-list row; {{unsubscribe}} becomes the per-recipient unsubscribe link."
                     },
                     "poll": {
                       "type": "string",
@@ -67534,7 +67534,7 @@
                     },
                     "bodyDocument": {
                       "type": "string",
-                      "description": "Visual-builder JSON document for the email body. When supplied, the server renders bodyHtml from this document and it takes precedence over HTML input. Alternatively, supply bodyHtml without a document. Envelope: {\"subject\": string, \"subTitle\": string, \"content\": <page node>}. Every node is {\"type\": string, \"attributes\": {MJML attributes as string values, e.g. \"padding\": \"10px 25px 10px 25px\", \"background-color\": \"#ffffff\", \"color\": \"#333333\", \"font-size\": \"16px\", \"align\": \"center\", \"width\": \"600px\", \"href\", \"src\"}, \"data\": {\"value\": {...}}, \"children\": [...]}; attribute values must be strings (numbers are dropped). Tree: page -> (wrapper | section) -> section -> column -> content blocks. Content block types: \"text\" (data.value.content = inline HTML string), \"image\" (attributes.src, alt, href, width), \"button\" (data.value.content = label, attributes.href), \"divider\", \"spacer\" (attributes.height), \"social\" (data.value.elements = [{src, href, content, target}]), \"navbar\" (data.value.links = [{href, content}]), \"raw\" (data.value.content = raw MJML/HTML), plus \"hero\", \"group\", \"accordion\", \"carousel\" and \"table\". Each also has an \"advanced_<type>\" variant (e.g. \"advanced_text\"), which is what the builder palette inserts; advanced content blocks placed directly under the page or a wrapper are auto-wrapped in a section/column. Page node: {\"type\": \"page\", \"attributes\": {\"background-color\": \"#efeeea\", \"width\": \"600px\"}, \"data\": {\"value\": {\"breakpoint\": \"480px\", \"font-family\": string, \"font-size\": \"14px\", \"line-height\": \"1.7\", \"font-weight\": \"400\", \"text-color\": \"#000000\", \"content-background-color\": string (optional), \"headStyles\": [{\"content\": css, \"inline\": bool}], \"fonts\": [{\"name\", \"href\"}], \"headAttributes\": \"\", \"responsive\": true}}}. Always set \"responsive\": true \u2014 a missing flag renders a fixed-width layout. Merge tokens pass through rendering untouched: {{content}} inside a text block marks where content-engine output is inserted when content is published as a campaign from this template; Smart-list merge tokens use the matching header normalized to camelCase: for example, `First Name` becomes {{firstName}} and `Company Name` becomes {{companyName}}. Tokens are replaced per recipient from the smart-list row; {{unsubscribe}} becomes the per-recipient unsubscribe link."
+                      "description": "Visual-builder JSON document for the email body. When supplied, the server renders bodyHtml from this document and it takes precedence over HTML input. Alternatively, supply bodyHtml without a document. Envelope: {\"subject\": string, \"subTitle\": string, \"content\": <page node>}. Every node is {\"type\": string, \"attributes\": {MJML attributes as string values, e.g. \"padding\": \"10px 25px 10px 25px\", \"background-color\": \"#ffffff\", \"color\": \"#333333\", \"font-size\": \"16px\", \"align\": \"center\", \"width\": \"600px\", \"href\", \"src\"}, \"data\": {\"value\": {...}}, \"children\": [...]}; attribute values must be strings (numbers are dropped). Tree: page -> (wrapper | section) -> section -> column -> content blocks. Content block types: \"text\" (data.value.content = inline HTML string), \"image\" (attributes.src, alt, href, width), \"button\" (data.value.content = label, attributes.href), \"divider\", \"spacer\" (attributes.height), \"social\" (data.value.elements = [{src, href, content, target}]), \"navbar\" (data.value.links = [{href, content}]), \"raw\" (data.value.content = raw MJML/HTML), plus \"hero\", \"group\", \"accordion\", \"carousel\" and \"table\". Each also has an \"advanced_<type>\" variant (e.g. \"advanced_text\"), which is what the builder palette inserts; advanced content blocks placed directly under the page or a wrapper are auto-wrapped in a section/column. For a visual poll, insert one marketing_poll block: {\"type\": \"marketing_poll\", \"data\": {\"value\": {\"question\": \"Your question?\", \"options\": [\"Answer one\", \"Answer two\"]}}, \"attributes\": {}, \"children\": []}. Its attributes support padding, font-family, font-size, font-weight, color, background-color, button-background-color, button-text-color, button-font-size, and border-radius. The server derives the campaign poll from this block; do not maintain a separate poll definition. Page node: {\"type\": \"page\", \"attributes\": {\"background-color\": \"#efeeea\", \"width\": \"600px\"}, \"data\": {\"value\": {\"breakpoint\": \"480px\", \"font-family\": string, \"font-size\": \"14px\", \"line-height\": \"1.7\", \"font-weight\": \"400\", \"text-color\": \"#000000\", \"content-background-color\": string (optional), \"headStyles\": [{\"content\": css, \"inline\": bool}], \"fonts\": [{\"name\", \"href\"}], \"headAttributes\": \"\", \"responsive\": true}}}. Always set \"responsive\": true \u2014 a missing flag renders a fixed-width layout. Merge tokens pass through rendering untouched: {{content}} inside a text block marks where content-engine output is inserted when content is published as a campaign from this template; Smart-list merge tokens use the matching header normalized to camelCase: for example, `First Name` becomes {{firstName}} and `Company Name` becomes {{companyName}}. Tokens are replaced per recipient from the smart-list row; {{unsubscribe}} becomes the per-recipient unsubscribe link."
                     },
                     "poll": {
                       "type": "string",
@@ -67664,15 +67664,15 @@
                   },
                   "bodyHtml": {
                     "type": "string",
-                    "description": "HTML email body. Supply without bodyDocument for HTML-based campaigns. On update, nonblank HTML replaces the previous body and clears the previous visual-builder document. Empty HTML preserves existing content. "
+                    "description": "HTML email body. Supply without bodyDocument for HTML-based campaigns. On update, nonblank HTML replaces the previous body and clears the previous visual-builder document. Empty HTML preserves existing content. For an inline poll, supply the poll field and style anchors with href=\"{{pollUrl0}}\", href=\"{{pollUrl1}}\", etc., one for every option. Use {{pollQuestion}} and {{pollOption0}} etc. for text. See poll for the complete contract. "
                   },
                   "bodyDocument": {
                     "type": "string",
-                    "description": "Visual-builder JSON document for the email body. When supplied, the server renders bodyHtml from this document and it takes precedence over HTML input. Alternatively, supply bodyHtml without a document. Envelope: {\"subject\": string, \"subTitle\": string, \"content\": <page node>}. Every node is {\"type\": string, \"attributes\": {MJML attributes as string values, e.g. \"padding\": \"10px 25px 10px 25px\", \"background-color\": \"#ffffff\", \"color\": \"#333333\", \"font-size\": \"16px\", \"align\": \"center\", \"width\": \"600px\", \"href\", \"src\"}, \"data\": {\"value\": {...}}, \"children\": [...]}; attribute values must be strings (numbers are dropped). Tree: page -> (wrapper | section) -> section -> column -> content blocks. Content block types: \"text\" (data.value.content = inline HTML string), \"image\" (attributes.src, alt, href, width), \"button\" (data.value.content = label, attributes.href), \"divider\", \"spacer\" (attributes.height), \"social\" (data.value.elements = [{src, href, content, target}]), \"navbar\" (data.value.links = [{href, content}]), \"raw\" (data.value.content = raw MJML/HTML), plus \"hero\", \"group\", \"accordion\", \"carousel\" and \"table\". Each also has an \"advanced_<type>\" variant (e.g. \"advanced_text\"), which is what the builder palette inserts; advanced content blocks placed directly under the page or a wrapper are auto-wrapped in a section/column. Page node: {\"type\": \"page\", \"attributes\": {\"background-color\": \"#efeeea\", \"width\": \"600px\"}, \"data\": {\"value\": {\"breakpoint\": \"480px\", \"font-family\": string, \"font-size\": \"14px\", \"line-height\": \"1.7\", \"font-weight\": \"400\", \"text-color\": \"#000000\", \"content-background-color\": string (optional), \"headStyles\": [{\"content\": css, \"inline\": bool}], \"fonts\": [{\"name\", \"href\"}], \"headAttributes\": \"\", \"responsive\": true}}}. Always set \"responsive\": true \u2014 a missing flag renders a fixed-width layout. Merge tokens pass through rendering untouched: {{content}} inside a text block marks where content-engine output is inserted when content is published as a campaign from this template; Smart-list merge tokens use the matching header normalized to camelCase: for example, `First Name` becomes {{firstName}} and `Company Name` becomes {{companyName}}. Tokens are replaced per recipient from the smart-list row; {{unsubscribe}} becomes the per-recipient unsubscribe link."
+                    "description": "Visual-builder JSON document for the email body. When supplied, the server renders bodyHtml from this document and it takes precedence over HTML input. Alternatively, supply bodyHtml without a document. Envelope: {\"subject\": string, \"subTitle\": string, \"content\": <page node>}. Every node is {\"type\": string, \"attributes\": {MJML attributes as string values, e.g. \"padding\": \"10px 25px 10px 25px\", \"background-color\": \"#ffffff\", \"color\": \"#333333\", \"font-size\": \"16px\", \"align\": \"center\", \"width\": \"600px\", \"href\", \"src\"}, \"data\": {\"value\": {...}}, \"children\": [...]}; attribute values must be strings (numbers are dropped). Tree: page -> (wrapper | section) -> section -> column -> content blocks. Content block types: \"text\" (data.value.content = inline HTML string), \"image\" (attributes.src, alt, href, width), \"button\" (data.value.content = label, attributes.href), \"divider\", \"spacer\" (attributes.height), \"social\" (data.value.elements = [{src, href, content, target}]), \"navbar\" (data.value.links = [{href, content}]), \"raw\" (data.value.content = raw MJML/HTML), plus \"hero\", \"group\", \"accordion\", \"carousel\" and \"table\". Each also has an \"advanced_<type>\" variant (e.g. \"advanced_text\"), which is what the builder palette inserts; advanced content blocks placed directly under the page or a wrapper are auto-wrapped in a section/column. For a visual poll, insert one marketing_poll block: {\"type\": \"marketing_poll\", \"data\": {\"value\": {\"question\": \"Your question?\", \"options\": [\"Answer one\", \"Answer two\"]}}, \"attributes\": {}, \"children\": []}. Its attributes support padding, font-family, font-size, font-weight, color, background-color, button-background-color, button-text-color, button-font-size, and border-radius. The server derives the campaign poll from this block; do not maintain a separate poll definition. Page node: {\"type\": \"page\", \"attributes\": {\"background-color\": \"#efeeea\", \"width\": \"600px\"}, \"data\": {\"value\": {\"breakpoint\": \"480px\", \"font-family\": string, \"font-size\": \"14px\", \"line-height\": \"1.7\", \"font-weight\": \"400\", \"text-color\": \"#000000\", \"content-background-color\": string (optional), \"headStyles\": [{\"content\": css, \"inline\": bool}], \"fonts\": [{\"name\", \"href\"}], \"headAttributes\": \"\", \"responsive\": true}}}. Always set \"responsive\": true \u2014 a missing flag renders a fixed-width layout. Merge tokens pass through rendering untouched: {{content}} inside a text block marks where content-engine output is inserted when content is published as a campaign from this template; Smart-list merge tokens use the matching header normalized to camelCase: for example, `First Name` becomes {{firstName}} and `Company Name` becomes {{companyName}}. Tokens are replaced per recipient from the smart-list row; {{unsubscribe}} becomes the per-recipient unsubscribe link."
                   },
                   "poll": {
                     "type": "object",
-                    "description": "Optional email poll: {\"question\": string, \"options\": [string, string, ...]}. Set null to remove while editable."
+                    "description": "For HTML-only campaigns, this field is the source of truth for the poll: {\"question\": \"Your question?\", \"options\": [\"Answer one\", \"Answer two\"]}. Require a non-empty question and two to six non-empty option strings. In bodyHtml, place {{pollQuestion}} and anchors such as <a href=\"{{pollUrl0}}\" style=\"background-color:#414141;color:#ffffff\">{{pollOption0}}</a>. Indices are zero-based and follow options order. Include a quoted href=\"{{pollUrlN}}\" for every option when using any poll token; partial inline polls are rejected. Question/option tokens are replaced with escaped text; URL tokens become per-recipient voting links when sending. Leave tokens intact: never invent or reuse recipient voting URLs. Inline polls suppress the default footer poll. With no poll tokens, a default poll is appended. Update poll and bodyHtml together when changing option count/order; literal HTML labels are not synchronized, so prefer text tokens. Set poll to null and remove all poll tokens from bodyHtml in the same update to remove an HTML poll. A poll-managed bodyDocument takes precedence and derives this field automatically; edit its marketing_poll block instead. Test-email links do not record votes."
                   },
                   "senderProfileId": {
                     "type": "string",
@@ -67920,7 +67920,7 @@
         "operationId": "marketing_campaigns_restoreCampaignVersion",
         "parameters": [
           {
-            "name": "versionId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -67928,7 +67928,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -68028,7 +68028,7 @@
                     },
                     "bodyDocument": {
                       "type": "string",
-                      "description": "Visual-builder JSON document for the email body. When supplied, the server renders bodyHtml from this document and it takes precedence over HTML input. Alternatively, supply bodyHtml without a document. Envelope: {\"subject\": string, \"subTitle\": string, \"content\": <page node>}. Every node is {\"type\": string, \"attributes\": {MJML attributes as string values, e.g. \"padding\": \"10px 25px 10px 25px\", \"background-color\": \"#ffffff\", \"color\": \"#333333\", \"font-size\": \"16px\", \"align\": \"center\", \"width\": \"600px\", \"href\", \"src\"}, \"data\": {\"value\": {...}}, \"children\": [...]}; attribute values must be strings (numbers are dropped). Tree: page -> (wrapper | section) -> section -> column -> content blocks. Content block types: \"text\" (data.value.content = inline HTML string), \"image\" (attributes.src, alt, href, width), \"button\" (data.value.content = label, attributes.href), \"divider\", \"spacer\" (attributes.height), \"social\" (data.value.elements = [{src, href, content, target}]), \"navbar\" (data.value.links = [{href, content}]), \"raw\" (data.value.content = raw MJML/HTML), plus \"hero\", \"group\", \"accordion\", \"carousel\" and \"table\". Each also has an \"advanced_<type>\" variant (e.g. \"advanced_text\"), which is what the builder palette inserts; advanced content blocks placed directly under the page or a wrapper are auto-wrapped in a section/column. Page node: {\"type\": \"page\", \"attributes\": {\"background-color\": \"#efeeea\", \"width\": \"600px\"}, \"data\": {\"value\": {\"breakpoint\": \"480px\", \"font-family\": string, \"font-size\": \"14px\", \"line-height\": \"1.7\", \"font-weight\": \"400\", \"text-color\": \"#000000\", \"content-background-color\": string (optional), \"headStyles\": [{\"content\": css, \"inline\": bool}], \"fonts\": [{\"name\", \"href\"}], \"headAttributes\": \"\", \"responsive\": true}}}. Always set \"responsive\": true \u2014 a missing flag renders a fixed-width layout. Merge tokens pass through rendering untouched: {{content}} inside a text block marks where content-engine output is inserted when content is published as a campaign from this template; Smart-list merge tokens use the matching header normalized to camelCase: for example, `First Name` becomes {{firstName}} and `Company Name` becomes {{companyName}}. Tokens are replaced per recipient from the smart-list row; {{unsubscribe}} becomes the per-recipient unsubscribe link."
+                      "description": "Visual-builder JSON document for the email body. When supplied, the server renders bodyHtml from this document and it takes precedence over HTML input. Alternatively, supply bodyHtml without a document. Envelope: {\"subject\": string, \"subTitle\": string, \"content\": <page node>}. Every node is {\"type\": string, \"attributes\": {MJML attributes as string values, e.g. \"padding\": \"10px 25px 10px 25px\", \"background-color\": \"#ffffff\", \"color\": \"#333333\", \"font-size\": \"16px\", \"align\": \"center\", \"width\": \"600px\", \"href\", \"src\"}, \"data\": {\"value\": {...}}, \"children\": [...]}; attribute values must be strings (numbers are dropped). Tree: page -> (wrapper | section) -> section -> column -> content blocks. Content block types: \"text\" (data.value.content = inline HTML string), \"image\" (attributes.src, alt, href, width), \"button\" (data.value.content = label, attributes.href), \"divider\", \"spacer\" (attributes.height), \"social\" (data.value.elements = [{src, href, content, target}]), \"navbar\" (data.value.links = [{href, content}]), \"raw\" (data.value.content = raw MJML/HTML), plus \"hero\", \"group\", \"accordion\", \"carousel\" and \"table\". Each also has an \"advanced_<type>\" variant (e.g. \"advanced_text\"), which is what the builder palette inserts; advanced content blocks placed directly under the page or a wrapper are auto-wrapped in a section/column. For a visual poll, insert one marketing_poll block: {\"type\": \"marketing_poll\", \"data\": {\"value\": {\"question\": \"Your question?\", \"options\": [\"Answer one\", \"Answer two\"]}}, \"attributes\": {}, \"children\": []}. Its attributes support padding, font-family, font-size, font-weight, color, background-color, button-background-color, button-text-color, button-font-size, and border-radius. The server derives the campaign poll from this block; do not maintain a separate poll definition. Page node: {\"type\": \"page\", \"attributes\": {\"background-color\": \"#efeeea\", \"width\": \"600px\"}, \"data\": {\"value\": {\"breakpoint\": \"480px\", \"font-family\": string, \"font-size\": \"14px\", \"line-height\": \"1.7\", \"font-weight\": \"400\", \"text-color\": \"#000000\", \"content-background-color\": string (optional), \"headStyles\": [{\"content\": css, \"inline\": bool}], \"fonts\": [{\"name\", \"href\"}], \"headAttributes\": \"\", \"responsive\": true}}}. Always set \"responsive\": true \u2014 a missing flag renders a fixed-width layout. Merge tokens pass through rendering untouched: {{content}} inside a text block marks where content-engine output is inserted when content is published as a campaign from this template; Smart-list merge tokens use the matching header normalized to camelCase: for example, `First Name` becomes {{firstName}} and `Company Name` becomes {{companyName}}. Tokens are replaced per recipient from the smart-list row; {{unsubscribe}} becomes the per-recipient unsubscribe link."
                     },
                     "poll": {
                       "type": "string",
@@ -68243,7 +68243,7 @@
                     },
                     "bodyDocument": {
                       "type": "string",
-                      "description": "Visual-builder JSON document for the email body. When supplied, the server renders bodyHtml from this document and it takes precedence over HTML input. Alternatively, supply bodyHtml without a document. Envelope: {\"subject\": string, \"subTitle\": string, \"content\": <page node>}. Every node is {\"type\": string, \"attributes\": {MJML attributes as string values, e.g. \"padding\": \"10px 25px 10px 25px\", \"background-color\": \"#ffffff\", \"color\": \"#333333\", \"font-size\": \"16px\", \"align\": \"center\", \"width\": \"600px\", \"href\", \"src\"}, \"data\": {\"value\": {...}}, \"children\": [...]}; attribute values must be strings (numbers are dropped). Tree: page -> (wrapper | section) -> section -> column -> content blocks. Content block types: \"text\" (data.value.content = inline HTML string), \"image\" (attributes.src, alt, href, width), \"button\" (data.value.content = label, attributes.href), \"divider\", \"spacer\" (attributes.height), \"social\" (data.value.elements = [{src, href, content, target}]), \"navbar\" (data.value.links = [{href, content}]), \"raw\" (data.value.content = raw MJML/HTML), plus \"hero\", \"group\", \"accordion\", \"carousel\" and \"table\". Each also has an \"advanced_<type>\" variant (e.g. \"advanced_text\"), which is what the builder palette inserts; advanced content blocks placed directly under the page or a wrapper are auto-wrapped in a section/column. Page node: {\"type\": \"page\", \"attributes\": {\"background-color\": \"#efeeea\", \"width\": \"600px\"}, \"data\": {\"value\": {\"breakpoint\": \"480px\", \"font-family\": string, \"font-size\": \"14px\", \"line-height\": \"1.7\", \"font-weight\": \"400\", \"text-color\": \"#000000\", \"content-background-color\": string (optional), \"headStyles\": [{\"content\": css, \"inline\": bool}], \"fonts\": [{\"name\", \"href\"}], \"headAttributes\": \"\", \"responsive\": true}}}. Always set \"responsive\": true \u2014 a missing flag renders a fixed-width layout. Merge tokens pass through rendering untouched: {{content}} inside a text block marks where content-engine output is inserted when content is published as a campaign from this template; Smart-list merge tokens use the matching header normalized to camelCase: for example, `First Name` becomes {{firstName}} and `Company Name` becomes {{companyName}}. Tokens are replaced per recipient from the smart-list row; {{unsubscribe}} becomes the per-recipient unsubscribe link."
+                      "description": "Visual-builder JSON document for the email body. When supplied, the server renders bodyHtml from this document and it takes precedence over HTML input. Alternatively, supply bodyHtml without a document. Envelope: {\"subject\": string, \"subTitle\": string, \"content\": <page node>}. Every node is {\"type\": string, \"attributes\": {MJML attributes as string values, e.g. \"padding\": \"10px 25px 10px 25px\", \"background-color\": \"#ffffff\", \"color\": \"#333333\", \"font-size\": \"16px\", \"align\": \"center\", \"width\": \"600px\", \"href\", \"src\"}, \"data\": {\"value\": {...}}, \"children\": [...]}; attribute values must be strings (numbers are dropped). Tree: page -> (wrapper | section) -> section -> column -> content blocks. Content block types: \"text\" (data.value.content = inline HTML string), \"image\" (attributes.src, alt, href, width), \"button\" (data.value.content = label, attributes.href), \"divider\", \"spacer\" (attributes.height), \"social\" (data.value.elements = [{src, href, content, target}]), \"navbar\" (data.value.links = [{href, content}]), \"raw\" (data.value.content = raw MJML/HTML), plus \"hero\", \"group\", \"accordion\", \"carousel\" and \"table\". Each also has an \"advanced_<type>\" variant (e.g. \"advanced_text\"), which is what the builder palette inserts; advanced content blocks placed directly under the page or a wrapper are auto-wrapped in a section/column. For a visual poll, insert one marketing_poll block: {\"type\": \"marketing_poll\", \"data\": {\"value\": {\"question\": \"Your question?\", \"options\": [\"Answer one\", \"Answer two\"]}}, \"attributes\": {}, \"children\": []}. Its attributes support padding, font-family, font-size, font-weight, color, background-color, button-background-color, button-text-color, button-font-size, and border-radius. The server derives the campaign poll from this block; do not maintain a separate poll definition. Page node: {\"type\": \"page\", \"attributes\": {\"background-color\": \"#efeeea\", \"width\": \"600px\"}, \"data\": {\"value\": {\"breakpoint\": \"480px\", \"font-family\": string, \"font-size\": \"14px\", \"line-height\": \"1.7\", \"font-weight\": \"400\", \"text-color\": \"#000000\", \"content-background-color\": string (optional), \"headStyles\": [{\"content\": css, \"inline\": bool}], \"fonts\": [{\"name\", \"href\"}], \"headAttributes\": \"\", \"responsive\": true}}}. Always set \"responsive\": true \u2014 a missing flag renders a fixed-width layout. Merge tokens pass through rendering untouched: {{content}} inside a text block marks where content-engine output is inserted when content is published as a campaign from this template; Smart-list merge tokens use the matching header normalized to camelCase: for example, `First Name` becomes {{firstName}} and `Company Name` becomes {{companyName}}. Tokens are replaced per recipient from the smart-list row; {{unsubscribe}} becomes the per-recipient unsubscribe link."
                     },
                     "poll": {
                       "type": "string",
@@ -68458,7 +68458,7 @@
                     },
                     "bodyDocument": {
                       "type": "string",
-                      "description": "Visual-builder JSON document for the email body. When supplied, the server renders bodyHtml from this document and it takes precedence over HTML input. Alternatively, supply bodyHtml without a document. Envelope: {\"subject\": string, \"subTitle\": string, \"content\": <page node>}. Every node is {\"type\": string, \"attributes\": {MJML attributes as string values, e.g. \"padding\": \"10px 25px 10px 25px\", \"background-color\": \"#ffffff\", \"color\": \"#333333\", \"font-size\": \"16px\", \"align\": \"center\", \"width\": \"600px\", \"href\", \"src\"}, \"data\": {\"value\": {...}}, \"children\": [...]}; attribute values must be strings (numbers are dropped). Tree: page -> (wrapper | section) -> section -> column -> content blocks. Content block types: \"text\" (data.value.content = inline HTML string), \"image\" (attributes.src, alt, href, width), \"button\" (data.value.content = label, attributes.href), \"divider\", \"spacer\" (attributes.height), \"social\" (data.value.elements = [{src, href, content, target}]), \"navbar\" (data.value.links = [{href, content}]), \"raw\" (data.value.content = raw MJML/HTML), plus \"hero\", \"group\", \"accordion\", \"carousel\" and \"table\". Each also has an \"advanced_<type>\" variant (e.g. \"advanced_text\"), which is what the builder palette inserts; advanced content blocks placed directly under the page or a wrapper are auto-wrapped in a section/column. Page node: {\"type\": \"page\", \"attributes\": {\"background-color\": \"#efeeea\", \"width\": \"600px\"}, \"data\": {\"value\": {\"breakpoint\": \"480px\", \"font-family\": string, \"font-size\": \"14px\", \"line-height\": \"1.7\", \"font-weight\": \"400\", \"text-color\": \"#000000\", \"content-background-color\": string (optional), \"headStyles\": [{\"content\": css, \"inline\": bool}], \"fonts\": [{\"name\", \"href\"}], \"headAttributes\": \"\", \"responsive\": true}}}. Always set \"responsive\": true \u2014 a missing flag renders a fixed-width layout. Merge tokens pass through rendering untouched: {{content}} inside a text block marks where content-engine output is inserted when content is published as a campaign from this template; Smart-list merge tokens use the matching header normalized to camelCase: for example, `First Name` becomes {{firstName}} and `Company Name` becomes {{companyName}}. Tokens are replaced per recipient from the smart-list row; {{unsubscribe}} becomes the per-recipient unsubscribe link."
+                      "description": "Visual-builder JSON document for the email body. When supplied, the server renders bodyHtml from this document and it takes precedence over HTML input. Alternatively, supply bodyHtml without a document. Envelope: {\"subject\": string, \"subTitle\": string, \"content\": <page node>}. Every node is {\"type\": string, \"attributes\": {MJML attributes as string values, e.g. \"padding\": \"10px 25px 10px 25px\", \"background-color\": \"#ffffff\", \"color\": \"#333333\", \"font-size\": \"16px\", \"align\": \"center\", \"width\": \"600px\", \"href\", \"src\"}, \"data\": {\"value\": {...}}, \"children\": [...]}; attribute values must be strings (numbers are dropped). Tree: page -> (wrapper | section) -> section -> column -> content blocks. Content block types: \"text\" (data.value.content = inline HTML string), \"image\" (attributes.src, alt, href, width), \"button\" (data.value.content = label, attributes.href), \"divider\", \"spacer\" (attributes.height), \"social\" (data.value.elements = [{src, href, content, target}]), \"navbar\" (data.value.links = [{href, content}]), \"raw\" (data.value.content = raw MJML/HTML), plus \"hero\", \"group\", \"accordion\", \"carousel\" and \"table\". Each also has an \"advanced_<type>\" variant (e.g. \"advanced_text\"), which is what the builder palette inserts; advanced content blocks placed directly under the page or a wrapper are auto-wrapped in a section/column. For a visual poll, insert one marketing_poll block: {\"type\": \"marketing_poll\", \"data\": {\"value\": {\"question\": \"Your question?\", \"options\": [\"Answer one\", \"Answer two\"]}}, \"attributes\": {}, \"children\": []}. Its attributes support padding, font-family, font-size, font-weight, color, background-color, button-background-color, button-text-color, button-font-size, and border-radius. The server derives the campaign poll from this block; do not maintain a separate poll definition. Page node: {\"type\": \"page\", \"attributes\": {\"background-color\": \"#efeeea\", \"width\": \"600px\"}, \"data\": {\"value\": {\"breakpoint\": \"480px\", \"font-family\": string, \"font-size\": \"14px\", \"line-height\": \"1.7\", \"font-weight\": \"400\", \"text-color\": \"#000000\", \"content-background-color\": string (optional), \"headStyles\": [{\"content\": css, \"inline\": bool}], \"fonts\": [{\"name\", \"href\"}], \"headAttributes\": \"\", \"responsive\": true}}}. Always set \"responsive\": true \u2014 a missing flag renders a fixed-width layout. Merge tokens pass through rendering untouched: {{content}} inside a text block marks where content-engine output is inserted when content is published as a campaign from this template; Smart-list merge tokens use the matching header normalized to camelCase: for example, `First Name` becomes {{firstName}} and `Company Name` becomes {{companyName}}. Tokens are replaced per recipient from the smart-list row; {{unsubscribe}} becomes the per-recipient unsubscribe link."
                     },
                     "poll": {
                       "type": "string",
@@ -68698,7 +68698,7 @@
                     },
                     "bodyDocument": {
                       "type": "string",
-                      "description": "Visual-builder JSON document for the email body. When supplied, the server renders bodyHtml from this document and it takes precedence over HTML input. Alternatively, supply bodyHtml without a document. Envelope: {\"subject\": string, \"subTitle\": string, \"content\": <page node>}. Every node is {\"type\": string, \"attributes\": {MJML attributes as string values, e.g. \"padding\": \"10px 25px 10px 25px\", \"background-color\": \"#ffffff\", \"color\": \"#333333\", \"font-size\": \"16px\", \"align\": \"center\", \"width\": \"600px\", \"href\", \"src\"}, \"data\": {\"value\": {...}}, \"children\": [...]}; attribute values must be strings (numbers are dropped). Tree: page -> (wrapper | section) -> section -> column -> content blocks. Content block types: \"text\" (data.value.content = inline HTML string), \"image\" (attributes.src, alt, href, width), \"button\" (data.value.content = label, attributes.href), \"divider\", \"spacer\" (attributes.height), \"social\" (data.value.elements = [{src, href, content, target}]), \"navbar\" (data.value.links = [{href, content}]), \"raw\" (data.value.content = raw MJML/HTML), plus \"hero\", \"group\", \"accordion\", \"carousel\" and \"table\". Each also has an \"advanced_<type>\" variant (e.g. \"advanced_text\"), which is what the builder palette inserts; advanced content blocks placed directly under the page or a wrapper are auto-wrapped in a section/column. Page node: {\"type\": \"page\", \"attributes\": {\"background-color\": \"#efeeea\", \"width\": \"600px\"}, \"data\": {\"value\": {\"breakpoint\": \"480px\", \"font-family\": string, \"font-size\": \"14px\", \"line-height\": \"1.7\", \"font-weight\": \"400\", \"text-color\": \"#000000\", \"content-background-color\": string (optional), \"headStyles\": [{\"content\": css, \"inline\": bool}], \"fonts\": [{\"name\", \"href\"}], \"headAttributes\": \"\", \"responsive\": true}}}. Always set \"responsive\": true \u2014 a missing flag renders a fixed-width layout. Merge tokens pass through rendering untouched: {{content}} inside a text block marks where content-engine output is inserted when content is published as a campaign from this template; Smart-list merge tokens use the matching header normalized to camelCase: for example, `First Name` becomes {{firstName}} and `Company Name` becomes {{companyName}}. Tokens are replaced per recipient from the smart-list row; {{unsubscribe}} becomes the per-recipient unsubscribe link."
+                      "description": "Visual-builder JSON document for the email body. When supplied, the server renders bodyHtml from this document and it takes precedence over HTML input. Alternatively, supply bodyHtml without a document. Envelope: {\"subject\": string, \"subTitle\": string, \"content\": <page node>}. Every node is {\"type\": string, \"attributes\": {MJML attributes as string values, e.g. \"padding\": \"10px 25px 10px 25px\", \"background-color\": \"#ffffff\", \"color\": \"#333333\", \"font-size\": \"16px\", \"align\": \"center\", \"width\": \"600px\", \"href\", \"src\"}, \"data\": {\"value\": {...}}, \"children\": [...]}; attribute values must be strings (numbers are dropped). Tree: page -> (wrapper | section) -> section -> column -> content blocks. Content block types: \"text\" (data.value.content = inline HTML string), \"image\" (attributes.src, alt, href, width), \"button\" (data.value.content = label, attributes.href), \"divider\", \"spacer\" (attributes.height), \"social\" (data.value.elements = [{src, href, content, target}]), \"navbar\" (data.value.links = [{href, content}]), \"raw\" (data.value.content = raw MJML/HTML), plus \"hero\", \"group\", \"accordion\", \"carousel\" and \"table\". Each also has an \"advanced_<type>\" variant (e.g. \"advanced_text\"), which is what the builder palette inserts; advanced content blocks placed directly under the page or a wrapper are auto-wrapped in a section/column. For a visual poll, insert one marketing_poll block: {\"type\": \"marketing_poll\", \"data\": {\"value\": {\"question\": \"Your question?\", \"options\": [\"Answer one\", \"Answer two\"]}}, \"attributes\": {}, \"children\": []}. Its attributes support padding, font-family, font-size, font-weight, color, background-color, button-background-color, button-text-color, button-font-size, and border-radius. The server derives the campaign poll from this block; do not maintain a separate poll definition. Page node: {\"type\": \"page\", \"attributes\": {\"background-color\": \"#efeeea\", \"width\": \"600px\"}, \"data\": {\"value\": {\"breakpoint\": \"480px\", \"font-family\": string, \"font-size\": \"14px\", \"line-height\": \"1.7\", \"font-weight\": \"400\", \"text-color\": \"#000000\", \"content-background-color\": string (optional), \"headStyles\": [{\"content\": css, \"inline\": bool}], \"fonts\": [{\"name\", \"href\"}], \"headAttributes\": \"\", \"responsive\": true}}}. Always set \"responsive\": true \u2014 a missing flag renders a fixed-width layout. Merge tokens pass through rendering untouched: {{content}} inside a text block marks where content-engine output is inserted when content is published as a campaign from this template; Smart-list merge tokens use the matching header normalized to camelCase: for example, `First Name` becomes {{firstName}} and `Company Name` becomes {{companyName}}. Tokens are replaced per recipient from the smart-list row; {{unsubscribe}} becomes the per-recipient unsubscribe link."
                     },
                     "poll": {
                       "type": "string",
@@ -68897,6 +68897,10 @@
               "schema": {
                 "type": "object",
                 "properties": {
+                  "poll": {
+                    "type": "object",
+                    "description": "Override poll for a test email. Test answer links do not record votes."
+                  },
                   "testEmail": {
                     "type": "string",
                     "description": "Email address to send the test to"
@@ -69170,7 +69174,7 @@
         "operationId": "marketing_campaigns_deleteCampaignRecipient",
         "parameters": [
           {
-            "name": "recipientId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -69178,7 +69182,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "recipientId",
             "in": "path",
             "required": true,
             "schema": {
@@ -69838,7 +69842,7 @@
                   },
                   "bodyDocument": {
                     "type": "string",
-                    "description": "Visual-builder JSON document for the email body. This is the single source of truth: the server renders bodyHtml from it (any bodyHtml you send is ignored). Envelope: {\"subject\": string, \"subTitle\": string, \"content\": <page node>}. Every node is {\"type\": string, \"attributes\": {MJML attributes as string values, e.g. \"padding\": \"10px 25px 10px 25px\", \"background-color\": \"#ffffff\", \"color\": \"#333333\", \"font-size\": \"16px\", \"align\": \"center\", \"width\": \"600px\", \"href\", \"src\"}, \"data\": {\"value\": {...}}, \"children\": [...]}; attribute values must be strings (numbers are dropped). Tree: page -> (wrapper | section) -> section -> column -> content blocks. Content block types: \"text\" (data.value.content = inline HTML string), \"image\" (attributes.src, alt, href, width), \"button\" (data.value.content = label, attributes.href), \"divider\", \"spacer\" (attributes.height), \"social\" (data.value.elements = [{src, href, content, target}]), \"navbar\" (data.value.links = [{href, content}]), \"raw\" (data.value.content = raw MJML/HTML), plus \"hero\", \"group\", \"accordion\", \"carousel\" and \"table\". Each also has an \"advanced_<type>\" variant (e.g. \"advanced_text\"), which is what the builder palette inserts; advanced content blocks placed directly under the page or a wrapper are auto-wrapped in a section/column. Page node: {\"type\": \"page\", \"attributes\": {\"background-color\": \"#efeeea\", \"width\": \"600px\"}, \"data\": {\"value\": {\"breakpoint\": \"480px\", \"font-family\": string, \"font-size\": \"14px\", \"line-height\": \"1.7\", \"font-weight\": \"400\", \"text-color\": \"#000000\", \"content-background-color\": string (optional), \"headStyles\": [{\"content\": css, \"inline\": bool}], \"fonts\": [{\"name\", \"href\"}], \"headAttributes\": \"\", \"responsive\": true}}}. Always set \"responsive\": true \u2014 a missing flag renders a fixed-width layout. Merge tokens pass through rendering untouched: {{content}} inside a text block marks where content-engine output is inserted when content is published as a campaign from this template; Smart-list merge tokens use the matching header normalized to camelCase: for example, `First Name` becomes {{firstName}} and `Company Name` becomes {{companyName}}. Tokens are replaced per recipient from the smart-list row; {{unsubscribe}} becomes the per-recipient unsubscribe link."
+                    "description": "Visual-builder JSON document for the email body. This is the single source of truth: the server renders bodyHtml from it (any bodyHtml you send is ignored). Envelope: {\"subject\": string, \"subTitle\": string, \"content\": <page node>}. Every node is {\"type\": string, \"attributes\": {MJML attributes as string values, e.g. \"padding\": \"10px 25px 10px 25px\", \"background-color\": \"#ffffff\", \"color\": \"#333333\", \"font-size\": \"16px\", \"align\": \"center\", \"width\": \"600px\", \"href\", \"src\"}, \"data\": {\"value\": {...}}, \"children\": [...]}; attribute values must be strings (numbers are dropped). Tree: page -> (wrapper | section) -> section -> column -> content blocks. Content block types: \"text\" (data.value.content = inline HTML string), \"image\" (attributes.src, alt, href, width), \"button\" (data.value.content = label, attributes.href), \"divider\", \"spacer\" (attributes.height), \"social\" (data.value.elements = [{src, href, content, target}]), \"navbar\" (data.value.links = [{href, content}]), \"raw\" (data.value.content = raw MJML/HTML), plus \"hero\", \"group\", \"accordion\", \"carousel\" and \"table\". Each also has an \"advanced_<type>\" variant (e.g. \"advanced_text\"), which is what the builder palette inserts; advanced content blocks placed directly under the page or a wrapper are auto-wrapped in a section/column. For a visual poll, insert one marketing_poll block: {\"type\": \"marketing_poll\", \"data\": {\"value\": {\"question\": \"Your question?\", \"options\": [\"Answer one\", \"Answer two\"]}}, \"attributes\": {}, \"children\": []}. Its attributes support padding, font-family, font-size, font-weight, color, background-color, button-background-color, button-text-color, button-font-size, and border-radius. The server derives the campaign poll from this block; do not maintain a separate poll definition. Page node: {\"type\": \"page\", \"attributes\": {\"background-color\": \"#efeeea\", \"width\": \"600px\"}, \"data\": {\"value\": {\"breakpoint\": \"480px\", \"font-family\": string, \"font-size\": \"14px\", \"line-height\": \"1.7\", \"font-weight\": \"400\", \"text-color\": \"#000000\", \"content-background-color\": string (optional), \"headStyles\": [{\"content\": css, \"inline\": bool}], \"fonts\": [{\"name\", \"href\"}], \"headAttributes\": \"\", \"responsive\": true}}}. Always set \"responsive\": true \u2014 a missing flag renders a fixed-width layout. Merge tokens pass through rendering untouched: {{content}} inside a text block marks where content-engine output is inserted when content is published as a campaign from this template; Smart-list merge tokens use the matching header normalized to camelCase: for example, `First Name` becomes {{firstName}} and `Company Name` becomes {{companyName}}. Tokens are replaced per recipient from the smart-list row; {{unsubscribe}} becomes the per-recipient unsubscribe link."
                   },
                   "senderProfileId": {
                     "type": "string",
@@ -70256,7 +70260,7 @@
                   },
                   "bodyDocument": {
                     "type": "string",
-                    "description": "Visual-builder JSON document for the email body. This is the single source of truth: the server renders bodyHtml from it (any bodyHtml you send is ignored). Envelope: {\"subject\": string, \"subTitle\": string, \"content\": <page node>}. Every node is {\"type\": string, \"attributes\": {MJML attributes as string values, e.g. \"padding\": \"10px 25px 10px 25px\", \"background-color\": \"#ffffff\", \"color\": \"#333333\", \"font-size\": \"16px\", \"align\": \"center\", \"width\": \"600px\", \"href\", \"src\"}, \"data\": {\"value\": {...}}, \"children\": [...]}; attribute values must be strings (numbers are dropped). Tree: page -> (wrapper | section) -> section -> column -> content blocks. Content block types: \"text\" (data.value.content = inline HTML string), \"image\" (attributes.src, alt, href, width), \"button\" (data.value.content = label, attributes.href), \"divider\", \"spacer\" (attributes.height), \"social\" (data.value.elements = [{src, href, content, target}]), \"navbar\" (data.value.links = [{href, content}]), \"raw\" (data.value.content = raw MJML/HTML), plus \"hero\", \"group\", \"accordion\", \"carousel\" and \"table\". Each also has an \"advanced_<type>\" variant (e.g. \"advanced_text\"), which is what the builder palette inserts; advanced content blocks placed directly under the page or a wrapper are auto-wrapped in a section/column. Page node: {\"type\": \"page\", \"attributes\": {\"background-color\": \"#efeeea\", \"width\": \"600px\"}, \"data\": {\"value\": {\"breakpoint\": \"480px\", \"font-family\": string, \"font-size\": \"14px\", \"line-height\": \"1.7\", \"font-weight\": \"400\", \"text-color\": \"#000000\", \"content-background-color\": string (optional), \"headStyles\": [{\"content\": css, \"inline\": bool}], \"fonts\": [{\"name\", \"href\"}], \"headAttributes\": \"\", \"responsive\": true}}}. Always set \"responsive\": true \u2014 a missing flag renders a fixed-width layout. Merge tokens pass through rendering untouched: {{content}} inside a text block marks where content-engine output is inserted when content is published as a campaign from this template; Smart-list merge tokens use the matching header normalized to camelCase: for example, `First Name` becomes {{firstName}} and `Company Name` becomes {{companyName}}. Tokens are replaced per recipient from the smart-list row; {{unsubscribe}} becomes the per-recipient unsubscribe link."
+                    "description": "Visual-builder JSON document for the email body. This is the single source of truth: the server renders bodyHtml from it (any bodyHtml you send is ignored). Envelope: {\"subject\": string, \"subTitle\": string, \"content\": <page node>}. Every node is {\"type\": string, \"attributes\": {MJML attributes as string values, e.g. \"padding\": \"10px 25px 10px 25px\", \"background-color\": \"#ffffff\", \"color\": \"#333333\", \"font-size\": \"16px\", \"align\": \"center\", \"width\": \"600px\", \"href\", \"src\"}, \"data\": {\"value\": {...}}, \"children\": [...]}; attribute values must be strings (numbers are dropped). Tree: page -> (wrapper | section) -> section -> column -> content blocks. Content block types: \"text\" (data.value.content = inline HTML string), \"image\" (attributes.src, alt, href, width), \"button\" (data.value.content = label, attributes.href), \"divider\", \"spacer\" (attributes.height), \"social\" (data.value.elements = [{src, href, content, target}]), \"navbar\" (data.value.links = [{href, content}]), \"raw\" (data.value.content = raw MJML/HTML), plus \"hero\", \"group\", \"accordion\", \"carousel\" and \"table\". Each also has an \"advanced_<type>\" variant (e.g. \"advanced_text\"), which is what the builder palette inserts; advanced content blocks placed directly under the page or a wrapper are auto-wrapped in a section/column. For a visual poll, insert one marketing_poll block: {\"type\": \"marketing_poll\", \"data\": {\"value\": {\"question\": \"Your question?\", \"options\": [\"Answer one\", \"Answer two\"]}}, \"attributes\": {}, \"children\": []}. Its attributes support padding, font-family, font-size, font-weight, color, background-color, button-background-color, button-text-color, button-font-size, and border-radius. The server derives the campaign poll from this block; do not maintain a separate poll definition. Page node: {\"type\": \"page\", \"attributes\": {\"background-color\": \"#efeeea\", \"width\": \"600px\"}, \"data\": {\"value\": {\"breakpoint\": \"480px\", \"font-family\": string, \"font-size\": \"14px\", \"line-height\": \"1.7\", \"font-weight\": \"400\", \"text-color\": \"#000000\", \"content-background-color\": string (optional), \"headStyles\": [{\"content\": css, \"inline\": bool}], \"fonts\": [{\"name\", \"href\"}], \"headAttributes\": \"\", \"responsive\": true}}}. Always set \"responsive\": true \u2014 a missing flag renders a fixed-width layout. Merge tokens pass through rendering untouched: {{content}} inside a text block marks where content-engine output is inserted when content is published as a campaign from this template; Smart-list merge tokens use the matching header normalized to camelCase: for example, `First Name` becomes {{firstName}} and `Company Name` becomes {{companyName}}. Tokens are replaced per recipient from the smart-list row; {{unsubscribe}} becomes the per-recipient unsubscribe link."
                   },
                   "senderProfileId": {
                     "type": "string",
@@ -71626,7 +71630,7 @@
         "operationId": "site_builder_apiWebsiteBranchDiff",
         "parameters": [
           {
-            "name": "branch",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -71634,7 +71638,7 @@
             }
           },
           {
-            "name": "websiteId",
+            "name": "branch",
             "in": "path",
             "required": true,
             "schema": {
