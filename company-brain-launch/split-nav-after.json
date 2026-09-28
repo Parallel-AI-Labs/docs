@@ -1,0 +1,87 @@
+{
+  "id": 17018,
+  "date": "2026-07-31T13:53:13",
+  "date_gmt": "2026-07-31T13:53:13",
+  "guid": {
+    "rendered": "https://parallellabs.app/footer-menu-4/",
+    "raw": "https://parallellabs.app/footer-menu-4/"
+  },
+  "modified": "2026-09-28T14:52:57",
+  "modified_gmt": "2026-09-28T14:52:57",
+  "password": "",
+  "slug": "footer-menu-4",
+  "status": "publish",
+  "type": "wp_navigation",
+  "link": "https://parallellabs.app/footer-menu-4/",
+  "title": {
+    "raw": "Footer menu 4",
+    "rendered": "Footer menu 4"
+  },
+  "content": {
+    "raw": "<!-- wp:navigation-link {\"label\":\"Documentation\",\"url\":\"https://docs.parallellabs.app/\",\"kind\":\"custom\"} /-->\n\n<!-- wp:navigation-link {\"label\":\"API\",\"url\":\"https://docs.parallellabs.app/api-reference/introduction\",\"kind\":\"custom\"} /-->\n\n<!-- wp:navigation-link {\"label\":\"MCP\",\"url\":\"https://docs.parallellabs.app/api-reference/mcp\",\"kind\":\"custom\"} /-->\n\n<!-- wp:navigation-link {\"label\":\"Integrations\",\"type\":\"page\",\"id\":18032,\"url\":\"https://parallellabs.app/integrations/\",\"kind\":\"post-type\"} /-->\n\n<!-- wp:navigation-link {\"label\":\"Playbooks\",\"type\":\"page\",\"id\":18056,\"url\":\"https://parallellabs.app/playbooks/\",\"kind\":\"post-type\"} /-->\n\n<!-- wp:navigation-link {\"label\":\"Platform Training\",\"type\":\"page\",\"id\":10801,\"url\":\"https://parallellabs.app/platform-training/\",\"kind\":\"post-type\"} /-->\n\n<!-- wp:navigation-link {\"label\":\"Company Brain\",\"type\":\"page\",\"id\":18601,\"url\":\"https://parallellabs.app/company-brain/\",\"kind\":\"post-type\"} /-->",
+    "rendered": "<li class=\"wp-block-navigation-item wp-block-navigation-link\"><a class=\"wp-block-navigation-item__content\"  href=\"https://docs.parallellabs.app/\"><span class=\"wp-block-navigation-item__label\">Documentation</span></a></li>\n\n<li class=\"wp-block-navigation-item wp-block-navigation-link\"><a class=\"wp-block-navigation-item__content\"  href=\"https://docs.parallellabs.app/api-reference/introduction\"><span class=\"wp-block-navigation-item__label\">API</span></a></li>\n\n<li class=\"wp-block-navigation-item wp-block-navigation-link\"><a class=\"wp-block-navigation-item__content\"  href=\"https://docs.parallellabs.app/api-reference/mcp\"><span class=\"wp-block-navigation-item__label\">MCP</span></a></li>\n\n<li class=\"wp-block-navigation-item wp-block-navigation-link\"><a class=\"wp-block-navigation-item__content\"  href=\"https://parallellabs.app/integrations/\"><span class=\"wp-block-navigation-item__label\">Integrations</span></a></li>\n\n<li class=\"wp-block-navigation-item wp-block-navigation-link\"><a class=\"wp-block-navigation-item__content\"  href=\"https://parallellabs.app/playbooks/\"><span class=\"wp-block-navigation-item__label\">Playbooks</span></a></li>\n\n<li class=\"wp-block-navigation-item wp-block-navigation-link\"><a class=\"wp-block-navigation-item__content\"  href=\"https://parallellabs.app/platform-training/\"><span class=\"wp-block-navigation-item__label\">Platform Training</span></a></li>\n\n<li class=\"wp-block-navigation-item wp-block-navigation-link\"><a class=\"wp-block-navigation-item__content\"  href=\"https://parallellabs.app/company-brain/\"><span class=\"wp-block-navigation-item__label\">Company Brain</span></a></li>",
+    "protected": false,
+    "block_version": 1
+  },
+  "template": "",
+  "_links": {
+    "self": [
+      {
+        "href": "https://parallellabs.app/wp-json/wp/v2/navigation/17018",
+        "targetHints": {
+          "allow": [
+            "GET",
+            "POST",
+            "PUT",
+            "PATCH",
+            "DELETE"
+          ]
+        }
+      }
+    ],
+    "collection": [
+      {
+        "href": "https://parallellabs.app/wp-json/wp/v2/navigation"
+      }
+    ],
+    "about": [
+      {
+        "href": "https://parallellabs.app/wp-json/wp/v2/types/wp_navigation"
+      }
+    ],
+    "version-history": [
+      {
+        "count": 5,
+        "href": "https://parallellabs.app/wp-json/wp/v2/navigation/17018/revisions"
+      }
+    ],
+    "predecessor-version": [
+      {
+        "id": 18605,
+        "href": "https://parallellabs.app/wp-json/wp/v2/navigation/17018/revisions/18605"
+      }
+    ],
+    "wp:attachment": [
+      {
+        "href": "https://parallellabs.app/wp-json/wp/v2/media?parent=17018"
+      }
+    ],
+    "wp:action-publish": [
+      {
+        "href": "https://parallellabs.app/wp-json/wp/v2/navigation/17018"
+      }
+    ],
+    "wp:action-unfiltered-html": [
+      {
+        "href": "https://parallellabs.app/wp-json/wp/v2/navigation/17018"
+      }
+    ],
+    "curies": [
+      {
+        "name": "wp",
+        "href": "https://api.w.org/{rel}",
+        "templated": true
+      }
+    ]
+  }
+}

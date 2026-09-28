@@ -45,7 +45,7 @@
     },
     {
       "name": "Content",
-      "description": "AI content engine for generating and scheduling social media posts, articles, and marketing content."
+      "description": "AI content engine. Use saveContentCampaign to create or update standard and SEO Autopilot campaigns. Non-null targetKeywords enables Autopilot; configure blog delivery in channels.blog_post.subSettings, schedule with publishDaysOfWeek, and pause with frequency=manual. Read campaign records through the existing campaign list and review articles through the Content Engine. No separate Autopilot configuration endpoint is needed."
     },
     {
       "name": "Content Research",
@@ -954,7 +954,7 @@
         "operationId": "documents_getDocumentContents",
         "parameters": [
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -962,7 +962,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -1021,7 +1021,7 @@
         "operationId": "documents_getDocument",
         "parameters": [
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -1029,7 +1029,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -3171,7 +3171,7 @@
         "operationId": "keys_getApiKey",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "name",
             "in": "path",
             "required": true,
             "schema": {
@@ -3179,7 +3179,7 @@
             }
           },
           {
-            "name": "name",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -6831,7 +6831,7 @@
         "operationId": "projects_getProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -6839,7 +6839,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -6974,7 +6974,7 @@
         "operationId": "projects_updateProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -6982,7 +6982,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -7147,7 +7147,7 @@
         "operationId": "projects_deleteProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -7155,7 +7155,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8054,7 +8054,7 @@
         "operationId": "projects_exportProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8062,7 +8062,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8172,7 +8172,7 @@
         "operationId": "projects_exportProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8180,7 +8180,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8292,7 +8292,7 @@
         "operationId": "projects_publishFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8300,7 +8300,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8447,7 +8447,7 @@
         "operationId": "projects_unpublishFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8455,7 +8455,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8889,7 +8889,7 @@
         "operationId": "memories_getMemory",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8897,7 +8897,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8995,7 +8995,7 @@
         "operationId": "memories_updateMemoryRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -9003,7 +9003,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -9131,7 +9131,7 @@
         "operationId": "memories_deleteMemoryRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -9139,7 +9139,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -9190,7 +9190,7 @@
         "operationId": "memories_toggleMemoryActiveRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -9198,7 +9198,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -20990,7 +20990,7 @@
         "operationId": "lists_getRowHistory",
         "parameters": [
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -20998,7 +20998,7 @@
             }
           },
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21210,7 +21210,7 @@
         "operationId": "lists_deleteHeader",
         "parameters": [
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21218,7 +21218,7 @@
             }
           },
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21284,7 +21284,7 @@
         "operationId": "lists_editHeader",
         "parameters": [
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21292,7 +21292,7 @@
             }
           },
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27045,7 +27045,7 @@
         "operationId": "sequences_editSequenceExecution",
         "parameters": [
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27053,7 +27053,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27142,7 +27142,7 @@
         "operationId": "sequences_previewSequenceExecution",
         "parameters": [
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27150,7 +27150,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -31020,7 +31020,7 @@
         "operationId": "people_updatePersonActivity",
         "parameters": [
           {
-            "name": "activityId",
+            "name": "personId",
             "in": "path",
             "required": true,
             "schema": {
@@ -31028,7 +31028,7 @@
             }
           },
           {
-            "name": "personId",
+            "name": "activityId",
             "in": "path",
             "required": true,
             "schema": {
@@ -31176,7 +31176,7 @@
         "operationId": "people_deletePersonActivity",
         "parameters": [
           {
-            "name": "activityId",
+            "name": "personId",
             "in": "path",
             "required": true,
             "schema": {
@@ -31184,7 +31184,7 @@
             }
           },
           {
-            "name": "personId",
+            "name": "activityId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33553,7 +33553,7 @@
         "operationId": "inbox_sendDraft",
         "parameters": [
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33561,7 +33561,7 @@
             }
           },
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33654,7 +33654,7 @@
         "operationId": "inbox_deleteDraft",
         "parameters": [
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33662,7 +33662,7 @@
             }
           },
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -35251,6 +35251,10 @@
                       "items": {
                         "type": "object",
                         "properties": {
+                          "campaignIsAutopilot": {
+                            "type": "boolean",
+                            "description": "Uses the shared multicolor Autopilot campaign accent."
+                          },
                           "id": {
                             "type": "string",
                             "description": "Content ID"
@@ -35845,6 +35849,10 @@
                     "content": {
                       "type": "object",
                       "properties": {
+                        "campaignIsAutopilot": {
+                          "type": "boolean",
+                          "description": "Uses the shared multicolor Autopilot campaign accent."
+                        },
                         "id": {
                           "type": "string",
                           "description": "Content ID"
@@ -35992,6 +36000,10 @@
                     "content": {
                       "type": "object",
                       "properties": {
+                        "campaignIsAutopilot": {
+                          "type": "boolean",
+                          "description": "Uses the shared multicolor Autopilot campaign accent."
+                        },
                         "id": {
                           "type": "string",
                           "description": "Content ID"
@@ -36143,6 +36155,10 @@
                     "content": {
                       "type": "object",
                       "properties": {
+                        "campaignIsAutopilot": {
+                          "type": "boolean",
+                          "description": "Uses the shared multicolor Autopilot campaign accent."
+                        },
                         "id": {
                           "type": "string",
                           "description": "Content ID"
@@ -36304,6 +36320,10 @@
                       "items": {
                         "type": "object",
                         "properties": {
+                          "campaignIsAutopilot": {
+                            "type": "boolean",
+                            "description": "Uses the shared multicolor Autopilot campaign accent."
+                          },
                           "id": {
                             "type": "string",
                             "description": "Content ID"
@@ -36439,6 +36459,10 @@
                     "content": {
                       "type": "object",
                       "properties": {
+                        "campaignIsAutopilot": {
+                          "type": "boolean",
+                          "description": "Uses the shared multicolor Autopilot campaign accent."
+                        },
                         "id": {
                           "type": "string",
                           "description": "Content ID"
@@ -36586,6 +36610,10 @@
                     "content": {
                       "type": "object",
                       "properties": {
+                        "campaignIsAutopilot": {
+                          "type": "boolean",
+                          "description": "Uses the shared multicolor Autopilot campaign accent."
+                        },
                         "id": {
                           "type": "string",
                           "description": "Content ID"
@@ -36749,6 +36777,10 @@
                     "content": {
                       "type": "object",
                       "properties": {
+                        "campaignIsAutopilot": {
+                          "type": "boolean",
+                          "description": "Uses the shared multicolor Autopilot campaign accent."
+                        },
                         "id": {
                           "type": "string",
                           "description": "Content ID"
@@ -36909,6 +36941,10 @@
                       "items": {
                         "type": "object",
                         "properties": {
+                          "campaignIsAutopilot": {
+                            "type": "boolean",
+                            "description": "Uses the shared multicolor Autopilot campaign accent."
+                          },
                           "id": {
                             "type": "string",
                             "description": "Content ID"
@@ -37376,7 +37412,24 @@
                           },
                           "status": {
                             "type": "string",
-                            "description": "Campaign status: active, paused, completed, error"
+                            "description": "Worker health: healthy, running or error. Autopilot pause state is frequency=manual."
+                          },
+                          "errorMessage": {
+                            "type": "string"
+                          },
+                          "publishDaysOfWeek": {
+                            "type": "array",
+                            "items": {
+                              "type": "integer"
+                            },
+                            "description": "UTC weekdays, Sunday=0 through Saturday=6."
+                          },
+                          "targetKeywords": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            },
+                            "description": "Seed keywords; non-null (including []) identifies SEO Autopilot."
                           },
                           "frequency": {
                             "type": "string",
@@ -38032,6 +38085,16 @@
         "operationId": "content_saveContentCampaign",
         "parameters": [],
         "responses": {
+          "400": {
+            "description": "Invalid campaign settings",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
           "401": {
             "description": "Invalid credentials",
             "content": {
@@ -38042,8 +38105,28 @@
               }
             }
           },
-          "500": {
-            "description": "Server error",
+          "403": {
+            "description": "Access or plan restriction",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Campaign or integration not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflicting creation request",
             "content": {
               "application/json": {
                 "schema": {
@@ -38053,24 +38136,729 @@
             }
           },
           "200": {
-            "description": "Success response",
+            "description": "Successful response",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
                     "msg": {
-                      "type": "string",
-                      "description": "Success message"
+                      "type": "string"
+                    },
+                    "campaignId": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "campaign": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "description": "Campaign ID"
+                        },
+                        "name": {
+                          "type": "string",
+                          "description": "Campaign name"
+                        },
+                        "plan": {
+                          "type": "string",
+                          "description": "Campaign plan/description"
+                        },
+                        "tone": {
+                          "type": "string",
+                          "description": "Content tone"
+                        },
+                        "model": {
+                          "type": "string",
+                          "description": "AI model"
+                        },
+                        "color": {
+                          "type": "string",
+                          "description": "Campaign color"
+                        },
+                        "webResearch": {
+                          "type": "boolean",
+                          "description": "Web research enabled"
+                        },
+                        "knowledgeBase": {
+                          "type": "boolean",
+                          "description": "Knowledge base enabled"
+                        },
+                        "idealCustomerProfileId": {
+                          "type": "string",
+                          "description": "ICP profile ID"
+                        },
+                        "contentStrategyId": {
+                          "type": "string",
+                          "description": "Content strategy ID"
+                        },
+                        "brandVoiceId": {
+                          "type": "string",
+                          "description": "Brand voice ID"
+                        },
+                        "brandImageId": {
+                          "type": "string",
+                          "description": "Brand image ID"
+                        },
+                        "isIdeationMode": {
+                          "type": "boolean",
+                          "description": "Ideation mode enabled"
+                        },
+                        "numberOfPosts": {
+                          "type": "integer",
+                          "description": "Number of posts"
+                        },
+                        "status": {
+                          "type": "string",
+                          "description": "Worker health: healthy, running or error. Autopilot pause state is frequency=manual."
+                        },
+                        "errorMessage": {
+                          "type": "string"
+                        },
+                        "publishDaysOfWeek": {
+                          "type": "array",
+                          "items": {
+                            "type": "integer"
+                          },
+                          "description": "UTC weekdays, Sunday=0 through Saturday=6."
+                        },
+                        "targetKeywords": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          },
+                          "description": "Seed keywords; non-null (including []) identifies SEO Autopilot."
+                        },
+                        "frequency": {
+                          "type": "string",
+                          "description": "Publishing frequency"
+                        },
+                        "channels": {
+                          "type": "object",
+                          "properties": {
+                            "blog_post": {
+                              "type": "object",
+                              "properties": {
+                                "enabled": {
+                                  "type": "boolean",
+                                  "description": "Whether this channel is enabled for the campaign",
+                                  "default": false
+                                },
+                                "subSettings": {
+                                  "type": "object",
+                                  "properties": {
+                                    "generateImages": {
+                                      "type": "boolean",
+                                      "description": "Generate images for this content type; disable for text only",
+                                      "default": true
+                                    },
+                                    "autoPublish": {
+                                      "type": "boolean",
+                                      "description": "Enable auto-publishing to this channel"
+                                    },
+                                    "publishAsDraft": {
+                                      "type": "boolean",
+                                      "description": "Publish as draft instead of live"
+                                    },
+                                    "wordpressIntegration": {
+                                      "type": "string",
+                                      "description": "WordPress/Blog integration ID for blog_post"
+                                    },
+                                    "linkedinIntegration": {
+                                      "type": "string",
+                                      "description": "LinkedIn integration ID for linkedin_post"
+                                    },
+                                    "facebookIntegration": {
+                                      "type": "string",
+                                      "description": "Facebook integration ID for facebook_post"
+                                    },
+                                    "instagramIntegration": {
+                                      "type": "string",
+                                      "description": "Instagram integration ID for instagram_post"
+                                    }
+                                  },
+                                  "description": "Channel-specific settings (auto-publish, integrations, etc.)"
+                                }
+                              },
+                              "description": "Blog post channel configuration"
+                            },
+                            "facebook_post": {
+                              "type": "object",
+                              "properties": {
+                                "enabled": {
+                                  "type": "boolean",
+                                  "description": "Whether this channel is enabled for the campaign",
+                                  "default": false
+                                },
+                                "subSettings": {
+                                  "type": "object",
+                                  "properties": {
+                                    "generateImages": {
+                                      "type": "boolean",
+                                      "description": "Generate images for this content type; disable for text only",
+                                      "default": true
+                                    },
+                                    "autoPublish": {
+                                      "type": "boolean",
+                                      "description": "Enable auto-publishing to this channel"
+                                    },
+                                    "publishAsDraft": {
+                                      "type": "boolean",
+                                      "description": "Publish as draft instead of live"
+                                    },
+                                    "wordpressIntegration": {
+                                      "type": "string",
+                                      "description": "WordPress/Blog integration ID for blog_post"
+                                    },
+                                    "linkedinIntegration": {
+                                      "type": "string",
+                                      "description": "LinkedIn integration ID for linkedin_post"
+                                    },
+                                    "facebookIntegration": {
+                                      "type": "string",
+                                      "description": "Facebook integration ID for facebook_post"
+                                    },
+                                    "instagramIntegration": {
+                                      "type": "string",
+                                      "description": "Instagram integration ID for instagram_post"
+                                    }
+                                  },
+                                  "description": "Channel-specific settings (auto-publish, integrations, etc.)"
+                                }
+                              },
+                              "description": "Facebook post channel configuration"
+                            },
+                            "linkedin_post": {
+                              "type": "object",
+                              "properties": {
+                                "enabled": {
+                                  "type": "boolean",
+                                  "description": "Whether this channel is enabled for the campaign",
+                                  "default": false
+                                },
+                                "subSettings": {
+                                  "type": "object",
+                                  "properties": {
+                                    "generateImages": {
+                                      "type": "boolean",
+                                      "description": "Generate images for this content type; disable for text only",
+                                      "default": true
+                                    },
+                                    "autoPublish": {
+                                      "type": "boolean",
+                                      "description": "Enable auto-publishing to this channel"
+                                    },
+                                    "publishAsDraft": {
+                                      "type": "boolean",
+                                      "description": "Publish as draft instead of live"
+                                    },
+                                    "wordpressIntegration": {
+                                      "type": "string",
+                                      "description": "WordPress/Blog integration ID for blog_post"
+                                    },
+                                    "linkedinIntegration": {
+                                      "type": "string",
+                                      "description": "LinkedIn integration ID for linkedin_post"
+                                    },
+                                    "facebookIntegration": {
+                                      "type": "string",
+                                      "description": "Facebook integration ID for facebook_post"
+                                    },
+                                    "instagramIntegration": {
+                                      "type": "string",
+                                      "description": "Instagram integration ID for instagram_post"
+                                    }
+                                  },
+                                  "description": "Channel-specific settings (auto-publish, integrations, etc.)"
+                                }
+                              },
+                              "description": "LinkedIn post channel configuration"
+                            },
+                            "instagram_post": {
+                              "type": "object",
+                              "properties": {
+                                "enabled": {
+                                  "type": "boolean",
+                                  "description": "Whether this channel is enabled for the campaign",
+                                  "default": false
+                                },
+                                "subSettings": {
+                                  "type": "object",
+                                  "properties": {
+                                    "generateImages": {
+                                      "type": "boolean",
+                                      "description": "Generate images for this content type; disable for text only",
+                                      "default": true
+                                    },
+                                    "autoPublish": {
+                                      "type": "boolean",
+                                      "description": "Enable auto-publishing to this channel"
+                                    },
+                                    "publishAsDraft": {
+                                      "type": "boolean",
+                                      "description": "Publish as draft instead of live"
+                                    },
+                                    "wordpressIntegration": {
+                                      "type": "string",
+                                      "description": "WordPress/Blog integration ID for blog_post"
+                                    },
+                                    "linkedinIntegration": {
+                                      "type": "string",
+                                      "description": "LinkedIn integration ID for linkedin_post"
+                                    },
+                                    "facebookIntegration": {
+                                      "type": "string",
+                                      "description": "Facebook integration ID for facebook_post"
+                                    },
+                                    "instagramIntegration": {
+                                      "type": "string",
+                                      "description": "Instagram integration ID for instagram_post"
+                                    }
+                                  },
+                                  "description": "Channel-specific settings (auto-publish, integrations, etc.)"
+                                }
+                              },
+                              "description": "Instagram post channel configuration"
+                            },
+                            "x_post": {
+                              "type": "object",
+                              "properties": {
+                                "enabled": {
+                                  "type": "boolean",
+                                  "description": "Whether this channel is enabled for the campaign",
+                                  "default": false
+                                },
+                                "subSettings": {
+                                  "type": "object",
+                                  "properties": {
+                                    "generateImages": {
+                                      "type": "boolean",
+                                      "description": "Generate images for this content type; disable for text only",
+                                      "default": true
+                                    },
+                                    "autoPublish": {
+                                      "type": "boolean",
+                                      "description": "Enable auto-publishing to this channel"
+                                    },
+                                    "publishAsDraft": {
+                                      "type": "boolean",
+                                      "description": "Publish as draft instead of live"
+                                    },
+                                    "wordpressIntegration": {
+                                      "type": "string",
+                                      "description": "WordPress/Blog integration ID for blog_post"
+                                    },
+                                    "linkedinIntegration": {
+                                      "type": "string",
+                                      "description": "LinkedIn integration ID for linkedin_post"
+                                    },
+                                    "facebookIntegration": {
+                                      "type": "string",
+                                      "description": "Facebook integration ID for facebook_post"
+                                    },
+                                    "instagramIntegration": {
+                                      "type": "string",
+                                      "description": "Instagram integration ID for instagram_post"
+                                    }
+                                  },
+                                  "description": "Channel-specific settings (auto-publish, integrations, etc.)"
+                                }
+                              },
+                              "description": "X (Twitter) post channel configuration"
+                            },
+                            "youtube_video": {
+                              "type": "object",
+                              "properties": {
+                                "enabled": {
+                                  "type": "boolean",
+                                  "description": "Whether this channel is enabled for the campaign",
+                                  "default": false
+                                },
+                                "subSettings": {
+                                  "type": "object",
+                                  "properties": {
+                                    "generateImages": {
+                                      "type": "boolean",
+                                      "description": "Generate images for this content type; disable for text only",
+                                      "default": true
+                                    },
+                                    "autoPublish": {
+                                      "type": "boolean",
+                                      "description": "Enable auto-publishing to this channel"
+                                    },
+                                    "publishAsDraft": {
+                                      "type": "boolean",
+                                      "description": "Publish as draft instead of live"
+                                    },
+                                    "wordpressIntegration": {
+                                      "type": "string",
+                                      "description": "WordPress/Blog integration ID for blog_post"
+                                    },
+                                    "linkedinIntegration": {
+                                      "type": "string",
+                                      "description": "LinkedIn integration ID for linkedin_post"
+                                    },
+                                    "facebookIntegration": {
+                                      "type": "string",
+                                      "description": "Facebook integration ID for facebook_post"
+                                    },
+                                    "instagramIntegration": {
+                                      "type": "string",
+                                      "description": "Instagram integration ID for instagram_post"
+                                    }
+                                  },
+                                  "description": "Channel-specific settings (auto-publish, integrations, etc.)"
+                                }
+                              },
+                              "description": "YouTube video channel configuration"
+                            },
+                            "tiktok_video": {
+                              "type": "object",
+                              "properties": {
+                                "enabled": {
+                                  "type": "boolean",
+                                  "description": "Whether this channel is enabled for the campaign",
+                                  "default": false
+                                },
+                                "subSettings": {
+                                  "type": "object",
+                                  "properties": {
+                                    "generateImages": {
+                                      "type": "boolean",
+                                      "description": "Generate images for this content type; disable for text only",
+                                      "default": true
+                                    },
+                                    "autoPublish": {
+                                      "type": "boolean",
+                                      "description": "Enable auto-publishing to this channel"
+                                    },
+                                    "publishAsDraft": {
+                                      "type": "boolean",
+                                      "description": "Publish as draft instead of live"
+                                    },
+                                    "wordpressIntegration": {
+                                      "type": "string",
+                                      "description": "WordPress/Blog integration ID for blog_post"
+                                    },
+                                    "linkedinIntegration": {
+                                      "type": "string",
+                                      "description": "LinkedIn integration ID for linkedin_post"
+                                    },
+                                    "facebookIntegration": {
+                                      "type": "string",
+                                      "description": "Facebook integration ID for facebook_post"
+                                    },
+                                    "instagramIntegration": {
+                                      "type": "string",
+                                      "description": "Instagram integration ID for instagram_post"
+                                    }
+                                  },
+                                  "description": "Channel-specific settings (auto-publish, integrations, etc.)"
+                                }
+                              },
+                              "description": "TikTok video channel configuration"
+                            },
+                            "email_newsletter": {
+                              "type": "object",
+                              "properties": {
+                                "enabled": {
+                                  "type": "boolean",
+                                  "description": "Whether this channel is enabled for the campaign",
+                                  "default": false
+                                },
+                                "subSettings": {
+                                  "type": "object",
+                                  "properties": {
+                                    "generateImages": {
+                                      "type": "boolean",
+                                      "description": "Generate images for this content type; disable for text only",
+                                      "default": true
+                                    },
+                                    "autoPublish": {
+                                      "type": "boolean",
+                                      "description": "Enable auto-publishing to this channel"
+                                    },
+                                    "publishAsDraft": {
+                                      "type": "boolean",
+                                      "description": "Publish as draft instead of live"
+                                    },
+                                    "wordpressIntegration": {
+                                      "type": "string",
+                                      "description": "WordPress/Blog integration ID for blog_post"
+                                    },
+                                    "linkedinIntegration": {
+                                      "type": "string",
+                                      "description": "LinkedIn integration ID for linkedin_post"
+                                    },
+                                    "facebookIntegration": {
+                                      "type": "string",
+                                      "description": "Facebook integration ID for facebook_post"
+                                    },
+                                    "instagramIntegration": {
+                                      "type": "string",
+                                      "description": "Instagram integration ID for instagram_post"
+                                    }
+                                  },
+                                  "description": "Channel-specific settings (auto-publish, integrations, etc.)"
+                                }
+                              },
+                              "description": "Email newsletter channel configuration"
+                            },
+                            "podcast_episode": {
+                              "type": "object",
+                              "properties": {
+                                "enabled": {
+                                  "type": "boolean",
+                                  "description": "Whether this channel is enabled for the campaign",
+                                  "default": false
+                                },
+                                "subSettings": {
+                                  "type": "object",
+                                  "properties": {
+                                    "generateImages": {
+                                      "type": "boolean",
+                                      "description": "Generate images for this content type; disable for text only",
+                                      "default": true
+                                    },
+                                    "autoPublish": {
+                                      "type": "boolean",
+                                      "description": "Enable auto-publishing to this channel"
+                                    },
+                                    "publishAsDraft": {
+                                      "type": "boolean",
+                                      "description": "Publish as draft instead of live"
+                                    },
+                                    "wordpressIntegration": {
+                                      "type": "string",
+                                      "description": "WordPress/Blog integration ID for blog_post"
+                                    },
+                                    "linkedinIntegration": {
+                                      "type": "string",
+                                      "description": "LinkedIn integration ID for linkedin_post"
+                                    },
+                                    "facebookIntegration": {
+                                      "type": "string",
+                                      "description": "Facebook integration ID for facebook_post"
+                                    },
+                                    "instagramIntegration": {
+                                      "type": "string",
+                                      "description": "Instagram integration ID for instagram_post"
+                                    }
+                                  },
+                                  "description": "Channel-specific settings (auto-publish, integrations, etc.)"
+                                }
+                              },
+                              "description": "Podcast episode channel configuration"
+                            },
+                            "website_copy": {
+                              "type": "object",
+                              "properties": {
+                                "enabled": {
+                                  "type": "boolean",
+                                  "description": "Whether this channel is enabled for the campaign",
+                                  "default": false
+                                },
+                                "subSettings": {
+                                  "type": "object",
+                                  "properties": {
+                                    "generateImages": {
+                                      "type": "boolean",
+                                      "description": "Generate images for this content type; disable for text only",
+                                      "default": true
+                                    },
+                                    "autoPublish": {
+                                      "type": "boolean",
+                                      "description": "Enable auto-publishing to this channel"
+                                    },
+                                    "publishAsDraft": {
+                                      "type": "boolean",
+                                      "description": "Publish as draft instead of live"
+                                    },
+                                    "wordpressIntegration": {
+                                      "type": "string",
+                                      "description": "WordPress/Blog integration ID for blog_post"
+                                    },
+                                    "linkedinIntegration": {
+                                      "type": "string",
+                                      "description": "LinkedIn integration ID for linkedin_post"
+                                    },
+                                    "facebookIntegration": {
+                                      "type": "string",
+                                      "description": "Facebook integration ID for facebook_post"
+                                    },
+                                    "instagramIntegration": {
+                                      "type": "string",
+                                      "description": "Instagram integration ID for instagram_post"
+                                    }
+                                  },
+                                  "description": "Channel-specific settings (auto-publish, integrations, etc.)"
+                                }
+                              },
+                              "description": "Website copy channel configuration"
+                            },
+                            "marketing_email": {
+                              "type": "object",
+                              "properties": {
+                                "enabled": {
+                                  "type": "boolean",
+                                  "description": "Whether this channel is enabled for the campaign",
+                                  "default": false
+                                },
+                                "subSettings": {
+                                  "type": "object",
+                                  "properties": {
+                                    "generateImages": {
+                                      "type": "boolean",
+                                      "description": "Generate images for this content type; disable for text only",
+                                      "default": true
+                                    },
+                                    "autoPublish": {
+                                      "type": "boolean",
+                                      "description": "Enable auto-publishing to this channel"
+                                    },
+                                    "publishAsDraft": {
+                                      "type": "boolean",
+                                      "description": "Publish as draft instead of live"
+                                    },
+                                    "wordpressIntegration": {
+                                      "type": "string",
+                                      "description": "WordPress/Blog integration ID for blog_post"
+                                    },
+                                    "linkedinIntegration": {
+                                      "type": "string",
+                                      "description": "LinkedIn integration ID for linkedin_post"
+                                    },
+                                    "facebookIntegration": {
+                                      "type": "string",
+                                      "description": "Facebook integration ID for facebook_post"
+                                    },
+                                    "instagramIntegration": {
+                                      "type": "string",
+                                      "description": "Instagram integration ID for instagram_post"
+                                    }
+                                  },
+                                  "description": "Channel-specific settings (auto-publish, integrations, etc.)"
+                                }
+                              },
+                              "description": "Marketing email channel configuration"
+                            },
+                            "ad_copy": {
+                              "type": "object",
+                              "properties": {
+                                "enabled": {
+                                  "type": "boolean",
+                                  "description": "Whether this channel is enabled for the campaign",
+                                  "default": false
+                                },
+                                "subSettings": {
+                                  "type": "object",
+                                  "properties": {
+                                    "generateImages": {
+                                      "type": "boolean",
+                                      "description": "Generate images for this content type; disable for text only",
+                                      "default": true
+                                    },
+                                    "autoPublish": {
+                                      "type": "boolean",
+                                      "description": "Enable auto-publishing to this channel"
+                                    },
+                                    "publishAsDraft": {
+                                      "type": "boolean",
+                                      "description": "Publish as draft instead of live"
+                                    },
+                                    "wordpressIntegration": {
+                                      "type": "string",
+                                      "description": "WordPress/Blog integration ID for blog_post"
+                                    },
+                                    "linkedinIntegration": {
+                                      "type": "string",
+                                      "description": "LinkedIn integration ID for linkedin_post"
+                                    },
+                                    "facebookIntegration": {
+                                      "type": "string",
+                                      "description": "Facebook integration ID for facebook_post"
+                                    },
+                                    "instagramIntegration": {
+                                      "type": "string",
+                                      "description": "Instagram integration ID for instagram_post"
+                                    }
+                                  },
+                                  "description": "Channel-specific settings (auto-publish, integrations, etc.)"
+                                }
+                              },
+                              "description": "Ad copy channel configuration"
+                            },
+                            "press_release": {
+                              "type": "object",
+                              "properties": {
+                                "enabled": {
+                                  "type": "boolean",
+                                  "description": "Whether this channel is enabled for the campaign",
+                                  "default": false
+                                },
+                                "subSettings": {
+                                  "type": "object",
+                                  "properties": {
+                                    "generateImages": {
+                                      "type": "boolean",
+                                      "description": "Generate images for this content type; disable for text only",
+                                      "default": true
+                                    },
+                                    "autoPublish": {
+                                      "type": "boolean",
+                                      "description": "Enable auto-publishing to this channel"
+                                    },
+                                    "publishAsDraft": {
+                                      "type": "boolean",
+                                      "description": "Publish as draft instead of live"
+                                    },
+                                    "wordpressIntegration": {
+                                      "type": "string",
+                                      "description": "WordPress/Blog integration ID for blog_post"
+                                    },
+                                    "linkedinIntegration": {
+                                      "type": "string",
+                                      "description": "LinkedIn integration ID for linkedin_post"
+                                    },
+                                    "facebookIntegration": {
+                                      "type": "string",
+                                      "description": "Facebook integration ID for facebook_post"
+                                    },
+                                    "instagramIntegration": {
+                                      "type": "string",
+                                      "description": "Instagram integration ID for instagram_post"
+                                    }
+                                  },
+                                  "description": "Channel-specific settings (auto-publish, integrations, etc.)"
+                                }
+                              },
+                              "description": "Press release channel configuration"
+                            }
+                          },
+                          "description": "Content channel configurations. Object with content type keys (blog_post, linkedin_post, etc.)"
+                        },
+                        "content_count": {
+                          "type": "integer",
+                          "description": "Number of content items in campaign"
+                        },
+                        "created_date": {
+                          "type": "string",
+                          "format": "date-time",
+                          "description": "Creation timestamp"
+                        }
+                      },
+                      "description": "Campaign object"
                     }
-                  },
-                  "description": "Success response"
+                  }
                 }
               }
             }
           }
         },
-        "summary": "Create or update a content campaign.",
+        "summary": "Create or update a standard or SEO Autopilot content campaign.",
+        "description": "Send campaign.id to update; omit it to create. A non-null targetKeywords (including [])\nselects Autopilot. Configure its blog through channels.blog_post.subSettings:\nwordpressIntegration, publishAsDraft (default true), autoPublish (true), generateImages.\nAutopilot creation prepares unapproved proposals asynchronously. Updates preserve the\nexisting content and do not start another plan. frequency=manual pauses automatic runs;\ndaily resumes selected UTC weekdays (Sunday=0). Existing planned dates are unchanged.\nUse top-level requestId for idempotent Autopilot creation retries. Read campaign records\nthrough the existing campaign list. Review and generate articles in the Content Engine.",
         "requestBody": {
           "required": true,
           "content": {
@@ -38082,6 +38870,10 @@
                     "type": "string",
                     "description": "Company ID"
                   },
+                  "requestId": {
+                    "type": "string",
+                    "description": "Optional idempotency key for Autopilot creation only. Reuse on retry; use campaign.id for updates."
+                  },
                   "campaign": {
                     "type": "object",
                     "properties": {
@@ -38091,11 +38883,11 @@
                       },
                       "name": {
                         "type": "string",
-                        "description": "Campaign name (required)"
+                        "description": "Required for standard creation; defaults to SEO Autopilot for Autopilot. Optional on update."
                       },
                       "plan": {
                         "type": "string",
-                        "description": "Campaign plan/description (required)"
+                        "description": "Required for standard creation; Autopilot supplies a default. Optional on update."
                       },
                       "tone": {
                         "type": "string",
@@ -38155,7 +38947,14 @@
                         "items": {
                           "type": "integer"
                         },
-                        "description": "Array of days (0-6, where 0=Sunday) for scheduling"
+                        "description": "UTC weekdays (Sunday=0 through Saturday=6). Daily campaigns run only on these days; planned posts use these days for all campaign types. Omit for all days."
+                      },
+                      "targetKeywords": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "description": "Autopilot seed keywords; null marks a standard campaign. Use this same campaign endpoint for Autopilot creation and updates; a new Autopilot campaign prepares its content ideas."
                       },
                       "status": {
                         "type": "string",
@@ -38172,14 +38971,13 @@
                       },
                       "frequency": {
                         "type": "string",
-                        "description": "How often the campaign auto-runs. One of: manual, daily, weekly, monthly. \"manual\" means it only runs on demand (via the trigger endpoint) and is the default if omitted; daily/weekly/monthly are picked up by the scheduled campaign jobs.",
+                        "description": "How often the campaign auto-runs. One of: manual, daily, weekly, monthly. \"manual\" means it only runs on demand (via the trigger endpoint) and is the standard-campaign default. Autopilot defaults to daily and supports only daily/manual; daily/weekly/monthly are picked up by the scheduled campaign jobs.",
                         "enum": [
                           "manual",
                           "daily",
                           "weekly",
                           "monthly"
-                        ],
-                        "default": "manual"
+                        ]
                       },
                       "start_date": {
                         "type": "string",
@@ -38796,11 +39594,7 @@
                         "description": "Content channel configurations. Must be an object (not null) with content type keys (blog_post, linkedin_post, etc.) and ChannelConfigSchema values. Example: {\"blog_post\": {\"enabled\": true, \"subSettings\": {\"autoPublish\": true}}}"
                       }
                     },
-                    "required": [
-                      "name",
-                      "plan"
-                    ],
-                    "description": "Campaign data object"
+                    "description": "Campaign record. Omit id to create; send id and changed fields to update. Non-null targetKeywords enables Autopilot."
                   }
                 },
                 "required": [
@@ -38811,7 +39605,7 @@
               }
             }
           },
-          "description": "Campaign data"
+          "description": "Create or update the canonical campaign record, including SEO Autopilot settings."
         }
       }
     },
@@ -39054,6 +39848,10 @@
                     "content": {
                       "type": "object",
                       "properties": {
+                        "campaignIsAutopilot": {
+                          "type": "boolean",
+                          "description": "Uses the shared multicolor Autopilot campaign accent."
+                        },
                         "id": {
                           "type": "string",
                           "description": "Content ID"
@@ -41722,7 +42520,7 @@
         "operationId": "content_getCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -41730,7 +42528,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -41769,7 +42567,7 @@
         "operationId": "content_updateCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -41777,7 +42575,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -41855,7 +42653,7 @@
         "operationId": "content_deleteCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -41863,7 +42661,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -41904,7 +42702,7 @@
         "operationId": "content_stopCanvasDesignThreadRun",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -41912,7 +42710,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -43727,6 +44525,121 @@
           },
           "description": "Text to humanize"
         }
+      }
+    },
+    "/api/v0/content/seo-autopilot/suggest-keywords": {
+      "get": {
+        "tags": [
+          "Content"
+        ],
+        "operationId": "content_suggestSeoAutopilotKeywords",
+        "parameters": [],
+        "responses": {
+          "400": {
+            "description": "companyId is required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Suggest target keywords for a company's website.",
+        "description": "Site-discovered DataForSEO keywords with positive search volume. Used by the\nSEO autopilot wizard's optional keyword step."
+      }
+    },
+    "/api/v0/content/seo-autopilot/integrations": {
+      "get": {
+        "tags": [
+          "Content"
+        ],
+        "operationId": "content_seoAutopilotIntegrations",
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "type": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "instanceName": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "total": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Page through visible CMS connections, including legacy category mappings."
       }
     },
     "/api/v0/brand-kits": {
@@ -52177,7 +53090,7 @@
         "operationId": "landing_pages_getLandingPageThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -52185,7 +53098,7 @@
             }
           },
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -52224,7 +53137,7 @@
         "operationId": "landing_pages_updateLandingPageThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -52232,7 +53145,7 @@
             }
           },
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -52310,7 +53223,7 @@
         "operationId": "landing_pages_deleteLandingPageThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -52318,7 +53231,7 @@
             }
           },
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -52359,7 +53272,7 @@
         "operationId": "landing_pages_stopLandingPageThreadRun",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -52367,7 +53280,7 @@
             }
           },
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -69531,7 +70444,7 @@
         "operationId": "marketing_campaigns_deleteCampaignRecipient",
         "parameters": [
           {
-            "name": "recipientId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -69539,7 +70452,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "recipientId",
             "in": "path",
             "required": true,
             "schema": {
@@ -71987,7 +72900,7 @@
         "operationId": "site_builder_apiWebsiteBranchDiff",
         "parameters": [
           {
-            "name": "branch",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -71995,7 +72908,7 @@
             }
           },
           {
-            "name": "websiteId",
+            "name": "branch",
             "in": "path",
             "required": true,
             "schema": {

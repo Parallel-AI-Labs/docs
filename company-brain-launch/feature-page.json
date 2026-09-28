@@ -1,0 +1,263 @@
+{
+  "id": 18601,
+  "date": "2026-09-28T14:52:43",
+  "date_gmt": "2026-09-28T14:52:43",
+  "guid": {
+    "rendered": "https://parallellabs.app/company-brain/",
+    "raw": "https://parallellabs.app/company-brain/"
+  },
+  "modified": "2026-09-28T14:52:43",
+  "modified_gmt": "2026-09-28T14:52:43",
+  "password": "",
+  "slug": "company-brain",
+  "status": "publish",
+  "type": "page",
+  "link": "https://parallellabs.app/company-brain/",
+  "title": {
+    "raw": "Company Brain: Every Relationship, One Connected Story",
+    "rendered": "Company Brain: Every Relationship, One Connected Story"
+  },
+  "content": {
+    "raw": "<!-- wp:html -->\n<section class=\"plw plw-hero\" style=\"padding-bottom:72px\"><div class=\"plw-hero-bg\"></div><div class=\"plw-hero-grid\"></div><div class=\"plw-wrap\"><div class=\"plw-hero-cols\"><div><p class=\"plw-eyebrow plw-reveal\">Company Brain &middot; Beta</p><h1 class=\"plw-h2 plw-reveal\" style=\"font-size:clamp(38px,4.6vw,62px)\">Every relationship.<br><span class=\"plw-serif\">One connected story.</span></h1><p class=\"plw-lede plw-reveal\" style=\"margin-top:16px\">Connect the people, companies, conversations, and activity already flowing through your business. Find the context behind a contact, see who is engaged, and go into your next conversation prepared.</p><div class=\"plw-btnrow plw-reveal\" style=\"margin-top:30px\"><a class=\"plw-btn plw-btn-pink\" href=\"https://web.parallellabs.app/dashboard/companies\">Explore <span class=\"plw-arr\">&rarr;</span></a><a class=\"plw-btn plw-btn-ghost\" href=\"#company-brain-setup\">Setup</a></div></div><div class=\"is-media plw-reveal\"><div class=\"plw-device\"><div class=\"plw-device-bar\"><span class=\"plw-dot\"></span><span class=\"plw-dot\"></span><span class=\"plw-dot\"></span><span class=\"plw-device-url\">People directory</span><span class=\"plw-live\">Beta</span></div><a href=\"https://parallellabs.app/wp-content/uploads/2026/09/01-directory.jpg\" target=\"_blank\" rel=\"noopener\"><img src=\"https://parallellabs.app/wp-content/uploads/2026/09/01-directory.jpg\" alt=\"Company Brain people directory with fictional demo data\" loading=\"lazy\" decoding=\"async\" style=\"display:block;width:100%;height:auto\" /></a></div><p style=\"font-size:12px;color:var(--plw-fg3);margin-top:12px\">Real product interface &middot; Fictional demo data &middot; Click to enlarge</p></div></div></div></section><section class=\"plw plw-sec\"><div class=\"plw-wrap\"><div class=\"plw-layer\"><div class=\"plw-cols\"><div class=\"plw-reveal\"><p class=\"plw-eyebrow\">Connected profiles</p><h2 class=\"plw-h3\">Know the person. <span class=\"plw-serif\">Understand the history.</span></h2><p class=\"plw-lede\" style=\"font-size:16px\">Search by name, company, email, or phone. Open a relationship brief or a full profile to see contact details, company context, and the records behind the relationship.</p><table class=\"plw-spec\"><tr><th>Engagement</th><td>Prioritize human replies, inbound messages, agent conversations, and bot-filtered sequence clicks and bookings.</td></tr><tr><th>All activity</th><td>Inspect the detailed sequence timeline, including opens, clicks, scheduling events, completed calls, and status changes.</td></tr><tr><th>Data sources</th><td>Follow linked source records to understand where your team knows someone from.</td></tr></table></div><div class=\"is-media plw-reveal\"><div class=\"plw-device\"><div class=\"plw-device-bar\"><span class=\"plw-dot\"></span><span class=\"plw-dot\"></span><span class=\"plw-dot\"></span><span class=\"plw-device-url\">Connected profiles</span><span class=\"plw-live\">Beta</span></div><a href=\"https://parallellabs.app/wp-content/uploads/2026/09/02-profile.jpg\" target=\"_blank\" rel=\"noopener\"><img src=\"https://parallellabs.app/wp-content/uploads/2026/09/02-profile.jpg\" alt=\"Company Brain connected profiles with fictional demo data\" loading=\"lazy\" decoding=\"async\" style=\"display:block;width:100%;height:auto\" /></a></div><p style=\"font-size:12px;color:var(--plw-fg3);margin-top:12px\">Real product interface &middot; Fictional demo data &middot; Click to enlarge</p></div></div></div><div class=\"plw-layer\"><div class=\"plw-cols\"><div class=\"is-media plw-reveal\"><div class=\"plw-device\"><div class=\"plw-device-bar\"><span class=\"plw-dot\"></span><span class=\"plw-dot\"></span><span class=\"plw-dot\"></span><span class=\"plw-device-url\">Company networks</span><span class=\"plw-live\">Beta</span></div><a href=\"https://parallellabs.app/wp-content/uploads/2026/09/04-network.jpg\" target=\"_blank\" rel=\"noopener\"><img src=\"https://parallellabs.app/wp-content/uploads/2026/09/04-network.jpg\" alt=\"Company Brain company networks with fictional demo data\" loading=\"lazy\" decoding=\"async\" style=\"display:block;width:100%;height:auto\" /></a></div><p style=\"font-size:12px;color:var(--plw-fg3);margin-top:12px\">Real product interface &middot; Fictional demo data &middot; Click to enlarge</p></div><div class=\"plw-reveal\"><p class=\"plw-eyebrow\">Company networks</p><h2 class=\"plw-h3\">See the account. <span class=\"plw-serif\">Connect the people.</span></h2><p class=\"plw-lede\" style=\"font-size:16px\">Open a company from the directory or a person\u2019s profile to explore the people and sources connected to that business.</p><table class=\"plw-spec\"><tr><th>Before a meeting</th><td>Review the latest interaction and the other people involved at the account.</td></tr><tr><th>During a handoff</th><td>Help the next teammate follow the source evidence and conversation history.</td></tr><tr><th>When following up</th><td>Start with recent human engagement, then inspect the actual interaction before taking action.</td></tr></table></div></div></div><div class=\"plw-layer\"><div class=\"plw-cols\"><div class=\"plw-reveal\"><p class=\"plw-eyebrow\">Identity review</p><h2 class=\"plw-h3\">Better context starts with <span class=\"plw-serif\">better connections.</span></h2><p class=\"plw-lede\" style=\"font-size:16px\">When identifiers are ambiguous, Company Brain makes the evidence visible so you can review how records were connected.</p><table class=\"plw-spec\"><tr><th>Needs review</th><td>Find uncertain identity matches from the directory.</td></tr><tr><th>Inspect the evidence</th><td>Review matching identifiers and the records linked through them.</td></tr><tr><th>Correct a match</th><td>Disable an incorrect shared matching key and confirm the review. New ambiguity can be flagged again.</td></tr></table></div><div class=\"is-media plw-reveal\"><div class=\"plw-device\"><div class=\"plw-device-bar\"><span class=\"plw-dot\"></span><span class=\"plw-dot\"></span><span class=\"plw-dot\"></span><span class=\"plw-device-url\">Identity review</span><span class=\"plw-live\">Beta</span></div><a href=\"https://parallellabs.app/wp-content/uploads/2026/09/05-identity.jpg\" target=\"_blank\" rel=\"noopener\"><img src=\"https://parallellabs.app/wp-content/uploads/2026/09/05-identity.jpg\" alt=\"Company Brain identity review with fictional demo data\" loading=\"lazy\" decoding=\"async\" style=\"display:block;width:100%;height:auto\" /></a></div><p style=\"font-size:12px;color:var(--plw-fg3);margin-top:12px\">Real product interface &middot; Fictional demo data &middot; Click to enlarge</p></div></div></div></div></section><section class=\"plw plw-sec\" style=\"padding-top:0\"><div class=\"plw-wrap\"><div class=\"plw-center plw-reveal\"><p class=\"plw-eyebrow\">Connected sources</p><h2 class=\"plw-h2\">Your business context. <span class=\"plw-serif\">In one place.</span></h2></div><div class=\"plw-lattice plw-reveal\" style=\"margin-top:36px\"><div class=\"plw-cell\"><span class=\"plw-cell-n\">01</span><h3 class=\"plw-cell-h\">Native activity</h3><ul class=\"plw-checks\"><li>Smart Lists, sequences, campaigns, agent conversations, and inbox activity contribute context.</li><li>Internal sources are always on.</li><li>Source records stay inspectable from each profile.</li></ul></div><div class=\"plw-cell\"><span class=\"plw-cell-n\">02</span><h3 class=\"plw-cell-h\">CRM + meetings</h3><ul class=\"plw-checks\"><li>Select one connected CRM: HubSpot, Salesforce, or GoHighLevel.</li><li>Enable Google Calendar or Zoom activity sync.</li><li>Meeting matching depends on identifiable external attendee data.</li></ul></div><div class=\"plw-cell\"><span class=\"plw-cell-n\">03</span><h3 class=\"plw-cell-h\">Custom workflows</h3><ul class=\"plw-checks\"><li>Use the People API to find resolved people, retrieve profiles, and explore company networks.</li><li>Create and manage custom text activities for milestones and handoffs.</li><li>A source and external ID make repeated activity submissions idempotent.</li></ul></div></div></div></section><style>\n.cb-feature-guide{max-width:1000px;margin:0 auto;color:#1d1d22;font-family:Inter,Arial,sans-serif;font-size:18px;line-height:1.8}.cb-feature-guide *{box-sizing:border-box}.cb-feature-guide h2{font-family:Cardo,Georgia,serif;font-weight:400;font-size:40px;line-height:1.2;margin:64px 0 24px;letter-spacing:-.6px}.cb-feature-guide h3{font-size:23px;line-height:1.4;margin:32px 0 14px}.cb-feature-guide p{margin:0 0 22px}.cb-feature-guide a{color:#027ba6}.cb-feature-guide .cb-lead{font-size:23px;line-height:1.65}.cb-kicker{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:#027ba6;font-weight:600}.cb-feature-guide .cb-callout{background:#f5fbfd;border-left:3px solid #027ba6;padding:28px 32px;margin:32px 0}.cb-feature-guide .cb-callout p:last-child{margin-bottom:0}.cb-feature-guide .cb-figure{margin:36px 0 44px}.cb-feature-guide .cb-figure img{width:100%;height:auto;display:block;border:1px solid #e5e5e9;border-radius:12px}.cb-feature-guide figcaption{font-size:13px;line-height:1.6;color:#61616c;padding:12px 2px}.cb-feature-guide .cb-note{font-size:14px;color:#61616c}.cb-feature-guide .cb-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:28px 0}.cb-feature-guide .cb-card{padding:24px;border:1px solid #e5e5e9;border-radius:12px;background:#fff}.cb-feature-guide .cb-card h3{margin-top:0}.cb-feature-guide .cb-card p{margin:0;font-size:16px}.cb-feature-guide .cb-setup-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}.cb-feature-guide .cb-setup-grid figure{margin-top:12px}.cb-feature-guide .cb-cta{background:#f5fbfd;border:1px solid #cef0ff;padding:36px;border-radius:16px;margin:52px 0}.cb-feature-guide .cb-cta h2{margin:0 0 18px}.cb-feature-guide .cb-button{display:inline-block;background:#027ba6;color:white!important;padding:12px 25px;border-radius:7px;text-decoration:none;font-size:16px;font-weight:600}.cb-feature-guide li{margin-bottom:12px}.cb-feature-guide code{font-size:15px;overflow-wrap:anywhere}@media(max-width:680px){.cb-feature-guide{font-size:17px}.cb-feature-guide h2{font-size:32px;margin-top:44px}.cb-feature-guide .cb-lead{font-size:20px}.cb-feature-guide .cb-grid,.cb-feature-guide .cb-setup-grid{grid-template-columns:1fr}.cb-feature-guide .cb-callout,.cb-feature-guide .cb-cta{padding:24px}.cb-feature-guide .cb-figure{margin:26px 0}}\n</style><section class=\"plw plw-sec\" style=\"padding-top:0\"><div class=\"plw-wrap\"><div class=\"cb-feature-guide\"><h2 id=\"company-brain-setup\">Get started: find it, connect it, explore it.</h2>\n<h3>1. Open Company Brain in the right workspace.</h3>\n<p>Sign in to Parallel AI and select the company you want to work in. In the sidebar, expand <strong>Find &amp; Enrich</strong> and select <strong>Company Brain</strong>, currently marked Beta.</p>\n<p>The setup guide introduces the identity graph and your sources. You can reopen it from the <strong>question-mark icon</strong> beside the Company Brain action row. Choose <strong>Explore</strong> to enter the directory.</p>\n<figure class=\"cb-figure\"><a href=\"https://parallellabs.app/wp-content/uploads/2026/09/06-tutorial-2.jpg\" target=\"_blank\" rel=\"noopener\"><img src=\"https://parallellabs.app/wp-content/uploads/2026/09/06-tutorial-2.jpg\" alt=\"The built-in guide explains native sources, CRM selection, and meeting activity setup. Fictional demo workspace.\" width=\"1200\" height=\"850\" style=\"aspect-ratio:1200/850\" loading=\"lazy\" decoding=\"async\"></a><figcaption>The built-in guide explains native sources, CRM selection, and meeting activity setup. Fictional demo workspace. Click to enlarge.</figcaption></figure>\n<h3>2. Check your sources and select a CRM.</h3>\n<p>Open <strong>Settings \u2192 Sources</strong>. Internal activity is always on. If you want CRM data, choose the relevant connection under <strong>CRM connections</strong>; your selection saves immediately. You can select one CRM connection at a time.</p>\n<p>If none appears, go to your company\u2019s <strong>Settings \u2192 Integrations</strong>, connect a supported CRM, and return to Company Brain. Back in <strong>Company Brain \u2192 Settings</strong>, use <strong>Sync now</strong> to queue a people sync. Allow processing time before expecting imported records to appear.</p>\n<div class=\"cb-setup-grid\"><figure class=\"cb-figure\"><a href=\"https://parallellabs.app/wp-content/uploads/2026/09/09-settings-2.jpg\" target=\"_blank\" rel=\"noopener\"><img src=\"https://parallellabs.app/wp-content/uploads/2026/09/09-settings-2.jpg\" alt=\"Company Brain settings: people sync, activity sync, and data sources.\" width=\"600\" height=\"540\" style=\"aspect-ratio:600/540\" loading=\"lazy\" decoding=\"async\"></a><figcaption>Company Brain settings: people sync, activity sync, and data sources. Click to enlarge.</figcaption></figure><figure class=\"cb-figure\"><a href=\"https://parallellabs.app/wp-content/uploads/2026/09/07-sources-2.jpg\" target=\"_blank\" rel=\"noopener\"><img src=\"https://parallellabs.app/wp-content/uploads/2026/09/07-sources-2.jpg\" alt=\"Select one connected CRM. Connection names and states shown here are fictional.\" width=\"600\" height=\"854\" style=\"aspect-ratio:600/854\" loading=\"lazy\" decoding=\"async\"></a><figcaption>Select one connected CRM. Connection names and states shown here are fictional. Click to enlarge.</figcaption></figure></div>\n<h3>3. Enable Calendar or Zoom activity.</h3>\n<p>Open <strong>Settings \u2192 Activity sync \u2192 Configure</strong>. In Connected apps, select a Google Calendar or Zoom account. Use <strong>Connect</strong> if you need to add one, then <strong>Enable</strong> to turn on its sync.</p>\n<p>Once enabled, the card shows <strong>Sync</strong>, <strong>Pause</strong>, and the last sync time. Use these controls to refresh or pause the connection. Matching depends on the attendee information the app supplies; not every meeting will identify a client.</p>\n<div style=\"max-width:600px;margin:0 auto\"><figure class=\"cb-figure\"><a href=\"https://parallellabs.app/wp-content/uploads/2026/09/08-sync-2.jpg\" target=\"_blank\" rel=\"noopener\"><img src=\"https://parallellabs.app/wp-content/uploads/2026/09/08-sync-2.jpg\" alt=\"Google Calendar and Zoom sync controls with fictional connected accounts.\" width=\"600\" height=\"854\" style=\"aspect-ratio:600/854\" loading=\"lazy\" decoding=\"async\"></a><figcaption>Google Calendar and Zoom sync controls with fictional connected accounts. Click to enlarge.</figcaption></figure></div>\n<h3>4. Follow one relationship from start to finish.</h3>\n<ol><li>Search for a person or company in the directory.</li><li>Select a row to inspect its relationship brief, or click the person\u2019s name for the full profile.</li><li>Read <strong>Engagement</strong> for recent human signals and <strong>All activity</strong> for the detailed sequence history.</li><li>Open <strong>Data sources</strong> to understand how the records were connected.</li><li>Click the company name to explore its network and the other people involved.</li></ol>\n<div class=\"cb-callout\"><p><strong>A useful first exercise:</strong> Pick an account you are actively speaking with. Find the latest reply, identify the other people at that company, and review the sources behind the relationship. You now have a concrete starting point for your next conversation.</p></div>\n</div></div></section><section class=\"plw plw-sec\" style=\"padding-top:0\"><div class=\"plw-wrap\"><div class=\"plw-center plw-reveal\"><h2 class=\"plw-h2\">A few things <span class=\"plw-serif\">to know.</span></h2></div><details class=\"plw-faq\"><summary>Do I need to connect a CRM first?</summary><div class=\"plw-faq-a\"><p>No. Internal Parallel AI sources already contribute. Add a supported CRM when you want to bring its people and company data into the picture.</p></div></details><details class=\"plw-faq\"><summary>Do email opens count as engagement?</summary><div class=\"plw-faq-a\"><p>No. The directory prioritizes human engagement. Sends and opens do not rank as engagement; detailed sequence tracking, including opens, appears in All activity.</p></div></details><details class=\"plw-faq\"><summary>Will every meeting appear in All activity?</summary><div class=\"plw-faq-a\"><p>No. Synced meeting records and custom activities are separate from the sequence tracking stream in All activity. Meeting matching also depends on the attendee information available from your connected account.</p></div></details><details class=\"plw-faq\"><summary>Where can I read the launch announcement?</summary><div class=\"plw-faq-a\"><p>Read <a href=\"https://parallellabs.app/introducing-company-brain/\">Introducing Company Brain</a> for the launch story and more examples.</p></div></details></div></section><section class=\"plw plw-cta\"><div class=\"plw-cta-glow\"></div><div class=\"plw-wrap\"><div class=\"plw-reveal\"><h2 class=\"plw-h2\">Start your next conversation <span class=\"plw-serif\">with context.</span></h2><p class=\"plw-lede\" style=\"margin:0 auto 34px\">Choose your company, then open Find &amp; Enrich \u2192 Company Brain.</p><div class=\"plw-btnrow\" style=\"justify-content:center\"><a class=\"plw-btn plw-btn-pink\" href=\"https://web.parallellabs.app/dashboard/companies\">Explore</a><a class=\"plw-btn plw-btn-ghost\" href=\"https://parallellabs.app/contact-us/\">Demo</a></div></div></div></section>\n<!-- /wp:html -->",
+    "rendered": "\n<section class=\"plw plw-hero\" style=\"padding-bottom:72px\"><div class=\"plw-hero-bg\"></div><div class=\"plw-hero-grid\"></div><div class=\"plw-wrap\"><div class=\"plw-hero-cols\"><div><p class=\"plw-eyebrow plw-reveal\">Company Brain &middot; Beta</p><h1 class=\"plw-h2 plw-reveal\" style=\"font-size:clamp(38px,4.6vw,62px)\">Every relationship.<br><span class=\"plw-serif\">One connected story.</span></h1><p class=\"plw-lede plw-reveal\" style=\"margin-top:16px\">Connect the people, companies, conversations, and activity already flowing through your business. Find the context behind a contact, see who is engaged, and go into your next conversation prepared.</p><div class=\"plw-btnrow plw-reveal\" style=\"margin-top:30px\"><a class=\"plw-btn plw-btn-pink\" href=\"https://web.parallellabs.app/dashboard/companies\">Explore <span class=\"plw-arr\">&rarr;</span></a><a class=\"plw-btn plw-btn-ghost\" href=\"#company-brain-setup\">Setup</a></div></div><div class=\"is-media plw-reveal\"><div class=\"plw-device\"><div class=\"plw-device-bar\"><span class=\"plw-dot\"></span><span class=\"plw-dot\"></span><span class=\"plw-dot\"></span><span class=\"plw-device-url\">People directory</span><span class=\"plw-live\">Beta</span></div><a href=\"https://i0.wp.com/parallellabs.app/wp-content/uploads/2026/09/01-directory.jpg?ssl=1\" target=\"_blank\" rel=\"noopener\"><img data-recalc-dims=\"1\" src=\"https://i0.wp.com/parallellabs.app/wp-content/uploads/2026/09/01-directory.jpg?ssl=1\" alt=\"Company Brain people directory with fictional demo data\" loading=\"lazy\" decoding=\"async\" style=\"display:block;width:100%;height:auto\" /></a></div><p style=\"font-size:12px;color:var(--plw-fg3);margin-top:12px\">Real product interface &middot; Fictional demo data &middot; Click to enlarge</p></div></div></div></section><section class=\"plw plw-sec\"><div class=\"plw-wrap\"><div class=\"plw-layer\"><div class=\"plw-cols\"><div class=\"plw-reveal\"><p class=\"plw-eyebrow\">Connected profiles</p><h2 class=\"plw-h3\">Know the person. <span class=\"plw-serif\">Understand the history.</span></h2><p class=\"plw-lede\" style=\"font-size:16px\">Search by name, company, email, or phone. Open a relationship brief or a full profile to see contact details, company context, and the records behind the relationship.</p><table class=\"plw-spec\"><tr><th>Engagement</th><td>Prioritize human replies, inbound messages, agent conversations, and bot-filtered sequence clicks and bookings.</td></tr><tr><th>All activity</th><td>Inspect the detailed sequence timeline, including opens, clicks, scheduling events, completed calls, and status changes.</td></tr><tr><th>Data sources</th><td>Follow linked source records to understand where your team knows someone from.</td></tr></table></div><div class=\"is-media plw-reveal\"><div class=\"plw-device\"><div class=\"plw-device-bar\"><span class=\"plw-dot\"></span><span class=\"plw-dot\"></span><span class=\"plw-dot\"></span><span class=\"plw-device-url\">Connected profiles</span><span class=\"plw-live\">Beta</span></div><a href=\"https://i0.wp.com/parallellabs.app/wp-content/uploads/2026/09/02-profile.jpg?ssl=1\" target=\"_blank\" rel=\"noopener\"><img data-recalc-dims=\"1\" src=\"https://i0.wp.com/parallellabs.app/wp-content/uploads/2026/09/02-profile.jpg?ssl=1\" alt=\"Company Brain connected profiles with fictional demo data\" loading=\"lazy\" decoding=\"async\" style=\"display:block;width:100%;height:auto\" /></a></div><p style=\"font-size:12px;color:var(--plw-fg3);margin-top:12px\">Real product interface &middot; Fictional demo data &middot; Click to enlarge</p></div></div></div><div class=\"plw-layer\"><div class=\"plw-cols\"><div class=\"is-media plw-reveal\"><div class=\"plw-device\"><div class=\"plw-device-bar\"><span class=\"plw-dot\"></span><span class=\"plw-dot\"></span><span class=\"plw-dot\"></span><span class=\"plw-device-url\">Company networks</span><span class=\"plw-live\">Beta</span></div><a href=\"https://i0.wp.com/parallellabs.app/wp-content/uploads/2026/09/04-network.jpg?ssl=1\" target=\"_blank\" rel=\"noopener\"><img data-recalc-dims=\"1\" src=\"https://i0.wp.com/parallellabs.app/wp-content/uploads/2026/09/04-network.jpg?ssl=1\" alt=\"Company Brain company networks with fictional demo data\" loading=\"lazy\" decoding=\"async\" style=\"display:block;width:100%;height:auto\" /></a></div><p style=\"font-size:12px;color:var(--plw-fg3);margin-top:12px\">Real product interface &middot; Fictional demo data &middot; Click to enlarge</p></div><div class=\"plw-reveal\"><p class=\"plw-eyebrow\">Company networks</p><h2 class=\"plw-h3\">See the account. <span class=\"plw-serif\">Connect the people.</span></h2><p class=\"plw-lede\" style=\"font-size:16px\">Open a company from the directory or a person\u2019s profile to explore the people and sources connected to that business.</p><table class=\"plw-spec\"><tr><th>Before a meeting</th><td>Review the latest interaction and the other people involved at the account.</td></tr><tr><th>During a handoff</th><td>Help the next teammate follow the source evidence and conversation history.</td></tr><tr><th>When following up</th><td>Start with recent human engagement, then inspect the actual interaction before taking action.</td></tr></table></div></div></div><div class=\"plw-layer\"><div class=\"plw-cols\"><div class=\"plw-reveal\"><p class=\"plw-eyebrow\">Identity review</p><h2 class=\"plw-h3\">Better context starts with <span class=\"plw-serif\">better connections.</span></h2><p class=\"plw-lede\" style=\"font-size:16px\">When identifiers are ambiguous, Company Brain makes the evidence visible so you can review how records were connected.</p><table class=\"plw-spec\"><tr><th>Needs review</th><td>Find uncertain identity matches from the directory.</td></tr><tr><th>Inspect the evidence</th><td>Review matching identifiers and the records linked through them.</td></tr><tr><th>Correct a match</th><td>Disable an incorrect shared matching key and confirm the review. New ambiguity can be flagged again.</td></tr></table></div><div class=\"is-media plw-reveal\"><div class=\"plw-device\"><div class=\"plw-device-bar\"><span class=\"plw-dot\"></span><span class=\"plw-dot\"></span><span class=\"plw-dot\"></span><span class=\"plw-device-url\">Identity review</span><span class=\"plw-live\">Beta</span></div><a href=\"https://i0.wp.com/parallellabs.app/wp-content/uploads/2026/09/05-identity.jpg?ssl=1\" target=\"_blank\" rel=\"noopener\"><img data-recalc-dims=\"1\" src=\"https://i0.wp.com/parallellabs.app/wp-content/uploads/2026/09/05-identity.jpg?ssl=1\" alt=\"Company Brain identity review with fictional demo data\" loading=\"lazy\" decoding=\"async\" style=\"display:block;width:100%;height:auto\" /></a></div><p style=\"font-size:12px;color:var(--plw-fg3);margin-top:12px\">Real product interface &middot; Fictional demo data &middot; Click to enlarge</p></div></div></div></div></section><section class=\"plw plw-sec\" style=\"padding-top:0\"><div class=\"plw-wrap\"><div class=\"plw-center plw-reveal\"><p class=\"plw-eyebrow\">Connected sources</p><h2 class=\"plw-h2\">Your business context. <span class=\"plw-serif\">In one place.</span></h2></div><div class=\"plw-lattice plw-reveal\" style=\"margin-top:36px\"><div class=\"plw-cell\"><span class=\"plw-cell-n\">01</span><h3 class=\"plw-cell-h\">Native activity</h3><ul class=\"plw-checks\"><li>Smart Lists, sequences, campaigns, agent conversations, and inbox activity contribute context.</li><li>Internal sources are always on.</li><li>Source records stay inspectable from each profile.</li></ul></div><div class=\"plw-cell\"><span class=\"plw-cell-n\">02</span><h3 class=\"plw-cell-h\">CRM + meetings</h3><ul class=\"plw-checks\"><li>Select one connected CRM: HubSpot, Salesforce, or GoHighLevel.</li><li>Enable Google Calendar or Zoom activity sync.</li><li>Meeting matching depends on identifiable external attendee data.</li></ul></div><div class=\"plw-cell\"><span class=\"plw-cell-n\">03</span><h3 class=\"plw-cell-h\">Custom workflows</h3><ul class=\"plw-checks\"><li>Use the People API to find resolved people, retrieve profiles, and explore company networks.</li><li>Create and manage custom text activities for milestones and handoffs.</li><li>A source and external ID make repeated activity submissions idempotent.</li></ul></div></div></div></section><style>\n.cb-feature-guide{max-width:1000px;margin:0 auto;color:#1d1d22;font-family:Inter,Arial,sans-serif;font-size:18px;line-height:1.8}.cb-feature-guide *{box-sizing:border-box}.cb-feature-guide h2{font-family:Cardo,Georgia,serif;font-weight:400;font-size:40px;line-height:1.2;margin:64px 0 24px;letter-spacing:-.6px}.cb-feature-guide h3{font-size:23px;line-height:1.4;margin:32px 0 14px}.cb-feature-guide p{margin:0 0 22px}.cb-feature-guide a{color:#027ba6}.cb-feature-guide .cb-lead{font-size:23px;line-height:1.65}.cb-kicker{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:#027ba6;font-weight:600}.cb-feature-guide .cb-callout{background:#f5fbfd;border-left:3px solid #027ba6;padding:28px 32px;margin:32px 0}.cb-feature-guide .cb-callout p:last-child{margin-bottom:0}.cb-feature-guide .cb-figure{margin:36px 0 44px}.cb-feature-guide .cb-figure img{width:100%;height:auto;display:block;border:1px solid #e5e5e9;border-radius:12px}.cb-feature-guide figcaption{font-size:13px;line-height:1.6;color:#61616c;padding:12px 2px}.cb-feature-guide .cb-note{font-size:14px;color:#61616c}.cb-feature-guide .cb-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:28px 0}.cb-feature-guide .cb-card{padding:24px;border:1px solid #e5e5e9;border-radius:12px;background:#fff}.cb-feature-guide .cb-card h3{margin-top:0}.cb-feature-guide .cb-card p{margin:0;font-size:16px}.cb-feature-guide .cb-setup-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}.cb-feature-guide .cb-setup-grid figure{margin-top:12px}.cb-feature-guide .cb-cta{background:#f5fbfd;border:1px solid #cef0ff;padding:36px;border-radius:16px;margin:52px 0}.cb-feature-guide .cb-cta h2{margin:0 0 18px}.cb-feature-guide .cb-button{display:inline-block;background:#027ba6;color:white!important;padding:12px 25px;border-radius:7px;text-decoration:none;font-size:16px;font-weight:600}.cb-feature-guide li{margin-bottom:12px}.cb-feature-guide code{font-size:15px;overflow-wrap:anywhere}@media(max-width:680px){.cb-feature-guide{font-size:17px}.cb-feature-guide h2{font-size:32px;margin-top:44px}.cb-feature-guide .cb-lead{font-size:20px}.cb-feature-guide .cb-grid,.cb-feature-guide .cb-setup-grid{grid-template-columns:1fr}.cb-feature-guide .cb-callout,.cb-feature-guide .cb-cta{padding:24px}.cb-feature-guide .cb-figure{margin:26px 0}}\n</style><section class=\"plw plw-sec\" style=\"padding-top:0\"><div class=\"plw-wrap\"><div class=\"cb-feature-guide\"><h2 id=\"company-brain-setup\">Get started: find it, connect it, explore it.</h2>\n<h3>1. Open Company Brain in the right workspace.</h3>\n<p>Sign in to Parallel AI and select the company you want to work in. In the sidebar, expand <strong>Find &amp; Enrich</strong> and select <strong>Company Brain</strong>, currently marked Beta.</p>\n<p>The setup guide introduces the identity graph and your sources. You can reopen it from the <strong>question-mark icon</strong> beside the Company Brain action row. Choose <strong>Explore</strong> to enter the directory.</p>\n<figure class=\"cb-figure\"><a href=\"https://i0.wp.com/parallellabs.app/wp-content/uploads/2026/09/06-tutorial-2.jpg?ssl=1\" target=\"_blank\" rel=\"noopener\"><img data-recalc-dims=\"1\" src=\"https://i0.wp.com/parallellabs.app/wp-content/uploads/2026/09/06-tutorial-2.jpg?resize=1200%2C850&#038;ssl=1\" alt=\"The built-in guide explains native sources, CRM selection, and meeting activity setup. Fictional demo workspace.\" width=\"1200\" height=\"850\" style=\"aspect-ratio:1200/850\" loading=\"lazy\" decoding=\"async\"></a><figcaption>The built-in guide explains native sources, CRM selection, and meeting activity setup. Fictional demo workspace. Click to enlarge.</figcaption></figure>\n<h3>2. Check your sources and select a CRM.</h3>\n<p>Open <strong>Settings \u2192 Sources</strong>. Internal activity is always on. If you want CRM data, choose the relevant connection under <strong>CRM connections</strong>; your selection saves immediately. You can select one CRM connection at a time.</p>\n<p>If none appears, go to your company\u2019s <strong>Settings \u2192 Integrations</strong>, connect a supported CRM, and return to Company Brain. Back in <strong>Company Brain \u2192 Settings</strong>, use <strong>Sync now</strong> to queue a people sync. Allow processing time before expecting imported records to appear.</p>\n<div class=\"cb-setup-grid\"><figure class=\"cb-figure\"><a href=\"https://i0.wp.com/parallellabs.app/wp-content/uploads/2026/09/09-settings-2.jpg?ssl=1\" target=\"_blank\" rel=\"noopener\"><img data-recalc-dims=\"1\" src=\"https://i0.wp.com/parallellabs.app/wp-content/uploads/2026/09/09-settings-2.jpg?resize=600%2C540&#038;ssl=1\" alt=\"Company Brain settings: people sync, activity sync, and data sources.\" width=\"600\" height=\"540\" style=\"aspect-ratio:600/540\" loading=\"lazy\" decoding=\"async\"></a><figcaption>Company Brain settings: people sync, activity sync, and data sources. Click to enlarge.</figcaption></figure><figure class=\"cb-figure\"><a href=\"https://i0.wp.com/parallellabs.app/wp-content/uploads/2026/09/07-sources-2.jpg?ssl=1\" target=\"_blank\" rel=\"noopener\"><img data-recalc-dims=\"1\" src=\"https://i0.wp.com/parallellabs.app/wp-content/uploads/2026/09/07-sources-2.jpg?resize=600%2C854&#038;ssl=1\" alt=\"Select one connected CRM. Connection names and states shown here are fictional.\" width=\"600\" height=\"854\" style=\"aspect-ratio:600/854\" loading=\"lazy\" decoding=\"async\"></a><figcaption>Select one connected CRM. Connection names and states shown here are fictional. Click to enlarge.</figcaption></figure></div>\n<h3>3. Enable Calendar or Zoom activity.</h3>\n<p>Open <strong>Settings \u2192 Activity sync \u2192 Configure</strong>. In Connected apps, select a Google Calendar or Zoom account. Use <strong>Connect</strong> if you need to add one, then <strong>Enable</strong> to turn on its sync.</p>\n<p>Once enabled, the card shows <strong>Sync</strong>, <strong>Pause</strong>, and the last sync time. Use these controls to refresh or pause the connection. Matching depends on the attendee information the app supplies; not every meeting will identify a client.</p>\n<div style=\"max-width:600px;margin:0 auto\"><figure class=\"cb-figure\"><a href=\"https://i0.wp.com/parallellabs.app/wp-content/uploads/2026/09/08-sync-2.jpg?ssl=1\" target=\"_blank\" rel=\"noopener\"><img data-recalc-dims=\"1\" src=\"https://i0.wp.com/parallellabs.app/wp-content/uploads/2026/09/08-sync-2.jpg?resize=600%2C854&#038;ssl=1\" alt=\"Google Calendar and Zoom sync controls with fictional connected accounts.\" width=\"600\" height=\"854\" style=\"aspect-ratio:600/854\" loading=\"lazy\" decoding=\"async\"></a><figcaption>Google Calendar and Zoom sync controls with fictional connected accounts. Click to enlarge.</figcaption></figure></div>\n<h3>4. Follow one relationship from start to finish.</h3>\n<ol><li>Search for a person or company in the directory.</li><li>Select a row to inspect its relationship brief, or click the person\u2019s name for the full profile.</li><li>Read <strong>Engagement</strong> for recent human signals and <strong>All activity</strong> for the detailed sequence history.</li><li>Open <strong>Data sources</strong> to understand how the records were connected.</li><li>Click the company name to explore its network and the other people involved.</li></ol>\n<div class=\"cb-callout\"><p><strong>A useful first exercise:</strong> Pick an account you are actively speaking with. Find the latest reply, identify the other people at that company, and review the sources behind the relationship. You now have a concrete starting point for your next conversation.</p></div>\n</div></div></section><section class=\"plw plw-sec\" style=\"padding-top:0\"><div class=\"plw-wrap\"><div class=\"plw-center plw-reveal\"><h2 class=\"plw-h2\">A few things <span class=\"plw-serif\">to know.</span></h2></div><details class=\"plw-faq\"><summary>Do I need to connect a CRM first?</summary><div class=\"plw-faq-a\"><p>No. Internal Parallel AI sources already contribute. Add a supported CRM when you want to bring its people and company data into the picture.</p></div></details><details class=\"plw-faq\"><summary>Do email opens count as engagement?</summary><div class=\"plw-faq-a\"><p>No. The directory prioritizes human engagement. Sends and opens do not rank as engagement; detailed sequence tracking, including opens, appears in All activity.</p></div></details><details class=\"plw-faq\"><summary>Will every meeting appear in All activity?</summary><div class=\"plw-faq-a\"><p>No. Synced meeting records and custom activities are separate from the sequence tracking stream in All activity. Meeting matching also depends on the attendee information available from your connected account.</p></div></details><details class=\"plw-faq\"><summary>Where can I read the launch announcement?</summary><div class=\"plw-faq-a\"><p>Read <a href=\"https://parallellabs.app/introducing-company-brain/\">Introducing Company Brain</a> for the launch story and more examples.</p></div></details></div></section><section class=\"plw plw-cta\"><div class=\"plw-cta-glow\"></div><div class=\"plw-wrap\"><div class=\"plw-reveal\"><h2 class=\"plw-h2\">Start your next conversation <span class=\"plw-serif\">with context.</span></h2><p class=\"plw-lede\" style=\"margin:0 auto 34px\">Choose your company, then open Find &amp; Enrich \u2192 Company Brain.</p><div class=\"plw-btnrow\" style=\"justify-content:center\"><a class=\"plw-btn plw-btn-pink\" href=\"https://web.parallellabs.app/dashboard/companies\">Explore</a><a class=\"plw-btn plw-btn-ghost\" href=\"https://parallellabs.app/contact-us/\">Demo</a></div></div></div></section>\n",
+    "protected": false,
+    "block_version": 1
+  },
+  "excerpt": {
+    "raw": "Connect people, companies, conversations, and activity with Company Brain. Explore connected profiles, company networks, CRM sync, and the setup guide.",
+    "rendered": "<p>Connect people, companies, conversations, and activity with Company Brain. Explore connected profiles, company networks, CRM sync, and the setup guide.</p>\n",
+    "protected": false
+  },
+  "author": 1,
+  "featured_media": 0,
+  "parent": 0,
+  "menu_order": 0,
+  "comment_status": "closed",
+  "ping_status": "closed",
+  "template": "",
+  "meta": {
+    "nf_dc_page": "",
+    "om_disable_all_campaigns": false,
+    "_monsterinsights_skip_tracking": false,
+    "footnotes": ""
+  },
+  "permalink_template": "https://parallellabs.app/%pagename%/",
+  "generated_slug": "company-brain-every-relationship-one-connected-story",
+  "class_list": [
+    "post-18601",
+    "page",
+    "type-page",
+    "status-publish",
+    "hentry"
+  ],
+  "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v28.5 - https://yoast.com/product/yoast-seo-wordpress/ -->\n<title>Company Brain: Every Relationship, One Connected Story - Parallel AI | Put autonomous AI agents to work for your business</title>\n<meta name=\"description\" content=\"Discover Company Brain: Every Relationship, One Connected Story from Parallel AI\u2014the platform that helps sales, marketing, and support teams automate work with autonomous AI employees.\" />\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"https://parallellabs.app/company-brain/\" />\n<meta property=\"og:locale\" content=\"en_US\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"Company Brain: Every Relationship, One Connected Story - Parallel AI | Put autonomous AI agents to work for your business\" />\n<meta property=\"og:description\" content=\"Discover Company Brain: Every Relationship, One Connected Story from Parallel AI\u2014the platform that helps sales, marketing, and support teams automate work with autonomous AI employees.\" />\n<meta property=\"og:url\" content=\"https://parallellabs.app/company-brain/\" />\n<meta property=\"og:site_name\" content=\"Parallel AI | Put autonomous AI agents to work for your business\" />\n<meta property=\"og:image\" content=\"https://parallellabs.app/wp-content/uploads/2026/09/01-directory.jpg\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<meta name=\"twitter:label1\" content=\"Est. reading time\" />\n\t<meta name=\"twitter:data1\" content=\"5 minutes\" />\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/parallellabs.app\\/company-brain\\/\",\"url\":\"https:\\/\\/parallellabs.app\\/company-brain\\/\",\"name\":\"Company Brain: Every Relationship, One Connected Story - Parallel AI | Put autonomous AI agents to work for your business\",\"isPartOf\":{\"@id\":\"https:\\/\\/parallellabs.app\\/#website\"},\"primaryImageOfPage\":{\"@id\":\"https:\\/\\/parallellabs.app\\/company-brain\\/#primaryimage\"},\"image\":{\"@id\":\"https:\\/\\/parallellabs.app\\/company-brain\\/#primaryimage\"},\"thumbnailUrl\":\"https:\\/\\/parallellabs.app\\/wp-content\\/uploads\\/2026\\/09\\/01-directory.jpg\",\"datePublished\":\"2026-09-28T14:52:43+00:00\",\"description\":\"Discover Company Brain: Every Relationship, One Connected Story from Parallel AI\u2014the platform that helps sales, marketing, and support teams automate work with autonomous AI employees.\",\"breadcrumb\":{\"@id\":\"https:\\/\\/parallellabs.app\\/company-brain\\/#breadcrumb\"},\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https:\\/\\/parallellabs.app\\/company-brain\\/\"]}]},{\"@type\":\"ImageObject\",\"inLanguage\":\"en-US\",\"@id\":\"https:\\/\\/parallellabs.app\\/company-brain\\/#primaryimage\",\"url\":\"https:\\/\\/i0.wp.com\\/parallellabs.app\\/wp-content\\/uploads\\/2026\\/09\\/01-directory.jpg?fit=2051%2C1004&ssl=1\",\"contentUrl\":\"https:\\/\\/i0.wp.com\\/parallellabs.app\\/wp-content\\/uploads\\/2026\\/09\\/01-directory.jpg?fit=2051%2C1004&ssl=1\",\"width\":2051,\"height\":1004,\"caption\":\"Company Brain directory screen with fictional demonstration data\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https:\\/\\/parallellabs.app\\/company-brain\\/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https:\\/\\/parallellabs.app\\/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Company Brain: Every Relationship, One Connected Story\"}]},{\"@type\":\"WebSite\",\"@id\":\"https:\\/\\/parallellabs.app\\/#website\",\"url\":\"https:\\/\\/parallellabs.app\\/\",\"name\":\"Parallel AI | Put autonomous AI agents to work for your business\",\"description\":\"The AI agent platform for sales, marketing, and support\",\"publisher\":{\"@id\":\"https:\\/\\/parallellabs.app\\/#organization\"},\"alternateName\":\"Parallel AI\",\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https:\\/\\/parallellabs.app\\/?s={search_term_string}\"},\"query-input\":{\"@type\":\"PropertyValueSpecification\",\"valueRequired\":true,\"valueName\":\"search_term_string\"}}],\"inLanguage\":\"en-US\"},{\"@type\":\"Organization\",\"@id\":\"https:\\/\\/parallellabs.app\\/#organization\",\"name\":\"Parallel AI | Your Entire Go-to-Market, Run by AI Agents\",\"url\":\"https:\\/\\/parallellabs.app\\/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"en-US\",\"@id\":\"https:\\/\\/parallellabs.app\\/#\\/schema\\/logo\\/image\\/\",\"url\":\"https:\\/\\/i0.wp.com\\/parallellabs.app\\/wp-content\\/uploads\\/2025\\/05\\/logo_transparent.webp?fit=457%2C103&ssl=1\",\"contentUrl\":\"https:\\/\\/i0.wp.com\\/parallellabs.app\\/wp-content\\/uploads\\/2025\\/05\\/logo_transparent.webp?fit=457%2C103&ssl=1\",\"width\":457,\"height\":103,\"caption\":\"Parallel AI | Your Entire Go-to-Market, Run by AI Agents\"},\"image\":{\"@id\":\"https:\\/\\/parallellabs.app\\/#\\/schema\\/logo\\/image\\/\"}}]}</script>\n<!-- / Yoast SEO plugin. -->",
+  "yoast_head_json": {
+    "title": "Company Brain: Every Relationship, One Connected Story - Parallel AI | Put autonomous AI agents to work for your business",
+    "description": "Discover Company Brain: Every Relationship, One Connected Story from Parallel AI\u2014the platform that helps sales, marketing, and support teams automate work with autonomous AI employees.",
+    "robots": {
+      "index": "index",
+      "follow": "follow",
+      "max-snippet": "max-snippet:-1",
+      "max-image-preview": "max-image-preview:large",
+      "max-video-preview": "max-video-preview:-1"
+    },
+    "canonical": "https://parallellabs.app/company-brain/",
+    "og_locale": "en_US",
+    "og_type": "article",
+    "og_title": "Company Brain: Every Relationship, One Connected Story - Parallel AI | Put autonomous AI agents to work for your business",
+    "og_description": "Discover Company Brain: Every Relationship, One Connected Story from Parallel AI\u2014the platform that helps sales, marketing, and support teams automate work with autonomous AI employees.",
+    "og_url": "https://parallellabs.app/company-brain/",
+    "og_site_name": "Parallel AI | Put autonomous AI agents to work for your business",
+    "og_image": [
+      {
+        "url": "https://parallellabs.app/wp-content/uploads/2026/09/01-directory.jpg",
+        "type": "",
+        "width": "",
+        "height": ""
+      }
+    ],
+    "twitter_card": "summary_large_image",
+    "twitter_misc": {
+      "Est. reading time": "5 minutes"
+    },
+    "schema": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://parallellabs.app/company-brain/",
+          "url": "https://parallellabs.app/company-brain/",
+          "name": "Company Brain: Every Relationship, One Connected Story - Parallel AI | Put autonomous AI agents to work for your business",
+          "isPartOf": {
+            "@id": "https://parallellabs.app/#website"
+          },
+          "primaryImageOfPage": {
+            "@id": "https://parallellabs.app/company-brain/#primaryimage"
+          },
+          "image": {
+            "@id": "https://parallellabs.app/company-brain/#primaryimage"
+          },
+          "thumbnailUrl": "https://parallellabs.app/wp-content/uploads/2026/09/01-directory.jpg",
+          "datePublished": "2026-09-28T14:52:43+00:00",
+          "description": "Discover Company Brain: Every Relationship, One Connected Story from Parallel AI\u2014the platform that helps sales, marketing, and support teams automate work with autonomous AI employees.",
+          "breadcrumb": {
+            "@id": "https://parallellabs.app/company-brain/#breadcrumb"
+          },
+          "inLanguage": "en-US",
+          "potentialAction": [
+            {
+              "@type": "ReadAction",
+              "target": [
+                "https://parallellabs.app/company-brain/"
+              ]
+            }
+          ]
+        },
+        {
+          "@type": "ImageObject",
+          "inLanguage": "en-US",
+          "@id": "https://parallellabs.app/company-brain/#primaryimage",
+          "url": "https://i0.wp.com/parallellabs.app/wp-content/uploads/2026/09/01-directory.jpg?fit=2051%2C1004&ssl=1",
+          "contentUrl": "https://i0.wp.com/parallellabs.app/wp-content/uploads/2026/09/01-directory.jpg?fit=2051%2C1004&ssl=1",
+          "width": 2051,
+          "height": 1004,
+          "caption": "Company Brain directory screen with fictional demonstration data"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://parallellabs.app/company-brain/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://parallellabs.app/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Company Brain: Every Relationship, One Connected Story"
+            }
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://parallellabs.app/#website",
+          "url": "https://parallellabs.app/",
+          "name": "Parallel AI | Put autonomous AI agents to work for your business",
+          "description": "The AI agent platform for sales, marketing, and support",
+          "publisher": {
+            "@id": "https://parallellabs.app/#organization"
+          },
+          "alternateName": "Parallel AI",
+          "potentialAction": [
+            {
+              "@type": "SearchAction",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://parallellabs.app/?s={search_term_string}"
+              },
+              "query-input": {
+                "@type": "PropertyValueSpecification",
+                "valueRequired": true,
+                "valueName": "search_term_string"
+              }
+            }
+          ],
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://parallellabs.app/#organization",
+          "name": "Parallel AI | Your Entire Go-to-Market, Run by AI Agents",
+          "url": "https://parallellabs.app/",
+          "logo": {
+            "@type": "ImageObject",
+            "inLanguage": "en-US",
+            "@id": "https://parallellabs.app/#/schema/logo/image/",
+            "url": "https://i0.wp.com/parallellabs.app/wp-content/uploads/2025/05/logo_transparent.webp?fit=457%2C103&ssl=1",
+            "contentUrl": "https://i0.wp.com/parallellabs.app/wp-content/uploads/2025/05/logo_transparent.webp?fit=457%2C103&ssl=1",
+            "width": 457,
+            "height": 103,
+            "caption": "Parallel AI | Your Entire Go-to-Market, Run by AI Agents"
+          },
+          "image": {
+            "@id": "https://parallellabs.app/#/schema/logo/image/"
+          }
+        }
+      ]
+    }
+  },
+  "jetpack_sharing_enabled": true,
+  "_links": {
+    "self": [
+      {
+        "href": "https://parallellabs.app/wp-json/wp/v2/pages/18601",
+        "targetHints": {
+          "allow": [
+            "GET",
+            "POST",
+            "PUT",
+            "PATCH",
+            "DELETE"
+          ]
+        }
+      }
+    ],
+    "collection": [
+      {
+        "href": "https://parallellabs.app/wp-json/wp/v2/pages"
+      }
+    ],
+    "about": [
+      {
+        "href": "https://parallellabs.app/wp-json/wp/v2/types/page"
+      }
+    ],
+    "author": [
+      {
+        "embeddable": true,
+        "href": "https://parallellabs.app/wp-json/wp/v2/users/1"
+      }
+    ],
+    "replies": [
+      {
+        "embeddable": true,
+        "href": "https://parallellabs.app/wp-json/wp/v2/comments?post=18601"
+      }
+    ],
+    "version-history": [
+      {
+        "count": 0,
+        "href": "https://parallellabs.app/wp-json/wp/v2/pages/18601/revisions"
+      }
+    ],
+    "wp:attachment": [
+      {
+        "href": "https://parallellabs.app/wp-json/wp/v2/media?parent=18601"
+      }
+    ],
+    "wp:action-publish": [
+      {
+        "href": "https://parallellabs.app/wp-json/wp/v2/pages/18601"
+      }
+    ],
+    "wp:action-unfiltered-html": [
+      {
+        "href": "https://parallellabs.app/wp-json/wp/v2/pages/18601"
+      }
+    ],
+    "wp:action-assign-author": [
+      {
+        "href": "https://parallellabs.app/wp-json/wp/v2/pages/18601"
+      }
+    ],
+    "curies": [
+      {
+        "name": "wp",
+        "href": "https://api.w.org/{rel}",
+        "templated": true
+      }
+    ]
+  }
+}

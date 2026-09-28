@@ -1,0 +1,34 @@
+{
+  "hero": {
+    "height": 945,
+    "imageId": "61e6830d-e779-43c4-bdb4-1c0f06c4e50c",
+    "url": "https://parallellabs.app/wp-content/uploads/2026/09/company-brain-hero.jpg",
+    "width": 1800,
+    "originalCanvasUrl": "https://web.parallellabs.app/images/p/61e6830d-e779-43c4-bdb4-1c0f06c4e50c/2db78dab52dd64a31312f32e16523485455b2a1111f55768",
+    "wordpressId": 18572
+  },
+  "directory": {
+    "height": 1430,
+    "imageId": "1b56c2a0-3046-4593-95ce-59bb04134626",
+    "url": "https://parallellabs.app/wp-content/uploads/2026/09/company-brain-directory.jpg",
+    "width": 2160,
+    "originalCanvasUrl": "https://web.parallellabs.app/images/p/1b56c2a0-3046-4593-95ce-59bb04134626/a7c2af0089fa3a7d35368f316d11eadccd1b872a03bcef09",
+    "wordpressId": 18574
+  },
+  "profile": {
+    "height": 1430,
+    "imageId": "f24f5cd9-df4e-4ee5-9d60-32a3b90fc324",
+    "url": "https://parallellabs.app/wp-content/uploads/2026/09/company-brain-profile.jpg",
+    "width": 2160,
+    "originalCanvasUrl": "https://web.parallellabs.app/images/p/f24f5cd9-df4e-4ee5-9d60-32a3b90fc324/aac9305a6bcbd2b81a301fcd33808cd9d9ca57b057491a7e",
+    "wordpressId": 18576
+  },
+  "network": {
+    "height": 1430,
+    "imageId": "35c81886-19ed-4e78-9c94-0afa030712d1",
+    "url": "https://parallellabs.app/wp-content/uploads/2026/09/company-brain-network.jpg",
+    "width": 2160,
+    "originalCanvasUrl": "https://web.parallellabs.app/images/p/35c81886-19ed-4e78-9c94-0afa030712d1/fec845f6a2693e70f122f4453c98cfdd6c9ab7fdbc5485ae",
+    "wordpressId": 18578
+  }
+}

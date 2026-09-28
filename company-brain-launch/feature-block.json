@@ -1,0 +1,109 @@
+{
+  "id": 18603,
+  "date": "2026-09-28T14:52:56",
+  "date_gmt": "2026-09-28T14:52:56",
+  "guid": {
+    "rendered": "https://parallellabs.app/homepage-feature-company-brain/",
+    "raw": "https://parallellabs.app/homepage-feature-company-brain/"
+  },
+  "modified": "2026-09-28T14:52:56",
+  "modified_gmt": "2026-09-28T14:52:56",
+  "password": "",
+  "slug": "homepage-feature-company-brain",
+  "status": "publish",
+  "type": "wp_block",
+  "link": "https://parallellabs.app/homepage-feature-company-brain/",
+  "title": {
+    "raw": "Homepage feature \u2014 Company Brain"
+  },
+  "content": {
+    "raw": "<!-- wp:html -->\n    <!-- COMPANY BRAIN -->\n    <div class=\"plw-layer\" id=\"company-brain\">\n      <div class=\"plw-cols\">\n        <div class=\"is-media plw-reveal\">\n          <div class=\"plw-device\">\n            <div class=\"plw-device-bar\"><span class=\"plw-dot\"></span><span class=\"plw-dot\"></span><span class=\"plw-dot\"></span><span class=\"plw-device-url\">Company Brain</span><span class=\"plw-live\">Beta</span></div>\n            <a href=\"https://parallellabs.app/company-brain/\" aria-label=\"Explore Company Brain and its setup guide\" style=\"display:block\">\n              <img src=\"https://parallellabs.app/wp-content/uploads/2026/09/01-directory.jpg\" alt=\"Company Brain directory showing people, companies, recent engagement, and a connected relationship brief with fictional demo data\" width=\"2051\" height=\"1004\" loading=\"lazy\" decoding=\"async\" style=\"display:block;width:100%;height:auto\" />\n            </a>\n          </div>\n          <p style=\"margin-top:12px;font-size:12px;color:var(--plw-fg3);text-align:center\">Real product interface &middot; Fictional demo data</p>\n        </div>\n        <div class=\"plw-reveal\">\n          <p class=\"plw-eyebrow\">06 &middot; Company Brain</p>\n          <h3 class=\"plw-h3\">Every relationship. <span class=\"plw-serif\">One connected story.</span></h3>\n          <p class=\"plw-lede\" style=\"font-size:16px\">Bring people, companies, conversations, and activity together &mdash; so your next conversation starts with context.</p>\n          <table class=\"plw-spec\">\n            <tr><th>Connected profiles</th><td>See contact details, linked records, and source evidence in one place. Review uncertain identity matches.</td></tr>\n            <tr><th>Meaningful engagement</th><td>Find the people replying, messaging your agents, clicking, and booking &mdash; with a timeline of the activity behind each relationship.</td></tr>\n            <tr><th>Company networks</th><td>Explore the connections between people, their companies, and the sources that brought them together.</td></tr>\n            <tr><th>CRM + meetings</th><td>Connect HubSpot, Salesforce, or GoHighLevel, then enable Google Calendar or Zoom activity sync.</td></tr>\n          </table>\n          <p style=\"margin-top:22px\"><a href=\"https://parallellabs.app/company-brain/\" style=\"color:var(--plw-fg);font-weight:500;border-bottom:1px solid var(--plw-line)\">Explore Company Brain <span class=\"plw-arr\">&rarr;</span></a></p>\n        </div>\n      </div>\n    </div>\n\n<!-- /wp:html -->",
+    "protected": false,
+    "block_version": 1
+  },
+  "excerpt": {
+    "raw": "",
+    "rendered": "<p>Company BrainBeta Real product interface &middot; Fictional demo data 06 &middot; Company Brain Every relationship. One connected story. Bring people, companies, conversations, and activity together &mdash; so your next conversation starts with context. Connected profiles See contact details, linked records, and source evidence in one place. Review uncertain identity matches. Meaningful engagement Find the people [&hellip;]</p>\n",
+    "protected": false
+  },
+  "template": "",
+  "meta": {
+    "nf_dc_page": "",
+    "om_disable_all_campaigns": false,
+    "_monsterinsights_skip_tracking": false,
+    "footnotes": ""
+  },
+  "wp_pattern_category": [],
+  "wp_pattern_sync_status": "",
+  "_links": {
+    "self": [
+      {
+        "href": "https://parallellabs.app/wp-json/wp/v2/blocks/18603",
+        "targetHints": {
+          "allow": [
+            "GET",
+            "POST",
+            "PUT",
+            "PATCH",
+            "DELETE"
+          ]
+        }
+      }
+    ],
+    "collection": [
+      {
+        "href": "https://parallellabs.app/wp-json/wp/v2/blocks"
+      }
+    ],
+    "about": [
+      {
+        "href": "https://parallellabs.app/wp-json/wp/v2/types/wp_block"
+      }
+    ],
+    "version-history": [
+      {
+        "count": 0,
+        "href": "https://parallellabs.app/wp-json/wp/v2/blocks/18603/revisions"
+      }
+    ],
+    "wp:attachment": [
+      {
+        "href": "https://parallellabs.app/wp-json/wp/v2/media?parent=18603"
+      }
+    ],
+    "wp:term": [
+      {
+        "taxonomy": "wp_pattern_category",
+        "embeddable": true,
+        "href": "https://parallellabs.app/wp-json/wp/v2/wp_pattern_category?post=18603"
+      }
+    ],
+    "wp:action-publish": [
+      {
+        "href": "https://parallellabs.app/wp-json/wp/v2/blocks/18603"
+      }
+    ],
+    "wp:action-unfiltered-html": [
+      {
+        "href": "https://parallellabs.app/wp-json/wp/v2/blocks/18603"
+      }
+    ],
+    "wp:action-create-wp_pattern_category": [
+      {
+        "href": "https://parallellabs.app/wp-json/wp/v2/blocks/18603"
+      }
+    ],
+    "wp:action-assign-wp_pattern_category": [
+      {
+        "href": "https://parallellabs.app/wp-json/wp/v2/blocks/18603"
+      }
+    ],
+    "curies": [
+      {
+        "name": "wp",
+        "href": "https://api.w.org/{rel}",
+        "templated": true
+      }
+    ]
+  }
+}

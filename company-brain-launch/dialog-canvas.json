@@ -1,0 +1,30 @@
+{
+  "06-tutorial.png": {
+    "height": 850,
+    "imageId": "21206502-3a32-427d-a749-0dbe09002ed1",
+    "url": "https://web.parallellabs.app/images/p/21206502-3a32-427d-a749-0dbe09002ed1/5ff1b1c3b1200122e79b48aa8af84b9671a22849fef6f2f8",
+    "width": 1200,
+    "wordpressId": 18590
+  },
+  "07-sources.png": {
+    "height": 854,
+    "imageId": "36b5da65-9a63-40d5-9892-cb32719765a2",
+    "url": "https://web.parallellabs.app/images/p/36b5da65-9a63-40d5-9892-cb32719765a2/f4a0a92b22a22f6caf4ae0758fdb2aa23ab03c08a91d0830",
+    "width": 600,
+    "wordpressId": 18592
+  },
+  "08-sync.png": {
+    "height": 854,
+    "imageId": "a071ae6a-64f1-467f-ac36-de65cc350392",
+    "url": "https://web.parallellabs.app/images/p/a071ae6a-64f1-467f-ac36-de65cc350392/4ad778cce0b025d733e12d7675b91545d944a567961924b3",
+    "width": 600,
+    "wordpressId": 18594
+  },
+  "09-settings.png": {
+    "height": 540,
+    "imageId": "f7d29810-5a9d-45c1-82e5-6b92170a4c56",
+    "url": "https://web.parallellabs.app/images/p/f7d29810-5a9d-45c1-82e5-6b92170a4c56/5cf1e75b8cb2157e8af0df400c8bfd55ef7c1ed7cf8cf388",
+    "width": 600,
+    "wordpressId": 18596
+  }
+}

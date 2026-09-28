@@ -1,0 +1,380 @@
+[
+  {
+    "id": 18361,
+    "slug": "unlimited",
+    "link": "https://parallellabs.app/unlimited/",
+    "title": {
+      "raw": "Unlimited AI for Your Business \u2014 $34/month",
+      "rendered": "Unlimited AI for Your Business \u2014 $34/month"
+    }
+  },
+  {
+    "id": 18274,
+    "slug": "thank-you",
+    "link": "https://parallellabs.app/lifetime/thank-you/",
+    "title": {
+      "raw": "Thank you",
+      "rendered": "Thank you"
+    }
+  },
+  {
+    "id": 18264,
+    "slug": "thank-you",
+    "link": "https://parallellabs.app/start-an-ai-business/thank-you/",
+    "title": {
+      "raw": "Thank you",
+      "rendered": "Thank you"
+    }
+  },
+  {
+    "id": 18263,
+    "slug": "start-an-ai-business",
+    "link": "https://parallellabs.app/start-an-ai-business/",
+    "title": {
+      "raw": "Start an AI Business",
+      "rendered": "Start an AI Business"
+    }
+  },
+  {
+    "id": 18261,
+    "slug": "lifetime",
+    "link": "https://parallellabs.app/lifetime/",
+    "title": {
+      "raw": "AI Employees Lifetime Deal",
+      "rendered": "AI Employees Lifetime Deal"
+    }
+  },
+  {
+    "id": 18256,
+    "slug": "thank-you",
+    "link": "https://parallellabs.app/ai-team/thank-you/",
+    "title": {
+      "raw": "Welcome to your AI team",
+      "rendered": "Welcome to your AI team"
+    }
+  },
+  {
+    "id": 18250,
+    "slug": "ai-team",
+    "link": "https://parallellabs.app/ai-team/",
+    "title": {
+      "raw": "AI Employees for Your Business",
+      "rendered": "AI Employees for Your Business"
+    }
+  },
+  {
+    "id": 18056,
+    "slug": "playbooks",
+    "link": "https://parallellabs.app/playbooks/",
+    "title": {
+      "raw": "Playbooks",
+      "rendered": "Playbooks"
+    }
+  },
+  {
+    "id": 18032,
+    "slug": "integrations",
+    "link": "https://parallellabs.app/integrations/",
+    "title": {
+      "raw": "Integrations",
+      "rendered": "Integrations"
+    }
+  },
+  {
+    "id": 17069,
+    "slug": "white-label-ai-platform",
+    "link": "https://parallellabs.app/white-label-ai-platform/",
+    "title": {
+      "raw": "White Label AI Platform: Sell AI Under Your Own Brand",
+      "rendered": "White Label AI Platform: Sell AI Under Your Own Brand"
+    }
+  },
+  {
+    "id": 16751,
+    "slug": "ai-employees",
+    "link": "https://parallellabs.app/ai-employees/",
+    "title": {
+      "raw": "AI Employees",
+      "rendered": "AI Employees"
+    }
+  },
+  {
+    "id": 12746,
+    "slug": "meet-our-team",
+    "link": "https://parallellabs.app/meet-our-team/",
+    "title": {
+      "raw": "Meet our team",
+      "rendered": "Meet our team"
+    }
+  },
+  {
+    "id": 12623,
+    "slug": "have-questions",
+    "link": "https://parallellabs.app/have-questions/",
+    "title": {
+      "raw": "Have Questions?",
+      "rendered": "Have Questions?"
+    }
+  },
+  {
+    "id": 12601,
+    "slug": "bug-bounty-program",
+    "link": "https://parallellabs.app/bug-bounty-program/",
+    "title": {
+      "raw": "Bug Bounty Program",
+      "rendered": "Bug Bounty Program"
+    }
+  },
+  {
+    "id": 12590,
+    "slug": "anonymous-whistleblower-form",
+    "link": "https://parallellabs.app/anonymous-whistleblower-form/",
+    "title": {
+      "raw": "Anonymous Whistleblower Form",
+      "rendered": "Anonymous Whistleblower Form"
+    }
+  },
+  {
+    "id": 12501,
+    "slug": "products",
+    "link": "https://parallellabs.app/products/",
+    "title": {
+      "raw": "Products",
+      "rendered": "Products"
+    }
+  },
+  {
+    "id": 12474,
+    "slug": "our-customers-virtual-receptionist",
+    "link": "https://parallellabs.app/our-customers-virtual-receptionist/",
+    "title": {
+      "raw": "Our Customers: Virtual Receptionist",
+      "rendered": "Our Customers: Virtual Receptionist"
+    }
+  },
+  {
+    "id": 12468,
+    "slug": "our-customers-aeo-monitoring",
+    "link": "https://parallellabs.app/our-customers-aeo-monitoring/",
+    "title": {
+      "raw": "Our Customers: AEO Monitoring",
+      "rendered": "Our Customers: AEO Monitoring"
+    }
+  },
+  {
+    "id": 12461,
+    "slug": "our-customers-ecommerce-brand",
+    "link": "https://parallellabs.app/our-customers-ecommerce-brand/",
+    "title": {
+      "raw": "Our Customers: E-Commerce Brand",
+      "rendered": "Our Customers: E-Commerce Brand"
+    }
+  },
+  {
+    "id": 12449,
+    "slug": "our-customers-b2b-software-startup",
+    "link": "https://parallellabs.app/our-customers-b2b-software-startup/",
+    "title": {
+      "raw": "Our Customers: B2B Software Startup",
+      "rendered": "Our Customers: B2B Software Startup"
+    }
+  },
+  {
+    "id": 12439,
+    "slug": "our-customers-real-estate",
+    "link": "https://parallellabs.app/our-customers-real-estate/",
+    "title": {
+      "raw": "Our Customers: Real Estate",
+      "rendered": "Our Customers: Real Estate"
+    }
+  },
+  {
+    "id": 12423,
+    "slug": "our-customers-marketing-agency",
+    "link": "https://parallellabs.app/our-customers-marketing-agency/",
+    "title": {
+      "raw": "Our Customers: Marketing Agency",
+      "rendered": "Our Customers: Marketing Agency"
+    }
+  },
+  {
+    "id": 12399,
+    "slug": "ai-receptionist-never-miss-another-lead",
+    "link": "https://parallellabs.app/ai-receptionist-never-miss-another-lead/",
+    "title": {
+      "raw": "AI Receptionist: Never Miss Another Lead",
+      "rendered": "AI Receptionist: Never Miss Another Lead"
+    }
+  },
+  {
+    "id": 12387,
+    "slug": "omni-channel-ai-agents-your-always-on-ai-sdr-support-rep-and-closer-all-in-one",
+    "link": "https://parallellabs.app/omni-channel-ai-agents-your-always-on-ai-sdr-support-rep-and-closer-all-in-one/",
+    "title": {
+      "raw": "Omni-Channel AI Agents: Always-On AI SDR, Support Rep, and Closer \u2014 All in One",
+      "rendered": "Omni-Channel AI Agents: Always-On AI SDR, Support Rep, and Closer \u2014 All in One"
+    }
+  },
+  {
+    "id": 12130,
+    "slug": "executive-assistant",
+    "link": "https://parallellabs.app/executive-assistant/",
+    "title": {
+      "raw": "Executive Assistant",
+      "rendered": "Executive Assistant"
+    }
+  },
+  {
+    "id": 12043,
+    "slug": "customer-case-studies",
+    "link": "https://parallellabs.app/customer-case-studies/",
+    "title": {
+      "raw": "Customer Case Studies",
+      "rendered": "Customer Case Studies"
+    }
+  },
+  {
+    "id": 10801,
+    "slug": "platform-training",
+    "link": "https://parallellabs.app/platform-training/",
+    "title": {
+      "raw": "Platform Training",
+      "rendered": "Platform Training"
+    }
+  },
+  {
+    "id": 1591,
+    "slug": "vulnerability-disclosure-policy",
+    "link": "https://parallellabs.app/vulnerability-disclosure-policy/",
+    "title": {
+      "raw": "Vulnerability Disclosure Policy",
+      "rendered": "Vulnerability Disclosure Policy"
+    }
+  },
+  {
+    "id": 1589,
+    "slug": "hall-of-fame",
+    "link": "https://parallellabs.app/security/hall-of-fame/",
+    "title": {
+      "raw": "Security Hall Of Fame",
+      "rendered": "Security Hall Of Fame"
+    }
+  },
+  {
+    "id": 1587,
+    "slug": "security",
+    "link": "https://parallellabs.app/security/",
+    "title": {
+      "raw": "Security",
+      "rendered": "Security"
+    }
+  },
+  {
+    "id": 1583,
+    "slug": "cookie-policy-page-content",
+    "link": "https://parallellabs.app/cookie-policy-page-content/",
+    "title": {
+      "raw": "Cookie Policy",
+      "rendered": "Cookie Policy"
+    }
+  },
+  {
+    "id": 1579,
+    "slug": "data-request",
+    "link": "https://parallellabs.app/data-request/",
+    "title": {
+      "raw": "Data Request Center",
+      "rendered": "Data Request Center"
+    }
+  },
+  {
+    "id": 1491,
+    "slug": "parallel-ai-for-highlevel-agencies",
+    "link": "https://parallellabs.app/parallel-ai-for-highlevel-agencies/",
+    "title": {
+      "raw": "For HighLevel Agencies",
+      "rendered": "For HighLevel Agencies"
+    }
+  },
+  {
+    "id": 239,
+    "slug": "white-label-solutions-from-parallel-ai",
+    "link": "https://parallellabs.app/white-label-solutions-from-parallel-ai/",
+    "title": {
+      "raw": "White Label Solutions: Turn AI Into Your Highest-Margin Service",
+      "rendered": "White Label Solutions: Turn AI Into Your Highest-Margin Service"
+    }
+  },
+  {
+    "id": 232,
+    "slug": "ai-powered-sequences-from-generic-to-genius",
+    "link": "https://parallellabs.app/ai-powered-sequences-from-generic-to-genius/",
+    "title": {
+      "raw": "AI-Powered Sequences: From Generic, to Genius",
+      "rendered": "AI-Powered Sequences: From Generic, to Genius"
+    }
+  },
+  {
+    "id": 163,
+    "slug": "content-engine-scale-your-content-production-10x-without-adding-headcount",
+    "link": "https://parallellabs.app/content-engine-scale-your-content-production-10x-without-adding-headcount/",
+    "title": {
+      "raw": "Scale Your Content Production Without Adding Headcount",
+      "rendered": "Scale Your Content Production Without Adding Headcount"
+    }
+  },
+  {
+    "id": 218,
+    "slug": "smart-lists-ai-powered-lead-generation-enrichment",
+    "link": "https://parallellabs.app/smart-lists-ai-powered-lead-generation-enrichment/",
+    "title": {
+      "raw": "Smart Lists: AI-Powered Lead Generation &amp; Enrichment",
+      "rendered": "Smart Lists: AI-Powered Lead Generation &amp; Enrichment"
+    }
+  },
+  {
+    "id": 84,
+    "slug": "pricing",
+    "link": "https://parallellabs.app/pricing/",
+    "title": {
+      "raw": "Pricing",
+      "rendered": "Pricing"
+    }
+  },
+  {
+    "id": 80,
+    "slug": "contact-us",
+    "link": "https://parallellabs.app/contact-us/",
+    "title": {
+      "raw": "Schedule a Demo",
+      "rendered": "Schedule a Demo"
+    }
+  },
+  {
+    "id": 71,
+    "slug": "terms",
+    "link": "https://parallellabs.app/terms/",
+    "title": {
+      "raw": "Terms and Conditions",
+      "rendered": "Terms and Conditions"
+    }
+  },
+  {
+    "id": 15,
+    "slug": "privacy",
+    "link": "https://parallellabs.app/privacy/",
+    "title": {
+      "raw": "Privacy Policy",
+      "rendered": "Privacy Policy"
+    }
+  },
+  {
+    "id": 13,
+    "slug": "blog",
+    "link": "https://parallellabs.app/blog/",
+    "title": {
+      "raw": "Blog",
+      "rendered": "Blog"
+    }
+  }
+]
