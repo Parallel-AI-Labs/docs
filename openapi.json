@@ -8047,7 +8047,7 @@
       }
     },
     "/api/v0/projects/{project_id}/files/{file_id}/export": {
-      "get": {
+      "post": {
         "tags": [
           "Projects"
         ],
@@ -8165,7 +8165,7 @@
           "description": "POST exports current editor content without saving; GET exports the saved file"
         }
       },
-      "post": {
+      "get": {
         "tags": [
           "Projects"
         ],
@@ -17553,7 +17553,7 @@
         "operationId": "agents_checkConversationActivity",
         "parameters": [
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -17561,7 +17561,7 @@
             }
           },
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -17623,7 +17623,7 @@
         "operationId": "agents_getConversationDetails",
         "parameters": [
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -17631,7 +17631,7 @@
             }
           },
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -20419,7 +20419,7 @@
         "operationId": "lists_deleteTableAction",
         "parameters": [
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -20427,7 +20427,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -20525,7 +20525,7 @@
         "operationId": "lists_getActionSummary",
         "parameters": [
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -20533,7 +20533,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -20653,7 +20653,7 @@
         "operationId": "lists_getActionQueueStatus",
         "parameters": [
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -20661,7 +20661,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -20990,7 +20990,7 @@
         "operationId": "lists_getRowHistory",
         "parameters": [
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -20998,7 +20998,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21210,7 +21210,7 @@
         "operationId": "lists_deleteHeader",
         "parameters": [
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21218,7 +21218,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21284,7 +21284,7 @@
         "operationId": "lists_editHeader",
         "parameters": [
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21292,7 +21292,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -35133,9 +35133,9 @@
             "required": false,
             "schema": {
               "type": "string",
-              "description": "Filter by status (ideated, generating, draft, scheduled, published, archived)"
+              "description": "Filter by status (ideated, queued, generating, draft, scheduled, published, archived)"
             },
-            "description": "Filter by status (ideated, generating, draft, scheduled, published, archived)"
+            "description": "Filter by status (ideated, queued, generating, draft, scheduled, published, archived)"
           },
           {
             "name": "approvalStatus",
@@ -35269,7 +35269,7 @@
                           },
                           "status": {
                             "type": "string",
-                            "description": "Content status: ideated, generating, draft, scheduled, published, archived"
+                            "description": "Content status: ideated, queued, generating, draft, scheduled, published, archived"
                           },
                           "funnelStage": {
                             "type": "string",
@@ -35414,7 +35414,7 @@
                   },
                   "status": {
                     "type": "string",
-                    "description": "Content status (default: draft). One of: ideated, generating, draft, scheduled, published, archived"
+                    "description": "Content status (default: draft). One of: ideated, queued, generating, draft, scheduled, published, archived"
                   },
                   "category": {
                     "type": "string",
@@ -35867,7 +35867,7 @@
                         },
                         "status": {
                           "type": "string",
-                          "description": "Content status: ideated, generating, draft, scheduled, published, archived"
+                          "description": "Content status: ideated, queued, generating, draft, scheduled, published, archived"
                         },
                         "funnelStage": {
                           "type": "string",
@@ -36018,7 +36018,7 @@
                         },
                         "status": {
                           "type": "string",
-                          "description": "Content status: ideated, generating, draft, scheduled, published, archived"
+                          "description": "Content status: ideated, queued, generating, draft, scheduled, published, archived"
                         },
                         "funnelStage": {
                           "type": "string",
@@ -36173,7 +36173,7 @@
                         },
                         "status": {
                           "type": "string",
-                          "description": "Content status: ideated, generating, draft, scheduled, published, archived"
+                          "description": "Content status: ideated, queued, generating, draft, scheduled, published, archived"
                         },
                         "funnelStage": {
                           "type": "string",
@@ -36338,7 +36338,7 @@
                           },
                           "status": {
                             "type": "string",
-                            "description": "Content status: ideated, generating, draft, scheduled, published, archived"
+                            "description": "Content status: ideated, queued, generating, draft, scheduled, published, archived"
                           },
                           "funnelStage": {
                             "type": "string",
@@ -36477,7 +36477,7 @@
                         },
                         "status": {
                           "type": "string",
-                          "description": "Content status: ideated, generating, draft, scheduled, published, archived"
+                          "description": "Content status: ideated, queued, generating, draft, scheduled, published, archived"
                         },
                         "funnelStage": {
                           "type": "string",
@@ -36534,7 +36534,7 @@
                   },
                   "status": {
                     "type": "string",
-                    "description": "Content status (ideated, generating, draft, scheduled, published, archived)"
+                    "description": "Content status (ideated, queued, generating, draft, scheduled, published, archived)"
                   }
                 },
                 "required": [
@@ -36628,7 +36628,7 @@
                         },
                         "status": {
                           "type": "string",
-                          "description": "Content status: ideated, generating, draft, scheduled, published, archived"
+                          "description": "Content status: ideated, queued, generating, draft, scheduled, published, archived"
                         },
                         "funnelStage": {
                           "type": "string",
@@ -36795,7 +36795,7 @@
                         },
                         "status": {
                           "type": "string",
-                          "description": "Content status: ideated, generating, draft, scheduled, published, archived"
+                          "description": "Content status: ideated, queued, generating, draft, scheduled, published, archived"
                         },
                         "funnelStage": {
                           "type": "string",
@@ -36959,7 +36959,7 @@
                           },
                           "status": {
                             "type": "string",
-                            "description": "Content status: ideated, generating, draft, scheduled, published, archived"
+                            "description": "Content status: ideated, queued, generating, draft, scheduled, published, archived"
                           },
                           "funnelStage": {
                             "type": "string",
@@ -39868,7 +39868,7 @@
                         },
                         "status": {
                           "type": "string",
-                          "description": "Content status: ideated, generating, draft, scheduled, published, archived"
+                          "description": "Content status: ideated, queued, generating, draft, scheduled, published, archived"
                         },
                         "funnelStage": {
                           "type": "string",
@@ -42522,7 +42522,7 @@
         "operationId": "content_getCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -42530,7 +42530,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -42569,7 +42569,7 @@
         "operationId": "content_updateCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -42577,7 +42577,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -42655,7 +42655,7 @@
         "operationId": "content_deleteCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -42663,7 +42663,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -42704,7 +42704,7 @@
         "operationId": "content_stopCanvasDesignThreadRun",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -42712,7 +42712,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -53092,7 +53092,7 @@
         "operationId": "landing_pages_getLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -53100,7 +53100,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -53139,7 +53139,7 @@
         "operationId": "landing_pages_updateLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -53147,7 +53147,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -53225,7 +53225,7 @@
         "operationId": "landing_pages_deleteLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -53233,7 +53233,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -53274,7 +53274,7 @@
         "operationId": "landing_pages_stopLandingPageThreadRun",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -53282,7 +53282,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -72902,7 +72902,7 @@
         "operationId": "site_builder_apiWebsiteBranchDiff",
         "parameters": [
           {
-            "name": "branch",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -72910,7 +72910,7 @@
             }
           },
           {
-            "name": "websiteId",
+            "name": "branch",
             "in": "path",
             "required": true,
             "schema": {
