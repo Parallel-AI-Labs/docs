@@ -96,6 +96,10 @@
       "description": "Generate leads from filters, intent segments and buyer-intent keywords, enrich contacts, and import them into a smart list."
     },
     {
+      "name": "Linkedin",
+      "description": "Connected LinkedIn accounts, shared daily action counts, and asynchronous profile visits, connection requests, messages, likes and comments. Poll action tasks without resubmitting."
+    },
+    {
       "name": "Lists",
       "description": "Manage smart lists for organizing contacts and data.",
       "x-relatedSkills": [
@@ -8889,7 +8893,7 @@
         "operationId": "memories_getMemory",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8897,7 +8901,7 @@
             }
           },
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8995,7 +8999,7 @@
         "operationId": "memories_updateMemoryRoute",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -9003,7 +9007,7 @@
             }
           },
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -9131,7 +9135,7 @@
         "operationId": "memories_deleteMemoryRoute",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -9139,7 +9143,7 @@
             }
           },
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -9190,7 +9194,7 @@
         "operationId": "memories_toggleMemoryActiveRoute",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -9198,7 +9202,7 @@
             }
           },
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -17553,7 +17557,7 @@
         "operationId": "agents_checkConversationActivity",
         "parameters": [
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -17561,7 +17565,7 @@
             }
           },
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -17623,7 +17627,7 @@
         "operationId": "agents_getConversationDetails",
         "parameters": [
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -17631,7 +17635,7 @@
             }
           },
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -20419,7 +20423,7 @@
         "operationId": "lists_deleteTableAction",
         "parameters": [
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -20427,7 +20431,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -20525,7 +20529,7 @@
         "operationId": "lists_getActionSummary",
         "parameters": [
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -20533,7 +20537,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -20653,7 +20657,7 @@
         "operationId": "lists_getActionQueueStatus",
         "parameters": [
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -20661,7 +20665,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24791,7 +24795,7 @@
         "operationId": "sequences_updateSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24799,7 +24803,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25073,7 +25077,7 @@
         "operationId": "sequences_deleteSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25081,7 +25085,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25803,7 +25807,7 @@
         "operationId": "sequences_getSequenceMemberTimeline",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25811,7 +25815,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26209,7 +26213,7 @@
         "operationId": "sequences_triggerSequenceMember",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26217,7 +26221,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26285,7 +26289,7 @@
         "operationId": "sequences_removeSequenceMember",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26293,7 +26297,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28798,7 +28802,7 @@
         "operationId": "sequences_testSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28806,7 +28810,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28860,7 +28864,7 @@
         "operationId": "sequences_sendTestEmail",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28868,7 +28872,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28946,7 +28950,7 @@
         "operationId": "sequences_getMemberProfile",
         "parameters": [
           {
-            "name": "memberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28954,7 +28958,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "memberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -31020,7 +31024,7 @@
         "operationId": "people_updatePersonActivity",
         "parameters": [
           {
-            "name": "personId",
+            "name": "activityId",
             "in": "path",
             "required": true,
             "schema": {
@@ -31028,7 +31032,7 @@
             }
           },
           {
-            "name": "activityId",
+            "name": "personId",
             "in": "path",
             "required": true,
             "schema": {
@@ -31176,7 +31180,7 @@
         "operationId": "people_deletePersonActivity",
         "parameters": [
           {
-            "name": "personId",
+            "name": "activityId",
             "in": "path",
             "required": true,
             "schema": {
@@ -31184,7 +31188,7 @@
             }
           },
           {
-            "name": "activityId",
+            "name": "personId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33553,7 +33557,7 @@
         "operationId": "inbox_sendDraft",
         "parameters": [
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33561,7 +33565,7 @@
             }
           },
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33654,7 +33658,7 @@
         "operationId": "inbox_deleteDraft",
         "parameters": [
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33662,7 +33666,7 @@
             }
           },
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -48361,6 +48365,896 @@
         }
       }
     },
+    "/api/v0/linkedin/accounts": {
+      "get": {
+        "tags": [
+          "Linkedin"
+        ],
+        "operationId": "linkedin_listAccounts",
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company used for access and billing."
+            },
+            "description": "Company used for access and billing."
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Page number, starting at 1.",
+              "default": 1
+            },
+            "description": "Page number, starting at 1."
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Accounts per page, 1\u2013100.",
+              "default": 20
+            },
+            "description": "Accounts per page, 1\u2013100."
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials or company access denied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "integrationId": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "status": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "total": {
+                      "type": "integer"
+                    },
+                    "page": {
+                      "type": "integer"
+                    },
+                    "pageSize": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "List connected LinkedIn accounts",
+        "description": "Paginated accessible accounts. Connect accounts through Integrations first.\nBuilder end-user accounts are excluded."
+      }
+    },
+    "/api/v0/linkedin/counts": {
+      "get": {
+        "tags": [
+          "Linkedin"
+        ],
+        "operationId": "linkedin_getCounts",
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company used for access and billing."
+            },
+            "description": "Company used for access and billing."
+          },
+          {
+            "name": "integrationId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Optional connected account ID. Omit to use your default personal-assistant browser profile.",
+              "default": null
+            },
+            "description": "Optional connected account ID. Omit to use your default personal-assistant browser profile."
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid parameters or inaccessible account",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials or company access denied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "date": {
+                      "type": "string",
+                      "description": "Date for the daily counter bucket."
+                    },
+                    "actions": {
+                      "type": "object",
+                      "description": "By action type: count, limit, remaining. Includes reserved attempts with uncertain outcomes; shares sequence account counters."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Get daily LinkedIn action counts",
+        "description": "Counts and remaining per-action limits shared with sequences and chat.\nCounts include reserved attempts with uncertain outcomes."
+      }
+    },
+    "/api/v0/linkedin/visit": {
+      "post": {
+        "tags": [
+          "Linkedin"
+        ],
+        "operationId": "linkedin_visitProfile",
+        "parameters": [],
+        "responses": {
+          "202": {
+            "description": "Action queued; poll the task endpoint",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "taskId": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "queued, running, completed, or failed. Do not submit a duplicate action while polling."
+                    },
+                    "result": {
+                      "type": "object",
+                      "description": "Action result and quota; a failed action may still have occurred. Check LinkedIn before retrying."
+                    },
+                    "error": {
+                      "type": "string"
+                    },
+                    "updatedAt": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials or company access denied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Account inaccessible",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Account needs reconnecting",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Action could not be queued",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Visit a LinkedIn profile",
+        "description": "Returns a task ID. Poll GET /api/v0/linkedin/tasks/{taskId} with companyId. Never resubmit while polling. Uses an optional connected account or the default user browser profile and shared daily counters. Successful actions cost 10 credits plus browser usage.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company used for access and billing."
+                  },
+                  "integrationId": {
+                    "type": "string",
+                    "description": "Optional connected account ID. Omit to use your default personal-assistant browser profile.",
+                    "default": null
+                  },
+                  "profileUrl": {
+                    "type": "string",
+                    "description": "Exact https://www.linkedin.com/in/... profile URL."
+                  }
+                },
+                "required": [
+                  "companyId",
+                  "profileUrl"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v0/linkedin/connect": {
+      "post": {
+        "tags": [
+          "Linkedin"
+        ],
+        "operationId": "linkedin_connectProfile",
+        "parameters": [],
+        "responses": {
+          "202": {
+            "description": "Action queued; poll the task endpoint",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "taskId": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "queued, running, completed, or failed. Do not submit a duplicate action while polling."
+                    },
+                    "result": {
+                      "type": "object",
+                      "description": "Action result and quota; a failed action may still have occurred. Check LinkedIn before retrying."
+                    },
+                    "error": {
+                      "type": "string"
+                    },
+                    "updatedAt": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials or company access denied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Account inaccessible",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Account needs reconnecting",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Action could not be queued",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Send a LinkedIn connection request",
+        "description": "Returns a task ID. Poll GET /api/v0/linkedin/tasks/{taskId} with companyId. Never resubmit while polling. Uses an optional connected account or the default user browser profile and shared daily counters. Successful actions cost 10 credits plus browser usage.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company used for access and billing."
+                  },
+                  "integrationId": {
+                    "type": "string",
+                    "description": "Optional connected account ID. Omit to use your default personal-assistant browser profile.",
+                    "default": null
+                  },
+                  "profileUrl": {
+                    "type": "string",
+                    "description": "Exact https://www.linkedin.com/in/... profile URL."
+                  },
+                  "note": {
+                    "type": "string",
+                    "description": "Optional connection note. Maximum 300 characters.",
+                    "default": ""
+                  }
+                },
+                "required": [
+                  "companyId",
+                  "profileUrl"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v0/linkedin/message": {
+      "post": {
+        "tags": [
+          "Linkedin"
+        ],
+        "operationId": "linkedin_sendMessage",
+        "parameters": [],
+        "responses": {
+          "202": {
+            "description": "Action queued; poll the task endpoint",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "taskId": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "queued, running, completed, or failed. Do not submit a duplicate action while polling."
+                    },
+                    "result": {
+                      "type": "object",
+                      "description": "Action result and quota; a failed action may still have occurred. Check LinkedIn before retrying."
+                    },
+                    "error": {
+                      "type": "string"
+                    },
+                    "updatedAt": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials or company access denied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Account inaccessible",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Account needs reconnecting",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Action could not be queued",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Send a LinkedIn message",
+        "description": "Returns a task ID. Poll GET /api/v0/linkedin/tasks/{taskId} with companyId. Never resubmit while polling. Uses an optional connected account or the default user browser profile and shared daily counters. Successful actions cost 10 credits plus browser usage.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company used for access and billing."
+                  },
+                  "integrationId": {
+                    "type": "string",
+                    "description": "Optional connected account ID. Omit to use your default personal-assistant browser profile.",
+                    "default": null
+                  },
+                  "profileUrl": {
+                    "type": "string",
+                    "description": "Exact https://www.linkedin.com/in/... profile URL."
+                  },
+                  "message": {
+                    "type": "string",
+                    "description": "Message text; cannot be blank. Maximum 200 characters."
+                  }
+                },
+                "required": [
+                  "companyId",
+                  "profileUrl",
+                  "message"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v0/linkedin/like": {
+      "post": {
+        "tags": [
+          "Linkedin"
+        ],
+        "operationId": "linkedin_likePost",
+        "parameters": [],
+        "responses": {
+          "202": {
+            "description": "Action queued; poll the task endpoint",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "taskId": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "queued, running, completed, or failed. Do not submit a duplicate action while polling."
+                    },
+                    "result": {
+                      "type": "object",
+                      "description": "Action result and quota; a failed action may still have occurred. Check LinkedIn before retrying."
+                    },
+                    "error": {
+                      "type": "string"
+                    },
+                    "updatedAt": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials or company access denied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Account inaccessible",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Account needs reconnecting",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Action could not be queued",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Like a LinkedIn post",
+        "description": "Returns a task ID. Poll GET /api/v0/linkedin/tasks/{taskId} with companyId. Never resubmit while polling. Uses an optional connected account or the default user browser profile and shared daily counters. Successful actions cost 10 credits plus browser usage.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company used for access and billing."
+                  },
+                  "integrationId": {
+                    "type": "string",
+                    "description": "Optional connected account ID. Omit to use your default personal-assistant browser profile.",
+                    "default": null
+                  },
+                  "postUrl": {
+                    "type": "string",
+                    "description": "Exact LinkedIn /posts/... or /feed/update/urn:li:activity:... URL."
+                  }
+                },
+                "required": [
+                  "companyId",
+                  "postUrl"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v0/linkedin/comment": {
+      "post": {
+        "tags": [
+          "Linkedin"
+        ],
+        "operationId": "linkedin_commentPost",
+        "parameters": [],
+        "responses": {
+          "202": {
+            "description": "Action queued; poll the task endpoint",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "taskId": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "queued, running, completed, or failed. Do not submit a duplicate action while polling."
+                    },
+                    "result": {
+                      "type": "object",
+                      "description": "Action result and quota; a failed action may still have occurred. Check LinkedIn before retrying."
+                    },
+                    "error": {
+                      "type": "string"
+                    },
+                    "updatedAt": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials or company access denied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Account inaccessible",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Account needs reconnecting",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Action could not be queued",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Comment on a LinkedIn post",
+        "description": "Returns a task ID. Poll GET /api/v0/linkedin/tasks/{taskId} with companyId. Never resubmit while polling. Uses an optional connected account or the default user browser profile and shared daily counters. Successful actions cost 10 credits plus browser usage.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company used for access and billing."
+                  },
+                  "integrationId": {
+                    "type": "string",
+                    "description": "Optional connected account ID. Omit to use your default personal-assistant browser profile.",
+                    "default": null
+                  },
+                  "postUrl": {
+                    "type": "string",
+                    "description": "Exact LinkedIn /posts/... or /feed/update/urn:li:activity:... URL."
+                  },
+                  "comment": {
+                    "type": "string",
+                    "description": "Comment text; cannot be blank. Maximum 1250 characters."
+                  }
+                },
+                "required": [
+                  "companyId",
+                  "postUrl",
+                  "comment"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v0/linkedin/tasks/{taskId}": {
+      "get": {
+        "tags": [
+          "Linkedin"
+        ],
+        "operationId": "linkedin_getTask",
+        "parameters": [
+          {
+            "name": "taskId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company used for access and billing."
+            },
+            "description": "Company used for access and billing."
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Malformed taskId or missing companyId",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials or company access denied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Task not found or expired",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "taskId": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "queued, running, completed, or failed. Do not submit a duplicate action while polling."
+                    },
+                    "result": {
+                      "type": "object",
+                      "description": "Action result and quota; a failed action may still have occurred. Check LinkedIn before retrying."
+                    },
+                    "error": {
+                      "type": "string"
+                    },
+                    "updatedAt": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Check a LinkedIn action task",
+        "description": "Only the initiating user in the same company can read the task. Tasks expire\nafter 24 hours. A failed or uncertain action may still have occurred: check\nLinkedIn before retrying. Poll this endpoint; do not repeat the action POST."
+      }
+    },
     "/api/v0/canvas": {
       "post": {
         "tags": [
@@ -53248,7 +54142,7 @@
         "operationId": "landing_pages_getLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -53256,7 +54150,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -53295,7 +54189,7 @@
         "operationId": "landing_pages_updateLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -53303,7 +54197,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -53381,7 +54275,7 @@
         "operationId": "landing_pages_deleteLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -53389,7 +54283,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -53430,7 +54324,7 @@
         "operationId": "landing_pages_stopLandingPageThreadRun",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -53438,7 +54332,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -69129,7 +70023,7 @@
         "operationId": "marketing_campaigns_restoreCampaignVersion",
         "parameters": [
           {
-            "name": "versionId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -69137,7 +70031,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -73058,7 +73952,7 @@
         "operationId": "site_builder_apiWebsiteBranchDiff",
         "parameters": [
           {
-            "name": "branch",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -73066,7 +73960,7 @@
             }
           },
           {
-            "name": "websiteId",
+            "name": "branch",
             "in": "path",
             "required": true,
             "schema": {

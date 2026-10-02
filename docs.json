@@ -585,6 +585,20 @@
             ]
           },
           {
+            "group": "Linkedin",
+            "expanded": false,
+            "pages": [
+              "GET /api/v0/linkedin/accounts",
+              "GET /api/v0/linkedin/counts",
+              "GET /api/v0/linkedin/tasks/{taskId}",
+              "POST /api/v0/linkedin/comment",
+              "POST /api/v0/linkedin/connect",
+              "POST /api/v0/linkedin/like",
+              "POST /api/v0/linkedin/message",
+              "POST /api/v0/linkedin/visit"
+            ]
+          },
+          {
             "group": "Lists",
             "expanded": false,
             "pages": [
