@@ -581,7 +581,8 @@
               "GET /api/v0/leads/segments",
               "POST /api/v0/leads",
               "POST /api/v0/leads/enrich",
-              "POST /api/v0/leads/import"
+              "POST /api/v0/leads/import",
+              "POST /api/v0/leads/people-search"
             ]
           },
           {
