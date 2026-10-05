@@ -10,6 +10,8 @@ Look up a person or company and get back verified contact details — emails, ph
 
 The Enrichment page is a quick lookup tool. Give it whatever you know about a contact (an email, a phone number, a LinkedIn URL, a name, or a company), and it returns matching contact data you can act on.
 
+Lookups return available contact and professional information. Available contact details vary by profile.
+
 It works two ways:
 
 - **Exact match** — When you provide a strong identifier (email, phone, LinkedIn URL, or a full name plus company), you get back a single, fully enriched contact.
@@ -21,7 +23,7 @@ This is the fast, one-off companion to the enrichment **actions** in [Smart List
 
 1. Select your company from the sidebar
 2. Click **Enrichment** (under Find & Enrich)
-3. Fill in one or more fields — you only need one:
+3. Fill in identifiers. An email, phone, or LinkedIn URL can identify a person; combine a name with a company domain for a name lookup:
    - **First Name / Last Name**
    - **Email** — the highest match rate
    - **Phone**
@@ -30,18 +32,18 @@ This is the fast, one-off companion to the enrichment **actions** in [Smart List
    - **LinkedIn URL**
 4. *(Optional, for company searches)* Narrow the results:
    - **Seniority** — e.g., VP, Director, Manager
-   - **Department** — e.g., Sales, Engineering
+   - **Department** — e.g., Sales & Business Development, Engineering
    - **Job Title** — type a title and press Enter to add it
-5. Click **Enrich Contact**
+5. Select **Email** or **Phone**, then click **Enrich**
 
 A chip above the results tells you what you got: an **exact match**, or a **lead search** with an estimated count of matching people.
 
 ## Saving Results to a Smart List
 
 1. In the results table, tick the checkbox next to each contact you want (or use **Select All**)
-2. Click **Add to Smart List**
+2. Click **Save**
 3. Choose the target list from the dropdown — any missing columns are created for you automatically
-4. Click **Add to List**
+4. Click **Add**
 
 From there, the contacts are ready for [Sequences](/engage/sequences), [Marketing Campaigns](/engage/marketing-campaigns), or any Smart List action.
 
@@ -51,7 +53,8 @@ Use **Clear** to reset the form and start a new lookup.
 
 Enrichment draws on **data credits**:
 
-- **1 credit** per contact returned on an exact match
+- **1 credit** per email/profile contact returned on an exact match
+- **2 credits** per returned phone number in Phone mode
 - **1 credit** per company search that returns results
 
 Failed lookups and empty results are free. Your current balance appears at the top of the page (on plans where enrichment isn't already included), and you can top up when you run low. If you're out of credits, the lookup will prompt you to add more.
@@ -67,3 +70,12 @@ Failed lookups and empty results are free. Your current balance appears at the t
 - [Build Smart Lists](/find-enrich/smart-lists)
 - [Run a Sequence](/engage/sequences)
 - [Send a Marketing Campaign](/engage/marketing-campaigns)
+
+
+## Separate email and phone enrichment
+
+`POST /api/v0/leads/enrich` returns emails and professional/company profiles, without phone numbers. It costs 1 data credit per returned contact.
+
+`POST /api/v0/leads/enrich-phone` accepts the same enrichment identifiers (name, email, phone, company/domain, LinkedIn URL, and location). It returns phone numbers and contact identifiers only, for 2 data credits per returned number. No phone match is free. This operation is also available through the platform MCP.
+
+In the Enrichment screen, select **Email** or **Phone** before running a lookup.

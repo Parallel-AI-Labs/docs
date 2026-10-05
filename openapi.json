@@ -93,7 +93,7 @@
     },
     {
       "name": "Leads",
-      "description": "Generate leads from filters, intent segments and buyer-intent keywords, enrich contacts, and import them into a smart list."
+      "description": "Search professionals, enrich emails and phones separately, and import records into a smart list. Search is free but requires at least 1 lead data credit. Email enrichment and imports cost one data credit per record; phone enrichment costs two per returned number."
     },
     {
       "name": "Linkedin",
@@ -3175,7 +3175,7 @@
         "operationId": "keys_getApiKey",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "name",
             "in": "path",
             "required": true,
             "schema": {
@@ -3183,7 +3183,7 @@
             }
           },
           {
-            "name": "name",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -4649,7 +4649,7 @@
                       },
                       "audienceTools": {
                         "type": "boolean",
-                        "description": "Enable the lead tools: enrich, leads, lead_field_options, lead_segments. Default: false"
+                        "description": "Enable the lead tools: enrich, leads, lead_field_options, import_leads. Default: false"
                       },
                       "voiceId": {
                         "type": "string",
@@ -4940,7 +4940,7 @@
                       },
                       "audienceTools": {
                         "type": "boolean",
-                        "description": "Enable the lead tools: enrich, leads, lead_field_options, lead_segments. Default: false"
+                        "description": "Enable the lead tools: enrich, leads, lead_field_options, import_leads. Default: false"
                       },
                       "voiceId": {
                         "type": "string",
@@ -8893,7 +8893,7 @@
         "operationId": "memories_getMemory",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8901,7 +8901,7 @@
             }
           },
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8999,7 +8999,7 @@
         "operationId": "memories_updateMemoryRoute",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -9007,7 +9007,7 @@
             }
           },
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -9135,7 +9135,7 @@
         "operationId": "memories_deleteMemoryRoute",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -9143,7 +9143,7 @@
             }
           },
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -9194,7 +9194,7 @@
         "operationId": "memories_toggleMemoryActiveRoute",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -9202,7 +9202,7 @@
             }
           },
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -17557,7 +17557,7 @@
         "operationId": "agents_checkConversationActivity",
         "parameters": [
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -17565,7 +17565,7 @@
             }
           },
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -17627,7 +17627,7 @@
         "operationId": "agents_getConversationDetails",
         "parameters": [
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -17635,7 +17635,7 @@
             }
           },
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -20994,7 +20994,7 @@
         "operationId": "lists_getRowHistory",
         "parameters": [
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21002,7 +21002,7 @@
             }
           },
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21214,7 +21214,7 @@
         "operationId": "lists_deleteHeader",
         "parameters": [
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21222,7 +21222,7 @@
             }
           },
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21288,7 +21288,7 @@
         "operationId": "lists_editHeader",
         "parameters": [
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21296,7 +21296,7 @@
             }
           },
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24795,7 +24795,7 @@
         "operationId": "sequences_updateSequenceStep",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24803,7 +24803,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25077,7 +25077,7 @@
         "operationId": "sequences_deleteSequenceStep",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25085,7 +25085,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25807,7 +25807,7 @@
         "operationId": "sequences_getSequenceMemberTimeline",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25815,7 +25815,7 @@
             }
           },
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26213,7 +26213,7 @@
         "operationId": "sequences_triggerSequenceMember",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26221,7 +26221,7 @@
             }
           },
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26289,7 +26289,7 @@
         "operationId": "sequences_removeSequenceMember",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26297,7 +26297,7 @@
             }
           },
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27049,7 +27049,7 @@
         "operationId": "sequences_editSequenceExecution",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27057,7 +27057,7 @@
             }
           },
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27146,7 +27146,7 @@
         "operationId": "sequences_previewSequenceExecution",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27154,7 +27154,7 @@
             }
           },
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28802,7 +28802,7 @@
         "operationId": "sequences_testSequenceStep",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28810,7 +28810,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28864,7 +28864,7 @@
         "operationId": "sequences_sendTestEmail",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28872,7 +28872,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33557,7 +33557,7 @@
         "operationId": "inbox_sendDraft",
         "parameters": [
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33565,7 +33565,7 @@
             }
           },
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33658,7 +33658,7 @@
         "operationId": "inbox_deleteDraft",
         "parameters": [
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33666,7 +33666,7 @@
             }
           },
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46530,7 +46530,17 @@
             }
           },
           "401": {
-            "description": "Invalid credentials, no company access, or out of credits",
+            "description": "Invalid credentials or no company access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Insufficient data credits",
             "content": {
               "application/json": {
                 "schema": {
@@ -46540,7 +46550,7 @@
             }
           },
           "502": {
-            "description": "Enrichment vendor failed",
+            "description": "Enrichment unavailable",
             "content": {
               "application/json": {
                 "schema": {
@@ -46575,7 +46585,7 @@
           }
         },
         "summary": "Enrich a person or company from any combination of identifiers",
-        "description": "Provide any combination of name, email, phone, company, domain, LinkedIn\nURL, or address \u2014 more identifiers = more precise matching. Returns full\ncontact profiles (emails, phones, job title, employer, up to ~75 fields\nper match). A no-match returns {results: [], count: 0}, not an error, and\nis not charged. Costs 2 data credits per matched call.",
+        "description": "Provide any combination of name, email, phone, company, domain, LinkedIn\nURL. Returns available\nemails, professional profiles, and company information. Phone enrichment is separate at /api/v0/leads/enrich-phone. A no-match returns {results: [], count: 0}, not an error, and\nis not charged. Costs 1 data credit per returned contact.",
         "requestBody": {
           "required": true,
           "content": {
@@ -46585,7 +46595,7 @@
                 "properties": {
                   "companyId": {
                     "type": "string",
-                    "description": "Company ID (bills its data credits)"
+                    "description": "Company ID for access and any applicable data-credit charges"
                   },
                   "firstName": {
                     "type": "string",
@@ -46603,9 +46613,142 @@
                     "type": "string",
                     "description": "Email domain (e.g., company.com)"
                   },
-                  "sha256Email": {
+                  "phone": {
                     "type": "string",
-                    "description": "SHA256 hash of the email, when only a hash is known."
+                    "description": "Phone number"
+                  },
+                  "company": {
+                    "type": "string",
+                    "description": "Company name"
+                  },
+                  "companyDomain": {
+                    "type": "string",
+                    "description": "Company domain name"
+                  },
+                  "linkedinUrl": {
+                    "type": "string",
+                    "description": "LinkedIn profile URL"
+                  },
+                  "personalCity": {
+                    "type": "string",
+                    "description": "Personal city"
+                  },
+                  "personalState": {
+                    "type": "string",
+                    "description": "Personal state/province"
+                  }
+                },
+                "required": [
+                  "companyId"
+                ],
+                "description": "Identifiers for the person/company to enrich"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v0/leads/enrich-phone": {
+      "post": {
+        "tags": [
+          "Leads"
+        ],
+        "operationId": "leads_enrichPhone",
+        "parameters": [],
+        "responses": {
+          "400": {
+            "description": "No identifier provided or companyId missing",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials or no company access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Insufficient data credits",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Phone enrichment unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Phone numbers and contact identifiers only. No match returns empty results and is free.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object"
+                      },
+                      "description": "Matching person/company enrichment records."
+                    },
+                    "count": {
+                      "type": "integer",
+                      "description": "Number of matches (0 = no match, not an error)"
+                    }
+                  },
+                  "description": "Matching person/company enrichment records"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Enrich phone numbers separately using any supported contact identifiers.",
+        "description": "Accepts the same name, email, phone, company/domain, LinkedIn URL and\nlocation identifiers as email enrichment. Returns phone numbers and profile\nidentifiers only. Costs 2 data credits per returned phone record; no match is free.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID for access and any applicable data-credit charges"
+                  },
+                  "firstName": {
+                    "type": "string",
+                    "description": "First name"
+                  },
+                  "lastName": {
+                    "type": "string",
+                    "description": "Last name"
+                  },
+                  "email": {
+                    "type": "string",
+                    "description": "Email address"
+                  },
+                  "emailDomain": {
+                    "type": "string",
+                    "description": "Email domain (e.g., company.com)"
                   },
                   "phone": {
                     "type": "string",
@@ -46623,14 +46766,6 @@
                     "type": "string",
                     "description": "LinkedIn profile URL"
                   },
-                  "personalZip": {
-                    "type": "string",
-                    "description": "Personal ZIP/postal code"
-                  },
-                  "personalAddress": {
-                    "type": "string",
-                    "description": "Personal street address"
-                  },
                   "personalCity": {
                     "type": "string",
                     "description": "Personal city"
@@ -46643,7 +46778,7 @@
                 "required": [
                   "companyId"
                 ],
-                "description": "Identifiers for the person/company to enrich"
+                "description": "Phone-only enrichment using any supported contact identifiers"
               }
             }
           }
@@ -46669,7 +46804,17 @@
             }
           },
           "401": {
-            "description": "Invalid credentials, no company access, or out of credits",
+            "description": "Invalid credentials or no company access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "At least 1 lead data credit required",
             "content": {
               "application/json": {
                 "schema": {
@@ -46679,7 +46824,7 @@
             }
           },
           "502": {
-            "description": "Lead generation vendor failed",
+            "description": "Lead search unavailable",
             "content": {
               "application/json": {
                 "schema": {
@@ -46700,7 +46845,7 @@
                       "items": {
                         "type": "object"
                       },
-                      "description": "Matching lead profiles (up to `limit`)."
+                      "description": "Basic person results: name, company, location and profile identifiers (up to `limit`)."
                     },
                     "totalAvailable": {
                       "type": "integer",
@@ -46713,8 +46858,8 @@
             }
           }
         },
-        "summary": "Generate leads by filters, premade segments, and/or buyer-intent keywords",
-        "description": "At least one of filters / segment / audience is required; combining them\nintersects the criteria. Call the field-options endpoint first to learn\nthe filter surface and valid enum values (never guess enum strings), and\nthe segments endpoint to find premade segment externalIds. Costs 1 data\ncredit per call.",
+        "summary": "Find professional leads by person and company filters.",
+        "description": "Call field-options with\ndescribe=true for the supported filter schema and exact enum values.\nReturns up to 100 basic profiles\n(name, company, location and identifiers) without enrichment calls\nplus totalAvailable. Search requires at least 1 lead data credit but consumes none; importing enriches emails and costs one\ndata credit per imported record.",
         "requestBody": {
           "required": true,
           "content": {
@@ -46724,26 +46869,11 @@
                 "properties": {
                   "companyId": {
                     "type": "string",
-                    "description": "Company ID (bills its data credits)"
+                    "description": "Company ID for access and any applicable data-credit charges"
                   },
                   "filters": {
                     "type": "object",
-                    "description": "Attribute filters (each a string[] unless noted), in the exact lead-search shape. Location: city, state, personalState (person's home state), zip. Person: age {minAge,maxAge}, gender. profile (nested object): incomeRange, netWorth, homeowner, married, children. attributes (nested object): credit_rating, credit_range_new_credit, credit_card_user, investment, cra_code, mortgage_amount {min,max}, occupation_group, ethnic_code, language_code, education, excludeEducation, smoker, single_parent, dwelling_type, estimated_home_value, home_year_built {min,max}, home_purchase_price {min,max}, home_purchase_year {min,max}. Contact quality: notNulls (fields that must be present). businessProfile (nested object): industry, seniority, department, jobTitle, excludeJobTitle, jobTitleMatchMode (string, \"contains\" default or \"exact\"), companyName, companyDomain, companyDescription, employeeCount, companyRevenue, sic, companyNaics. Use lead_field_options for the enumerated fields' valid values."
-                  },
-                  "segment": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    },
-                    "description": "Premade segment externalIds from lead_segments (e.g. \"b2b_12636\", \"b2c_1253\")."
-                  },
-                  "audience": {
-                    "type": "object",
-                    "description": "Buyer-intent keyword search \u2014 the highest-signal input. { segmentSearches: string[] } is free-text topics the lead is actively shopping for (e.g. ['CRM software']); optional b2b: bool biases to business vs consumer intent. Distinct from filters.businessProfile.companyDescription, which describes what the company IS. Combine with filters to intersect intent and firmographics."
-                  },
-                  "daysBack": {
-                    "type": "integer",
-                    "description": "Recency window for intent data, 2-10, default 7."
+                    "description": "Professional/company filters from lead_field_options(describe=true). Accepts catalog camelCase fields (title, seniority, department, company, companyDomain, industry, employeeRange, country, city, education, numeric min/max fields, exclusions). Country values are two-letter codes. Use lead_field_options to discover supported fields."
                   },
                   "limit": {
                     "type": "integer",
@@ -46751,7 +46881,8 @@
                   }
                 },
                 "required": [
-                  "companyId"
+                  "companyId",
+                  "filters"
                 ],
                 "description": "Lead generation criteria"
               }
@@ -46779,7 +46910,7 @@
             }
           },
           "401": {
-            "description": "Invalid credentials, no company access, or out of credits",
+            "description": "Invalid credentials or no company access",
             "content": {
               "application/json": {
                 "schema": {
@@ -46789,7 +46920,7 @@
             }
           },
           "402": {
-            "description": "Not enough data credits to build the audience",
+            "description": "Not enough data credits for the import",
             "content": {
               "application/json": {
                 "schema": {
@@ -46809,7 +46940,7 @@
             }
           },
           "502": {
-            "description": "Audience vendor failed",
+            "description": "Import lookup unavailable",
             "content": {
               "application/json": {
                 "schema": {
@@ -46848,8 +46979,8 @@
             }
           }
         },
-        "summary": "Import leads into a smart list",
-        "description": "Takes the same criteria as the generate endpoint but, instead of returning\na sample, builds the full audience and writes every matching contact into\nthe destination smart list as rows. The list must already exist \u2014 create\none with the Lists API first and pass its id.\n\nRuns in the background: responds 202 with a taskId as soon as the import is\nqueued, and rows appear in the list over the next few minutes. Costs 1 data\ncredit per contact imported. The credit check gates on the FULL match count,\nnot on `count`, because the whole audience is built regardless of how many\nrows are imported \u2014 call the generate endpoint first to see totalAvailable.",
+        "summary": "Import matching professional leads into an existing smart list.",
+        "description": "Uses the same filters as generate. Runs in the background and returns\na taskId to poll. count limits how many profiles are fetched and imported;\nimports stop at 50,000 records. Emails are enriched during import.\nCosts 1 data credit per imported contact.",
         "requestBody": {
           "required": true,
           "content": {
@@ -46859,7 +46990,7 @@
                 "properties": {
                   "companyId": {
                     "type": "string",
-                    "description": "Company ID (bills its data credits)"
+                    "description": "Company ID for access and any applicable data-credit charges"
                   },
                   "listId": {
                     "type": "string",
@@ -46867,22 +46998,7 @@
                   },
                   "filters": {
                     "type": "object",
-                    "description": "Attribute filters (each a string[] unless noted), in the exact lead-search shape. Location: city, state, personalState (person's home state), zip. Person: age {minAge,maxAge}, gender. profile (nested object): incomeRange, netWorth, homeowner, married, children. attributes (nested object): credit_rating, credit_range_new_credit, credit_card_user, investment, cra_code, mortgage_amount {min,max}, occupation_group, ethnic_code, language_code, education, excludeEducation, smoker, single_parent, dwelling_type, estimated_home_value, home_year_built {min,max}, home_purchase_price {min,max}, home_purchase_year {min,max}. Contact quality: notNulls (fields that must be present). businessProfile (nested object): industry, seniority, department, jobTitle, excludeJobTitle, jobTitleMatchMode (string, \"contains\" default or \"exact\"), companyName, companyDomain, companyDescription, employeeCount, companyRevenue, sic, companyNaics. Use lead_field_options for the enumerated fields' valid values."
-                  },
-                  "segment": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    },
-                    "description": "Premade segment externalIds from lead_segments (e.g. \"b2b_12636\", \"b2c_1253\")."
-                  },
-                  "audience": {
-                    "type": "object",
-                    "description": "Buyer-intent keyword search \u2014 the highest-signal input. { segmentSearches: string[] } is free-text topics the lead is actively shopping for (e.g. ['CRM software']); optional b2b: bool biases to business vs consumer intent. Distinct from filters.businessProfile.companyDescription, which describes what the company IS. Combine with filters to intersect intent and firmographics."
-                  },
-                  "daysBack": {
-                    "type": "integer",
-                    "description": "Recency window for intent data, 2-10, default 7."
+                    "description": "Professional/company filters from lead_field_options(describe=true). Accepts catalog camelCase fields (title, seniority, department, company, companyDomain, industry, employeeRange, country, city, education, numeric min/max fields, exclusions). Country values are two-letter codes. Use lead_field_options to discover supported fields."
                   },
                   "importAll": {
                     "type": "boolean",
@@ -46890,20 +47006,17 @@
                   },
                   "count": {
                     "type": "integer",
-                    "description": "Max contacts to import. Required when importAll is false. Note the full audience is still built vendor-side."
+                    "description": "Max contacts to import. Required when importAll is false. The import stops after this many records."
                   },
                   "audienceName": {
                     "type": "string",
-                    "description": "Name for the generated audience. Default \"Leads\"."
-                  },
-                  "saveAudience": {
-                    "type": "boolean",
-                    "description": "Attach this configuration to the list so it can be edited and auto-refreshed later. Ignored when the list already has an audience \u2014 an existing one is never overwritten."
+                    "description": "Name for the import. Default \"Leads\"."
                   }
                 },
                 "required": [
                   "companyId",
-                  "listId"
+                  "listId",
+                  "filters"
                 ],
                 "description": "Lead import criteria plus the destination smart list"
               }
@@ -46945,9 +47058,9 @@
             "required": false,
             "schema": {
               "type": "string",
-              "description": "With describe: scope to one group (location/person/business/financial/housing/contact/intent) and inline its enum options."
+              "description": "With describe: scope to one group (location/person/company/funding) and inline its enum options."
             },
-            "description": "With describe: scope to one group (location/person/business/financial/housing/contact/intent) and inline its enum options."
+            "description": "With describe: scope to one group (location/person/company/funding) and inline its enum options."
           },
           {
             "name": "field",
@@ -46990,112 +47103,7 @@
           }
         },
         "summary": "Describe the lead-generation filter surface and list valid enum values",
-        "description": "describe=true returns the schema map \u2014 every field the generate endpoint\naccepts, its type (enum/text/range/keywords), its group, and where it\nlives. Enum option lists are inlined only when scoped with field= or\ngroup=. Call describe=true first (compact), then fetch options per group\nas you build filters. Free \u2014 no data credits charged."
-      }
-    },
-    "/api/v0/leads/segments": {
-      "get": {
-        "tags": [
-          "Leads"
-        ],
-        "operationId": "leads_searchSegments",
-        "parameters": [
-          {
-            "name": "companyId",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "description": "Company ID (optional \u2014 this endpoint is free)"
-            },
-            "description": "Company ID (optional \u2014 this endpoint is free)"
-          },
-          {
-            "name": "q",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "description": "Search text (>= 2 chars)."
-            },
-            "description": "Search text (>= 2 chars)."
-          },
-          {
-            "name": "limit",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "integer",
-              "description": "Max results, max 100, default 25."
-            },
-            "description": "Max results, max 100, default 25."
-          },
-          {
-            "name": "category",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "description": "Optional: restrict to one segment category (e.g. \"Automotive\")."
-            },
-            "description": "Optional: restrict to one segment category (e.g. \"Automotive\")."
-          }
-        ],
-        "responses": {
-          "400": {
-            "description": "Missing search text",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "200": {
-            "description": "Matching segments, best match first",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "segments": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "externalId": {
-                            "type": "string",
-                            "description": "The id to pass into the generate endpoint's segment list"
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "category": {
-                            "type": "string"
-                          },
-                          "subcategory": {
-                            "type": "string"
-                          },
-                          "isB2b": {
-                            "type": "boolean"
-                          },
-                          "description": {
-                            "type": "string"
-                          }
-                        }
-                      },
-                      "description": "Matching segments, best match first."
-                    }
-                  },
-                  "description": "Matching segments, best match first"
-                }
-              }
-            }
-          }
-        },
-        "summary": "Search the premade interest/intent segment taxonomy",
-        "description": "Thousands of B2B/B2C segments \u2014 searched, never listed. Returns matching\nsegments; pass their externalId values (e.g. \"b2b_12636\") into the\ngenerate endpoint's segment parameter. Free \u2014 no data credits charged."
+        "description": "describe=true returns the schema map \u2014 every field the generate endpoint\naccepts, its type (enum/text/number/boolean), its group, and where it\nlives. Enum option lists are inlined only when scoped with field= or\ngroup=. Call describe=true first (compact), then fetch options per group\nas you build filters. Free \u2014 no data credits charged."
       }
     },
     "/api/v0/leads/people-search": {
@@ -47127,7 +47135,7 @@
             }
           },
           "402": {
-            "description": "Not enough data credits",
+            "description": "At least 1 lead data credit required",
             "content": {
               "application/json": {
                 "schema": {
@@ -47137,7 +47145,7 @@
             }
           },
           "502": {
-            "description": "Search provider unavailable",
+            "description": "Search unavailable",
             "content": {
               "application/json": {
                 "schema": {
@@ -47169,7 +47177,12 @@
                       "type": "integer"
                     },
                     "creditCost": {
-                      "type": "integer"
+                      "type": "integer",
+                      "description": "Always zero; people search is free. Importing costs one data credit per record and enriches emails."
+                    },
+                    "nextCursor": {
+                      "type": "string",
+                      "description": "Continuation cursor; null means the end of the results"
                     }
                   }
                 }
@@ -47177,7 +47190,7 @@
             }
           }
         },
-        "summary": "Search the people database. Charge one data credit per returned person.",
+        "summary": "Free people search. Requires at least 1 lead data credit; no credits are deducted.",
         "requestBody": {
           "required": true,
           "content": {
@@ -47190,7 +47203,7 @@
                   },
                   "filters": {
                     "type": "object",
-                    "description": "People search filters: query, title, company, companyDomain, country, state, city, seniority, department, functionalArea, industry, employeeRange, revenueRange, naicsCode, linkedinIndustry, and exclusions. Values are text or arrays of text."
+                    "description": "Professional/company filters. Use field-options?describe=true for all supported fields, types and exact enum values. Use the documented camelCase filter names."
                   },
                   "page": {
                     "type": "integer",
@@ -47200,6 +47213,10 @@
                     "type": "integer",
                     "description": "5, 10, or 25 results per page",
                     "default": 10
+                  },
+                  "cursor": {
+                    "type": "string",
+                    "description": "nextCursor from the previous response. Required for page > 1; keep filters, companyId and pageSize unchanged."
                   }
                 },
                 "required": [
@@ -54256,7 +54273,7 @@
         "operationId": "landing_pages_getLandingPageThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -54264,7 +54281,7 @@
             }
           },
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -54303,7 +54320,7 @@
         "operationId": "landing_pages_updateLandingPageThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -54311,7 +54328,7 @@
             }
           },
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -54389,7 +54406,7 @@
         "operationId": "landing_pages_deleteLandingPageThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -54397,7 +54414,7 @@
             }
           },
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -54438,7 +54455,7 @@
         "operationId": "landing_pages_stopLandingPageThreadRun",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -54446,7 +54463,7 @@
             }
           },
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -55104,7 +55121,7 @@
                       },
                       "audienceTools": {
                         "type": "boolean",
-                        "description": "Enable the lead tools: enrich, leads, lead_field_options, lead_segments. Default: false"
+                        "description": "Enable the lead tools: enrich, leads, lead_field_options, import_leads. Default: false"
                       },
                       "voiceId": {
                         "type": "string",
@@ -55997,7 +56014,7 @@
                       },
                       "audienceTools": {
                         "type": "boolean",
-                        "description": "Enable the lead tools: enrich, leads, lead_field_options, lead_segments. Default: false"
+                        "description": "Enable the lead tools: enrich, leads, lead_field_options, import_leads. Default: false"
                       },
                       "voiceId": {
                         "type": "string",
@@ -68172,7 +68189,7 @@
         "operationId": "seo_projectLighthouseSnapshotRoute",
         "parameters": [
           {
-            "name": "snapshotId",
+            "name": "projectId",
             "in": "path",
             "required": true,
             "schema": {
@@ -68180,7 +68197,7 @@
             }
           },
           {
-            "name": "projectId",
+            "name": "snapshotId",
             "in": "path",
             "required": true,
             "schema": {

@@ -1,62 +1,52 @@
 ---
 title: "People Search"
-description: "Build an audience from filters — industry, seniority, location, company size — and import the matches into a Smart List."
+description: "Find professionals by role, company, location, and funding filters, then import selected contacts into a Smart List."
 icon: "users-viewfinder"
 ---
 
-[Enrichment](/find-enrich/lead-data/enrichment) answers "tell me about this person." **People Search** answers the opposite question: "who fits this description?" You describe an ideal customer with filters, preview who matches, and import as many as you want.
+People Search finds professionals who fit your criteria. Search results show name, company, and location. Search does not perform contact or company enrichment.
 
 ## Building a Search
 
-1. Select your company from the sidebar
-2. Go to **Lead Data** → **People Search**
-3. Give the audience a name — for example, "Marketing Directors in SF Bay Area"
-4. Open the filter groups on the left and set your criteria
-5. Click **Preview** to see matching contacts
-6. Choose an **Import Size** and click **Import**
-7. Pick the Smart List the contacts should land in
+1. Select your company from the sidebar.
+2. Open **People Search** under Find & Enrich.
+3. Expand the filter groups and enter your criteria.
+4. Click **Search** to see matching people and the total match count.
+5. Browse pages of 5, 10, or 25 people. Click a name to view its details or open its LinkedIn profile.
 
-You need at least one filter before previewing. The header shows how many contacts match and how many data credits you have.
+Enter at least one positive filter. Multiple values within a filter match any of those values; different filters combine. Use **Reset** to clear the search.
 
 ## Filter Groups
 
-Filters are grouped down the left side. You can combine as many as you like — each one narrows the audience.
-
 | Group | Examples |
 |-------|----------|
-| **Business** | Industries, Departments, Seniority, Job Titles, Exclude Job Titles, Company Names, Company Domains, Employee Count, Company Revenue, SIC Codes |
-| **Location** | Where the person or company is based |
-| **Contact** | What contact details a record must have |
-| **Intent** | Buying-intent signals, by segment or keyword |
-| **Personal**, **Financial**, **Housing**, **Family** | Consumer attributes, for B2C audiences |
+| **Person** | Job titles and exclusions, job levels, job functions, education, LinkedIn connections |
+| **Company** | Names, domains, LinkedIn URLs, industries, employee ranges, revenue, website traffic, company keywords |
+| **Funding** | Funding types, investors, total funding, latest funding amount and year |
+| **Location** | Person and company headquarters cities, country codes, continents, sales regions |
 
-### Job title matching
+Choose the supplied dropdown values for job levels, functions, industries, and other enumerated filters. Country filters use two-letter codes such as `US` or `GB`. Leave numeric bounds blank or set them to zero to omit that bound.
 
-**Job Titles** and **Exclude Job Titles** work together, and **Job Title Match** controls how strictly titles are compared. Excluding titles is often the fastest way to clean up an audience — screening out "Assistant" or "Intern" usually does more than adding another positive filter.
+Job-title searches can include LinkedIn headlines. Excluded titles help remove unwanted roles, such as assistants or interns.
 
-### Intent filters
+The separate **advanced people-search dialog** continues to offer its consumer and intent filters. Those filters are not available in the professional People Search page or public lead tools.
 
-Intent narrows to people showing buying signals. You can pick from ready-made audience segments or supply your own keywords, and there's an **AI Generator** to suggest keywords if you're not sure where to start.
+## Exporting and Importing
 
-## Previewing and Importing
+**Export** downloads selected people, or the current page when nothing is selected, as a CSV file.
 
-**Preview** shows a sample of matching contacts on the right, with the total match count in the header. Treat the count as the audience size and the sample as a spot check — if the sample looks wrong, tighten the filters before importing.
+To save contacts, select the people you want on the current page and click **Import**. Choose an existing Smart List or create a new one. Contacts need a LinkedIn URL or email to be imported. Missing columns can be created automatically, and existing contacts can be matched by LinkedIn URL. Import looks up available email addresses. Company details and phones are not fetched during import.
 
-**Import Size** offers 25, 50, 75, 100, 250, 500, 1,000, 5,000, 10,000, or **All**. Start small. Importing 50 and reading them tells you more about filter quality than importing 5,000 you haven't looked at.
+Selections apply to the current page. Import a small sample first to check that your criteria find the right people.
 
 ## Credits
 
-People Search costs **1 credit per search, plus 1 credit per contact imported**. Previewing the same search repeatedly is inexpensive; importing is what spends credits at volume. See [Credits](/find-enrich/lead-data/lead-credits).
+People Search and export are **free**. Searching requires a balance of **at least 1 lead data credit**, including when requesting another results page. The credit is not consumed by search. Import costs **1 data credit per successfully imported person** and enriches their email. See [Credits](/find-enrich/lead-data/lead-credits).
 
-## Tips
-
-1. **Name your audiences descriptively.** "Mktg Dirs — Bay Area — 50-200 employees" beats "Test 3."
-2. **Filter down, not up.** Start broad, preview, then add filters until the sample looks right.
-3. **Import in stages.** Run outreach against a small import first; refine the filters before pulling the rest.
-4. **Watch the match count.** A count in the millions means your filters aren't doing anything yet.
+Public lead imports run in the background, cost one data credit per imported contact, and support a requested count. They stop at 50,000 records. Public API and MCP clients can use **lead field options** to discover the accepted filter names and enum values.
 
 ## Next Steps
 
 - [Enrich a single contact](/find-enrich/lead-data/enrichment)
-- [Search Sales Navigator instead](/find-enrich/lead-data/sales-navigator)
-- [Work with the imported list](/find-enrich/smart-lists)
+- [Search Sales Navigator](/find-enrich/lead-data/sales-navigator)
+- [Work with your Smart List](/find-enrich/smart-lists)
