@@ -45,7 +45,7 @@
               "find-enrich/people",
               "find-enrich/smart-lists",
               {
-                "group": "Lead Data",
+                "group": "Leads",
                 "icon": "user-magnifying-glass",
                 "pages": [
                   "find-enrich/lead-data",
@@ -582,7 +582,8 @@
               "POST /api/v0/leads/enrich",
               "POST /api/v0/leads/enrich-phone",
               "POST /api/v0/leads/import",
-              "POST /api/v0/leads/people-search"
+              "POST /api/v0/leads/people-search",
+              "POST /api/v0/leads/people-search/lists/{listId}/import"
             ]
           },
           {

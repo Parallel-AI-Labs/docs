@@ -27,7 +27,7 @@
         "find-enrich/people",
         "find-enrich/smart-lists",
         {
-          "group": "Lead Data",
+          "group": "Leads",
           "icon": "user-magnifying-glass",
           "pages": [
             "find-enrich/lead-data",
