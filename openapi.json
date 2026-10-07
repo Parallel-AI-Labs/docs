@@ -958,7 +958,7 @@
         "operationId": "documents_getDocumentContents",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -966,7 +966,7 @@
             }
           },
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -1025,7 +1025,7 @@
         "operationId": "documents_getDocument",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -1033,7 +1033,7 @@
             }
           },
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -3175,7 +3175,7 @@
         "operationId": "keys_getApiKey",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "name",
             "in": "path",
             "required": true,
             "schema": {
@@ -3183,7 +3183,7 @@
             }
           },
           {
-            "name": "name",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8893,7 +8893,7 @@
         "operationId": "memories_getMemory",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8901,7 +8901,7 @@
             }
           },
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8999,7 +8999,7 @@
         "operationId": "memories_updateMemoryRoute",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -9007,7 +9007,7 @@
             }
           },
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -9135,7 +9135,7 @@
         "operationId": "memories_deleteMemoryRoute",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -9143,7 +9143,7 @@
             }
           },
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -9194,7 +9194,7 @@
         "operationId": "memories_toggleMemoryActiveRoute",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -9202,7 +9202,7 @@
             }
           },
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -17627,7 +17627,7 @@
         "operationId": "agents_checkConversationActivity",
         "parameters": [
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -17635,7 +17635,7 @@
             }
           },
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -17697,7 +17697,7 @@
         "operationId": "agents_getConversationDetails",
         "parameters": [
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -17705,7 +17705,7 @@
             }
           },
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24865,7 +24865,7 @@
         "operationId": "sequences_updateSequenceStep",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24873,7 +24873,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25147,7 +25147,7 @@
         "operationId": "sequences_deleteSequenceStep",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25155,7 +25155,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27119,7 +27119,7 @@
         "operationId": "sequences_editSequenceExecution",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27127,7 +27127,7 @@
             }
           },
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27216,7 +27216,7 @@
         "operationId": "sequences_previewSequenceExecution",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27224,7 +27224,7 @@
             }
           },
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28872,7 +28872,7 @@
         "operationId": "sequences_testSequenceStep",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28880,7 +28880,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28934,7 +28934,7 @@
         "operationId": "sequences_sendTestEmail",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28942,7 +28942,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -29020,7 +29020,7 @@
         "operationId": "sequences_getMemberProfile",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "memberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -29028,7 +29028,7 @@
             }
           },
           {
-            "name": "memberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -31094,7 +31094,7 @@
         "operationId": "people_updatePersonActivity",
         "parameters": [
           {
-            "name": "activityId",
+            "name": "personId",
             "in": "path",
             "required": true,
             "schema": {
@@ -31102,7 +31102,7 @@
             }
           },
           {
-            "name": "personId",
+            "name": "activityId",
             "in": "path",
             "required": true,
             "schema": {
@@ -31250,7 +31250,7 @@
         "operationId": "people_deletePersonActivity",
         "parameters": [
           {
-            "name": "activityId",
+            "name": "personId",
             "in": "path",
             "required": true,
             "schema": {
@@ -31258,7 +31258,7 @@
             }
           },
           {
-            "name": "personId",
+            "name": "activityId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33657,7 +33657,7 @@
         "operationId": "inbox_sendDraft",
         "parameters": [
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33665,7 +33665,7 @@
             }
           },
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33768,7 +33768,7 @@
         "operationId": "inbox_deleteDraft",
         "parameters": [
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33776,7 +33776,7 @@
             }
           },
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -42806,7 +42806,7 @@
         "operationId": "content_getCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -42814,7 +42814,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -42853,7 +42853,7 @@
         "operationId": "content_updateCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -42861,7 +42861,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -42939,7 +42939,7 @@
         "operationId": "content_deleteCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -42947,7 +42947,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -42988,7 +42988,7 @@
         "operationId": "content_stopCanvasDesignThreadRun",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -42996,7 +42996,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -47097,7 +47097,7 @@
                       "description": "Human-readable status message"
                     }
                   },
-                  "description": "The queued background import"
+                  "description": "The queued background people job"
                 }
               }
             }
@@ -47420,39 +47420,37 @@
               }
             }
           },
-          "200": {
-            "description": "Selected-result import outcome and data-credit charges",
+          "202": {
+            "description": "Queued import; completion is emailed",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "imported": {
-                      "type": "integer",
-                      "description": "Number of successfully imported people"
+                    "taskId": {
+                      "type": "string",
+                      "description": "Background task id for the running import."
                     },
-                    "failed": {
-                      "type": "integer",
-                      "description": "Number of people that could not be imported"
+                    "listId": {
+                      "type": "string",
+                      "description": "The destination smart list."
                     },
-                    "creditCost": {
-                      "type": "integer",
-                      "description": "Data credits charged for successfully imported people"
+                    "status": {
+                      "type": "string",
+                      "description": "Always \"background\" \u2014 the import runs asynchronously."
                     },
-                    "failedRowIndexes": {
-                      "type": "array",
-                      "items": {
-                        "type": "integer"
-                      },
-                      "description": "Zero-based indexes of rows that failed"
+                    "message": {
+                      "type": "string",
+                      "description": "Human-readable status message"
                     }
-                  }
+                  },
+                  "description": "The queued background people job"
                 }
               }
             }
           }
         },
-        "summary": "Import at most one selected result page into a company-owned smart list.",
+        "summary": "Queue selected rows or a bounded filtered search into a company-owned smart list.",
         "requestBody": {
           "required": true,
           "content": {
@@ -47481,14 +47479,25 @@
                     },
                     "description": "Select 1\u201350 search results. Each needs linkedinUrl or email. Profile values must be text of at most 5000 characters (250000 for profileData, about and companyDescription). profileData retains the complete search profile as JSON. Supported fields: profileData, allEmails, externalId, displayName, firstName, lastName, email, businessEmail, personalEmail, phoneNumber, linkedinUrl, headline, location, positionTitle, positionLocation, seniority, department, companyName, companyWebsite, companyLinkedinUrl, companyEmployeeRange, companyIndustry, companyAnnualRevenue, businessEmailRiskScore, businessEmailValidatedAt, numOfConnections, about, photoUrl, companyDescription, companyFoundedOn, companyNumberOfFollowers, companyEmployeesOnLinkedin, companyLocation."
                   },
+                  "filters": {
+                    "type": "object",
+                    "description": "Search filters; required when rows are omitted."
+                  },
+                  "count": {
+                    "type": "integer",
+                    "description": "Maximum people to process, from 1 to 50000."
+                  },
+                  "importAll": {
+                    "type": "boolean",
+                    "description": "Process matching results, capped at 50000."
+                  },
                   "importId": {
                     "type": "string",
-                    "description": "Optional UUID identifying this import for credit-charge deduplication. Reuse it when retrying the same selection."
+                    "description": "Optional UUID identifying this job. Reuse it to retrieve the same job when retrying an unchanged request."
                   }
                 },
                 "required": [
-                  "companyId",
-                  "rows"
+                  "companyId"
                 ]
               }
             }
@@ -47534,35 +47543,37 @@
               }
             }
           },
-          "200": {
-            "description": "Enriched export rows and data-credit charges",
+          "202": {
+            "description": "Queued export; download link is emailed",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "items": {
-                      "type": "array",
-                      "items": {
-                        "type": "object"
-                      },
-                      "description": "Successfully enriched people to export"
+                    "taskId": {
+                      "type": "string",
+                      "description": "Background task id for the running import."
                     },
-                    "failed": {
-                      "type": "integer",
-                      "description": "Number of people that could not be enriched"
+                    "listId": {
+                      "type": "string",
+                      "description": "The destination smart list."
                     },
-                    "creditCost": {
-                      "type": "integer",
-                      "description": "Data credits charged"
+                    "status": {
+                      "type": "string",
+                      "description": "Always \"background\" \u2014 the import runs asynchronously."
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Human-readable status message"
                     }
-                  }
+                  },
+                  "description": "The queued background people job"
                 }
               }
             }
           }
         },
-        "summary": "Enrich and bill one result page for CSV export.",
+        "summary": "Queue selected rows or a bounded filtered search for CSV export.",
         "requestBody": {
           "required": true,
           "content": {
@@ -47589,16 +47600,27 @@
                     "items": {
                       "type": "object"
                     },
-                    "description": "Select 1\u201350 search results. Each needs linkedinUrl or email. Profile values must be text of at most 5000 characters (250000 for profileData, about and companyDescription). profileData retains the complete search profile as JSON. Supported fields: profileData, allEmails, externalId, displayName, firstName, lastName, email, businessEmail, personalEmail, phoneNumber, linkedinUrl, headline, location, positionTitle, positionLocation, seniority, department, companyName, companyWebsite, companyLinkedinUrl, companyEmployeeRange, companyIndustry, companyAnnualRevenue, businessEmailRiskScore, businessEmailValidatedAt, numOfConnections, about, photoUrl, companyDescription, companyFoundedOn, companyNumberOfFollowers, companyEmployeesOnLinkedin, companyLocation."
+                    "description": "Selected results, up to 50. Omit to export a filtered search."
+                  },
+                  "filters": {
+                    "type": "object",
+                    "description": "Search filters; required when rows are omitted."
+                  },
+                  "count": {
+                    "type": "integer",
+                    "description": "Maximum people to export, from 1 to 50000."
+                  },
+                  "importAll": {
+                    "type": "boolean",
+                    "description": "Export matching results, capped at 50000."
                   },
                   "importId": {
                     "type": "string",
-                    "description": "Optional UUID identifying this import for credit-charge deduplication. Reuse it when retrying the same selection."
+                    "description": "Optional UUID identifying this job. Reuse it to retrieve the same job when retrying an unchanged request."
                   }
                 },
                 "required": [
-                  "companyId",
-                  "rows"
+                  "companyId"
                 ]
               }
             }
@@ -68566,7 +68588,7 @@
         "operationId": "seo_projectLighthouseSnapshotRoute",
         "parameters": [
           {
-            "name": "snapshotId",
+            "name": "projectId",
             "in": "path",
             "required": true,
             "schema": {
@@ -68574,7 +68596,7 @@
             }
           },
           {
-            "name": "projectId",
+            "name": "snapshotId",
             "in": "path",
             "required": true,
             "schema": {
@@ -73329,7 +73351,7 @@
         "operationId": "marketing_campaigns_restoreTemplateVersion",
         "parameters": [
           {
-            "name": "templateId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -73337,7 +73359,7 @@
             }
           },
           {
-            "name": "versionId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -74460,7 +74482,7 @@
         "operationId": "site_builder_apiWebsiteBranchDiff",
         "parameters": [
           {
-            "name": "websiteId",
+            "name": "branch",
             "in": "path",
             "required": true,
             "schema": {
@@ -74468,7 +74490,7 @@
             }
           },
           {
-            "name": "branch",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
