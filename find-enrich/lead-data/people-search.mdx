@@ -12,7 +12,7 @@ People Search finds professionals who fit your criteria. Search results show nam
 2. Open **People Search** under Find & Enrich.
 3. Expand the filter groups and enter your criteria.
 4. Click **Search** to see matching people and the total match count.
-5. Browse pages of 5, 10, or 25 people. Click a name to view its details or open its LinkedIn profile.
+5. Browse pages of 5, 10, 25, or 50 people. Click a name to view its details or open its LinkedIn profile.
 
 Enter at least one positive filter. Multiple values within a filter match any of those values; different filters combine. Use **Reset** to clear the search.
 
@@ -29,24 +29,43 @@ Choose the supplied dropdown values for job levels, functions, industries, and o
 
 Job-title searches can include LinkedIn headlines. Excluded titles help remove unwanted roles, such as assistants or interns.
 
-The separate **advanced people-search dialog** continues to offer its consumer and intent filters. Those filters are not available in the professional People Search page or public lead tools.
+## Importing and Exporting
 
-## Exporting and Importing
+Click **Import** to add people to a Smart List, or **Export** to get a CSV file. Choose how many people to include:
 
-**Export** downloads selected people, or the current page when nothing is selected, as a CSV file.
+- **Selected people** — the people you've checked on the current page (people need a LinkedIn URL or email to be selected)
+- **Up to** a set number, or a **custom number** — taken in order from the first result, across pages
+- **All** matching people, up to 50,000
 
-To save contacts, select the people you want on the current page and click **Import**. Choose an existing Smart List or create a new one. Contacts need a LinkedIn URL or email to be imported. Missing columns can be created automatically, and existing contacts can be matched by LinkedIn URL. Import looks up available email addresses. Company details and phones are not fetched during import.
+Then choose what to look up for each person:
 
-Selections apply to the current page. Import a small sample first to check that your criteria find the right people.
+- **Include email** (on by default) — finds their email address and profile details
+- **Include mobile/direct phone number** — finds a mobile or direct phone number
+
+Imports and exports run in the background. You can leave the page; you'll get an email when the job is ready, and an export's email includes a CSV download link that stays valid for 24 hours. If you run low on data credits partway through, the job waits and resumes once credits are available.
+
+When importing, choose the destination Smart List. People already in that list with the same LinkedIn URL or email are updated instead of duplicated.
+
+Import a small sample first to check that your criteria find the right people.
 
 ## Credits
 
-People Search and export are **free**. Searching requires a balance of **at least 1 lead data credit**, including when requesting another results page. The credit is not consumed by search. Import costs **1 data credit per successfully imported person** and enriches their email. See [Credits](/find-enrich/lead-data/lead-credits).
+Searching is **free**. To search, you need a balance of **at least 1 data credit**, or remaining capacity in your plan's data-credit window. Search never spends it, including when you load more pages.
 
-Public lead imports run in the background, cost one data credit per imported contact, and support a requested count. They stop at 50,000 records. Public API and MCP clients can use **lead field options** to discover the accepted filter names and enum values.
+Imports and exports cost:
+
+- **1 data credit** per person whose email is found
+- **2 data credits** per phone number found, when phone numbers are included
+
+People with no match cost nothing. See [Credits](/find-enrich/lead-data/lead-credits).
+
+## Using the API or MCP
+
+Search, import, and export are available to your own code and to AI assistants. See [Leads via API & MCP](/find-enrich/lead-data/api-and-mcp).
 
 ## Next Steps
 
 - [Enrich a single contact](/find-enrich/lead-data/enrichment)
 - [Search Sales Navigator](/find-enrich/lead-data/sales-navigator)
 - [Work with your Smart List](/find-enrich/smart-lists)
+- [Run People Search from the API or MCP](/find-enrich/lead-data/api-and-mcp)

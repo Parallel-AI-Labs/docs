@@ -1,0 +1,138 @@
+---
+title: "Leads via API & MCP"
+description: "Search, import, export, and enrich leads from code or from an AI assistant connected over MCP."
+icon: "plug"
+---
+
+Everything on the Leads pages is also available through the API and the [MCP server](/integrations/mcp), so an AI assistant or your own code can run the whole workflow: find people, import them into a Smart List or export them, and enrich contact details.
+
+Over MCP, every step below is one `platform_execute_action` call with the operation ID shown. Call `platform_get_action_details` first to see the exact parameters, and pass your `companyId` (from `platform_list_companies`) on every call.
+
+<Tip>
+  AI assistants get these same instructions automatically. When an assistant lists the **Leads** or **Lists** capabilities, it is pointed to the `lead-generation` skill, which walks it through this workflow step by step.
+</Tip>
+
+## Choosing an Operation
+
+| You have | Use |
+|----------|-----|
+| A description of who to target: titles, seniority, industry, size, location | People search, then import or export |
+| A company domain or name, and you want people there | People search with the `companyDomain` or `company` filter |
+| One known person: email, LinkedIn URL, phone, or name with company | `leads_enrichContact` (emails and profile) or `leads_enrichPhone` |
+| Contacts already in a Smart List that need emails or phones | The **Enrichment Waterfall** table action |
+| A list of companies, and you want people at each | The **Find Leads at Company** table action |
+| A Sales Navigator search | `lists_searchSalesNavigator`, then `lists_importLeadSearch` |
+
+Enrichment always needs a person identifier. A company on its own is rejected with a `400` error. To find people at a company, run a people search instead, which is free.
+
+## Costs
+
+| Operation | Data credits |
+|-----------|--------------|
+| `leads_listFieldOptions`, `leads_searchPeopleDatabase` | Free. Searching requires at least 1 data credit, or remaining capacity in your data-credit window, but never spends it. |
+| `leads_enrichContact`, or import/export with `includeEmail` (the default) | 1 per contact found |
+| `leads_enrichPhone`, or import/export with `includePhone` | 2 per phone number found |
+| **Find Leads at Company** table action | 1 per company that returns people |
+| `lists_searchSalesNavigator` | 1 per lead the search returns |
+
+Lookups that find nothing are free. If your balance is too low, the call returns `402`; see [Credits](/find-enrich/lead-data/lead-credits) to top up.
+
+## Step 1: Build Filters
+
+Call `leads_listFieldOptions` with `describe=true`. It returns every filter field, its type, and its group: `person`, `company`, `funding`, or `location`. Then fetch the accepted values for the groups you need, for example `group=person`. Values outside these lists are rejected.
+
+Filters are an object keyed by field name:
+
+```json
+{
+  "title": ["Head of Marketing", "VP Marketing"],
+  "seniority": ["Director", "VP"],
+  "employeeRange": ["51-200"],
+  "country": ["US"]
+}
+```
+
+- Text and option fields take a list. Any value in the list matches.
+- Different fields must all match.
+- Countries use two-letter codes.
+- Number fields, such as `employeeCountMin`, take a single number.
+- Include at least one positive filter. Exclusions on their own are not enough.
+
+## Step 2: Search
+
+Call `leads_searchPeopleDatabase` with `filters`, `pageSize` (5, 10, 25, or 50), and `page: 1`.
+
+The response contains:
+
+- `items`: matching people, with name, title, company, location, and LinkedIn URL. No emails or phones.
+- `total`: the total number of matches.
+- `nextCursor`: the cursor for the next page.
+
+To get the next page, send the same filters and `pageSize` with `page: 2` and `cursor` set to the previous `nextCursor`. A `nextCursor` of `null` means you've reached the last page.
+
+## Step 3: Import or Export
+
+1. Pick a destination list with `lists_getLists`, or create one with `lists_saveList`.
+2. Call `leads_importPeopleDatabaseResults` with the list ID and either:
+   - `rows`: 1–50 `items` from the search, passed back unchanged, or
+   - `filters` plus `count` (1–50,000, starting from the first result), or `importAll: true`.
+
+   Set `includeEmail` (default `true`) and `includePhone` (default `false`). Pass a new UUID as `importId`, and reuse it if you retry so the retry returns the same job instead of starting another.
+3. To get a CSV instead of a list, call `leads_exportPeopleDatabaseResults` with the same body.
+
+Both return a `taskId` right away. Poll `lists_getTaskStatus` every 15–60 seconds until `status` is `completed`, `failed`, or `cancelled`.
+
+- `processedItems` and `totalItems` show progress.
+- A `pending` task with `taskMetadata.waitReason` is waiting for data credits or for the data provider. It resumes on its own.
+- When an export completes, `result.downloadUrl` links to the CSV. The link stays valid for 24 hours and is also emailed to you.
+
+Imported people who are already in the list with the same LinkedIn URL or email are updated rather than duplicated.
+
+## Enrich One Person
+
+Call `leads_enrichContact` with any of `firstName`, `lastName`, `email`, `phone`, or `linkedinUrl`. Add `company` or `companyDomain` to disambiguate a name. The response is `{results, count}`. A `count` of `0` means no match, and it's free.
+
+Phone numbers come only from `leads_enrichPhone`, which takes the same identifiers. A LinkedIn URL gives the best match rate.
+
+To save the person, add them to a list with `lists_addRows`.
+
+## Enrich Contacts Already in a Smart List
+
+1. Call `lists_getListActionsCatalog` and copy the `audience_enrich` (**Enrichment Waterfall**) template. Set `includeEmail` and `includePhone`.
+2. Add it to the list with `lists_addTableAction`. Then call `lists_getListSchema` to find the new action column's `id`.
+3. Run it with `lists_runTableAction`, passing `actionId`, `type: "audience_enrich"`, and optionally `selectedRows`. Omitting `selectedRows` runs it on every row.
+4. Poll `lists_getActionQueueStatus` until no rows are pending or processing, then read the rows.
+
+A row is enriched when it has an email, phone, or LinkedIn URL, or a first and last name plus a company name or domain.
+
+## Find People at Each Company in a List
+
+Add the `audience_find_leads` (**Find Leads at Company**) action the same way. Each row needs a company website or name.
+
+| Option | What it does |
+|--------|--------------|
+| `seniority`, `department`, `jobTitle` | Narrow who to find |
+| `maxLeads` | How many people to find per company |
+| `enrichRow` | Default `true`: write the best match over the row |
+| `autoAddToList` | `""` (off), `"current"`, or `"existing"` with `targetListId`: add every match as a new row |
+
+People found this way don't include emails. Run **Enrichment Waterfall** on them to get emails.
+
+Every match stays on the row's cell. To choose matches yourself, set `enrichRow: false` and `autoAddToList: ""`, run the action, and then for each row:
+
+1. Call `leads_getStagedLeads` with the list ID, row ID, and `headerId` (the action column's ID).
+2. Call `leads_applyStagedLeads` with `enrichLead` (one person to write over the row), `appendLeads` (people to add as new rows), or both.
+
+## Sales Navigator
+
+`lists_searchSalesNavigator` takes a Sales Navigator URL or filters and returns a `searchId`. Poll `lists_getLeadSearchDetail` until `status` is no longer `pending`; this takes a few minutes. Then import the results with `lists_importLeadSearch`, which is free.
+
+<Warning>
+  Don't call `lists_searchSalesNavigator` again while a search is pending. Every call starts and charges a new search.
+</Warning>
+
+## Next Steps
+
+- [Connect an AI assistant over MCP](/integrations/mcp)
+- [Browse the Leads API reference](/api-reference/introduction)
+- [Check your data credits](/find-enrich/lead-data/lead-credits)

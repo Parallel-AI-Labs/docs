@@ -52,6 +52,7 @@
                   "find-enrich/lead-data/enrichment",
                   "find-enrich/lead-data/people-search",
                   "find-enrich/lead-data/sales-navigator",
+                  "find-enrich/lead-data/api-and-mcp",
                   "find-enrich/lead-data/lead-credits"
                 ]
               }
@@ -578,10 +579,10 @@
             "expanded": false,
             "pages": [
               "GET /api/v0/leads/field-options",
-              "POST /api/v0/leads",
+              "GET /api/v0/leads/lists/{listId}/rows/{rowId}/found-leads",
               "POST /api/v0/leads/enrich",
               "POST /api/v0/leads/enrich-phone",
-              "POST /api/v0/leads/import",
+              "POST /api/v0/leads/lists/{listId}/rows/{rowId}/found-leads/apply",
               "POST /api/v0/leads/people-search",
               "POST /api/v0/leads/people-search/export",
               "POST /api/v0/leads/people-search/lists/{listId}/import"

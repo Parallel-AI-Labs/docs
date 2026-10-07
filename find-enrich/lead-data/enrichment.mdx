@@ -14,8 +14,8 @@ Lookups return available contact and professional information. Available contact
 
 It works two ways:
 
-- **Exact match** — When you provide a strong identifier (email, phone, LinkedIn URL, or a full name plus company), you get back a single, fully enriched contact.
-- **Company search** — When you provide just a company name or domain, you get a preview of people at that organization, plus an estimate of how many matches exist.
+- **Exact match** — When you provide a person identifier (email, phone, LinkedIn URL, or a name — add a company to pin down a name), you get back the matching, fully enriched contact.
+- **Company search** — When you provide just a company name or domain, you get a preview of people at that organization, plus an estimate of how many matches exist. Preview results show names, titles, and LinkedIn profiles; select the people you want and click **Enrich** to look up their contact details.
 
 This is the fast, one-off companion to the enrichment **actions** in [Smart Lists](/find-enrich/smart-lists), which enrich many rows at once.
 
@@ -38,6 +38,14 @@ This is the fast, one-off companion to the enrichment **actions** in [Smart List
 
 A chip above the results tells you what you got: an **exact match**, or a **lead search** with an estimated count of matching people.
 
+## Enriching People from a Company Search
+
+1. Run a company search (company name or domain only)
+2. Tick the people you want in the results
+3. Click **Enrich**
+
+Each selected person is looked up by their LinkedIn profile and their row fills in with what was found. In **Email** mode you get emails and profile details; in **Phone** mode you get phone numbers. You're charged only for people who are found, at the same rates as a single lookup. If you run out of credits partway through, the people already enriched keep their details.
+
 ## Saving Results to a Smart List
 
 1. In the results table, tick the checkbox next to each contact you want (or use **Select All**)
@@ -53,7 +61,7 @@ Use **Clear** to reset the form and start a new lookup.
 
 Enrichment draws on **data credits**:
 
-- **1 credit** per email/profile contact returned on an exact match
+- **1 credit** per email/profile contact returned, for an exact match or each person you enrich from a company search
 - **2 credits** per returned phone number in Phone mode
 - **1 credit** per company search that returns results
 
@@ -72,10 +80,11 @@ Failed lookups and empty results are free. Your current balance appears at the t
 - [Send a Marketing Campaign](/engage/marketing-campaigns)
 
 
-## Separate email and phone enrichment
+## Using the API or MCP
 
-`POST /api/v0/leads/enrich` returns emails and professional/company profiles, without phone numbers. It costs 1 data credit per returned contact.
+- `POST /api/v0/leads/enrich` (`leads_enrichContact`) returns emails and professional and company profiles, without phone numbers, for 1 data credit per returned contact.
+- `POST /api/v0/leads/enrich-phone` (`leads_enrichPhone`) takes the same identifiers and returns phone numbers only, for 2 data credits per returned number.
 
-`POST /api/v0/leads/enrich-phone` accepts the same enrichment identifiers (name, email, phone, company/domain, LinkedIn URL, and location). It returns phone numbers and contact identifiers only, for 2 data credits per returned number. No phone match is free. This operation is also available through the platform MCP.
+Both need a person identifier: a name, email, phone, or LinkedIn URL, with an optional company or domain to disambiguate a name. A company on its own is rejected; to find people at a company, use [People Search](/find-enrich/lead-data/people-search) with a company domain filter, which is free. No-match lookups are free.
 
-In the Enrichment screen, select **Email** or **Phone** before running a lookup.
+See [Leads via API & MCP](/find-enrich/lead-data/api-and-mcp) for the full workflow.

@@ -34,6 +34,7 @@
             "find-enrich/lead-data/enrichment",
             "find-enrich/lead-data/people-search",
             "find-enrich/lead-data/sales-navigator",
+            "find-enrich/lead-data/api-and-mcp",
             "find-enrich/lead-data/lead-credits"
           ]
         }

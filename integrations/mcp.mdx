@@ -9,6 +9,7 @@ description: "Parallel AI's MCP server lets Claude Desktop, Cursor, Windsurf, an
 
 Model Context Protocol (MCP) is an open standard for connecting AI assistants to external tools and data sources. With Parallel AI's MCP server, your AI assistant can:
 
+* Find, import, and enrich leads
 * Browse and manage your AI agents
 * Create and monitor outreach sequences
 * Search your knowledge base documents
@@ -31,9 +32,12 @@ https://api.parallellabs.app/api/v0/mcp
 
 | Tool                          | Description                                                 |
 | ----------------------------- | ----------------------------------------------------------- |
+| `platform_list_companies`     | List the companies you can access and their IDs             |
 | `platform_list_capabilities`  | Browse available API endpoints by category                  |
 | `platform_get_action_details` | Get the full spec for an endpoint including required params |
 | `platform_execute_action`     | Execute any API endpoint with automatic authentication      |
+
+When a category has a **skill** (step-by-step instructions for a workflow), `platform_list_capabilities` names it under `relatedSkills`; assistants read it with the `skills_getSkill` action. For example, the **Leads** category links the `lead-generation` skill — see [Leads via API & MCP](/find-enrich/lead-data/api-and-mcp).
 
 ## Connecting Claude Desktop
 
@@ -71,7 +75,7 @@ https://api.parallellabs.app/api/v0/mcp
     Ask Claude something like:
 
     * *"List my AI agents"*
-    * *"Create a new email sequence for cold outreach"*
+    * *"Find 50 marketing directors at US SaaS companies with 51–200 employees and add them to a new list"*
 
     Claude will automatically use the Parallel AI tools to fulfill your request.
   </Step>
@@ -129,14 +133,14 @@ X-Company-ID: your_company_id
 
 ## Example MCP Interactions
 
-The three tools work together to let your AI assistant discover and execute any platform action.
+The tools work together to let your AI assistant discover and execute any platform action: find your company ID, browse a category, read an action's parameters, then run it.
 
 <CodeGroup>
   ```json platform_list_capabilities
   {
     "tool": "platform_list_capabilities",
     "input": {
-      "category": "Sequences"
+      "category": "Leads"
     }
   }
   ```
@@ -145,7 +149,7 @@ The three tools work together to let your AI assistant discover and execute any 
   {
     "tool": "platform_get_action_details",
     "input": {
-      "operationId": "post_sequences.create_sequence"
+      "operationId": "leads_searchPeopleDatabase"
     }
   }
   ```
@@ -154,14 +158,19 @@ The three tools work together to let your AI assistant discover and execute any 
   {
     "tool": "platform_execute_action",
     "input": {
-      "operationId": "get_agents.list_agents",
-      "parameters": {}
+      "operationId": "leads_searchPeopleDatabase",
+      "companyId": "YOUR_COMPANY_ID",
+      "body": {
+        "filters": {"title": ["Head of Marketing"], "country": ["US"]},
+        "pageSize": 25,
+        "page": 1
+      }
     }
   }
   ```
 </CodeGroup>
 
 <Note>
-  For the full MCP API reference, including all available operation IDs and
-  response schemas, see the [MCP Overview](/api-reference/introduction).
+  Every operation ID and its parameters are listed in the [API reference](/api-reference/introduction).
+  `platform_get_action_details` returns the same information for one operation.
 </Note>

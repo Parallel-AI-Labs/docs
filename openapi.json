@@ -3,7 +3,7 @@
   "info": {
     "title": "API Documentation",
     "version": "1.0.0",
-    "description": "\n# Introduction\n\nWelcome to the API. This API provides programmatic access to all platform features including AI agents, smart lists, documents, sequences, and media generation.\n\n## Authentication\n\nThe API supports two types of authentication:\n\n1. **Company API Keys** - Scoped to a specific company\n2. **Personal Access Keys** - User-level keys that work across all your companies\n\n---\n\n### Option 1: Company API Key\n\nCompany API keys are tied to a specific company. Use this when you only need to access one company.\n\n**Getting a Company API Key:**\n\n1. Log in to your dashboard\n2. Navigate to **Integrations** page\n3. Find the **API Keys** section and click **Generate New Key**\n4. Copy and securely store your API key (it won't be shown again)\n\n**Usage:**\n\nInclude your API key in the `X-API-Key` header:\n\n```bash\ncurl -X GET \"https://api.example.com/api/v0/agents\" \\\n  -H \"X-API-Key: YOUR_COMPANY_API_KEY\" \\\n  -H \"Content-Type: application/json\"\n```\n\nOr use the `Authorization` header (OpenAI-compatible):\n\n```bash\ncurl -X GET \"https://api.example.com/api/v0/agents\" \\\n  -H \"Authorization: Bearer YOUR_COMPANY_API_KEY\" \\\n  -H \"Content-Type: application/json\"\n```\n\n---\n\n### Option 2: Personal Access Key\n\nPersonal access keys are tied to your user account and can access any company you belong to. Use this when you need to access multiple companies or build integrations that work across companies.\n\n**Getting a Personal Access Key:**\n\n1. Log in to your dashboard\n2. Click on your avatar/profile icon and go to **Profile**\n3. Find the **Personal Access Keys** section\n4. Click **Create New Key**\n5. Give it a name and optionally set an expiration date\n6. Copy and securely store your key (it won't be shown again)\n\n**Usage:**\n\nPersonal access keys start with `pak_` and **require** you to specify which company to access using the `X-Company-ID` header:\n\n```bash\ncurl -X GET \"https://api.example.com/api/v0/agents\" \\\n  -H \"Authorization: Bearer pak_your_personal_access_key\" \\\n  -H \"X-Company-ID: your_company_id\" \\\n  -H \"Content-Type: application/json\"\n```\n\nOr using the `X-API-Key` header:\n\n```bash\ncurl -X GET \"https://api.example.com/api/v0/agents\" \\\n  -H \"X-API-Key: pak_your_personal_access_key\" \\\n  -H \"X-Company-ID: your_company_id\" \\\n  -H \"Content-Type: application/json\"\n```\n\nYou can also pass the company ID as a query parameter:\n\n```bash\ncurl -X GET \"https://api.example.com/api/v0/agents?companyId=your_company_id\" \\\n  -H \"Authorization: Bearer pak_your_personal_access_key\" \\\n  -H \"Content-Type: application/json\"\n```\n\n**Finding Your Company ID:**\n\nYour company ID can be found in the dashboard URL when viewing a company, or via the Settings page.\n\n---\n\n### Which Key Type Should I Use?\n\n| Use Case | Recommended Key Type |\n|----------|---------------------|\n| Single company integration | Company API Key |\n| Multi-company dashboard | Personal Access Key |\n| CI/CD pipelines | Company API Key |\n| Personal automation scripts | Personal Access Key |\n| Third-party app integration | Company API Key |\n\n---\n\n## Response Format\n\nAll responses are returned in JSON format. Successful responses include the requested data:\n\n```json\n{\n  \"id\": \"abc123\",\n  \"name\": \"My Agent\",\n  \"created\": \"2024-01-15T10:30:00Z\"\n}\n```\n\nError responses follow a consistent structure:\n\n```json\n{\n  \"error\": \"Description of what went wrong\"\n}\n```\n\n## HTTP Status Codes\n\n| Code | Description |\n|------|-------------|\n| 200 | Success |\n| 201 | Created |\n| 400 | Bad Request - Invalid parameters |\n| 401 | Unauthorized - Invalid or missing API key |\n| 403 | Forbidden - Insufficient permissions |\n| 404 | Not Found - Resource doesn't exist |\n| 429 | Too Many Requests - Rate limit exceeded |\n| 500 | Internal Server Error |\n\n## Pagination\n\nList endpoints support pagination using `page` and `pageSize` parameters:\n\n```\nGET /api/v0/agents?page=1&pageSize=20\n```\n\nPaginated responses include:\n- `items`: Array of results\n- `total`: Total number of items\n- `pages`: Total number of pages\n- `hasNext`: Whether more pages exist\n\n## OpenAI Compatibility\n\nThe Chat API (`/api/v0/chat/completions`) is fully compatible with the OpenAI API specification.\n\n---\n\n## Anthropic Compatibility & Claude Code\n\nThe platform also exposes an **Anthropic Messages API-compatible** endpoint, so any Anthropic SDK \u2014 including **Claude Code** \u2014 can use the platform as its LLM provider. Requests are billed against your platform credits like any other API usage.\n\n### Endpoints\n\n| Endpoint | Description |\n|----------|-------------|\n| `POST /api/v0/claude/v1/messages` | Create a message (streaming and non-streaming, tool use supported) |\n| `POST /api/v0/claude/v1/messages/count_tokens` | Estimate token count for a request |\n| `GET /api/v0/claude/v1/models` | List available models |\n\nAuthentication works exactly like the rest of the API: send your API key as `Authorization: Bearer <key>` or `x-api-key: <key>`. Personal access keys (`pak_...`) also work but require the `X-Company-ID` header, which Claude Code cannot send by default \u2014 use a **Company API Key** for Claude Code.\n\n### Setting up Claude Code\n\n1. **Install Claude Code** (skip if already installed):\n\n```bash\n# macOS / Linux / WSL \u2014 native installer\ncurl -fsSL https://claude.ai/install.sh | bash\n\n# Or via npm (requires Node.js 18+)\nnpm install -g @anthropic-ai/claude-code\n```\n\nOn Windows (PowerShell):\n\n```powershell\nirm https://claude.ai/install.ps1 | iex\n```\n\nVerify the install with `claude --version`. See the official docs at https://code.claude.com/docs for more install options.\n\n2. **Get a Company API Key**: Dashboard \u2192 **Integrations** \u2192 **API Keys** \u2192 **Generate New Key**.\n\n3. **Configure Claude Code.** Either export environment variables in your shell:\n\n```bash\nexport ANTHROPIC_BASE_URL=\"https://api.example.com/api/v0/claude\"\nexport ANTHROPIC_AUTH_TOKEN=\"YOUR_COMPANY_API_KEY\"\nclaude\n```\n\nOr persist the settings in `~/.claude/settings.json` (applies to all projects) or `.claude/settings.local.json` in a project. Set the model variables to any platform model names \u2014 for example:\n\n```json\n{\n  \"env\": {\n    \"ANTHROPIC_BASE_URL\": \"https://api.example.com/api/v0/claude\",\n    \"ANTHROPIC_AUTH_TOKEN\": \"YOUR_COMPANY_API_KEY\",\n    \"ANTHROPIC_MODEL\": \"qwen3.8-max\",\n    \"ANTHROPIC_DEFAULT_OPUS_MODEL\": \"kimi-k3\",\n    \"ANTHROPIC_DEFAULT_SONNET_MODEL\": \"qwen3.8-max\",\n    \"ANTHROPIC_DEFAULT_HAIKU_MODEL\": \"glm-5.3-flash\"\n  }\n}\n```\n\n4. **Verify** with `/status` inside Claude Code \u2014 it should show your custom base URL \u2014 or test the endpoint directly:\n\n```bash\ncurl -X POST \"https://api.example.com/api/v0/claude/v1/messages\" \\\n  -H \"Authorization: Bearer YOUR_COMPANY_API_KEY\" \\\n  -H \"anthropic-version: 2023-06-01\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"model\": \"qwen3.8-max\", \"max_tokens\": 64, \"messages\": [{\"role\": \"user\", \"content\": \"Hello\"}]}'\n```\n\n### Model names\n\nThe `model` field accepts any model name from `GET /api/v0/models` \u2014 any provider, not just Anthropic \u2014 so you can run Claude Code on any model the platform offers. When Claude Code sends its default Anthropic model ids (e.g. `claude-sonnet-4-5-20250929`), they are routed by tier to platform models: opus-class requests run on the platform's highest-capability model, sonnet-class on the balanced default, and haiku-class (background tasks) on the fastest low-cost model. Set `ANTHROPIC_MODEL` and the `ANTHROPIC_DEFAULT_*_MODEL` variables to exact platform model names for full control over routing.\n\nOptionally set `CLAUDE_CODE_ENABLE_GATEWAY_MODEL_DISCOVERY=1` so Claude Code lists the platform's models in its `/model` picker.\n\n### Notes and limitations\n\n- **Streaming** is fully supported (Anthropic SSE event format with keep-alive pings).\n- **Tool use** is supported: Claude Code's client-side tools (file edits, bash, etc.) are forwarded to the model and executed locally by Claude Code \u2014 never on the platform's servers.\n- Server-side Anthropic tools (web search, code execution), extended thinking blocks, and prompt caching directives are accepted but ignored.\n- Usage is billed per request based on real token counts and appears in your usage dashboard under the chat feature.\n\n### Using the Anthropic SDK directly\n\n```python\nimport anthropic\n\nclient = anthropic.Anthropic(\n    base_url=\"https://api.example.com/api/v0/claude\",\n    auth_token=\"YOUR_COMPANY_API_KEY\",\n)\n\nresponse = client.messages.create(\n    model=\"kimi-k3\",\n    max_tokens=1024,\n    messages=[{\"role\": \"user\", \"content\": \"Hello\"}],\n)\nprint(response.content[0].text)\n```\n\n---\n\n## MCP (Model Context Protocol) Integration\n\nThe platform provides an MCP server that allows AI assistants like Claude Desktop, Cursor, Windsurf, and other MCP-compatible tools to interact with the full platform API.\n\n### What is MCP?\n\nModel Context Protocol (MCP) is an open standard that allows AI assistants to securely connect to external tools and data sources. With MCP, your AI assistant can:\n\n- Browse and manage your AI agents\n- Create and monitor outreach sequences\n- Search your knowledge base documents\n- Generate AI content, images, audio, and video\n- Execute browser automation tasks\n- And access every other platform feature\n\n### MCP Server URL\n\n```\nhttps://api.example.com/api/v0/mcp\n```\n\nThis endpoint implements the **MCP Streamable HTTP Transport** (JSON-RPC 2.0) and is compatible with `mcp-remote` and other MCP clients.\n\n### Available Tools\n\nThe MCP server provides 3 tools that give access to the entire platform API:\n\n| Tool | Description |\n|------|-------------|\n| `platform_list_capabilities` | Browse available API endpoints by category (Agents, Sequences, Lists, Documents, etc.) |\n| `platform_get_action_details` | Get the full specification for an endpoint including required parameters |\n| `platform_execute_action` | Execute any API endpoint with automatic authentication |\n\n### Connecting Claude Desktop\n\n1. Open your Claude Desktop configuration file:\n   - **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`\n   - **Windows**: `%APPDATA%\\Claude\\claude_desktop_config.json`\n\n2. Add the MCP server configuration:\n\n```json\n{\n  \"mcpServers\": {\n    \"platform\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"mcp-remote\", \"https://api.example.com/api/v0/mcp\"],\n      \"env\": {\n        \"API_KEY\": \"your_api_key_here\"\n      }\n    }\n  }\n}\n```\n\n3. Restart Claude Desktop\n\n4. You can now ask Claude to interact with your platform data, for example:\n   - \"List my AI agents\"\n   - \"Show me my active sequences\"\n   - \"Create a new email sequence for cold outreach\"\n   - \"Search my documents for pricing information\"\n\n### Connecting Cursor / Windsurf\n\n1. Open Settings and navigate to the MCP section\n\n2. Add a new MCP server with:\n   - **URL**: `https://api.example.com/api/v0/mcp`\n   - **Authentication**: Bearer token with your API key\n\n3. The platform tools will now be available in your AI assistant\n\n### Connecting via mcp-remote (Generic)\n\nFor any MCP-compatible client, you can use the `mcp-remote` package:\n\n```bash\nnpx mcp-remote https://api.example.com/api/v0/mcp --header \"Authorization: Bearer YOUR_API_KEY\"\n```\n\n### Authentication for MCP\n\nMCP requests use the same authentication as the REST API:\n\n**Using Company API Key:**\n```\nAuthorization: Bearer YOUR_COMPANY_API_KEY\n```\n\n**Using Personal Access Key:**\n```\nAuthorization: Bearer pak_your_personal_access_key\nX-Company-ID: your_company_id\n```\n\n### Example MCP Interactions\n\n**List available capabilities:**\n```json\n{\n  \"name\": \"platform_list_capabilities\",\n  \"arguments\": {\n    \"category\": \"Sequences\"\n  }\n}\n```\n\n**Get action details:**\n```json\n{\n  \"name\": \"platform_get_action_details\",\n  \"arguments\": {\n    \"operationId\": \"post_sequences.create_sequence\"\n  }\n}\n```\n\n**Execute an action:**\n```json\n{\n  \"name\": \"platform_execute_action\",\n  \"arguments\": {\n    \"operationId\": \"get_agents.list_agents\"\n  }\n}\n```\n\n### MCP Endpoints\n\n| Endpoint | Method | Description |\n|----------|--------|-------------|\n| `/api/v0/mcp/info` | GET | Get MCP server information and capabilities |\n| `/api/v0/mcp/tools/list` | GET | List all available MCP tools |\n| `/api/v0/mcp/tools/call` | POST | Execute an MCP tool call |\n"
+    "description": "\n# Introduction\n\nWelcome to the API. This API provides programmatic access to all platform features including AI agents, smart lists, documents, sequences, and media generation.\n\n## Authentication\n\nThe API supports two types of authentication:\n\n1. **Company API Keys** - Scoped to a specific company\n2. **Personal Access Keys** - User-level keys that work across all your companies\n\n---\n\n### Option 1: Company API Key\n\nCompany API keys are tied to a specific company. Use this when you only need to access one company.\n\n**Getting a Company API Key:**\n\n1. Log in to your dashboard\n2. Navigate to **Integrations** page\n3. Find the **API Keys** section and click **Generate New Key**\n4. Copy and securely store your API key (it won't be shown again)\n\n**Usage:**\n\nInclude your API key in the `X-API-Key` header:\n\n```bash\ncurl -X GET \"https://api.example.com/api/v0/agents\" \\\n  -H \"X-API-Key: YOUR_COMPANY_API_KEY\" \\\n  -H \"Content-Type: application/json\"\n```\n\nOr use the `Authorization` header (OpenAI-compatible):\n\n```bash\ncurl -X GET \"https://api.example.com/api/v0/agents\" \\\n  -H \"Authorization: Bearer YOUR_COMPANY_API_KEY\" \\\n  -H \"Content-Type: application/json\"\n```\n\n---\n\n### Option 2: Personal Access Key\n\nPersonal access keys are tied to your user account and can access any company you belong to. Use this when you need to access multiple companies or build integrations that work across companies.\n\n**Getting a Personal Access Key:**\n\n1. Log in to your dashboard\n2. Click on your avatar/profile icon and go to **Profile**\n3. Find the **Personal Access Keys** section\n4. Click **Create New Key**\n5. Give it a name and optionally set an expiration date\n6. Copy and securely store your key (it won't be shown again)\n\n**Usage:**\n\nPersonal access keys start with `pak_` and **require** you to specify which company to access using the `X-Company-ID` header:\n\n```bash\ncurl -X GET \"https://api.example.com/api/v0/agents\" \\\n  -H \"Authorization: Bearer pak_your_personal_access_key\" \\\n  -H \"X-Company-ID: your_company_id\" \\\n  -H \"Content-Type: application/json\"\n```\n\nOr using the `X-API-Key` header:\n\n```bash\ncurl -X GET \"https://api.example.com/api/v0/agents\" \\\n  -H \"X-API-Key: pak_your_personal_access_key\" \\\n  -H \"X-Company-ID: your_company_id\" \\\n  -H \"Content-Type: application/json\"\n```\n\nYou can also pass the company ID as a query parameter:\n\n```bash\ncurl -X GET \"https://api.example.com/api/v0/agents?companyId=your_company_id\" \\\n  -H \"Authorization: Bearer pak_your_personal_access_key\" \\\n  -H \"Content-Type: application/json\"\n```\n\n**Finding Your Company ID:**\n\nYour company ID can be found in the dashboard URL when viewing a company, or via the Settings page.\n\n---\n\n### Which Key Type Should I Use?\n\n| Use Case | Recommended Key Type |\n|----------|---------------------|\n| Single company integration | Company API Key |\n| Multi-company dashboard | Personal Access Key |\n| CI/CD pipelines | Company API Key |\n| Personal automation scripts | Personal Access Key |\n| Third-party app integration | Company API Key |\n\n---\n\n## Response Format\n\nAll responses are returned in JSON format. Successful responses include the requested data:\n\n```json\n{\n  \"id\": \"abc123\",\n  \"name\": \"My Agent\",\n  \"created\": \"2024-01-15T10:30:00Z\"\n}\n```\n\nError responses follow a consistent structure:\n\n```json\n{\n  \"error\": \"Description of what went wrong\"\n}\n```\n\n## HTTP Status Codes\n\n| Code | Description |\n|------|-------------|\n| 200 | Success |\n| 201 | Created |\n| 400 | Bad Request - Invalid parameters |\n| 401 | Unauthorized - Invalid or missing API key |\n| 403 | Forbidden - Insufficient permissions |\n| 404 | Not Found - Resource doesn't exist |\n| 429 | Too Many Requests - Rate limit exceeded |\n| 500 | Internal Server Error |\n\n## Pagination\n\nList endpoints support pagination using `page` and `pageSize` parameters:\n\n```\nGET /api/v0/agents?page=1&pageSize=20\n```\n\nPaginated responses include:\n- `items`: Array of results\n- `total`: Total number of items\n- `pages`: Total number of pages\n- `hasNext`: Whether more pages exist\n\n## OpenAI Compatibility\n\nThe Chat API (`/api/v0/chat/completions`) is fully compatible with the OpenAI API specification.\n\n---\n\n## Anthropic Compatibility & Claude Code\n\nThe platform also exposes an **Anthropic Messages API-compatible** endpoint, so any Anthropic SDK \u2014 including **Claude Code** \u2014 can use the platform as its LLM provider. Requests are billed against your platform credits like any other API usage.\n\n### Endpoints\n\n| Endpoint | Description |\n|----------|-------------|\n| `POST /api/v0/claude/v1/messages` | Create a message (streaming and non-streaming, tool use supported) |\n| `POST /api/v0/claude/v1/messages/count_tokens` | Estimate token count for a request |\n| `GET /api/v0/claude/v1/models` | List available models |\n\nAuthentication works exactly like the rest of the API: send your API key as `Authorization: Bearer <key>` or `x-api-key: <key>`. Personal access keys (`pak_...`) also work but require the `X-Company-ID` header, which Claude Code cannot send by default \u2014 use a **Company API Key** for Claude Code.\n\n### Setting up Claude Code\n\n1. **Install Claude Code** (skip if already installed):\n\n```bash\n# macOS / Linux / WSL \u2014 native installer\ncurl -fsSL https://claude.ai/install.sh | bash\n\n# Or via npm (requires Node.js 18+)\nnpm install -g @anthropic-ai/claude-code\n```\n\nOn Windows (PowerShell):\n\n```powershell\nirm https://claude.ai/install.ps1 | iex\n```\n\nVerify the install with `claude --version`. See the official docs at https://code.claude.com/docs for more install options.\n\n2. **Get a Company API Key**: Dashboard \u2192 **Integrations** \u2192 **API Keys** \u2192 **Generate New Key**.\n\n3. **Configure Claude Code.** Either export environment variables in your shell:\n\n```bash\nexport ANTHROPIC_BASE_URL=\"https://api.example.com/api/v0/claude\"\nexport ANTHROPIC_AUTH_TOKEN=\"YOUR_COMPANY_API_KEY\"\nclaude\n```\n\nOr persist the settings in `~/.claude/settings.json` (applies to all projects) or `.claude/settings.local.json` in a project. Set the model variables to any platform model names \u2014 for example:\n\n```json\n{\n  \"env\": {\n    \"ANTHROPIC_BASE_URL\": \"https://api.example.com/api/v0/claude\",\n    \"ANTHROPIC_AUTH_TOKEN\": \"YOUR_COMPANY_API_KEY\",\n    \"ANTHROPIC_MODEL\": \"qwen3.8-max\",\n    \"ANTHROPIC_DEFAULT_OPUS_MODEL\": \"kimi-k3\",\n    \"ANTHROPIC_DEFAULT_SONNET_MODEL\": \"qwen3.8-max\",\n    \"ANTHROPIC_DEFAULT_HAIKU_MODEL\": \"glm-5.3-flash\"\n  }\n}\n```\n\n4. **Verify** with `/status` inside Claude Code \u2014 it should show your custom base URL \u2014 or test the endpoint directly:\n\n```bash\ncurl -X POST \"https://api.example.com/api/v0/claude/v1/messages\" \\\n  -H \"Authorization: Bearer YOUR_COMPANY_API_KEY\" \\\n  -H \"anthropic-version: 2023-06-01\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"model\": \"qwen3.8-max\", \"max_tokens\": 64, \"messages\": [{\"role\": \"user\", \"content\": \"Hello\"}]}'\n```\n\n### Model names\n\nThe `model` field accepts any model name from `GET /api/v0/models` \u2014 any provider, not just Anthropic \u2014 so you can run Claude Code on any model the platform offers. When Claude Code sends its default Anthropic model ids (e.g. `claude-sonnet-4-5-20250929`), they are routed by tier to platform models: opus-class requests run on the platform's highest-capability model, sonnet-class on the balanced default, and haiku-class (background tasks) on the fastest low-cost model. Set `ANTHROPIC_MODEL` and the `ANTHROPIC_DEFAULT_*_MODEL` variables to exact platform model names for full control over routing.\n\nOptionally set `CLAUDE_CODE_ENABLE_GATEWAY_MODEL_DISCOVERY=1` so Claude Code lists the platform's models in its `/model` picker.\n\n### Notes and limitations\n\n- **Streaming** is fully supported (Anthropic SSE event format with keep-alive pings).\n- **Tool use** is supported: Claude Code's client-side tools (file edits, bash, etc.) are forwarded to the model and executed locally by Claude Code \u2014 never on the platform's servers.\n- Server-side Anthropic tools (web search, code execution), extended thinking blocks, and prompt caching directives are accepted but ignored.\n- Usage is billed per request based on real token counts and appears in your usage dashboard under the chat feature.\n\n### Using the Anthropic SDK directly\n\n```python\nimport anthropic\n\nclient = anthropic.Anthropic(\n    base_url=\"https://api.example.com/api/v0/claude\",\n    auth_token=\"YOUR_COMPANY_API_KEY\",\n)\n\nresponse = client.messages.create(\n    model=\"kimi-k3\",\n    max_tokens=1024,\n    messages=[{\"role\": \"user\", \"content\": \"Hello\"}],\n)\nprint(response.content[0].text)\n```\n\n---\n\n## MCP (Model Context Protocol) Integration\n\nThe platform provides an MCP server that allows AI assistants like Claude Desktop, Cursor, Windsurf, and other MCP-compatible tools to interact with the full platform API.\n\n### What is MCP?\n\nModel Context Protocol (MCP) is an open standard that allows AI assistants to securely connect to external tools and data sources. With MCP, your AI assistant can:\n\n- Browse and manage your AI agents\n- Create and monitor outreach sequences\n- Search your knowledge base documents\n- Generate AI content, images, audio, and video\n- Execute browser automation tasks\n- And access every other platform feature\n\n### MCP Server URL\n\n```\nhttps://api.example.com/api/v0/mcp\n```\n\nThis endpoint implements the **MCP Streamable HTTP Transport** (JSON-RPC 2.0) and is compatible with `mcp-remote` and other MCP clients.\n\n### Available Tools\n\nThe MCP server provides 3 tools that give access to the entire platform API:\n\n| Tool | Description |\n|------|-------------|\n| `platform_list_capabilities` | Browse available API endpoints by category (Agents, Sequences, Lists, Documents, etc.) |\n| `platform_get_action_details` | Get the full specification for an endpoint including required parameters |\n| `platform_execute_action` | Execute any API endpoint with automatic authentication |\n\n### Connecting Claude Desktop\n\n1. Open your Claude Desktop configuration file:\n   - **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`\n   - **Windows**: `%APPDATA%\\Claude\\claude_desktop_config.json`\n\n2. Add the MCP server configuration:\n\n```json\n{\n  \"mcpServers\": {\n    \"platform\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"mcp-remote\", \"https://api.example.com/api/v0/mcp\"],\n      \"env\": {\n        \"API_KEY\": \"your_api_key_here\"\n      }\n    }\n  }\n}\n```\n\n3. Restart Claude Desktop\n\n4. You can now ask Claude to interact with your platform data, for example:\n   - \"List my AI agents\"\n   - \"Show me my active sequences\"\n   - \"Create a new email sequence for cold outreach\"\n   - \"Search my documents for pricing information\"\n\n### Connecting Cursor / Windsurf\n\n1. Open Settings and navigate to the MCP section\n\n2. Add a new MCP server with:\n   - **URL**: `https://api.example.com/api/v0/mcp`\n   - **Authentication**: Bearer token with your API key\n\n3. The platform tools will now be available in your AI assistant\n\n### Connecting via mcp-remote (Generic)\n\nFor any MCP-compatible client, you can use the `mcp-remote` package:\n\n```bash\nnpx mcp-remote https://api.example.com/api/v0/mcp --header \"Authorization: Bearer YOUR_API_KEY\"\n```\n\n### Authentication for MCP\n\nMCP requests use the same authentication as the REST API:\n\n**Using Company API Key:**\n```\nAuthorization: Bearer YOUR_COMPANY_API_KEY\n```\n\n**Using Personal Access Key:**\n```\nAuthorization: Bearer pak_your_personal_access_key\nX-Company-ID: your_company_id\n```\n\n### Example MCP Interactions\n\n**List available capabilities:**\n```json\n{\n  \"name\": \"platform_list_capabilities\",\n  \"arguments\": {\n    \"category\": \"Sequences\"\n  }\n}\n```\n\n**Get action details:**\n```json\n{\n  \"name\": \"platform_get_action_details\",\n  \"arguments\": {\n    \"operationId\": \"sequences_saveSequence\"\n  }\n}\n```\n\n**Execute an action:**\n```json\n{\n  \"name\": \"platform_execute_action\",\n  \"arguments\": {\n    \"operationId\": \"agents_listAgents\"\n  }\n}\n```\n\n### MCP Endpoints\n\n| Endpoint | Method | Description |\n|----------|--------|-------------|\n| `/api/v0/mcp/info` | GET | Get MCP server information and capabilities |\n| `/api/v0/mcp/tools/list` | GET | List all available MCP tools |\n| `/api/v0/mcp/tools/call` | POST | Execute an MCP tool call |\n"
   },
   "servers": [
     {
@@ -93,7 +93,10 @@
     },
     {
       "name": "Leads",
-      "description": "Prospect acquisition: search professionals, enrich emails and phones separately, and import records into a smart list. Search is free and requires available data-credit window capacity or at least 1 lead data credit. Email enrichment and imports cost one data credit per record; phone enrichment costs two per returned number."
+      "description": "Prospect acquisition: search the professional people database by role and company filters, import or export the results, enrich known people (emails and phones separately), and review \"Find Leads at Company\" matches. Read the lead-generation skill (skills_getSkill) for the end-to-end workflow. Search is free and requires available data-credit window capacity or at least 1 lead data credit. Email enrichment and imports cost one data credit per record; phone enrichment costs two per returned number.",
+      "x-relatedSkills": [
+        "lead-generation"
+      ]
     },
     {
       "name": "Linkedin",
@@ -104,7 +107,8 @@
       "description": "Manage smart lists for organizing contacts and data.",
       "x-relatedSkills": [
         "cold-email-outreach",
-        "campaign-email"
+        "campaign-email",
+        "lead-generation"
       ]
     },
     {
@@ -6835,7 +6839,7 @@
         "operationId": "projects_getProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -6843,7 +6847,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -6978,7 +6982,7 @@
         "operationId": "projects_updateProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -6986,7 +6990,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -7151,7 +7155,7 @@
         "operationId": "projects_deleteProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -7159,7 +7163,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8051,14 +8055,14 @@
       }
     },
     "/api/v0/projects/{project_id}/files/{file_id}/export": {
-      "post": {
+      "get": {
         "tags": [
           "Projects"
         ],
         "operationId": "projects_exportProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8066,7 +8070,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8169,14 +8173,14 @@
           "description": "POST exports current editor content without saving; GET exports the saved file"
         }
       },
-      "get": {
+      "post": {
         "tags": [
           "Projects"
         ],
         "operationId": "projects_exportProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8184,7 +8188,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8296,7 +8300,7 @@
         "operationId": "projects_publishFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8304,7 +8308,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8451,7 +8455,7 @@
         "operationId": "projects_unpublishFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8459,7 +8463,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -13870,7 +13874,7 @@
           }
         },
         "summary": "Execute an MCP tool call.",
-        "description": "Calls the specified tool with the provided arguments and returns the result in MCP format.\n\n**Example - List Sequences:**\n\n```json\n{\n\"name\": \"platform_list_capabilities\",\n\"arguments\": {\"category\": \"Sequences\"}\n}\n```\n\n**Example - Get Action Details:**\n\n```json\n{\n\"name\": \"platform_get_action_details\",\n\"arguments\": {\"operationId\": \"get_sequences.list_sequences\"}\n}\n```\n\n**Example - Execute Action:**\n\n```json\n{\n\"name\": \"platform_execute_action\",\n\"arguments\": {\n\"operationId\": \"get_agents.list_agents\"\n}\n}\n```\n\nThe response follows MCP format with a `content` array containing the result.",
+        "description": "Calls the specified tool with the provided arguments and returns the result in MCP format.\n\n**Example - List Sequences:**\n\n```json\n{\n\"name\": \"platform_list_capabilities\",\n\"arguments\": {\"category\": \"Sequences\"}\n}\n```\n\n**Example - Get Action Details:**\n\n```json\n{\n\"name\": \"platform_get_action_details\",\n\"arguments\": {\"operationId\": \"sequences_getSequences\"}\n}\n```\n\n**Example - Execute Action:**\n\n```json\n{\n\"name\": \"platform_execute_action\",\n\"arguments\": {\n\"operationId\": \"agents_listAgents\"\n}\n}\n```\n\nThe response follows MCP format with a `content` array containing the result.",
         "requestBody": {
           "required": true,
           "content": {
@@ -17627,7 +17631,7 @@
         "operationId": "agents_checkConversationActivity",
         "parameters": [
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -17635,7 +17639,7 @@
             }
           },
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -17697,7 +17701,7 @@
         "operationId": "agents_getConversationDetails",
         "parameters": [
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -17705,7 +17709,7 @@
             }
           },
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -20493,7 +20497,7 @@
         "operationId": "lists_deleteTableAction",
         "parameters": [
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -20501,7 +20505,7 @@
             }
           },
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -20599,7 +20603,7 @@
         "operationId": "lists_getActionSummary",
         "parameters": [
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -20607,7 +20611,7 @@
             }
           },
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -20727,7 +20731,7 @@
         "operationId": "lists_getActionQueueStatus",
         "parameters": [
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -20735,7 +20739,7 @@
             }
           },
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -31105,7 +31109,7 @@
         "operationId": "people_updatePersonActivity",
         "parameters": [
           {
-            "name": "activityId",
+            "name": "personId",
             "in": "path",
             "required": true,
             "schema": {
@@ -31113,7 +31117,7 @@
             }
           },
           {
-            "name": "personId",
+            "name": "activityId",
             "in": "path",
             "required": true,
             "schema": {
@@ -31261,7 +31265,7 @@
         "operationId": "people_deletePersonActivity",
         "parameters": [
           {
-            "name": "activityId",
+            "name": "personId",
             "in": "path",
             "required": true,
             "schema": {
@@ -31269,7 +31273,7 @@
             }
           },
           {
-            "name": "personId",
+            "name": "activityId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33668,7 +33672,7 @@
         "operationId": "inbox_sendDraft",
         "parameters": [
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33676,7 +33680,7 @@
             }
           },
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33779,7 +33783,7 @@
         "operationId": "inbox_deleteDraft",
         "parameters": [
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33787,7 +33791,7 @@
             }
           },
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -42817,7 +42821,7 @@
         "operationId": "content_getCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -42825,7 +42829,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -42864,7 +42868,7 @@
         "operationId": "content_updateCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -42872,7 +42876,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -42950,7 +42954,7 @@
         "operationId": "content_deleteCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -42958,7 +42962,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -42999,7 +43003,7 @@
         "operationId": "content_stopCanvasDesignThreadRun",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -43007,7 +43011,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -46655,7 +46659,7 @@
         "parameters": [],
         "responses": {
           "400": {
-            "description": "No identifier provided or companyId missing",
+            "description": "No person identifier provided or companyId missing",
             "content": {
               "application/json": {
                 "schema": {
@@ -46719,8 +46723,8 @@
             }
           }
         },
-        "summary": "Enrich a person or company from any combination of identifiers",
-        "description": "Provide any combination of name, email, phone, company, domain, LinkedIn\nURL. Returns available\nemails, professional profiles, and company information. Phone enrichment is separate at /api/v0/leads/enrich-phone. A no-match returns {results: [], count: 0}, not an error, and\nis not charged. Costs 1 data credit per returned contact.",
+        "summary": "Enrich a known person: emails, job title, employer and company data",
+        "description": "Requires a person identifier: firstName/lastName, email, phone, or\nlinkedinUrl. Add company or companyDomain to disambiguate a name. A\ncompany on its own is rejected with 400 \u2014 to find people at a company, use\nleads_searchPeopleDatabase with the companyDomain or company filter.\nPhone numbers are not returned; use leads_enrichPhone. A no-match returns\n{results: [], count: 0}, not an error, and is free. Costs 1 data credit per\nreturned contact.",
         "requestBody": {
           "required": true,
           "content": {
@@ -46776,7 +46780,7 @@
                 "required": [
                   "companyId"
                 ],
-                "description": "Identifiers for the person/company to enrich"
+                "description": "Identifiers for the person to enrich. Include at least one of firstName/lastName, email, phone or linkedinUrl; company fields only narrow a name match."
               }
             }
           }
@@ -46792,7 +46796,7 @@
         "parameters": [],
         "responses": {
           "400": {
-            "description": "No identifier provided or companyId missing",
+            "description": "No person identifier provided or companyId missing",
             "content": {
               "application/json": {
                 "schema": {
@@ -46856,8 +46860,8 @@
             }
           }
         },
-        "summary": "Enrich phone numbers separately using any supported contact identifiers.",
-        "description": "Accepts the same name, email, phone, company/domain, LinkedIn URL and\nlocation identifiers as email enrichment. Returns phone numbers and profile\nidentifiers only. Costs 2 data credits per returned phone record; no match is free.",
+        "summary": "Find a known person's phone numbers.",
+        "description": "Accepts the same identifiers as leads_enrichContact and likewise requires a\nperson identifier (firstName/lastName, email, phone, or linkedinUrl); a\nlinkedinUrl gives the best match rate. Returns phone numbers and profile\nidentifiers only. Costs 2 data credits per returned phone record; no match\nis free.",
         "requestBody": {
           "required": true,
           "content": {
@@ -46914,256 +46918,6 @@
                   "companyId"
                 ],
                 "description": "Phone-only enrichment using any supported contact identifiers"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/v0/leads": {
-      "post": {
-        "tags": [
-          "Leads"
-        ],
-        "operationId": "leads_generateLeads",
-        "parameters": [],
-        "responses": {
-          "400": {
-            "description": "No criteria provided or companyId missing",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Invalid credentials or no company access",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "402": {
-            "description": "Data-credit window capacity or at least 1 lead data credit required",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "502": {
-            "description": "Lead search unavailable",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "200": {
-            "description": "Matching leads plus the total available",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "leads": {
-                      "type": "array",
-                      "items": {
-                        "type": "object"
-                      },
-                      "description": "Basic person results: name, company, location and profile identifiers (up to `limit`)."
-                    },
-                    "totalAvailable": {
-                      "type": "integer",
-                      "description": "Total leads matching the criteria."
-                    }
-                  },
-                  "description": "Matching leads plus the total available"
-                }
-              }
-            }
-          }
-        },
-        "summary": "Find professional leads by person and company filters.",
-        "description": "Call field-options with\ndescribe=true for the supported filter schema and exact enum values.\nReturns up to 100 basic profiles\n(name, company, location and identifiers) without enrichment calls\nplus totalAvailable. Search requires available data-credit window capacity or at least 1 lead data credit but consumes none; importing enriches emails and costs one\ndata credit per imported record.",
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "companyId": {
-                    "type": "string",
-                    "description": "Company ID for access and any applicable data-credit charges"
-                  },
-                  "filters": {
-                    "type": "object",
-                    "description": "Professional/company filters from lead_field_options(describe=true). Accepts catalog camelCase fields (title, seniority, department, company, companyDomain, industry, employeeRange, country, city, education, numeric min/max fields, exclusions). Country values are two-letter codes. Use lead_field_options to discover supported fields."
-                  },
-                  "limit": {
-                    "type": "integer",
-                    "description": "Max leads, max 100, default 25."
-                  }
-                },
-                "required": [
-                  "companyId",
-                  "filters"
-                ],
-                "description": "Lead generation criteria"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/v0/leads/import": {
-      "post": {
-        "tags": [
-          "Leads"
-        ],
-        "operationId": "leads_importLeadsToList",
-        "parameters": [],
-        "responses": {
-          "400": {
-            "description": "No criteria provided, companyId/listId missing, or invalid count",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Invalid credentials or no company access",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "402": {
-            "description": "Not enough data credits for the import",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Destination list not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "502": {
-            "description": "Import lookup unavailable",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "202": {
-            "description": "The import was queued; poll taskId for progress",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "taskId": {
-                      "type": "string",
-                      "description": "Background task id for the running import."
-                    },
-                    "listId": {
-                      "type": "string",
-                      "description": "The destination smart list."
-                    },
-                    "status": {
-                      "type": "string",
-                      "description": "Always \"background\" \u2014 the import runs asynchronously."
-                    },
-                    "message": {
-                      "type": "string",
-                      "description": "Human-readable status message"
-                    }
-                  },
-                  "description": "The queued background people job"
-                }
-              }
-            }
-          }
-        },
-        "summary": "Import matching professional leads into an existing smart list.",
-        "description": "Uses the same filters as generate. Runs in the background and returns\na taskId to poll. count limits how many profiles are fetched and imported;\nimports stop at 50,000 records. Optional email enrichment costs 1 data credit\nper imported contact; optional phone enrichment costs 2 per returned number.",
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "includeEmail": {
-                    "type": "boolean",
-                    "description": "Enrich email for 1 data credit per person.",
-                    "default": true
-                  },
-                  "includePhone": {
-                    "type": "boolean",
-                    "description": "Enrich mobile/direct phone for 2 data credits per returned number.",
-                    "default": false
-                  },
-                  "companyId": {
-                    "type": "string",
-                    "description": "Company ID for access and any applicable data-credit charges"
-                  },
-                  "listId": {
-                    "type": "string",
-                    "description": "Destination smart list id. Must already exist."
-                  },
-                  "filters": {
-                    "type": "object",
-                    "description": "Professional/company filters from lead_field_options(describe=true). Accepts catalog camelCase fields (title, seniority, department, company, companyDomain, industry, employeeRange, country, city, education, numeric min/max fields, exclusions). Country values are two-letter codes. Use lead_field_options to discover supported fields."
-                  },
-                  "importAll": {
-                    "type": "boolean",
-                    "description": "true = import every matching contact. Defaults to true only when no count is given; pass count to import a slice."
-                  },
-                  "count": {
-                    "type": "integer",
-                    "description": "Max contacts to import. Required when importAll is false. The import stops after this many records."
-                  },
-                  "audienceName": {
-                    "type": "string",
-                    "description": "Name for the import. Default \"Leads\"."
-                  }
-                },
-                "required": [
-                  "companyId",
-                  "listId",
-                  "filters"
-                ],
-                "description": "Lead import criteria plus the destination smart list"
               }
             }
           }
@@ -47247,8 +47001,8 @@
             }
           }
         },
-        "summary": "Describe the lead-generation filter surface and list valid enum values",
-        "description": "describe=true returns the schema map \u2014 every field the generate endpoint\naccepts, its type (enum/text/number/boolean), its group, and where it\nlives. Enum option lists are inlined only when scoped with field= or\ngroup=. Call describe=true first (compact), then fetch options per group\nas you build filters. Free \u2014 no data credits charged."
+        "summary": "Describe the people-search filters and list valid enum values",
+        "description": "Call this before building filters for leads_searchPeopleDatabase,\nleads_importPeopleDatabaseResults or leads_exportPeopleDatabaseResults.\ndescribe=true returns the schema map \u2014 every filter field, its type\n(enum/text/number/boolean), its group (person/company/funding/location)\nand whether it can be a positive criterion. Enum option lists are inlined\nonly when scoped with field= or group=, so call describe=true first, then\nfetch options per group. Enum filters reject any value not in these lists.\nFree \u2014 no data credits charged."
       }
     },
     "/api/v0/leads/people-search": {
@@ -47260,7 +47014,7 @@
         "parameters": [],
         "responses": {
           "400": {
-            "description": "Invalid filters or pagination",
+            "description": "Invalid filters, pagination or cursor",
             "content": {
               "application/json": {
                 "schema": {
@@ -47310,10 +47064,12 @@
                       "type": "array",
                       "items": {
                         "type": "object"
-                      }
+                      },
+                      "description": "Matching people: name, title, company, location, linkedinUrl and other profile fields, as text. No emails or phones. Pass items back unchanged as rows to import or export them."
                     },
                     "total": {
-                      "type": "integer"
+                      "type": "integer",
+                      "description": "Total people matching the filters"
                     },
                     "page": {
                       "type": "integer"
@@ -47335,7 +47091,8 @@
             }
           }
         },
-        "summary": "Free people search with data-credit window capacity or at least 1 lead data credit.",
+        "summary": "Search the professional people database by person and company filters.",
+        "description": "Get filter names and enum values from leads_listFieldOptions first; at\nleast one positive filter is required (exclusions alone are rejected).\nReturns basic profiles (name, title, company, location, linkedinUrl) plus\nthe total match count \u2014 no emails or phones. To page, send the same\nfilters, companyId and pageSize with page+1 and the previous nextCursor;\nnextCursor null means the last page. Free: searching requires at least 1\ndata credit or remaining data-credit window capacity but never spends it.\nTo get contact details, import the results into a smart list or export\nthem.",
         "requestBody": {
           "required": true,
           "content": {
@@ -47344,14 +47101,16 @@
                 "type": "object",
                 "properties": {
                   "companyId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Company ID for access and any applicable data-credit charges"
                   },
                   "filters": {
                     "type": "object",
-                    "description": "Professional/company filters. Use field-options?describe=true for all supported fields, types and exact enum values. Use the documented camelCase filter names."
+                    "description": "Person and company filters keyed by the camelCase field names from leads_listFieldOptions, e.g. {\"title\": [\"Head of Marketing\"], \"seniority\": [\"Director\"], \"companyDomain\": [\"acme.com\"], \"employeeRange\": [\"51-200\"], \"country\": [\"US\"]}. Text and enum filters take a list of values (any value matches); different filters must all match. Enum values must come from leads_listFieldOptions; countries are two-letter codes. Number filters take a single number. At least one positive (non-exclude) filter is required."
                   },
                   "page": {
                     "type": "integer",
+                    "description": "1-based page number. Page 1 needs no cursor; later pages need the previous response's nextCursor.",
                     "default": 1
                   },
                   "pageSize": {
@@ -47392,7 +47151,7 @@
         ],
         "responses": {
           "400": {
-            "description": "Invalid selected rows or importId",
+            "description": "Invalid rows, filters, count or importId",
             "content": {
               "application/json": {
                 "schema": {
@@ -47431,8 +47190,18 @@
               }
             }
           },
+          "409": {
+            "description": "importId reused with different options",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
           "202": {
-            "description": "Queued import; completion is emailed",
+            "description": "Queued import; poll lists_getTaskStatus with taskId",
             "content": {
               "application/json": {
                 "schema": {
@@ -47440,15 +47209,15 @@
                   "properties": {
                     "taskId": {
                       "type": "string",
-                      "description": "Background task id for the running import."
+                      "description": "Background task id. Poll lists_getTaskStatus with it until status is completed, failed or cancelled."
                     },
                     "listId": {
                       "type": "string",
-                      "description": "The destination smart list."
+                      "description": "The destination smart list (null for an export)."
                     },
                     "status": {
                       "type": "string",
-                      "description": "Always \"background\" \u2014 the import runs asynchronously."
+                      "description": "Always \"background\" \u2014 the job runs asynchronously."
                     },
                     "message": {
                       "type": "string",
@@ -47461,7 +47230,8 @@
             }
           }
         },
-        "summary": "Queue selected rows or a bounded filtered search into a company-owned smart list.",
+        "summary": "Import people-search results into an existing smart list.",
+        "description": "Send either rows (1\u201350 results from leads_searchPeopleDatabase, passed\nback unchanged) or filters plus count (or importAll=true) to import a\nfiltered search of up to 50,000 people. Runs in the background and returns\na taskId: poll lists_getTaskStatus until status is completed, failed or\ncancelled. A pending task with taskMetadata.waitReason is waiting for data\ncredits or the provider and resumes on its own. People already in the list\nwith the same LinkedIn URL or email are updated, not duplicated.\nincludeEmail (default true) costs 1 data credit per imported person;\nincludePhone (default false) costs 2 per phone found. Pass a fresh UUID as\nimportId and reuse it on retries so a retry returns the same task.",
         "requestBody": {
           "required": true,
           "content": {
@@ -47492,15 +47262,19 @@
                   },
                   "filters": {
                     "type": "object",
-                    "description": "Search filters; required when rows are omitted."
+                    "description": "Search filters, same shape as leads_searchPeopleDatabase. Required when rows are omitted."
                   },
                   "count": {
                     "type": "integer",
-                    "description": "Maximum people to process, from 1 to 50000."
+                    "description": "With filters: how many people to process, from 1 to 50000, starting at the first result. Required unless importAll is true."
                   },
                   "importAll": {
                     "type": "boolean",
-                    "description": "Process matching results, capped at 50000."
+                    "description": "With filters: process every match, capped at 50000."
+                  },
+                  "audienceName": {
+                    "type": "string",
+                    "description": "Optional label for the job."
                   },
                   "importId": {
                     "type": "string",
@@ -47525,7 +47299,7 @@
         "parameters": [],
         "responses": {
           "400": {
-            "description": "Invalid rows or options",
+            "description": "Invalid rows, filters, count or importId",
             "content": {
               "application/json": {
                 "schema": {
@@ -47554,8 +47328,18 @@
               }
             }
           },
+          "409": {
+            "description": "importId reused with different options",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
           "202": {
-            "description": "Queued export; download link is emailed",
+            "description": "Queued export; poll lists_getTaskStatus for result.downloadUrl",
             "content": {
               "application/json": {
                 "schema": {
@@ -47563,15 +47347,15 @@
                   "properties": {
                     "taskId": {
                       "type": "string",
-                      "description": "Background task id for the running import."
+                      "description": "Background task id. Poll lists_getTaskStatus with it until status is completed, failed or cancelled."
                     },
                     "listId": {
                       "type": "string",
-                      "description": "The destination smart list."
+                      "description": "The destination smart list (null for an export)."
                     },
                     "status": {
                       "type": "string",
-                      "description": "Always \"background\" \u2014 the import runs asynchronously."
+                      "description": "Always \"background\" \u2014 the job runs asynchronously."
                     },
                     "message": {
                       "type": "string",
@@ -47584,7 +47368,8 @@
             }
           }
         },
-        "summary": "Queue selected rows or a bounded filtered search for CSV export.",
+        "summary": "Export people-search results to a CSV file.",
+        "description": "Takes the same rows or filters/count, includeEmail/includePhone and\nimportId options as leads_importPeopleDatabaseResults, at the same data\ncredit cost, but writes a CSV instead of a smart list. Returns a taskId:\npoll lists_getTaskStatus until status is completed, then read\nresult.downloadUrl (valid for 24 hours). The link is also emailed to the\ncaller.",
         "requestBody": {
           "required": true,
           "content": {
@@ -47625,6 +47410,10 @@
                     "type": "boolean",
                     "description": "Export matching results, capped at 50000."
                   },
+                  "audienceName": {
+                    "type": "string",
+                    "description": "Optional label for the job."
+                  },
                   "importId": {
                     "type": "string",
                     "description": "Optional UUID identifying this job. Reuse it to retrieve the same job when retrying an unchanged request."
@@ -47632,6 +47421,228 @@
                 },
                 "required": [
                   "companyId"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v0/leads/lists/{listId}/rows/{rowId}/found-leads": {
+      "get": {
+        "tags": [
+          "Leads"
+        ],
+        "operationId": "leads_getStagedLeads",
+        "parameters": [
+          {
+            "name": "rowId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "listId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID for access and any applicable data-credit charges"
+            },
+            "description": "Company ID for access and any applicable data-credit charges"
+          },
+          {
+            "name": "headerId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "The \"Find Leads at Company\" action column id (from the list's headers)."
+            },
+            "description": "The \"Find Leads at Company\" action column id (from the list's headers)."
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "companyId or headerId missing",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "No company access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "List or row not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "The company searched and the leads found for this row",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "company": {
+                      "type": "string",
+                      "description": "The company domain or name that was searched"
+                    },
+                    "leads": {
+                      "type": "array",
+                      "items": {
+                        "type": "object"
+                      },
+                      "description": "People found at the company. Empty when nothing is waiting for review."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Read the leads a \"Find Leads at Company\" action found for one row.",
+        "description": "headerId is the find-leads action's column id. The action keeps every match\non that row's cell for review \u2014 when the action is set to neither enrich the\nrow nor add leads to a list, review is the only way they are used. Returns\n{company, leads}; leads is empty when nothing is waiting. Pass chosen leads\nto leads_applyStagedLeads unchanged."
+      }
+    },
+    "/api/v0/leads/lists/{listId}/rows/{rowId}/found-leads/apply": {
+      "post": {
+        "tags": [
+          "Leads"
+        ],
+        "operationId": "leads_applyStagedLeads",
+        "parameters": [
+          {
+            "name": "rowId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "listId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "companyId/headerId missing or no leads selected",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "No company access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "List, row or target list not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "How many leads enriched the row and were added as rows",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "enriched": {
+                      "type": "integer",
+                      "description": "1 when enrichLead was written over the row"
+                    },
+                    "appended": {
+                      "type": "integer",
+                      "description": "Rows added from appendLeads"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Apply leads found by \"Find Leads at Company\" for one row.",
+        "description": "enrichLead (one lead from leads_getStagedLeads) is written over the source\nrow; appendLeads are added as new rows to targetListId (default: this\nlist), creating missing columns. Send at least one of them. Clears the\nfound leads from the cell. Records 1 data credit of usage per lead used;\nthe lookup itself was already charged when the action ran.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID for access and any applicable data-credit charges"
+                  },
+                  "headerId": {
+                    "type": "string",
+                    "description": "The \"Find Leads at Company\" action column id."
+                  },
+                  "enrichLead": {
+                    "type": "object",
+                    "description": "One lead from leads_getStagedLeads to write over this row."
+                  },
+                  "appendLeads": {
+                    "type": "array",
+                    "items": {
+                      "type": "object"
+                    },
+                    "description": "Leads from leads_getStagedLeads to add as new rows."
+                  },
+                  "targetListId": {
+                    "type": "string",
+                    "description": "Smart list for appendLeads. Defaults to this list."
+                  }
+                },
+                "required": [
+                  "companyId",
+                  "headerId"
                 ]
               }
             }
@@ -68599,7 +68610,7 @@
         "operationId": "seo_projectLighthouseSnapshotRoute",
         "parameters": [
           {
-            "name": "snapshotId",
+            "name": "projectId",
             "in": "path",
             "required": true,
             "schema": {
@@ -68607,7 +68618,7 @@
             }
           },
           {
-            "name": "projectId",
+            "name": "snapshotId",
             "in": "path",
             "required": true,
             "schema": {
@@ -73362,7 +73373,7 @@
         "operationId": "marketing_campaigns_restoreTemplateVersion",
         "parameters": [
           {
-            "name": "templateId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -73370,7 +73381,7 @@
             }
           },
           {
-            "name": "versionId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
