@@ -583,6 +583,7 @@
               "POST /api/v0/leads/enrich-phone",
               "POST /api/v0/leads/import",
               "POST /api/v0/leads/people-search",
+              "POST /api/v0/leads/people-search/export",
               "POST /api/v0/leads/people-search/lists/{listId}/import"
             ]
           },
