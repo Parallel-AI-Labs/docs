@@ -21068,7 +21068,7 @@
         "operationId": "lists_getRowHistory",
         "parameters": [
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21076,7 +21076,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21963,13 +21963,14 @@
             "required": false,
             "schema": {
               "type": "string",
-              "description": "Only return searches from this surface. One of: sales_navigator, enrichment. Omit for all.",
+              "description": "Only return searches from this surface. One of: sales_navigator, enrichment, people_search. Omit for all.",
               "enum": [
                 "sales_navigator",
-                "enrichment"
+                "enrichment",
+                "people_search"
               ]
             },
-            "description": "Only return searches from this surface. One of: sales_navigator, enrichment. Omit for all."
+            "description": "Only return searches from this surface. One of: sales_navigator, enrichment, people_search. Omit for all."
           },
           {
             "name": "page",
@@ -22043,7 +22044,7 @@
                           },
                           "source": {
                             "type": "string",
-                            "description": "Which surface ran the search. One of: sales_navigator, enrichment."
+                            "description": "Which surface ran the search. One of: sales_navigator, enrichment, people_search."
                           },
                           "label": {
                             "type": "string",
@@ -22107,7 +22108,7 @@
           }
         },
         "summary": "List saved lead searches for the company, newest first.",
-        "description": "Result rows are omitted here \u2014 the listing carries the label, result count\nand cost so a history panel can render without pulling every stored row.\nFetch a single search by id to get its results back.\n\nFilter by `source` (\"sales_navigator\" or \"enrichment\") to show one surface's\nhistory."
+        "description": "Result rows are omitted here \u2014 the listing carries the label, result count\nand cost so a history panel can render without pulling every stored row.\nFetch a single search by id to get its results back.\n\nFilter by `source` (\"sales_navigator\", \"enrichment\" or \"people_search\") to show one surface's\nhistory."
       }
     },
     "/api/v0/lead-searches/{searchId}": {
@@ -22180,7 +22181,7 @@
                     },
                     "source": {
                       "type": "string",
-                      "description": "Which surface ran the search. One of: sales_navigator, enrichment."
+                      "description": "Which surface ran the search. One of: sales_navigator, enrichment, people_search."
                     },
                     "label": {
                       "type": "string",
@@ -22411,7 +22412,7 @@
                     },
                     "source": {
                       "type": "string",
-                      "description": "Which surface produced the search. One of: sales_navigator, enrichment."
+                      "description": "Which surface produced the search. One of: sales_navigator, enrichment, people_search."
                     }
                   },
                   "description": "Outcome of importing a saved lead search into a smart list"
@@ -24880,7 +24881,7 @@
         "operationId": "sequences_updateSequenceStep",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24888,7 +24889,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25162,7 +25163,7 @@
         "operationId": "sequences_deleteSequenceStep",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25170,7 +25171,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25892,7 +25893,7 @@
         "operationId": "sequences_getSequenceMemberTimeline",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25900,7 +25901,7 @@
             }
           },
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26298,7 +26299,7 @@
         "operationId": "sequences_triggerSequenceMember",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26306,7 +26307,7 @@
             }
           },
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26374,7 +26375,7 @@
         "operationId": "sequences_removeSequenceMember",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26382,7 +26383,7 @@
             }
           },
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28887,7 +28888,7 @@
         "operationId": "sequences_testSequenceStep",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28895,7 +28896,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28949,7 +28950,7 @@
         "operationId": "sequences_sendTestEmail",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28957,7 +28958,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -31109,7 +31110,7 @@
         "operationId": "people_updatePersonActivity",
         "parameters": [
           {
-            "name": "personId",
+            "name": "activityId",
             "in": "path",
             "required": true,
             "schema": {
@@ -31117,7 +31118,7 @@
             }
           },
           {
-            "name": "activityId",
+            "name": "personId",
             "in": "path",
             "required": true,
             "schema": {
@@ -31265,7 +31266,7 @@
         "operationId": "people_deletePersonActivity",
         "parameters": [
           {
-            "name": "personId",
+            "name": "activityId",
             "in": "path",
             "required": true,
             "schema": {
@@ -31273,7 +31274,7 @@
             }
           },
           {
-            "name": "activityId",
+            "name": "personId",
             "in": "path",
             "required": true,
             "schema": {
@@ -47044,7 +47045,7 @@
             }
           },
           "502": {
-            "description": "Search unavailable",
+            "description": "Search or AI search unavailable",
             "content": {
               "application/json": {
                 "schema": {
@@ -47084,6 +47085,10 @@
                     "nextCursor": {
                       "type": "string",
                       "description": "Continuation cursor; null means the end of the results"
+                    },
+                    "filters": {
+                      "type": "object",
+                      "description": "The normalized filters that were searched. For an AI search, these are the filters it chose; send them with nextCursor for later pages."
                     }
                   }
                 }
@@ -47091,8 +47096,8 @@
             }
           }
         },
-        "summary": "Search the professional people database by person and company filters.",
-        "description": "Get filter names and enum values from leads_listFieldOptions first; at\nleast one positive filter is required (exclusions alone are rejected).\nReturns basic profiles (name, title, company, location, linkedinUrl) plus\nthe total match count \u2014 no emails or phones. To page, send the same\nfilters, companyId and pageSize with page+1 and the previous nextCursor;\nnextCursor null means the last page. Free: searching requires at least 1\ndata credit or remaining data-credit window capacity but never spends it.\nTo get contact details, import the results into a smart list or export\nthem.",
+        "summary": "Search the professional people database by filters or a plain-language description.",
+        "description": "Send either `query` (AI search, below) or `filters`. For filters, get\nfield names and enum values from leads_listFieldOptions first; at least\none positive filter is required (exclusions alone are rejected).\nReturns basic profiles (name, title, company, location, linkedinUrl) plus\nthe total match count \u2014 no emails or phones. To page, send the same\nfilters, companyId and pageSize with page+1 and the previous nextCursor;\nnextCursor null means the last page. Free: searching requires at least 1\ndata credit or remaining data-credit window capacity but never spends it.\nTo get contact details, import the results into a smart list or export\nthem.\n\nAI search: send `query` (a description such as \"engineers in New York at\nsoftware companies with more than 500 employees\") instead of filters \u2014 no\nleads_listFieldOptions call needed. AI picks the filters (using AI\ncredits), the search runs, and the response's `filters` shows what was\nsearched \u2014 page on with those filters and nextCursor.",
         "requestBody": {
           "required": true,
           "content": {
@@ -47106,7 +47111,11 @@
                   },
                   "filters": {
                     "type": "object",
-                    "description": "Person and company filters keyed by the camelCase field names from leads_listFieldOptions, e.g. {\"title\": [\"Head of Marketing\"], \"seniority\": [\"Director\"], \"companyDomain\": [\"acme.com\"], \"employeeRange\": [\"51-200\"], \"country\": [\"US\"]}. Text and enum filters take a list of values (any value matches); different filters must all match. Enum values must come from leads_listFieldOptions; countries are two-letter codes. Number filters take a single number. At least one positive (non-exclude) filter is required."
+                    "description": "Person and company filters keyed by the camelCase field names from leads_listFieldOptions, e.g. {\"title\": [\"Head of Marketing\"], \"seniority\": [\"Director\"], \"companyDomain\": [\"acme.com\"], \"employeeRange\": [\"51-200\"], \"country\": [\"US\"]}. Text and enum filters take a list of values (any value matches); different filters must all match. Enum values must come from leads_listFieldOptions; countries are two-letter codes. Number filters take a single number. At least one positive (non-exclude) filter is required. Send filters or query, not both."
+                  },
+                  "query": {
+                    "type": "string",
+                    "description": "AI search: a plain-language description of the people to find, e.g. \"engineers in New York at software companies with more than 500 employees\". Turned into filters by AI (uses AI credits), then searched. Page 1 only; the response returns the filters used, so request later pages with those filters and nextCursor."
                   },
                   "page": {
                     "type": "integer",
@@ -47124,8 +47133,7 @@
                   }
                 },
                 "required": [
-                  "companyId",
-                  "filters"
+                  "companyId"
                 ]
               }
             }
@@ -47436,7 +47444,7 @@
         "operationId": "leads_getStagedLeads",
         "parameters": [
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -47444,7 +47452,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -47539,7 +47547,7 @@
         "operationId": "leads_applyStagedLeads",
         "parameters": [
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -47547,7 +47555,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -70575,7 +70583,7 @@
         "operationId": "marketing_campaigns_restoreCampaignVersion",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -70583,7 +70591,7 @@
             }
           },
           {
-            "name": "versionId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -72048,7 +72056,7 @@
         "operationId": "marketing_campaigns_deleteCampaignRecipient",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "recipientId",
             "in": "path",
             "required": true,
             "schema": {
@@ -72056,7 +72064,7 @@
             }
           },
           {
-            "name": "recipientId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
