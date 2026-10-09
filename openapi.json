@@ -113,7 +113,7 @@
     },
     {
       "name": "Marketing Campaigns",
-      "description": "Create, schedule, and send one-shot marketing email campaigns to a smart list, and track open/click performance.",
+      "description": "Create, schedule, and send one-shot marketing email campaigns to a smart list, and track open/click performance. To send from your own domain through the platform, add a sending domain (integrations_addEmailSendingDomain, or integrations_addHostedEmailSendingDomain for a domain purchased here), add its DNS records, call integrations_verifyEmailSendingDomain until verified, then integrations_addEmailSendingSender and use the returned sender id as the campaign senderProfileId. integrations_getEmailSendingTenant shows whether sending is paused.",
       "x-relatedSkills": [
         "campaign-email"
       ]
@@ -462,6 +462,1090 @@
           },
           "description": "Workspace to list sequences for"
         }
+      }
+    },
+    "/api/v0/email-sending/tenant": {
+      "get": {
+        "tags": [
+          "Marketing Campaigns"
+        ],
+        "operationId": "integrations_getEmailSendingTenant",
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Company ID. Not needed with a Company API key, which is already scoped to one company."
+            },
+            "description": "Company ID. Not needed with a Company API key, which is already scoped to one company."
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "companyId is required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "No company access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "The company's sending account, or null before any domain is added",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "tenant": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "description": "Sending account ID."
+                        },
+                        "companyId": {
+                          "type": "string",
+                          "description": "Company that owns the sending account."
+                        },
+                        "sendingStatus": {
+                          "type": "string",
+                          "description": "ENABLED or REINSTATED means mail is sending; DISABLED means sending is paused, usually for high bounce or complaint rates."
+                        },
+                        "sendingStatusCause": {
+                          "type": "string",
+                          "description": "Why sending was paused, when it is paused."
+                        },
+                        "lastStatusCheckDate": {
+                          "type": "string",
+                          "format": "date-time",
+                          "description": "When the sending status was last refreshed."
+                        }
+                      },
+                      "description": "The company's email sending account"
+                    }
+                  },
+                  "description": "Email sending account (null until the first domain is added)"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Get the company's email sending account and whether sending is paused.",
+        "description": "The account is created when the first sending domain is added. A DISABLED\nsendingStatus means marketing campaign sending is paused for this company."
+      }
+    },
+    "/api/v0/email-sending/tenant/refresh": {
+      "post": {
+        "tags": [
+          "Marketing Campaigns"
+        ],
+        "operationId": "integrations_refreshEmailSendingTenant",
+        "parameters": [],
+        "responses": {
+          "400": {
+            "description": "companyId is required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "No company access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Email service unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "The sending account with its current status",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "tenant": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "description": "Sending account ID."
+                        },
+                        "companyId": {
+                          "type": "string",
+                          "description": "Company that owns the sending account."
+                        },
+                        "sendingStatus": {
+                          "type": "string",
+                          "description": "ENABLED or REINSTATED means mail is sending; DISABLED means sending is paused, usually for high bounce or complaint rates."
+                        },
+                        "sendingStatusCause": {
+                          "type": "string",
+                          "description": "Why sending was paused, when it is paused."
+                        },
+                        "lastStatusCheckDate": {
+                          "type": "string",
+                          "format": "date-time",
+                          "description": "When the sending status was last refreshed."
+                        }
+                      },
+                      "description": "The company's email sending account"
+                    }
+                  },
+                  "description": "Email sending account (null until the first domain is added)"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Refresh the company's sending status from the email service.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID. Not needed with a Company API key, which is already scoped to one company."
+                  }
+                },
+                "description": "Company to act on"
+              }
+            }
+          },
+          "description": "Company to refresh"
+        }
+      }
+    },
+    "/api/v0/email-sending/domains": {
+      "get": {
+        "tags": [
+          "Marketing Campaigns"
+        ],
+        "operationId": "integrations_listEmailSendingDomains",
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Company ID. Not needed with a Company API key, which is already scoped to one company."
+            },
+            "description": "Company ID. Not needed with a Company API key, which is already scoped to one company."
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Page number (1-indexed).",
+              "default": 1
+            },
+            "description": "Page number (1-indexed)."
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Items per page (max 100).",
+              "default": 20
+            },
+            "description": "Items per page (max 100)."
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid request parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "No company access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Paginated sending domains",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "description": "Sending domain ID \u2014 the domainId for verify, senders, and delete."
+                          },
+                          "domain": {
+                            "type": "string",
+                            "description": "The domain mail is sent from."
+                          },
+                          "mailFromDomain": {
+                            "type": "string",
+                            "description": "Bounce (MAIL FROM) subdomain."
+                          },
+                          "status": {
+                            "type": "string",
+                            "description": "pending, verified, or failed. Senders can be added only once verified."
+                          },
+                          "dkimStatus": {
+                            "type": "string",
+                            "description": "DKIM verification status."
+                          },
+                          "mailFromStatus": {
+                            "type": "string",
+                            "description": "MAIL FROM verification status."
+                          },
+                          "dnsRecords": {
+                            "type": "array",
+                            "items": {
+                              "type": "object"
+                            },
+                            "description": "DNS records to add: [{type, name, value, priority, purpose, required, autoAdded}]. autoAdded records were written for you."
+                          },
+                          "trackingDomainId": {
+                            "type": "string",
+                            "description": "Purchased domain this sending domain uses, when DNS is managed automatically."
+                          },
+                          "integrationId": {
+                            "type": "string",
+                            "description": "Sending integration created once the domain is verified."
+                          },
+                          "lastVerificationDate": {
+                            "type": "string",
+                            "format": "date-time",
+                            "description": "When verification was last checked."
+                          },
+                          "verifiedDate": {
+                            "type": "string",
+                            "format": "date-time",
+                            "description": "When the domain was verified."
+                          },
+                          "created_date": {
+                            "type": "string",
+                            "format": "date-time",
+                            "description": "When the domain was added."
+                          }
+                        },
+                        "description": "Sending domain"
+                      },
+                      "description": "Sending domains, newest first."
+                    },
+                    "total": {
+                      "type": "integer",
+                      "description": "Total sending domains."
+                    },
+                    "page": {
+                      "type": "integer",
+                      "description": "Current page."
+                    },
+                    "pages": {
+                      "type": "integer",
+                      "description": "Total pages."
+                    },
+                    "has_next": {
+                      "type": "boolean",
+                      "description": "Whether another page exists."
+                    }
+                  },
+                  "description": "Paginated list of sending domains"
+                }
+              }
+            }
+          }
+        },
+        "summary": "List the company's marketing email sending domains with their DNS records and verification status."
+      },
+      "post": {
+        "tags": [
+          "Marketing Campaigns"
+        ],
+        "operationId": "integrations_addEmailSendingDomain",
+        "parameters": [],
+        "responses": {
+          "400": {
+            "description": "Invalid domain",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "No company access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Domain already in use",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Email service unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "The pending domain with the DNS records to add",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "domain": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "description": "Sending domain ID \u2014 the domainId for verify, senders, and delete."
+                        },
+                        "domain": {
+                          "type": "string",
+                          "description": "The domain mail is sent from."
+                        },
+                        "mailFromDomain": {
+                          "type": "string",
+                          "description": "Bounce (MAIL FROM) subdomain."
+                        },
+                        "status": {
+                          "type": "string",
+                          "description": "pending, verified, or failed. Senders can be added only once verified."
+                        },
+                        "dkimStatus": {
+                          "type": "string",
+                          "description": "DKIM verification status."
+                        },
+                        "mailFromStatus": {
+                          "type": "string",
+                          "description": "MAIL FROM verification status."
+                        },
+                        "dnsRecords": {
+                          "type": "array",
+                          "items": {
+                            "type": "object"
+                          },
+                          "description": "DNS records to add: [{type, name, value, priority, purpose, required, autoAdded}]. autoAdded records were written for you."
+                        },
+                        "trackingDomainId": {
+                          "type": "string",
+                          "description": "Purchased domain this sending domain uses, when DNS is managed automatically."
+                        },
+                        "integrationId": {
+                          "type": "string",
+                          "description": "Sending integration created once the domain is verified."
+                        },
+                        "lastVerificationDate": {
+                          "type": "string",
+                          "format": "date-time",
+                          "description": "When verification was last checked."
+                        },
+                        "verifiedDate": {
+                          "type": "string",
+                          "format": "date-time",
+                          "description": "When the domain was verified."
+                        },
+                        "created_date": {
+                          "type": "string",
+                          "format": "date-time",
+                          "description": "When the domain was added."
+                        }
+                      },
+                      "description": "Sending domain"
+                    }
+                  },
+                  "description": "Sending domain"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Add a domain you manage for sending marketing campaigns.",
+        "description": "Returns dnsRecords to add at your DNS provider. After adding them, call\nintegrations_verifyEmailSendingDomain until status is verified, then add a sender.\nFor a domain purchased on the platform, use integrations_addHostedEmailSendingDomain instead.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID. Not needed with a Company API key, which is already scoped to one company."
+                  },
+                  "domain": {
+                    "type": "string",
+                    "description": "Domain or subdomain to send from, such as news.example.com. Add the returned dnsRecords at your DNS provider, then call verify."
+                  }
+                },
+                "required": [
+                  "domain"
+                ],
+                "description": "Domain to send marketing email from"
+              }
+            }
+          },
+          "description": "Domain to send from"
+        }
+      }
+    },
+    "/api/v0/email-sending/hosted-domains": {
+      "post": {
+        "tags": [
+          "Marketing Campaigns"
+        ],
+        "operationId": "integrations_addHostedEmailSendingDomain",
+        "parameters": [],
+        "responses": {
+          "400": {
+            "description": "A valid trackingDomainId is required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "No company access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Domain already in use",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Email service or DNS update unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "The pending domain; its DNS records are added automatically",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "domain": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "description": "Sending domain ID \u2014 the domainId for verify, senders, and delete."
+                        },
+                        "domain": {
+                          "type": "string",
+                          "description": "The domain mail is sent from."
+                        },
+                        "mailFromDomain": {
+                          "type": "string",
+                          "description": "Bounce (MAIL FROM) subdomain."
+                        },
+                        "status": {
+                          "type": "string",
+                          "description": "pending, verified, or failed. Senders can be added only once verified."
+                        },
+                        "dkimStatus": {
+                          "type": "string",
+                          "description": "DKIM verification status."
+                        },
+                        "mailFromStatus": {
+                          "type": "string",
+                          "description": "MAIL FROM verification status."
+                        },
+                        "dnsRecords": {
+                          "type": "array",
+                          "items": {
+                            "type": "object"
+                          },
+                          "description": "DNS records to add: [{type, name, value, priority, purpose, required, autoAdded}]. autoAdded records were written for you."
+                        },
+                        "trackingDomainId": {
+                          "type": "string",
+                          "description": "Purchased domain this sending domain uses, when DNS is managed automatically."
+                        },
+                        "integrationId": {
+                          "type": "string",
+                          "description": "Sending integration created once the domain is verified."
+                        },
+                        "lastVerificationDate": {
+                          "type": "string",
+                          "format": "date-time",
+                          "description": "When verification was last checked."
+                        },
+                        "verifiedDate": {
+                          "type": "string",
+                          "format": "date-time",
+                          "description": "When the domain was verified."
+                        },
+                        "created_date": {
+                          "type": "string",
+                          "format": "date-time",
+                          "description": "When the domain was added."
+                        }
+                      },
+                      "description": "Sending domain"
+                    }
+                  },
+                  "description": "Sending domain"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Send from a domain purchased here; DNS records are written automatically.",
+        "description": "Call integrations_verifyEmailSendingDomain until status is verified, then add a sender.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID. Not needed with a Company API key, which is already scoped to one company."
+                  },
+                  "trackingDomainId": {
+                    "type": "string",
+                    "description": "ID of a domain purchased on the platform (from the Domains endpoints). Its DNS records are written automatically."
+                  }
+                },
+                "required": [
+                  "trackingDomainId"
+                ],
+                "description": "Purchased domain to send marketing email from"
+              }
+            }
+          },
+          "description": "Purchased domain to send from"
+        }
+      }
+    },
+    "/api/v0/email-sending/domains/{domainId}/verify": {
+      "post": {
+        "tags": [
+          "Marketing Campaigns"
+        ],
+        "operationId": "integrations_verifyEmailSendingDomain",
+        "parameters": [
+          {
+            "name": "domainId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "companyId is required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "No company access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Domain not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Email service unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "The domain with its refreshed verification status",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "domain": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "description": "Sending domain ID \u2014 the domainId for verify, senders, and delete."
+                        },
+                        "domain": {
+                          "type": "string",
+                          "description": "The domain mail is sent from."
+                        },
+                        "mailFromDomain": {
+                          "type": "string",
+                          "description": "Bounce (MAIL FROM) subdomain."
+                        },
+                        "status": {
+                          "type": "string",
+                          "description": "pending, verified, or failed. Senders can be added only once verified."
+                        },
+                        "dkimStatus": {
+                          "type": "string",
+                          "description": "DKIM verification status."
+                        },
+                        "mailFromStatus": {
+                          "type": "string",
+                          "description": "MAIL FROM verification status."
+                        },
+                        "dnsRecords": {
+                          "type": "array",
+                          "items": {
+                            "type": "object"
+                          },
+                          "description": "DNS records to add: [{type, name, value, priority, purpose, required, autoAdded}]. autoAdded records were written for you."
+                        },
+                        "trackingDomainId": {
+                          "type": "string",
+                          "description": "Purchased domain this sending domain uses, when DNS is managed automatically."
+                        },
+                        "integrationId": {
+                          "type": "string",
+                          "description": "Sending integration created once the domain is verified."
+                        },
+                        "lastVerificationDate": {
+                          "type": "string",
+                          "format": "date-time",
+                          "description": "When verification was last checked."
+                        },
+                        "verifiedDate": {
+                          "type": "string",
+                          "format": "date-time",
+                          "description": "When the domain was verified."
+                        },
+                        "created_date": {
+                          "type": "string",
+                          "format": "date-time",
+                          "description": "When the domain was added."
+                        }
+                      },
+                      "description": "Sending domain"
+                    }
+                  },
+                  "description": "Sending domain"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Check a sending domain's DNS records and mark it verified once they are in place.",
+        "description": "DNS changes can take minutes to hours to propagate; call again later while status is pending.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID. Not needed with a Company API key, which is already scoped to one company."
+                  }
+                },
+                "description": "Company to act on"
+              }
+            }
+          },
+          "description": "Company that owns the domain"
+        }
+      }
+    },
+    "/api/v0/email-sending/domains/{domainId}/senders": {
+      "post": {
+        "tags": [
+          "Marketing Campaigns"
+        ],
+        "operationId": "integrations_addEmailSendingSender",
+        "parameters": [
+          {
+            "name": "domainId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Domain not verified or invalid sender",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "No company access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Domain not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "The new sender profile",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "sender": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "description": "Sender profile ID \u2014 use it as a marketing campaign senderProfileId."
+                        },
+                        "name": {
+                          "type": "string",
+                          "description": "Sender name recipients see."
+                        },
+                        "email": {
+                          "type": "string",
+                          "description": "Sender email address."
+                        },
+                        "integrationId": {
+                          "type": "string",
+                          "description": "Sending integration the sender uses."
+                        },
+                        "dailySendingLimit": {
+                          "type": "integer",
+                          "description": "Maximum emails this sender sends per day."
+                        }
+                      },
+                      "description": "Sender profile"
+                    }
+                  },
+                  "description": "Created sender profile"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Create a sender address on a verified sending domain.",
+        "description": "The returned sender id is a senderProfileId for marketing_campaigns_createCampaign or marketing_campaigns_updateCampaign.\nSenders created here send marketing campaigns only, not sequences.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID. Not needed with a Company API key, which is already scoped to one company."
+                  },
+                  "name": {
+                    "type": "string",
+                    "description": "Sender name recipients will see, such as Acme News."
+                  },
+                  "localPart": {
+                    "type": "string",
+                    "description": "Part of the address before the @, such as news for news@example.com."
+                  }
+                },
+                "required": [
+                  "name",
+                  "localPart"
+                ],
+                "description": "Sender address to create on a verified sending domain"
+              }
+            }
+          },
+          "description": "Sender name and address"
+        }
+      }
+    },
+    "/api/v0/email-sending/domains/{domainId}": {
+      "delete": {
+        "tags": [
+          "Marketing Campaigns"
+        ],
+        "operationId": "integrations_deleteEmailSendingDomain",
+        "parameters": [
+          {
+            "name": "domainId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Company ID. Not needed with a Company API key, which is already scoped to one company."
+            },
+            "description": "Company ID. Not needed with a Company API key, which is already scoped to one company."
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "companyId is required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "No company access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Domain not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Email service or DNS update unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Deletion confirmation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "msg": {
+                      "type": "string",
+                      "description": "Deleted"
+                    }
+                  },
+                  "description": "Deletion confirmation"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Remove a sending domain. Its senders can no longer send marketing campaigns."
       }
     },
     "/api/v0/integrations/by-type/{integration_type}": {
@@ -3179,7 +4263,7 @@
         "operationId": "keys_getApiKey",
         "parameters": [
           {
-            "name": "name",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -3187,7 +4271,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "name",
             "in": "path",
             "required": true,
             "schema": {
@@ -6839,7 +7923,7 @@
         "operationId": "projects_getProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -6847,7 +7931,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -6982,7 +8066,7 @@
         "operationId": "projects_updateProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -6990,7 +8074,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -7155,7 +8239,7 @@
         "operationId": "projects_deleteProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -7163,7 +8247,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8055,14 +9139,14 @@
       }
     },
     "/api/v0/projects/{project_id}/files/{file_id}/export": {
-      "post": {
+      "get": {
         "tags": [
           "Projects"
         ],
         "operationId": "projects_exportProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8070,7 +9154,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8173,14 +9257,14 @@
           "description": "POST exports current editor content without saving; GET exports the saved file"
         }
       },
-      "get": {
+      "post": {
         "tags": [
           "Projects"
         ],
         "operationId": "projects_exportProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8188,7 +9272,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8300,7 +9384,7 @@
         "operationId": "projects_publishFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8308,7 +9392,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8455,7 +9539,7 @@
         "operationId": "projects_unpublishFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8463,7 +9547,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -13356,7 +14440,7 @@
         "operationId": "organizations_updateOrganizationMember",
         "parameters": [
           {
-            "name": "orgId",
+            "name": "memberUid",
             "in": "path",
             "required": true,
             "schema": {
@@ -13364,7 +14448,7 @@
             }
           },
           {
-            "name": "memberUid",
+            "name": "orgId",
             "in": "path",
             "required": true,
             "schema": {
@@ -13491,7 +14575,7 @@
         "operationId": "organizations_removeOrganizationMember",
         "parameters": [
           {
-            "name": "orgId",
+            "name": "memberUid",
             "in": "path",
             "required": true,
             "schema": {
@@ -13499,7 +14583,7 @@
             }
           },
           {
-            "name": "memberUid",
+            "name": "orgId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21288,7 +22372,7 @@
         "operationId": "lists_deleteHeader",
         "parameters": [
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21296,7 +22380,7 @@
             }
           },
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21362,7 +22446,7 @@
         "operationId": "lists_editHeader",
         "parameters": [
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21370,7 +22454,7 @@
             }
           },
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24897,7 +25981,7 @@
         "operationId": "sequences_updateSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24905,7 +25989,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25179,7 +26263,7 @@
         "operationId": "sequences_deleteSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25187,7 +26271,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25913,7 +26997,7 @@
         "operationId": "sequences_getSequenceMemberTimeline",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25921,7 +27005,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26319,7 +27403,7 @@
         "operationId": "sequences_triggerSequenceMember",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26327,7 +27411,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26395,7 +27479,7 @@
         "operationId": "sequences_removeSequenceMember",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26403,7 +27487,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28908,7 +29992,7 @@
         "operationId": "sequences_testSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28916,7 +30000,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28970,7 +30054,7 @@
         "operationId": "sequences_sendTestEmail",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28978,7 +30062,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -42842,7 +43926,7 @@
         "operationId": "content_getCanvasDesignThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -42850,7 +43934,7 @@
             }
           },
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -42889,7 +43973,7 @@
         "operationId": "content_updateCanvasDesignThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -42897,7 +43981,7 @@
             }
           },
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -42975,7 +44059,7 @@
         "operationId": "content_deleteCanvasDesignThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -42983,7 +44067,7 @@
             }
           },
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -43024,7 +44108,7 @@
         "operationId": "content_stopCanvasDesignThreadRun",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -43032,7 +44116,7 @@
             }
           },
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -54722,7 +55806,7 @@
         "operationId": "landing_pages_getLandingPageThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -54730,7 +55814,7 @@
             }
           },
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -54769,7 +55853,7 @@
         "operationId": "landing_pages_updateLandingPageThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -54777,7 +55861,7 @@
             }
           },
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -54855,7 +55939,7 @@
         "operationId": "landing_pages_deleteLandingPageThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -54863,7 +55947,7 @@
             }
           },
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -54904,7 +55988,7 @@
         "operationId": "landing_pages_stopLandingPageThreadRun",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -54912,7 +55996,7 @@
             }
           },
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -72084,7 +73168,7 @@
         "operationId": "marketing_campaigns_deleteCampaignRecipient",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "recipientId",
             "in": "path",
             "required": true,
             "schema": {
@@ -72092,7 +73176,7 @@
             }
           },
           {
-            "name": "recipientId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -73417,7 +74501,7 @@
         "operationId": "marketing_campaigns_restoreTemplateVersion",
         "parameters": [
           {
-            "name": "versionId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -73425,7 +74509,7 @@
             }
           },
           {
-            "name": "templateId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
