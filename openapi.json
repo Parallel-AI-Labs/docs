@@ -782,7 +782,7 @@
                             },
                             "description": "DNS records to add: [{type, name, value, priority, purpose, required, autoAdded}]. autoAdded records were written for you."
                           },
-                          "trackingDomainId": {
+                          "purchasedDomainId": {
                             "type": "string",
                             "description": "Purchased domain this sending domain uses, when DNS is managed automatically."
                           },
@@ -933,7 +933,7 @@
                           },
                           "description": "DNS records to add: [{type, name, value, priority, purpose, required, autoAdded}]. autoAdded records were written for you."
                         },
-                        "trackingDomainId": {
+                        "purchasedDomainId": {
                           "type": "string",
                           "description": "Purchased domain this sending domain uses, when DNS is managed automatically."
                         },
@@ -1004,7 +1004,7 @@
         "parameters": [],
         "responses": {
           "400": {
-            "description": "A valid trackingDomainId is required",
+            "description": "A valid purchasedDomainId is required",
             "content": {
               "application/json": {
                 "schema": {
@@ -1094,7 +1094,7 @@
                           },
                           "description": "DNS records to add: [{type, name, value, priority, purpose, required, autoAdded}]. autoAdded records were written for you."
                         },
-                        "trackingDomainId": {
+                        "purchasedDomainId": {
                           "type": "string",
                           "description": "Purchased domain this sending domain uses, when DNS is managed automatically."
                         },
@@ -1140,13 +1140,13 @@
                     "type": "string",
                     "description": "Company ID. Not needed with a Company API key, which is already scoped to one company."
                   },
-                  "trackingDomainId": {
+                  "purchasedDomainId": {
                     "type": "string",
-                    "description": "ID of a domain purchased on the platform (from the Domains endpoints). Its DNS records are written automatically."
+                    "description": "ID of a domain purchased on the platform (from GET /api/v0/domains). Its DNS records are written automatically."
                   }
                 },
                 "required": [
-                  "trackingDomainId"
+                  "purchasedDomainId"
                 ],
                 "description": "Purchased domain to send marketing email from"
               }
@@ -1264,7 +1264,7 @@
                           },
                           "description": "DNS records to add: [{type, name, value, priority, purpose, required, autoAdded}]. autoAdded records were written for you."
                         },
-                        "trackingDomainId": {
+                        "purchasedDomainId": {
                           "type": "string",
                           "description": "Purchased domain this sending domain uses, when DNS is managed automatically."
                         },
@@ -2046,7 +2046,7 @@
         "operationId": "documents_getDocumentContents",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -2054,7 +2054,7 @@
             }
           },
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -2113,7 +2113,7 @@
         "operationId": "documents_getDocument",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -2121,7 +2121,7 @@
             }
           },
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -14440,7 +14440,7 @@
         "operationId": "organizations_updateOrganizationMember",
         "parameters": [
           {
-            "name": "memberUid",
+            "name": "orgId",
             "in": "path",
             "required": true,
             "schema": {
@@ -14448,7 +14448,7 @@
             }
           },
           {
-            "name": "orgId",
+            "name": "memberUid",
             "in": "path",
             "required": true,
             "schema": {
@@ -14575,7 +14575,7 @@
         "operationId": "organizations_removeOrganizationMember",
         "parameters": [
           {
-            "name": "memberUid",
+            "name": "orgId",
             "in": "path",
             "required": true,
             "schema": {
@@ -14583,7 +14583,7 @@
             }
           },
           {
-            "name": "orgId",
+            "name": "memberUid",
             "in": "path",
             "required": true,
             "schema": {
@@ -21581,7 +21581,7 @@
         "operationId": "lists_deleteTableAction",
         "parameters": [
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21589,7 +21589,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21687,7 +21687,7 @@
         "operationId": "lists_getActionSummary",
         "parameters": [
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21695,7 +21695,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21815,7 +21815,7 @@
         "operationId": "lists_getActionQueueStatus",
         "parameters": [
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21823,7 +21823,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25981,7 +25981,7 @@
         "operationId": "sequences_updateSequenceStep",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25989,7 +25989,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26263,7 +26263,7 @@
         "operationId": "sequences_deleteSequenceStep",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26271,7 +26271,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28239,7 +28239,7 @@
         "operationId": "sequences_editSequenceExecution",
         "parameters": [
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28247,7 +28247,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28336,7 +28336,7 @@
         "operationId": "sequences_previewSequenceExecution",
         "parameters": [
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28344,7 +28344,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -29992,7 +29992,7 @@
         "operationId": "sequences_testSequenceStep",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30000,7 +30000,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30054,7 +30054,7 @@
         "operationId": "sequences_sendTestEmail",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30062,7 +30062,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30140,7 +30140,7 @@
         "operationId": "sequences_getMemberProfile",
         "parameters": [
           {
-            "name": "memberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30148,7 +30148,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "memberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -34777,7 +34777,7 @@
         "operationId": "inbox_sendDraft",
         "parameters": [
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -34785,7 +34785,7 @@
             }
           },
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -34888,7 +34888,7 @@
         "operationId": "inbox_deleteDraft",
         "parameters": [
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -34896,7 +34896,7 @@
             }
           },
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -35648,462 +35648,6 @@
         }
       }
     },
-    "/api/v0/domains/check-availability": {
-      "post": {
-        "tags": [
-          "Domains"
-        ],
-        "operationId": "inbox_apiCheckDomainAvailability",
-        "parameters": [],
-        "responses": {
-          "400": {
-            "description": "Invalid domain or missing companyId",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Invalid credentials",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "No company access",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "502": {
-            "description": "Domain availability check failed",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "Check a root-domain registration's availability and price.",
-        "description": "This read-only endpoint is only for a domain registration purchase. It does\nnot connect a domain the customer already owns; use domain-connections for\nSSL termination and routing instead.",
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "companyId": {
-                    "type": "string",
-                    "description": "Company that will own the registered domain"
-                  },
-                  "domain": {
-                    "type": "string",
-                    "description": "Root .com domain to check, e.g. example.com. Other TLDs, https://, and subdomains are not supported."
-                  }
-                },
-                "required": [
-                  "companyId",
-                  "domain"
-                ],
-                "description": "Read-only availability check for a root-domain registration; it does not connect an existing domain"
-              }
-            }
-          },
-          "description": "Root domain to check before requesting purchase approval"
-        }
-      }
-    },
-    "/api/v0/domains/pricing": {
-      "get": {
-        "tags": [
-          "Domains"
-        ],
-        "operationId": "inbox_apiGetDomainPricing",
-        "parameters": [
-          {
-            "name": "companyId",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "description": "Company that will own the registered domain"
-            },
-            "description": "Company that will own the registered domain"
-          }
-        ],
-        "responses": {
-          "400": {
-            "description": "companyId is required",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Invalid credentials",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "No company access",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "Get the current one-time price to register one root domain.",
-        "description": "The returned customerPrice applies the same request-scoped whitelabel add-on\nmultiplier as mailbox orders. It is not the $5/month branded-domain\nconnection add-on price. Use it before asking the user to approve a purchase."
-      }
-    },
-    "/api/v0/domains/purchase": {
-      "post": {
-        "tags": [
-          "Domains"
-        ],
-        "operationId": "inbox_apiPurchaseDomain",
-        "parameters": [],
-        "responses": {
-          "400": {
-            "description": "Invalid domain, registration details, or missing purchase confirmation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Invalid credentials",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "No company access",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "502": {
-            "description": "Domain purchase could not be completed",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "201": {
-            "description": "Registered domain and its pending branded-domain connection",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "domain": {
-                      "type": "object",
-                      "description": "The pending branded-domain connection created for the newly registered domain"
-                    },
-                    "pricing": {
-                      "type": "object",
-                      "description": "Registration quote: basePrice, priceMultiplier, and customerPrice in USD. This is not the monthly connection add-on price."
-                    },
-                    "dnsRecord": {
-                      "type": "object",
-                      "description": "A record used by the branded-domain connection for SSL termination and routing"
-                    },
-                    "providerStatus": {
-                      "type": "string",
-                      "description": "Registration status from the managed domain service"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "summary": "Purchase a root-domain registration and create its pending connection.",
-        "description": "This is a financial action and requires a successful Stripe PaymentIntent\ncreated for the same user, company, and domain. Never blindly retry a provider\ntimeout; check the domain list first to avoid a duplicate purchase.",
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "companyId": {
-                    "type": "string",
-                    "description": "Company that will own the registered domain and connection"
-                  },
-                  "domain": {
-                    "type": "string",
-                    "description": "Available root .com domain to purchase, e.g. example.com. Other TLDs, https://, and subdomains are not supported."
-                  },
-                  "contactDetails": {
-                    "type": "object",
-                    "description": "Registrant data: firstName, lastName, email, phone, address1, city, province, postalCode, and country; organization is optional. The registrant email is reused for DMARC reports. Domain forwarding is not configured by this purchase path."
-                  },
-                  "paymentIntentId": {
-                    "type": "string",
-                    "description": "Successful Stripe PaymentIntent created for this exact company and domain."
-                  },
-                  "connectedAccount": {
-                    "type": "string",
-                    "description": "Stripe connected account returned when the payment was created, if applicable."
-                  }
-                },
-                "required": [
-                  "companyId",
-                  "domain",
-                  "contactDetails",
-                  "paymentIntentId"
-                ],
-                "description": "One-time root-domain registration for email infrastructure. This is separate from the $5/month branded-domain connection add-on for SSL termination and routing."
-              }
-            }
-          },
-          "description": "Confirmed one-time root-domain registration purchase"
-        }
-      }
-    },
-    "/api/v0/domains/{domain_id}/dns": {
-      "get": {
-        "tags": [
-          "Domains"
-        ],
-        "operationId": "inbox_apiGetDomainDns",
-        "parameters": [
-          {
-            "name": "domain_id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "companyId",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "description": "Company that owns the domain"
-            },
-            "description": "Company that owns the domain"
-          }
-        ],
-        "responses": {
-          "400": {
-            "description": "companyId missing or domain is not provider-managed",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Invalid credentials",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Domain not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "502": {
-            "description": "DNS provider unavailable",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "200": {
-            "description": "Current DNS records",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "records": {
-                      "type": "array",
-                      "items": {
-                        "type": "object"
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "summary": "List DNS records for a domain registered through this platform.",
-        "description": "Customer-owned domains connected for SSL termination keep DNS at their\nexisting DNS host. Read records before proposing any change."
-      },
-      "put": {
-        "tags": [
-          "Domains"
-        ],
-        "operationId": "inbox_apiUpdateDomainDns",
-        "parameters": [
-          {
-            "name": "domain_id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "400": {
-            "description": "Invalid records, missing confirmation, or domain is not provider-managed",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Invalid credentials",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Domain not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "502": {
-            "description": "DNS update failed",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "200": {
-            "description": "Submitted DNS records",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "records": {
-                      "type": "array",
-                      "items": {
-                        "type": "object"
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "summary": "Update DNS records for a domain registered through this platform.",
-        "description": "This is an irreversible infrastructure change. Read the current records,\npreserve records you are not intentionally changing, obtain approval, and\nset dnsChangeConfirmed to true. Never blindly retry a timeout.",
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "companyId": {
-                    "type": "string",
-                    "description": "Company that owns the domain"
-                  },
-                  "records": {
-                    "type": "array",
-                    "items": {
-                      "type": "object"
-                    },
-                    "description": "DNS records to update. Each record needs name, type, and value; include editable: true for editable records."
-                  },
-                  "dnsChangeConfirmed": {
-                    "type": "boolean",
-                    "description": "Must be true. DNS changes can interrupt website and email delivery."
-                  }
-                },
-                "required": [
-                  "companyId",
-                  "records",
-                  "dnsChangeConfirmed"
-                ],
-                "description": "Confirmed DNS record update for a domain registered through this platform. Customer-owned external domains keep DNS at their existing DNS host."
-              }
-            }
-          },
-          "description": "Confirmed DNS update"
-        }
-      }
-    },
     "/api/v0/domain-connections": {
       "get": {
         "tags": [
@@ -36311,6 +35855,575 @@
             }
           },
           "description": "Connect a customer-owned domain or subdomain for SSL termination and routing"
+        }
+      }
+    },
+    "/api/v0/domains": {
+      "get": {
+        "tags": [
+          "Domains"
+        ],
+        "operationId": "inbox_apiListPurchasedDomains",
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company whose purchased domains to list"
+            },
+            "description": "Company whose purchased domains to list"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Page number, starting at 1",
+              "default": 1
+            },
+            "description": "Page number, starting at 1"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Domains per page, up to 100",
+              "default": 20
+            },
+            "description": "Domains per page, up to 100"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "companyId is required",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "No company access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Domains purchased by the company",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "object"
+                      },
+                      "description": "Purchased domains: id, domain, companyId, created_date"
+                    },
+                    "total": {
+                      "type": "integer"
+                    },
+                    "page": {
+                      "type": "integer"
+                    },
+                    "pages": {
+                      "type": "integer"
+                    },
+                    "has_next": {
+                      "type": "boolean"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "List domains the company purchased on the platform.",
+        "description": "These are registrations, not branded-domain connections. Use their IDs with\nthe DNS endpoints and with hosted email sending domains."
+      }
+    },
+    "/api/v0/domains/check-availability": {
+      "post": {
+        "tags": [
+          "Domains"
+        ],
+        "operationId": "inbox_apiCheckDomainAvailability",
+        "parameters": [],
+        "responses": {
+          "400": {
+            "description": "Invalid domain or missing companyId",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "No company access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Domain availability check failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Check a root-domain registration's availability and price.",
+        "description": "This read-only endpoint is only for a domain registration purchase. It does\nnot connect a domain the customer already owns; use domain-connections for\nSSL termination and routing instead.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company that will own the registered domain"
+                  },
+                  "domain": {
+                    "type": "string",
+                    "description": "Root domain to check, e.g. example.com. Premium names, https://, and subdomains are not supported."
+                  }
+                },
+                "required": [
+                  "companyId",
+                  "domain"
+                ],
+                "description": "Read-only availability check for a root-domain registration; it does not connect an existing domain"
+              }
+            }
+          },
+          "description": "Root domain to check before requesting purchase approval"
+        }
+      }
+    },
+    "/api/v0/domains/pricing": {
+      "get": {
+        "tags": [
+          "Domains"
+        ],
+        "operationId": "inbox_apiGetDomainPricing",
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company that will own the registered domain"
+            },
+            "description": "Company that will own the registered domain"
+          },
+          {
+            "name": "domain",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Root domain to price, e.g. example.com or example.ai"
+            },
+            "description": "Root domain to price, e.g. example.com or example.ai"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "companyId missing, invalid domain, or domain unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "No company access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Get the price to register one root domain.",
+        "description": "customerPrice is the first payment, covering the registration term;\nrenewalPrice is then billed yearly until cancelled. Both apply the same\nrequest-scoped whitelabel add-on multiplier as mailbox orders. Neither is\nthe $5/month branded-domain connection add-on price. Use it before asking\nthe user to approve a purchase."
+      }
+    },
+    "/api/v0/domains/purchase": {
+      "post": {
+        "tags": [
+          "Domains"
+        ],
+        "operationId": "inbox_apiPurchaseDomain",
+        "parameters": [],
+        "responses": {
+          "400": {
+            "description": "Invalid domain, registration details, or missing purchase confirmation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "No company access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Domain purchase could not be completed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "The registered domain",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "domain": {
+                      "type": "object",
+                      "description": "The newly registered domain, unconnected until the customer connects it; it uses no connection slot until then"
+                    },
+                    "pricing": {
+                      "type": "object",
+                      "description": "Registration price in USD: customerPrice (first payment) and renewalPrice (billed yearly), with basePrice, renewalBasePrice, and priceMultiplier. This is not the monthly connection add-on price."
+                    },
+                    "providerStatus": {
+                      "type": "string",
+                      "description": "Registration status from the managed domain service"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Purchase a root-domain registration.",
+        "description": "This is a financial action and requires a successful Stripe PaymentIntent\ncreated for the same user, company, and domain. The purchase starts a yearly\nrenewal subscription on the same card. The domain is not connected for SSL\nrouting; create a domain-connection for a hostname under it when needed.\nNever blindly retry a provider timeout; check the domain list first.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company that will own the registered domain and connection"
+                  },
+                  "domain": {
+                    "type": "string",
+                    "description": "Available root domain to purchase, e.g. example.com. Premium names, https://, and subdomains are not supported."
+                  },
+                  "contactDetails": {
+                    "type": "object",
+                    "description": "Registrant data: firstName, lastName, email, phone, address1, city, province, postalCode, and country; organization is optional. The registrant email is reused for DMARC reports. Domain forwarding is not configured by this purchase path."
+                  },
+                  "paymentIntentId": {
+                    "type": "string",
+                    "description": "Successful Stripe PaymentIntent created for this exact company and domain."
+                  },
+                  "connectedAccount": {
+                    "type": "string",
+                    "description": "Stripe connected account returned when the payment was created, if applicable."
+                  }
+                },
+                "required": [
+                  "companyId",
+                  "domain",
+                  "contactDetails",
+                  "paymentIntentId"
+                ],
+                "description": "Root-domain registration for email infrastructure, renewed yearly. This is separate from the $5/month branded-domain connection add-on for SSL termination and routing."
+              }
+            }
+          },
+          "description": "Confirmed root-domain registration purchase with yearly renewal"
+        }
+      }
+    },
+    "/api/v0/domains/{domainId}/dns": {
+      "get": {
+        "tags": [
+          "Domains"
+        ],
+        "operationId": "inbox_apiGetDomainDns",
+        "parameters": [
+          {
+            "name": "domainId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company that owns the domain"
+            },
+            "description": "Company that owns the domain"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "companyId missing",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Domain not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "DNS provider unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Current DNS records",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "records": {
+                      "type": "array",
+                      "items": {
+                        "type": "object"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "List DNS records for a domain purchased on the platform.",
+        "description": "Customer-owned domains connected for SSL termination keep DNS at their\nexisting DNS host. Read records before proposing any change."
+      },
+      "put": {
+        "tags": [
+          "Domains"
+        ],
+        "operationId": "inbox_apiUpdateDomainDns",
+        "parameters": [
+          {
+            "name": "domainId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid records or missing confirmation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Domain not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "DNS update failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Records after the update",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "records": {
+                      "type": "array",
+                      "items": {
+                        "type": "object"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Replace the DNS records of a domain purchased on the platform.",
+        "description": "Records not in the request are deleted. This is an irreversible\ninfrastructure change: read the current records, keep those you are not\nintentionally changing, obtain approval, and set dnsChangeConfirmed to true.\nNever blindly retry a timeout.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company that owns the domain"
+                  },
+                  "records": {
+                    "type": "array",
+                    "items": {
+                      "type": "object"
+                    },
+                    "description": "DNS records to update. Each record needs name, type, and value; include editable: true for editable records."
+                  },
+                  "dnsChangeConfirmed": {
+                    "type": "boolean",
+                    "description": "Must be true. DNS changes can interrupt website and email delivery."
+                  }
+                },
+                "required": [
+                  "companyId",
+                  "records",
+                  "dnsChangeConfirmed"
+                ],
+                "description": "Confirmed DNS record update for a domain registered through this platform. Customer-owned external domains keep DNS at their existing DNS host."
+              }
+            }
+          },
+          "description": "Confirmed DNS update"
         }
       }
     },
@@ -71687,7 +71800,7 @@
         "operationId": "marketing_campaigns_restoreCampaignVersion",
         "parameters": [
           {
-            "name": "versionId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -71695,7 +71808,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -75632,7 +75745,7 @@
         "operationId": "site_builder_apiWebsiteBranchDiff",
         "parameters": [
           {
-            "name": "branch",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -75640,7 +75753,7 @@
             }
           },
           {
-            "name": "websiteId",
+            "name": "branch",
             "in": "path",
             "required": true,
             "schema": {
