@@ -230,6 +230,7 @@
             "pages": [
               "DELETE /api/v0/brand-kits/{brandKitId}",
               "GET /api/v0/brand-kits",
+              "GET /api/v0/brand-kits/color-palettes",
               "GET /api/v0/brand-kits/{brandKitId}",
               "POST /api/v0/brand-kits",
               "POST /api/v0/brand-kits/build",
