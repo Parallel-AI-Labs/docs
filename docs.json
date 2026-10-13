@@ -1023,6 +1023,8 @@
             "pages": [
               "DELETE /api/v0/websites/{websiteId}/file",
               "GET /api/v0/websites",
+              "GET /api/v0/websites/collections",
+              "GET /api/v0/websites/collections/{collectionId}/entries",
               "GET /api/v0/websites/{websiteId}/branches",
               "GET /api/v0/websites/{websiteId}/branches/{branch}/diff",
               "GET /api/v0/websites/{websiteId}/file",
@@ -1030,6 +1032,9 @@
               "GET /api/v0/websites/{websiteId}/pages",
               "GET /api/v0/websites/{websiteId}/seo-audit",
               "GET /api/v0/websites/{websiteId}/validate",
+              "PATCH /api/v0/websites/entries/{entryId}",
+              "POST /api/v0/websites/collections",
+              "POST /api/v0/websites/entries",
               "PUT /api/v0/websites/{websiteId}/file"
             ]
           }
