@@ -3,7 +3,7 @@
   "info": {
     "title": "API Documentation",
     "version": "1.0.0",
-    "description": "\n# Introduction\n\nWelcome to the API. This API provides programmatic access to all platform features including AI agents, smart lists, documents, sequences, and media generation.\n\n## Authentication\n\nThe API supports two types of authentication:\n\n1. **Company API Keys** - Scoped to a specific company\n2. **Personal Access Keys** - User-level keys that work across all your companies\n\n---\n\n### Option 1: Company API Key\n\nCompany API keys are tied to a specific company. Use this when you only need to access one company.\n\n**Getting a Company API Key:**\n\n1. Log in to your dashboard\n2. Navigate to **Integrations** page\n3. Find the **API Keys** section and click **Generate New Key**\n4. Copy and securely store your API key (it won't be shown again)\n\n**Usage:**\n\nInclude your API key in the `X-API-Key` header:\n\n```bash\ncurl -X GET \"https://api.example.com/api/v0/agents\" \\\n  -H \"X-API-Key: YOUR_COMPANY_API_KEY\" \\\n  -H \"Content-Type: application/json\"\n```\n\nOr use the `Authorization` header (OpenAI-compatible):\n\n```bash\ncurl -X GET \"https://api.example.com/api/v0/agents\" \\\n  -H \"Authorization: Bearer YOUR_COMPANY_API_KEY\" \\\n  -H \"Content-Type: application/json\"\n```\n\n---\n\n### Option 2: Personal Access Key\n\nPersonal access keys are tied to your user account and can access any company you belong to. Use this when you need to access multiple companies or build integrations that work across companies.\n\n**Getting a Personal Access Key:**\n\n1. Log in to your dashboard\n2. Click on your avatar/profile icon and go to **Profile**\n3. Find the **Personal Access Keys** section\n4. Click **Create New Key**\n5. Give it a name and optionally set an expiration date\n6. Copy and securely store your key (it won't be shown again)\n\n**Usage:**\n\nPersonal access keys start with `pak_` and **require** you to specify which company to access using the `X-Company-ID` header:\n\n```bash\ncurl -X GET \"https://api.example.com/api/v0/agents\" \\\n  -H \"Authorization: Bearer pak_your_personal_access_key\" \\\n  -H \"X-Company-ID: your_company_id\" \\\n  -H \"Content-Type: application/json\"\n```\n\nOr using the `X-API-Key` header:\n\n```bash\ncurl -X GET \"https://api.example.com/api/v0/agents\" \\\n  -H \"X-API-Key: pak_your_personal_access_key\" \\\n  -H \"X-Company-ID: your_company_id\" \\\n  -H \"Content-Type: application/json\"\n```\n\nYou can also pass the company ID as a query parameter:\n\n```bash\ncurl -X GET \"https://api.example.com/api/v0/agents?companyId=your_company_id\" \\\n  -H \"Authorization: Bearer pak_your_personal_access_key\" \\\n  -H \"Content-Type: application/json\"\n```\n\n**Finding Your Company ID:**\n\nYour company ID can be found in the dashboard URL when viewing a company, or via the Settings page.\n\n---\n\n### Which Key Type Should I Use?\n\n| Use Case | Recommended Key Type |\n|----------|---------------------|\n| Single company integration | Company API Key |\n| Multi-company dashboard | Personal Access Key |\n| CI/CD pipelines | Company API Key |\n| Personal automation scripts | Personal Access Key |\n| Third-party app integration | Company API Key |\n\n---\n\n## Response Format\n\nAll responses are returned in JSON format. Successful responses include the requested data:\n\n```json\n{\n  \"id\": \"abc123\",\n  \"name\": \"My Agent\",\n  \"created\": \"2024-01-15T10:30:00Z\"\n}\n```\n\nError responses follow a consistent structure:\n\n```json\n{\n  \"error\": \"Description of what went wrong\"\n}\n```\n\n## HTTP Status Codes\n\n| Code | Description |\n|------|-------------|\n| 200 | Success |\n| 201 | Created |\n| 400 | Bad Request - Invalid parameters |\n| 401 | Unauthorized - Invalid or missing API key |\n| 403 | Forbidden - Insufficient permissions |\n| 404 | Not Found - Resource doesn't exist |\n| 429 | Too Many Requests - Rate limit exceeded |\n| 500 | Internal Server Error |\n\n## Pagination\n\nList endpoints support pagination using `page` and `pageSize` parameters:\n\n```\nGET /api/v0/agents?page=1&pageSize=20\n```\n\nPaginated responses include:\n- `items`: Array of results\n- `total`: Total number of items\n- `pages`: Total number of pages\n- `hasNext`: Whether more pages exist\n\n## OpenAI Compatibility\n\nThe Chat API (`/api/v0/chat/completions`) is fully compatible with the OpenAI API specification.\n\n---\n\n## Anthropic Compatibility & Claude Code\n\nThe platform also exposes an **Anthropic Messages API-compatible** endpoint, so any Anthropic SDK \u2014 including **Claude Code** \u2014 can use the platform as its LLM provider. Requests are billed against your platform credits like any other API usage.\n\n### Endpoints\n\n| Endpoint | Description |\n|----------|-------------|\n| `POST /api/v0/claude/v1/messages` | Create a message (streaming and non-streaming, tool use supported) |\n| `POST /api/v0/claude/v1/messages/count_tokens` | Estimate token count for a request |\n| `GET /api/v0/claude/v1/models` | List available models |\n\nAuthentication works exactly like the rest of the API: send your API key as `Authorization: Bearer <key>` or `x-api-key: <key>`. Personal access keys (`pak_...`) also work but require the `X-Company-ID` header, which Claude Code cannot send by default \u2014 use a **Company API Key** for Claude Code.\n\n### Setting up Claude Code\n\n1. **Install Claude Code** (skip if already installed):\n\n```bash\n# macOS / Linux / WSL \u2014 native installer\ncurl -fsSL https://claude.ai/install.sh | bash\n\n# Or via npm (requires Node.js 18+)\nnpm install -g @anthropic-ai/claude-code\n```\n\nOn Windows (PowerShell):\n\n```powershell\nirm https://claude.ai/install.ps1 | iex\n```\n\nVerify the install with `claude --version`. See the official docs at https://code.claude.com/docs for more install options.\n\n2. **Get a Company API Key**: Dashboard \u2192 **Integrations** \u2192 **API Keys** \u2192 **Generate New Key**.\n\n3. **Configure Claude Code.** Either export environment variables in your shell:\n\n```bash\nexport ANTHROPIC_BASE_URL=\"https://api.example.com/api/v0/claude\"\nexport ANTHROPIC_AUTH_TOKEN=\"YOUR_COMPANY_API_KEY\"\nclaude\n```\n\nOr persist the settings in `~/.claude/settings.json` (applies to all projects) or `.claude/settings.local.json` in a project. Set the model variables to any platform model names \u2014 for example:\n\n```json\n{\n  \"env\": {\n    \"ANTHROPIC_BASE_URL\": \"https://api.example.com/api/v0/claude\",\n    \"ANTHROPIC_AUTH_TOKEN\": \"YOUR_COMPANY_API_KEY\",\n    \"ANTHROPIC_MODEL\": \"qwen3.8-max\",\n    \"ANTHROPIC_DEFAULT_OPUS_MODEL\": \"kimi-k3\",\n    \"ANTHROPIC_DEFAULT_SONNET_MODEL\": \"qwen3.8-max\",\n    \"ANTHROPIC_DEFAULT_HAIKU_MODEL\": \"glm-5.3-flash\"\n  }\n}\n```\n\n4. **Verify** with `/status` inside Claude Code \u2014 it should show your custom base URL \u2014 or test the endpoint directly:\n\n```bash\ncurl -X POST \"https://api.example.com/api/v0/claude/v1/messages\" \\\n  -H \"Authorization: Bearer YOUR_COMPANY_API_KEY\" \\\n  -H \"anthropic-version: 2023-06-01\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"model\": \"qwen3.8-max\", \"max_tokens\": 64, \"messages\": [{\"role\": \"user\", \"content\": \"Hello\"}]}'\n```\n\n### Model names\n\nThe `model` field accepts any model name from `GET /api/v0/models` \u2014 any provider, not just Anthropic \u2014 so you can run Claude Code on any model the platform offers. When Claude Code sends its default Anthropic model ids (e.g. `claude-sonnet-4-5-20250929`), they are routed by tier to platform models: opus-class requests run on the platform's highest-capability model, sonnet-class on the balanced default, and haiku-class (background tasks) on the fastest low-cost model. Set `ANTHROPIC_MODEL` and the `ANTHROPIC_DEFAULT_*_MODEL` variables to exact platform model names for full control over routing.\n\nOptionally set `CLAUDE_CODE_ENABLE_GATEWAY_MODEL_DISCOVERY=1` so Claude Code lists the platform's models in its `/model` picker.\n\n### Notes and limitations\n\n- **Streaming** is fully supported (Anthropic SSE event format with keep-alive pings).\n- **Tool use** is supported: Claude Code's client-side tools (file edits, bash, etc.) are forwarded to the model and executed locally by Claude Code \u2014 never on the platform's servers.\n- Server-side Anthropic tools (web search, code execution), extended thinking blocks, and prompt caching directives are accepted but ignored.\n- Usage is billed per request based on real token counts and appears in your usage dashboard under the chat feature.\n\n### Using the Anthropic SDK directly\n\n```python\nimport anthropic\n\nclient = anthropic.Anthropic(\n    base_url=\"https://api.example.com/api/v0/claude\",\n    auth_token=\"YOUR_COMPANY_API_KEY\",\n)\n\nresponse = client.messages.create(\n    model=\"kimi-k3\",\n    max_tokens=1024,\n    messages=[{\"role\": \"user\", \"content\": \"Hello\"}],\n)\nprint(response.content[0].text)\n```\n\n---\n\n## MCP (Model Context Protocol) Integration\n\nThe platform provides an MCP server that allows AI assistants like Claude Desktop, Cursor, Windsurf, and other MCP-compatible tools to interact with the full platform API.\n\n### What is MCP?\n\nModel Context Protocol (MCP) is an open standard that allows AI assistants to securely connect to external tools and data sources. With MCP, your AI assistant can:\n\n- Browse and manage your AI agents\n- Create and monitor outreach sequences\n- Search your knowledge base documents\n- Generate AI content, images, audio, and video\n- Execute browser automation tasks\n- And access every other platform feature\n\n### MCP Server URL\n\n```\nhttps://api.example.com/api/v0/mcp\n```\n\nThis endpoint implements the **MCP Streamable HTTP Transport** (JSON-RPC 2.0) and is compatible with `mcp-remote` and other MCP clients.\n\n### Available Tools\n\nThe MCP server provides 3 tools that give access to the entire platform API:\n\n| Tool | Description |\n|------|-------------|\n| `platform_list_capabilities` | Browse available API endpoints by category (Agents, Sequences, Lists, Documents, etc.) |\n| `platform_get_action_details` | Get the full specification for an endpoint including required parameters |\n| `platform_execute_action` | Execute any API endpoint with automatic authentication |\n\n### Connecting Claude Desktop\n\n1. Open your Claude Desktop configuration file:\n   - **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`\n   - **Windows**: `%APPDATA%\\Claude\\claude_desktop_config.json`\n\n2. Add the MCP server configuration:\n\n```json\n{\n  \"mcpServers\": {\n    \"platform\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"mcp-remote\", \"https://api.example.com/api/v0/mcp\"],\n      \"env\": {\n        \"API_KEY\": \"your_api_key_here\"\n      }\n    }\n  }\n}\n```\n\n3. Restart Claude Desktop\n\n4. You can now ask Claude to interact with your platform data, for example:\n   - \"List my AI agents\"\n   - \"Show me my active sequences\"\n   - \"Create a new email sequence for cold outreach\"\n   - \"Search my documents for pricing information\"\n\n### Connecting Cursor / Windsurf\n\n1. Open Settings and navigate to the MCP section\n\n2. Add a new MCP server with:\n   - **URL**: `https://api.example.com/api/v0/mcp`\n   - **Authentication**: Bearer token with your API key\n\n3. The platform tools will now be available in your AI assistant\n\n### Connecting via mcp-remote (Generic)\n\nFor any MCP-compatible client, you can use the `mcp-remote` package:\n\n```bash\nnpx mcp-remote https://api.example.com/api/v0/mcp --header \"Authorization: Bearer YOUR_API_KEY\"\n```\n\n### Authentication for MCP\n\nMCP requests use the same authentication as the REST API:\n\n**Using Company API Key:**\n```\nAuthorization: Bearer YOUR_COMPANY_API_KEY\n```\n\n**Using Personal Access Key:**\n```\nAuthorization: Bearer pak_your_personal_access_key\nX-Company-ID: your_company_id\n```\n\n### Example MCP Interactions\n\n**List available capabilities:**\n```json\n{\n  \"name\": \"platform_list_capabilities\",\n  \"arguments\": {\n    \"category\": \"Sequences\"\n  }\n}\n```\n\n**Get action details:**\n```json\n{\n  \"name\": \"platform_get_action_details\",\n  \"arguments\": {\n    \"operationId\": \"sequences_saveSequence\"\n  }\n}\n```\n\n**Execute an action:**\n```json\n{\n  \"name\": \"platform_execute_action\",\n  \"arguments\": {\n    \"operationId\": \"agents_listAgents\"\n  }\n}\n```\n\n### MCP Endpoints\n\n| Endpoint | Method | Description |\n|----------|--------|-------------|\n| `/api/v0/mcp/info` | GET | Get MCP server information and capabilities |\n| `/api/v0/mcp/tools/list` | GET | List all available MCP tools |\n| `/api/v0/mcp/tools/call` | POST | Execute an MCP tool call |\n"
+    "description": "\n# Introduction\n\nWelcome to the API. This API provides programmatic access to all platform features including AI agents, smart lists, documents, sequences, and media generation.\n\n## Authentication\n\nThe API supports two types of authentication:\n\n1. **Company API Keys** - Scoped to a specific company\n2. **Personal Access Keys** - User-level keys that work across all your companies\n\n---\n\n### Option 1: Company API Key\n\nCompany API keys are tied to a specific company. Use this when you only need to access one company.\n\n**Getting a Company API Key:**\n\n1. Log in to your dashboard\n2. Navigate to **Integrations** page\n3. Find the **API Keys** section and click **Generate New Key**\n4. Copy and securely store your API key (it won't be shown again)\n\n**Usage:**\n\nInclude your API key in the `X-API-Key` header:\n\n```bash\ncurl -X GET \"https://api.example.com/api/v0/agents\" \\\n  -H \"X-API-Key: YOUR_COMPANY_API_KEY\" \\\n  -H \"Content-Type: application/json\"\n```\n\nOr use the `Authorization` header (OpenAI-compatible):\n\n```bash\ncurl -X GET \"https://api.example.com/api/v0/agents\" \\\n  -H \"Authorization: Bearer YOUR_COMPANY_API_KEY\" \\\n  -H \"Content-Type: application/json\"\n```\n\n---\n\n### Option 2: Personal Access Key\n\nPersonal access keys are tied to your user account and can access any company you belong to. Use this when you need to access multiple companies or build integrations that work across companies.\n\n**Getting a Personal Access Key:**\n\n1. Log in to your dashboard\n2. Click on your avatar/profile icon and go to **Profile**\n3. Find the **Personal Access Keys** section\n4. Click **Create New Key**\n5. Give it a name and optionally set an expiration date\n6. Copy and securely store your key (it won't be shown again)\n\n**Usage:**\n\nPersonal access keys start with `pak_` and **require** you to specify which company to access using the `X-Company-ID` header:\n\n```bash\ncurl -X GET \"https://api.example.com/api/v0/agents\" \\\n  -H \"Authorization: Bearer pak_your_personal_access_key\" \\\n  -H \"X-Company-ID: your_company_id\" \\\n  -H \"Content-Type: application/json\"\n```\n\nOr using the `X-API-Key` header:\n\n```bash\ncurl -X GET \"https://api.example.com/api/v0/agents\" \\\n  -H \"X-API-Key: pak_your_personal_access_key\" \\\n  -H \"X-Company-ID: your_company_id\" \\\n  -H \"Content-Type: application/json\"\n```\n\nYou can also pass the company ID as a query parameter:\n\n```bash\ncurl -X GET \"https://api.example.com/api/v0/agents?companyId=your_company_id\" \\\n  -H \"Authorization: Bearer pak_your_personal_access_key\" \\\n  -H \"Content-Type: application/json\"\n```\n\n**Finding Your Company ID:**\n\nYour company ID can be found in the dashboard URL when viewing a company, or via the Settings page.\n\n---\n\n### Which Key Type Should I Use?\n\n| Use Case | Recommended Key Type |\n|----------|---------------------|\n| Single company integration | Company API Key |\n| Multi-company dashboard | Personal Access Key |\n| CI/CD pipelines | Company API Key |\n| Personal automation scripts | Personal Access Key |\n| Third-party app integration | Company API Key |\n\n---\n\n## Response Format\n\nAll responses are returned in JSON format. Successful responses include the requested data:\n\n```json\n{\n  \"id\": \"abc123\",\n  \"name\": \"My Agent\",\n  \"created\": \"2024-01-15T10:30:00Z\"\n}\n```\n\nError responses follow a consistent structure:\n\n```json\n{\n  \"error\": \"Description of what went wrong\"\n}\n```\n\n## HTTP Status Codes\n\n| Code | Description |\n|------|-------------|\n| 200 | Success |\n| 201 | Created |\n| 400 | Bad Request - Invalid parameters |\n| 401 | Unauthorized - Invalid or missing API key |\n| 403 | Forbidden - Insufficient permissions |\n| 404 | Not Found - Resource doesn't exist |\n| 429 | Too Many Requests - Rate limit exceeded |\n| 500 | Internal Server Error |\n\n## Pagination\n\nList endpoints support pagination using `page` and `pageSize` parameters:\n\n```\nGET /api/v0/agents?page=1&pageSize=20\n```\n\nPaginated responses include:\n- `items`: Array of results\n- `total`: Total number of items\n- `pages`: Total number of pages\n- `hasNext`: Whether more pages exist\n\n## OpenAI Compatibility\n\nThe Chat API (`/api/v0/chat/completions`) is fully compatible with the OpenAI API specification.\n\n---\n\n## Anthropic Compatibility & Claude Code\n\nThe platform also exposes an **Anthropic Messages API-compatible** endpoint, so any Anthropic SDK \u2014 including **Claude Code** \u2014 can use the platform as its LLM provider. Requests are billed against your platform credits like any other API usage.\n\n### Endpoints\n\n| Endpoint | Description |\n|----------|-------------|\n| `POST /api/v0/claude/v1/messages` | Create a message (streaming and non-streaming, tool use supported) |\n| `POST /api/v0/claude/v1/messages/count_tokens` | Estimate token count for a request |\n| `GET /api/v0/claude/v1/models` | List available models |\n\nAuthentication works exactly like the rest of the API: send your API key as `Authorization: Bearer <key>` or `x-api-key: <key>`. Personal access keys (`pak_...`) also work but require the `X-Company-ID` header, which Claude Code cannot send by default \u2014 use a **Company API Key** for Claude Code.\n\n### Setting up Claude Code\n\n1. **Install Claude Code** (skip if already installed):\n\n```bash\n# macOS / Linux / WSL \u2014 native installer\ncurl -fsSL https://claude.ai/install.sh | bash\n\n# Or via npm (requires Node.js 18+)\nnpm install -g @anthropic-ai/claude-code\n```\n\nOn Windows (PowerShell):\n\n```powershell\nirm https://claude.ai/install.ps1 | iex\n```\n\nVerify the install with `claude --version`. See the official docs at https://code.claude.com/docs for more install options.\n\n2. **Get a Company API Key**: Dashboard \u2192 **Integrations** \u2192 **API Keys** \u2192 **Generate New Key**.\n\n3. **Configure Claude Code.** Either export environment variables in your shell:\n\n```bash\nexport ANTHROPIC_BASE_URL=\"https://api.example.com/api/v0/claude\"\nexport ANTHROPIC_AUTH_TOKEN=\"YOUR_COMPANY_API_KEY\"\nclaude\n```\n\nOr persist the settings in `~/.claude/settings.json` (applies to all projects) or `.claude/settings.local.json` in a project. Set the model variables to any platform model names \u2014 for example:\n\n```json\n{\n  \"env\": {\n    \"ANTHROPIC_BASE_URL\": \"https://api.example.com/api/v0/claude\",\n    \"ANTHROPIC_AUTH_TOKEN\": \"YOUR_COMPANY_API_KEY\",\n    \"ANTHROPIC_MODEL\": \"qwen3.8-max\",\n    \"ANTHROPIC_DEFAULT_OPUS_MODEL\": \"kimi-k3\",\n    \"ANTHROPIC_DEFAULT_SONNET_MODEL\": \"qwen3.8-max\",\n    \"ANTHROPIC_DEFAULT_HAIKU_MODEL\": \"deepseek-v4.1-flash\"\n  }\n}\n```\n\n4. **Verify** with `/status` inside Claude Code \u2014 it should show your custom base URL \u2014 or test the endpoint directly:\n\n```bash\ncurl -X POST \"https://api.example.com/api/v0/claude/v1/messages\" \\\n  -H \"Authorization: Bearer YOUR_COMPANY_API_KEY\" \\\n  -H \"anthropic-version: 2023-06-01\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"model\": \"qwen3.8-max\", \"max_tokens\": 64, \"messages\": [{\"role\": \"user\", \"content\": \"Hello\"}]}'\n```\n\n### Model names\n\nThe `model` field accepts any model name from `GET /api/v0/models` \u2014 any provider, not just Anthropic \u2014 so you can run Claude Code on any model the platform offers. When Claude Code sends its default Anthropic model ids (e.g. `claude-sonnet-4-5-20250929`), they are routed by tier to platform models: opus-class requests run on the platform's highest-capability model, sonnet-class on the balanced default, and haiku-class (background tasks) on the fastest low-cost model. Set `ANTHROPIC_MODEL` and the `ANTHROPIC_DEFAULT_*_MODEL` variables to exact platform model names for full control over routing.\n\nOptionally set `CLAUDE_CODE_ENABLE_GATEWAY_MODEL_DISCOVERY=1` so Claude Code lists the platform's models in its `/model` picker.\n\n### Notes and limitations\n\n- **Streaming** is fully supported (Anthropic SSE event format with keep-alive pings).\n- **Tool use** is supported: Claude Code's client-side tools (file edits, bash, etc.) are forwarded to the model and executed locally by Claude Code \u2014 never on the platform's servers.\n- Server-side Anthropic tools (web search, code execution), extended thinking blocks, and prompt caching directives are accepted but ignored.\n- Usage is billed per request based on real token counts and appears in your usage dashboard under the chat feature.\n\n### Using the Anthropic SDK directly\n\n```python\nimport anthropic\n\nclient = anthropic.Anthropic(\n    base_url=\"https://api.example.com/api/v0/claude\",\n    auth_token=\"YOUR_COMPANY_API_KEY\",\n)\n\nresponse = client.messages.create(\n    model=\"kimi-k3\",\n    max_tokens=1024,\n    messages=[{\"role\": \"user\", \"content\": \"Hello\"}],\n)\nprint(response.content[0].text)\n```\n\n---\n\n## MCP (Model Context Protocol) Integration\n\nThe platform provides an MCP server that allows AI assistants like Claude Desktop, Cursor, Windsurf, and other MCP-compatible tools to interact with the full platform API.\n\n### What is MCP?\n\nModel Context Protocol (MCP) is an open standard that allows AI assistants to securely connect to external tools and data sources. With MCP, your AI assistant can:\n\n- Browse and manage your AI agents\n- Create and monitor outreach sequences\n- Search your knowledge base documents\n- Generate AI content, images, audio, and video\n- Execute browser automation tasks\n- And access every other platform feature\n\n### MCP Server URL\n\n```\nhttps://api.example.com/api/v0/mcp\n```\n\nThis endpoint implements the **MCP Streamable HTTP Transport** (JSON-RPC 2.0) and is compatible with `mcp-remote` and other MCP clients.\n\n### Available Tools\n\nThe MCP server provides 3 tools that give access to the entire platform API:\n\n| Tool | Description |\n|------|-------------|\n| `platform_list_capabilities` | Browse available API endpoints by category (Agents, Sequences, Lists, Documents, etc.) |\n| `platform_get_action_details` | Get the full specification for an endpoint including required parameters |\n| `platform_execute_action` | Execute any API endpoint with automatic authentication |\n\n### Connecting Claude Desktop\n\n1. Open your Claude Desktop configuration file:\n   - **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`\n   - **Windows**: `%APPDATA%\\Claude\\claude_desktop_config.json`\n\n2. Add the MCP server configuration:\n\n```json\n{\n  \"mcpServers\": {\n    \"platform\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"mcp-remote\", \"https://api.example.com/api/v0/mcp\"],\n      \"env\": {\n        \"API_KEY\": \"your_api_key_here\"\n      }\n    }\n  }\n}\n```\n\n3. Restart Claude Desktop\n\n4. You can now ask Claude to interact with your platform data, for example:\n   - \"List my AI agents\"\n   - \"Show me my active sequences\"\n   - \"Create a new email sequence for cold outreach\"\n   - \"Search my documents for pricing information\"\n\n### Connecting Cursor / Windsurf\n\n1. Open Settings and navigate to the MCP section\n\n2. Add a new MCP server with:\n   - **URL**: `https://api.example.com/api/v0/mcp`\n   - **Authentication**: Bearer token with your API key\n\n3. The platform tools will now be available in your AI assistant\n\n### Connecting via mcp-remote (Generic)\n\nFor any MCP-compatible client, you can use the `mcp-remote` package:\n\n```bash\nnpx mcp-remote https://api.example.com/api/v0/mcp --header \"Authorization: Bearer YOUR_API_KEY\"\n```\n\n### Authentication for MCP\n\nMCP requests use the same authentication as the REST API:\n\n**Using Company API Key:**\n```\nAuthorization: Bearer YOUR_COMPANY_API_KEY\n```\n\n**Using Personal Access Key:**\n```\nAuthorization: Bearer pak_your_personal_access_key\nX-Company-ID: your_company_id\n```\n\n### Example MCP Interactions\n\n**List available capabilities:**\n```json\n{\n  \"name\": \"platform_list_capabilities\",\n  \"arguments\": {\n    \"category\": \"Sequences\"\n  }\n}\n```\n\n**Get action details:**\n```json\n{\n  \"name\": \"platform_get_action_details\",\n  \"arguments\": {\n    \"operationId\": \"sequences_saveSequence\"\n  }\n}\n```\n\n**Execute an action:**\n```json\n{\n  \"name\": \"platform_execute_action\",\n  \"arguments\": {\n    \"operationId\": \"agents_listAgents\"\n  }\n}\n```\n\n### MCP Endpoints\n\n| Endpoint | Method | Description |\n|----------|--------|-------------|\n| `/api/v0/mcp/info` | GET | Get MCP server information and capabilities |\n| `/api/v0/mcp/tools/list` | GET | List all available MCP tools |\n| `/api/v0/mcp/tools/call` | POST | Execute an MCP tool call |\n"
   },
   "servers": [
     {
@@ -2046,7 +2046,7 @@
         "operationId": "documents_getDocumentContents",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -2054,7 +2054,7 @@
             }
           },
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -2113,7 +2113,7 @@
         "operationId": "documents_getDocument",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -2121,7 +2121,7 @@
             }
           },
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -4263,7 +4263,7 @@
         "operationId": "keys_getApiKey",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "name",
             "in": "path",
             "required": true,
             "schema": {
@@ -4271,7 +4271,7 @@
             }
           },
           {
-            "name": "name",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -9141,7 +9141,7 @@
       }
     },
     "/api/v0/projects/{project_id}/files/{file_id}/export": {
-      "get": {
+      "post": {
         "tags": [
           "Projects"
         ],
@@ -9259,7 +9259,7 @@
           "description": "POST exports current editor content without saving; GET exports the saved file"
         }
       },
-      "post": {
+      "get": {
         "tags": [
           "Projects"
         ],
@@ -9983,7 +9983,7 @@
         "operationId": "memories_getMemory",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -9991,7 +9991,7 @@
             }
           },
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10089,7 +10089,7 @@
         "operationId": "memories_updateMemoryRoute",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10097,7 +10097,7 @@
             }
           },
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10225,7 +10225,7 @@
         "operationId": "memories_deleteMemoryRoute",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10233,7 +10233,7 @@
             }
           },
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10284,7 +10284,7 @@
         "operationId": "memories_toggleMemoryActiveRoute",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10292,7 +10292,7 @@
             }
           },
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27085,7 +27085,7 @@
         "operationId": "sequences_getSequenceMemberTimeline",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27093,7 +27093,7 @@
             }
           },
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27491,7 +27491,7 @@
         "operationId": "sequences_triggerSequenceMember",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27499,7 +27499,7 @@
             }
           },
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27567,7 +27567,7 @@
         "operationId": "sequences_removeSequenceMember",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27575,7 +27575,7 @@
             }
           },
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28367,7 +28367,7 @@
         "operationId": "sequences_editSequenceExecution",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28375,7 +28375,7 @@
             }
           },
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28464,7 +28464,7 @@
         "operationId": "sequences_previewSequenceExecution",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28472,7 +28472,7 @@
             }
           },
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30318,7 +30318,7 @@
         "operationId": "sequences_getMemberProfile",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "memberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30326,7 +30326,7 @@
             }
           },
           {
-            "name": "memberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -32392,7 +32392,7 @@
         "operationId": "people_updatePersonActivity",
         "parameters": [
           {
-            "name": "personId",
+            "name": "activityId",
             "in": "path",
             "required": true,
             "schema": {
@@ -32400,7 +32400,7 @@
             }
           },
           {
-            "name": "activityId",
+            "name": "personId",
             "in": "path",
             "required": true,
             "schema": {
@@ -32548,7 +32548,7 @@
         "operationId": "people_deletePersonActivity",
         "parameters": [
           {
-            "name": "personId",
+            "name": "activityId",
             "in": "path",
             "required": true,
             "schema": {
@@ -32556,7 +32556,7 @@
             }
           },
           {
-            "name": "activityId",
+            "name": "personId",
             "in": "path",
             "required": true,
             "schema": {
@@ -72103,7 +72103,7 @@
         "operationId": "marketing_campaigns_restoreCampaignVersion",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -72111,7 +72111,7 @@
             }
           },
           {
-            "name": "versionId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -73584,7 +73584,7 @@
         "operationId": "marketing_campaigns_deleteCampaignRecipient",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "recipientId",
             "in": "path",
             "required": true,
             "schema": {
@@ -73592,7 +73592,7 @@
             }
           },
           {
-            "name": "recipientId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -76129,7 +76129,7 @@
         "operationId": "marketing_campaigns_restoreTemplateVersion",
         "parameters": [
           {
-            "name": "templateId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -76137,7 +76137,7 @@
             }
           },
           {
-            "name": "versionId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -77253,7 +77253,7 @@
         "operationId": "site_builder_apiWebsiteBranchDiff",
         "parameters": [
           {
-            "name": "websiteId",
+            "name": "branch",
             "in": "path",
             "required": true,
             "schema": {
@@ -77261,7 +77261,7 @@
             }
           },
           {
-            "name": "branch",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
