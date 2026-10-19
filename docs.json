@@ -254,10 +254,13 @@
             "group": "Canvas",
             "expanded": false,
             "pages": [
+              "GET /api/v0/canvas/templates",
               "GET /api/v0/stock-music/search",
               "GET /api/v0/stock-videos/search",
               "POST /api/v0/audio/music",
               "POST /api/v0/canvas",
+              "POST /api/v0/canvas/templates/preview",
+              "POST /api/v0/canvas/templates/render",
               "POST /api/v0/stock-music/import"
             ]
           },

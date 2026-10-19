@@ -4840,6 +4840,27 @@
                     "type": "string",
                     "description": "Greeting shown when a new chat starts"
                   },
+                  "starterPrompts": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "title": {
+                          "type": "string",
+                          "description": "Short playbook title shown on the card"
+                        },
+                        "prompt": {
+                          "type": "string",
+                          "description": "Message sent when the card is clicked"
+                        }
+                      },
+                      "required": [
+                        "title",
+                        "prompt"
+                      ]
+                    },
+                    "description": "Clickable playbooks shown when a new chat starts"
+                  },
                   "tags": {
                     "type": "array",
                     "items": {
@@ -9983,7 +10004,7 @@
         "operationId": "memories_getMemory",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -9991,7 +10012,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10089,7 +10110,7 @@
         "operationId": "memories_updateMemoryRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10097,7 +10118,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10225,7 +10246,7 @@
         "operationId": "memories_deleteMemoryRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10233,7 +10254,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10284,7 +10305,7 @@
         "operationId": "memories_toggleMemoryActiveRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10292,7 +10313,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18717,7 +18738,7 @@
         "operationId": "agents_checkConversationActivity",
         "parameters": [
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18725,7 +18746,7 @@
             }
           },
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18787,7 +18808,7 @@
         "operationId": "agents_getConversationDetails",
         "parameters": [
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18795,7 +18816,7 @@
             }
           },
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -32392,7 +32413,7 @@
         "operationId": "people_updatePersonActivity",
         "parameters": [
           {
-            "name": "personId",
+            "name": "activityId",
             "in": "path",
             "required": true,
             "schema": {
@@ -32400,7 +32421,7 @@
             }
           },
           {
-            "name": "activityId",
+            "name": "personId",
             "in": "path",
             "required": true,
             "schema": {
@@ -32548,7 +32569,7 @@
         "operationId": "people_deletePersonActivity",
         "parameters": [
           {
-            "name": "personId",
+            "name": "activityId",
             "in": "path",
             "required": true,
             "schema": {
@@ -32556,7 +32577,7 @@
             }
           },
           {
-            "name": "activityId",
+            "name": "personId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46512,7 +46533,7 @@
                   },
                   "brandKit": {
                     "type": "object",
-                    "description": "Brand kit data object with fields: id (optional for create), name (required), description, images (array of {url, key, width, height, fileSize, mimeType, type}), imageModels (array of preferred AI image generation models), imageStylePrompt (canvas style prompt: brand colors, typography, layout, mood), imageCreationMode (how content images are produced: ai_image or canvas), canvasTools (array of imagery tools the canvas agent may use: ai_images, stock_images; empty = typography only), templates (array of {id, url, name, description, width, height} for PNG overlay templates), and the landing-page/website assets: webArtifacts ({favicon, logo, images}), globalStyles (CSS), headScripts, brandGuidelines, landingPageId, isDefault"
+                    "description": "Brand kit data object with fields: id (optional for create), name (required), description, images (array of {url, key, width, height, fileSize, mimeType, type}), imageModels (array of preferred AI image generation models), imageStylePrompt (canvas style prompt: brand colors, typography, layout, mood), imageCreationMode (how content images are produced: ai_image, canvas, or template for locked canvas templates filled from the content \u2014 see GET /api/v0/canvas/templates), canvasTemplates (template mode: array of template ids content images may use; null = all), canvasTools (array of imagery tools the canvas agent or the Photo Headline template may use: ai_images, stock_images; empty = typography only), templates (array of {id, url, name, description, width, height} for PNG overlay templates), and the landing-page/website assets: webArtifacts ({favicon, logo, images}), globalStyles (CSS), headScripts, brandGuidelines, landingPageId, isDefault"
                   }
                 },
                 "required": [
@@ -51424,6 +51445,327 @@
         }
       }
     },
+    "/api/v0/canvas/templates": {
+      "get": {
+        "tags": [
+          "Canvas"
+        ],
+        "operationId": "canvas_listCanvasTemplates",
+        "parameters": [],
+        "responses": {
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Every locked canvas template with its slots",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "templates": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "description": "Template ID (templateId)"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "description": {
+                            "type": "string"
+                          },
+                          "bestFor": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            },
+                            "description": "Content this template fits"
+                          },
+                          "usesPhoto": {
+                            "type": "boolean",
+                            "description": "Whether the template has a photo media zone"
+                          },
+                          "slots": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "name": {
+                                  "type": "string",
+                                  "description": "Slot key used in the slots object"
+                                },
+                                "label": {
+                                  "type": "string",
+                                  "description": "Human-readable slot name"
+                                },
+                                "maxWords": {
+                                  "type": "integer",
+                                  "description": "Word limit; longer text is cut at a word boundary"
+                                },
+                                "required": {
+                                  "type": "boolean",
+                                  "description": "Whether the template needs this slot"
+                                },
+                                "description": {
+                                  "type": "string",
+                                  "description": "What belongs in the slot"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "List locked canvas templates",
+        "description": "Locked templates have fixed slot geometry for every format, auto-fitting\ntext, safe margins and contrast-checked brand colors. Pick the template\nwhose bestFor matches the content, then fill its slots via\nPOST /api/v0/canvas/templates/render; no HTML authoring is needed."
+      }
+    },
+    "/api/v0/canvas/templates/preview": {
+      "post": {
+        "tags": [
+          "Canvas"
+        ],
+        "operationId": "canvas_previewCanvasTemplate",
+        "parameters": [],
+        "responses": {
+          "400": {
+            "description": "Unknown template, bad size or brand kit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Canvas HTML with sample content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "html": {
+                      "type": "string",
+                      "description": "Complete canvas HTML filled with sample content"
+                    },
+                    "width": {
+                      "type": "integer"
+                    },
+                    "height": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Preview a canvas template",
+        "description": "Returns the template's HTML filled with sample content in a brand kit's\ncolors and logo. Free \u2014 nothing is rendered or saved.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company that owns brandKitId"
+                  },
+                  "templateId": {
+                    "type": "string",
+                    "description": "Template ID from GET /api/v0/canvas/templates"
+                  },
+                  "format": {
+                    "type": "string",
+                    "description": "Named canvas format (same values as POST /api/v0/canvas, e.g. 'square', 'portrait', 'story', 'landscape'); default 'portrait'. Ignored when width/height are given."
+                  },
+                  "width": {
+                    "type": "integer",
+                    "description": "Custom width in px; requires height"
+                  },
+                  "height": {
+                    "type": "integer",
+                    "description": "Custom height in px; requires width"
+                  },
+                  "brandKitId": {
+                    "type": "string",
+                    "description": "Brand kit whose colors and logo to preview with; defaults to the company's default brand kit"
+                  },
+                  "colorPalette": {
+                    "type": "object",
+                    "description": "Unsaved palette {primary, secondary, accent, background, surface, text} as #RRGGBB; overrides the brand kit palette"
+                  }
+                },
+                "required": [
+                  "templateId"
+                ],
+                "description": "Template to preview"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v0/canvas/templates/render": {
+      "post": {
+        "tags": [
+          "Canvas"
+        ],
+        "operationId": "canvas_renderCanvasTemplate",
+        "parameters": [],
+        "responses": {
+          "400": {
+            "description": "Unknown template, missing required slot, bad size or brand kit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials, no company access, or out of credits",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "The canvas could not be rendered \u2014 not charged",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "The rendered canvas with its public image URL",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "imageId": {
+                      "type": "string",
+                      "description": "ID of the saved image (still canvases only)"
+                    },
+                    "videoId": {
+                      "type": "string",
+                      "description": "ID of the saved video (animated canvases only)"
+                    },
+                    "url": {
+                      "type": "string",
+                      "description": "Permanent public URL of the rendered PNG, or of the recorded MP4 when animated"
+                    },
+                    "width": {
+                      "type": "integer",
+                      "description": "Rendered width in px"
+                    },
+                    "height": {
+                      "type": "integer",
+                      "description": "Rendered height in px"
+                    },
+                    "duration": {
+                      "type": "number",
+                      "description": "Video length in seconds (animated canvases only)"
+                    }
+                  },
+                  "description": "Rendered canvas"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Render a locked canvas template to a PNG.",
+        "description": "Renders a locked canvas template filled with your slot text and returns a permanent public PNG URL. The layout, type sizing, margins and contrast are fixed by the template, so the result always fits its format. Costs 0.1 credits per call. List templates and their slots with GET /api/v0/canvas/templates.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID whose credits are billed for the call"
+                  },
+                  "templateId": {
+                    "type": "string",
+                    "description": "Template ID from GET /api/v0/canvas/templates"
+                  },
+                  "slots": {
+                    "type": "object",
+                    "description": "Slot text keyed by slot name, e.g. {\"headline\": \"...\", \"supporting\": \"...\"}. Required slots must be present; text over a slot's word limit is cut."
+                  },
+                  "format": {
+                    "type": "string",
+                    "description": "Named canvas format (same values as POST /api/v0/canvas, e.g. 'square', 'portrait', 'story', 'landscape'); default 'portrait'. Ignored when width/height are given."
+                  },
+                  "width": {
+                    "type": "integer",
+                    "description": "Custom width in px (200-2160); requires height"
+                  },
+                  "height": {
+                    "type": "integer",
+                    "description": "Custom height in px (200-2160); requires width"
+                  },
+                  "brandKitId": {
+                    "type": "string",
+                    "description": "Brand kit whose color palette and logo style the template; defaults to the company's default brand kit"
+                  },
+                  "photoUrl": {
+                    "type": "string",
+                    "description": "Public https image URL for the Photo Headline media zone (e.g. a stock search fullUrl)"
+                  }
+                },
+                "required": [
+                  "companyId",
+                  "templateId",
+                  "slots"
+                ],
+                "description": "Template and slot text to render"
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v0/stock-videos/search": {
       "get": {
         "tags": [
@@ -56222,7 +56564,7 @@
         "operationId": "landing_pages_getLandingPageThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -56230,7 +56572,7 @@
             }
           },
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -56269,7 +56611,7 @@
         "operationId": "landing_pages_updateLandingPageThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -56277,7 +56619,7 @@
             }
           },
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -56355,7 +56697,7 @@
         "operationId": "landing_pages_deleteLandingPageThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -56363,7 +56705,7 @@
             }
           },
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -56404,7 +56746,7 @@
         "operationId": "landing_pages_stopLandingPageThreadRun",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -56412,7 +56754,7 @@
             }
           },
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -70138,7 +70480,7 @@
         "operationId": "seo_projectLighthouseSnapshotRoute",
         "parameters": [
           {
-            "name": "snapshotId",
+            "name": "projectId",
             "in": "path",
             "required": true,
             "schema": {
@@ -70146,7 +70488,7 @@
             }
           },
           {
-            "name": "projectId",
+            "name": "snapshotId",
             "in": "path",
             "required": true,
             "schema": {
@@ -72103,7 +72445,7 @@
         "operationId": "marketing_campaigns_restoreCampaignVersion",
         "parameters": [
           {
-            "name": "versionId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -72111,7 +72453,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -73584,7 +73926,7 @@
         "operationId": "marketing_campaigns_deleteCampaignRecipient",
         "parameters": [
           {
-            "name": "recipientId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -73592,7 +73934,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "recipientId",
             "in": "path",
             "required": true,
             "schema": {
@@ -74779,7 +75121,7 @@
         "operationId": "marketing_campaigns_getTemplateEmailBuilderThread",
         "parameters": [
           {
-            "name": "templateId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -74787,7 +75129,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -74846,7 +75188,7 @@
         "operationId": "marketing_campaigns_updateTemplateEmailBuilderThread",
         "parameters": [
           {
-            "name": "templateId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -74854,7 +75196,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -74942,7 +75284,7 @@
         "operationId": "marketing_campaigns_deleteTemplateEmailBuilderThread",
         "parameters": [
           {
-            "name": "templateId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -74950,7 +75292,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -75011,7 +75353,7 @@
         "operationId": "marketing_campaigns_stopTemplateEmailBuilderThreadRun",
         "parameters": [
           {
-            "name": "templateId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -75019,7 +75361,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -76129,7 +76471,7 @@
         "operationId": "marketing_campaigns_restoreTemplateVersion",
         "parameters": [
           {
-            "name": "versionId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -76137,7 +76479,7 @@
             }
           },
           {
-            "name": "templateId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
