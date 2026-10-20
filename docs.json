@@ -321,6 +321,7 @@
               "GET /api/v0/content/brand-voices/{voiceId}",
               "GET /api/v0/content/campaigns",
               "GET /api/v0/content/canvases",
+              "GET /api/v0/content/canvases/{canvasId}/media",
               "GET /api/v0/content/canvases/{canvas_id}",
               "GET /api/v0/content/canvases/{canvas_id}/threads",
               "GET /api/v0/content/canvases/{canvas_id}/threads/{thread_id}",
@@ -348,6 +349,7 @@
               "POST /api/v0/content/campaigns",
               "POST /api/v0/content/campaigns/{contentCampaignId}/trigger",
               "POST /api/v0/content/canvases",
+              "POST /api/v0/content/canvases/{canvasId}/media",
               "POST /api/v0/content/canvases/{canvas_id}/chat",
               "POST /api/v0/content/canvases/{canvas_id}/render",
               "POST /api/v0/content/canvases/{canvas_id}/render-video",
@@ -373,6 +375,7 @@
               "POST /api/v0/content/{contentId}/canvas",
               "POST /api/v0/content/{contentId}/publish",
               "POST /api/v0/content/{contentId}/select-hook",
+              "PUT /api/v0/content/canvases/{canvasId}/html",
               "PUT /api/v0/content/{contentId}/assignment-status",
               "PUT /api/v0/content/{contentId}/schedule",
               "PUT /api/v0/content/{contentId}/status"
