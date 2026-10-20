@@ -2046,7 +2046,7 @@
         "operationId": "documents_getDocumentContents",
         "parameters": [
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -2054,7 +2054,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -2113,7 +2113,7 @@
         "operationId": "documents_getDocument",
         "parameters": [
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -2121,7 +2121,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -7946,7 +7946,7 @@
         "operationId": "projects_getProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -7954,7 +7954,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8089,7 +8089,7 @@
         "operationId": "projects_updateProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8097,7 +8097,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8262,7 +8262,7 @@
         "operationId": "projects_deleteProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8270,7 +8270,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9162,14 +9162,14 @@
       }
     },
     "/api/v0/projects/{project_id}/files/{file_id}/export": {
-      "post": {
+      "get": {
         "tags": [
           "Projects"
         ],
         "operationId": "projects_exportProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9177,7 +9177,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9280,14 +9280,14 @@
           "description": "POST exports current editor content without saving; GET exports the saved file"
         }
       },
-      "get": {
+      "post": {
         "tags": [
           "Projects"
         ],
         "operationId": "projects_exportProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9295,7 +9295,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9407,7 +9407,7 @@
         "operationId": "projects_publishFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9415,7 +9415,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9562,7 +9562,7 @@
         "operationId": "projects_unpublishFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9570,7 +9570,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -10004,7 +10004,7 @@
         "operationId": "memories_getMemory",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10012,7 +10012,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10110,7 +10110,7 @@
         "operationId": "memories_updateMemoryRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10118,7 +10118,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10246,7 +10246,7 @@
         "operationId": "memories_deleteMemoryRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10254,7 +10254,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10305,7 +10305,7 @@
         "operationId": "memories_toggleMemoryActiveRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10313,7 +10313,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18738,7 +18738,7 @@
         "operationId": "agents_checkConversationActivity",
         "parameters": [
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18746,7 +18746,7 @@
             }
           },
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18808,7 +18808,7 @@
         "operationId": "agents_getConversationDetails",
         "parameters": [
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18816,7 +18816,7 @@
             }
           },
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22437,7 +22437,7 @@
         "operationId": "lists_deleteHeader",
         "parameters": [
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22445,7 +22445,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22511,7 +22511,7 @@
         "operationId": "lists_editHeader",
         "parameters": [
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22519,7 +22519,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26094,7 +26094,7 @@
         "operationId": "sequences_updateSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26102,7 +26102,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26386,7 +26386,7 @@
         "operationId": "sequences_deleteSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26394,7 +26394,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27120,7 +27120,7 @@
         "operationId": "sequences_getSequenceMemberTimeline",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27128,7 +27128,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27526,7 +27526,7 @@
         "operationId": "sequences_triggerSequenceMember",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27534,7 +27534,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27602,7 +27602,7 @@
         "operationId": "sequences_removeSequenceMember",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27610,7 +27610,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30205,7 +30205,7 @@
         "operationId": "sequences_testSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30213,7 +30213,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30267,7 +30267,7 @@
         "operationId": "sequences_sendTestEmail",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30275,7 +30275,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30353,7 +30353,7 @@
         "operationId": "sequences_getMemberProfile",
         "parameters": [
           {
-            "name": "memberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30361,7 +30361,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "memberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -43957,8 +43957,69 @@
               }
             }
           },
-          "502": {
-            "description": "The canvas could not be recorded \u2014 not charged",
+          "202": {
+            "description": "The queued (or already running) export job",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "videoId": {
+                      "type": "string",
+                      "description": "Video id of the export"
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "generating, completed or failed"
+                    },
+                    "videoUrl": {
+                      "type": "string",
+                      "description": "Public MP4 URL once completed"
+                    },
+                    "error": {
+                      "type": "string",
+                      "description": "Reason the export failed"
+                    }
+                  },
+                  "description": "Canvas MP4 export job"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Start recording the canvas's saved HTML to a permanent public MP4 in the background.",
+        "description": "Returns 202 with the export job; poll GET .../render-video until its status\nis completed (videoUrl) or failed (error). Charged at\nDATA_CREDIT_COST_CANVAS_VIDEO only when the recording succeeds. A second\nrequest while an export is running returns that job instead of a new one."
+      }
+    },
+    "/api/v0/content/canvases/{canvasId}/render-video": {
+      "get": {
+        "tags": [
+          "Content"
+        ],
+        "operationId": "content_getCanvasDesignVideoJob",
+        "parameters": [
+          {
+            "name": "canvasId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -43968,73 +44029,36 @@
             }
           },
           "200": {
-            "description": "Canvas with its recorded MP4 url",
+            "description": "The latest export job for the canvas (all fields null when none)",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "id": {
-                      "type": "string",
-                      "description": "Canvas ID"
-                    },
-                    "companyId": {
-                      "type": "string",
-                      "description": "Company ID"
-                    },
-                    "name": {
-                      "type": "string",
-                      "description": "Canvas name"
-                    },
-                    "width": {
-                      "type": "integer",
-                      "description": "Canvas width in pixels"
-                    },
-                    "height": {
-                      "type": "integer",
-                      "description": "Canvas height in pixels"
-                    },
-                    "format": {
-                      "type": "string",
-                      "description": "Named canvas format id, when the size came from one"
-                    },
-                    "htmlContent": {
-                      "type": "string",
-                      "description": "The standalone HTML document for the canvas"
-                    },
-                    "animated": {
-                      "type": "boolean",
-                      "description": "Whether the canvas is animated (exports a looping MP4 instead of a PNG)"
-                    },
-                    "videoDuration": {
-                      "type": "number",
-                      "description": "Loop length in seconds for animated canvases"
-                    },
-                    "imageId": {
-                      "type": "string",
-                      "description": "Images table id of the last render"
-                    },
-                    "imageUrl": {
-                      "type": "string",
-                      "description": "Public PNG URL of the last render"
-                    },
                     "videoId": {
                       "type": "string",
-                      "description": "Videos table id of the last recording (animated canvases)"
+                      "description": "Video id of the export"
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "generating, completed or failed"
                     },
                     "videoUrl": {
                       "type": "string",
-                      "description": "Public MP4 URL of the last recording (animated canvases)"
+                      "description": "Public MP4 URL once completed"
+                    },
+                    "error": {
+                      "type": "string",
+                      "description": "Reason the export failed"
                     }
                   },
-                  "description": "Canvas design"
+                  "description": "Canvas MP4 export job"
                 }
               }
             }
           }
         },
-        "summary": "Record the canvas's saved HTML to a permanent public looping MP4 (charged at DATA_CREDIT_COST_CANVAS_VIDEO).",
-        "description": "Seeks the design's CSS animation timeline frame by frame, so the canvas\nHTML must animate with CSS keyframes for the video to show any motion."
+        "summary": "Status of the canvas's latest MP4 export: generating, completed (videoUrl) or failed (error)."
       }
     },
     "/api/v0/content/canvases/{canvasId}/html": {
@@ -44311,6 +44335,22 @@
                           "duration": {
                             "type": "number",
                             "description": "Length in seconds"
+                          },
+                          "status": {
+                            "type": "string",
+                            "description": "processing, ready or failed"
+                          },
+                          "public": {
+                            "type": "boolean",
+                            "description": "False for a private video; placing it makes a public copy"
+                          },
+                          "fileSize": {
+                            "type": "integer",
+                            "description": "Size in bytes, when known"
+                          },
+                          "error": {
+                            "type": "string",
+                            "description": "Why processing failed"
                           }
                         },
                         "description": "An uploaded video or audio clip"
@@ -44329,7 +44369,7 @@
             }
           }
         },
-        "summary": "List the company's public videos or audio for the canvas timeline's media bin."
+        "summary": "List videos or audio for the canvas timeline's media bin (videos include the user's uploads still processing)."
       },
       "post": {
         "tags": [
@@ -44377,8 +44417,18 @@
               }
             }
           },
+          "413": {
+            "description": "File too large",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
           "200": {
-            "description": "The stored clip, ready to place on the timeline",
+            "description": "Audio: the stored clip (200). Video: a processing item (202) to poll",
             "content": {
               "application/json": {
                 "schema": {
@@ -44403,6 +44453,22 @@
                     "duration": {
                       "type": "number",
                       "description": "Length in seconds"
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "processing, ready or failed"
+                    },
+                    "public": {
+                      "type": "boolean",
+                      "description": "False for a private video; placing it makes a public copy"
+                    },
+                    "fileSize": {
+                      "type": "integer",
+                      "description": "Size in bytes, when known"
+                    },
+                    "error": {
+                      "type": "string",
+                      "description": "Why processing failed"
                     }
                   },
                   "description": "An uploaded video or audio clip"
@@ -44411,7 +44477,223 @@
             }
           }
         },
-        "summary": "Upload a video or audio file for the canvas timeline."
+        "summary": "Upload a video or audio file for the canvas timeline. Videos are processed in the background."
+      }
+    },
+    "/api/v0/content/canvases/{canvasId}/media/{videoId}": {
+      "get": {
+        "tags": [
+          "Content"
+        ],
+        "operationId": "content_getCanvasDesignMedia",
+        "parameters": [
+          {
+            "name": "canvasId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "videoId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Missing companyId",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "The video item with its processing status",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "kind": {
+                      "type": "string",
+                      "description": "video or audio"
+                    },
+                    "id": {
+                      "type": "string",
+                      "description": "Video or audio id"
+                    },
+                    "url": {
+                      "type": "string",
+                      "description": "Permanent public URL to use as the clip src"
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": "File name"
+                    },
+                    "duration": {
+                      "type": "number",
+                      "description": "Length in seconds"
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "processing, ready or failed"
+                    },
+                    "public": {
+                      "type": "boolean",
+                      "description": "False for a private video; placing it makes a public copy"
+                    },
+                    "fileSize": {
+                      "type": "integer",
+                      "description": "Size in bytes, when known"
+                    },
+                    "error": {
+                      "type": "string",
+                      "description": "Why processing failed"
+                    }
+                  },
+                  "description": "An uploaded video or audio clip"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Poll one timeline video (an upload's processing status)."
+      }
+    },
+    "/api/v0/content/canvases/{canvasId}/media/{videoId}/use": {
+      "post": {
+        "tags": [
+          "Content"
+        ],
+        "operationId": "content_useCanvasDesignMedia",
+        "parameters": [
+          {
+            "name": "canvasId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "videoId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Video not ready or unusable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "A public video to place on the timeline",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "kind": {
+                      "type": "string",
+                      "description": "video or audio"
+                    },
+                    "id": {
+                      "type": "string",
+                      "description": "Video or audio id"
+                    },
+                    "url": {
+                      "type": "string",
+                      "description": "Permanent public URL to use as the clip src"
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": "File name"
+                    },
+                    "duration": {
+                      "type": "number",
+                      "description": "Length in seconds"
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "processing, ready or failed"
+                    },
+                    "public": {
+                      "type": "boolean",
+                      "description": "False for a private video; placing it makes a public copy"
+                    },
+                    "fileSize": {
+                      "type": "integer",
+                      "description": "Size in bytes, when known"
+                    },
+                    "error": {
+                      "type": "string",
+                      "description": "Why processing failed"
+                    }
+                  },
+                  "description": "An uploaded video or audio clip"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Get a public video for the timeline: the video itself, or a public copy of a private one."
       }
     },
     "/api/v0/content/canvases/{canvas_id}/chat": {
@@ -56955,7 +57237,7 @@
         "operationId": "landing_pages_getLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -56963,7 +57245,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -57002,7 +57284,7 @@
         "operationId": "landing_pages_updateLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -57010,7 +57292,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -57088,7 +57370,7 @@
         "operationId": "landing_pages_deleteLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -57096,7 +57378,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -57137,7 +57419,7 @@
         "operationId": "landing_pages_stopLandingPageThreadRun",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -57145,7 +57427,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -70903,7 +71185,7 @@
         "operationId": "seo_projectLighthouseSnapshotRoute",
         "parameters": [
           {
-            "name": "snapshotId",
+            "name": "projectId",
             "in": "path",
             "required": true,
             "schema": {
@@ -70911,7 +71193,7 @@
             }
           },
           {
-            "name": "projectId",
+            "name": "snapshotId",
             "in": "path",
             "required": true,
             "schema": {
@@ -74349,7 +74631,7 @@
         "operationId": "marketing_campaigns_deleteCampaignRecipient",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "recipientId",
             "in": "path",
             "required": true,
             "schema": {
@@ -74357,7 +74639,7 @@
             }
           },
           {
-            "name": "recipientId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -75544,7 +75826,7 @@
         "operationId": "marketing_campaigns_getTemplateEmailBuilderThread",
         "parameters": [
           {
-            "name": "templateId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -75552,7 +75834,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -75611,7 +75893,7 @@
         "operationId": "marketing_campaigns_updateTemplateEmailBuilderThread",
         "parameters": [
           {
-            "name": "templateId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -75619,7 +75901,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -75707,7 +75989,7 @@
         "operationId": "marketing_campaigns_deleteTemplateEmailBuilderThread",
         "parameters": [
           {
-            "name": "templateId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -75715,7 +75997,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -75776,7 +76058,7 @@
         "operationId": "marketing_campaigns_stopTemplateEmailBuilderThreadRun",
         "parameters": [
           {
-            "name": "templateId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -75784,7 +76066,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -77374,10 +77656,15 @@
                       "type": "string"
                     },
                     "content": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "File content; empty for a file held in object storage"
                     },
                     "metadata": {
                       "type": "object"
+                    },
+                    "storage": {
+                      "type": "object",
+                      "description": "Present for a file held in object storage: {type, bytes, contentType, sha256}"
                     }
                   }
                 }
@@ -77479,7 +77766,7 @@
                   },
                   "content": {
                     "type": "string",
-                    "description": "Full new file content"
+                    "description": "Full new file content. For binary files (images, fonts, documents) this must be base64; to add an image or document use the upload-asset endpoint with sourceUrl instead."
                   },
                   "metadata": {
                     "type": "object",
@@ -77907,6 +78194,148 @@
         },
         "summary": "Lighthouse-score a published page",
         "description": "Returns performance, accessibility, best-practices and SEO scores plus Core\nWeb Vitals for one live page. Only works after the site is published; for a\npre-publish check use the seo-audit endpoint instead."
+      }
+    },
+    "/api/v0/websites/{websiteId}/assets": {
+      "post": {
+        "tags": [
+          "Websites"
+        ],
+        "operationId": "site_builder_apiUploadWebsiteAsset",
+        "parameters": [
+          {
+            "name": "websiteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "invalid source/path/branch, unsupported type, too large, or branch is main",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "No company access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Website not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "The stored file",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "path": {
+                      "type": "string",
+                      "description": "Saved path \u2014 reference the file by this path"
+                    },
+                    "storage": {
+                      "type": "string",
+                      "description": "'inline' (small file kept in the project) or 'object' (object storage)"
+                    },
+                    "bytes": {
+                      "type": "integer",
+                      "description": "Stored size in bytes"
+                    },
+                    "contentType": {
+                      "type": "string"
+                    },
+                    "sha256": {
+                      "type": "string",
+                      "description": "Content hash (object-stored files)"
+                    },
+                    "width": {
+                      "type": "integer",
+                      "description": "Image width, for the <img width> attribute"
+                    },
+                    "height": {
+                      "type": "integer",
+                      "description": "Image height, for the <img height> attribute"
+                    },
+                    "optimized": {
+                      "type": "boolean",
+                      "description": "True when an image was downscaled/re-encoded"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Upload an image, document or media file onto a review branch",
+        "description": "Adds a binary file to the site: images (png, jpg, webp, gif, avif, ico),\ndocuments (pdf, doc/docx, xls/xlsx, ppt/pptx, zip), audio/video (mp4,\nwebm, mov, mp3, wav, ogg, m4a) and fonts. Pass sourceUrl to have the\nserver fetch a public URL (best for images), or contentBase64 for bytes\nyou already hold; multipart file uploads are also accepted. Images are\noptimized; documents download when linked. Up to 50MB. The branch is\nREQUIRED and must not be \"main\". Reference the file by the returned path.\nHTML, CSS, JS and SVG are source files \u2014 write those with the write-file\nendpoint.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID that owns the website"
+                  },
+                  "path": {
+                    "type": "string",
+                    "description": "Where the file lives in the site, e.g. /assets/hero.jpg or /assets/files/sales-sheet.pdf. A bare file name lands in /assets/ (documents in /assets/files/). Defaults to the file name from sourceUrl. Raster images are optimized to WebP, so /assets/hero.jpg may be saved as /assets/hero.webp \u2014 use the returned path in links and <img src>."
+                  },
+                  "sourceUrl": {
+                    "type": "string",
+                    "description": "Public http(s) URL to fetch the file from (preferred for images: no need to inline bytes). Private/internal addresses are refused. Send exactly one of sourceUrl or contentBase64."
+                  },
+                  "contentBase64": {
+                    "type": "string",
+                    "description": "The file bytes, base64-encoded (a data: URL prefix is accepted). Only for files you already hold locally; prefer sourceUrl."
+                  },
+                  "branch": {
+                    "type": "string",
+                    "description": "Review branch to read from or write to. Omit (or \"main\") to read the live site. To propose fixes, write files to a NEW branch name (e.g. \"seo-optimizer-2026-09-03\") \u2014 the branch is created on first write and is reviewed and approved by the owner. Writing to \"main\" is refused. Required here and must not be \"main\"."
+                  }
+                },
+                "required": [
+                  "companyId",
+                  "branch"
+                ],
+                "description": "Upload a website asset"
+              }
+            }
+          }
+        }
       }
     },
     "/api/v0/websites/{websiteId}/branches": {

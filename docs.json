@@ -322,6 +322,8 @@
               "GET /api/v0/content/campaigns",
               "GET /api/v0/content/canvases",
               "GET /api/v0/content/canvases/{canvasId}/media",
+              "GET /api/v0/content/canvases/{canvasId}/media/{videoId}",
+              "GET /api/v0/content/canvases/{canvasId}/render-video",
               "GET /api/v0/content/canvases/{canvas_id}",
               "GET /api/v0/content/canvases/{canvas_id}/threads",
               "GET /api/v0/content/canvases/{canvas_id}/threads/{thread_id}",
@@ -350,6 +352,7 @@
               "POST /api/v0/content/campaigns/{contentCampaignId}/trigger",
               "POST /api/v0/content/canvases",
               "POST /api/v0/content/canvases/{canvasId}/media",
+              "POST /api/v0/content/canvases/{canvasId}/media/{videoId}/use",
               "POST /api/v0/content/canvases/{canvas_id}/chat",
               "POST /api/v0/content/canvases/{canvas_id}/render",
               "POST /api/v0/content/canvases/{canvas_id}/render-video",
@@ -1057,6 +1060,7 @@
               "PATCH /api/v0/websites/entries/{entryId}",
               "POST /api/v0/websites/collections",
               "POST /api/v0/websites/entries",
+              "POST /api/v0/websites/{websiteId}/assets",
               "PUT /api/v0/websites/{websiteId}/file"
             ]
           }
