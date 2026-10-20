@@ -3257,7 +3257,18 @@
           "Documents"
         ],
         "operationId": "documents_searchDocumentsPost",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID."
+            },
+            "description": "Company ID."
+          }
+        ],
         "responses": {
           "400": {
             "description": "Query required",
@@ -3674,6 +3685,16 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID."
+            },
+            "description": "Company ID."
           }
         ],
         "responses": {
@@ -3796,6 +3817,16 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID."
+            },
+            "description": "Company ID."
           }
         ],
         "responses": {
@@ -3857,7 +3888,18 @@
           "Documents"
         ],
         "operationId": "documents_createDocumentApi",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID."
+            },
+            "description": "Company ID."
+          }
+        ],
         "responses": {
           "400": {
             "description": "Invalid request",
@@ -4263,7 +4305,7 @@
         "operationId": "keys_getApiKey",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "name",
             "in": "path",
             "required": true,
             "schema": {
@@ -4271,7 +4313,7 @@
             }
           },
           {
-            "name": "name",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -4742,6 +4784,16 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID."
+            },
+            "description": "Company ID."
           }
         ],
         "responses": {
@@ -4900,6 +4952,16 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID."
+            },
+            "description": "Company ID."
           }
         ],
         "responses": {
@@ -5588,6 +5650,10 @@
               "schema": {
                 "type": "object",
                 "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID."
+                  },
                   "employeeId": {
                     "type": "string",
                     "description": "ID of the employee to chat with"
@@ -5771,6 +5837,7 @@
                   }
                 },
                 "required": [
+                  "companyId",
                   "employeeId",
                   "message"
                 ],
@@ -5879,6 +5946,10 @@
               "schema": {
                 "type": "object",
                 "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID."
+                  },
                   "employeeId": {
                     "type": "string",
                     "description": "ID of the employee to chat with"
@@ -6062,6 +6133,7 @@
                   }
                 },
                 "required": [
+                  "companyId",
                   "employeeId",
                   "message"
                 ],
@@ -7946,7 +8018,7 @@
         "operationId": "projects_getProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -7954,7 +8026,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8089,7 +8161,7 @@
         "operationId": "projects_updateProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8097,7 +8169,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8262,7 +8334,7 @@
         "operationId": "projects_deleteProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8270,7 +8342,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9162,14 +9234,14 @@
       }
     },
     "/api/v0/projects/{project_id}/files/{file_id}/export": {
-      "post": {
+      "get": {
         "tags": [
           "Projects"
         ],
         "operationId": "projects_exportProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9177,7 +9249,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9280,14 +9352,14 @@
           "description": "POST exports current editor content without saving; GET exports the saved file"
         }
       },
-      "get": {
+      "post": {
         "tags": [
           "Projects"
         ],
         "operationId": "projects_exportProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9295,7 +9367,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9407,7 +9479,7 @@
         "operationId": "projects_publishFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9415,7 +9487,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9562,7 +9634,7 @@
         "operationId": "projects_unpublishFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9570,7 +9642,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -10004,7 +10076,7 @@
         "operationId": "memories_getMemory",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10012,7 +10084,7 @@
             }
           },
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10110,7 +10182,7 @@
         "operationId": "memories_updateMemoryRoute",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10118,7 +10190,7 @@
             }
           },
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10246,7 +10318,7 @@
         "operationId": "memories_deleteMemoryRoute",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10254,7 +10326,7 @@
             }
           },
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10305,7 +10377,7 @@
         "operationId": "memories_toggleMemoryActiveRoute",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10313,7 +10385,7 @@
             }
           },
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -14463,7 +14535,7 @@
         "operationId": "organizations_updateOrganizationMember",
         "parameters": [
           {
-            "name": "memberUid",
+            "name": "orgId",
             "in": "path",
             "required": true,
             "schema": {
@@ -14471,7 +14543,7 @@
             }
           },
           {
-            "name": "orgId",
+            "name": "memberUid",
             "in": "path",
             "required": true,
             "schema": {
@@ -14598,7 +14670,7 @@
         "operationId": "organizations_removeOrganizationMember",
         "parameters": [
           {
-            "name": "memberUid",
+            "name": "orgId",
             "in": "path",
             "required": true,
             "schema": {
@@ -14606,7 +14678,7 @@
             }
           },
           {
-            "name": "orgId",
+            "name": "memberUid",
             "in": "path",
             "required": true,
             "schema": {
@@ -15796,6 +15868,16 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID."
+            },
+            "description": "Company ID."
           }
         ],
         "responses": {
@@ -16898,12 +16980,12 @@
           {
             "name": "companyId",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string",
-              "description": "Company ID"
+              "description": "Company ID."
             },
-            "description": "Company ID"
+            "description": "Company ID."
           }
         ],
         "responses": {
@@ -17904,6 +17986,16 @@
         "operationId": "agents_listAgents",
         "parameters": [
           {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID."
+            },
+            "description": "Company ID."
+          },
+          {
             "name": "page",
             "in": "query",
             "required": false,
@@ -18100,6 +18192,16 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID."
+            },
+            "description": "Company ID."
           }
         ],
         "responses": {
@@ -18544,6 +18646,16 @@
         "operationId": "agents_getAllAgentConversations",
         "parameters": [
           {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID."
+            },
+            "description": "Company ID."
+          },
+          {
             "name": "page",
             "in": "query",
             "required": false,
@@ -18738,7 +18850,7 @@
         "operationId": "agents_checkConversationActivity",
         "parameters": [
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18746,7 +18858,7 @@
             }
           },
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18808,7 +18920,7 @@
         "operationId": "agents_getConversationDetails",
         "parameters": [
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18816,7 +18928,7 @@
             }
           },
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18967,12 +19079,12 @@
           {
             "name": "companyId",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string",
-              "description": "Company ID that owns the list. Required when authenticating with a personal access key (pak_\u2026) \u2014 the key is not tied to a specific company so the server cannot infer it. Required when authenticating with a company API key only if the key belongs to a user who has access to multiple companies; otherwise it defaults to the key's company. Optional for JWT (dashboard) auth \u2014 defaults to the user's active company."
+              "description": "Company ID."
             },
-            "description": "Company ID that owns the list. Required when authenticating with a personal access key (pak_\u2026) \u2014 the key is not tied to a specific company so the server cannot infer it. Required when authenticating with a company API key only if the key belongs to a user who has access to multiple companies; otherwise it defaults to the key's company. Optional for JWT (dashboard) auth \u2014 defaults to the user's active company."
+            "description": "Company ID."
           },
           {
             "name": "page",
@@ -19312,11 +19424,12 @@
                   },
                   "companyId": {
                     "type": "string",
-                    "description": "Company that owns the new list. Required unless supplied via the companyId query parameter, X-Company-ID header, or a company-scoped API key. JWT authentication does not infer an active company."
+                    "description": "Company ID."
                   }
                 },
                 "required": [
-                  "listDict"
+                  "listDict",
+                  "companyId"
                 ],
                 "description": "Request body for creating a new smart list. companyId must be supplied in the body, query string, or X-Company-ID header unless a company-scoped API key supplies it. JWT authentication does not infer an active company. Sharing visibility is controlled by listDict.sharing \u2014 see field description for the three modes."
               }
@@ -19742,12 +19855,12 @@
           {
             "name": "companyId",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string",
-              "description": "Company ID that owns the list. Required when authenticating with a personal access key (pak_\u2026) \u2014 the key is not tied to a specific company so the server cannot infer it. Required when authenticating with a company API key only if the key belongs to a user who has access to multiple companies; otherwise it defaults to the key's company. Optional for JWT (dashboard) auth \u2014 defaults to the user's active company."
+              "description": "Company ID."
             },
-            "description": "Company ID that owns the list. Required when authenticating with a personal access key (pak_\u2026) \u2014 the key is not tied to a specific company so the server cannot infer it. Required when authenticating with a company API key only if the key belongs to a user who has access to multiple companies; otherwise it defaults to the key's company. Optional for JWT (dashboard) auth \u2014 defaults to the user's active company."
+            "description": "Company ID."
           },
           {
             "name": "page",
@@ -20333,12 +20446,12 @@
           {
             "name": "companyId",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string",
-              "description": "Company ID that owns the list. Required when authenticating with a personal access key (pak_\u2026) \u2014 the key is not tied to a specific company so the server cannot infer it. Required when authenticating with a company API key only if the key belongs to a user who has access to multiple companies; otherwise it defaults to the key's company. Optional for JWT (dashboard) auth \u2014 defaults to the user's active company."
+              "description": "Company ID."
             },
-            "description": "Company ID that owns the list. Required when authenticating with a personal access key (pak_\u2026) \u2014 the key is not tied to a specific company so the server cannot infer it. Required when authenticating with a company API key only if the key belongs to a user who has access to multiple companies; otherwise it defaults to the key's company. Optional for JWT (dashboard) auth \u2014 defaults to the user's active company."
+            "description": "Company ID."
           },
           {
             "name": "page",
@@ -20977,12 +21090,12 @@
           {
             "name": "companyId",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string",
-              "description": "Company ID that owns the list. Required when authenticating with a personal access key (pak_\u2026) \u2014 the key is not tied to a specific company so the server cannot infer it. Required when authenticating with a company API key only if the key belongs to a user who has access to multiple companies; otherwise it defaults to the key's company. Optional for JWT (dashboard) auth \u2014 defaults to the user's active company."
+              "description": "Company ID."
             },
-            "description": "Company ID that owns the list. Required when authenticating with a personal access key (pak_\u2026) \u2014 the key is not tied to a specific company so the server cannot infer it. Required when authenticating with a company API key only if the key belongs to a user who has access to multiple companies; otherwise it defaults to the key's company. Optional for JWT (dashboard) auth \u2014 defaults to the user's active company."
+            "description": "Company ID."
           },
           {
             "name": "page",
@@ -21646,7 +21759,7 @@
         "operationId": "lists_deleteTableAction",
         "parameters": [
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21654,7 +21767,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21752,7 +21865,7 @@
         "operationId": "lists_getActionSummary",
         "parameters": [
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21760,7 +21873,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21880,7 +21993,7 @@
         "operationId": "lists_getActionQueueStatus",
         "parameters": [
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21888,7 +22001,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24672,12 +24785,17 @@
               "schema": {
                 "type": "object",
                 "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID."
+                  },
                   "goal": {
                     "type": "string",
                     "description": "Goal/objective for the sequence"
                   }
                 },
                 "required": [
+                  "companyId",
                   "goal"
                 ],
                 "description": "Request body for AI-generated sequence"
@@ -24694,7 +24812,18 @@
           "Sequences"
         ],
         "operationId": "sequences_listStepTypes",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID."
+            },
+            "description": "Company ID."
+          }
+        ],
         "responses": {
           "401": {
             "description": "Invalid credentials",
@@ -25081,6 +25210,10 @@
               "schema": {
                 "type": "object",
                 "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID."
+                  },
                   "id": {
                     "type": "string",
                     "description": "Sequence ID. Provide to update an existing sequence; omit to create a new one."
@@ -25172,6 +25305,9 @@
                     "description": "Company user IDs (uids) who should receive sequence notifications. To find valid IDs, call company_users_getCompanyUsers."
                   }
                 },
+                "required": [
+                  "companyId"
+                ],
                 "description": "Request body for creating or updating a sequence"
               }
             }
@@ -25185,6 +25321,16 @@
         ],
         "operationId": "sequences_getSequences",
         "parameters": [
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID."
+            },
+            "description": "Company ID."
+          },
           {
             "name": "page",
             "in": "query",
@@ -25571,6 +25717,16 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID."
+            },
+            "description": "Company ID."
           }
         ],
         "responses": {
@@ -26469,6 +26625,16 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID."
+            },
+            "description": "Company ID."
           }
         ],
         "responses": {
@@ -26765,6 +26931,16 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID."
+            },
+            "description": "Company ID."
           },
           {
             "name": "page",
@@ -29252,6 +29428,16 @@
         ],
         "operationId": "sequences_listProfiles",
         "parameters": [
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID."
+            },
+            "description": "Company ID."
+          },
           {
             "name": "page",
             "in": "query",
@@ -32427,7 +32613,7 @@
         "operationId": "people_updatePersonActivity",
         "parameters": [
           {
-            "name": "activityId",
+            "name": "personId",
             "in": "path",
             "required": true,
             "schema": {
@@ -32435,7 +32621,7 @@
             }
           },
           {
-            "name": "personId",
+            "name": "activityId",
             "in": "path",
             "required": true,
             "schema": {
@@ -32583,7 +32769,7 @@
         "operationId": "people_deletePersonActivity",
         "parameters": [
           {
-            "name": "activityId",
+            "name": "personId",
             "in": "path",
             "required": true,
             "schema": {
@@ -32591,7 +32777,7 @@
             }
           },
           {
-            "name": "personId",
+            "name": "activityId",
             "in": "path",
             "required": true,
             "schema": {
@@ -44488,7 +44674,7 @@
         "operationId": "content_getCanvasDesignMedia",
         "parameters": [
           {
-            "name": "videoId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -44496,7 +44682,7 @@
             }
           },
           {
-            "name": "canvasId",
+            "name": "videoId",
             "in": "path",
             "required": true,
             "schema": {
@@ -44596,7 +44782,7 @@
         "operationId": "content_useCanvasDesignMedia",
         "parameters": [
           {
-            "name": "videoId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -44604,7 +44790,7 @@
             }
           },
           {
-            "name": "canvasId",
+            "name": "videoId",
             "in": "path",
             "required": true,
             "schema": {
@@ -44911,7 +45097,7 @@
         "operationId": "content_getCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -44919,7 +45105,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -44958,7 +45144,7 @@
         "operationId": "content_updateCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -44966,7 +45152,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -45044,7 +45230,7 @@
         "operationId": "content_deleteCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -45052,7 +45238,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -45093,7 +45279,7 @@
         "operationId": "content_stopCanvasDesignThreadRun",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -45101,7 +45287,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -47466,6 +47652,16 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID."
+            },
+            "description": "Company ID."
           }
         ],
         "responses": {
@@ -48058,12 +48254,12 @@
           {
             "name": "companyId",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string",
-              "description": "Company ID"
+              "description": "Company ID."
             },
-            "description": "Company ID"
+            "description": "Company ID."
           },
           {
             "name": "page",
@@ -49113,12 +49309,12 @@
           {
             "name": "companyId",
             "in": "query",
-            "required": false,
+            "required": true,
             "schema": {
               "type": "string",
-              "description": "Company ID (optional \u2014 this endpoint is free)"
+              "description": "Company ID for access and any applicable data-credit charges"
             },
-            "description": "Company ID (optional \u2014 this endpoint is free)"
+            "description": "Company ID for access and any applicable data-credit charges"
           },
           {
             "name": "describe",
@@ -77180,7 +77376,7 @@
         "operationId": "marketing_campaigns_restoreTemplateVersion",
         "parameters": [
           {
-            "name": "versionId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -77188,7 +77384,7 @@
             }
           },
           {
-            "name": "templateId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78451,7 +78647,7 @@
         "operationId": "site_builder_apiWebsiteBranchDiff",
         "parameters": [
           {
-            "name": "websiteId",
+            "name": "branch",
             "in": "path",
             "required": true,
             "schema": {
@@ -78459,7 +78655,7 @@
             }
           },
           {
-            "name": "branch",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
