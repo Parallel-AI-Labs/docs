@@ -1063,6 +1063,8 @@
               "POST /api/v0/websites/collections",
               "POST /api/v0/websites/entries",
               "POST /api/v0/websites/{websiteId}/assets",
+              "POST /api/v0/websites/{websiteId}/branches/{branch}/merge",
+              "POST /api/v0/websites/{websiteId}/preview-session",
               "PUT /api/v0/websites/{websiteId}/file"
             ]
           }

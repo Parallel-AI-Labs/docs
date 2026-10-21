@@ -2046,7 +2046,7 @@
         "operationId": "documents_getDocumentContents",
         "parameters": [
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -2054,7 +2054,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -2113,7 +2113,7 @@
         "operationId": "documents_getDocument",
         "parameters": [
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -2121,7 +2121,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -4305,7 +4305,7 @@
         "operationId": "keys_getApiKey",
         "parameters": [
           {
-            "name": "name",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -4313,7 +4313,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "name",
             "in": "path",
             "required": true,
             "schema": {
@@ -5798,6 +5798,10 @@
                         "type": "boolean",
                         "description": "Enable document creation tool. Default: false"
                       },
+                      "inboxId": {
+                        "type": "string",
+                        "description": "ID of an inbox the employee works from. When set, the employee gets inbox tools (list with a live provider pull, read, send, reply, forward, mark handled) and uses this inbox for email by default. Empty: no inbox"
+                      },
                       "sleepTool": {
                         "type": "boolean",
                         "description": "Enable the sleep tool, which pauses briefly mid-run. Default: true"
@@ -6093,6 +6097,10 @@
                       "documentCreation": {
                         "type": "boolean",
                         "description": "Enable document creation tool. Default: false"
+                      },
+                      "inboxId": {
+                        "type": "string",
+                        "description": "ID of an inbox the employee works from. When set, the employee gets inbox tools (list with a live provider pull, read, send, reply, forward, mark handled) and uses this inbox for email by default. Empty: no inbox"
                       },
                       "sleepTool": {
                         "type": "boolean",
@@ -8018,7 +8026,7 @@
         "operationId": "projects_getProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8026,7 +8034,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8161,7 +8169,7 @@
         "operationId": "projects_updateProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8169,7 +8177,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8334,7 +8342,7 @@
         "operationId": "projects_deleteProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8342,7 +8350,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9241,7 +9249,7 @@
         "operationId": "projects_exportProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9249,7 +9257,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9359,7 +9367,7 @@
         "operationId": "projects_exportProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9367,7 +9375,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9479,7 +9487,7 @@
         "operationId": "projects_publishFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9487,7 +9495,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9634,7 +9642,7 @@
         "operationId": "projects_unpublishFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9642,7 +9650,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -10076,7 +10084,7 @@
         "operationId": "memories_getMemory",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10084,7 +10092,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10182,7 +10190,7 @@
         "operationId": "memories_updateMemoryRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10190,7 +10198,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10318,7 +10326,7 @@
         "operationId": "memories_deleteMemoryRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10326,7 +10334,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10377,7 +10385,7 @@
         "operationId": "memories_toggleMemoryActiveRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10385,7 +10393,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18850,7 +18858,7 @@
         "operationId": "agents_checkConversationActivity",
         "parameters": [
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18858,7 +18866,7 @@
             }
           },
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18920,7 +18928,7 @@
         "operationId": "agents_getConversationDetails",
         "parameters": [
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18928,7 +18936,7 @@
             }
           },
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27296,7 +27304,7 @@
         "operationId": "sequences_getSequenceMemberTimeline",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27304,7 +27312,7 @@
             }
           },
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27702,7 +27710,7 @@
         "operationId": "sequences_triggerSequenceMember",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27710,7 +27718,7 @@
             }
           },
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27778,7 +27786,7 @@
         "operationId": "sequences_removeSequenceMember",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27786,7 +27794,7 @@
             }
           },
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -35186,7 +35194,7 @@
         "operationId": "inbox_sendDraft",
         "parameters": [
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -35194,7 +35202,7 @@
             }
           },
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -35297,7 +35305,7 @@
         "operationId": "inbox_deleteDraft",
         "parameters": [
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -35305,7 +35313,7 @@
             }
           },
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -44684,7 +44692,7 @@
         "operationId": "content_getCanvasDesignMedia",
         "parameters": [
           {
-            "name": "videoId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -44692,7 +44700,7 @@
             }
           },
           {
-            "name": "canvasId",
+            "name": "videoId",
             "in": "path",
             "required": true,
             "schema": {
@@ -44792,7 +44800,7 @@
         "operationId": "content_useCanvasDesignMedia",
         "parameters": [
           {
-            "name": "videoId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -44800,7 +44808,7 @@
             }
           },
           {
-            "name": "canvasId",
+            "name": "videoId",
             "in": "path",
             "required": true,
             "schema": {
@@ -45107,7 +45115,7 @@
         "operationId": "content_getCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -45115,7 +45123,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -45154,7 +45162,7 @@
         "operationId": "content_updateCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -45162,7 +45170,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -45240,7 +45248,7 @@
         "operationId": "content_deleteCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -45248,7 +45256,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -45289,7 +45297,7 @@
         "operationId": "content_stopCanvasDesignThreadRun",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -45297,7 +45305,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -57443,7 +57451,7 @@
         "operationId": "landing_pages_getLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -57451,7 +57459,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -57490,7 +57498,7 @@
         "operationId": "landing_pages_updateLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -57498,7 +57506,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -57576,7 +57584,7 @@
         "operationId": "landing_pages_deleteLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -57584,7 +57592,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -57625,7 +57633,7 @@
         "operationId": "landing_pages_stopLandingPageThreadRun",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -57633,7 +57641,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -58262,6 +58270,10 @@
                       "documentCreation": {
                         "type": "boolean",
                         "description": "Enable document creation tool. Default: false"
+                      },
+                      "inboxId": {
+                        "type": "string",
+                        "description": "ID of an inbox the employee works from. When set, the employee gets inbox tools (list with a live provider pull, read, send, reply, forward, mark handled) and uses this inbox for email by default. Empty: no inbox"
                       },
                       "sleepTool": {
                         "type": "boolean",
@@ -59187,6 +59199,10 @@
                       "documentCreation": {
                         "type": "boolean",
                         "description": "Enable document creation tool. Default: false"
+                      },
+                      "inboxId": {
+                        "type": "string",
+                        "description": "ID of an inbox the employee works from. When set, the employee gets inbox tools (list with a live provider pull, read, send, reply, forward, mark handled) and uses this inbox for email by default. Empty: no inbox"
                       },
                       "sleepTool": {
                         "type": "boolean",
@@ -71395,7 +71411,7 @@
         "operationId": "seo_projectLighthouseSnapshotRoute",
         "parameters": [
           {
-            "name": "snapshotId",
+            "name": "projectId",
             "in": "path",
             "required": true,
             "schema": {
@@ -71403,7 +71419,7 @@
             }
           },
           {
-            "name": "projectId",
+            "name": "snapshotId",
             "in": "path",
             "required": true,
             "schema": {
@@ -77742,6 +77758,201 @@
         "description": "Reports whether a publish is queued, building, finished (idle) or failed,\nwhich build is live, when it went live, and the public URL."
       }
     },
+    "/api/v0/websites/{websiteId}/preview-session": {
+      "post": {
+        "tags": [
+          "Websites"
+        ],
+        "operationId": "site_builder_createWebsitePreviewSession",
+        "parameters": [
+          {
+            "name": "websiteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "invalid branch name",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Website not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "A link that opens the preview",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "url": {
+                      "type": "string",
+                      "description": "Link that opens the preview in a browser; valid for 4 hours"
+                    },
+                    "baseUrl": {
+                      "type": "string",
+                      "description": "The same preview as a path on the API host"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Get a preview link for a website or one of its review branches",
+        "description": "Returns `url`, a link anyone can open in a browser for the next 4 hours to\nbrowse the site exactly as it will look \u2014 pass `branch` to preview a\nreview branch's changes before approving it, or omit it for the live\n(main) version.\n\nThe preview is a real navigable origin, not an HTML blob: the editor's\niframe cannot send a bearer header, so access is carried by a short-lived,\nwebsite-scoped token in the path. Everything under that prefix \u2014 pages\nand assets \u2014 resolves the way it will on the published site, so relative\nassets and links just work.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID that owns the website"
+                  },
+                  "branch": {
+                    "type": "string",
+                    "description": "Review branch to preview. Omit (or \"main\") to preview the live version."
+                  }
+                },
+                "required": [
+                  "companyId"
+                ],
+                "description": "Preview a website or review branch"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v0/websites/{websiteId}/branches/{branch}/merge": {
+      "post": {
+        "tags": [
+          "Websites"
+        ],
+        "operationId": "site_builder_mergeWebsiteBranch",
+        "parameters": [
+          {
+            "name": "branch",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "websiteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "invalid branch, or the site would not render with the branch merged",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Website not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "The branch was merged into main",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "merged": {
+                      "type": "boolean"
+                    },
+                    "fileCount": {
+                      "type": "integer",
+                      "description": "How many files the branch changed on main"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Approve a review branch into the live (main) version of a website",
+        "description": "Copies the branch's changed files onto main (branch wins) and deletes the\nbranch. This does not publish: call publish afterwards to deploy main to\nthe public site. Only approve a branch the owner has asked you to approve.\n\nThe merged tree is validated first \u2014 a branch that would leave the site\nunrenderable is refused with the problems, since it could never publish.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID that owns the website"
+                  }
+                },
+                "required": [
+                  "companyId"
+                ],
+                "description": "Approve a review branch into main"
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v0/websites": {
       "get": {
         "tags": [
@@ -78838,7 +79049,7 @@
         "operationId": "site_builder_apiWebsiteBranchDiff",
         "parameters": [
           {
-            "name": "websiteId",
+            "name": "branch",
             "in": "path",
             "required": true,
             "schema": {
@@ -78846,7 +79057,7 @@
             }
           },
           {
-            "name": "branch",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
