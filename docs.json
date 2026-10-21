@@ -1047,6 +1047,7 @@
             "expanded": false,
             "pages": [
               "DELETE /api/v0/websites/{websiteId}/file",
+              "GET /api/v0/apps/{appId}/publish-status",
               "GET /api/v0/websites",
               "GET /api/v0/websites/collections",
               "GET /api/v0/websites/collections/{collectionId}/entries",
@@ -1058,6 +1059,7 @@
               "GET /api/v0/websites/{websiteId}/seo-audit",
               "GET /api/v0/websites/{websiteId}/validate",
               "PATCH /api/v0/websites/entries/{entryId}",
+              "POST /api/v0/apps/{appId}/publish",
               "POST /api/v0/websites/collections",
               "POST /api/v0/websites/entries",
               "POST /api/v0/websites/{websiteId}/assets",
