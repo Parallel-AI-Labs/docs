@@ -875,6 +875,7 @@
               "GET /api/v0/scheduled-tasks/{task_id}/daily-logs",
               "GET /api/v0/scheduled-tasks/{task_id}/evaluate",
               "GET /api/v0/scheduled-tasks/{task_id}/executions",
+              "GET /api/v0/scheduled-tasks/{task_id}/train",
               "POST /api/v0/scheduled-task-templates/{template_id}/employee",
               "POST /api/v0/scheduled-tasks",
               "POST /api/v0/scheduled-tasks/{task_id}/duplicate",
@@ -883,6 +884,7 @@
               "POST /api/v0/scheduled-tasks/{task_id}/reset",
               "POST /api/v0/scheduled-tasks/{task_id}/resume",
               "POST /api/v0/scheduled-tasks/{task_id}/run",
+              "POST /api/v0/scheduled-tasks/{task_id}/train",
               "POST /api/v0/scheduled-tasks/{task_id}/upgrade-template",
               "PUT /api/v0/scheduled-tasks/{task_id}"
             ]

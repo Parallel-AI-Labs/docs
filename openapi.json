@@ -2046,7 +2046,7 @@
         "operationId": "documents_getDocumentContents",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -2054,7 +2054,7 @@
             }
           },
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -2113,7 +2113,7 @@
         "operationId": "documents_getDocument",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -2121,7 +2121,7 @@
             }
           },
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -4310,7 +4310,7 @@
         "operationId": "keys_getApiKey",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "name",
             "in": "path",
             "required": true,
             "schema": {
@@ -4318,7 +4318,7 @@
             }
           },
           {
-            "name": "name",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -14548,7 +14548,7 @@
         "operationId": "organizations_updateOrganizationMember",
         "parameters": [
           {
-            "name": "orgId",
+            "name": "memberUid",
             "in": "path",
             "required": true,
             "schema": {
@@ -14556,7 +14556,7 @@
             }
           },
           {
-            "name": "memberUid",
+            "name": "orgId",
             "in": "path",
             "required": true,
             "schema": {
@@ -14683,7 +14683,7 @@
         "operationId": "organizations_removeOrganizationMember",
         "parameters": [
           {
-            "name": "orgId",
+            "name": "memberUid",
             "in": "path",
             "required": true,
             "schema": {
@@ -14691,7 +14691,7 @@
             }
           },
           {
-            "name": "memberUid",
+            "name": "orgId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18863,7 +18863,7 @@
         "operationId": "agents_checkConversationActivity",
         "parameters": [
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18871,7 +18871,7 @@
             }
           },
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18933,7 +18933,7 @@
         "operationId": "agents_getConversationDetails",
         "parameters": [
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18941,7 +18941,7 @@
             }
           },
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22036,7 +22036,7 @@
         "operationId": "lists_deleteTableAction",
         "parameters": [
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22044,7 +22044,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22142,7 +22142,7 @@
         "operationId": "lists_getActionSummary",
         "parameters": [
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22150,7 +22150,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22270,7 +22270,7 @@
         "operationId": "lists_getActionQueueStatus",
         "parameters": [
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22278,7 +22278,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22607,7 +22607,7 @@
         "operationId": "lists_getRowHistory",
         "parameters": [
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22615,7 +22615,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22827,7 +22827,7 @@
         "operationId": "lists_deleteHeader",
         "parameters": [
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22835,7 +22835,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22901,7 +22901,7 @@
         "operationId": "lists_editHeader",
         "parameters": [
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22909,7 +22909,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27573,7 +27573,7 @@
         "operationId": "sequences_getSequenceMemberTimeline",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27581,7 +27581,7 @@
             }
           },
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27979,7 +27979,7 @@
         "operationId": "sequences_triggerSequenceMember",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27987,7 +27987,7 @@
             }
           },
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28055,7 +28055,7 @@
         "operationId": "sequences_removeSequenceMember",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28063,7 +28063,7 @@
             }
           },
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28855,7 +28855,7 @@
         "operationId": "sequences_editSequenceExecution",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28863,7 +28863,7 @@
             }
           },
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28962,7 +28962,7 @@
         "operationId": "sequences_previewSequenceExecution",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28970,7 +28970,7 @@
             }
           },
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -35463,7 +35463,7 @@
         "operationId": "inbox_sendDraft",
         "parameters": [
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -35471,7 +35471,7 @@
             }
           },
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -35574,7 +35574,7 @@
         "operationId": "inbox_deleteDraft",
         "parameters": [
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -35582,7 +35582,7 @@
             }
           },
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -44961,7 +44961,7 @@
         "operationId": "content_getCanvasDesignMedia",
         "parameters": [
           {
-            "name": "videoId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -44969,7 +44969,7 @@
             }
           },
           {
-            "name": "canvasId",
+            "name": "videoId",
             "in": "path",
             "required": true,
             "schema": {
@@ -45069,7 +45069,7 @@
         "operationId": "content_useCanvasDesignMedia",
         "parameters": [
           {
-            "name": "videoId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -45077,7 +45077,7 @@
             }
           },
           {
-            "name": "canvasId",
+            "name": "videoId",
             "in": "path",
             "required": true,
             "schema": {
@@ -50105,7 +50105,7 @@
         "operationId": "leads_getStagedLeads",
         "parameters": [
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -50113,7 +50113,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -50208,7 +50208,7 @@
         "operationId": "leads_applyStagedLeads",
         "parameters": [
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -50216,7 +50216,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -59155,6 +59155,16 @@
               }
             }
           },
+          "409": {
+            "description": "This task is training. Try again when training finishes.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
           "500": {
             "description": "Server error",
             "content": {
@@ -59654,6 +59664,16 @@
               }
             }
           },
+          "409": {
+            "description": "This task is training. Try again when training finishes.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
           "500": {
             "description": "Server error",
             "content": {
@@ -60145,6 +60165,16 @@
               }
             }
           },
+          "409": {
+            "description": "This task is training. Try again when training finishes.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
           "200": {
             "description": "The reset task",
             "content": {
@@ -60467,6 +60497,16 @@
               }
             }
           },
+          "409": {
+            "description": "This task is training. Try again when training finishes.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
           "202": {
             "description": "Run started in the background",
             "content": {
@@ -60559,6 +60599,16 @@
           },
           "500": {
             "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "This task is training. Try again when training finishes.",
             "content": {
               "application/json": {
                 "schema": {
@@ -60753,6 +60803,229 @@
           }
         },
         "summary": "Latest evaluation for a task, including its status and any suggestion."
+      }
+    },
+    "/api/v0/scheduled-tasks/{task_id}/train": {
+      "post": {
+        "tags": [
+          "Scheduled Tasks"
+        ],
+        "operationId": "scheduled_tasks_trainScheduledTask",
+        "parameters": [
+          {
+            "name": "task_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "This task is not trained",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Task not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Task is already training",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "Training started; poll the GET endpoint",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "training": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "scheduledTaskId": {
+                          "type": "string"
+                        },
+                        "status": {
+                          "type": "string",
+                          "description": "running, completed, or failed"
+                        },
+                        "suggestion": {
+                          "type": "object",
+                          "description": "rounds (phase, ready, report, runbook, chatId, credits, toolCalls, durationMs, error), summary, improvedPrompt, passed, applied"
+                        },
+                        "errorMessage": {
+                          "type": "string"
+                        },
+                        "createdDate": {
+                          "type": "string"
+                        },
+                        "completedDate": {
+                          "type": "string"
+                        }
+                      },
+                      "description": "The task's employee rehearses it without sending or changing anything, writes exact steps (a runbook) and dry-runs them; a ready runbook replaces the task prompt"
+                    }
+                  },
+                  "description": "Latest training for a task; training is null when it has never trained"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Train the task again on its current prompt.",
+        "description": "Its employee rehearses the task without sending or changing anything,\nwrites exact steps and dry-runs them; if the steps are ready they replace\nthe task prompt. Runs due before training finishes are held. Training takes\nseveral minutes, so this returns 202 and the client polls\nGET /scheduled-tasks/<task_id>/train.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID. Optional when the API key is a company key."
+                  }
+                },
+                "description": "Company scoping"
+              }
+            }
+          },
+          "description": "Company scoping"
+        }
+      },
+      "get": {
+        "tags": [
+          "Scheduled Tasks"
+        ],
+        "operationId": "scheduled_tasks_getScheduledTaskTraining",
+        "parameters": [
+          {
+            "name": "task_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Company ID. Optional when the API key is a company key; required for personal access keys unless X-Company-ID is set."
+            },
+            "description": "Company ID. Optional when the API key is a company key; required for personal access keys unless X-Company-ID is set."
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Latest training, or null",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "training": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "scheduledTaskId": {
+                          "type": "string"
+                        },
+                        "status": {
+                          "type": "string",
+                          "description": "running, completed, or failed"
+                        },
+                        "suggestion": {
+                          "type": "object",
+                          "description": "rounds (phase, ready, report, runbook, chatId, credits, toolCalls, durationMs, error), summary, improvedPrompt, passed, applied"
+                        },
+                        "errorMessage": {
+                          "type": "string"
+                        },
+                        "createdDate": {
+                          "type": "string"
+                        },
+                        "completedDate": {
+                          "type": "string"
+                        }
+                      },
+                      "description": "The task's employee rehearses it without sending or changing anything, writes exact steps (a runbook) and dry-runs them; a ready runbook replaces the task prompt"
+                    }
+                  },
+                  "description": "Latest training for a task; training is null when it has never trained"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Latest training for a task: its status, each round, and the outcome."
       }
     },
     "/api/v0/scheduled-tasks/{task_id}/executions": {
@@ -71680,7 +71953,7 @@
         "operationId": "seo_projectLighthouseSnapshotRoute",
         "parameters": [
           {
-            "name": "projectId",
+            "name": "snapshotId",
             "in": "path",
             "required": true,
             "schema": {
@@ -71688,7 +71961,7 @@
             }
           },
           {
-            "name": "snapshotId",
+            "name": "projectId",
             "in": "path",
             "required": true,
             "schema": {
@@ -73645,7 +73918,7 @@
         "operationId": "marketing_campaigns_restoreCampaignVersion",
         "parameters": [
           {
-            "name": "versionId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -73653,7 +73926,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -75126,7 +75399,7 @@
         "operationId": "marketing_campaigns_deleteCampaignRecipient",
         "parameters": [
           {
-            "name": "recipientId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -75134,7 +75407,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "recipientId",
             "in": "path",
             "required": true,
             "schema": {
@@ -75701,7 +75974,7 @@
         "operationId": "marketing_campaigns_getCampaignEmailBuilderThread",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -75709,7 +75982,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -75768,7 +76041,7 @@
         "operationId": "marketing_campaigns_updateCampaignEmailBuilderThread",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -75776,7 +76049,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -75864,7 +76137,7 @@
         "operationId": "marketing_campaigns_deleteCampaignEmailBuilderThread",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -75872,7 +76145,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -75933,7 +76206,7 @@
         "operationId": "marketing_campaigns_stopCampaignEmailBuilderThreadRun",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -75941,7 +76214,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78131,7 +78404,7 @@
         "operationId": "site_builder_mergeWebsiteBranch",
         "parameters": [
           {
-            "name": "branch",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78139,7 +78412,7 @@
             }
           },
           {
-            "name": "websiteId",
+            "name": "branch",
             "in": "path",
             "required": true,
             "schema": {
@@ -79318,7 +79591,7 @@
         "operationId": "site_builder_apiWebsiteBranchDiff",
         "parameters": [
           {
-            "name": "branch",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -79326,7 +79599,7 @@
             }
           },
           {
-            "name": "websiteId",
+            "name": "branch",
             "in": "path",
             "required": true,
             "schema": {
