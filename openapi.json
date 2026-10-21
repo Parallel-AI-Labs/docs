@@ -8031,7 +8031,7 @@
         "operationId": "projects_getProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8039,7 +8039,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8174,7 +8174,7 @@
         "operationId": "projects_updateProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8182,7 +8182,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8347,7 +8347,7 @@
         "operationId": "projects_deleteProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8355,7 +8355,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9247,14 +9247,14 @@
       }
     },
     "/api/v0/projects/{project_id}/files/{file_id}/export": {
-      "get": {
+      "post": {
         "tags": [
           "Projects"
         ],
         "operationId": "projects_exportProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9262,7 +9262,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9365,14 +9365,14 @@
           "description": "POST exports current editor content without saving; GET exports the saved file"
         }
       },
-      "post": {
+      "get": {
         "tags": [
           "Projects"
         ],
         "operationId": "projects_exportProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9380,7 +9380,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9492,7 +9492,7 @@
         "operationId": "projects_publishFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9500,7 +9500,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9647,7 +9647,7 @@
         "operationId": "projects_unpublishFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9655,7 +9655,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -21220,6 +21220,255 @@
         "description": "For lists under 10k rows, returns CSV directly.\nFor larger lists, creates a background task and emails the download link."
       }
     },
+    "/api/v0/lists/{listId}/import/preview": {
+      "post": {
+        "tags": [
+          "Lists"
+        ],
+        "operationId": "lists_importPreview",
+        "parameters": [
+          {
+            "name": "listId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "No CSV, not a CSV, or an empty CSV",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "List or project file not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "CSV columns, sample rows and the suggested mapping",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "headers": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "CSV column names."
+                    },
+                    "headerMapping": {
+                      "type": "object",
+                      "description": "Suggested mapping: CSV column name -> existing list column id, or \"new\"."
+                    },
+                    "existingHeaders": {
+                      "type": "array",
+                      "items": {
+                        "type": "object"
+                      },
+                      "description": "The list's current columns (id, name, type)."
+                    },
+                    "preview": {
+                      "type": "array",
+                      "items": {
+                        "type": "object"
+                      },
+                      "description": "The first 4 CSV rows, keyed by column name."
+                    },
+                    "rowCount": {
+                      "type": "integer",
+                      "description": "Number of rows in the CSV."
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "Always \"success\"."
+                    }
+                  },
+                  "description": "The CSV's columns, its first rows, and the suggested column mapping."
+                }
+              }
+            }
+          }
+        },
+        "summary": "Preview a CSV import into a list.",
+        "description": "Returns the CSV's columns, its first rows and a suggested headerMapping that\nmatches CSV columns to the list's existing columns. Review or adjust the\nmapping, then pass it to lists_importRecords.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "projectId": {
+                    "type": "string",
+                    "description": "Project (UUID) holding the CSV. Use with path instead of uploading a file."
+                  },
+                  "path": {
+                    "type": "string",
+                    "description": "Path of the CSV in the project, e.g. \"/uploads/contacts.csv\"."
+                  },
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID that owns the list. Required when authenticating with a personal access key (pak_\u2026) \u2014 the key is not tied to a specific company so the server cannot infer it. Required when authenticating with a company API key only if the key belongs to a user who has access to multiple companies; otherwise it defaults to the key's company. Optional for JWT (dashboard) auth \u2014 defaults to the user's active company."
+                  }
+                },
+                "description": "Request body for previewing a CSV import into a list. Send the CSV as multipart `file`, or name a CSV saved in a project with `projectId` and `path` (files uploaded to a chat are saved under /uploads/ in the chat's project)."
+              }
+            }
+          },
+          "description": "The CSV to preview"
+        }
+      }
+    },
+    "/api/v0/lists/{listId}/import": {
+      "post": {
+        "tags": [
+          "Lists"
+        ],
+        "operationId": "lists_importRecords",
+        "parameters": [
+          {
+            "name": "listId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "No CSV, not a CSV, or an empty CSV",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "List or project file not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "An import into this list is already running",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Import finished (200) or started in the background (202)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "description": "\"background\" when the import runs asynchronously."
+                    },
+                    "taskId": {
+                      "type": "string",
+                      "description": "Background task ID (UUID). Poll it with lists_getTaskStatus until status is \"completed\", \"failed\", or \"cancelled\"."
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Human-readable status message."
+                    },
+                    "rowCount": {
+                      "type": "integer",
+                      "description": "Number of CSV rows being imported."
+                    },
+                    "msg": {
+                      "type": "string",
+                      "description": "\"Success\" when a small import finished immediately."
+                    }
+                  },
+                  "description": "Result of a CSV import: \"background\" with a taskId (202) for imports over 100 rows, otherwise msg \"Success\" (200) once the rows are imported."
+                }
+              }
+            }
+          }
+        },
+        "summary": "Import CSV rows into a list.",
+        "description": "Rows are added to the list, with CSV columns mapped by headerMapping. Imports\nover 100 rows run in the background: poll the returned taskId with\nlists_getTaskStatus. Confirm the mapping with lists_importPreview first.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "projectId": {
+                    "type": "string",
+                    "description": "Project (UUID) holding the CSV. Use with path instead of uploading a file."
+                  },
+                  "path": {
+                    "type": "string",
+                    "description": "Path of the CSV in the project, e.g. \"/uploads/contacts.csv\"."
+                  },
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID that owns the list. Required when authenticating with a personal access key (pak_\u2026) \u2014 the key is not tied to a specific company so the server cannot infer it. Required when authenticating with a company API key only if the key belongs to a user who has access to multiple companies; otherwise it defaults to the key's company. Optional for JWT (dashboard) auth \u2014 defaults to the user's active company."
+                  },
+                  "headerMapping": {
+                    "type": "object",
+                    "description": "Maps each CSV column name to the id of an existing list column, \"new\" to add it as a new column, or \"ignore\" to skip it. Get the suggested mapping from lists_importPreview. When omitted, the suggested mapping is used. In multipart requests, send it as a JSON string."
+                  }
+                },
+                "description": "Request body for importing CSV rows into a list. Send the CSV as multipart `file`, or name a CSV saved in a project with `projectId` and `path` (files uploaded to a chat are saved under /uploads/ in the chat's project). Imports over 100 rows run in the background and respond 202 with a taskId. Only one CSV import runs per list at a time (409 otherwise)."
+              }
+            }
+          },
+          "description": "The CSV to import and its column mapping"
+        }
+      }
+    },
     "/api/v0/lists/{listId}/action": {
       "post": {
         "tags": [
@@ -21772,7 +22021,7 @@
         "operationId": "lists_deleteTableAction",
         "parameters": [
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21780,7 +22029,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21878,7 +22127,7 @@
         "operationId": "lists_getActionSummary",
         "parameters": [
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21886,7 +22135,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22006,7 +22255,7 @@
         "operationId": "lists_getActionQueueStatus",
         "parameters": [
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22014,7 +22263,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28591,7 +28840,7 @@
         "operationId": "sequences_editSequenceExecution",
         "parameters": [
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28599,7 +28848,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28698,7 +28947,7 @@
         "operationId": "sequences_previewSequenceExecution",
         "parameters": [
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28706,7 +28955,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -44697,7 +44946,7 @@
         "operationId": "content_getCanvasDesignMedia",
         "parameters": [
           {
-            "name": "canvasId",
+            "name": "videoId",
             "in": "path",
             "required": true,
             "schema": {
@@ -44705,7 +44954,7 @@
             }
           },
           {
-            "name": "videoId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -44805,7 +45054,7 @@
         "operationId": "content_useCanvasDesignMedia",
         "parameters": [
           {
-            "name": "canvasId",
+            "name": "videoId",
             "in": "path",
             "required": true,
             "schema": {
@@ -44813,7 +45062,7 @@
             }
           },
           {
-            "name": "videoId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -76057,7 +76306,7 @@
         "operationId": "marketing_campaigns_getTemplateEmailBuilderThread",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -76065,7 +76314,7 @@
             }
           },
           {
-            "name": "templateId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -76124,7 +76373,7 @@
         "operationId": "marketing_campaigns_updateTemplateEmailBuilderThread",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -76132,7 +76381,7 @@
             }
           },
           {
-            "name": "templateId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -76220,7 +76469,7 @@
         "operationId": "marketing_campaigns_deleteTemplateEmailBuilderThread",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -76228,7 +76477,7 @@
             }
           },
           {
-            "name": "templateId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -76289,7 +76538,7 @@
         "operationId": "marketing_campaigns_stopTemplateEmailBuilderThreadRun",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -76297,7 +76546,7 @@
             }
           },
           {
-            "name": "templateId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -77407,7 +77656,7 @@
         "operationId": "marketing_campaigns_restoreTemplateVersion",
         "parameters": [
           {
-            "name": "versionId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -77415,7 +77664,7 @@
             }
           },
           {
-            "name": "templateId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -77867,7 +78116,7 @@
         "operationId": "site_builder_mergeWebsiteBranch",
         "parameters": [
           {
-            "name": "websiteId",
+            "name": "branch",
             "in": "path",
             "required": true,
             "schema": {
@@ -77875,7 +78124,7 @@
             }
           },
           {
-            "name": "branch",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -79054,7 +79303,7 @@
         "operationId": "site_builder_apiWebsiteBranchDiff",
         "parameters": [
           {
-            "name": "websiteId",
+            "name": "branch",
             "in": "path",
             "required": true,
             "schema": {
@@ -79062,7 +79311,7 @@
             }
           },
           {
-            "name": "branch",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
