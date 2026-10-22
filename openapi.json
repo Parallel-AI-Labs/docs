@@ -2046,7 +2046,7 @@
         "operationId": "documents_getDocumentContents",
         "parameters": [
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -2054,7 +2054,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -2113,7 +2113,7 @@
         "operationId": "documents_getDocument",
         "parameters": [
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -2121,7 +2121,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -14548,7 +14548,7 @@
         "operationId": "organizations_updateOrganizationMember",
         "parameters": [
           {
-            "name": "orgId",
+            "name": "memberUid",
             "in": "path",
             "required": true,
             "schema": {
@@ -14556,7 +14556,7 @@
             }
           },
           {
-            "name": "memberUid",
+            "name": "orgId",
             "in": "path",
             "required": true,
             "schema": {
@@ -14683,7 +14683,7 @@
         "operationId": "organizations_removeOrganizationMember",
         "parameters": [
           {
-            "name": "orgId",
+            "name": "memberUid",
             "in": "path",
             "required": true,
             "schema": {
@@ -14691,7 +14691,7 @@
             }
           },
           {
-            "name": "memberUid",
+            "name": "orgId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22607,7 +22607,7 @@
         "operationId": "lists_getRowHistory",
         "parameters": [
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22615,7 +22615,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22827,7 +22827,7 @@
         "operationId": "lists_deleteHeader",
         "parameters": [
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22835,7 +22835,7 @@
             }
           },
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22901,7 +22901,7 @@
         "operationId": "lists_editHeader",
         "parameters": [
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22909,7 +22909,7 @@
             }
           },
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26527,7 +26527,7 @@
         "operationId": "sequences_updateSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26535,7 +26535,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26819,7 +26819,7 @@
         "operationId": "sequences_deleteSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26827,7 +26827,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30678,7 +30678,7 @@
         "operationId": "sequences_testSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30686,7 +30686,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30740,7 +30740,7 @@
         "operationId": "sequences_sendTestEmail",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30748,7 +30748,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -35463,7 +35463,7 @@
         "operationId": "inbox_sendDraft",
         "parameters": [
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -35471,7 +35471,7 @@
             }
           },
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -35574,7 +35574,7 @@
         "operationId": "inbox_deleteDraft",
         "parameters": [
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -35582,7 +35582,7 @@
             }
           },
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -45384,7 +45384,7 @@
         "operationId": "content_getCanvasDesignThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -45392,7 +45392,7 @@
             }
           },
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -45431,7 +45431,7 @@
         "operationId": "content_updateCanvasDesignThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -45439,7 +45439,7 @@
             }
           },
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -45517,7 +45517,7 @@
         "operationId": "content_deleteCanvasDesignThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -45525,7 +45525,7 @@
             }
           },
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -45566,7 +45566,7 @@
         "operationId": "content_stopCanvasDesignThreadRun",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "canvas_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -45574,7 +45574,7 @@
             }
           },
           {
-            "name": "canvas_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -50105,7 +50105,7 @@
         "operationId": "leads_getStagedLeads",
         "parameters": [
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -50113,7 +50113,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -50208,7 +50208,7 @@
         "operationId": "leads_applyStagedLeads",
         "parameters": [
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -50216,7 +50216,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -60258,7 +60258,7 @@
           }
         },
         "summary": "Reset a task's history.",
-        "description": "Soft-deletes its executions, evaluations and daily logs/notes and zeroes\nits run counters. The task's settings are untouched.",
+        "description": "Soft-deletes its executions, trainings and daily logs/notes and zeroes\nits run counters. The task's settings are untouched.",
         "requestBody": {
           "required": true,
           "content": {
@@ -60550,261 +60550,6 @@
         }
       }
     },
-    "/api/v0/scheduled-tasks/{task_id}/evaluate": {
-      "post": {
-        "tags": [
-          "Scheduled Tasks"
-        ],
-        "operationId": "scheduled_tasks_evaluateScheduledTask",
-        "parameters": [
-          {
-            "name": "task_id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "401": {
-            "description": "Invalid credentials",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Task not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "429": {
-            "description": "Scheduled task daily quota reached",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "409": {
-            "description": "This task is training. Try again when training finishes.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "202": {
-            "description": "Evaluation started; poll the GET endpoint",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "id": {
-                      "type": "string"
-                    },
-                    "scheduledTaskId": {
-                      "type": "string"
-                    },
-                    "status": {
-                      "type": "string",
-                      "description": "running, completed, or failed"
-                    },
-                    "executionId": {
-                      "type": "string",
-                      "description": "The run that was graded"
-                    },
-                    "score": {
-                      "type": "integer"
-                    },
-                    "scoreReason": {
-                      "type": "string"
-                    },
-                    "suggestedPrompt": {
-                      "type": "string"
-                    },
-                    "suggestionReason": {
-                      "type": "string"
-                    },
-                    "notes": {
-                      "type": "string"
-                    },
-                    "errorMessage": {
-                      "type": "string"
-                    },
-                    "createdDate": {
-                      "type": "string"
-                    },
-                    "updatedDate": {
-                      "type": "string"
-                    }
-                  },
-                  "description": "A run of the task graded 0-100, plus a proposed more efficient prompt"
-                }
-              }
-            }
-          }
-        },
-        "summary": "Grade a run of this task and propose a more efficient prompt.",
-        "description": "By default this triggers a fresh run. Pass executionId to evaluate a run\nthat already happened instead - these tasks take real actions, so re-running\njust to get a score is often not what the user wants.\n\nPass notes to steer the rewrite (\"stop it posting twice\", \"keep the tone\").\nThe run shows what happened, not which parts the owner considers wrong.\n\nA real run can take minutes, so this returns 202 immediately and the client\npolls GET /scheduled-tasks/<task_id>/evaluate for the result.",
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "companyId": {
-                    "type": "string",
-                    "description": "Company ID. Optional when the API key is a company key."
-                  },
-                  "executionId": {
-                    "type": "string",
-                    "description": "Grade this past run instead of triggering a fresh one"
-                  },
-                  "notes": {
-                    "type": "string",
-                    "description": "Free-text guidance for the prompt rewrite, e.g. \"stop it posting twice\""
-                  }
-                },
-                "description": "Request body for evaluating a scheduled task"
-              }
-            }
-          },
-          "description": "What to evaluate and how to steer the rewrite"
-        }
-      },
-      "get": {
-        "tags": [
-          "Scheduled Tasks"
-        ],
-        "operationId": "scheduled_tasks_getScheduledTaskEvaluation",
-        "parameters": [
-          {
-            "name": "task_id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "companyId",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "description": "Company ID. Optional when the API key is a company key; required for personal access keys unless X-Company-ID is set."
-            },
-            "description": "Company ID. Optional when the API key is a company key; required for personal access keys unless X-Company-ID is set."
-          }
-        ],
-        "responses": {
-          "401": {
-            "description": "Invalid credentials",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Server error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "200": {
-            "description": "Latest evaluation, or null",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "evaluation": {
-                      "type": "object",
-                      "properties": {
-                        "id": {
-                          "type": "string"
-                        },
-                        "scheduledTaskId": {
-                          "type": "string"
-                        },
-                        "status": {
-                          "type": "string",
-                          "description": "running, completed, or failed"
-                        },
-                        "executionId": {
-                          "type": "string",
-                          "description": "The run that was graded"
-                        },
-                        "score": {
-                          "type": "integer"
-                        },
-                        "scoreReason": {
-                          "type": "string"
-                        },
-                        "suggestedPrompt": {
-                          "type": "string"
-                        },
-                        "suggestionReason": {
-                          "type": "string"
-                        },
-                        "notes": {
-                          "type": "string"
-                        },
-                        "errorMessage": {
-                          "type": "string"
-                        },
-                        "createdDate": {
-                          "type": "string"
-                        },
-                        "updatedDate": {
-                          "type": "string"
-                        }
-                      },
-                      "description": "A run of the task graded 0-100, plus a proposed more efficient prompt"
-                    }
-                  },
-                  "description": "Latest evaluation for a task; evaluation is null when none has been run"
-                }
-              }
-            }
-          }
-        },
-        "summary": "Latest evaluation for a task, including its status and any suggestion."
-      }
-    },
     "/api/v0/scheduled-tasks/{task_id}/train": {
       "post": {
         "tags": [
@@ -60916,7 +60661,7 @@
           }
         },
         "summary": "Train the task again on its current prompt.",
-        "description": "Its employee rehearses the task without sending or changing anything,\nwrites exact steps and dry-runs them; if the steps are ready they replace\nthe task prompt. Runs due before training finishes are held. Training takes\nseveral minutes, so this returns 202 and the client polls\nGET /scheduled-tasks/<task_id>/train.",
+        "description": "Its employee rehearses the task without sending or changing anything,\nwrites exact steps and dry-runs them; if the steps are ready they replace\nthe task prompt. Pass notes to fine-tune it (\"stop it posting twice\", \"keep\nthe tone\"): every round builds them into the steps. Runs due before training\nfinishes are held. Training takes several minutes, so this returns 202 and\nthe client polls GET /scheduled-tasks/<task_id>/train.",
         "requestBody": {
           "required": true,
           "content": {
@@ -60927,13 +60672,17 @@
                   "companyId": {
                     "type": "string",
                     "description": "Company ID. Optional when the API key is a company key."
+                  },
+                  "notes": {
+                    "type": "string",
+                    "description": "Changes for training to build into the task steps, e.g. \"stop it posting twice\""
                   }
                 },
-                "description": "Company scoping"
+                "description": "Request body for training a scheduled task"
               }
             }
           },
-          "description": "Company scoping"
+          "description": "Company scoping and optional changes to train in"
         }
       },
       "get": {
@@ -71953,7 +71702,7 @@
         "operationId": "seo_projectLighthouseSnapshotRoute",
         "parameters": [
           {
-            "name": "projectId",
+            "name": "snapshotId",
             "in": "path",
             "required": true,
             "schema": {
@@ -71961,7 +71710,7 @@
             }
           },
           {
-            "name": "snapshotId",
+            "name": "projectId",
             "in": "path",
             "required": true,
             "schema": {
@@ -73918,7 +73667,7 @@
         "operationId": "marketing_campaigns_restoreCampaignVersion",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -73926,7 +73675,7 @@
             }
           },
           {
-            "name": "versionId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -75399,7 +75148,7 @@
         "operationId": "marketing_campaigns_deleteCampaignRecipient",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "recipientId",
             "in": "path",
             "required": true,
             "schema": {
@@ -75407,7 +75156,7 @@
             }
           },
           {
-            "name": "recipientId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -76594,7 +76343,7 @@
         "operationId": "marketing_campaigns_getTemplateEmailBuilderThread",
         "parameters": [
           {
-            "name": "templateId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -76602,7 +76351,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -76661,7 +76410,7 @@
         "operationId": "marketing_campaigns_updateTemplateEmailBuilderThread",
         "parameters": [
           {
-            "name": "templateId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -76669,7 +76418,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -76757,7 +76506,7 @@
         "operationId": "marketing_campaigns_deleteTemplateEmailBuilderThread",
         "parameters": [
           {
-            "name": "templateId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -76765,7 +76514,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -76826,7 +76575,7 @@
         "operationId": "marketing_campaigns_stopTemplateEmailBuilderThreadRun",
         "parameters": [
           {
-            "name": "templateId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -76834,7 +76583,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -77944,7 +77693,7 @@
         "operationId": "marketing_campaigns_restoreTemplateVersion",
         "parameters": [
           {
-            "name": "templateId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -77952,7 +77701,7 @@
             }
           },
           {
-            "name": "versionId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78404,7 +78153,7 @@
         "operationId": "site_builder_mergeWebsiteBranch",
         "parameters": [
           {
-            "name": "branch",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78412,7 +78161,7 @@
             }
           },
           {
-            "name": "websiteId",
+            "name": "branch",
             "in": "path",
             "required": true,
             "schema": {
@@ -79591,7 +79340,7 @@
         "operationId": "site_builder_apiWebsiteBranchDiff",
         "parameters": [
           {
-            "name": "branch",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -79599,7 +79348,7 @@
             }
           },
           {
-            "name": "websiteId",
+            "name": "branch",
             "in": "path",
             "required": true,
             "schema": {
