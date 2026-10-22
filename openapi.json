@@ -8031,7 +8031,7 @@
         "operationId": "projects_getProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8039,7 +8039,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8174,7 +8174,7 @@
         "operationId": "projects_updateProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8182,7 +8182,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8347,7 +8347,7 @@
         "operationId": "projects_deleteProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8355,7 +8355,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9254,7 +9254,7 @@
         "operationId": "projects_exportProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9262,7 +9262,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9372,7 +9372,7 @@
         "operationId": "projects_exportProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9380,7 +9380,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9492,7 +9492,7 @@
         "operationId": "projects_publishFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9500,7 +9500,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9647,7 +9647,7 @@
         "operationId": "projects_unpublishFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9655,7 +9655,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -14548,7 +14548,7 @@
         "operationId": "organizations_updateOrganizationMember",
         "parameters": [
           {
-            "name": "memberUid",
+            "name": "orgId",
             "in": "path",
             "required": true,
             "schema": {
@@ -14556,7 +14556,7 @@
             }
           },
           {
-            "name": "orgId",
+            "name": "memberUid",
             "in": "path",
             "required": true,
             "schema": {
@@ -14683,7 +14683,7 @@
         "operationId": "organizations_removeOrganizationMember",
         "parameters": [
           {
-            "name": "memberUid",
+            "name": "orgId",
             "in": "path",
             "required": true,
             "schema": {
@@ -14691,7 +14691,7 @@
             }
           },
           {
-            "name": "orgId",
+            "name": "memberUid",
             "in": "path",
             "required": true,
             "schema": {
@@ -18863,7 +18863,7 @@
         "operationId": "agents_checkConversationActivity",
         "parameters": [
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18871,7 +18871,7 @@
             }
           },
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18933,7 +18933,7 @@
         "operationId": "agents_getConversationDetails",
         "parameters": [
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18941,7 +18941,7 @@
             }
           },
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22036,7 +22036,7 @@
         "operationId": "lists_deleteTableAction",
         "parameters": [
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22044,7 +22044,7 @@
             }
           },
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22142,7 +22142,7 @@
         "operationId": "lists_getActionSummary",
         "parameters": [
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22150,7 +22150,7 @@
             }
           },
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22270,7 +22270,7 @@
         "operationId": "lists_getActionQueueStatus",
         "parameters": [
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22278,7 +22278,7 @@
             }
           },
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22607,7 +22607,7 @@
         "operationId": "lists_getRowHistory",
         "parameters": [
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22615,7 +22615,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26527,7 +26527,7 @@
         "operationId": "sequences_updateSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26535,7 +26535,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26819,7 +26819,7 @@
         "operationId": "sequences_deleteSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26827,7 +26827,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27573,7 +27573,7 @@
         "operationId": "sequences_getSequenceMemberTimeline",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27581,7 +27581,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27979,7 +27979,7 @@
         "operationId": "sequences_triggerSequenceMember",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27987,7 +27987,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28055,7 +28055,7 @@
         "operationId": "sequences_removeSequenceMember",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28063,7 +28063,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30678,7 +30678,7 @@
         "operationId": "sequences_testSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30686,7 +30686,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30740,7 +30740,7 @@
         "operationId": "sequences_sendTestEmail",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30748,7 +30748,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -35463,7 +35463,7 @@
         "operationId": "inbox_sendDraft",
         "parameters": [
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -35471,7 +35471,7 @@
             }
           },
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -35574,7 +35574,7 @@
         "operationId": "inbox_deleteDraft",
         "parameters": [
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -35582,7 +35582,7 @@
             }
           },
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -50105,7 +50105,7 @@
         "operationId": "leads_getStagedLeads",
         "parameters": [
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -50113,7 +50113,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -50208,7 +50208,7 @@
         "operationId": "leads_applyStagedLeads",
         "parameters": [
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -50216,7 +50216,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -56060,6 +56060,109 @@
         },
         "summary": "List enabled CRM integrations, to discover a valid crmIntegrationId.",
         "description": "Use the returned id when setting a sequence's crmIntegrationId (with\ncrmSyncEnabled=true). Pass companyId as a query parameter."
+      }
+    },
+    "/api/v0/design-styles": {
+      "get": {
+        "tags": [
+          "Websites"
+        ],
+        "operationId": "design_styles_listDesignStyles",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Page number, 1-indexed (default 1)"
+            },
+            "description": "Page number, 1-indexed (default 1)"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Styles per page, 1-100 (default 24)"
+            },
+            "description": "Styles per page, 1-100 (default 24)"
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Match on name, description or category (e.g. \"minimal\", \"bold\", \"luxury\")"
+            },
+            "description": "Match on name, description or category (e.g. \"minimal\", \"bold\", \"luxury\")"
+          },
+          {
+            "name": "category",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Only styles in this category (one of the categories this list returns)"
+            },
+            "description": "Only styles in this category (one of the categories this list returns)"
+          },
+          {
+            "name": "medium",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Only styles with an example for this medium: website, blog, social, story or email. Use \"website\" when picking a style for a new website."
+            },
+            "description": "Only styles with an example for this medium: website, blog, social, story or email. Use \"website\" when picking a style for a new website."
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "A page of the design style library",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "Styles in library order: {id, slug, name, category, description, mediums}. mediums maps each medium to {width, height, imageUrl}, a preview image of the style. Pass id as designStyleId when creating a website."
+                    },
+                    "total": {
+                      "type": "integer"
+                    },
+                    "categories": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "Every category, for the category filter"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "List design styles for a new website",
+        "description": "The design style library: preset looks (layout, typography, color and\nmood) the website builder designs a new site in. Pick one whose name,\ncategory and description fit the site \u2014 filter with medium=website and\nsearch \u2014 and pass its id as designStyleId when creating the website. The\nbuilder agent follows the style on the site's first build. A brand kit\n(brandKitId) wins over a design style when both are given."
       }
     },
     "/api/v0/landing-pages": {
@@ -71702,7 +71805,7 @@
         "operationId": "seo_projectLighthouseSnapshotRoute",
         "parameters": [
           {
-            "name": "projectId",
+            "name": "snapshotId",
             "in": "path",
             "required": true,
             "schema": {
@@ -71710,7 +71813,7 @@
             }
           },
           {
-            "name": "snapshotId",
+            "name": "projectId",
             "in": "path",
             "required": true,
             "schema": {
@@ -73667,7 +73770,7 @@
         "operationId": "marketing_campaigns_restoreCampaignVersion",
         "parameters": [
           {
-            "name": "versionId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -73675,7 +73778,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78049,25 +78152,16 @@
         "description": "Reports whether a publish is queued, building, finished (idle) or failed,\nwhich build is live, when it went live, and the public URL."
       }
     },
-    "/api/v0/websites/{websiteId}/preview-session": {
+    "/api/v0/websites": {
       "post": {
         "tags": [
           "Websites"
         ],
-        "operationId": "site_builder_createWebsitePreviewSession",
-        "parameters": [
-          {
-            "name": "websiteId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
+        "operationId": "site_builder_createWebsite",
+        "parameters": [],
         "responses": {
           "400": {
-            "description": "invalid branch name",
+            "description": "companyId missing, or brand kit / design style not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -78086,8 +78180,8 @@
               }
             }
           },
-          "404": {
-            "description": "Website not found",
+          "403": {
+            "description": "No company access",
             "content": {
               "application/json": {
                 "schema": {
@@ -78096,29 +78190,28 @@
               }
             }
           },
-          "200": {
-            "description": "A link that opens the preview",
+          "201": {
+            "description": "The new website",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "url": {
-                      "type": "string",
-                      "description": "Link that opens the preview in a browser; valid for 4 hours"
+                    "id": {
+                      "type": "string"
                     },
-                    "baseUrl": {
-                      "type": "string",
-                      "description": "The same preview as a path on the API host"
+                    "name": {
+                      "type": "string"
                     }
-                  }
+                  },
+                  "description": "The new website. Its id is the websiteId for every other Websites action."
                 }
               }
             }
           }
         },
-        "summary": "Get a preview link for a website or one of its review branches",
-        "description": "Returns `url`, a link anyone can open in a browser for the next 4 hours to\nbrowse the site exactly as it will look \u2014 pass `branch` to preview a\nreview branch's changes before approving it, or omit it for the live\n(main) version.\n\nThe preview is a real navigable origin, not an HTML blob: the editor's\niframe cannot send a bearer header, so access is carried by a short-lived,\nwebsite-scoped token in the path. Everything under that prefix \u2014 pages\nand assets \u2014 resolves the way it will on the published site, so relative\nassets and links just work.",
+        "summary": "Create a new website from scratch",
+        "description": "Creates an empty starter website and returns its id. Choose its look\nhere: a brandKitId, or a designStyleId from the design style library\n(list design styles, medium=website) and/or a colorPalette.\n\nTo have the built-in website builder agent design and build it: list the\nsite's threads, move the first thread onto a review branch (update\nthread), run the agent in it with a description of the site, and read\nthe thread until the agent finishes. Only that first thread designs in\nthe chosen style. Or write the pages, layouts and assets onto a review\nbranch yourself (write file, upload asset).\n\nEither way, check the branch with validate and a preview link, approve\nit into main (merge), then publish to put it live.",
         "requestBody": {
           "required": true,
           "content": {
@@ -78130,121 +78223,44 @@
                     "type": "string",
                     "description": "Company ID that owns the website"
                   },
-                  "branch": {
+                  "name": {
                     "type": "string",
-                    "description": "Review branch to preview. Omit (or \"main\") to preview the live version."
+                    "description": "Website name (default \"Untitled website\")"
+                  },
+                  "description": {
+                    "type": "string",
+                    "description": "Optional short description"
+                  },
+                  "seedPrompt": {
+                    "type": "string",
+                    "description": "What the site is for. Used only to name the site when name is omitted; it does not build any pages."
+                  },
+                  "brandKitId": {
+                    "type": "string",
+                    "description": "Brand kit to design with (an id from brand_kit_listBrandKits). Wins over designStyleId and colorPalette. Omit all three to use the company's default kit."
+                  },
+                  "designStyleId": {
+                    "type": "string",
+                    "description": "Design style the site is designed in, when no brand kit is given. Get ids from design_styles_listDesignStyles with medium=website and pick the style whose name, category and description fit the site."
+                  },
+                  "colorPalette": {
+                    "type": "object",
+                    "description": "Colors to use when no brand kit is given: {primary, secondary, accent, background, surface, text} as hex values. Combines with designStyleId."
+                  },
+                  "useCompanyContext": {
+                    "type": "boolean",
+                    "description": "Let the site builder use the company profile as context"
                   }
                 },
                 "required": [
                   "companyId"
                 ],
-                "description": "Preview a website or review branch"
+                "description": "Create a website"
               }
             }
           }
         }
-      }
-    },
-    "/api/v0/websites/{websiteId}/branches/{branch}/merge": {
-      "post": {
-        "tags": [
-          "Websites"
-        ],
-        "operationId": "site_builder_mergeWebsiteBranch",
-        "parameters": [
-          {
-            "name": "websiteId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "branch",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "400": {
-            "description": "invalid branch, or the site would not render with the branch merged",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Invalid credentials",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Website not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "200": {
-            "description": "The branch was merged into main",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "merged": {
-                      "type": "boolean"
-                    },
-                    "fileCount": {
-                      "type": "integer",
-                      "description": "How many files the branch changed on main"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "summary": "Approve a review branch into the live (main) version of a website",
-        "description": "Copies the branch's changed files onto main (branch wins) and deletes the\nbranch. This does not publish: call publish afterwards to deploy main to\nthe public site. Only approve a branch the owner has asked you to approve.\n\nThe merged tree is validated first \u2014 a branch that would leave the site\nunrenderable is refused with the problems, since it could never publish.",
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "companyId": {
-                    "type": "string",
-                    "description": "Company ID that owns the website"
-                  }
-                },
-                "required": [
-                  "companyId"
-                ],
-                "description": "Approve a review branch into main"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/v0/websites": {
+      },
       "get": {
         "tags": [
           "Websites"
@@ -78348,6 +78364,778 @@
         },
         "summary": "List the company's websites",
         "description": "Start here: returns each website's id and name so you can audit or optimize\none. branchCount is how many review branches already have unmerged changes."
+      }
+    },
+    "/api/v0/websites/{websiteId}/preview-session": {
+      "post": {
+        "tags": [
+          "Websites"
+        ],
+        "operationId": "site_builder_createWebsitePreviewSession",
+        "parameters": [
+          {
+            "name": "websiteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "invalid branch name",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Website not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "A link that opens the preview",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "url": {
+                      "type": "string",
+                      "description": "Link that opens the preview in a browser; valid for 4 hours"
+                    },
+                    "baseUrl": {
+                      "type": "string",
+                      "description": "The same preview as a path on the API host"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Get a preview link for a website or one of its review branches",
+        "description": "Returns `url`, a link anyone can open in a browser for the next 4 hours to\nbrowse the site exactly as it will look \u2014 pass `branch` to preview a\nreview branch's changes before approving it, or omit it for the live\n(main) version.\n\nThe preview is a real navigable origin, not an HTML blob: the editor's\niframe cannot send a bearer header, so access is carried by a short-lived,\nwebsite-scoped token in the path. Everything under that prefix \u2014 pages\nand assets \u2014 resolves the way it will on the published site, so relative\nassets and links just work.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID that owns the website"
+                  },
+                  "branch": {
+                    "type": "string",
+                    "description": "Review branch to preview. Omit (or \"main\") to preview the live version."
+                  }
+                },
+                "required": [
+                  "companyId"
+                ],
+                "description": "Preview a website or review branch"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v0/websites/{websiteId}/threads": {
+      "get": {
+        "tags": [
+          "Websites"
+        ],
+        "operationId": "site_builder_listWebsiteThreads",
+        "parameters": [
+          {
+            "name": "websiteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID that owns the website"
+            },
+            "description": "Company ID that owns the website"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Website not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "The website's builder threads",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "threads": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "Threads, most recently updated first: {id, title, branch, createdAt, updatedAt, messageCount, totalCreditUsage}"
+                    },
+                    "activeThreadId": {
+                      "type": "string",
+                      "description": "The thread open in the editor"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "List a website's builder threads",
+        "description": "Each thread is a conversation with the website builder agent and carries\nthe branch its edits go to. A new website has one thread, \"Main\", on\nmain: that first thread is the one that designs in the website's design\nstyle or palette, so move it onto a review branch (update thread) and run\nthe agent in it to build a new site."
+      },
+      "post": {
+        "tags": [
+          "Websites"
+        ],
+        "operationId": "site_builder_createWebsiteThread",
+        "parameters": [
+          {
+            "name": "websiteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "invalid branch name",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Website not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "branch already exists",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "The new thread",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "branch": {
+                      "type": "string"
+                    }
+                  },
+                  "description": "The thread: {id, title, branch, createdAt, updatedAt, messageCount, totalCreditUsage}"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Start a new website builder thread",
+        "description": "Starts a fresh conversation with the website builder agent, for a new\npiece of work on an existing site. Pass branch so the agent's edits land\non a review branch. To build a brand-new website, use its first thread\ninstead (list threads) \u2014 only that one designs in the chosen style.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID that owns the website"
+                  },
+                  "title": {
+                    "type": "string",
+                    "description": "Optional title; the first message names the thread when omitted"
+                  },
+                  "branch": {
+                    "type": "string",
+                    "description": "Review branch the thread's agent writes to, e.g. \"homepage-refresh\". Required before the agent can be run over the API."
+                  }
+                },
+                "required": [
+                  "companyId"
+                ],
+                "description": "Start a website builder thread"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v0/websites/{websiteId}/threads/{threadId}": {
+      "get": {
+        "tags": [
+          "Websites"
+        ],
+        "operationId": "site_builder_getWebsiteThreadMessages",
+        "parameters": [
+          {
+            "name": "threadId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "websiteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID that owns the website"
+            },
+            "description": "Company ID that owns the website"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Website or thread not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "The thread's messages",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "messages": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "Messages oldest first: {id, role, content, toolCalls, loading}. The agent is still working while the last assistant message has loading true."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Read a website builder thread",
+        "description": "Returns the conversation with the agent, including each tool call it made.\nAfter running the agent, read this about every 30 seconds: the run is\nfinished when the last assistant message has loading false, and its\ncontent is the agent's summary of what it built."
+      },
+      "patch": {
+        "tags": [
+          "Websites"
+        ],
+        "operationId": "site_builder_patchWebsiteThread",
+        "parameters": [
+          {
+            "name": "threadId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "websiteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "invalid branch name",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Website or thread not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "branch already exists",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "The updated thread",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "branch": {
+                      "type": "string"
+                    }
+                  },
+                  "description": "The thread: {id, title, branch, createdAt, updatedAt, messageCount, totalCreditUsage}"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Move a website builder thread onto a review branch, or rename it",
+        "description": "Pass branch to make the thread's agent write to that review branch\ninstead of main. Required before running the agent over the API.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID that owns the website"
+                  },
+                  "branch": {
+                    "type": "string",
+                    "description": "Review branch for the thread's agent to write to. Use this on a new website's first thread before running the agent."
+                  },
+                  "allowExisting": {
+                    "type": "boolean",
+                    "description": "Join a branch that already exists. Without it, a name already in use is refused (409)."
+                  },
+                  "title": {
+                    "type": "string",
+                    "description": "New thread title (when branch is not given)"
+                  }
+                },
+                "required": [
+                  "companyId"
+                ],
+                "description": "Move a thread onto a review branch, or rename it"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v0/websites/{websiteId}/threads/{threadId}/stop": {
+      "post": {
+        "tags": [
+          "Websites"
+        ],
+        "operationId": "site_builder_stopWebsiteThreadRun",
+        "parameters": [
+          {
+            "name": "threadId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "websiteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Website or thread not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Whether a running turn was asked to stop",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "stopped": {
+                      "type": "boolean",
+                      "description": "True when a running turn was asked to wrap up"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Stop the website builder agent",
+        "description": "Asks the thread's running agent turn to wrap up. Its work so far is kept.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID that owns the website"
+                  }
+                },
+                "required": [
+                  "companyId"
+                ],
+                "description": "Company scope"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v0/websites/{websiteId}/chat": {
+      "post": {
+        "tags": [
+          "Websites"
+        ],
+        "operationId": "site_builder_websiteChat",
+        "parameters": [
+          {
+            "name": "websiteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "message or threadId missing, or the thread is on main",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Website not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "The agent is running",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "threadId": {
+                      "type": "string"
+                    },
+                    "messageId": {
+                      "type": "string",
+                      "description": "The agent's reply message; read the thread until it is no longer loading"
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "\"running\""
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Run the website builder agent",
+        "description": "Sends a message to the built-in website builder agent, which designs and\nwrites the site's pages, layouts and assets itself \u2014 the same agent as\nthe editor's chat. The thread must be on a review branch; the agent\nwrites there, never to main. Returns at once while the agent works (a\nfull site build takes several minutes): read the thread until its last\nmessage is no longer loading, check it with a preview link, then approve\nthe branch (merge) and publish. Send a follow-up message on the same\nthread to make changes.\n\nThe editor gets the turn as a server-sent event stream; API callers get\nthe 202 and read the thread instead.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID that owns the website"
+                  },
+                  "threadId": {
+                    "type": "string",
+                    "description": "Thread to run in. It must be on a review branch (see the thread's branch)."
+                  },
+                  "message": {
+                    "type": "string",
+                    "description": "What to build or change, as you would ask a web designer: the business, audience, pages, sections, copy and tone."
+                  }
+                },
+                "required": [
+                  "companyId",
+                  "threadId",
+                  "message"
+                ],
+                "description": "Run the website builder agent"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v0/websites/{websiteId}/branches/{branch}/merge": {
+      "post": {
+        "tags": [
+          "Websites"
+        ],
+        "operationId": "site_builder_mergeWebsiteBranch",
+        "parameters": [
+          {
+            "name": "branch",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "websiteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "invalid branch, or the site would not render with the branch merged",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Website not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "The branch was merged into main",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "merged": {
+                      "type": "boolean"
+                    },
+                    "fileCount": {
+                      "type": "integer",
+                      "description": "How many files the branch changed on main"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Approve a review branch into the live (main) version of a website",
+        "description": "Copies the branch's changed files onto main (branch wins) and deletes the\nbranch. This does not publish: call publish afterwards to deploy main to\nthe public site. Only approve a branch the owner has asked you to approve.\n\nThe merged tree is validated first \u2014 a branch that would leave the site\nunrenderable is refused with the problems, since it could never publish.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID that owns the website"
+                  }
+                },
+                "required": [
+                  "companyId"
+                ],
+                "description": "Approve a review branch into main"
+              }
+            }
+          }
+        }
       }
     },
     "/api/v0/websites/{websiteId}/pages": {
@@ -79340,7 +80128,7 @@
         "operationId": "site_builder_apiWebsiteBranchDiff",
         "parameters": [
           {
-            "name": "websiteId",
+            "name": "branch",
             "in": "path",
             "required": true,
             "schema": {
@@ -79348,7 +80136,7 @@
             }
           },
           {
-            "name": "branch",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
