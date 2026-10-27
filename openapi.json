@@ -22040,7 +22040,7 @@
         "operationId": "lists_deleteTableAction",
         "parameters": [
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22048,7 +22048,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22146,7 +22146,7 @@
         "operationId": "lists_getActionSummary",
         "parameters": [
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22154,7 +22154,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22274,7 +22274,7 @@
         "operationId": "lists_getActionQueueStatus",
         "parameters": [
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22282,7 +22282,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22611,7 +22611,7 @@
         "operationId": "lists_getRowHistory",
         "parameters": [
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22619,7 +22619,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26531,7 +26531,7 @@
         "operationId": "sequences_updateSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26539,7 +26539,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26823,7 +26823,7 @@
         "operationId": "sequences_deleteSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26831,7 +26831,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30682,7 +30682,7 @@
         "operationId": "sequences_testSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30690,7 +30690,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30744,7 +30744,7 @@
         "operationId": "sequences_sendTestEmail",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30752,7 +30752,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -32904,7 +32904,7 @@
         "operationId": "people_updatePersonActivity",
         "parameters": [
           {
-            "name": "personId",
+            "name": "activityId",
             "in": "path",
             "required": true,
             "schema": {
@@ -32912,7 +32912,7 @@
             }
           },
           {
-            "name": "activityId",
+            "name": "personId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33060,7 +33060,7 @@
         "operationId": "people_deletePersonActivity",
         "parameters": [
           {
-            "name": "personId",
+            "name": "activityId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33068,7 +33068,7 @@
             }
           },
           {
-            "name": "activityId",
+            "name": "personId",
             "in": "path",
             "required": true,
             "schema": {
@@ -35467,7 +35467,7 @@
         "operationId": "inbox_sendDraft",
         "parameters": [
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -35475,7 +35475,7 @@
             }
           },
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -35578,7 +35578,7 @@
         "operationId": "inbox_deleteDraft",
         "parameters": [
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -35586,7 +35586,7 @@
             }
           },
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -45321,7 +45321,7 @@
         "operationId": "content_writeVideoScene",
         "parameters": [
           {
-            "name": "sceneId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -45329,7 +45329,7 @@
             }
           },
           {
-            "name": "canvasId",
+            "name": "sceneId",
             "in": "path",
             "required": true,
             "schema": {
@@ -45712,7 +45712,7 @@
         "operationId": "content_getVideoScenesJob",
         "parameters": [
           {
-            "name": "jobId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -45720,7 +45720,7 @@
             }
           },
           {
-            "name": "canvasId",
+            "name": "jobId",
             "in": "path",
             "required": true,
             "schema": {
@@ -51358,7 +51358,7 @@
         "operationId": "leads_getStagedLeads",
         "parameters": [
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -51366,7 +51366,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -51461,7 +51461,7 @@
         "operationId": "leads_applyStagedLeads",
         "parameters": [
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -51469,7 +51469,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -63399,6 +63399,10 @@
                             "type": "string",
                             "description": "The app, e.g. gmail"
                           },
+                          "toolkitName": {
+                            "type": "string",
+                            "description": "Display name of the app, e.g. Gmail"
+                          },
                           "alias": {
                             "type": "string",
                             "description": "Account label, when set"
@@ -63414,8 +63418,8 @@
             }
           }
         },
-        "summary": "List the connected app accounts an event trigger can listen on.",
-        "description": "Event triggers use the caller's own connected accounts; pass an account's\nid as connectedAccountId in a task's triggers."
+        "summary": "List the connected app accounts an event trigger can listen on: those on",
+        "description": "apps with at least one event that works from the connection.\n\nEvent triggers use the caller's own connected accounts; pass an account's\nid as connectedAccountId in a task's triggers."
       }
     },
     "/api/v0/scheduled-task-triggers/types": {
@@ -77652,7 +77656,7 @@
         "operationId": "marketing_campaigns_deleteCampaignRecipient",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "recipientId",
             "in": "path",
             "required": true,
             "schema": {
@@ -77660,7 +77664,7 @@
             }
           },
           {
-            "name": "recipientId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78227,7 +78231,7 @@
         "operationId": "marketing_campaigns_getCampaignEmailBuilderThread",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78235,7 +78239,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78294,7 +78298,7 @@
         "operationId": "marketing_campaigns_updateCampaignEmailBuilderThread",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78302,7 +78306,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78390,7 +78394,7 @@
         "operationId": "marketing_campaigns_deleteCampaignEmailBuilderThread",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78398,7 +78402,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78459,7 +78463,7 @@
         "operationId": "marketing_campaigns_stopCampaignEmailBuilderThreadRun",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78467,7 +78471,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78847,7 +78851,7 @@
         "operationId": "marketing_campaigns_getTemplateEmailBuilderThread",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78855,7 +78859,7 @@
             }
           },
           {
-            "name": "templateId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78914,7 +78918,7 @@
         "operationId": "marketing_campaigns_updateTemplateEmailBuilderThread",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78922,7 +78926,7 @@
             }
           },
           {
-            "name": "templateId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -79010,7 +79014,7 @@
         "operationId": "marketing_campaigns_deleteTemplateEmailBuilderThread",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -79018,7 +79022,7 @@
             }
           },
           {
-            "name": "templateId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -79079,7 +79083,7 @@
         "operationId": "marketing_campaigns_stopTemplateEmailBuilderThreadRun",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -79087,7 +79091,7 @@
             }
           },
           {
-            "name": "templateId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
