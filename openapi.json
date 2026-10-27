@@ -2046,7 +2046,7 @@
         "operationId": "documents_getDocumentContents",
         "parameters": [
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -2054,7 +2054,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -2113,7 +2113,7 @@
         "operationId": "documents_getDocument",
         "parameters": [
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -2121,7 +2121,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8031,7 +8031,7 @@
         "operationId": "projects_getProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8039,7 +8039,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8174,7 +8174,7 @@
         "operationId": "projects_updateProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8182,7 +8182,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8347,7 +8347,7 @@
         "operationId": "projects_deleteProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8355,7 +8355,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9254,7 +9254,7 @@
         "operationId": "projects_exportProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9262,7 +9262,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9372,7 +9372,7 @@
         "operationId": "projects_exportProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9380,7 +9380,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9492,7 +9492,7 @@
         "operationId": "projects_publishFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9500,7 +9500,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9647,7 +9647,7 @@
         "operationId": "projects_unpublishFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9655,7 +9655,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -18867,7 +18867,7 @@
         "operationId": "agents_checkConversationActivity",
         "parameters": [
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18875,7 +18875,7 @@
             }
           },
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18937,7 +18937,7 @@
         "operationId": "agents_getConversationDetails",
         "parameters": [
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18945,7 +18945,7 @@
             }
           },
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26531,7 +26531,7 @@
         "operationId": "sequences_updateSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26539,7 +26539,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26823,7 +26823,7 @@
         "operationId": "sequences_deleteSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26831,7 +26831,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27577,7 +27577,7 @@
         "operationId": "sequences_getSequenceMemberTimeline",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27585,7 +27585,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27983,7 +27983,7 @@
         "operationId": "sequences_triggerSequenceMember",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27991,7 +27991,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28059,7 +28059,7 @@
         "operationId": "sequences_removeSequenceMember",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28067,7 +28067,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28859,7 +28859,7 @@
         "operationId": "sequences_editSequenceExecution",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28867,7 +28867,7 @@
             }
           },
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28966,7 +28966,7 @@
         "operationId": "sequences_previewSequenceExecution",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28974,7 +28974,7 @@
             }
           },
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30682,7 +30682,7 @@
         "operationId": "sequences_testSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30690,7 +30690,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30744,7 +30744,7 @@
         "operationId": "sequences_sendTestEmail",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30752,7 +30752,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -35467,7 +35467,7 @@
         "operationId": "inbox_sendDraft",
         "parameters": [
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -35475,7 +35475,7 @@
             }
           },
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -35578,7 +35578,7 @@
         "operationId": "inbox_deleteDraft",
         "parameters": [
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -35586,7 +35586,7 @@
             }
           },
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -43920,7 +43920,7 @@
         }
       }
     },
-    "/api/v0/content/canvases/{canvas_id}": {
+    "/api/v0/content/canvases/{canvasId}": {
       "get": {
         "tags": [
           "Content"
@@ -43928,7 +43928,7 @@
         "operationId": "content_getCanvasDesign",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -44042,7 +44042,7 @@
         "operationId": "content_updateCanvasDesign",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -44201,7 +44201,7 @@
         "operationId": "content_deleteCanvasDesign",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -44261,7 +44261,7 @@
         "summary": "Delete a canvas design."
       }
     },
-    "/api/v0/content/canvases/{canvas_id}/render": {
+    "/api/v0/content/canvases/{canvasId}/render": {
       "post": {
         "tags": [
           "Content"
@@ -44269,7 +44269,7 @@
         "operationId": "content_renderCanvasDesign",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -44387,7 +44387,7 @@
         "summary": "Render the canvas's saved HTML to a permanent public PNG (charged at DATA_CREDIT_COST_CANVAS)."
       }
     },
-    "/api/v0/content/canvases/{canvas_id}/render-video": {
+    "/api/v0/content/canvases/{canvasId}/render-video": {
       "post": {
         "tags": [
           "Content"
@@ -44395,7 +44395,7 @@
         "operationId": "content_renderCanvasDesignVideo",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -44466,9 +44466,7 @@
         },
         "summary": "Start recording the canvas's saved HTML to a permanent public MP4 in the background.",
         "description": "Returns 202 with the export job; poll GET .../render-video until its status\nis completed (videoUrl) or failed (error). Charged at\nDATA_CREDIT_COST_CANVAS_VIDEO only when the recording succeeds. A second\nrequest while an export is running returns that job instead of a new one."
-      }
-    },
-    "/api/v0/content/canvases/{canvasId}/render-video": {
+      },
       "get": {
         "tags": [
           "Content"
@@ -44848,6 +44846,14 @@
                         },
                         "loop": {
                           "type": "boolean"
+                        },
+                        "clipIn": {
+                          "type": "number",
+                          "description": "Second of the track to start playing from (skip a slow intro)"
+                        },
+                        "clipOut": {
+                          "type": "number",
+                          "description": "Second of the track to stop at"
                         }
                       },
                       "required": [
@@ -45226,6 +45232,14 @@
                         },
                         "loop": {
                           "type": "boolean"
+                        },
+                        "clipIn": {
+                          "type": "number",
+                          "description": "Second of the track to start playing from (skip a slow intro)"
+                        },
+                        "clipOut": {
+                          "type": "number",
+                          "description": "Second of the track to stop at"
                         }
                       },
                       "required": [
@@ -45307,7 +45321,7 @@
         "operationId": "content_writeVideoScene",
         "parameters": [
           {
-            "name": "canvasId",
+            "name": "sceneId",
             "in": "path",
             "required": true,
             "schema": {
@@ -45315,7 +45329,7 @@
             }
           },
           {
-            "name": "sceneId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -45542,7 +45556,7 @@
             }
           },
           "200": {
-            "description": "Scenes written, failures and the check frames",
+            "description": "Scenes written, failures and the check frames; or, with status \"writing\" (HTTP 202), the jobId to poll",
             "content": {
               "application/json": {
                 "schema": {
@@ -45577,6 +45591,18 @@
                     "seconds": {
                       "type": "integer",
                       "description": "Time the writers took"
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "writing, completed or failed"
+                    },
+                    "jobId": {
+                      "type": "string",
+                      "description": "Job to poll at GET .../scenes/jobs/<jobId> while status is writing"
+                    },
+                    "error": {
+                      "type": "string",
+                      "description": "Why a failed job failed"
                     }
                   },
                   "description": "Scenes written from briefs"
@@ -45586,7 +45612,7 @@
           }
         },
         "summary": "Write or revise many scenes of a video project at once from briefs, then check them.",
-        "description": "Write or revise many scenes of a video project at once: the fast way to build a video. Give each scene a brief and its scene writer writes the file from it, every scene at the same time, then the scenes are checked in one preview and any problems found go back to their writers once. A brief is the full direction for that scene: what the viewer sees and reads (the exact on-screen words), the layout, the product UI moment, the motion and camera on which beats, which images to use (URLs), and how it hands over to the next scene. For a scene that already has content the brief is the revision to make (e.g. a review note); everything else in the scene stays as it is. A new sceneId also needs start and duration. Put what every scene shares (the customer, tone, type treatment, recurring motifs) in direction, and the beat grid in beats/downbeats. Returns which scenes were written and a contact sheet with one frame per scene; look at it with view_image, then render. Use write_scene for a small exact fix you can make yourself.",
+        "description": "Write or revise many scenes of a video project at once: the fast way to build a video. Give each scene a brief and its scene writer writes the file from it, every scene at the same time, then the scenes are checked in one preview and any problems found go back to their writers once. A brief is the full direction for that scene: what the viewer sees and reads (the exact on-screen words), the layout, the product UI moment, the motion and camera on which beats, which images to use (URLs), and how it hands over to the next scene. For a scene that already has content the brief is the revision to make (e.g. a review note); everything else in the scene stays as it is. A new sceneId also needs start and duration. Put what every scene shares (the customer, tone, type treatment, recurring motifs) in direction, and the beat grid in beats/downbeats. Returns which scenes were written and a contact sheet with one frame per scene; look at it with view_image, then render. Use write_scene for a small exact fix you can make yourself. Over the API this waits up to 40s; writers still working by then answer 202 with status \"writing\" and a jobId: poll GET .../scenes/jobs/<jobId> every 10-15s until its status is completed (the same result) or failed.",
         "requestBody": {
           "required": true,
           "content": {
@@ -45676,6 +45702,110 @@
           },
           "description": "A brief for each scene to write or revise"
         }
+      }
+    },
+    "/api/v0/content/canvases/{canvasId}/scenes/jobs/{jobId}": {
+      "get": {
+        "tags": [
+          "Content"
+        ],
+        "operationId": "content_getVideoScenesJob",
+        "parameters": [
+          {
+            "name": "jobId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "canvasId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Job not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "The scene writers' job: writing, completed (with the result) or failed (with the error)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "written": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "Scene ids written"
+                    },
+                    "failed": {
+                      "type": "object",
+                      "description": "Scene id -> why it was not written"
+                    },
+                    "problems": {
+                      "type": "object",
+                      "description": "Scene id -> problems still open on its check frame"
+                    },
+                    "other": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "Problems not tied to one scene"
+                    },
+                    "imageUrl": {
+                      "type": "string",
+                      "description": "Contact sheet with one check frame per written scene"
+                    },
+                    "seconds": {
+                      "type": "integer",
+                      "description": "Time the writers took"
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "writing, completed or failed"
+                    },
+                    "jobId": {
+                      "type": "string",
+                      "description": "Job to poll at GET .../scenes/jobs/<jobId> while status is writing"
+                    },
+                    "error": {
+                      "type": "string",
+                      "description": "Why a failed job failed"
+                    }
+                  },
+                  "description": "Scenes written from briefs"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Poll a scene-writer job started by POST .../scenes."
       }
     },
     "/api/v0/content/canvases/{canvasId}/preview": {
@@ -46084,7 +46214,7 @@
         "operationId": "content_getCanvasDesignMedia",
         "parameters": [
           {
-            "name": "canvasId",
+            "name": "videoId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46092,7 +46222,7 @@
             }
           },
           {
-            "name": "videoId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46192,7 +46322,7 @@
         "operationId": "content_useCanvasDesignMedia",
         "parameters": [
           {
-            "name": "canvasId",
+            "name": "videoId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46200,7 +46330,7 @@
             }
           },
           {
-            "name": "videoId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46292,7 +46422,7 @@
         "summary": "Get a public video for the timeline: the video itself, or a public copy of a private one."
       }
     },
-    "/api/v0/content/canvases/{canvas_id}/chat": {
+    "/api/v0/content/canvases/{canvasId}/chat": {
       "post": {
         "tags": [
           "Content"
@@ -46300,7 +46430,7 @@
         "operationId": "content_canvasDesignChat",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46384,7 +46514,7 @@
         }
       }
     },
-    "/api/v0/content/canvases/{canvas_id}/threads": {
+    "/api/v0/content/canvases/{canvasId}/threads": {
       "get": {
         "tags": [
           "Content"
@@ -46392,7 +46522,7 @@
         "operationId": "content_listCanvasDesignThreads",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46431,7 +46561,7 @@
         "operationId": "content_createCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46499,7 +46629,7 @@
         }
       }
     },
-    "/api/v0/content/canvases/{canvas_id}/threads/{thread_id}": {
+    "/api/v0/content/canvases/{canvasId}/threads/{threadId}": {
       "get": {
         "tags": [
           "Content"
@@ -46507,7 +46637,7 @@
         "operationId": "content_getCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46515,7 +46645,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46554,7 +46684,7 @@
         "operationId": "content_updateCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46562,7 +46692,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46640,7 +46770,7 @@
         "operationId": "content_deleteCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46648,7 +46778,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46681,7 +46811,7 @@
         "summary": "Delete a thread; returns the refreshed thread view."
       }
     },
-    "/api/v0/content/canvases/{canvas_id}/threads/{thread_id}/stop": {
+    "/api/v0/content/canvases/{canvasId}/threads/{threadId}/stop": {
       "post": {
         "tags": [
           "Content"
@@ -46689,7 +46819,7 @@
         "operationId": "content_stopCanvasDesignThreadRun",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46697,7 +46827,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46741,7 +46871,7 @@
         "description": "message sends; the partial reply is already saved)."
       }
     },
-    "/api/v0/content/canvases/{canvas_id}/upload": {
+    "/api/v0/content/canvases/{canvasId}/upload": {
       "post": {
         "tags": [
           "Content"
@@ -46749,7 +46879,7 @@
         "operationId": "content_canvasDesignChatUpload",
         "parameters": [
           {
-            "name": "canvas_id",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -59230,7 +59360,7 @@
         "operationId": "landing_pages_getLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -59238,7 +59368,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -59277,7 +59407,7 @@
         "operationId": "landing_pages_updateLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -59285,7 +59415,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -59363,7 +59493,7 @@
         "operationId": "landing_pages_deleteLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -59371,7 +59501,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -59412,7 +59542,7 @@
         "operationId": "landing_pages_stopLandingPageThreadRun",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -59420,7 +59550,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -59632,7 +59762,7 @@
                           },
                           "scheduleType": {
                             "type": "string",
-                            "description": "one_time, recurring, or heartbeat"
+                            "description": "one_time, recurring, heartbeat, or event"
                           },
                           "scheduledAt": {
                             "type": "string",
@@ -59672,6 +59802,46 @@
                           },
                           "templateVersion": {
                             "type": "integer"
+                          },
+                          "triggers": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "string"
+                                },
+                                "scheduledTaskId": {
+                                  "type": "string"
+                                },
+                                "toolkit": {
+                                  "type": "string",
+                                  "description": "The connected app, e.g. gmail"
+                                },
+                                "connectedAccountId": {
+                                  "type": "string"
+                                },
+                                "triggerSlug": {
+                                  "type": "string"
+                                },
+                                "triggerName": {
+                                  "type": "string"
+                                },
+                                "triggerConfig": {
+                                  "type": "object"
+                                },
+                                "lastTriggeredAt": {
+                                  "type": "string",
+                                  "description": "ISO 8601 time of the last event, null when none"
+                                },
+                                "triggerCount": {
+                                  "type": "integer",
+                                  "description": "Events received"
+                                }
+                              },
+                              "description": "An event trigger on a task"
+                            },
+                            "description": "App events that start the task"
                           },
                           "createdDate": {
                             "type": "string"
@@ -59769,7 +59939,7 @@
                     },
                     "scheduleType": {
                       "type": "string",
-                      "description": "one_time, recurring, or heartbeat"
+                      "description": "one_time, recurring, heartbeat, or event"
                     },
                     "scheduledAt": {
                       "type": "string",
@@ -59809,6 +59979,46 @@
                     },
                     "templateVersion": {
                       "type": "integer"
+                    },
+                    "triggers": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "scheduledTaskId": {
+                            "type": "string"
+                          },
+                          "toolkit": {
+                            "type": "string",
+                            "description": "The connected app, e.g. gmail"
+                          },
+                          "connectedAccountId": {
+                            "type": "string"
+                          },
+                          "triggerSlug": {
+                            "type": "string"
+                          },
+                          "triggerName": {
+                            "type": "string"
+                          },
+                          "triggerConfig": {
+                            "type": "object"
+                          },
+                          "lastTriggeredAt": {
+                            "type": "string",
+                            "description": "ISO 8601 time of the last event, null when none"
+                          },
+                          "triggerCount": {
+                            "type": "integer",
+                            "description": "Events received"
+                          }
+                        },
+                        "description": "An event trigger on a task"
+                      },
+                      "description": "App events that start the task"
                     },
                     "createdDate": {
                       "type": "string"
@@ -59850,11 +60060,12 @@
                   },
                   "scheduleType": {
                     "type": "string",
-                    "description": "one_time (default), recurring, or heartbeat",
+                    "description": "one_time (default), recurring, heartbeat, or event (runs only when a trigger fires)",
                     "enum": [
                       "one_time",
                       "recurring",
-                      "heartbeat"
+                      "heartbeat",
+                      "event"
                     ]
                   },
                   "scheduledAt": {
@@ -60102,6 +60313,36 @@
                   "dailyCreditLimit": {
                     "type": "number",
                     "description": "Daily credit budget for this task; null uses the platform default"
+                  },
+                  "triggers": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "connectedAccountId": {
+                          "type": "string",
+                          "description": "One of your connected accounts, from GET /scheduled-task-triggers/accounts"
+                        },
+                        "triggerSlug": {
+                          "type": "string",
+                          "description": "Event type slug, from GET /scheduled-task-triggers/types"
+                        },
+                        "triggerName": {
+                          "type": "string",
+                          "description": "Display name of the event type"
+                        },
+                        "triggerConfig": {
+                          "type": "object",
+                          "description": "Settings for the event, matching the event type's config schema"
+                        }
+                      },
+                      "required": [
+                        "connectedAccountId",
+                        "triggerSlug"
+                      ],
+                      "description": "An app event that starts the task, alongside or instead of its schedule. Each run an event starts is given the event's data."
+                    },
+                    "description": "Up to 10 app events that start the task. On update, the list replaces the current triggers; unchanged entries are kept. Required for scheduleType event."
                   }
                 },
                 "required": [
@@ -60563,7 +60804,7 @@
                     },
                     "scheduleType": {
                       "type": "string",
-                      "description": "one_time, recurring, or heartbeat"
+                      "description": "one_time, recurring, heartbeat, or event"
                     },
                     "scheduledAt": {
                       "type": "string",
@@ -60603,6 +60844,46 @@
                     },
                     "templateVersion": {
                       "type": "integer"
+                    },
+                    "triggers": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "scheduledTaskId": {
+                            "type": "string"
+                          },
+                          "toolkit": {
+                            "type": "string",
+                            "description": "The connected app, e.g. gmail"
+                          },
+                          "connectedAccountId": {
+                            "type": "string"
+                          },
+                          "triggerSlug": {
+                            "type": "string"
+                          },
+                          "triggerName": {
+                            "type": "string"
+                          },
+                          "triggerConfig": {
+                            "type": "object"
+                          },
+                          "lastTriggeredAt": {
+                            "type": "string",
+                            "description": "ISO 8601 time of the last event, null when none"
+                          },
+                          "triggerCount": {
+                            "type": "integer",
+                            "description": "Events received"
+                          }
+                        },
+                        "description": "An event trigger on a task"
+                      },
+                      "description": "App events that start the task"
                     },
                     "createdDate": {
                       "type": "string"
@@ -60713,7 +60994,7 @@
                     },
                     "scheduleType": {
                       "type": "string",
-                      "description": "one_time, recurring, or heartbeat"
+                      "description": "one_time, recurring, heartbeat, or event"
                     },
                     "scheduledAt": {
                       "type": "string",
@@ -60754,6 +61035,46 @@
                     "templateVersion": {
                       "type": "integer"
                     },
+                    "triggers": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "scheduledTaskId": {
+                            "type": "string"
+                          },
+                          "toolkit": {
+                            "type": "string",
+                            "description": "The connected app, e.g. gmail"
+                          },
+                          "connectedAccountId": {
+                            "type": "string"
+                          },
+                          "triggerSlug": {
+                            "type": "string"
+                          },
+                          "triggerName": {
+                            "type": "string"
+                          },
+                          "triggerConfig": {
+                            "type": "object"
+                          },
+                          "lastTriggeredAt": {
+                            "type": "string",
+                            "description": "ISO 8601 time of the last event, null when none"
+                          },
+                          "triggerCount": {
+                            "type": "integer",
+                            "description": "Events received"
+                          }
+                        },
+                        "description": "An event trigger on a task"
+                      },
+                      "description": "App events that start the task"
+                    },
                     "createdDate": {
                       "type": "string"
                     },
@@ -60789,11 +61110,12 @@
                   },
                   "scheduleType": {
                     "type": "string",
-                    "description": "one_time, recurring, or heartbeat",
+                    "description": "one_time, recurring, heartbeat, or event",
                     "enum": [
                       "one_time",
                       "recurring",
-                      "heartbeat"
+                      "heartbeat",
+                      "event"
                     ]
                   },
                   "scheduledAt": {
@@ -61042,6 +61364,36 @@
                   "dailyCreditLimit": {
                     "type": "number",
                     "description": "Daily credit budget for this task; null uses the platform default"
+                  },
+                  "triggers": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "connectedAccountId": {
+                          "type": "string",
+                          "description": "One of your connected accounts, from GET /scheduled-task-triggers/accounts"
+                        },
+                        "triggerSlug": {
+                          "type": "string",
+                          "description": "Event type slug, from GET /scheduled-task-triggers/types"
+                        },
+                        "triggerName": {
+                          "type": "string",
+                          "description": "Display name of the event type"
+                        },
+                        "triggerConfig": {
+                          "type": "object",
+                          "description": "Settings for the event, matching the event type's config schema"
+                        }
+                      },
+                      "required": [
+                        "connectedAccountId",
+                        "triggerSlug"
+                      ],
+                      "description": "An app event that starts the task, alongside or instead of its schedule. Each run an event starts is given the event's data."
+                    },
+                    "description": "Up to 10 app events that start the task. On update, the list replaces the current triggers; unchanged entries are kept. Required for scheduleType event."
                   }
                 },
                 "description": "Request body for updating a scheduled task. Only supplied fields change."
@@ -61222,7 +61574,7 @@
                     },
                     "scheduleType": {
                       "type": "string",
-                      "description": "one_time, recurring, or heartbeat"
+                      "description": "one_time, recurring, heartbeat, or event"
                     },
                     "scheduledAt": {
                       "type": "string",
@@ -61262,6 +61614,46 @@
                     },
                     "templateVersion": {
                       "type": "integer"
+                    },
+                    "triggers": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "scheduledTaskId": {
+                            "type": "string"
+                          },
+                          "toolkit": {
+                            "type": "string",
+                            "description": "The connected app, e.g. gmail"
+                          },
+                          "connectedAccountId": {
+                            "type": "string"
+                          },
+                          "triggerSlug": {
+                            "type": "string"
+                          },
+                          "triggerName": {
+                            "type": "string"
+                          },
+                          "triggerConfig": {
+                            "type": "object"
+                          },
+                          "lastTriggeredAt": {
+                            "type": "string",
+                            "description": "ISO 8601 time of the last event, null when none"
+                          },
+                          "triggerCount": {
+                            "type": "integer",
+                            "description": "Events received"
+                          }
+                        },
+                        "description": "An event trigger on a task"
+                      },
+                      "description": "App events that start the task"
                     },
                     "createdDate": {
                       "type": "string"
@@ -61383,7 +61775,7 @@
                     },
                     "scheduleType": {
                       "type": "string",
-                      "description": "one_time, recurring, or heartbeat"
+                      "description": "one_time, recurring, heartbeat, or event"
                     },
                     "scheduledAt": {
                       "type": "string",
@@ -61423,6 +61815,46 @@
                     },
                     "templateVersion": {
                       "type": "integer"
+                    },
+                    "triggers": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "scheduledTaskId": {
+                            "type": "string"
+                          },
+                          "toolkit": {
+                            "type": "string",
+                            "description": "The connected app, e.g. gmail"
+                          },
+                          "connectedAccountId": {
+                            "type": "string"
+                          },
+                          "triggerSlug": {
+                            "type": "string"
+                          },
+                          "triggerName": {
+                            "type": "string"
+                          },
+                          "triggerConfig": {
+                            "type": "object"
+                          },
+                          "lastTriggeredAt": {
+                            "type": "string",
+                            "description": "ISO 8601 time of the last event, null when none"
+                          },
+                          "triggerCount": {
+                            "type": "integer",
+                            "description": "Events received"
+                          }
+                        },
+                        "description": "An event trigger on a task"
+                      },
+                      "description": "App events that start the task"
                     },
                     "createdDate": {
                       "type": "string"
@@ -61543,7 +61975,7 @@
                     },
                     "scheduleType": {
                       "type": "string",
-                      "description": "one_time, recurring, or heartbeat"
+                      "description": "one_time, recurring, heartbeat, or event"
                     },
                     "scheduledAt": {
                       "type": "string",
@@ -61583,6 +62015,46 @@
                     },
                     "templateVersion": {
                       "type": "integer"
+                    },
+                    "triggers": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "scheduledTaskId": {
+                            "type": "string"
+                          },
+                          "toolkit": {
+                            "type": "string",
+                            "description": "The connected app, e.g. gmail"
+                          },
+                          "connectedAccountId": {
+                            "type": "string"
+                          },
+                          "triggerSlug": {
+                            "type": "string"
+                          },
+                          "triggerName": {
+                            "type": "string"
+                          },
+                          "triggerConfig": {
+                            "type": "object"
+                          },
+                          "lastTriggeredAt": {
+                            "type": "string",
+                            "description": "ISO 8601 time of the last event, null when none"
+                          },
+                          "triggerCount": {
+                            "type": "integer",
+                            "description": "Events received"
+                          }
+                        },
+                        "description": "An event trigger on a task"
+                      },
+                      "description": "App events that start the task"
                     },
                     "createdDate": {
                       "type": "string"
@@ -61713,7 +62185,7 @@
                     },
                     "scheduleType": {
                       "type": "string",
-                      "description": "one_time, recurring, or heartbeat"
+                      "description": "one_time, recurring, heartbeat, or event"
                     },
                     "scheduledAt": {
                       "type": "string",
@@ -61753,6 +62225,46 @@
                     },
                     "templateVersion": {
                       "type": "integer"
+                    },
+                    "triggers": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "scheduledTaskId": {
+                            "type": "string"
+                          },
+                          "toolkit": {
+                            "type": "string",
+                            "description": "The connected app, e.g. gmail"
+                          },
+                          "connectedAccountId": {
+                            "type": "string"
+                          },
+                          "triggerSlug": {
+                            "type": "string"
+                          },
+                          "triggerName": {
+                            "type": "string"
+                          },
+                          "triggerConfig": {
+                            "type": "object"
+                          },
+                          "lastTriggeredAt": {
+                            "type": "string",
+                            "description": "ISO 8601 time of the last event, null when none"
+                          },
+                          "triggerCount": {
+                            "type": "integer",
+                            "description": "Events received"
+                          }
+                        },
+                        "description": "An event trigger on a task"
+                      },
+                      "description": "App events that start the task"
                     },
                     "createdDate": {
                       "type": "string"
@@ -61874,7 +62386,7 @@
                     },
                     "scheduleType": {
                       "type": "string",
-                      "description": "one_time, recurring, or heartbeat"
+                      "description": "one_time, recurring, heartbeat, or event"
                     },
                     "scheduledAt": {
                       "type": "string",
@@ -61914,6 +62426,46 @@
                     },
                     "templateVersion": {
                       "type": "integer"
+                    },
+                    "triggers": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "scheduledTaskId": {
+                            "type": "string"
+                          },
+                          "toolkit": {
+                            "type": "string",
+                            "description": "The connected app, e.g. gmail"
+                          },
+                          "connectedAccountId": {
+                            "type": "string"
+                          },
+                          "triggerSlug": {
+                            "type": "string"
+                          },
+                          "triggerName": {
+                            "type": "string"
+                          },
+                          "triggerConfig": {
+                            "type": "object"
+                          },
+                          "lastTriggeredAt": {
+                            "type": "string",
+                            "description": "ISO 8601 time of the last event, null when none"
+                          },
+                          "triggerCount": {
+                            "type": "integer",
+                            "description": "Events received"
+                          }
+                        },
+                        "description": "An event trigger on a task"
+                      },
+                      "description": "App events that start the task"
                     },
                     "createdDate": {
                       "type": "string"
@@ -62436,6 +62988,14 @@
                           "scoredAt": {
                             "type": "string"
                           },
+                          "triggerId": {
+                            "type": "string",
+                            "description": "The trigger that started this run, null for scheduled and manual runs"
+                          },
+                          "triggerEvent": {
+                            "type": "object",
+                            "description": "The event that started this run and its data"
+                          },
                           "createdDate": {
                             "type": "string"
                           }
@@ -62709,6 +63269,14 @@
                           "scoredAt": {
                             "type": "string"
                           },
+                          "triggerId": {
+                            "type": "string",
+                            "description": "The trigger that started this run, null for scheduled and manual runs"
+                          },
+                          "triggerEvent": {
+                            "type": "object",
+                            "description": "The event that started this run and its data"
+                          },
                           "createdDate": {
                             "type": "string"
                           }
@@ -62770,6 +63338,198 @@
           }
         },
         "summary": "List visible connections for a template's required integration choices."
+      }
+    },
+    "/api/v0/scheduled-task-triggers/accounts": {
+      "get": {
+        "tags": [
+          "Scheduled Tasks"
+        ],
+        "operationId": "scheduled_tasks_listTriggerAccounts",
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Company ID. Optional when the API key is a company key; required for personal access keys unless X-Company-ID is set."
+            },
+            "description": "Company ID. Optional when the API key is a company key; required for personal access keys unless X-Company-ID is set."
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "The caller's connected app accounts",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "accounts": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "description": "Use as connectedAccountId"
+                          },
+                          "toolkit": {
+                            "type": "string",
+                            "description": "The app, e.g. gmail"
+                          },
+                          "alias": {
+                            "type": "string",
+                            "description": "Account label, when set"
+                          }
+                        },
+                        "description": "A connected app account"
+                      }
+                    }
+                  },
+                  "description": "The caller's connected app accounts"
+                }
+              }
+            }
+          }
+        },
+        "summary": "List the connected app accounts an event trigger can listen on.",
+        "description": "Event triggers use the caller's own connected accounts; pass an account's\nid as connectedAccountId in a task's triggers."
+      }
+    },
+    "/api/v0/scheduled-task-triggers/types": {
+      "get": {
+        "tags": [
+          "Scheduled Tasks"
+        ],
+        "operationId": "scheduled_tasks_listTaskTriggerTypes",
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Company ID. Optional when the API key is a company key; required for personal access keys unless X-Company-ID is set."
+            },
+            "description": "Company ID. Optional when the API key is a company key; required for personal access keys unless X-Company-ID is set."
+          },
+          {
+            "name": "toolkit",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "The connected app, e.g. gmail"
+            },
+            "description": "The connected app, e.g. gmail"
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "nextCursor from the previous page"
+            },
+            "description": "nextCursor from the previous page"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "A page of the app's event types",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "slug": {
+                            "type": "string",
+                            "description": "Use as triggerSlug"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "description": {
+                            "type": "string"
+                          },
+                          "instructions": {
+                            "type": "string"
+                          },
+                          "type": {
+                            "type": "string",
+                            "description": "webhook or poll"
+                          },
+                          "config": {
+                            "type": "object",
+                            "description": "JSON schema of the settings the event takes"
+                          },
+                          "toolkit": {
+                            "type": "object",
+                            "description": "slug, name and logo of the app"
+                          }
+                        },
+                        "description": "An event an app can start a task with"
+                      }
+                    },
+                    "nextCursor": {
+                      "type": "string"
+                    }
+                  },
+                  "description": "A page of an app's event types"
+                }
+              }
+            }
+          }
+        },
+        "summary": "List the events a connected app can start a task with.",
+        "description": "Each event type's config is a JSON schema of the settings it takes; pass\nthem as triggerConfig in a task's triggers."
       }
     },
     "/api/v0/monitors": {
@@ -73446,7 +74206,7 @@
         "operationId": "seo_projectLighthouseSnapshotRoute",
         "parameters": [
           {
-            "name": "snapshotId",
+            "name": "projectId",
             "in": "path",
             "required": true,
             "schema": {
@@ -73454,7 +74214,7 @@
             }
           },
           {
-            "name": "projectId",
+            "name": "snapshotId",
             "in": "path",
             "required": true,
             "schema": {
@@ -77467,7 +78227,7 @@
         "operationId": "marketing_campaigns_getCampaignEmailBuilderThread",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -77475,7 +78235,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -77534,7 +78294,7 @@
         "operationId": "marketing_campaigns_updateCampaignEmailBuilderThread",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -77542,7 +78302,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -77630,7 +78390,7 @@
         "operationId": "marketing_campaigns_deleteCampaignEmailBuilderThread",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -77638,7 +78398,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -77699,7 +78459,7 @@
         "operationId": "marketing_campaigns_stopCampaignEmailBuilderThreadRun",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -77707,7 +78467,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78087,7 +78847,7 @@
         "operationId": "marketing_campaigns_getTemplateEmailBuilderThread",
         "parameters": [
           {
-            "name": "templateId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78095,7 +78855,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78154,7 +78914,7 @@
         "operationId": "marketing_campaigns_updateTemplateEmailBuilderThread",
         "parameters": [
           {
-            "name": "templateId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78162,7 +78922,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78250,7 +79010,7 @@
         "operationId": "marketing_campaigns_deleteTemplateEmailBuilderThread",
         "parameters": [
           {
-            "name": "templateId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78258,7 +79018,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78319,7 +79079,7 @@
         "operationId": "marketing_campaigns_stopTemplateEmailBuilderThreadRun",
         "parameters": [
           {
-            "name": "templateId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78327,7 +79087,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -80296,7 +81056,7 @@
         "operationId": "site_builder_getWebsiteThreadMessages",
         "parameters": [
           {
-            "name": "websiteId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -80304,7 +81064,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -80373,7 +81133,7 @@
         "operationId": "site_builder_patchWebsiteThread",
         "parameters": [
           {
-            "name": "websiteId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -80381,7 +81141,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -80497,7 +81257,7 @@
         "operationId": "site_builder_stopWebsiteThreadRun",
         "parameters": [
           {
-            "name": "websiteId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -80505,7 +81265,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -80688,7 +81448,7 @@
         "operationId": "site_builder_mergeWebsiteBranch",
         "parameters": [
           {
-            "name": "websiteId",
+            "name": "branch",
             "in": "path",
             "required": true,
             "schema": {
@@ -80696,7 +81456,7 @@
             }
           },
           {
-            "name": "branch",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81769,7 +82529,7 @@
         "operationId": "site_builder_apiWebsiteBranchDiff",
         "parameters": [
           {
-            "name": "websiteId",
+            "name": "branch",
             "in": "path",
             "required": true,
             "schema": {
@@ -81777,7 +82537,7 @@
             }
           },
           {
-            "name": "branch",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
