@@ -4310,7 +4310,7 @@
         "operationId": "keys_getApiKey",
         "parameters": [
           {
-            "name": "name",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -4318,7 +4318,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "name",
             "in": "path",
             "required": true,
             "schema": {
@@ -8031,7 +8031,7 @@
         "operationId": "projects_getProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8039,7 +8039,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8174,7 +8174,7 @@
         "operationId": "projects_updateProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8182,7 +8182,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8347,7 +8347,7 @@
         "operationId": "projects_deleteProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8355,7 +8355,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9254,7 +9254,7 @@
         "operationId": "projects_exportProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9262,7 +9262,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9372,7 +9372,7 @@
         "operationId": "projects_exportProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9380,7 +9380,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9492,7 +9492,7 @@
         "operationId": "projects_publishFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9500,7 +9500,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9647,7 +9647,7 @@
         "operationId": "projects_unpublishFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9655,7 +9655,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -10089,7 +10089,7 @@
         "operationId": "memories_getMemory",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10097,7 +10097,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10195,7 +10195,7 @@
         "operationId": "memories_updateMemoryRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10203,7 +10203,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10331,7 +10331,7 @@
         "operationId": "memories_deleteMemoryRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10339,7 +10339,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10390,7 +10390,7 @@
         "operationId": "memories_toggleMemoryActiveRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10398,7 +10398,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18867,7 +18867,7 @@
         "operationId": "agents_checkConversationActivity",
         "parameters": [
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18875,7 +18875,7 @@
             }
           },
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18937,7 +18937,7 @@
         "operationId": "agents_getConversationDetails",
         "parameters": [
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18945,7 +18945,7 @@
             }
           },
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22040,7 +22040,7 @@
         "operationId": "lists_deleteTableAction",
         "parameters": [
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22048,7 +22048,7 @@
             }
           },
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22146,7 +22146,7 @@
         "operationId": "lists_getActionSummary",
         "parameters": [
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22154,7 +22154,7 @@
             }
           },
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22274,7 +22274,7 @@
         "operationId": "lists_getActionQueueStatus",
         "parameters": [
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22282,7 +22282,7 @@
             }
           },
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22611,7 +22611,7 @@
         "operationId": "lists_getRowHistory",
         "parameters": [
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22619,7 +22619,7 @@
             }
           },
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22831,7 +22831,7 @@
         "operationId": "lists_deleteHeader",
         "parameters": [
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22839,7 +22839,7 @@
             }
           },
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22905,7 +22905,7 @@
         "operationId": "lists_editHeader",
         "parameters": [
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22913,7 +22913,7 @@
             }
           },
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26531,7 +26531,7 @@
         "operationId": "sequences_updateSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26539,7 +26539,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26823,7 +26823,7 @@
         "operationId": "sequences_deleteSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26831,7 +26831,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28859,7 +28859,7 @@
         "operationId": "sequences_editSequenceExecution",
         "parameters": [
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28867,7 +28867,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28966,7 +28966,7 @@
         "operationId": "sequences_previewSequenceExecution",
         "parameters": [
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28974,7 +28974,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30682,7 +30682,7 @@
         "operationId": "sequences_testSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30690,7 +30690,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30744,7 +30744,7 @@
         "operationId": "sequences_sendTestEmail",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30752,7 +30752,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30830,7 +30830,7 @@
         "operationId": "sequences_getMemberProfile",
         "parameters": [
           {
-            "name": "memberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30838,7 +30838,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "memberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -32904,7 +32904,7 @@
         "operationId": "people_updatePersonActivity",
         "parameters": [
           {
-            "name": "activityId",
+            "name": "personId",
             "in": "path",
             "required": true,
             "schema": {
@@ -32912,7 +32912,7 @@
             }
           },
           {
-            "name": "personId",
+            "name": "activityId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33060,7 +33060,7 @@
         "operationId": "people_deletePersonActivity",
         "parameters": [
           {
-            "name": "activityId",
+            "name": "personId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33068,7 +33068,7 @@
             }
           },
           {
-            "name": "personId",
+            "name": "activityId",
             "in": "path",
             "required": true,
             "schema": {
@@ -44774,7 +44774,7 @@
           }
         },
         "summary": "Create a video project: a canvas video authored as separate scenes.",
-        "description": "A video project is one animated canvas built scene by scene: create it with every scene's timing, write each scene (PUT .../scenes/<sceneId>, several in parallel is fine), check scenes with POST .../preview, then export with POST .../render-video and poll GET .../render-video. The canvas stays a normal canvas, so it opens in the canvas editor with its timeline.\n\nA scene file is markup, plus an optional <style> (it only styles this scene; :scope is the scene) and an optional <script> whose body runs as function (scene, tl, $, kit): tl is the scene's GSAP timeline (0 = the scene start), $(selector) selects inside the scene. Motion Kit attributes work inside scenes, timed from the scene start (data-canvas-motion, data-delay, data-canvas-split, data-canvas-type, data-canvas-count, data-canvas-camera). Theme variables: --canvas-bg, --surface, --ink, --muted, --line, --accent, --accent-ink, --positive, --positive-soft, --font-display, --font-ui, --radius, --shadow. Lucide icons: <i data-lucide=\"name\">.\nPartials (finished, theme-styled UI):\n- <x-window title, url; children are the window body>: App or browser window: bar with three dots, optional title and address pill.\n- <x-prompt text, icon (lucide, default \"search\"), button, button-icon, speed (chars/s, default 40), delay>: Input that types its text, then presses its button.\n- <x-post network, name, avatar (initials or image URL), image, caption, approve-at, status, status-icon>: Social post card. With approve-at its Approve button turns into the status chip at that second.\n- <x-ad network, name, avatar, image, caption, cta, url>: Sponsored ad card with a call-to-action row.\n- <x-metric label, value, prefix, suffix, decimals, delay, duration>: Metric tile whose number counts up from 0.\n- <x-toggle label, on-at>: Switch that flips on (accent fill, knob slide) at on-at seconds.\n- <x-chip text, icon, tone (accent | ink | positive | soft)>: Pill label with an optional icon.\n- <x-tile label, icon (lucide) or letter, live>: App or channel tile; live adds a green status dot.\n- <x-bars at, highlight (row number from 1), highlight-at; children <x-bar label value>>: Ranked bars that grow at `at` with counting percentages; the highlighted row lights up.\n- <x-bar label, value (0-100)>: One row inside <x-bars>.\n- <x-line-chart points (comma numbers), at, duration>: Line chart that draws itself.\n- <x-avatar initials or image>: Round avatar.\nKit helpers (times in seconds from the scene start; targets are selectors in the scene):\n- kit.cursorClick(tl, target, at, {travel}): A cursor glides onto target and clicks it at `at`: a ripple, and the target presses.\n- kit.press(tl, target, at, {scale}): Target squeezes like a pressed button.\n- kit.tiltIn(tl, target, at, {duration, rotateX, rotateY, scale}): Target arrives tilted in 3D and settles flat (camera on product UI).\n- kit.push(tl, target, at, duration, {scale, x, y}): Slow camera push on target.\n- kit.pullOut(tl, container, focus, at, {scale, duration, rotation}): Camera starts zoomed into focus and pulls out to the whole container.\n- kit.beatWords(tl, container, words, times, {colors, style, images}): One full-frame word per time with [background, text] colours; style \"whip\" (default: words whip in from alternating sides, each colour wipes across) or \"slam\"; images puts a photo (product shot, UI, the customer) behind each word under a scrim, pushing in.\n- kit.cycleWords(tl, target, words, times, {colors, frame, style}): Target shows each word at its time (style \"slam\" default, or \"cut\"), its parent punches on each change; optional [frame background, text] colours per word.\n- kit.orbit(tl, target, at, duration, {rotateY, rotateX, scale}): Slow 3D camera drift around product UI (after tiltIn, or alone).\n- kit.parallax(tl, targets, at, duration, {distance}): Layers drift sideways at different depths (later targets move further).\n- kit.burst(tl, target, at, {rings, scale, color}): Rings shock out from the target.\n- kit.drawPath(tl, path, at, duration = 1.6): An SVG path draws itself.\n- kit.highlight(tl, target, at): Accent ring and glow switch on around target.\n- kit.flash(tl, at, {color}): Full-frame flash, for the drop.\n- kit.shake(tl, target, at, {strength}): Short impact shake.\n- kit.stagger(tl, targets, at, {from, each}): Targets pop in one after another.\n- kit.position(target): Its {x, y, w, h} in the scene, ignoring transforms.",
+        "description": "A video project is one animated canvas built scene by scene: create it with every scene's timing, brief every scene in one POST .../scenes (scene writers write and check them all at once; PUT .../scenes/<sceneId> writes one scene yourself), check scenes with POST .../preview, then export with POST .../render-video and poll GET .../render-video. The canvas stays a normal canvas, so it opens in the canvas editor with its timeline.\n\nA scene file is markup, plus an optional <style> (it only styles this scene; :scope is the scene) and an optional <script> whose body runs as function (scene, tl, $, kit): tl is the scene's GSAP timeline (0 = the scene start), $(selector) selects inside the scene. Motion Kit attributes work inside scenes, timed from the scene start (data-canvas-motion, data-delay, data-canvas-split, data-canvas-type, data-canvas-count, data-canvas-camera). Theme variables: --canvas-bg, --surface, --ink, --muted, --line, --accent, --accent-ink, --positive, --positive-soft, --font-display, --font-ui, --radius, --shadow. Lucide icons: <i data-lucide=\"name\">.\nPartials (finished, theme-styled UI):\n- <x-window title, url; children are the window body>: App or browser window: bar with three dots, optional title and address pill.\n- <x-prompt text, icon (lucide, default \"search\"), button, button-icon, speed (chars/s, default 40), delay>: Input that types its text, then presses its button.\n- <x-post network, name, avatar (initials or image URL), image, caption, approve-at, status, status-icon>: Social post card. With approve-at its Approve button turns into the status chip at that second.\n- <x-ad network, name, avatar, image, caption, cta, url>: Sponsored ad card with a call-to-action row.\n- <x-metric label, value, prefix, suffix, decimals, delay, duration>: Metric tile whose number counts up from 0.\n- <x-toggle label, on-at>: Switch that flips on (accent fill, knob slide) at on-at seconds.\n- <x-chip text, icon, tone (accent | ink | positive | soft)>: Pill label with an optional icon.\n- <x-tile label, icon (lucide) or letter, live>: App or channel tile; live adds a green status dot.\n- <x-bars at, highlight (row number from 1), highlight-at; children <x-bar label value>>: Ranked bars that grow at `at` with counting percentages; the highlighted row lights up.\n- <x-bar label, value (0-100)>: One row inside <x-bars>.\n- <x-line-chart points (comma numbers), at, duration>: Line chart that draws itself.\n- <x-avatar initials or image>: Round avatar.\nKit helpers (times in seconds from the scene start; targets are selectors in the scene):\n- kit.cursorClick(tl, target, at, {travel}): A cursor glides onto target and clicks it at `at`: a ripple, and the target presses.\n- kit.press(tl, target, at, {scale}): Target squeezes like a pressed button.\n- kit.tiltIn(tl, target, at, {duration, rotateX, rotateY, scale}): Target arrives tilted in 3D and settles flat (camera on product UI).\n- kit.push(tl, target, at, duration, {scale, x, y}): Slow camera push on target.\n- kit.pullOut(tl, container, focus, at, {scale, duration, rotation}): Camera starts zoomed into focus and pulls out to the whole container.\n- kit.beatWords(tl, container, words, times, {colors, style, images}): One full-frame word per time with [background, text] colours; style \"whip\" (default: words whip in from alternating sides, each colour wipes across) or \"slam\"; images puts a photo (product shot, UI, the customer) behind each word under a scrim, pushing in.\n- kit.cycleWords(tl, target, words, times, {colors, frame, style}): Target shows each word at its time (style \"slam\" default, or \"cut\"), its parent punches on each change; optional [frame background, text] colours per word.\n- kit.orbit(tl, target, at, duration, {rotateY, rotateX, scale}): Slow 3D camera drift around product UI (after tiltIn, or alone).\n- kit.parallax(tl, targets, at, duration, {distance}): Layers drift sideways at different depths (later targets move further).\n- kit.burst(tl, target, at, {rings, scale, color}): Rings shock out from the target.\n- kit.drawPath(tl, path, at, duration = 1.6): An SVG path draws itself.\n- kit.highlight(tl, target, at): Accent ring and glow switch on around target.\n- kit.flash(tl, at, {color}): Full-frame flash, for the drop.\n- kit.shake(tl, target, at, {strength}): Short impact shake.\n- kit.stagger(tl, targets, at, {from, each}): Targets pop in one after another.\n- kit.position(target): Its {x, y, w, h} in the scene, ignoring transforms.",
         "requestBody": {
           "required": true,
           "content": {
@@ -45471,6 +45471,210 @@
             }
           },
           "description": "The scene file (or edits to it) and its timing"
+        }
+      }
+    },
+    "/api/v0/content/canvases/{canvasId}/scenes": {
+      "post": {
+        "tags": [
+          "Content"
+        ],
+        "operationId": "content_writeVideoScenes",
+        "parameters": [
+          {
+            "name": "canvasId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid scenes",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Out of credits",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Canvas not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Writing failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Scenes written, failures and the check frames",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "written": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "Scene ids written"
+                    },
+                    "failed": {
+                      "type": "object",
+                      "description": "Scene id -> why it was not written"
+                    },
+                    "problems": {
+                      "type": "object",
+                      "description": "Scene id -> problems still open on its check frame"
+                    },
+                    "other": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "Problems not tied to one scene"
+                    },
+                    "imageUrl": {
+                      "type": "string",
+                      "description": "Contact sheet with one check frame per written scene"
+                    },
+                    "seconds": {
+                      "type": "integer",
+                      "description": "Time the writers took"
+                    }
+                  },
+                  "description": "Scenes written from briefs"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Write or revise many scenes of a video project at once from briefs, then check them.",
+        "description": "Write or revise many scenes of a video project at once: the fast way to build a video. Give each scene a brief and its scene writer writes the file from it, every scene at the same time, then the scenes are checked in one preview and any problems found go back to their writers once. A brief is the full direction for that scene: what the viewer sees and reads (the exact on-screen words), the layout, the product UI moment, the motion and camera on which beats, which images to use (URLs), and how it hands over to the next scene. For a scene that already has content the brief is the revision to make (e.g. a review note); everything else in the scene stays as it is. A new sceneId also needs start and duration. Put what every scene shares (the customer, tone, type treatment, recurring motifs) in direction, and the beat grid in beats/downbeats. Returns which scenes were written and a contact sheet with one frame per scene; look at it with view_image, then render. Use write_scene for a small exact fix you can make yourself.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID"
+                  },
+                  "scenes": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "start": {
+                          "type": "number",
+                          "description": "Second the scene starts"
+                        },
+                        "duration": {
+                          "type": "number",
+                          "description": "Seconds it stays on screen"
+                        },
+                        "transitionIn": {
+                          "type": "string",
+                          "description": "Entrance transition (Motion Kit scene transition name)"
+                        },
+                        "transitionOut": {
+                          "type": "string",
+                          "description": "Exit transition, or \"none\" to hold"
+                        },
+                        "transitionDuration": {
+                          "type": "number",
+                          "description": "Seconds the entrance takes"
+                        },
+                        "exitDuration": {
+                          "type": "number",
+                          "description": "Seconds the exit takes"
+                        },
+                        "background": {
+                          "type": "string",
+                          "description": "CSS background of the scene"
+                        },
+                        "sceneId": {
+                          "type": "string",
+                          "description": "Scene id; a new id adds the scene (give start and duration)"
+                        },
+                        "brief": {
+                          "type": "string",
+                          "description": "The scene's full direction: exact on-screen words, layout, product UI moment, motion on which beats, image URLs, hand-over. For a written scene: the change to make"
+                        }
+                      },
+                      "required": [
+                        "sceneId",
+                        "brief"
+                      ]
+                    },
+                    "description": "The scenes to write or revise, each with its brief"
+                  },
+                  "direction": {
+                    "type": "string",
+                    "description": "What every scene shares: the customer, tone, type treatment, motifs"
+                  },
+                  "beats": {
+                    "type": "array",
+                    "items": {
+                      "type": "number"
+                    },
+                    "description": "Beat times in seconds of the video"
+                  },
+                  "downbeats": {
+                    "type": "array",
+                    "items": {
+                      "type": "number"
+                    },
+                    "description": "Downbeat times in seconds of the video"
+                  }
+                },
+                "required": [
+                  "companyId",
+                  "scenes"
+                ],
+                "description": "Request body for writing scenes from briefs"
+              }
+            }
+          },
+          "description": "A brief for each scene to write or revise"
         }
       }
     },
@@ -51024,7 +51228,7 @@
         "operationId": "leads_getStagedLeads",
         "parameters": [
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -51032,7 +51236,7 @@
             }
           },
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -51127,7 +51331,7 @@
         "operationId": "leads_applyStagedLeads",
         "parameters": [
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -51135,7 +51339,7 @@
             }
           },
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -54337,7 +54541,7 @@
           }
         },
         "summary": "Watch a rendered canvas video and score it.",
-        "description": "Have a video model watch an exported canvas video (with its soundtrack) the way a demanding creative director would, and return scores (hook, story, product, motion, pacing, typography, art direction, ending, technical), an overall 1-10 score and a list of timestamped problems with fixes. Pass the videoUrl of the rendered video and the brief. Review every promo, ad, hype or explainer video before you hand it back: fix the problems it lists (write_scene edits on a video project, else update_canvas) and review again, until overall reaches 7 or two fix rounds have run. Report the final score honestly; never describe problems the review found as fixed unless a later review confirms it.",
+        "description": "Have a video model watch an exported canvas video (with its soundtrack) the way a demanding creative director would, and return scores (hook, story, product, motion, pacing, typography, art direction, ending, technical), an overall 1-10 score and a list of timestamped problems with fixes. Pass the videoUrl of the rendered video and the brief. Review every promo, ad, hype or explainer video before you hand it back. Overall 7 is a pass. Below it, run one fix round (on a video project: one write_scenes call briefing the scenes the review names with its notes; else update_canvas), render and review again; a second round only if overall is still below 6. Report the final score honestly; never describe problems the review found as fixed unless a later review confirms it.",
         "requestBody": {
           "required": true,
           "content": {
@@ -59026,7 +59230,7 @@
         "operationId": "landing_pages_getLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -59034,7 +59238,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -59073,7 +59277,7 @@
         "operationId": "landing_pages_updateLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -59081,7 +59285,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -59159,7 +59363,7 @@
         "operationId": "landing_pages_deleteLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -59167,7 +59371,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -59208,7 +59412,7 @@
         "operationId": "landing_pages_stopLandingPageThreadRun",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -59216,7 +59420,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -73242,7 +73446,7 @@
         "operationId": "seo_projectLighthouseSnapshotRoute",
         "parameters": [
           {
-            "name": "projectId",
+            "name": "snapshotId",
             "in": "path",
             "required": true,
             "schema": {
@@ -73250,7 +73454,7 @@
             }
           },
           {
-            "name": "snapshotId",
+            "name": "projectId",
             "in": "path",
             "required": true,
             "schema": {
@@ -75207,7 +75411,7 @@
         "operationId": "marketing_campaigns_restoreCampaignVersion",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -75215,7 +75419,7 @@
             }
           },
           {
-            "name": "versionId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -76688,7 +76892,7 @@
         "operationId": "marketing_campaigns_deleteCampaignRecipient",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "recipientId",
             "in": "path",
             "required": true,
             "schema": {
@@ -76696,7 +76900,7 @@
             }
           },
           {
-            "name": "recipientId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -77883,7 +78087,7 @@
         "operationId": "marketing_campaigns_getTemplateEmailBuilderThread",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -77891,7 +78095,7 @@
             }
           },
           {
-            "name": "templateId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -77950,7 +78154,7 @@
         "operationId": "marketing_campaigns_updateTemplateEmailBuilderThread",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -77958,7 +78162,7 @@
             }
           },
           {
-            "name": "templateId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78046,7 +78250,7 @@
         "operationId": "marketing_campaigns_deleteTemplateEmailBuilderThread",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78054,7 +78258,7 @@
             }
           },
           {
-            "name": "templateId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78115,7 +78319,7 @@
         "operationId": "marketing_campaigns_stopTemplateEmailBuilderThreadRun",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78123,7 +78327,7 @@
             }
           },
           {
-            "name": "templateId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {

@@ -361,6 +361,7 @@
               "POST /api/v0/content/canvases/{canvasId}/media",
               "POST /api/v0/content/canvases/{canvasId}/media/{videoId}/use",
               "POST /api/v0/content/canvases/{canvasId}/preview",
+              "POST /api/v0/content/canvases/{canvasId}/scenes",
               "POST /api/v0/content/canvases/{canvas_id}/chat",
               "POST /api/v0/content/canvases/{canvas_id}/render",
               "POST /api/v0/content/canvases/{canvas_id}/render-video",
