@@ -9247,7 +9247,7 @@
       }
     },
     "/api/v0/projects/{project_id}/files/{file_id}/export": {
-      "post": {
+      "get": {
         "tags": [
           "Projects"
         ],
@@ -9365,7 +9365,7 @@
           "description": "POST exports current editor content without saving; GET exports the saved file"
         }
       },
-      "get": {
+      "post": {
         "tags": [
           "Projects"
         ],
@@ -14552,7 +14552,7 @@
         "operationId": "organizations_updateOrganizationMember",
         "parameters": [
           {
-            "name": "orgId",
+            "name": "memberUid",
             "in": "path",
             "required": true,
             "schema": {
@@ -14560,7 +14560,7 @@
             }
           },
           {
-            "name": "memberUid",
+            "name": "orgId",
             "in": "path",
             "required": true,
             "schema": {
@@ -14687,7 +14687,7 @@
         "operationId": "organizations_removeOrganizationMember",
         "parameters": [
           {
-            "name": "orgId",
+            "name": "memberUid",
             "in": "path",
             "required": true,
             "schema": {
@@ -14695,7 +14695,7 @@
             }
           },
           {
-            "name": "memberUid",
+            "name": "orgId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22040,7 +22040,7 @@
         "operationId": "lists_deleteTableAction",
         "parameters": [
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22048,7 +22048,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22146,7 +22146,7 @@
         "operationId": "lists_getActionSummary",
         "parameters": [
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22154,7 +22154,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22274,7 +22274,7 @@
         "operationId": "lists_getActionQueueStatus",
         "parameters": [
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22282,7 +22282,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22611,7 +22611,7 @@
         "operationId": "lists_getRowHistory",
         "parameters": [
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22619,7 +22619,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -45307,7 +45307,7 @@
         "operationId": "content_writeVideoScene",
         "parameters": [
           {
-            "name": "canvasId",
+            "name": "sceneId",
             "in": "path",
             "required": true,
             "schema": {
@@ -45315,7 +45315,7 @@
             }
           },
           {
-            "name": "sceneId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -51228,7 +51228,7 @@
         "operationId": "leads_getStagedLeads",
         "parameters": [
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -51236,7 +51236,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -51331,7 +51331,7 @@
         "operationId": "leads_applyStagedLeads",
         "parameters": [
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -51339,7 +51339,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -73446,7 +73446,7 @@
         "operationId": "seo_projectLighthouseSnapshotRoute",
         "parameters": [
           {
-            "name": "projectId",
+            "name": "snapshotId",
             "in": "path",
             "required": true,
             "schema": {
@@ -73454,7 +73454,7 @@
             }
           },
           {
-            "name": "snapshotId",
+            "name": "projectId",
             "in": "path",
             "required": true,
             "schema": {
@@ -79437,7 +79437,7 @@
         "operationId": "marketing_campaigns_restoreTemplateVersion",
         "parameters": [
           {
-            "name": "versionId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -79445,7 +79445,7 @@
             }
           },
           {
-            "name": "templateId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -80688,7 +80688,7 @@
         "operationId": "site_builder_mergeWebsiteBranch",
         "parameters": [
           {
-            "name": "websiteId",
+            "name": "branch",
             "in": "path",
             "required": true,
             "schema": {
@@ -80696,7 +80696,7 @@
             }
           },
           {
-            "name": "branch",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81769,7 +81769,7 @@
         "operationId": "site_builder_apiWebsiteBranchDiff",
         "parameters": [
           {
-            "name": "websiteId",
+            "name": "branch",
             "in": "path",
             "required": true,
             "schema": {
@@ -81777,7 +81777,7 @@
             }
           },
           {
-            "name": "branch",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
