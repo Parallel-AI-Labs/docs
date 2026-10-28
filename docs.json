@@ -607,7 +607,8 @@
               "POST /api/v0/leads/lists/{listId}/rows/{rowId}/found-leads/apply",
               "POST /api/v0/leads/people-search",
               "POST /api/v0/leads/people-search/export",
-              "POST /api/v0/leads/people-search/lists/{listId}/import"
+              "POST /api/v0/leads/people-search/lists/{listId}/import",
+              "POST /api/v0/leads/people-search/sequences/{sequenceId}/import"
             ]
           },
           {
