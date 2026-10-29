@@ -25,11 +25,14 @@
     },
     {
       "name": "Browser",
-      "description": "Execute browser automation tasks with natural language."
+      "description": "Execute browser automation tasks with natural language; results are text only. To record a video walkthrough or tutorial of a website or the app, use canvas_recordWebWalkthrough instead, passing a browser_session integration id from listBrowserIntegrations to record in that saved login."
     },
     {
       "name": "Canvas",
-      "description": "Render a standalone HTML canvas into shareable art \u2014 a still PNG or a looping MP4 \u2014 and return a permanent public URL."
+      "description": "Render a standalone HTML canvas into shareable art \u2014 a still PNG or a looping MP4 \u2014 and return a permanent public URL. Also records real website or product walkthroughs and tutorials (recordWebWalkthrough) as studio-edited videos.",
+      "x-relatedSkills": [
+        "canvas-video"
+      ]
     },
     {
       "name": "Chat",
@@ -178,7 +181,7 @@
     },
     {
       "name": "Video",
-      "description": "Generate AI videos from text and images."
+      "description": "Generate AI videos from text and images. For a screen-recorded walkthrough or tutorial of a website or the app, use canvas_recordWebWalkthrough."
     },
     {
       "name": "Voices",
@@ -4310,7 +4313,7 @@
         "operationId": "keys_getApiKey",
         "parameters": [
           {
-            "name": "name",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -4318,7 +4321,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "name",
             "in": "path",
             "required": true,
             "schema": {
@@ -14552,7 +14555,7 @@
         "operationId": "organizations_updateOrganizationMember",
         "parameters": [
           {
-            "name": "orgId",
+            "name": "memberUid",
             "in": "path",
             "required": true,
             "schema": {
@@ -14560,7 +14563,7 @@
             }
           },
           {
-            "name": "memberUid",
+            "name": "orgId",
             "in": "path",
             "required": true,
             "schema": {
@@ -14687,7 +14690,7 @@
         "operationId": "organizations_removeOrganizationMember",
         "parameters": [
           {
-            "name": "orgId",
+            "name": "memberUid",
             "in": "path",
             "required": true,
             "schema": {
@@ -14695,7 +14698,7 @@
             }
           },
           {
-            "name": "memberUid",
+            "name": "orgId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18867,7 +18870,7 @@
         "operationId": "agents_checkConversationActivity",
         "parameters": [
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18875,7 +18878,7 @@
             }
           },
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18937,7 +18940,7 @@
         "operationId": "agents_getConversationDetails",
         "parameters": [
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18945,7 +18948,7 @@
             }
           },
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22611,7 +22614,7 @@
         "operationId": "lists_getRowHistory",
         "parameters": [
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22619,7 +22622,7 @@
             }
           },
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22831,7 +22834,7 @@
         "operationId": "lists_deleteHeader",
         "parameters": [
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22839,7 +22842,7 @@
             }
           },
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22905,7 +22908,7 @@
         "operationId": "lists_editHeader",
         "parameters": [
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22913,7 +22916,7 @@
             }
           },
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26531,7 +26534,7 @@
         "operationId": "sequences_updateSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26539,7 +26542,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26823,7 +26826,7 @@
         "operationId": "sequences_deleteSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26831,7 +26834,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27577,7 +27580,7 @@
         "operationId": "sequences_getSequenceMemberTimeline",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27585,7 +27588,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27983,7 +27986,7 @@
         "operationId": "sequences_triggerSequenceMember",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27991,7 +27994,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28059,7 +28062,7 @@
         "operationId": "sequences_removeSequenceMember",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28067,7 +28070,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30682,7 +30685,7 @@
         "operationId": "sequences_testSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30690,7 +30693,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30744,7 +30747,7 @@
         "operationId": "sequences_sendTestEmail",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30752,7 +30755,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -35478,7 +35481,7 @@
         "operationId": "inbox_sendDraft",
         "parameters": [
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -35486,7 +35489,7 @@
             }
           },
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -35589,7 +35592,7 @@
         "operationId": "inbox_deleteDraft",
         "parameters": [
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -35597,7 +35600,7 @@
             }
           },
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46658,7 +46661,7 @@
         "operationId": "content_getCanvasDesignThread",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46666,7 +46669,7 @@
             }
           },
           {
-            "name": "canvasId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46705,7 +46708,7 @@
         "operationId": "content_updateCanvasDesignThread",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46713,7 +46716,7 @@
             }
           },
           {
-            "name": "canvasId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46791,7 +46794,7 @@
         "operationId": "content_deleteCanvasDesignThread",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46799,7 +46802,7 @@
             }
           },
           {
-            "name": "canvasId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46840,7 +46843,7 @@
         "operationId": "content_stopCanvasDesignThreadRun",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46848,7 +46851,7 @@
             }
           },
           {
-            "name": "canvasId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -51548,7 +51551,7 @@
         "operationId": "leads_getStagedLeads",
         "parameters": [
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -51556,7 +51559,7 @@
             }
           },
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -51651,7 +51654,7 @@
         "operationId": "leads_applyStagedLeads",
         "parameters": [
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -51659,7 +51662,7 @@
             }
           },
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -54908,7 +54911,7 @@
           }
         },
         "summary": "Record a real website or product walkthrough, with a studio edit.",
-        "description": "Record a real walkthrough of a website or web app in a cloud browser: open a URL and run up to 25 steps (goto, click, type, press, hover, scroll, wait). Returns a public MP4 of the raw session (videoUrl), a crisp screenshot after every step (for designed scenes), and each step's start/end second in the video plus the on-screen box of the element it acted on, so cuts, zooms and callouts can land exactly. A visible cursor glides to each target and ripples on clicks; typing is human-paced. Targets are the visible text, label or placeholder of an element (e.g. \"Pricing\", \"Search leads\", \"Email\") or a CSS selector. Set signedIn=true to record in the user's own browser profile, where their saved logins live (for showing the logged-in product). It never types passwords: when a login page appears it stops and reports loginRequired; the user then signs in through the browser login handoff and you record again. Signed-in recordings show the user's real account data: only record screens they asked to show, and tell them what was captured. Desktop records a 1440x900 page at 2x (2880x1800); device \"mobile\" a phone viewport at 3x. With studio (on by default) it also renders a polished edit: the recording in a window with padding, rounded corners and shadow over a background, the camera zooming into each click and typed field and panning between them with motion blur, and frozen loading stretches cut. Use the studio edit, not the raw videoUrl, as the product footage: keep studio on, record a whole tour as one recording (goto steps between pages), and finish a walkthrough video by editing its canvas (music, captions, end card). It is saved as an editable canvas video (studio.canvasId, studio.videoUrl) in the aspect you choose (16:9, 9:16, 1:1, 4:5). Costs 3 data credits, plus a canvas video render for the studio edit.",
+        "description": "Record a real walkthrough of a website or web app in a cloud browser: open a URL and run up to 25 steps (goto, click, type, press, hover, scroll, wait). Returns a public MP4 of the raw session (videoUrl), a crisp screenshot after every step (for designed scenes), and each step's start/end second in the video plus the on-screen box of the element it acted on, so cuts, zooms and callouts can land exactly. A visible cursor glides to each target and ripples on clicks; typing is human-paced. Targets are the visible text, label or placeholder of an element (e.g. \"Pricing\", \"Search leads\", \"Email\") or a CSS selector. It records in the user's own browser profile, where their saved logins live, so it shows the logged-in product; pass integrationId to record in a connected browser-session account's saved login instead. Recordings show the user's real account data: only record screens they asked to show, and tell them what was captured. A wait step pauses for its hold (at most 10s per step) and a recording stops at 120s, so record a long-running result (e.g. an AI reply) in a second recording. When unsure what a page shows, record a short probe with studio=false and look at the step screenshotUrls: a click can open a dialog or picker that must be handled before the next step, and rich-text editors need a CSS selector such as [contenteditable=\"true\"]. Desktop records a 1440x900 page at 2x (2880x1800); device \"mobile\" a phone viewport at 3x. With studio (on by default) it also renders a polished edit: the recording in a window with padding, rounded corners and shadow over a background, the camera zooming into each click and typed field and panning between them with motion blur, and frozen loading stretches cut. Use the studio edit, not the raw videoUrl, as the product footage: keep studio on, record a whole tour as one recording (goto steps between pages), and finish a walkthrough video by editing its canvas (music, captions, end card). It is saved as an editable canvas video (studio.canvasId, studio.videoUrl) in the aspect you choose (16:9, 9:16, 1:1, 4:5). Costs 3 data credits, plus a canvas video render for the studio edit.",
         "requestBody": {
           "required": true,
           "content": {
@@ -54943,7 +54946,11 @@
                         },
                         "hold": {
                           "type": "number",
-                          "description": "Seconds to linger after the step"
+                          "description": "Seconds to linger after the step (at most 10)"
+                        },
+                        "zoom": {
+                          "type": "boolean",
+                          "description": "false: no camera zoom on this step; true: zoom even when zoom is off for the recording"
                         }
                       },
                       "required": [
@@ -54951,10 +54958,9 @@
                       ]
                     }
                   },
-                  "signedIn": {
-                    "type": "boolean",
-                    "description": "Record in the user's browser profile",
-                    "default": false
+                  "integrationId": {
+                    "type": "string",
+                    "description": "Record in a connected browser-session account's saved login instead of the user's own browser profile. Ids come from Browser_listBrowserIntegrations (type browser_session)."
                   },
                   "device": {
                     "type": "string",
@@ -54973,7 +54979,20 @@
                   },
                   "background": {
                     "type": "string",
-                    "description": "CSS background behind the window"
+                    "description": "CSS background behind the window. Default: a mesh of the brand kit's colours"
+                  },
+                  "zoom": {
+                    "type": "boolean",
+                    "description": "Zoom into clicks, typed fields and hovers; false keeps the whole window in view",
+                    "default": true
+                  },
+                  "duration": {
+                    "type": "number",
+                    "description": "Target length of the studio edit in seconds"
+                  },
+                  "music": {
+                    "type": "string",
+                    "description": "Music for the studio edit: a mood to pick stock music for, or a platform audioUrl"
                   },
                   "title": {
                     "type": "string",
@@ -59553,7 +59572,7 @@
         "operationId": "landing_pages_getLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -59561,7 +59580,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -59600,7 +59619,7 @@
         "operationId": "landing_pages_updateLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -59608,7 +59627,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -59686,7 +59705,7 @@
         "operationId": "landing_pages_deleteLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -59694,7 +59713,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -59735,7 +59754,7 @@
         "operationId": "landing_pages_stopLandingPageThreadRun",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -59743,7 +59762,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -74403,7 +74422,7 @@
         "operationId": "seo_projectLighthouseSnapshotRoute",
         "parameters": [
           {
-            "name": "snapshotId",
+            "name": "projectId",
             "in": "path",
             "required": true,
             "schema": {
@@ -74411,7 +74430,7 @@
             }
           },
           {
-            "name": "projectId",
+            "name": "snapshotId",
             "in": "path",
             "required": true,
             "schema": {
@@ -76368,7 +76387,7 @@
         "operationId": "marketing_campaigns_restoreCampaignVersion",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -76376,7 +76395,7 @@
             }
           },
           {
-            "name": "versionId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -77849,7 +77868,7 @@
         "operationId": "marketing_campaigns_deleteCampaignRecipient",
         "parameters": [
           {
-            "name": "recipientId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -77857,7 +77876,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "recipientId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78424,7 +78443,7 @@
         "operationId": "marketing_campaigns_getCampaignEmailBuilderThread",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78432,7 +78451,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78491,7 +78510,7 @@
         "operationId": "marketing_campaigns_updateCampaignEmailBuilderThread",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78499,7 +78518,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78587,7 +78606,7 @@
         "operationId": "marketing_campaigns_deleteCampaignEmailBuilderThread",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78595,7 +78614,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78656,7 +78675,7 @@
         "operationId": "marketing_campaigns_stopCampaignEmailBuilderThreadRun",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78664,7 +78683,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81253,7 +81272,7 @@
         "operationId": "site_builder_getWebsiteThreadMessages",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81261,7 +81280,7 @@
             }
           },
           {
-            "name": "websiteId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81330,7 +81349,7 @@
         "operationId": "site_builder_patchWebsiteThread",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81338,7 +81357,7 @@
             }
           },
           {
-            "name": "websiteId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81454,7 +81473,7 @@
         "operationId": "site_builder_stopWebsiteThreadRun",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81462,7 +81481,7 @@
             }
           },
           {
-            "name": "websiteId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81645,7 +81664,7 @@
         "operationId": "site_builder_mergeWebsiteBranch",
         "parameters": [
           {
-            "name": "branch",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81653,7 +81672,7 @@
             }
           },
           {
-            "name": "websiteId",
+            "name": "branch",
             "in": "path",
             "required": true,
             "schema": {
@@ -82726,7 +82745,7 @@
         "operationId": "site_builder_apiWebsiteBranchDiff",
         "parameters": [
           {
-            "name": "branch",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -82734,7 +82753,7 @@
             }
           },
           {
-            "name": "websiteId",
+            "name": "branch",
             "in": "path",
             "required": true,
             "schema": {
