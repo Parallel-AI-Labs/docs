@@ -257,6 +257,7 @@
               "GET /api/v0/canvas/templates",
               "GET /api/v0/stock-music/search",
               "GET /api/v0/stock-videos/search",
+              "GET /api/v0/web/walkthroughs/jobs/{jobId}",
               "POST /api/v0/audio/beats",
               "POST /api/v0/audio/music",
               "POST /api/v0/audio/sound-effects",
