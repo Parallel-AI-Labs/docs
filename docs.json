@@ -1065,6 +1065,7 @@
             "group": "Websites",
             "expanded": false,
             "pages": [
+              "DELETE /api/v0/websites/{websiteId}/branches/{branch}",
               "DELETE /api/v0/websites/{websiteId}/file",
               "GET /api/v0/apps/{appId}/publish-status",
               "GET /api/v0/design-styles",
