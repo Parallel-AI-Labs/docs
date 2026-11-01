@@ -2049,7 +2049,7 @@
         "operationId": "documents_getDocumentContents",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -2057,7 +2057,7 @@
             }
           },
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -2116,7 +2116,7 @@
         "operationId": "documents_getDocument",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -2124,7 +2124,7 @@
             }
           },
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -4313,7 +4313,7 @@
         "operationId": "keys_getApiKey",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "name",
             "in": "path",
             "required": true,
             "schema": {
@@ -4321,7 +4321,7 @@
             }
           },
           {
-            "name": "name",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -9250,7 +9250,7 @@
       }
     },
     "/api/v0/projects/{project_id}/files/{file_id}/export": {
-      "post": {
+      "get": {
         "tags": [
           "Projects"
         ],
@@ -9368,7 +9368,7 @@
           "description": "POST exports current editor content without saving; GET exports the saved file"
         }
       },
-      "get": {
+      "post": {
         "tags": [
           "Projects"
         ],
@@ -22682,7 +22682,7 @@
         "operationId": "lists_getRowHistory",
         "parameters": [
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22690,7 +22690,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26602,7 +26602,7 @@
         "operationId": "sequences_updateSequenceStep",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26610,7 +26610,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26894,7 +26894,7 @@
         "operationId": "sequences_deleteSequenceStep",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26902,7 +26902,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27648,7 +27648,7 @@
         "operationId": "sequences_getSequenceMemberTimeline",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27656,7 +27656,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28054,7 +28054,7 @@
         "operationId": "sequences_triggerSequenceMember",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28062,7 +28062,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28130,7 +28130,7 @@
         "operationId": "sequences_removeSequenceMember",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28138,7 +28138,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28930,7 +28930,7 @@
         "operationId": "sequences_editSequenceExecution",
         "parameters": [
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28938,7 +28938,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -29037,7 +29037,7 @@
         "operationId": "sequences_previewSequenceExecution",
         "parameters": [
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -29045,7 +29045,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30753,7 +30753,7 @@
         "operationId": "sequences_testSequenceStep",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30761,7 +30761,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30825,7 +30825,7 @@
         "operationId": "sequences_sendTestEmail",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30833,7 +30833,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30911,7 +30911,7 @@
         "operationId": "sequences_getMemberProfile",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "memberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30919,7 +30919,7 @@
             }
           },
           {
-            "name": "memberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -32996,7 +32996,7 @@
         "operationId": "people_updatePersonActivity",
         "parameters": [
           {
-            "name": "personId",
+            "name": "activityId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33004,7 +33004,7 @@
             }
           },
           {
-            "name": "activityId",
+            "name": "personId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33152,7 +33152,7 @@
         "operationId": "people_deletePersonActivity",
         "parameters": [
           {
-            "name": "personId",
+            "name": "activityId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33160,7 +33160,7 @@
             }
           },
           {
-            "name": "activityId",
+            "name": "personId",
             "in": "path",
             "required": true,
             "schema": {
@@ -35559,7 +35559,7 @@
         "operationId": "inbox_sendDraft",
         "parameters": [
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -35567,7 +35567,7 @@
             }
           },
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -35670,7 +35670,7 @@
         "operationId": "inbox_deleteDraft",
         "parameters": [
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -35678,7 +35678,7 @@
             }
           },
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -45814,7 +45814,7 @@
         "operationId": "content_getVideoScenesJob",
         "parameters": [
           {
-            "name": "canvasId",
+            "name": "jobId",
             "in": "path",
             "required": true,
             "schema": {
@@ -45822,7 +45822,7 @@
             }
           },
           {
-            "name": "jobId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46316,7 +46316,7 @@
         "operationId": "content_getCanvasDesignMedia",
         "parameters": [
           {
-            "name": "canvasId",
+            "name": "videoId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46324,7 +46324,7 @@
             }
           },
           {
-            "name": "videoId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46424,7 +46424,7 @@
         "operationId": "content_useCanvasDesignMedia",
         "parameters": [
           {
-            "name": "canvasId",
+            "name": "videoId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46432,7 +46432,7 @@
             }
           },
           {
-            "name": "videoId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46739,7 +46739,7 @@
         "operationId": "content_getCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvasId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46747,7 +46747,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46786,7 +46786,7 @@
         "operationId": "content_updateCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvasId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46794,7 +46794,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46872,7 +46872,7 @@
         "operationId": "content_deleteCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvasId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46880,7 +46880,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46921,7 +46921,7 @@
         "operationId": "content_stopCanvasDesignThreadRun",
         "parameters": [
           {
-            "name": "canvasId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46929,7 +46929,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -51259,7 +51259,7 @@
           }
         },
         "summary": "Import people-search results into an existing smart list.",
-        "description": "Send either rows (1\u201350 results from leads_searchPeopleDatabase, passed\nback unchanged) or filters plus count (or importAll=true) to import a\nfiltered search of up to 50,000 people. Runs in the background and returns\na taskId: poll lists_getTaskStatus until status is completed, failed or\ncancelled. A pending task with taskMetadata.waitReason is waiting for data\ncredits or the provider and resumes on its own. People already in the list\nwith the same LinkedIn URL or email are updated, not duplicated.\nEach page of up to 50 people costs 1 data credit (profiles plus company\ndata). includeEmail (default true) adds 1 per email found; includePhone\n(default false) adds 2 per phone found. Pass a fresh UUID as\nimportId and reuse it on retries so a retry returns the same task.",
+        "description": "Send either rows (1\u201350 results from leads_searchPeopleDatabase, passed\nback unchanged) or filters plus count (or importAll=true) to import a\nfiltered search of up to 50,000 people. Runs in the background and returns\na taskId: poll lists_getTaskStatus until status is completed, failed or\ncancelled. A pending task with taskMetadata.waitReason is waiting for data\ncredits or the provider and resumes on its own. People already in the list\nwith the same LinkedIn URL or email are updated, not duplicated.\nEach page of up to 50 people costs 1 data credit (profiles plus company\ndata). includeEmail (default true) adds 1 per email found; includePhone\n(default false) adds 2 per phone found. requireEmail and requirePhone\n(default false) leave out people without an email or a phone after\nenrichment; they count as failed and cost nothing. Pass a fresh UUID as importId and\nreuse it on retries so a retry returns the same task.",
         "requestBody": {
           "required": true,
           "content": {
@@ -51275,6 +51275,16 @@
                   "includePhone": {
                     "type": "boolean",
                     "description": "Enrich mobile/direct phone for 2 data credits per returned number.",
+                    "default": false
+                  },
+                  "requireEmail": {
+                    "type": "boolean",
+                    "description": "Leave out people with no email after enrichment. They count as failed and cost nothing.",
+                    "default": false
+                  },
+                  "requirePhone": {
+                    "type": "boolean",
+                    "description": "Leave out people with no phone after enrichment (set includePhone too). They count as failed and cost nothing.",
                     "default": false
                   },
                   "companyId": {
@@ -51420,7 +51430,7 @@
           }
         },
         "summary": "Import people-search results straight into a sequence, without a smart list.",
-        "description": "Takes the same rows or filters/count, includeEmail/includePhone and\nimportId options as leads_importPeopleDatabaseResults, at the same data\ncredit cost, but adds each person as a sequence member. Each person needs\nan email, LinkedIn URL or phone the sequence can reach; people already in\nthe sequence are updated and keep their place. Returns a taskId: poll\nlists_getTaskStatus until status is completed, failed or cancelled.",
+        "description": "Takes the same rows or filters/count, includeEmail/includePhone and\nimportId options as leads_importPeopleDatabaseResults, at the same data\ncredit cost, but adds each person as a sequence member. Each person needs\nan email, LinkedIn URL or phone the sequence can reach; people already in\nthe sequence are updated and keep their place. Send\nrequireEmail=true for email sequences, or requirePhone=true (with\nincludePhone) for SMS or call sequences, to leave out people who\ncannot be reached that way. Returns a taskId: poll\nlists_getTaskStatus until status is completed, failed or cancelled.",
         "requestBody": {
           "required": true,
           "content": {
@@ -51436,6 +51446,16 @@
                   "includePhone": {
                     "type": "boolean",
                     "description": "Enrich mobile/direct phone for 2 data credits per returned number.",
+                    "default": false
+                  },
+                  "requireEmail": {
+                    "type": "boolean",
+                    "description": "Leave out people with no email after enrichment. They count as failed and cost nothing.",
+                    "default": false
+                  },
+                  "requirePhone": {
+                    "type": "boolean",
+                    "description": "Leave out people with no phone after enrichment (set includePhone too). They count as failed and cost nothing.",
                     "default": false
                   },
                   "companyId": {
@@ -51580,6 +51600,16 @@
                     "description": "Enrich mobile/direct phone for 2 data credits per returned number.",
                     "default": false
                   },
+                  "requireEmail": {
+                    "type": "boolean",
+                    "description": "Leave out people with no email after enrichment. They count as failed and cost nothing.",
+                    "default": false
+                  },
+                  "requirePhone": {
+                    "type": "boolean",
+                    "description": "Leave out people with no phone after enrichment (set includePhone too). They count as failed and cost nothing.",
+                    "default": false
+                  },
                   "companyId": {
                     "type": "string",
                     "description": "Company ID for access and any applicable data-credit charges"
@@ -51629,7 +51659,7 @@
         "operationId": "leads_getStagedLeads",
         "parameters": [
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -51637,7 +51667,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -51732,7 +51762,7 @@
         "operationId": "leads_applyStagedLeads",
         "parameters": [
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -51740,7 +51770,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -74569,7 +74599,7 @@
         "operationId": "seo_projectLighthouseSnapshotRoute",
         "parameters": [
           {
-            "name": "projectId",
+            "name": "snapshotId",
             "in": "path",
             "required": true,
             "schema": {
@@ -74577,7 +74607,7 @@
             }
           },
           {
-            "name": "snapshotId",
+            "name": "projectId",
             "in": "path",
             "required": true,
             "schema": {
@@ -76534,7 +76564,7 @@
         "operationId": "marketing_campaigns_restoreCampaignVersion",
         "parameters": [
           {
-            "name": "versionId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -76542,7 +76572,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78015,7 +78045,7 @@
         "operationId": "marketing_campaigns_deleteCampaignRecipient",
         "parameters": [
           {
-            "name": "recipientId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78023,7 +78053,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "recipientId",
             "in": "path",
             "required": true,
             "schema": {
@@ -79210,7 +79240,7 @@
         "operationId": "marketing_campaigns_getTemplateEmailBuilderThread",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -79218,7 +79248,7 @@
             }
           },
           {
-            "name": "templateId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -79277,7 +79307,7 @@
         "operationId": "marketing_campaigns_updateTemplateEmailBuilderThread",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -79285,7 +79315,7 @@
             }
           },
           {
-            "name": "templateId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -79373,7 +79403,7 @@
         "operationId": "marketing_campaigns_deleteTemplateEmailBuilderThread",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -79381,7 +79411,7 @@
             }
           },
           {
-            "name": "templateId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -79442,7 +79472,7 @@
         "operationId": "marketing_campaigns_stopTemplateEmailBuilderThreadRun",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -79450,7 +79480,7 @@
             }
           },
           {
-            "name": "templateId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -80560,7 +80590,7 @@
         "operationId": "marketing_campaigns_restoreTemplateVersion",
         "parameters": [
           {
-            "name": "versionId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -80568,7 +80598,7 @@
             }
           },
           {
-            "name": "templateId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -83640,6 +83670,90 @@
                   "companyId"
                 ],
                 "description": "Update an entry"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v0/websites/entries/{entryId}/unpublish": {
+      "post": {
+        "tags": [
+          "Websites"
+        ],
+        "operationId": "site_builder_apiUnpublishWebsiteEntry",
+        "parameters": [
+          {
+            "name": "entryId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "companyId missing or entry not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "No company access",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "The entry, now a draft",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "description": "The entry: id, collectionId, slug, title, body, status and SEO fields"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Unpublish a CMS entry",
+        "description": "Moves a published entry back to draft and rebuilds the sites showing it,\nso its page leaves the live site and its listings. Use it to retire a\nduplicate or outdated post; pair it with a redirect in /redirects.json so\nthe old URL keeps working. Publishing stays in the editor.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID that owns the website"
+                  }
+                },
+                "required": [
+                  "companyId"
+                ],
+                "description": "Unpublish a CMS entry"
               }
             }
           }
