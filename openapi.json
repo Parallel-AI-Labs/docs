@@ -60,7 +60,7 @@
     },
     {
       "name": "Design Styles",
-      "description": "A library of professional design styles (layout, typography, shapes, ornament and mood) for every visual asset: websites, social posts, stories, blog headers, emails, canvas images and videos. Pick a style that fits the brand and fetch its guide for the asset's format before designing, so the result looks deliberate rather than generic."
+      "description": "A library of professional design styles (layout, typography, shapes, ornament and mood) for every visual asset: websites, social posts, stories, blog headers, emails, canvas images and videos. Pick a style and fetch its guide for the asset's format before designing, so the result looks deliberate rather than generic. Design with the brand kit OR a design style, never both. When the company has a brand kit, use its logo, colors and fonts and no design style. Use a design style when there is no brand kit, or when the user asks for a different look. Combine them only when the user asks to redesign or refresh their brand's look: the style's layout, typography and ornament, carrying the brand's name and logo."
     },
     {
       "name": "Documentation",
@@ -2053,7 +2053,7 @@
         "operationId": "documents_getDocumentContents",
         "parameters": [
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -2061,7 +2061,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -2120,7 +2120,7 @@
         "operationId": "documents_getDocument",
         "parameters": [
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -2128,7 +2128,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -4317,7 +4317,7 @@
         "operationId": "keys_getApiKey",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "name",
             "in": "path",
             "required": true,
             "schema": {
@@ -4325,7 +4325,7 @@
             }
           },
           {
-            "name": "name",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8038,7 +8038,7 @@
         "operationId": "projects_getProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8046,7 +8046,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8181,7 +8181,7 @@
         "operationId": "projects_updateProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8189,7 +8189,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8354,7 +8354,7 @@
         "operationId": "projects_deleteProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8362,7 +8362,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9261,7 +9261,7 @@
         "operationId": "projects_exportProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9269,7 +9269,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9379,7 +9379,7 @@
         "operationId": "projects_exportProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9387,7 +9387,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9499,7 +9499,7 @@
         "operationId": "projects_publishFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9507,7 +9507,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9654,7 +9654,7 @@
         "operationId": "projects_unpublishFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9662,7 +9662,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -22906,7 +22906,7 @@
         "operationId": "lists_deleteHeader",
         "parameters": [
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22914,7 +22914,7 @@
             }
           },
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22980,7 +22980,7 @@
         "operationId": "lists_editHeader",
         "parameters": [
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22988,7 +22988,7 @@
             }
           },
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26606,7 +26606,7 @@
         "operationId": "sequences_updateSequenceStep",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26614,7 +26614,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26898,7 +26898,7 @@
         "operationId": "sequences_deleteSequenceStep",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26906,7 +26906,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30757,7 +30757,7 @@
         "operationId": "sequences_testSequenceStep",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30765,7 +30765,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30829,7 +30829,7 @@
         "operationId": "sequences_sendTestEmail",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30837,7 +30837,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30915,7 +30915,7 @@
         "operationId": "sequences_getMemberProfile",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "memberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30923,7 +30923,7 @@
             }
           },
           {
-            "name": "memberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33000,7 +33000,7 @@
         "operationId": "people_updatePersonActivity",
         "parameters": [
           {
-            "name": "personId",
+            "name": "activityId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33008,7 +33008,7 @@
             }
           },
           {
-            "name": "activityId",
+            "name": "personId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33156,7 +33156,7 @@
         "operationId": "people_deletePersonActivity",
         "parameters": [
           {
-            "name": "personId",
+            "name": "activityId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33164,7 +33164,7 @@
             }
           },
           {
-            "name": "activityId",
+            "name": "personId",
             "in": "path",
             "required": true,
             "schema": {
@@ -44010,10 +44010,6 @@
                   "animated": {
                     "type": "boolean",
                     "description": "Design with motion and export a looping MP4 instead of a still PNG. Default false"
-                  },
-                  "designStyleId": {
-                    "type": "string",
-                    "description": "Design style the canvas agent designs the first version in: an id from design_styles_listDesignStyles whose name, category and description fit the brand."
                   }
                 },
                 "required": [
@@ -44873,10 +44869,6 @@
                     "guide": {
                       "type": "string",
                       "description": "Scene file contract, partials and kit helpers (on create)"
-                    },
-                    "designStyle": {
-                      "type": "string",
-                      "description": "On create with a designStyleId: the style's guide to write every scene in"
                     }
                   },
                   "description": "Video project"
@@ -45029,10 +45021,6 @@
                   "replace": {
                     "type": "boolean",
                     "description": "With canvasId: discard the design already on it"
-                  },
-                  "designStyleId": {
-                    "type": "string",
-                    "description": "Design style every scene is written in: an id from design_styles_listDesignStyles whose look fits the brand. The response carries its guide (designStyle) at the format closest to the video's shape: write every scene in it, and set the theme colors and fonts to match it."
                   }
                 },
                 "required": [
@@ -45148,10 +45136,6 @@
                     "guide": {
                       "type": "string",
                       "description": "Scene file contract, partials and kit helpers (on create)"
-                    },
-                    "designStyle": {
-                      "type": "string",
-                      "description": "On create with a designStyleId: the style's guide to write every scene in"
                     }
                   },
                   "description": "Video project"
@@ -45241,10 +45225,6 @@
                     "guide": {
                       "type": "string",
                       "description": "Scene file contract, partials and kit helpers (on create)"
-                    },
-                    "designStyle": {
-                      "type": "string",
-                      "description": "On create with a designStyleId: the style's guide to write every scene in"
                     }
                   },
                   "description": "Video project"
@@ -45447,7 +45427,7 @@
         "operationId": "content_writeVideoScene",
         "parameters": [
           {
-            "name": "canvasId",
+            "name": "sceneId",
             "in": "path",
             "required": true,
             "schema": {
@@ -45455,7 +45435,7 @@
             }
           },
           {
-            "name": "sceneId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -45527,10 +45507,6 @@
                     "guide": {
                       "type": "string",
                       "description": "Scene file contract, partials and kit helpers (on create)"
-                    },
-                    "designStyle": {
-                      "type": "string",
-                      "description": "On create with a designStyleId: the style's guide to write every scene in"
                     }
                   },
                   "description": "Video project"
@@ -46447,7 +46423,7 @@
         "operationId": "content_getCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvasId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46455,7 +46431,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46494,7 +46470,7 @@
         "operationId": "content_updateCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvasId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46502,7 +46478,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46580,7 +46556,7 @@
         "operationId": "content_deleteCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvasId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46588,7 +46564,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46629,7 +46605,7 @@
         "operationId": "content_stopCanvasDesignThreadRun",
         "parameters": [
           {
-            "name": "canvasId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46637,7 +46613,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -53827,7 +53803,7 @@
           }
         },
         "summary": "Render a canvas art image or animation from HTML",
-        "description": "Renders a self-contained HTML canvas at exact pixel dimensions and returns a permanent public URL \u2014 for social posts, story graphics, quote cards, and link preview art. Costs 0.1 credits per call.\n\nPass animated=true to record the canvas as an MP4 instead of a still PNG; that costs 3 credits and saves it as a canvas (canvasId). A recording that finishes within 40s returns its videoId and MP4 url; a longer one returns 202 with status \"generating\" \u2014 poll GET /api/v0/content/canvases/{canvasId}/render-video until it is completed. For a video with scenes (promo, ad, explainer), build a video project instead (POST /api/v0/content/canvases/projects).\n\nBefore writing the HTML, pick a design style so the canvas looks deliberate rather than generic: design_styles_listDesignStyles (medium social, story or blog, whichever shape is closest), then design_styles_getDesignStyleGuide for the chosen style, and follow its guide. A brand kit's logo, colors and fonts still win over the style's palette.\n\nAuthor the HTML to these design guidelines:\n\n## What You Are Making\nA canvas is a piece of visual art, not a document. Museum-quality, magazine-quality \u2014\nnever cartoony, never clip-art, never a slide. Before writing any HTML, decide a design\ndirection in one sentence (e.g. \"Swiss formalism: one monumental word, hard grid,\nred/black/paper\" or \"quiet editorial: thin serif, vast negative space, one photograph\").\nEvery choice then serves that direction.\n\n## Brand Style (check first)\n- Before choosing a direction, check whether the company has a brand kit saved in\n  the content engine (GET /brand-kits \u2014 brand_kit_listBrandKits on the platform\n  API/MCP). Do this BEFORE the first render, not after.\n- If a brand kit exists, its `imageStylePrompt` is the company's established visual\n  style (palette, mood, typography feel, photographic treatment); its `images` list\n  holds brand assets (logos, product shots, approved photography) with public URLs;\n  and its `webArtifacts` holds the primary `favicon` and `logo` (each with a public\n  `url`). Treat these as the source of truth: derive the palette and type choices\n  from the style prompt, and embed brand assets by their exact URL instead of stock\n  or AI-generated stand-ins when a suitable one exists. Never alter, recolor, or\n  distort a logo.\n- If no brand kit exists, or the session already supplies brand context in its\n  instructions, skip the lookup and design from the brief.\n\n## Canvas Setup (exact rules)\n- Output one complete standalone HTML document. No external CSS/JS files; inline a\n  `<style>` block. Plain CSS preferred, but these shared platform libraries may be loaded\n  from their CDNs:\n  - Tailwind CSS: `<script src=\"https://cdn.tailwindcss.com\"></script>` \u2014 utility classes; no build step\n  - Lucide Icons: `<script src=\"https://unpkg.com/lucide@0.575.0/dist/umd/lucide.min.js\"></script>` \u2014 place `<i data-lucide=\"arrow-right\"></i>`, then call `lucide.createIcons();` after the last icon. Brand marks are included: linkedin, instagram, facebook, youtube, twitter, github, slack, figma\n  - Google Fonts: `<link href=\"https://fonts.googleapis.com/css2?family=...&display=swap\" rel=\"stylesheet\">` \u2014 pick faces that match the brand\n- Size the canvas EXACTLY to the chosen format:\n  `html,body{margin:0;padding:0}` and `body{width:<W>px;height:<H>px;overflow:hidden;position:relative}`\n- Named formats include: square 1080x1080 (feed), portrait 1080x1350 (feed, default), story\n  1080x1920 (Stories/Reels), landscape 1200x630 (link previews), slide 1920x1080 (16:9\n  presentation slide background \u2014 decorative art only, no text; editable text is layered on\n  later), plus profile covers (linkedin_banner, twitter_header, facebook_cover),\n  youtube_thumb, email_header, print pages (a4_portrait, a4_landscape, letter_portrait) and\n  business_card. When none fits, an exact custom width/height (200-2160px each) can be\n  supplied instead \u2014 size the body to whatever exact dimensions the session gives you.\n- A canvas is rendered one of two ways, and you are told which one this session wants:\n  - STILL (default): the canvas is photographed the instant it loads. Design it static \u2014\n    no animations or transitions, since only the first frame is ever seen.\n  - ANIMATED: the canvas is recorded to a short MP4. Follow the animation rules below.\n\n## Image sharpness\n- Use the stock result's fullUrl, never a thumbnail or preview URL. Choose photos\n  with enough native pixels for the area they cover, including any cover crop.\n  Avoid enlarging small photos or cropping so tightly that the subject becomes blurry.\n- Keep text, logos, icons, and geometric details as HTML/CSS or SVG where possible;\n  never flatten them into a low-resolution bitmap. Avoid blur filters on these layers.\n- For a HTML <canvas>, size its backing bitmap to its CSS dimensions multiplied by\n  window.devicePixelRatio and scale the drawing context accordingly. CSS size alone\n  stretches the default bitmap and produces blurry artwork.\n- Generated photo prompts should specify crisp subject detail and sharp focus where\n  the design needs it. Keep typography in the HTML layer rather than inside the photo.\n\n## Typography (the heart of the canvas)\n- Google Fonts only, loaded via `<link href=\"https://fonts.googleapis.com/css2?family=...&display=swap\" rel=\"stylesheet\">`.\n- Choose from this curated library \u2014 at most TWO fonts per canvas:\n  - Monumental display: Boldonse, Big Shoulders, Erica One, Archivo Black, Bebas Neue\n  - Elegant serif: Gloock, Italiana, Young Serif, Instrument Serif, Playfair Display, Libre Baskerville\n  - Modern sans: Bricolage Grotesque, Outfit, Work Sans, Instrument Sans, Space Grotesk\n  - Editorial body serif: Lora, Crimson Pro, IBM Plex Serif\n  - Technical mono: JetBrains Mono, IBM Plex Mono, DM Mono, Tektur, Jura\n  - Retro pixel: Silkscreen, Pixelify Sans\n  - Handwritten: Nothing You Could Do, Smooch Sans; thin deco: Poiret One\n- Text is minimal and visual-first: usually one dominant word or short phrase, with at\n  most one short supporting line. Rarely more than a dozen words on the whole canvas.\n- Make the hero text HUGE \u2014 roughly 10-25% of the canvas height. Uppercase display type\n  wants letter-spacing (0.02-0.15em).\n- Never use small print. Any supporting text must read easily at feed thumbnail size:\n  at least ~3.5% of the canvas height (about 40px or more on a 1080px-tall canvas).\n- Line-height on stacked display lines: some display fonts draw far taller than their\n  em box and collide when stacked (Boldonse needs line-height ~1.3). Use 1.2-1.3 for\n  multi-line display type and only go tighter for fonts you know sit inside their box.\n- Contrast in scale is the composition: one enormous element against a clearly smaller,\n  still legible supporting line.\n\n## Icons (Lucide)\n- When the design calls for an icon \u2014 a directional arrow, a play glyph, a small\n  functional mark next to a label \u2014 use Lucide, never emoji and never clip-art.\n- Load it once, at the END of the body, then render the icons:\n  `<script src=\"https://unpkg.com/lucide@0.575.0/dist/umd/lucide.min.js\"></script>` followed by `<script>lucide.createIcons();</script>`\n- Place an icon with `<i data-lucide=\"arrow-right\"></i>`. Size and color it through CSS on\n  the element \u2014 Lucide SVGs inherit `currentColor` and take `width`/`height`:\n  `i[data-lucide]{width:64px;height:64px;stroke-width:1.5}` (the stroke weight matters as\n  much as the size \u2014 hairline strokes read as refined, thick ones as cartoonish).\n- Use real Lucide names (arrow-right, arrow-up-right, sparkles, zap, check, star, play,\n  quote, trending-up, circle-dot). A misspelled name renders nothing at all.\n- Icons are accents, not the subject: one or two per canvas, small against the hero type.\n  An icon never substitutes for a real design idea.\n\n## Animation (ANIMATED canvases only)\nOnly when the session asks for an animated canvas. A still canvas must have no animation\nat all \u2014 it is photographed on the first frame. An animated canvas is one of two things;\ndecide which before writing anything:\n- A LOOP: one composition that moves (a social post that breathes, drifting type, a slow\n  parallax push), usually 4-10s. Follow \"Loops\" below.\n- A VIDEO: a promo, ad, hype reel, launch or explainer video, product demo, or anything with\n  scenes or longer than ~10s. Follow \"Making videos\" below. Its energy rules REPLACE the\n  loop rules (cuts, speed and camera moves are the point of a video).\n\n### Loops\n- Animate with CSS `@keyframes` on the elements themselves. The recording seeks the page's\n  animation timeline frame by frame, so what is recorded is exactly your CSS timeline.\n- Every animation MUST be `infinite` and MUST tile seamlessly: the state at the end of one\n  iteration has to match the state at the start, or the loop visibly jumps. The cleanest\n  way is a single cycle that returns home (`0%` and `100%` identical).\n- Give the whole piece ONE shared cycle length \u2014 set every animation to the same\n  `animation-duration` (or an exact divisor of it, e.g. 2s inside an 8s piece) so the\n  composition repeats as a whole rather than drifting out of phase.\n- Stagger with `animation-delay` (negative delays start an element mid-cycle), never by\n  giving elements unrelated durations.\n- Animate `transform` and `opacity` above all \u2014 they are what animates smoothly. Also fine:\n  `filter`, `clip-path`, gradient positions, `stroke-dashoffset` on SVG.\n- Keep a loop restrained and slow: a drifting gradient, a slow parallax push, type that\n  breathes, a single element sliding through. The canvas must still look composed in any\n  single frozen frame.\n\n### Making videos (promo, ad, hype, explainer)\nA video is a video project built scene by scene, never one big HTML document: before\nstarting, read the `canvas-video` skill with read_skill (slug `canvas-video`). It is the\nplaybook: research, music and its beat grid (analyze_music_beats), the storyboard,\ncreate_video_project, write_scene with partials and motion helpers, preview_video, the render\nand the review_canvas_video loop that checks the export before you hand it back. When the skill\ncannot be read, still: create the project with every scene timed on the beats, build the story\naround the product's UI doing real work, put frame 0's headline on screen from the first\nframe, preview, and review the export before handing it back.\n\n### What the recorder can and cannot capture\nThe recording pauses the browser's animation timeline and steps through it \u2014 it does NOT\nwatch the page play in real time. Only motion it can seek is captured:\n- CAPTURED: CSS `@keyframes`, CSS transitions, SVG SMIL, the Web Animations API\n  (`element.animate(...)`), the Canvas Motion Kit, a GSAP timeline registered as\n  `window.canvasTimeline`, and `canvasOnFrame((seconds) => { ... })` handlers that draw the\n  frame for a given time. HTML `<video>` frames are seeked in step with the timeline.\n- NOT CAPTURED (records as a frozen video, with no error): anything that advances itself in\n  real time \u2014 `requestAnimationFrame` loops, `setInterval`/`setTimeout`, an unregistered or\n  playing GSAP timeline, canvas/WebGL draw loops, and scroll-triggered libraries. Animated\n  GIFs are not seeked reliably.\n- This is the ONE rule that differs from the landing page builder, whose pages play live in\n  a real browser and can use anything. Do not carry those habits over.\n\n### Stock video for animated canvases \u2014 search_stock_videos\nSearch Pexels stock videos for animated canvases. Returns direct videoUrl MP4 URLs, preview images, dimensions, duration and creator attribution. Use the exact videoUrl in <video autoplay loop muted playsinline> with object-fit:cover, sized to the canvas; layer readable text above it. Set animated=true when calling create_canvas, or set_animated(True) in the canvas builder. Video frames are seeked with the animation timeline in exports; use separate audio tracks for sound. Still PNGs have no motion. Paginate with page/pageSize; this tool is available whenever canvas tools are enabled.\n\n### Audio for animated canvases\nDefault to free stock music for music, soundtracks, reels and stories: use search_stock_music then import_stock_music. Use paid create_music ONLY when the user explicitly requests custom AI-generated music. Never automatically fall back to paid generation when stock search/import fails; try different keywords or tracks and report if none are suitable.\nSearch free CC0/public-domain stock music and loops by mood, genre or instruments. Returns candidates with stockAudioId, previewUrl, duration in seconds, creator and source/license links. Choose a track and call import_stock_music to get a permanent canvas audio URL. Do not embed previewUrl in a canvas. Search consumes no audio credits.\nImport a selected search_stock_music result by stockAudioId. Rechecks its indexed license and matching license link on the original source page, saves an MP3 with source/license metadata, and returns a permanent public audioUrl plus measured duration in seconds. Use audioUrl in <audio src=\"URL\" loop data-volume=\"0.2\"></audio> in an animated canvas. No audio generation credits are charged. Sources that cannot be verified are rejected; choose another track. Imports are bounded by the configured file-size and duration limits (default 40 MiB and the first ten minutes).\n\n- For narration or dialogue, call `create_speech`. Audio tools return permanent public\n  audio URLs and measured durations. Never invent audio URLs. If speech generation\n  is unavailable, explain that limitation.\n- Include tracks directly in the HTML: `<audio src=\"RETURNED_URL\" loop\n  data-volume=\"0.2\"></audio>` for quiet background music; `<audio src=\"RETURNED_URL\"\n  data-start=\"2\" data-volume=\"1\"></audio>` for narration starting 2 seconds in.\n- Up to 24 tracks are mixed into the exported MP4. data-start is seconds (default 0);\n  data-volume is 0..1 (default 1). `loop` repeats music; omit it for speech. `muted`\n  excludes a track. Only platform public generated or imported audio URLs are accepted.\n- For dialogue, generate each speaker's line separately with the desired voice ID,\n  then use data-start and the returned durations to place the lines in sequence.\n  Lower the music volume under dialogue. Do not repeat or cut off spoken lines.\n- Set video duration long enough for all lines, within the tool's duration limit;\n  shorten the script if needed. With audio the requested duration is preserved,\n  without rounding to whole animation cycles. Tracks are trimmed/padded to that length.\n- Audio is mixed during export; browser autoplay, Web Audio and JavaScript playback\n  are not recorded. HTML preview autoplay may be blocked; use the exported MP4 to\n  review the finished soundtrack. Still PNGs have no audio.\n\n### Animation libraries\nCSS keyframes are enough for a loop. A video uses the Canvas Motion Kit (scenes, text\neffects, camera) and GSAP for choreography (see the `canvas-video` skill).\n- GSAP: `<script src=\"https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js\"></script>` \u2014 exactly one `gsap.timeline({ paused: true })` assigned to\n  `window.canvasTimeline`, every tween at an absolute second of the video. A playing or\n  unregistered timeline records as a frozen video.\n- Anime.js (advanced animation): `<script src=\"https://cdn.jsdelivr.net/npm/animejs/dist/bundles/anime.umd.min.js\"></script>` \u2014 staggered reveals, timelines, kinetic type. `anime.waapi.animate(...)` puts the animation on the browser timeline; `anime.animate(...)` / `anime.Timeline` drive it from JS frame by frame\n  Only through `anime.waapi.animate('.el', {...})`; its classic `anime.animate(...)` /\n  `anime.Timeline` API records as a FROZEN video.\n- AOS (used by the landing page builder) is scroll-triggered and USELESS here: a canvas is a\n  fixed viewport with nothing to scroll, so its animations never fire. Never load it.\n\n### Canvas Motion Kit\nLoaded automatically in preview and export: `<html data-canvas-duration=\"30\">`, one\n`<section data-canvas-scene data-start data-duration data-transition-in data-transition-out>`\nper scene, and `data-canvas-motion` / `data-canvas-split` / `data-canvas-type` /\n`data-canvas-cycle` / `data-canvas-count` / `data-canvas-camera` on elements. The names and\nattributes are in the `canvas-video` skill (references/motion-kit.md); unknown names are\nrejected when the canvas is saved.\n\n### Timeline clips \u2014 the video editor\nThe canvas editor shows a timeline built from tagged elements in this HTML. The user drags and\ntrims clips there, which rewrites their attributes in the HTML. Read the current HTML before\nediting and keep every `data-clip-id` and timing attribute you do not mean to change.\n- Footage: `<video data-clip-id=\"intro\" data-start=\"0\" data-in=\"2\" data-out=\"10\" src=\"URL\"\n  muted playsinline></video>` plays source seconds data-in..data-out from timeline second\n  data-start. Tagged clips always render full-bleed BENEATH all graphics (object-fit: cover);\n  a later clip covers an earlier one where they overlap, and gaps are black. Do not style or\n  position them. `src` must be a platform video URL or a search_stock_videos videoUrl.\n  `data-volume` (0..1, default 1) sets the clip's own sound.\n- Sound: `<audio data-clip-id=\"vo1\" data-track=\"voiceover\" data-start=\"1\" data-volume=\"1\"\n  src=\"URL\"></audio>`; `data-track` is `voiceover` or `music`; optional `data-in`/`data-out`\n  trim the source. The audio rules above still apply.\n- Graphics: Motion Kit scenes with a `data-clip-id` are the timeline's graphics clips\n  (`data-start`/`data-duration`).\n- With video clips the page background is transparent so the footage shows through \u2014 put\n  backgrounds inside scenes, never on html/body.\n- Set `<html data-canvas-duration>` to the full timeline length (at most 60s with\n  video clips; the shorter animation limit applies without them).\n- An untagged `<video>` stays a free-form looping background inside the page.\n\n## Color & Background\n- A limited, intentional palette: 2-3 colors total. Pick them for the design direction,\n  not decoration. High text/background contrast is non-negotiable.\n- Backgrounds: a flat color, a subtle gradient, or a photo. For photos use\n  `background:url(...) center/cover` and ALWAYS add a scrim over photo areas behind text\n  (e.g. `background:rgba(0,0,0,.35)` or a directional gradient) so type stays legible.\n  The scrim serves the text, not the whole canvas: keep it light (\u2264 ~0.5 opacity) or\n  directional so the photo stays clearly visible \u2014 a photo buried under a near-opaque\n  overlay reads as a plain dark field and wastes the imagery.\n- Photo URLs must be public http(s) images. Two ways to get one:\n  - Stock photography: search the stock image library (Unsplash/Pexels via the stock\n    image search \u2014 images_searchStockImages on the platform API/MCP) and use a\n    result's fullUrl.\n  - AI-generated imagery: generate an image with the platform's AI image models\n    (images_createImage on the platform API/MCP \u2014 describe the scene, pick a model,\n    and use the returned public URL). Best for imagery no stock photo can match;\n    request it WITHOUT text, since the canvas type layer supplies all text.\n\n## Composition (non-negotiable craft rules)\n- Keep a safe margin of at least 5% of the canvas on every side. NOTHING touches or\n  overflows the canvas edge, and elements never overlap illegibly.\n- Compose deliberately: strong asymmetry or a strict grid both work; accidental\n  centering of everything does not. Let negative space breathe \u2014 empty space is a\n  design element, not waste.\n- Repetition rewards attention: thin rules, small registration marks, an index number,\n  a tiny caption line \u2014 sparse, clinical details make the piece feel designed.\n- The finished canvas should look like it took a top-of-field designer hours of\n  painstaking refinement: aligned edges, consistent spacing rhythm, optically balanced.\n  Double-check every element is inside the canvas and nothing collides before finishing.\n",
+        "description": "Renders a self-contained HTML canvas at exact pixel dimensions and returns a permanent public URL \u2014 for social posts, story graphics, quote cards, and link preview art. Costs 0.1 credits per call.\n\nPass animated=true to record the canvas as an MP4 instead of a still PNG; that costs 3 credits and saves it as a canvas (canvasId). A recording that finishes within 40s returns its videoId and MP4 url; a longer one returns 202 with status \"generating\" \u2014 poll GET /api/v0/content/canvases/{canvasId}/render-video until it is completed. For a video with scenes (promo, ad, explainer), build a video project instead (POST /api/v0/content/canvases/projects).\n\nDecide the look before writing the HTML. Design with the brand kit OR a design style, never both. When the company has a brand kit, use its logo, colors and fonts and no design style. Use a design style when there is no brand kit, or when the user asks for a different look. Combine them only when the user asks to redesign or refresh their brand's look: the style's layout, typography and ornament, carrying the brand's name and logo. For a design style: design_styles_listDesignStyles (medium social, story or blog, whichever shape is closest), then design_styles_getDesignStyleGuide for the chosen style, and follow its guide.\n\nAuthor the HTML to these design guidelines:\n\n## What You Are Making\nA canvas is a piece of visual art, not a document. Museum-quality, magazine-quality \u2014\nnever cartoony, never clip-art, never a slide. Before writing any HTML, decide a design\ndirection in one sentence (e.g. \"Swiss formalism: one monumental word, hard grid,\nred/black/paper\" or \"quiet editorial: thin serif, vast negative space, one photograph\").\nEvery choice then serves that direction.\n\n## Brand Style (check first)\n- Before choosing a direction, check whether the company has a brand kit saved in\n  the content engine (GET /brand-kits \u2014 brand_kit_listBrandKits on the platform\n  API/MCP). Do this BEFORE the first render, not after.\n- If a brand kit exists, its `imageStylePrompt` is the company's established visual\n  style (palette, mood, typography feel, photographic treatment); its `images` list\n  holds brand assets (logos, product shots, approved photography) with public URLs;\n  and its `webArtifacts` holds the primary `favicon` and `logo` (each with a public\n  `url`). Treat these as the source of truth: derive the palette and type choices\n  from the style prompt, and embed brand assets by their exact URL instead of stock\n  or AI-generated stand-ins when a suitable one exists. Never alter, recolor, or\n  distort a logo.\n- If no brand kit exists, or the session already supplies brand context in its\n  instructions, skip the lookup and design from the brief.\n\n## Canvas Setup (exact rules)\n- Output one complete standalone HTML document. No external CSS/JS files; inline a\n  `<style>` block. Plain CSS preferred, but these shared platform libraries may be loaded\n  from their CDNs:\n  - Tailwind CSS: `<script src=\"https://cdn.tailwindcss.com\"></script>` \u2014 utility classes; no build step\n  - Lucide Icons: `<script src=\"https://unpkg.com/lucide@0.575.0/dist/umd/lucide.min.js\"></script>` \u2014 place `<i data-lucide=\"arrow-right\"></i>`, then call `lucide.createIcons();` after the last icon. Brand marks are included: linkedin, instagram, facebook, youtube, twitter, github, slack, figma\n  - Google Fonts: `<link href=\"https://fonts.googleapis.com/css2?family=...&display=swap\" rel=\"stylesheet\">` \u2014 pick faces that match the brand\n- Size the canvas EXACTLY to the chosen format:\n  `html,body{margin:0;padding:0}` and `body{width:<W>px;height:<H>px;overflow:hidden;position:relative}`\n- Named formats include: square 1080x1080 (feed), portrait 1080x1350 (feed, default), story\n  1080x1920 (Stories/Reels), landscape 1200x630 (link previews), slide 1920x1080 (16:9\n  presentation slide background \u2014 decorative art only, no text; editable text is layered on\n  later), plus profile covers (linkedin_banner, twitter_header, facebook_cover),\n  youtube_thumb, email_header, print pages (a4_portrait, a4_landscape, letter_portrait) and\n  business_card. When none fits, an exact custom width/height (200-2160px each) can be\n  supplied instead \u2014 size the body to whatever exact dimensions the session gives you.\n- A canvas is rendered one of two ways, and you are told which one this session wants:\n  - STILL (default): the canvas is photographed the instant it loads. Design it static \u2014\n    no animations or transitions, since only the first frame is ever seen.\n  - ANIMATED: the canvas is recorded to a short MP4. Follow the animation rules below.\n\n## Image sharpness\n- Use the stock result's fullUrl, never a thumbnail or preview URL. Choose photos\n  with enough native pixels for the area they cover, including any cover crop.\n  Avoid enlarging small photos or cropping so tightly that the subject becomes blurry.\n- Keep text, logos, icons, and geometric details as HTML/CSS or SVG where possible;\n  never flatten them into a low-resolution bitmap. Avoid blur filters on these layers.\n- For a HTML <canvas>, size its backing bitmap to its CSS dimensions multiplied by\n  window.devicePixelRatio and scale the drawing context accordingly. CSS size alone\n  stretches the default bitmap and produces blurry artwork.\n- Generated photo prompts should specify crisp subject detail and sharp focus where\n  the design needs it. Keep typography in the HTML layer rather than inside the photo.\n\n## Typography (the heart of the canvas)\n- Google Fonts only, loaded via `<link href=\"https://fonts.googleapis.com/css2?family=...&display=swap\" rel=\"stylesheet\">`.\n- Choose from this curated library \u2014 at most TWO fonts per canvas:\n  - Monumental display: Boldonse, Big Shoulders, Erica One, Archivo Black, Bebas Neue\n  - Elegant serif: Gloock, Italiana, Young Serif, Instrument Serif, Playfair Display, Libre Baskerville\n  - Modern sans: Bricolage Grotesque, Outfit, Work Sans, Instrument Sans, Space Grotesk\n  - Editorial body serif: Lora, Crimson Pro, IBM Plex Serif\n  - Technical mono: JetBrains Mono, IBM Plex Mono, DM Mono, Tektur, Jura\n  - Retro pixel: Silkscreen, Pixelify Sans\n  - Handwritten: Nothing You Could Do, Smooch Sans; thin deco: Poiret One\n- Text is minimal and visual-first: usually one dominant word or short phrase, with at\n  most one short supporting line. Rarely more than a dozen words on the whole canvas.\n- Make the hero text HUGE \u2014 roughly 10-25% of the canvas height. Uppercase display type\n  wants letter-spacing (0.02-0.15em).\n- Never use small print. Any supporting text must read easily at feed thumbnail size:\n  at least ~3.5% of the canvas height (about 40px or more on a 1080px-tall canvas).\n- Line-height on stacked display lines: some display fonts draw far taller than their\n  em box and collide when stacked (Boldonse needs line-height ~1.3). Use 1.2-1.3 for\n  multi-line display type and only go tighter for fonts you know sit inside their box.\n- Contrast in scale is the composition: one enormous element against a clearly smaller,\n  still legible supporting line.\n\n## Icons (Lucide)\n- When the design calls for an icon \u2014 a directional arrow, a play glyph, a small\n  functional mark next to a label \u2014 use Lucide, never emoji and never clip-art.\n- Load it once, at the END of the body, then render the icons:\n  `<script src=\"https://unpkg.com/lucide@0.575.0/dist/umd/lucide.min.js\"></script>` followed by `<script>lucide.createIcons();</script>`\n- Place an icon with `<i data-lucide=\"arrow-right\"></i>`. Size and color it through CSS on\n  the element \u2014 Lucide SVGs inherit `currentColor` and take `width`/`height`:\n  `i[data-lucide]{width:64px;height:64px;stroke-width:1.5}` (the stroke weight matters as\n  much as the size \u2014 hairline strokes read as refined, thick ones as cartoonish).\n- Use real Lucide names (arrow-right, arrow-up-right, sparkles, zap, check, star, play,\n  quote, trending-up, circle-dot). A misspelled name renders nothing at all.\n- Icons are accents, not the subject: one or two per canvas, small against the hero type.\n  An icon never substitutes for a real design idea.\n\n## Animation (ANIMATED canvases only)\nOnly when the session asks for an animated canvas. A still canvas must have no animation\nat all \u2014 it is photographed on the first frame. An animated canvas is one of two things;\ndecide which before writing anything:\n- A LOOP: one composition that moves (a social post that breathes, drifting type, a slow\n  parallax push), usually 4-10s. Follow \"Loops\" below.\n- A VIDEO: a promo, ad, hype reel, launch or explainer video, product demo, or anything with\n  scenes or longer than ~10s. Follow \"Making videos\" below. Its energy rules REPLACE the\n  loop rules (cuts, speed and camera moves are the point of a video).\n\n### Loops\n- Animate with CSS `@keyframes` on the elements themselves. The recording seeks the page's\n  animation timeline frame by frame, so what is recorded is exactly your CSS timeline.\n- Every animation MUST be `infinite` and MUST tile seamlessly: the state at the end of one\n  iteration has to match the state at the start, or the loop visibly jumps. The cleanest\n  way is a single cycle that returns home (`0%` and `100%` identical).\n- Give the whole piece ONE shared cycle length \u2014 set every animation to the same\n  `animation-duration` (or an exact divisor of it, e.g. 2s inside an 8s piece) so the\n  composition repeats as a whole rather than drifting out of phase.\n- Stagger with `animation-delay` (negative delays start an element mid-cycle), never by\n  giving elements unrelated durations.\n- Animate `transform` and `opacity` above all \u2014 they are what animates smoothly. Also fine:\n  `filter`, `clip-path`, gradient positions, `stroke-dashoffset` on SVG.\n- Keep a loop restrained and slow: a drifting gradient, a slow parallax push, type that\n  breathes, a single element sliding through. The canvas must still look composed in any\n  single frozen frame.\n\n### Making videos (promo, ad, hype, explainer)\nA video is a video project built scene by scene, never one big HTML document: before\nstarting, read the `canvas-video` skill with read_skill (slug `canvas-video`). It is the\nplaybook: research, music and its beat grid (analyze_music_beats), the storyboard,\ncreate_video_project, write_scene with partials and motion helpers, preview_video, the render\nand the review_canvas_video loop that checks the export before you hand it back. When the skill\ncannot be read, still: create the project with every scene timed on the beats, build the story\naround the product's UI doing real work, put frame 0's headline on screen from the first\nframe, preview, and review the export before handing it back.\n\n### What the recorder can and cannot capture\nThe recording pauses the browser's animation timeline and steps through it \u2014 it does NOT\nwatch the page play in real time. Only motion it can seek is captured:\n- CAPTURED: CSS `@keyframes`, CSS transitions, SVG SMIL, the Web Animations API\n  (`element.animate(...)`), the Canvas Motion Kit, a GSAP timeline registered as\n  `window.canvasTimeline`, and `canvasOnFrame((seconds) => { ... })` handlers that draw the\n  frame for a given time. HTML `<video>` frames are seeked in step with the timeline.\n- NOT CAPTURED (records as a frozen video, with no error): anything that advances itself in\n  real time \u2014 `requestAnimationFrame` loops, `setInterval`/`setTimeout`, an unregistered or\n  playing GSAP timeline, canvas/WebGL draw loops, and scroll-triggered libraries. Animated\n  GIFs are not seeked reliably.\n- This is the ONE rule that differs from the landing page builder, whose pages play live in\n  a real browser and can use anything. Do not carry those habits over.\n\n### Stock video for animated canvases \u2014 search_stock_videos\nSearch Pexels stock videos for animated canvases. Returns direct videoUrl MP4 URLs, preview images, dimensions, duration and creator attribution. Use the exact videoUrl in <video autoplay loop muted playsinline> with object-fit:cover, sized to the canvas; layer readable text above it. Set animated=true when calling create_canvas, or set_animated(True) in the canvas builder. Video frames are seeked with the animation timeline in exports; use separate audio tracks for sound. Still PNGs have no motion. Paginate with page/pageSize; this tool is available whenever canvas tools are enabled.\n\n### Audio for animated canvases\nDefault to free stock music for music, soundtracks, reels and stories: use search_stock_music then import_stock_music. Use paid create_music ONLY when the user explicitly requests custom AI-generated music. Never automatically fall back to paid generation when stock search/import fails; try different keywords or tracks and report if none are suitable.\nSearch free CC0/public-domain stock music and loops by mood, genre or instruments. Returns candidates with stockAudioId, previewUrl, duration in seconds, creator and source/license links. Choose a track and call import_stock_music to get a permanent canvas audio URL. Do not embed previewUrl in a canvas. Search consumes no audio credits.\nImport a selected search_stock_music result by stockAudioId. Rechecks its indexed license and matching license link on the original source page, saves an MP3 with source/license metadata, and returns a permanent public audioUrl plus measured duration in seconds. Use audioUrl in <audio src=\"URL\" loop data-volume=\"0.2\"></audio> in an animated canvas. No audio generation credits are charged. Sources that cannot be verified are rejected; choose another track. Imports are bounded by the configured file-size and duration limits (default 40 MiB and the first ten minutes).\n\n- For narration or dialogue, call `create_speech`. Audio tools return permanent public\n  audio URLs and measured durations. Never invent audio URLs. If speech generation\n  is unavailable, explain that limitation.\n- Include tracks directly in the HTML: `<audio src=\"RETURNED_URL\" loop\n  data-volume=\"0.2\"></audio>` for quiet background music; `<audio src=\"RETURNED_URL\"\n  data-start=\"2\" data-volume=\"1\"></audio>` for narration starting 2 seconds in.\n- Up to 24 tracks are mixed into the exported MP4. data-start is seconds (default 0);\n  data-volume is 0..1 (default 1). `loop` repeats music; omit it for speech. `muted`\n  excludes a track. Only platform public generated or imported audio URLs are accepted.\n- For dialogue, generate each speaker's line separately with the desired voice ID,\n  then use data-start and the returned durations to place the lines in sequence.\n  Lower the music volume under dialogue. Do not repeat or cut off spoken lines.\n- Set video duration long enough for all lines, within the tool's duration limit;\n  shorten the script if needed. With audio the requested duration is preserved,\n  without rounding to whole animation cycles. Tracks are trimmed/padded to that length.\n- Audio is mixed during export; browser autoplay, Web Audio and JavaScript playback\n  are not recorded. HTML preview autoplay may be blocked; use the exported MP4 to\n  review the finished soundtrack. Still PNGs have no audio.\n\n### Animation libraries\nCSS keyframes are enough for a loop. A video uses the Canvas Motion Kit (scenes, text\neffects, camera) and GSAP for choreography (see the `canvas-video` skill).\n- GSAP: `<script src=\"https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js\"></script>` \u2014 exactly one `gsap.timeline({ paused: true })` assigned to\n  `window.canvasTimeline`, every tween at an absolute second of the video. A playing or\n  unregistered timeline records as a frozen video.\n- Anime.js (advanced animation): `<script src=\"https://cdn.jsdelivr.net/npm/animejs/dist/bundles/anime.umd.min.js\"></script>` \u2014 staggered reveals, timelines, kinetic type. `anime.waapi.animate(...)` puts the animation on the browser timeline; `anime.animate(...)` / `anime.Timeline` drive it from JS frame by frame\n  Only through `anime.waapi.animate('.el', {...})`; its classic `anime.animate(...)` /\n  `anime.Timeline` API records as a FROZEN video.\n- AOS (used by the landing page builder) is scroll-triggered and USELESS here: a canvas is a\n  fixed viewport with nothing to scroll, so its animations never fire. Never load it.\n\n### Canvas Motion Kit\nLoaded automatically in preview and export: `<html data-canvas-duration=\"30\">`, one\n`<section data-canvas-scene data-start data-duration data-transition-in data-transition-out>`\nper scene, and `data-canvas-motion` / `data-canvas-split` / `data-canvas-type` /\n`data-canvas-cycle` / `data-canvas-count` / `data-canvas-camera` on elements. The names and\nattributes are in the `canvas-video` skill (references/motion-kit.md); unknown names are\nrejected when the canvas is saved.\n\n### Timeline clips \u2014 the video editor\nThe canvas editor shows a timeline built from tagged elements in this HTML. The user drags and\ntrims clips there, which rewrites their attributes in the HTML. Read the current HTML before\nediting and keep every `data-clip-id` and timing attribute you do not mean to change.\n- Footage: `<video data-clip-id=\"intro\" data-start=\"0\" data-in=\"2\" data-out=\"10\" src=\"URL\"\n  muted playsinline></video>` plays source seconds data-in..data-out from timeline second\n  data-start. Tagged clips always render full-bleed BENEATH all graphics (object-fit: cover);\n  a later clip covers an earlier one where they overlap, and gaps are black. Do not style or\n  position them. `src` must be a platform video URL or a search_stock_videos videoUrl.\n  `data-volume` (0..1, default 1) sets the clip's own sound.\n- Sound: `<audio data-clip-id=\"vo1\" data-track=\"voiceover\" data-start=\"1\" data-volume=\"1\"\n  src=\"URL\"></audio>`; `data-track` is `voiceover` or `music`; optional `data-in`/`data-out`\n  trim the source. The audio rules above still apply.\n- Graphics: Motion Kit scenes with a `data-clip-id` are the timeline's graphics clips\n  (`data-start`/`data-duration`).\n- With video clips the page background is transparent so the footage shows through \u2014 put\n  backgrounds inside scenes, never on html/body.\n- Set `<html data-canvas-duration>` to the full timeline length (at most 60s with\n  video clips; the shorter animation limit applies without them).\n- An untagged `<video>` stays a free-form looping background inside the page.\n\n## Color & Background\n- A limited, intentional palette: 2-3 colors total. Pick them for the design direction,\n  not decoration. High text/background contrast is non-negotiable.\n- Backgrounds: a flat color, a subtle gradient, or a photo. For photos use\n  `background:url(...) center/cover` and ALWAYS add a scrim over photo areas behind text\n  (e.g. `background:rgba(0,0,0,.35)` or a directional gradient) so type stays legible.\n  The scrim serves the text, not the whole canvas: keep it light (\u2264 ~0.5 opacity) or\n  directional so the photo stays clearly visible \u2014 a photo buried under a near-opaque\n  overlay reads as a plain dark field and wastes the imagery.\n- Photo URLs must be public http(s) images. Two ways to get one:\n  - Stock photography: search the stock image library (Unsplash/Pexels via the stock\n    image search \u2014 images_searchStockImages on the platform API/MCP) and use a\n    result's fullUrl.\n  - AI-generated imagery: generate an image with the platform's AI image models\n    (images_createImage on the platform API/MCP \u2014 describe the scene, pick a model,\n    and use the returned public URL). Best for imagery no stock photo can match;\n    request it WITHOUT text, since the canvas type layer supplies all text.\n\n## Composition (non-negotiable craft rules)\n- Keep a safe margin of at least 5% of the canvas on every side. NOTHING touches or\n  overflows the canvas edge, and elements never overlap illegibly.\n- Compose deliberately: strong asymmetry or a strict grid both work; accidental\n  centering of everything does not. Let negative space breathe \u2014 empty space is a\n  design element, not waste.\n- Repetition rewards attention: thin rules, small registration marks, an index number,\n  a tiny caption line \u2014 sparse, clinical details make the piece feel designed.\n- The finished canvas should look like it took a top-of-field designer hours of\n  painstaking refinement: aligned edges, consistent spacing rhythm, optically balanced.\n  Double-check every element is inside the canvas and nothing collides before finishing.\n",
         "requestBody": {
           "required": true,
           "content": {
@@ -57777,7 +57753,7 @@
                       "items": {
                         "type": "string"
                       },
-                      "description": "Styles in library order: {id, slug, name, category, description, mediums}. mediums maps each format to {width, height, imageUrl}, a preview image of the style. Get a style's guide with design_styles_getDesignStyleGuide, or pass id as designStyleId when creating a website, canvas or video project."
+                      "description": "Styles in library order: {id, slug, name, category, description, mediums}. mediums maps each format to {width, height, imageUrl}, a preview image of the style. Get a style's guide with design_styles_getDesignStyleGuide before designing; pass id as designStyleId only when creating a website the platform builds."
                     },
                     "total": {
                       "type": "integer"
@@ -57796,7 +57772,7 @@
           }
         },
         "summary": "List design styles for any visual asset",
-        "description": "The design style library: preset looks (layout, typography, shapes, ornament\nand mood) for websites, social posts, stories, blog headers, emails, canvas\nimages and videos. Use one instead of designing from scratch, so the result\nlooks deliberate rather than generic. Filter with medium (the asset's format)\nand search, pick the style whose name, category and description fit the\nbrand, then call design_styles_getDesignStyleGuide with its id before\ndesigning. To have the platform build in a style, pass its id as\ndesignStyleId when creating a website, canvas or video project."
+        "description": "The design style library: preset looks (layout, typography, shapes, ornament\nand mood) for websites, social posts, stories, blog headers, emails, canvas\nimages and videos. Use one instead of designing from scratch, so the result\nlooks deliberate rather than generic. Use the brand kit OR a design style,\nnever both: a company with a brand kit designs with it, unless the user\nasks for a different look; combine them only for a redesign of the brand's\nlook. Filter with medium (the asset's format) and search, pick the style\nwhose name, category and description fit, then call\ndesign_styles_getDesignStyleGuide with its id and follow it while designing. When the platform's website builder builds the site\nfor you, pass the id as designStyleId when creating the website instead."
       }
     },
     "/api/v0/design-styles/{styleId}/guide": {
@@ -74426,7 +74402,7 @@
         "operationId": "seo_projectLighthouseSnapshotRoute",
         "parameters": [
           {
-            "name": "projectId",
+            "name": "snapshotId",
             "in": "path",
             "required": true,
             "schema": {
@@ -74434,7 +74410,7 @@
             }
           },
           {
-            "name": "snapshotId",
+            "name": "projectId",
             "in": "path",
             "required": true,
             "schema": {
@@ -76391,7 +76367,7 @@
         "operationId": "marketing_campaigns_restoreCampaignVersion",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -76399,7 +76375,7 @@
             }
           },
           {
-            "name": "versionId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78447,7 +78423,7 @@
         "operationId": "marketing_campaigns_getCampaignEmailBuilderThread",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78455,7 +78431,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78514,7 +78490,7 @@
         "operationId": "marketing_campaigns_updateCampaignEmailBuilderThread",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78522,7 +78498,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78610,7 +78586,7 @@
         "operationId": "marketing_campaigns_deleteCampaignEmailBuilderThread",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78618,7 +78594,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78679,7 +78655,7 @@
         "operationId": "marketing_campaigns_stopCampaignEmailBuilderThreadRun",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78687,7 +78663,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81276,7 +81252,7 @@
         "operationId": "site_builder_getWebsiteThreadMessages",
         "parameters": [
           {
-            "name": "websiteId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81284,7 +81260,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81353,7 +81329,7 @@
         "operationId": "site_builder_patchWebsiteThread",
         "parameters": [
           {
-            "name": "websiteId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81361,7 +81337,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81477,7 +81453,7 @@
         "operationId": "site_builder_stopWebsiteThreadRun",
         "parameters": [
           {
-            "name": "websiteId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81485,7 +81461,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81668,7 +81644,7 @@
         "operationId": "site_builder_mergeWebsiteBranch",
         "parameters": [
           {
-            "name": "websiteId",
+            "name": "branch",
             "in": "path",
             "required": true,
             "schema": {
@@ -81676,7 +81652,7 @@
             }
           },
           {
-            "name": "branch",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81767,7 +81743,7 @@
         "operationId": "site_builder_discardWebsiteBranch",
         "parameters": [
           {
-            "name": "websiteId",
+            "name": "branch",
             "in": "path",
             "required": true,
             "schema": {
@@ -81775,7 +81751,7 @@
             }
           },
           {
-            "name": "branch",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -82834,7 +82810,7 @@
         "operationId": "site_builder_apiWebsiteBranchDiff",
         "parameters": [
           {
-            "name": "websiteId",
+            "name": "branch",
             "in": "path",
             "required": true,
             "schema": {
@@ -82842,7 +82818,7 @@
             }
           },
           {
-            "name": "branch",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
