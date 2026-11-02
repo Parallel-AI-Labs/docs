@@ -331,7 +331,6 @@
               "GET /api/v0/content/canvases/{canvasId}/media/{videoId}",
               "GET /api/v0/content/canvases/{canvasId}/project",
               "GET /api/v0/content/canvases/{canvasId}/render-video",
-              "GET /api/v0/content/canvases/{canvasId}/scenes/jobs/{jobId}",
               "GET /api/v0/content/canvases/{canvasId}/threads",
               "GET /api/v0/content/canvases/{canvasId}/threads/{threadId}",
               "GET /api/v0/content/profiles",
@@ -366,7 +365,6 @@
               "POST /api/v0/content/canvases/{canvasId}/preview",
               "POST /api/v0/content/canvases/{canvasId}/render",
               "POST /api/v0/content/canvases/{canvasId}/render-video",
-              "POST /api/v0/content/canvases/{canvasId}/scenes",
               "POST /api/v0/content/canvases/{canvasId}/threads",
               "POST /api/v0/content/canvases/{canvasId}/threads/{threadId}/stop",
               "POST /api/v0/content/canvases/{canvasId}/upload",
@@ -427,6 +425,14 @@
               "PUT /api/v0/company-users/{company_user_id}/departments",
               "PUT /api/v0/departments/{department_id}",
               "PUT /api/v0/employees/{employee_id}/departments"
+            ]
+          },
+          {
+            "group": "Design Styles",
+            "expanded": false,
+            "pages": [
+              "GET /api/v0/design-styles",
+              "GET /api/v0/design-styles/{styleId}/guide"
             ]
           },
           {
@@ -1068,7 +1074,6 @@
               "DELETE /api/v0/websites/{websiteId}/branches/{branch}",
               "DELETE /api/v0/websites/{websiteId}/file",
               "GET /api/v0/apps/{appId}/publish-status",
-              "GET /api/v0/design-styles",
               "GET /api/v0/websites",
               "GET /api/v0/websites/collections",
               "GET /api/v0/websites/collections/{collectionId}/entries",
