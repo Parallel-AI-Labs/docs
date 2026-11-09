@@ -2053,7 +2053,7 @@
         "operationId": "documents_getDocumentContents",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -2061,7 +2061,7 @@
             }
           },
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -2120,7 +2120,7 @@
         "operationId": "documents_getDocument",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -2128,7 +2128,7 @@
             }
           },
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8038,7 +8038,7 @@
         "operationId": "projects_getProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8046,7 +8046,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8181,7 +8181,7 @@
         "operationId": "projects_updateProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8189,7 +8189,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8354,7 +8354,7 @@
         "operationId": "projects_deleteProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8362,7 +8362,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9261,7 +9261,7 @@
         "operationId": "projects_exportProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9269,7 +9269,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9379,7 +9379,7 @@
         "operationId": "projects_exportProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9387,7 +9387,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9499,7 +9499,7 @@
         "operationId": "projects_publishFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9507,7 +9507,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9654,7 +9654,7 @@
         "operationId": "projects_unpublishFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9662,7 +9662,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -10096,7 +10096,7 @@
         "operationId": "memories_getMemory",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10104,7 +10104,7 @@
             }
           },
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10202,7 +10202,7 @@
         "operationId": "memories_updateMemoryRoute",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10210,7 +10210,7 @@
             }
           },
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10338,7 +10338,7 @@
         "operationId": "memories_deleteMemoryRoute",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10346,7 +10346,7 @@
             }
           },
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10397,7 +10397,7 @@
         "operationId": "memories_toggleMemoryActiveRoute",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10405,7 +10405,7 @@
             }
           },
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -14627,7 +14627,7 @@
         "operationId": "organizations_updateOrganizationMember",
         "parameters": [
           {
-            "name": "memberUid",
+            "name": "orgId",
             "in": "path",
             "required": true,
             "schema": {
@@ -14635,7 +14635,7 @@
             }
           },
           {
-            "name": "orgId",
+            "name": "memberUid",
             "in": "path",
             "required": true,
             "schema": {
@@ -14762,7 +14762,7 @@
         "operationId": "organizations_removeOrganizationMember",
         "parameters": [
           {
-            "name": "memberUid",
+            "name": "orgId",
             "in": "path",
             "required": true,
             "schema": {
@@ -14770,7 +14770,7 @@
             }
           },
           {
-            "name": "orgId",
+            "name": "memberUid",
             "in": "path",
             "required": true,
             "schema": {
@@ -19206,9 +19206,35 @@
             "required": false,
             "schema": {
               "type": "string",
-              "description": "Search query to filter lists by name (case-insensitive substring match)"
+              "description": "Search query: matches list names (case-insensitive substring) and classification labels, e.g. \"customer\" finds lists classified as Customer"
             },
-            "description": "Search query to filter lists by name (case-insensitive substring match)"
+            "description": "Search query: matches list names (case-insensitive substring) and classification labels, e.g. \"customer\" finds lists classified as Customer"
+          },
+          {
+            "name": "classification",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "What being on the list means, so automations can act on membership. One of: \"form_submission\" (Form Submission); \"website_visitor\" (Website Visitor); \"conversation_contact\" (Conversation Contact); \"event_registrant\" (Event Registrant); \"subscriber\" (Subscriber); \"new_signup\" (New Signup); \"customer\" (Customer); \"qualified\" (Qualified); \"prospect\" (Prospect); \"intent\" (Intent); \"partner\" (Partner); \"social_mention\" (Social Mention); \"research\" (Research); \"unclassified\" (Unclassified). Only lists with this classification are returned.",
+              "enum": [
+                "form_submission",
+                "website_visitor",
+                "conversation_contact",
+                "event_registrant",
+                "subscriber",
+                "new_signup",
+                "customer",
+                "qualified",
+                "prospect",
+                "intent",
+                "partner",
+                "social_mention",
+                "research",
+                "unclassified"
+              ]
+            },
+            "description": "What being on the list means, so automations can act on membership. One of: \"form_submission\" (Form Submission); \"website_visitor\" (Website Visitor); \"conversation_contact\" (Conversation Contact); \"event_registrant\" (Event Registrant); \"subscriber\" (Subscriber); \"new_signup\" (New Signup); \"customer\" (Customer); \"qualified\" (Qualified); \"prospect\" (Prospect); \"intent\" (Intent); \"partner\" (Partner); \"social_mention\" (Social Mention); \"research\" (Research); \"unclassified\" (Unclassified). Only lists with this classification are returned."
           },
           {
             "name": "minimal",
@@ -19216,10 +19242,10 @@
             "required": false,
             "schema": {
               "type": "boolean",
-              "description": "If true, each item in the response only includes id, name, and type \u2014 useful for populating dropdowns without N+1 queries. Default: false",
+              "description": "If true, each item in the response only includes id, name, type and classification \u2014 useful for populating dropdowns without N+1 queries. Default: false",
               "default": false
             },
-            "description": "If true, each item in the response only includes id, name, and type \u2014 useful for populating dropdowns without N+1 queries. Default: false"
+            "description": "If true, each item in the response only includes id, name, type and classification \u2014 useful for populating dropdowns without N+1 queries. Default: false"
           },
           {
             "name": "sortBy",
@@ -19303,6 +19329,10 @@
                             "type": "string",
                             "description": "List type: \"leads\", \"companies\", or \"custom\""
                           },
+                          "classification": {
+                            "type": "string",
+                            "description": "What being on the list means, so automations can act on membership. One of: \"form_submission\" (Form Submission); \"website_visitor\" (Website Visitor); \"conversation_contact\" (Conversation Contact); \"event_registrant\" (Event Registrant); \"subscriber\" (Subscriber); \"new_signup\" (New Signup); \"customer\" (Customer); \"qualified\" (Qualified); \"prospect\" (Prospect); \"intent\" (Intent); \"partner\" (Partner); \"social_mention\" (Social Mention); \"research\" (Research); \"unclassified\" (Unclassified). Null until the list has been classified."
+                          },
                           "sharing": {
                             "type": "string",
                             "description": "Sharing visibility: \"Private\", \"Shared\", or \"Public\""
@@ -19364,7 +19394,7 @@
                       "description": "Whether another page is available"
                     }
                   },
-                  "description": "Paginated lists response. The shape of `items` depends on the `minimal` query parameter: by default each item is a ListSummary (with row count, automations count, etc.); when minimal=true each item is a ListMinimal (id, name, type only)."
+                  "description": "Paginated lists response. The shape of `items` depends on the `minimal` query parameter: by default each item is a ListSummary (with row count, automations count, etc.); when minimal=true each item is a ListMinimal (id, name, type, classification only)."
                 }
               }
             }
@@ -19427,6 +19457,10 @@
                     "type": {
                       "type": "string",
                       "description": "List type: \"leads\", \"companies\", or \"custom\""
+                    },
+                    "classification": {
+                      "type": "string",
+                      "description": "What being on the list means, so automations can act on membership. One of: \"form_submission\" (Form Submission); \"website_visitor\" (Website Visitor); \"conversation_contact\" (Conversation Contact); \"event_registrant\" (Event Registrant); \"subscriber\" (Subscriber); \"new_signup\" (New Signup); \"customer\" (Customer); \"qualified\" (Qualified); \"prospect\" (Prospect); \"intent\" (Intent); \"partner\" (Partner); \"social_mention\" (Social Mention); \"research\" (Research); \"unclassified\" (Unclassified). Null when none was given: the list is then classified automatically a few seconds later."
                     },
                     "headers": {
                       "type": "array",
@@ -19512,7 +19546,7 @@
                 "properties": {
                   "listDict": {
                     "type": "object",
-                    "description": "List properties. Required: name (string). Optional: type (string, one of \"leads\" | \"companies\" | \"custom\"; default \"custom\"), sharing (string controlling visibility \u2014 see below; default \"Private\"), fields (object keyed by column, each value {\"name\", \"label\", \"datatype\"}, e.g. {\"businessName\": {\"name\": \"businessName\", \"label\": \"Business Name\", \"datatype\": \"string\"}}; only when not using a template), templateId (string, when creating from a template).\n\nsharing values:\n  - \"Private\" (default): only the creating user can view or modify the list.\n  - \"Shared\": any user in the same company can view and modify the list.\n  - \"Public\": anyone with the list ID can read the list and its rows via the public endpoints (GET /public/lists/<listId> and GET /public/lists/<listId>/rows). Only the list owner can change sharing afterward.\n\ndepartmentIds (array of department ID strings, optional): only applies when sharing is \"Shared\". When set, only company members assigned to one of these departments (plus admins/owners and the list owner) can see the list. Leave empty/omitted for no department restriction. Also drives the folder grouping in the UI."
+                    "description": "List properties. Required: name (string). Optional: type (string, one of \"leads\" | \"companies\" | \"custom\"; default \"custom\"), sharing (string controlling visibility \u2014 see below; default \"Private\"), fields (object keyed by column, each value {\"name\", \"label\", \"datatype\"}, e.g. {\"businessName\": {\"name\": \"businessName\", \"label\": \"Business Name\", \"datatype\": \"string\"}}; only when not using a template), templateId (string, when creating from a template), classification (string, what being on the list means; one of form_submission, website_visitor, conversation_contact, event_registrant, subscriber, new_signup, customer, qualified, prospect, intent, partner, social_mention, research, unclassified. Omit it and the list is classified automatically from its name and columns a few seconds after it is created).\n\nsharing values:\n  - \"Private\" (default): only the creating user can view or modify the list.\n  - \"Shared\": any user in the same company can view and modify the list.\n  - \"Public\": anyone with the list ID can read the list and its rows via the public endpoints (GET /public/lists/<listId> and GET /public/lists/<listId>/rows). Only the list owner can change sharing afterward.\n\ndepartmentIds (array of department ID strings, optional): only applies when sharing is \"Shared\". When set, only company members assigned to one of these departments (plus admins/owners and the list owner) can see the list. Leave empty/omitted for no department restriction. Also drives the folder grouping in the UI."
                   },
                   "companyId": {
                     "type": "string",
@@ -19595,6 +19629,26 @@
                   "type": {
                     "type": "string",
                     "description": "List type: \"leads\", \"companies\", or \"custom\""
+                  },
+                  "classification": {
+                    "type": "string",
+                    "description": "What being on the list means, so automations can act on membership. One of: \"form_submission\" (Form Submission); \"website_visitor\" (Website Visitor); \"conversation_contact\" (Conversation Contact); \"event_registrant\" (Event Registrant); \"subscriber\" (Subscriber); \"new_signup\" (New Signup); \"customer\" (Customer); \"qualified\" (Qualified); \"prospect\" (Prospect); \"intent\" (Intent); \"partner\" (Partner); \"social_mention\" (Social Mention); \"research\" (Research); \"unclassified\" (Unclassified).",
+                    "enum": [
+                      "form_submission",
+                      "website_visitor",
+                      "conversation_contact",
+                      "event_registrant",
+                      "subscriber",
+                      "new_signup",
+                      "customer",
+                      "qualified",
+                      "prospect",
+                      "intent",
+                      "partner",
+                      "social_mention",
+                      "research",
+                      "unclassified"
+                    ]
                   },
                   "sharing": {
                     "type": "string",
@@ -19815,6 +19869,10 @@
                     "type": {
                       "type": "string",
                       "description": "List type: \"leads\", \"companies\", or \"custom\""
+                    },
+                    "classification": {
+                      "type": "string",
+                      "description": "What being on the list means, so automations can act on membership. One of: \"form_submission\" (Form Submission); \"website_visitor\" (Website Visitor); \"conversation_contact\" (Conversation Contact); \"event_registrant\" (Event Registrant); \"subscriber\" (Subscriber); \"new_signup\" (New Signup); \"customer\" (Customer); \"qualified\" (Qualified); \"prospect\" (Prospect); \"intent\" (Intent); \"partner\" (Partner); \"social_mention\" (Social Mention); \"research\" (Research); \"unclassified\" (Unclassified). Null when none was given: the list is then classified automatically a few seconds later."
                     },
                     "headers": {
                       "type": "array",
@@ -22115,7 +22173,7 @@
         "operationId": "lists_deleteTableAction",
         "parameters": [
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22123,7 +22181,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22221,7 +22279,7 @@
         "operationId": "lists_getActionSummary",
         "parameters": [
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22229,7 +22287,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22349,7 +22407,7 @@
         "operationId": "lists_getActionQueueStatus",
         "parameters": [
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22357,7 +22415,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22686,7 +22744,7 @@
         "operationId": "lists_getRowHistory",
         "parameters": [
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22694,7 +22752,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22906,7 +22964,7 @@
         "operationId": "lists_deleteHeader",
         "parameters": [
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22914,7 +22972,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22980,7 +23038,7 @@
         "operationId": "lists_editHeader",
         "parameters": [
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22988,7 +23046,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26606,7 +26664,7 @@
         "operationId": "sequences_updateSequenceStep",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26614,7 +26672,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26898,7 +26956,7 @@
         "operationId": "sequences_deleteSequenceStep",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26906,7 +26964,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28934,7 +28992,7 @@
         "operationId": "sequences_editSequenceExecution",
         "parameters": [
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28942,7 +29000,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -29041,7 +29099,7 @@
         "operationId": "sequences_previewSequenceExecution",
         "parameters": [
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -29049,7 +29107,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30757,7 +30815,7 @@
         "operationId": "sequences_testSequenceStep",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30765,7 +30823,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30829,7 +30887,7 @@
         "operationId": "sequences_sendTestEmail",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30837,7 +30895,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33000,7 +33058,7 @@
         "operationId": "people_updatePersonActivity",
         "parameters": [
           {
-            "name": "personId",
+            "name": "activityId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33008,7 +33066,7 @@
             }
           },
           {
-            "name": "activityId",
+            "name": "personId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33156,7 +33214,7 @@
         "operationId": "people_deletePersonActivity",
         "parameters": [
           {
-            "name": "personId",
+            "name": "activityId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33164,7 +33222,7 @@
             }
           },
           {
-            "name": "activityId",
+            "name": "personId",
             "in": "path",
             "required": true,
             "schema": {
@@ -35563,7 +35621,7 @@
         "operationId": "inbox_sendDraft",
         "parameters": [
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -35571,7 +35629,7 @@
             }
           },
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -35674,7 +35732,7 @@
         "operationId": "inbox_deleteDraft",
         "parameters": [
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -35682,7 +35740,7 @@
             }
           },
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46455,7 +46513,7 @@
         "operationId": "content_getCanvasDesignThread",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46463,7 +46521,7 @@
             }
           },
           {
-            "name": "canvasId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46502,7 +46560,7 @@
         "operationId": "content_updateCanvasDesignThread",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46510,7 +46568,7 @@
             }
           },
           {
-            "name": "canvasId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46588,7 +46646,7 @@
         "operationId": "content_deleteCanvasDesignThread",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46596,7 +46654,7 @@
             }
           },
           {
-            "name": "canvasId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46637,7 +46695,7 @@
         "operationId": "content_stopCanvasDesignThreadRun",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46645,7 +46703,7 @@
             }
           },
           {
-            "name": "canvasId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -51375,7 +51433,7 @@
         "operationId": "leads_getStagedLeads",
         "parameters": [
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -51383,7 +51441,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -51478,7 +51536,7 @@
         "operationId": "leads_applyStagedLeads",
         "parameters": [
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -51486,7 +51544,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -74434,7 +74492,7 @@
         "operationId": "seo_projectLighthouseSnapshotRoute",
         "parameters": [
           {
-            "name": "snapshotId",
+            "name": "projectId",
             "in": "path",
             "required": true,
             "schema": {
@@ -74442,7 +74500,7 @@
             }
           },
           {
-            "name": "projectId",
+            "name": "snapshotId",
             "in": "path",
             "required": true,
             "schema": {
@@ -79075,7 +79133,7 @@
         "operationId": "marketing_campaigns_getTemplateEmailBuilderThread",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -79083,7 +79141,7 @@
             }
           },
           {
-            "name": "templateId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -79142,7 +79200,7 @@
         "operationId": "marketing_campaigns_updateTemplateEmailBuilderThread",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -79150,7 +79208,7 @@
             }
           },
           {
-            "name": "templateId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -79238,7 +79296,7 @@
         "operationId": "marketing_campaigns_deleteTemplateEmailBuilderThread",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -79246,7 +79304,7 @@
             }
           },
           {
-            "name": "templateId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -79307,7 +79365,7 @@
         "operationId": "marketing_campaigns_stopTemplateEmailBuilderThreadRun",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -79315,7 +79373,7 @@
             }
           },
           {
-            "name": "templateId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81284,7 +81342,7 @@
         "operationId": "site_builder_getWebsiteThreadMessages",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81292,7 +81350,7 @@
             }
           },
           {
-            "name": "websiteId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81361,7 +81419,7 @@
         "operationId": "site_builder_patchWebsiteThread",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81369,7 +81427,7 @@
             }
           },
           {
-            "name": "websiteId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81485,7 +81543,7 @@
         "operationId": "site_builder_stopWebsiteThreadRun",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81493,7 +81551,7 @@
             }
           },
           {
-            "name": "websiteId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81676,7 +81734,7 @@
         "operationId": "site_builder_mergeWebsiteBranch",
         "parameters": [
           {
-            "name": "branch",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81684,7 +81742,7 @@
             }
           },
           {
-            "name": "websiteId",
+            "name": "branch",
             "in": "path",
             "required": true,
             "schema": {
@@ -81775,7 +81833,7 @@
         "operationId": "site_builder_discardWebsiteBranch",
         "parameters": [
           {
-            "name": "branch",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81783,7 +81841,7 @@
             }
           },
           {
-            "name": "websiteId",
+            "name": "branch",
             "in": "path",
             "required": true,
             "schema": {
@@ -82842,7 +82900,7 @@
         "operationId": "site_builder_apiWebsiteBranchDiff",
         "parameters": [
           {
-            "name": "branch",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -82850,7 +82908,7 @@
             }
           },
           {
-            "name": "websiteId",
+            "name": "branch",
             "in": "path",
             "required": true,
             "schema": {
