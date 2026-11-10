@@ -10096,7 +10096,7 @@
         "operationId": "memories_getMemory",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10104,7 +10104,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10202,7 +10202,7 @@
         "operationId": "memories_updateMemoryRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10210,7 +10210,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10338,7 +10338,7 @@
         "operationId": "memories_deleteMemoryRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10346,7 +10346,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10397,7 +10397,7 @@
         "operationId": "memories_toggleMemoryActiveRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10405,7 +10405,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18946,7 +18946,7 @@
         "operationId": "agents_checkConversationActivity",
         "parameters": [
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18954,7 +18954,7 @@
             }
           },
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19016,7 +19016,7 @@
         "operationId": "agents_getConversationDetails",
         "parameters": [
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19024,7 +19024,7 @@
             }
           },
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22177,7 +22177,7 @@
         "operationId": "lists_deleteTableAction",
         "parameters": [
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22185,7 +22185,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22283,7 +22283,7 @@
         "operationId": "lists_getActionSummary",
         "parameters": [
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22291,7 +22291,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22411,7 +22411,7 @@
         "operationId": "lists_getActionQueueStatus",
         "parameters": [
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22419,7 +22419,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27714,7 +27714,7 @@
         "operationId": "sequences_getSequenceMemberTimeline",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27722,7 +27722,7 @@
             }
           },
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28120,7 +28120,7 @@
         "operationId": "sequences_triggerSequenceMember",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28128,7 +28128,7 @@
             }
           },
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28196,7 +28196,7 @@
         "operationId": "sequences_removeSequenceMember",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28204,7 +28204,7 @@
             }
           },
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28996,7 +28996,7 @@
         "operationId": "sequences_editSequenceExecution",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -29004,7 +29004,7 @@
             }
           },
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -29103,7 +29103,7 @@
         "operationId": "sequences_previewSequenceExecution",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -29111,7 +29111,7 @@
             }
           },
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33062,7 +33062,7 @@
         "operationId": "people_updatePersonActivity",
         "parameters": [
           {
-            "name": "personId",
+            "name": "activityId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33070,7 +33070,7 @@
             }
           },
           {
-            "name": "activityId",
+            "name": "personId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33218,7 +33218,7 @@
         "operationId": "people_deletePersonActivity",
         "parameters": [
           {
-            "name": "personId",
+            "name": "activityId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33226,7 +33226,7 @@
             }
           },
           {
-            "name": "activityId",
+            "name": "personId",
             "in": "path",
             "required": true,
             "schema": {
@@ -35641,7 +35641,7 @@
         "operationId": "inbox_sendDraft",
         "parameters": [
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -35649,7 +35649,7 @@
             }
           },
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -35752,7 +35752,7 @@
         "operationId": "inbox_deleteDraft",
         "parameters": [
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -35760,7 +35760,7 @@
             }
           },
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -45506,7 +45506,7 @@
         "operationId": "content_writeVideoScene",
         "parameters": [
           {
-            "name": "canvasId",
+            "name": "sceneId",
             "in": "path",
             "required": true,
             "schema": {
@@ -45514,7 +45514,7 @@
             }
           },
           {
-            "name": "sceneId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46110,7 +46110,7 @@
         "operationId": "content_getCanvasDesignMedia",
         "parameters": [
           {
-            "name": "canvasId",
+            "name": "videoId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46118,7 +46118,7 @@
             }
           },
           {
-            "name": "videoId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46218,7 +46218,7 @@
         "operationId": "content_useCanvasDesignMedia",
         "parameters": [
           {
-            "name": "canvasId",
+            "name": "videoId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46226,7 +46226,7 @@
             }
           },
           {
-            "name": "videoId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81362,7 +81362,7 @@
         "operationId": "site_builder_getWebsiteThreadMessages",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81370,7 +81370,7 @@
             }
           },
           {
-            "name": "websiteId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81439,7 +81439,7 @@
         "operationId": "site_builder_patchWebsiteThread",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81447,7 +81447,7 @@
             }
           },
           {
-            "name": "websiteId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81563,7 +81563,7 @@
         "operationId": "site_builder_stopWebsiteThreadRun",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81571,7 +81571,7 @@
             }
           },
           {
-            "name": "websiteId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
