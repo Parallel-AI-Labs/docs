@@ -1082,6 +1082,7 @@
               "GET /api/v0/websites/{websiteId}/file",
               "GET /api/v0/websites/{websiteId}/lighthouse",
               "GET /api/v0/websites/{websiteId}/pages",
+              "GET /api/v0/websites/{websiteId}/search",
               "GET /api/v0/websites/{websiteId}/seo-audit",
               "GET /api/v0/websites/{websiteId}/threads",
               "GET /api/v0/websites/{websiteId}/threads/{threadId}",
