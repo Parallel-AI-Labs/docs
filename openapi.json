@@ -4317,7 +4317,7 @@
         "operationId": "keys_getApiKey",
         "parameters": [
           {
-            "name": "name",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -4325,7 +4325,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "name",
             "in": "path",
             "required": true,
             "schema": {
@@ -8038,7 +8038,7 @@
         "operationId": "projects_getProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8046,7 +8046,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8181,7 +8181,7 @@
         "operationId": "projects_updateProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8189,7 +8189,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8354,7 +8354,7 @@
         "operationId": "projects_deleteProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8362,7 +8362,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9261,7 +9261,7 @@
         "operationId": "projects_exportProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9269,7 +9269,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9379,7 +9379,7 @@
         "operationId": "projects_exportProjectFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9387,7 +9387,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9499,7 +9499,7 @@
         "operationId": "projects_publishFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9507,7 +9507,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9654,7 +9654,7 @@
         "operationId": "projects_unpublishFile",
         "parameters": [
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9662,7 +9662,7 @@
             }
           },
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -18960,7 +18960,7 @@
         "operationId": "agents_checkConversationActivity",
         "parameters": [
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18968,7 +18968,7 @@
             }
           },
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19030,7 +19030,7 @@
         "operationId": "agents_getConversationDetails",
         "parameters": [
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19038,7 +19038,7 @@
             }
           },
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22191,7 +22191,7 @@
         "operationId": "lists_deleteTableAction",
         "parameters": [
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22199,7 +22199,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22297,7 +22297,7 @@
         "operationId": "lists_getActionSummary",
         "parameters": [
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22305,7 +22305,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22425,7 +22425,7 @@
         "operationId": "lists_getActionQueueStatus",
         "parameters": [
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22433,7 +22433,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22982,7 +22982,7 @@
         "operationId": "lists_deleteHeader",
         "parameters": [
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22990,7 +22990,7 @@
             }
           },
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23056,7 +23056,7 @@
         "operationId": "lists_editHeader",
         "parameters": [
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23064,7 +23064,7 @@
             }
           },
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27728,7 +27728,7 @@
         "operationId": "sequences_getSequenceMemberTimeline",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27736,7 +27736,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28134,7 +28134,7 @@
         "operationId": "sequences_triggerSequenceMember",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28142,7 +28142,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28210,7 +28210,7 @@
         "operationId": "sequences_removeSequenceMember",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28218,7 +28218,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -29010,7 +29010,7 @@
         "operationId": "sequences_editSequenceExecution",
         "parameters": [
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -29018,7 +29018,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -29117,7 +29117,7 @@
         "operationId": "sequences_previewSequenceExecution",
         "parameters": [
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -29125,7 +29125,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33076,7 +33076,7 @@
         "operationId": "people_updatePersonActivity",
         "parameters": [
           {
-            "name": "activityId",
+            "name": "personId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33084,7 +33084,7 @@
             }
           },
           {
-            "name": "personId",
+            "name": "activityId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33232,7 +33232,7 @@
         "operationId": "people_deletePersonActivity",
         "parameters": [
           {
-            "name": "activityId",
+            "name": "personId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33240,7 +33240,7 @@
             }
           },
           {
-            "name": "personId",
+            "name": "activityId",
             "in": "path",
             "required": true,
             "schema": {
@@ -45520,7 +45520,7 @@
         "operationId": "content_writeVideoScene",
         "parameters": [
           {
-            "name": "canvasId",
+            "name": "sceneId",
             "in": "path",
             "required": true,
             "schema": {
@@ -45528,7 +45528,7 @@
             }
           },
           {
-            "name": "sceneId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46547,7 +46547,7 @@
         "operationId": "content_getCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvasId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46555,7 +46555,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46594,7 +46594,7 @@
         "operationId": "content_updateCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvasId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46602,7 +46602,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46680,7 +46680,7 @@
         "operationId": "content_deleteCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvasId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46688,7 +46688,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46729,7 +46729,7 @@
         "operationId": "content_stopCanvasDesignThreadRun",
         "parameters": [
           {
-            "name": "canvasId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46737,7 +46737,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -59676,7 +59676,7 @@
         "operationId": "landing_pages_getLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -59684,7 +59684,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -59723,7 +59723,7 @@
         "operationId": "landing_pages_updateLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -59731,7 +59731,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -59809,7 +59809,7 @@
         "operationId": "landing_pages_deleteLandingPageThread",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -59817,7 +59817,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -59858,7 +59858,7 @@
         "operationId": "landing_pages_stopLandingPageThreadRun",
         "parameters": [
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -59866,7 +59866,7 @@
             }
           },
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -74526,7 +74526,7 @@
         "operationId": "seo_projectLighthouseSnapshotRoute",
         "parameters": [
           {
-            "name": "projectId",
+            "name": "snapshotId",
             "in": "path",
             "required": true,
             "schema": {
@@ -74534,7 +74534,7 @@
             }
           },
           {
-            "name": "snapshotId",
+            "name": "projectId",
             "in": "path",
             "required": true,
             "schema": {
@@ -75314,6 +75314,46 @@
               "description": "Filter by status (one of: draft, scheduled, sending, sent, failed, cancelled)"
             },
             "description": "Filter by status (one of: draft, scheduled, sending, sent, failed, cancelled)"
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Case-insensitive match on campaign name or subject"
+            },
+            "description": "Case-insensitive match on campaign name or subject"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "1-indexed page number. Omit to return all matching campaigns."
+            },
+            "description": "1-indexed page number. Omit to return all matching campaigns."
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Campaigns per page (1-100, default 25)"
+            },
+            "description": "Campaigns per page (1-100, default 25)"
+          },
+          {
+            "name": "summary",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "description": "When true, rows omit bodyHtml and bodyDocument and include hasContent"
+            },
+            "description": "When true, rows omit bodyHtml and bodyDocument and include hasContent"
           }
         ],
         "responses": {
@@ -75453,6 +75493,22 @@
                             "type": "integer",
                             "description": "Total rows in the associated smart list at read time"
                           },
+                          "delivered": {
+                            "type": "integer",
+                            "description": "Recipients the email was delivered to (list responses only)"
+                          },
+                          "uniqueOpens": {
+                            "type": "integer",
+                            "description": "Recipients who opened the email at least once (list responses only)"
+                          },
+                          "uniqueClicks": {
+                            "type": "integer",
+                            "description": "Recipients who clicked a tracked link at least once (list responses only)"
+                          },
+                          "hasContent": {
+                            "type": "boolean",
+                            "description": "Whether the campaign has an email body (summary list responses only)"
+                          },
                           "startedAt": {
                             "type": "string",
                             "description": "ISO timestamp when sending started"
@@ -75502,6 +75558,14 @@
                         },
                         "description": "Marketing campaign object"
                       }
+                    },
+                    "total": {
+                      "type": "integer",
+                      "description": "Number of campaigns matching the filters"
+                    },
+                    "statusCounts": {
+                      "type": "object",
+                      "description": "Campaign count per status for the current search, ignoring the status filter"
                     }
                   },
                   "description": "List of marketing campaigns"
@@ -75511,7 +75575,7 @@
           }
         },
         "summary": "List marketing campaigns for the current company.",
-        "description": "Returns all non-deleted campaigns ordered by creation date (newest first).\nOptionally filter by status (draft, scheduled, sending, sent, failed, cancelled)."
+        "description": "Returns non-deleted campaigns ordered by creation date (newest first).\nOptionally filter by status (draft, scheduled, sending, sent, failed, cancelled)\nand by a name/subject search. Pass page and pageSize to page through results;\nwithout page, all matching campaigns are returned."
       },
       "post": {
         "tags": [
@@ -75650,6 +75714,22 @@
                     "totalRecipients": {
                       "type": "integer",
                       "description": "Total rows in the associated smart list at read time"
+                    },
+                    "delivered": {
+                      "type": "integer",
+                      "description": "Recipients the email was delivered to (list responses only)"
+                    },
+                    "uniqueOpens": {
+                      "type": "integer",
+                      "description": "Recipients who opened the email at least once (list responses only)"
+                    },
+                    "uniqueClicks": {
+                      "type": "integer",
+                      "description": "Recipients who clicked a tracked link at least once (list responses only)"
+                    },
+                    "hasContent": {
+                      "type": "boolean",
+                      "description": "Whether the campaign has an email body (summary list responses only)"
                     },
                     "startedAt": {
                       "type": "string",
@@ -75939,6 +76019,22 @@
                       "type": "integer",
                       "description": "Total rows in the associated smart list at read time"
                     },
+                    "delivered": {
+                      "type": "integer",
+                      "description": "Recipients the email was delivered to (list responses only)"
+                    },
+                    "uniqueOpens": {
+                      "type": "integer",
+                      "description": "Recipients who opened the email at least once (list responses only)"
+                    },
+                    "uniqueClicks": {
+                      "type": "integer",
+                      "description": "Recipients who clicked a tracked link at least once (list responses only)"
+                    },
+                    "hasContent": {
+                      "type": "boolean",
+                      "description": "Whether the campaign has an email body (summary list responses only)"
+                    },
                     "startedAt": {
                       "type": "string",
                       "description": "ISO timestamp when sending started"
@@ -76150,6 +76246,22 @@
                     "totalRecipients": {
                       "type": "integer",
                       "description": "Total rows in the associated smart list at read time"
+                    },
+                    "delivered": {
+                      "type": "integer",
+                      "description": "Recipients the email was delivered to (list responses only)"
+                    },
+                    "uniqueOpens": {
+                      "type": "integer",
+                      "description": "Recipients who opened the email at least once (list responses only)"
+                    },
+                    "uniqueClicks": {
+                      "type": "integer",
+                      "description": "Recipients who clicked a tracked link at least once (list responses only)"
+                    },
+                    "hasContent": {
+                      "type": "boolean",
+                      "description": "Whether the campaign has an email body (summary list responses only)"
                     },
                     "startedAt": {
                       "type": "string",
@@ -76649,6 +76761,22 @@
                       "type": "integer",
                       "description": "Total rows in the associated smart list at read time"
                     },
+                    "delivered": {
+                      "type": "integer",
+                      "description": "Recipients the email was delivered to (list responses only)"
+                    },
+                    "uniqueOpens": {
+                      "type": "integer",
+                      "description": "Recipients who opened the email at least once (list responses only)"
+                    },
+                    "uniqueClicks": {
+                      "type": "integer",
+                      "description": "Recipients who clicked a tracked link at least once (list responses only)"
+                    },
+                    "hasContent": {
+                      "type": "boolean",
+                      "description": "Whether the campaign has an email body (summary list responses only)"
+                    },
                     "startedAt": {
                       "type": "string",
                       "description": "ISO timestamp when sending started"
@@ -76863,6 +76991,22 @@
                     "totalRecipients": {
                       "type": "integer",
                       "description": "Total rows in the associated smart list at read time"
+                    },
+                    "delivered": {
+                      "type": "integer",
+                      "description": "Recipients the email was delivered to (list responses only)"
+                    },
+                    "uniqueOpens": {
+                      "type": "integer",
+                      "description": "Recipients who opened the email at least once (list responses only)"
+                    },
+                    "uniqueClicks": {
+                      "type": "integer",
+                      "description": "Recipients who clicked a tracked link at least once (list responses only)"
+                    },
+                    "hasContent": {
+                      "type": "boolean",
+                      "description": "Whether the campaign has an email body (summary list responses only)"
                     },
                     "startedAt": {
                       "type": "string",
@@ -77079,6 +77223,22 @@
                       "type": "integer",
                       "description": "Total rows in the associated smart list at read time"
                     },
+                    "delivered": {
+                      "type": "integer",
+                      "description": "Recipients the email was delivered to (list responses only)"
+                    },
+                    "uniqueOpens": {
+                      "type": "integer",
+                      "description": "Recipients who opened the email at least once (list responses only)"
+                    },
+                    "uniqueClicks": {
+                      "type": "integer",
+                      "description": "Recipients who clicked a tracked link at least once (list responses only)"
+                    },
+                    "hasContent": {
+                      "type": "boolean",
+                      "description": "Whether the campaign has an email body (summary list responses only)"
+                    },
                     "startedAt": {
                       "type": "string",
                       "description": "ISO timestamp when sending started"
@@ -77293,6 +77453,22 @@
                     "totalRecipients": {
                       "type": "integer",
                       "description": "Total rows in the associated smart list at read time"
+                    },
+                    "delivered": {
+                      "type": "integer",
+                      "description": "Recipients the email was delivered to (list responses only)"
+                    },
+                    "uniqueOpens": {
+                      "type": "integer",
+                      "description": "Recipients who opened the email at least once (list responses only)"
+                    },
+                    "uniqueClicks": {
+                      "type": "integer",
+                      "description": "Recipients who clicked a tracked link at least once (list responses only)"
+                    },
+                    "hasContent": {
+                      "type": "boolean",
+                      "description": "Whether the campaign has an email body (summary list responses only)"
                     },
                     "startedAt": {
                       "type": "string",
@@ -77534,6 +77710,22 @@
                       "type": "integer",
                       "description": "Total rows in the associated smart list at read time"
                     },
+                    "delivered": {
+                      "type": "integer",
+                      "description": "Recipients the email was delivered to (list responses only)"
+                    },
+                    "uniqueOpens": {
+                      "type": "integer",
+                      "description": "Recipients who opened the email at least once (list responses only)"
+                    },
+                    "uniqueClicks": {
+                      "type": "integer",
+                      "description": "Recipients who clicked a tracked link at least once (list responses only)"
+                    },
+                    "hasContent": {
+                      "type": "boolean",
+                      "description": "Whether the campaign has an email body (summary list responses only)"
+                    },
                     "startedAt": {
                       "type": "string",
                       "description": "ISO timestamp when sending started"
@@ -77698,6 +77890,10 @@
                   "bodyHtml": {
                     "type": "string",
                     "description": "Override HTML body to test with the current (unsaved) form value instead of the persisted campaign body"
+                  },
+                  "bodyDocument": {
+                    "type": "string",
+                    "description": "Override visual-builder document to test with; rendered in place of bodyHtml, including its preview text"
                   },
                   "fromName": {
                     "type": "string",
@@ -77972,7 +78168,7 @@
         "operationId": "marketing_campaigns_deleteCampaignRecipient",
         "parameters": [
           {
-            "name": "recipientId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -77980,7 +78176,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "recipientId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78278,7 +78474,7 @@
           }
         },
         "summary": "Return per-hour sent, opened, and clicked counts for the last N days",
-        "description": "(default 7, max 90). Optionally restrict to a single campaign with\n?campaignId=\u2026"
+        "description": "(default 7, max 90). Optionally restrict to a single campaign with\n?campaignId=\u2026; a single campaign's series instead covers its first N days\nfrom the first send (returned as firstSentAt)."
       }
     },
     "/api/v0/marketing-campaigns/{campaignId}/chat": {
@@ -81376,7 +81572,7 @@
         "operationId": "site_builder_getWebsiteThreadMessages",
         "parameters": [
           {
-            "name": "websiteId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81384,7 +81580,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81453,7 +81649,7 @@
         "operationId": "site_builder_patchWebsiteThread",
         "parameters": [
           {
-            "name": "websiteId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81461,7 +81657,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81577,7 +81773,7 @@
         "operationId": "site_builder_stopWebsiteThreadRun",
         "parameters": [
           {
-            "name": "websiteId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81585,7 +81781,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
