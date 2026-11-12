@@ -2053,7 +2053,7 @@
         "operationId": "documents_getDocumentContents",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -2061,7 +2061,7 @@
             }
           },
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -2120,7 +2120,7 @@
         "operationId": "documents_getDocument",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -2128,7 +2128,7 @@
             }
           },
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8038,7 +8038,7 @@
         "operationId": "projects_getProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8046,7 +8046,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8181,7 +8181,7 @@
         "operationId": "projects_updateProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8189,7 +8189,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8354,7 +8354,7 @@
         "operationId": "projects_deleteProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8362,7 +8362,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9261,7 +9261,7 @@
         "operationId": "projects_exportProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9269,7 +9269,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9379,7 +9379,7 @@
         "operationId": "projects_exportProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9387,7 +9387,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9499,7 +9499,7 @@
         "operationId": "projects_publishFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9507,7 +9507,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9654,7 +9654,7 @@
         "operationId": "projects_unpublishFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9662,7 +9662,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -10096,7 +10096,7 @@
         "operationId": "memories_getMemory",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10104,7 +10104,7 @@
             }
           },
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10202,7 +10202,7 @@
         "operationId": "memories_updateMemoryRoute",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10210,7 +10210,7 @@
             }
           },
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10338,7 +10338,7 @@
         "operationId": "memories_deleteMemoryRoute",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10346,7 +10346,7 @@
             }
           },
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10397,7 +10397,7 @@
         "operationId": "memories_toggleMemoryActiveRoute",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10405,7 +10405,7 @@
             }
           },
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -14645,7 +14645,7 @@
         "operationId": "organizations_updateOrganizationMember",
         "parameters": [
           {
-            "name": "orgId",
+            "name": "memberUid",
             "in": "path",
             "required": true,
             "schema": {
@@ -14653,7 +14653,7 @@
             }
           },
           {
-            "name": "memberUid",
+            "name": "orgId",
             "in": "path",
             "required": true,
             "schema": {
@@ -14780,7 +14780,7 @@
         "operationId": "organizations_removeOrganizationMember",
         "parameters": [
           {
-            "name": "orgId",
+            "name": "memberUid",
             "in": "path",
             "required": true,
             "schema": {
@@ -14788,7 +14788,7 @@
             }
           },
           {
-            "name": "memberUid",
+            "name": "orgId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22982,7 +22982,7 @@
         "operationId": "lists_deleteHeader",
         "parameters": [
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22990,7 +22990,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23056,7 +23056,7 @@
         "operationId": "lists_editHeader",
         "parameters": [
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23064,7 +23064,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33421,6 +33421,487 @@
         "description": "Touchpoints are grouped by source type and ordered newest first. This is the\nview that answers \"everywhere this human appears\" without checking each\nfeature by hand."
       }
     },
+    "/api/v0/crm/pipelines": {
+      "get": {
+        "tags": [
+          "People"
+        ],
+        "operationId": "crm_records_listPipelines",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "summary": "List deal pipelines with their ordered stages. A default pipeline is created on first use."
+      },
+      "post": {
+        "tags": [
+          "People"
+        ],
+        "operationId": "crm_records_createPipeline",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "summary": "Create a pipeline from a name and an ordered list of stages ({name, stageType})."
+      }
+    },
+    "/api/v0/crm/pipelines/{pipelineId}": {
+      "patch": {
+        "tags": [
+          "People"
+        ],
+        "operationId": "crm_records_updatePipeline",
+        "parameters": [
+          {
+            "name": "pipelineId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "summary": "Rename a pipeline or replace its ordered stages. Stages keep their id; omitted stages are removed."
+      },
+      "delete": {
+        "tags": [
+          "People"
+        ],
+        "operationId": "crm_records_deletePipeline",
+        "parameters": [
+          {
+            "name": "pipelineId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "summary": "Delete an empty pipeline."
+      }
+    },
+    "/api/v0/crm/pipelines/{pipelineId}/board": {
+      "get": {
+        "tags": [
+          "People"
+        ],
+        "operationId": "crm_records_getDealBoard",
+        "parameters": [
+          {
+            "name": "pipelineId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "summary": "Every stage of a pipeline with its deal count, total value and first page of deals."
+      }
+    },
+    "/api/v0/crm/deals": {
+      "get": {
+        "tags": [
+          "People"
+        ],
+        "operationId": "crm_records_listDeals",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "summary": "Paginated deals, filterable by pipeline, stage, owner, person, company and search."
+      },
+      "post": {
+        "tags": [
+          "People"
+        ],
+        "operationId": "crm_records_createDeal",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "summary": "Create a deal. Without stageId it starts in the first open stage of the first pipeline."
+      }
+    },
+    "/api/v0/crm/deals/{dealId}": {
+      "get": {
+        "tags": [
+          "People"
+        ],
+        "operationId": "crm_records_getDeal",
+        "parameters": [
+          {
+            "name": "dealId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "summary": "One deal with its stage, person, company and owner."
+      },
+      "patch": {
+        "tags": [
+          "People"
+        ],
+        "operationId": "crm_records_updateDeal",
+        "parameters": [
+          {
+            "name": "dealId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "summary": "Edit a deal or move it to another stage (stageId, optional board position)."
+      },
+      "delete": {
+        "tags": [
+          "People"
+        ],
+        "operationId": "crm_records_deleteDeal",
+        "parameters": [
+          {
+            "name": "dealId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "summary": "Delete a deal."
+      }
+    },
+    "/api/v0/crm/tasks": {
+      "get": {
+        "tags": [
+          "People"
+        ],
+        "operationId": "crm_records_listTasks",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "summary": "Paginated tasks. status=open|completed; due=overdue|today|upcoming in the caller's timeZone."
+      },
+      "post": {
+        "tags": [
+          "People"
+        ],
+        "operationId": "crm_records_createTask",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "summary": "Create a task, assigned to the caller unless assigneeUid is given."
+      }
+    },
+    "/api/v0/crm/tasks/{taskId}": {
+      "patch": {
+        "tags": [
+          "People"
+        ],
+        "operationId": "crm_records_updateTask",
+        "parameters": [
+          {
+            "name": "taskId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "summary": "Edit a task or mark it complete (completed: true/false)."
+      },
+      "delete": {
+        "tags": [
+          "People"
+        ],
+        "operationId": "crm_records_deleteTask",
+        "parameters": [
+          {
+            "name": "taskId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "summary": "Delete a task."
+      }
+    },
+    "/api/v0/crm/people": {
+      "post": {
+        "tags": [
+          "People"
+        ],
+        "operationId": "crm_records_createPerson",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "summary": "Add a person by hand. 409 with existingPersonId when their email, phone or LinkedIn is already known."
+      }
+    },
+    "/api/v0/crm/people/{personId}": {
+      "patch": {
+        "tags": [
+          "People"
+        ],
+        "operationId": "crm_records_updatePerson",
+        "parameters": [
+          {
+            "name": "personId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "summary": "Edit a person's details, owner (ownerUid) or company (accountId). Syncs never overwrite these edits."
+      },
+      "delete": {
+        "tags": [
+          "People"
+        ],
+        "operationId": "crm_records_deletePerson",
+        "parameters": [
+          {
+            "name": "personId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "summary": "Delete a person who was added by hand. People from connected data return with the next sync."
+      }
+    },
+    "/api/v0/crm/people/{personId}/notes": {
+      "get": {
+        "tags": [
+          "People"
+        ],
+        "operationId": "crm_records_listNotes",
+        "parameters": [
+          {
+            "name": "personId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "summary": "Paginated notes on a person, newest first."
+      },
+      "post": {
+        "tags": [
+          "People"
+        ],
+        "operationId": "crm_records_createNote",
+        "parameters": [
+          {
+            "name": "personId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "summary": "Add a note to a person."
+      }
+    },
+    "/api/v0/crm/people/{personId}/notes/{noteId}": {
+      "delete": {
+        "tags": [
+          "People"
+        ],
+        "operationId": "crm_records_deleteNote",
+        "parameters": [
+          {
+            "name": "personId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "noteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "summary": "Delete a note."
+      }
+    },
+    "/api/v0/crm/accounts": {
+      "get": {
+        "tags": [
+          "People"
+        ],
+        "operationId": "crm_records_searchAccounts",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "summary": "Paginated companies, searchable by name or website."
+      },
+      "post": {
+        "tags": [
+          "People"
+        ],
+        "operationId": "crm_records_createAccount",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "summary": "Add a company by hand. Returns the existing company when the website is already known."
+      }
+    },
+    "/api/v0/crm/accounts/{accountId}": {
+      "get": {
+        "tags": [
+          "People"
+        ],
+        "operationId": "crm_records_getAccount",
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "summary": "One company's editable details and owner."
+      },
+      "patch": {
+        "tags": [
+          "People"
+        ],
+        "operationId": "crm_records_updateAccount",
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "summary": "Edit a company's details or owner (ownerUid)."
+      }
+    },
     "/api/v0/inboxes": {
       "post": {
         "tags": [
@@ -35655,7 +36136,7 @@
         "operationId": "inbox_sendDraft",
         "parameters": [
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -35663,7 +36144,7 @@
             }
           },
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -35766,7 +36247,7 @@
         "operationId": "inbox_deleteDraft",
         "parameters": [
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -35774,7 +36255,7 @@
             }
           },
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -45520,7 +46001,7 @@
         "operationId": "content_writeVideoScene",
         "parameters": [
           {
-            "name": "sceneId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -45528,7 +46009,7 @@
             }
           },
           {
-            "name": "canvasId",
+            "name": "sceneId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46124,7 +46605,7 @@
         "operationId": "content_getCanvasDesignMedia",
         "parameters": [
           {
-            "name": "videoId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46132,7 +46613,7 @@
             }
           },
           {
-            "name": "canvasId",
+            "name": "videoId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46232,7 +46713,7 @@
         "operationId": "content_useCanvasDesignMedia",
         "parameters": [
           {
-            "name": "videoId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46240,7 +46721,7 @@
             }
           },
           {
-            "name": "canvasId",
+            "name": "videoId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46547,7 +47028,7 @@
         "operationId": "content_getCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvasId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46555,7 +47036,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46594,7 +47075,7 @@
         "operationId": "content_updateCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvasId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46602,7 +47083,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46680,7 +47161,7 @@
         "operationId": "content_deleteCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvasId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46688,7 +47169,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46729,7 +47210,7 @@
         "operationId": "content_stopCanvasDesignThreadRun",
         "parameters": [
           {
-            "name": "canvasId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46737,7 +47218,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -76603,7 +77084,7 @@
         "operationId": "marketing_campaigns_restoreCampaignVersion",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -76611,7 +77092,7 @@
             }
           },
           {
-            "name": "versionId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78168,7 +78649,7 @@
         "operationId": "marketing_campaigns_deleteCampaignRecipient",
         "parameters": [
           {
-            "name": "recipientId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78176,7 +78657,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "recipientId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78743,7 +79224,7 @@
         "operationId": "marketing_campaigns_getCampaignEmailBuilderThread",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78751,7 +79232,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78810,7 +79291,7 @@
         "operationId": "marketing_campaigns_updateCampaignEmailBuilderThread",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78818,7 +79299,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78906,7 +79387,7 @@
         "operationId": "marketing_campaigns_deleteCampaignEmailBuilderThread",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78914,7 +79395,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78975,7 +79456,7 @@
         "operationId": "marketing_campaigns_stopCampaignEmailBuilderThreadRun",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -78983,7 +79464,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81572,7 +82053,7 @@
         "operationId": "site_builder_getWebsiteThreadMessages",
         "parameters": [
           {
-            "name": "websiteId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81580,7 +82061,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81649,7 +82130,7 @@
         "operationId": "site_builder_patchWebsiteThread",
         "parameters": [
           {
-            "name": "websiteId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81657,7 +82138,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81773,7 +82254,7 @@
         "operationId": "site_builder_stopWebsiteThreadRun",
         "parameters": [
           {
-            "name": "websiteId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81781,7 +82262,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
