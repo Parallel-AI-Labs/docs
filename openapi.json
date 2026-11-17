@@ -4317,7 +4317,7 @@
         "operationId": "keys_getApiKey",
         "parameters": [
           {
-            "name": "name",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -4325,7 +4325,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "name",
             "in": "path",
             "required": true,
             "schema": {
@@ -10096,7 +10096,7 @@
         "operationId": "memories_getMemory",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10104,7 +10104,7 @@
             }
           },
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10202,7 +10202,7 @@
         "operationId": "memories_updateMemoryRoute",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10210,7 +10210,7 @@
             }
           },
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10338,7 +10338,7 @@
         "operationId": "memories_deleteMemoryRoute",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10346,7 +10346,7 @@
             }
           },
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10397,7 +10397,7 @@
         "operationId": "memories_toggleMemoryActiveRoute",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10405,7 +10405,7 @@
             }
           },
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18960,7 +18960,7 @@
         "operationId": "agents_checkConversationActivity",
         "parameters": [
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18968,7 +18968,7 @@
             }
           },
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19030,7 +19030,7 @@
         "operationId": "agents_getConversationDetails",
         "parameters": [
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19038,7 +19038,7 @@
             }
           },
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22191,7 +22191,7 @@
         "operationId": "lists_deleteTableAction",
         "parameters": [
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22199,7 +22199,7 @@
             }
           },
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22297,7 +22297,7 @@
         "operationId": "lists_getActionSummary",
         "parameters": [
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22305,7 +22305,7 @@
             }
           },
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22425,7 +22425,7 @@
         "operationId": "lists_getActionQueueStatus",
         "parameters": [
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22433,7 +22433,7 @@
             }
           },
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22762,7 +22762,7 @@
         "operationId": "lists_getRowHistory",
         "parameters": [
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22770,7 +22770,7 @@
             }
           },
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -25682,7 +25682,7 @@
                     "items": {
                       "type": "string"
                     },
-                    "description": "PRIMARY channel configuration. Sender profile IDs to send as; each profile already carries its own email account, LinkedIn account, phone integration + number, voice, and agent, so usually this is the only channel field you need to set. To find valid IDs (and to see which channels each profile already has), call sequences_listProfiles. To attach a missing channel, edit the sender profile via sequences_updateProfile rather than setting the sequence-level fallbacks below."
+                    "description": "PRIMARY channel configuration. Sender profile IDs to send as; each profile already carries its own email account, LinkedIn account, phone integration + number, voice, and agent, so usually this is the only channel field you need to set. To find valid IDs (and to see which channels each profile already has), call sequences_listProfiles; for cold outreach pick profiles whose classification is cold_outreach, never primary_inbox or notifications. To attach a missing channel, edit the sender profile via sequences_updateProfile rather than setting the sequence-level fallbacks below."
                   },
                   "senderProfileId": {
                     "type": "string",
@@ -29880,9 +29880,26 @@
             "required": false,
             "schema": {
               "type": "string",
-              "description": "Search by name or email"
+              "description": "Search by name, email or classification label, e.g. \"cold\" finds senders classified as Cold Outreach"
             },
-            "description": "Search by name or email"
+            "description": "Search by name, email or classification label, e.g. \"cold\" finds senders classified as Cold Outreach"
+          },
+          {
+            "name": "classification",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "What the sender is for. Match it to the email being sent: cold sequences to prospects use \"cold_outreach\" senders, campaigns to opted-in contacts use \"marketing\", people who already know the business can get \"primary_inbox\", and \"notifications\" senders are not read. One of: \"cold_outreach\" (Cold Outreach: Sends first-touch outreach to people who have not asked to hear from the business. Signs: a mailbox on a separate domain from the business's main domain (often a variation of it), mailbox warmup or slow ramp-up turned on, a low daily limit, or it sends outreach sequences. Use it for cold sequences to prospects.); \"marketing\" (Marketing: Sends newsletters, announcements and campaigns to opted-in subscribers and customers. Usually a bulk email service (SendGrid, SES, Mailgun) or an address like news@, hello@ or marketing@, often with a high daily limit. Use it for marketing campaigns, not cold outreach.); \"primary_inbox\" (Primary Inbox: A person's or team's everyday mailbox on the business's main domain (the same domain as its website), used for replies, customers, partners, support and warm conversations. A mailbox on a separate domain is not this. Use it for people who already know the business; never for cold outreach, which puts the main domain at risk.); \"notifications\" (Notifications: An automated no-reply sender for receipts, alerts, reminders and other system messages. Replies are not read, so do not use it for outreach or conversations.); \"unclassified\" (Unclassified: Test senders, or nothing about the sender says what it is for.) Only senders with this classification are returned.",
+              "enum": [
+                "cold_outreach",
+                "marketing",
+                "primary_inbox",
+                "notifications",
+                "unclassified"
+              ]
+            },
+            "description": "What the sender is for. Match it to the email being sent: cold sequences to prospects use \"cold_outreach\" senders, campaigns to opted-in contacts use \"marketing\", people who already know the business can get \"primary_inbox\", and \"notifications\" senders are not read. One of: \"cold_outreach\" (Cold Outreach: Sends first-touch outreach to people who have not asked to hear from the business. Signs: a mailbox on a separate domain from the business's main domain (often a variation of it), mailbox warmup or slow ramp-up turned on, a low daily limit, or it sends outreach sequences. Use it for cold sequences to prospects.); \"marketing\" (Marketing: Sends newsletters, announcements and campaigns to opted-in subscribers and customers. Usually a bulk email service (SendGrid, SES, Mailgun) or an address like news@, hello@ or marketing@, often with a high daily limit. Use it for marketing campaigns, not cold outreach.); \"primary_inbox\" (Primary Inbox: A person's or team's everyday mailbox on the business's main domain (the same domain as its website), used for replies, customers, partners, support and warm conversations. A mailbox on a separate domain is not this. Use it for people who already know the business; never for cold outreach, which puts the main domain at risk.); \"notifications\" (Notifications: An automated no-reply sender for receipts, alerts, reminders and other system messages. Replies are not read, so do not use it for outreach or conversations.); \"unclassified\" (Unclassified: Test senders, or nothing about the sender says what it is for.) Only senders with this classification are returned."
           }
         ],
         "responses": {
@@ -29953,6 +29970,10 @@
                           "integrationId": {
                             "type": "string",
                             "description": "Email integration ID"
+                          },
+                          "classification": {
+                            "type": "string",
+                            "description": "What the sender is for. Match it to the email being sent: cold sequences to prospects use \"cold_outreach\" senders, campaigns to opted-in contacts use \"marketing\", people who already know the business can get \"primary_inbox\", and \"notifications\" senders are not read. One of: \"cold_outreach\" (Cold Outreach: Sends first-touch outreach to people who have not asked to hear from the business. Signs: a mailbox on a separate domain from the business's main domain (often a variation of it), mailbox warmup or slow ramp-up turned on, a low daily limit, or it sends outreach sequences. Use it for cold sequences to prospects.); \"marketing\" (Marketing: Sends newsletters, announcements and campaigns to opted-in subscribers and customers. Usually a bulk email service (SendGrid, SES, Mailgun) or an address like news@, hello@ or marketing@, often with a high daily limit. Use it for marketing campaigns, not cold outreach.); \"primary_inbox\" (Primary Inbox: A person's or team's everyday mailbox on the business's main domain (the same domain as its website), used for replies, customers, partners, support and warm conversations. A mailbox on a separate domain is not this. Use it for people who already know the business; never for cold outreach, which puts the main domain at risk.); \"notifications\" (Notifications: An automated no-reply sender for receipts, alerts, reminders and other system messages. Replies are not read, so do not use it for outreach or conversations.); \"unclassified\" (Unclassified: Test senders, or nothing about the sender says what it is for.) Null until the sender has been classified."
                           }
                         },
                         "description": "Sender profile object"
@@ -30034,6 +30055,17 @@
                   "slowRampEnabled": {
                     "type": "boolean",
                     "description": "Gradually increase the number of emails sent per day until the daily sending limit is reached"
+                  },
+                  "classification": {
+                    "type": "string",
+                    "description": "What the sender is for. Match it to the email being sent: cold sequences to prospects use \"cold_outreach\" senders, campaigns to opted-in contacts use \"marketing\", people who already know the business can get \"primary_inbox\", and \"notifications\" senders are not read. One of: \"cold_outreach\" (Cold Outreach: Sends first-touch outreach to people who have not asked to hear from the business. Signs: a mailbox on a separate domain from the business's main domain (often a variation of it), mailbox warmup or slow ramp-up turned on, a low daily limit, or it sends outreach sequences. Use it for cold sequences to prospects.); \"marketing\" (Marketing: Sends newsletters, announcements and campaigns to opted-in subscribers and customers. Usually a bulk email service (SendGrid, SES, Mailgun) or an address like news@, hello@ or marketing@, often with a high daily limit. Use it for marketing campaigns, not cold outreach.); \"primary_inbox\" (Primary Inbox: A person's or team's everyday mailbox on the business's main domain (the same domain as its website), used for replies, customers, partners, support and warm conversations. A mailbox on a separate domain is not this. Use it for people who already know the business; never for cold outreach, which puts the main domain at risk.); \"notifications\" (Notifications: An automated no-reply sender for receipts, alerts, reminders and other system messages. Replies are not read, so do not use it for outreach or conversations.); \"unclassified\" (Unclassified: Test senders, or nothing about the sender says what it is for.) Omit it or send null and the sender is classified automatically.",
+                    "enum": [
+                      "cold_outreach",
+                      "marketing",
+                      "primary_inbox",
+                      "notifications",
+                      "unclassified"
+                    ]
                   },
                   "linkedinIntegrationId": {
                     "type": "string",
@@ -30154,6 +30186,17 @@
                   "slowRampEnabled": {
                     "type": "boolean",
                     "description": "Gradually increase the number of emails sent per day until the daily sending limit is reached"
+                  },
+                  "classification": {
+                    "type": "string",
+                    "description": "What the sender is for. Match it to the email being sent: cold sequences to prospects use \"cold_outreach\" senders, campaigns to opted-in contacts use \"marketing\", people who already know the business can get \"primary_inbox\", and \"notifications\" senders are not read. One of: \"cold_outreach\" (Cold Outreach: Sends first-touch outreach to people who have not asked to hear from the business. Signs: a mailbox on a separate domain from the business's main domain (often a variation of it), mailbox warmup or slow ramp-up turned on, a low daily limit, or it sends outreach sequences. Use it for cold sequences to prospects.); \"marketing\" (Marketing: Sends newsletters, announcements and campaigns to opted-in subscribers and customers. Usually a bulk email service (SendGrid, SES, Mailgun) or an address like news@, hello@ or marketing@, often with a high daily limit. Use it for marketing campaigns, not cold outreach.); \"primary_inbox\" (Primary Inbox: A person's or team's everyday mailbox on the business's main domain (the same domain as its website), used for replies, customers, partners, support and warm conversations. A mailbox on a separate domain is not this. Use it for people who already know the business; never for cold outreach, which puts the main domain at risk.); \"notifications\" (Notifications: An automated no-reply sender for receipts, alerts, reminders and other system messages. Replies are not read, so do not use it for outreach or conversations.); \"unclassified\" (Unclassified: Test senders, or nothing about the sender says what it is for.) Omit it or send null and the sender is classified automatically.",
+                    "enum": [
+                      "cold_outreach",
+                      "marketing",
+                      "primary_inbox",
+                      "notifications",
+                      "unclassified"
+                    ]
                   },
                   "linkedinIntegrationId": {
                     "type": "string",
@@ -30331,7 +30374,7 @@
                   },
                   "updates": {
                     "type": "object",
-                    "description": "Fields to update: {dailySendingLimit?: number, trackingDomainId?: string, signature?: string, slowRampEnabled?: boolean}"
+                    "description": "Fields to update: {dailySendingLimit?: number, trackingDomainId?: string, signature?: string, slowRampEnabled?: boolean, classification?: string|null (cold_outreach, marketing, primary_inbox, notifications, unclassified; null classifies automatically)}"
                   }
                 },
                 "required": [
@@ -30963,7 +31006,7 @@
         "operationId": "sequences_getMemberProfile",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "memberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30971,7 +31014,7 @@
             }
           },
           {
-            "name": "memberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -45900,7 +45943,7 @@
         "operationId": "content_writeVideoScene",
         "parameters": [
           {
-            "name": "canvasId",
+            "name": "sceneId",
             "in": "path",
             "required": true,
             "schema": {
@@ -45908,7 +45951,7 @@
             }
           },
           {
-            "name": "sceneId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46504,7 +46547,7 @@
         "operationId": "content_getCanvasDesignMedia",
         "parameters": [
           {
-            "name": "canvasId",
+            "name": "videoId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46512,7 +46555,7 @@
             }
           },
           {
-            "name": "videoId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46612,7 +46655,7 @@
         "operationId": "content_useCanvasDesignMedia",
         "parameters": [
           {
-            "name": "canvasId",
+            "name": "videoId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46620,7 +46663,7 @@
             }
           },
           {
-            "name": "videoId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46927,7 +46970,7 @@
         "operationId": "content_getCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvasId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46935,7 +46978,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46974,7 +47017,7 @@
         "operationId": "content_updateCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvasId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46982,7 +47025,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -47060,7 +47103,7 @@
         "operationId": "content_deleteCanvasDesignThread",
         "parameters": [
           {
-            "name": "canvasId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -47068,7 +47111,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -47109,7 +47152,7 @@
         "operationId": "content_stopCanvasDesignThreadRun",
         "parameters": [
           {
-            "name": "canvasId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -47117,7 +47160,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -51839,7 +51882,7 @@
         "operationId": "leads_getStagedLeads",
         "parameters": [
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -51847,7 +51890,7 @@
             }
           },
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -51942,7 +51985,7 @@
         "operationId": "leads_applyStagedLeads",
         "parameters": [
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -51950,7 +51993,7 @@
             }
           },
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -76975,7 +77018,7 @@
         "operationId": "marketing_campaigns_restoreCampaignVersion",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -76983,7 +77026,7 @@
             }
           },
           {
-            "name": "versionId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -79115,7 +79158,7 @@
         "operationId": "marketing_campaigns_getCampaignEmailBuilderThread",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -79123,7 +79166,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -79182,7 +79225,7 @@
         "operationId": "marketing_campaigns_updateCampaignEmailBuilderThread",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -79190,7 +79233,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -79278,7 +79321,7 @@
         "operationId": "marketing_campaigns_deleteCampaignEmailBuilderThread",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -79286,7 +79329,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -79347,7 +79390,7 @@
         "operationId": "marketing_campaigns_stopCampaignEmailBuilderThreadRun",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -79355,7 +79398,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
