@@ -899,6 +899,7 @@
               "POST /api/v0/seo/projects",
               "POST /api/v0/seo/projects/ensure",
               "POST /api/v0/seo/projects/estimate",
+              "POST /api/v0/seo/projects/setup",
               "POST /api/v0/seo/projects/{projectId}/disavow",
               "POST /api/v0/seo/projects/{projectId}/pause",
               "POST /api/v0/seo/projects/{projectId}/resume",
