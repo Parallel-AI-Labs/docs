@@ -2053,7 +2053,7 @@
         "operationId": "documents_getDocumentContents",
         "parameters": [
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -2061,7 +2061,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -2120,7 +2120,7 @@
         "operationId": "documents_getDocument",
         "parameters": [
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -2128,7 +2128,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8038,7 +8038,7 @@
         "operationId": "projects_getProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8046,7 +8046,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8181,7 +8181,7 @@
         "operationId": "projects_updateProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8189,7 +8189,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8354,7 +8354,7 @@
         "operationId": "projects_deleteProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8362,7 +8362,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9254,14 +9254,14 @@
       }
     },
     "/api/v0/projects/{project_id}/files/{file_id}/export": {
-      "get": {
+      "post": {
         "tags": [
           "Projects"
         ],
         "operationId": "projects_exportProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9269,7 +9269,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9372,14 +9372,14 @@
           "description": "POST exports current editor content without saving; GET exports the saved file"
         }
       },
-      "post": {
+      "get": {
         "tags": [
           "Projects"
         ],
         "operationId": "projects_exportProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9387,7 +9387,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9499,7 +9499,7 @@
         "operationId": "projects_publishFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9507,7 +9507,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9654,7 +9654,7 @@
         "operationId": "projects_unpublishFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9662,7 +9662,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -18964,7 +18964,7 @@
         "operationId": "agents_checkConversationActivity",
         "parameters": [
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18972,7 +18972,7 @@
             }
           },
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19034,7 +19034,7 @@
         "operationId": "agents_getConversationDetails",
         "parameters": [
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19042,7 +19042,7 @@
             }
           },
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22766,7 +22766,7 @@
         "operationId": "lists_getRowHistory",
         "parameters": [
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22774,7 +22774,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22986,7 +22986,7 @@
         "operationId": "lists_deleteHeader",
         "parameters": [
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22994,7 +22994,7 @@
             }
           },
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23060,7 +23060,7 @@
         "operationId": "lists_editHeader",
         "parameters": [
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23068,7 +23068,7 @@
             }
           },
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26666,7 +26666,7 @@
         "operationId": "sequences_updateSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26674,7 +26674,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26954,7 +26954,7 @@
         "operationId": "sequences_deleteSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26962,7 +26962,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27704,7 +27704,7 @@
         "operationId": "sequences_getSequenceMemberTimeline",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27712,7 +27712,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28110,7 +28110,7 @@
         "operationId": "sequences_triggerSequenceMember",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28118,7 +28118,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28186,7 +28186,7 @@
         "operationId": "sequences_removeSequenceMember",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28194,7 +28194,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28986,7 +28986,7 @@
         "operationId": "sequences_editSequenceExecution",
         "parameters": [
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28994,7 +28994,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -29093,7 +29093,7 @@
         "operationId": "sequences_previewSequenceExecution",
         "parameters": [
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -29101,7 +29101,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30852,7 +30852,7 @@
         "operationId": "sequences_testSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30860,7 +30860,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30924,7 +30924,7 @@
         "operationId": "sequences_sendTestEmail",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30932,7 +30932,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -31010,7 +31010,7 @@
         "operationId": "sequences_getMemberProfile",
         "parameters": [
           {
-            "name": "memberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -31018,7 +31018,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "memberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -38029,6 +38029,14 @@
                             "type": "object",
                             "description": "Content variants"
                           },
+                          "videoUrl": {
+                            "type": "string",
+                            "description": "Public MP4 of the post's video (video channels: facebook_video, instagram_reel, linkedin_video, tiktok_video)"
+                          },
+                          "videoCanvasId": {
+                            "type": "string",
+                            "description": "Canvas design the video was made as; edit it there"
+                          },
                           "publishDate": {
                             "type": "string",
                             "description": "Publish date"
@@ -38145,7 +38153,7 @@
                   },
                   "type": {
                     "type": "string",
-                    "description": "Content type. One of: blog_post, facebook_post, linkedin_post, instagram_post, x_post, youtube_video, tiktok_video, email_newsletter, podcast_episode, website_copy, marketing_email, ad_copy, press_release"
+                    "description": "Content type. One of: blog_post, facebook_post, linkedin_post, instagram_post, x_post, youtube_video, tiktok_video, facebook_video, instagram_reel, linkedin_video, email_newsletter, podcast_episode, website_copy, marketing_email, ad_copy, press_release"
                   },
                   "status": {
                     "type": "string",
@@ -38627,6 +38635,14 @@
                           "type": "object",
                           "description": "Content variants"
                         },
+                        "videoUrl": {
+                          "type": "string",
+                          "description": "Public MP4 of the post's video (video channels: facebook_video, instagram_reel, linkedin_video, tiktok_video)"
+                        },
+                        "videoCanvasId": {
+                          "type": "string",
+                          "description": "Canvas design the video was made as; edit it there"
+                        },
                         "publishDate": {
                           "type": "string",
                           "description": "Publish date"
@@ -38777,6 +38793,14 @@
                         "variants": {
                           "type": "object",
                           "description": "Content variants"
+                        },
+                        "videoUrl": {
+                          "type": "string",
+                          "description": "Public MP4 of the post's video (video channels: facebook_video, instagram_reel, linkedin_video, tiktok_video)"
+                        },
+                        "videoCanvasId": {
+                          "type": "string",
+                          "description": "Canvas design the video was made as; edit it there"
                         },
                         "publishDate": {
                           "type": "string",
@@ -38932,6 +38956,14 @@
                         "variants": {
                           "type": "object",
                           "description": "Content variants"
+                        },
+                        "videoUrl": {
+                          "type": "string",
+                          "description": "Public MP4 of the post's video (video channels: facebook_video, instagram_reel, linkedin_video, tiktok_video)"
+                        },
+                        "videoCanvasId": {
+                          "type": "string",
+                          "description": "Canvas design the video was made as; edit it there"
                         },
                         "publishDate": {
                           "type": "string",
@@ -39098,6 +39130,14 @@
                             "type": "object",
                             "description": "Content variants"
                           },
+                          "videoUrl": {
+                            "type": "string",
+                            "description": "Public MP4 of the post's video (video channels: facebook_video, instagram_reel, linkedin_video, tiktok_video)"
+                          },
+                          "videoCanvasId": {
+                            "type": "string",
+                            "description": "Canvas design the video was made as; edit it there"
+                          },
                           "publishDate": {
                             "type": "string",
                             "description": "Publish date"
@@ -39236,6 +39276,14 @@
                         "variants": {
                           "type": "object",
                           "description": "Content variants"
+                        },
+                        "videoUrl": {
+                          "type": "string",
+                          "description": "Public MP4 of the post's video (video channels: facebook_video, instagram_reel, linkedin_video, tiktok_video)"
+                        },
+                        "videoCanvasId": {
+                          "type": "string",
+                          "description": "Canvas design the video was made as; edit it there"
                         },
                         "publishDate": {
                           "type": "string",
@@ -39388,6 +39436,14 @@
                           "type": "object",
                           "description": "Content variants"
                         },
+                        "videoUrl": {
+                          "type": "string",
+                          "description": "Public MP4 of the post's video (video channels: facebook_video, instagram_reel, linkedin_video, tiktok_video)"
+                        },
+                        "videoCanvasId": {
+                          "type": "string",
+                          "description": "Canvas design the video was made as; edit it there"
+                        },
                         "publishDate": {
                           "type": "string",
                           "description": "Publish date"
@@ -39438,6 +39494,10 @@
                   "collectionId": {
                     "type": "string",
                     "description": "Collection to publish into, instead of an integration. Any website showing the collection picks the post up on its next build."
+                  },
+                  "tiktokPost": {
+                    "type": "object",
+                    "description": "Required to publish tiktok_video content: {privacyLevel (one of the account's privacyLevelOptions, see GET /api/v0/content/tiktok-creator), title?, allowComment?, allowDuet?, allowStitch?, brandOrganic?, brandedContent?}. A TikTok cannot be scheduled."
                   }
                 },
                 "required": [
@@ -39449,6 +39509,112 @@
           },
           "description": "Publish configuration"
         }
+      }
+    },
+    "/api/v0/content/tiktok-creator": {
+      "get": {
+        "tags": [
+          "Content"
+        ],
+        "operationId": "content_getContentTikTokCreator",
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Company ID"
+            },
+            "description": "Company ID"
+          },
+          {
+            "name": "integrationId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "TikTok integration ID"
+            },
+            "description": "TikTok integration ID"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "The TikTok account and what it may post",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "nickname": {
+                      "type": "string",
+                      "description": "Account display name"
+                    },
+                    "username": {
+                      "type": "string",
+                      "description": "Account username"
+                    },
+                    "avatarUrl": {
+                      "type": "string",
+                      "description": "Account avatar URL"
+                    },
+                    "privacyLevelOptions": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "Audiences the account may post to; one is sent as tiktokPost.privacyLevel"
+                    },
+                    "commentDisabled": {
+                      "type": "boolean",
+                      "description": "Comments are off for this account"
+                    },
+                    "duetDisabled": {
+                      "type": "boolean",
+                      "description": "Duets are off for this account"
+                    },
+                    "stitchDisabled": {
+                      "type": "boolean",
+                      "description": "Stitches are off for this account"
+                    },
+                    "maxVideoSeconds": {
+                      "type": "integer",
+                      "description": "Longest video the account may post"
+                    },
+                    "error": {
+                      "type": "string",
+                      "description": "Why the account could not be read, instead of the fields above"
+                    }
+                  },
+                  "description": "A TikTok account's posting options"
+                }
+              }
+            }
+          }
+        },
+        "summary": "The TikTok account a video would be posted to, and the choices it offers.",
+        "description": "TikTok has whoever posts a video see the account it goes to and choose who can see it, so read this before\npublishing tiktok_video content and send the choices as `tiktokPost` when publishing. `error` is set instead\nwhen the account is not connected or TikTok could not be asked."
       }
     },
     "/api/v0/content/{contentId}/schedule": {
@@ -39554,6 +39720,14 @@
                         "variants": {
                           "type": "object",
                           "description": "Content variants"
+                        },
+                        "videoUrl": {
+                          "type": "string",
+                          "description": "Public MP4 of the post's video (video channels: facebook_video, instagram_reel, linkedin_video, tiktok_video)"
+                        },
+                        "videoCanvasId": {
+                          "type": "string",
+                          "description": "Canvas design the video was made as; edit it there"
                         },
                         "publishDate": {
                           "type": "string",
@@ -39718,6 +39892,14 @@
                           "variants": {
                             "type": "object",
                             "description": "Content variants"
+                          },
+                          "videoUrl": {
+                            "type": "string",
+                            "description": "Public MP4 of the post's video (video channels: facebook_video, instagram_reel, linkedin_video, tiktok_video)"
+                          },
+                          "videoCanvasId": {
+                            "type": "string",
+                            "description": "Canvas design the video was made as; edit it there"
                           },
                           "publishDate": {
                             "type": "string",
@@ -40003,6 +40185,202 @@
         }
       }
     },
+    "/api/v0/content/{contentId}/images/{imageId}/canvas": {
+      "post": {
+        "tags": [
+          "Content"
+        ],
+        "operationId": "content_openContentImageCanvas",
+        "parameters": [
+          {
+            "name": "imageId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "contentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Image not found, or not a canvas design",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "The canvas design of the image",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "canvasId": {
+                      "type": "string",
+                      "description": "Canvas design ID"
+                    }
+                  },
+                  "description": "The canvas design a post's image can be changed as"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Open a post's canvas-designed image as a canvas design, so it can be changed.",
+        "description": "For a content image whose `canEdit` is true. Returns the canvas design to edit (ask for changes with\nPOST /api/v0/content/canvases/{canvasId}/chat, then render it with POST .../render): the post's image follows\nthe canvas's latest render. `imageId` is the content image's `id`.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID"
+                  }
+                },
+                "required": [
+                  "companyId"
+                ],
+                "description": "Request body for creating a post's video"
+              }
+            }
+          },
+          "description": "Company the content belongs to"
+        }
+      }
+    },
+    "/api/v0/content/{contentId}/video": {
+      "post": {
+        "tags": [
+          "Content"
+        ],
+        "operationId": "content_generateContentVideo",
+        "parameters": [
+          {
+            "name": "contentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Content not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "Video creation started",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "taskId": {
+                      "type": "string",
+                      "description": "Background task ID to poll"
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "Task status when the request returned: \"pending\""
+                    },
+                    "poll": {
+                      "type": "string",
+                      "description": "How to read the result"
+                    }
+                  },
+                  "description": "A background task was started. Poll GET /api/v0/lists/tasks/{taskId} until `status` is \"completed\" (read `result`) or \"failed\" (read `errorMessage`)."
+                }
+              }
+            }
+          }
+        },
+        "summary": "Create (or replace) the video of a video-channel post from its caption.",
+        "description": "For content of type facebook_video, instagram_reel, linkedin_video or tiktok_video. The video is a short\nvertical canvas video built from the caption, the post's image and the brand kit, saved to the company's\ncanvases (the content's `videoCanvasId`) where it can be edited. It is charged as a canvas video. It runs as a\nbackground task: the response is 202 with a taskId. Poll GET /api/v0/lists/tasks/{taskId} until `status` is\n\"completed\" (`result.videoUrl`, `result.videoCanvasId`) or \"failed\" (`errorMessage`).",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID"
+                  }
+                },
+                "required": [
+                  "companyId"
+                ],
+                "description": "Request body for creating a post's video"
+              }
+            }
+          },
+          "description": "Company the content belongs to"
+        }
+      }
+    },
     "/api/v0/content/campaigns": {
       "get": {
         "tags": [
@@ -40192,15 +40570,15 @@
                                       },
                                       "linkedinIntegration": {
                                         "type": "string",
-                                        "description": "LinkedIn integration ID for linkedin_post"
+                                        "description": "LinkedIn integration ID for linkedin_post and linkedin_video"
                                       },
                                       "facebookIntegration": {
                                         "type": "string",
-                                        "description": "Facebook integration ID for facebook_post"
+                                        "description": "Facebook integration ID for facebook_post and facebook_video"
                                       },
                                       "instagramIntegration": {
                                         "type": "string",
-                                        "description": "Instagram integration ID for instagram_post"
+                                        "description": "Instagram integration ID for instagram_post and instagram_reel"
                                       }
                                     },
                                     "description": "Channel-specific settings (auto-publish, integrations, etc.)"
@@ -40242,15 +40620,15 @@
                                       },
                                       "linkedinIntegration": {
                                         "type": "string",
-                                        "description": "LinkedIn integration ID for linkedin_post"
+                                        "description": "LinkedIn integration ID for linkedin_post and linkedin_video"
                                       },
                                       "facebookIntegration": {
                                         "type": "string",
-                                        "description": "Facebook integration ID for facebook_post"
+                                        "description": "Facebook integration ID for facebook_post and facebook_video"
                                       },
                                       "instagramIntegration": {
                                         "type": "string",
-                                        "description": "Instagram integration ID for instagram_post"
+                                        "description": "Instagram integration ID for instagram_post and instagram_reel"
                                       }
                                     },
                                     "description": "Channel-specific settings (auto-publish, integrations, etc.)"
@@ -40292,15 +40670,15 @@
                                       },
                                       "linkedinIntegration": {
                                         "type": "string",
-                                        "description": "LinkedIn integration ID for linkedin_post"
+                                        "description": "LinkedIn integration ID for linkedin_post and linkedin_video"
                                       },
                                       "facebookIntegration": {
                                         "type": "string",
-                                        "description": "Facebook integration ID for facebook_post"
+                                        "description": "Facebook integration ID for facebook_post and facebook_video"
                                       },
                                       "instagramIntegration": {
                                         "type": "string",
-                                        "description": "Instagram integration ID for instagram_post"
+                                        "description": "Instagram integration ID for instagram_post and instagram_reel"
                                       }
                                     },
                                     "description": "Channel-specific settings (auto-publish, integrations, etc.)"
@@ -40342,15 +40720,15 @@
                                       },
                                       "linkedinIntegration": {
                                         "type": "string",
-                                        "description": "LinkedIn integration ID for linkedin_post"
+                                        "description": "LinkedIn integration ID for linkedin_post and linkedin_video"
                                       },
                                       "facebookIntegration": {
                                         "type": "string",
-                                        "description": "Facebook integration ID for facebook_post"
+                                        "description": "Facebook integration ID for facebook_post and facebook_video"
                                       },
                                       "instagramIntegration": {
                                         "type": "string",
-                                        "description": "Instagram integration ID for instagram_post"
+                                        "description": "Instagram integration ID for instagram_post and instagram_reel"
                                       }
                                     },
                                     "description": "Channel-specific settings (auto-publish, integrations, etc.)"
@@ -40392,15 +40770,15 @@
                                       },
                                       "linkedinIntegration": {
                                         "type": "string",
-                                        "description": "LinkedIn integration ID for linkedin_post"
+                                        "description": "LinkedIn integration ID for linkedin_post and linkedin_video"
                                       },
                                       "facebookIntegration": {
                                         "type": "string",
-                                        "description": "Facebook integration ID for facebook_post"
+                                        "description": "Facebook integration ID for facebook_post and facebook_video"
                                       },
                                       "instagramIntegration": {
                                         "type": "string",
-                                        "description": "Instagram integration ID for instagram_post"
+                                        "description": "Instagram integration ID for instagram_post and instagram_reel"
                                       }
                                     },
                                     "description": "Channel-specific settings (auto-publish, integrations, etc.)"
@@ -40442,15 +40820,15 @@
                                       },
                                       "linkedinIntegration": {
                                         "type": "string",
-                                        "description": "LinkedIn integration ID for linkedin_post"
+                                        "description": "LinkedIn integration ID for linkedin_post and linkedin_video"
                                       },
                                       "facebookIntegration": {
                                         "type": "string",
-                                        "description": "Facebook integration ID for facebook_post"
+                                        "description": "Facebook integration ID for facebook_post and facebook_video"
                                       },
                                       "instagramIntegration": {
                                         "type": "string",
-                                        "description": "Instagram integration ID for instagram_post"
+                                        "description": "Instagram integration ID for instagram_post and instagram_reel"
                                       }
                                     },
                                     "description": "Channel-specific settings (auto-publish, integrations, etc.)"
@@ -40492,21 +40870,171 @@
                                       },
                                       "linkedinIntegration": {
                                         "type": "string",
-                                        "description": "LinkedIn integration ID for linkedin_post"
+                                        "description": "LinkedIn integration ID for linkedin_post and linkedin_video"
                                       },
                                       "facebookIntegration": {
                                         "type": "string",
-                                        "description": "Facebook integration ID for facebook_post"
+                                        "description": "Facebook integration ID for facebook_post and facebook_video"
                                       },
                                       "instagramIntegration": {
                                         "type": "string",
-                                        "description": "Instagram integration ID for instagram_post"
+                                        "description": "Instagram integration ID for instagram_post and instagram_reel"
                                       }
                                     },
                                     "description": "Channel-specific settings (auto-publish, integrations, etc.)"
                                   }
                                 },
-                                "description": "TikTok video channel configuration"
+                                "description": "TikTok video channel configuration: a caption and a short vertical video made from it"
+                              },
+                              "facebook_video": {
+                                "type": "object",
+                                "properties": {
+                                  "enabled": {
+                                    "type": "boolean",
+                                    "description": "Whether this channel is enabled for the campaign",
+                                    "default": false
+                                  },
+                                  "subSettings": {
+                                    "type": "object",
+                                    "properties": {
+                                      "generateImages": {
+                                        "type": "boolean",
+                                        "description": "Generate images for this content type; disable for text only",
+                                        "default": true
+                                      },
+                                      "autoPublish": {
+                                        "type": "boolean",
+                                        "description": "Enable auto-publishing to this channel"
+                                      },
+                                      "publishAsDraft": {
+                                        "type": "boolean",
+                                        "description": "Publish as draft instead of live"
+                                      },
+                                      "websiteUrl": {
+                                        "type": "string",
+                                        "description": "Website researched and written for by Auto SEO; defaults to the company website"
+                                      },
+                                      "wordpressIntegration": {
+                                        "type": "string",
+                                        "description": "WordPress/Blog integration ID for blog_post"
+                                      },
+                                      "linkedinIntegration": {
+                                        "type": "string",
+                                        "description": "LinkedIn integration ID for linkedin_post and linkedin_video"
+                                      },
+                                      "facebookIntegration": {
+                                        "type": "string",
+                                        "description": "Facebook integration ID for facebook_post and facebook_video"
+                                      },
+                                      "instagramIntegration": {
+                                        "type": "string",
+                                        "description": "Instagram integration ID for instagram_post and instagram_reel"
+                                      }
+                                    },
+                                    "description": "Channel-specific settings (auto-publish, integrations, etc.)"
+                                  }
+                                },
+                                "description": "Facebook video channel configuration: a caption and a short vertical video made from it"
+                              },
+                              "instagram_reel": {
+                                "type": "object",
+                                "properties": {
+                                  "enabled": {
+                                    "type": "boolean",
+                                    "description": "Whether this channel is enabled for the campaign",
+                                    "default": false
+                                  },
+                                  "subSettings": {
+                                    "type": "object",
+                                    "properties": {
+                                      "generateImages": {
+                                        "type": "boolean",
+                                        "description": "Generate images for this content type; disable for text only",
+                                        "default": true
+                                      },
+                                      "autoPublish": {
+                                        "type": "boolean",
+                                        "description": "Enable auto-publishing to this channel"
+                                      },
+                                      "publishAsDraft": {
+                                        "type": "boolean",
+                                        "description": "Publish as draft instead of live"
+                                      },
+                                      "websiteUrl": {
+                                        "type": "string",
+                                        "description": "Website researched and written for by Auto SEO; defaults to the company website"
+                                      },
+                                      "wordpressIntegration": {
+                                        "type": "string",
+                                        "description": "WordPress/Blog integration ID for blog_post"
+                                      },
+                                      "linkedinIntegration": {
+                                        "type": "string",
+                                        "description": "LinkedIn integration ID for linkedin_post and linkedin_video"
+                                      },
+                                      "facebookIntegration": {
+                                        "type": "string",
+                                        "description": "Facebook integration ID for facebook_post and facebook_video"
+                                      },
+                                      "instagramIntegration": {
+                                        "type": "string",
+                                        "description": "Instagram integration ID for instagram_post and instagram_reel"
+                                      }
+                                    },
+                                    "description": "Channel-specific settings (auto-publish, integrations, etc.)"
+                                  }
+                                },
+                                "description": "Instagram Reel channel configuration: a caption and a short vertical video made from it"
+                              },
+                              "linkedin_video": {
+                                "type": "object",
+                                "properties": {
+                                  "enabled": {
+                                    "type": "boolean",
+                                    "description": "Whether this channel is enabled for the campaign",
+                                    "default": false
+                                  },
+                                  "subSettings": {
+                                    "type": "object",
+                                    "properties": {
+                                      "generateImages": {
+                                        "type": "boolean",
+                                        "description": "Generate images for this content type; disable for text only",
+                                        "default": true
+                                      },
+                                      "autoPublish": {
+                                        "type": "boolean",
+                                        "description": "Enable auto-publishing to this channel"
+                                      },
+                                      "publishAsDraft": {
+                                        "type": "boolean",
+                                        "description": "Publish as draft instead of live"
+                                      },
+                                      "websiteUrl": {
+                                        "type": "string",
+                                        "description": "Website researched and written for by Auto SEO; defaults to the company website"
+                                      },
+                                      "wordpressIntegration": {
+                                        "type": "string",
+                                        "description": "WordPress/Blog integration ID for blog_post"
+                                      },
+                                      "linkedinIntegration": {
+                                        "type": "string",
+                                        "description": "LinkedIn integration ID for linkedin_post and linkedin_video"
+                                      },
+                                      "facebookIntegration": {
+                                        "type": "string",
+                                        "description": "Facebook integration ID for facebook_post and facebook_video"
+                                      },
+                                      "instagramIntegration": {
+                                        "type": "string",
+                                        "description": "Instagram integration ID for instagram_post and instagram_reel"
+                                      }
+                                    },
+                                    "description": "Channel-specific settings (auto-publish, integrations, etc.)"
+                                  }
+                                },
+                                "description": "LinkedIn video channel configuration: a caption and a short vertical video made from it"
                               },
                               "email_newsletter": {
                                 "type": "object",
@@ -40542,15 +41070,15 @@
                                       },
                                       "linkedinIntegration": {
                                         "type": "string",
-                                        "description": "LinkedIn integration ID for linkedin_post"
+                                        "description": "LinkedIn integration ID for linkedin_post and linkedin_video"
                                       },
                                       "facebookIntegration": {
                                         "type": "string",
-                                        "description": "Facebook integration ID for facebook_post"
+                                        "description": "Facebook integration ID for facebook_post and facebook_video"
                                       },
                                       "instagramIntegration": {
                                         "type": "string",
-                                        "description": "Instagram integration ID for instagram_post"
+                                        "description": "Instagram integration ID for instagram_post and instagram_reel"
                                       }
                                     },
                                     "description": "Channel-specific settings (auto-publish, integrations, etc.)"
@@ -40592,15 +41120,15 @@
                                       },
                                       "linkedinIntegration": {
                                         "type": "string",
-                                        "description": "LinkedIn integration ID for linkedin_post"
+                                        "description": "LinkedIn integration ID for linkedin_post and linkedin_video"
                                       },
                                       "facebookIntegration": {
                                         "type": "string",
-                                        "description": "Facebook integration ID for facebook_post"
+                                        "description": "Facebook integration ID for facebook_post and facebook_video"
                                       },
                                       "instagramIntegration": {
                                         "type": "string",
-                                        "description": "Instagram integration ID for instagram_post"
+                                        "description": "Instagram integration ID for instagram_post and instagram_reel"
                                       }
                                     },
                                     "description": "Channel-specific settings (auto-publish, integrations, etc.)"
@@ -40642,15 +41170,15 @@
                                       },
                                       "linkedinIntegration": {
                                         "type": "string",
-                                        "description": "LinkedIn integration ID for linkedin_post"
+                                        "description": "LinkedIn integration ID for linkedin_post and linkedin_video"
                                       },
                                       "facebookIntegration": {
                                         "type": "string",
-                                        "description": "Facebook integration ID for facebook_post"
+                                        "description": "Facebook integration ID for facebook_post and facebook_video"
                                       },
                                       "instagramIntegration": {
                                         "type": "string",
-                                        "description": "Instagram integration ID for instagram_post"
+                                        "description": "Instagram integration ID for instagram_post and instagram_reel"
                                       }
                                     },
                                     "description": "Channel-specific settings (auto-publish, integrations, etc.)"
@@ -40692,15 +41220,15 @@
                                       },
                                       "linkedinIntegration": {
                                         "type": "string",
-                                        "description": "LinkedIn integration ID for linkedin_post"
+                                        "description": "LinkedIn integration ID for linkedin_post and linkedin_video"
                                       },
                                       "facebookIntegration": {
                                         "type": "string",
-                                        "description": "Facebook integration ID for facebook_post"
+                                        "description": "Facebook integration ID for facebook_post and facebook_video"
                                       },
                                       "instagramIntegration": {
                                         "type": "string",
-                                        "description": "Instagram integration ID for instagram_post"
+                                        "description": "Instagram integration ID for instagram_post and instagram_reel"
                                       }
                                     },
                                     "description": "Channel-specific settings (auto-publish, integrations, etc.)"
@@ -40742,15 +41270,15 @@
                                       },
                                       "linkedinIntegration": {
                                         "type": "string",
-                                        "description": "LinkedIn integration ID for linkedin_post"
+                                        "description": "LinkedIn integration ID for linkedin_post and linkedin_video"
                                       },
                                       "facebookIntegration": {
                                         "type": "string",
-                                        "description": "Facebook integration ID for facebook_post"
+                                        "description": "Facebook integration ID for facebook_post and facebook_video"
                                       },
                                       "instagramIntegration": {
                                         "type": "string",
-                                        "description": "Instagram integration ID for instagram_post"
+                                        "description": "Instagram integration ID for instagram_post and instagram_reel"
                                       }
                                     },
                                     "description": "Channel-specific settings (auto-publish, integrations, etc.)"
@@ -40792,15 +41320,15 @@
                                       },
                                       "linkedinIntegration": {
                                         "type": "string",
-                                        "description": "LinkedIn integration ID for linkedin_post"
+                                        "description": "LinkedIn integration ID for linkedin_post and linkedin_video"
                                       },
                                       "facebookIntegration": {
                                         "type": "string",
-                                        "description": "Facebook integration ID for facebook_post"
+                                        "description": "Facebook integration ID for facebook_post and facebook_video"
                                       },
                                       "instagramIntegration": {
                                         "type": "string",
-                                        "description": "Instagram integration ID for instagram_post"
+                                        "description": "Instagram integration ID for instagram_post and instagram_reel"
                                       }
                                     },
                                     "description": "Channel-specific settings (auto-publish, integrations, etc.)"
@@ -41044,15 +41572,15 @@
                                     },
                                     "linkedinIntegration": {
                                       "type": "string",
-                                      "description": "LinkedIn integration ID for linkedin_post"
+                                      "description": "LinkedIn integration ID for linkedin_post and linkedin_video"
                                     },
                                     "facebookIntegration": {
                                       "type": "string",
-                                      "description": "Facebook integration ID for facebook_post"
+                                      "description": "Facebook integration ID for facebook_post and facebook_video"
                                     },
                                     "instagramIntegration": {
                                       "type": "string",
-                                      "description": "Instagram integration ID for instagram_post"
+                                      "description": "Instagram integration ID for instagram_post and instagram_reel"
                                     }
                                   },
                                   "description": "Channel-specific settings (auto-publish, integrations, etc.)"
@@ -41094,15 +41622,15 @@
                                     },
                                     "linkedinIntegration": {
                                       "type": "string",
-                                      "description": "LinkedIn integration ID for linkedin_post"
+                                      "description": "LinkedIn integration ID for linkedin_post and linkedin_video"
                                     },
                                     "facebookIntegration": {
                                       "type": "string",
-                                      "description": "Facebook integration ID for facebook_post"
+                                      "description": "Facebook integration ID for facebook_post and facebook_video"
                                     },
                                     "instagramIntegration": {
                                       "type": "string",
-                                      "description": "Instagram integration ID for instagram_post"
+                                      "description": "Instagram integration ID for instagram_post and instagram_reel"
                                     }
                                   },
                                   "description": "Channel-specific settings (auto-publish, integrations, etc.)"
@@ -41144,15 +41672,15 @@
                                     },
                                     "linkedinIntegration": {
                                       "type": "string",
-                                      "description": "LinkedIn integration ID for linkedin_post"
+                                      "description": "LinkedIn integration ID for linkedin_post and linkedin_video"
                                     },
                                     "facebookIntegration": {
                                       "type": "string",
-                                      "description": "Facebook integration ID for facebook_post"
+                                      "description": "Facebook integration ID for facebook_post and facebook_video"
                                     },
                                     "instagramIntegration": {
                                       "type": "string",
-                                      "description": "Instagram integration ID for instagram_post"
+                                      "description": "Instagram integration ID for instagram_post and instagram_reel"
                                     }
                                   },
                                   "description": "Channel-specific settings (auto-publish, integrations, etc.)"
@@ -41194,15 +41722,15 @@
                                     },
                                     "linkedinIntegration": {
                                       "type": "string",
-                                      "description": "LinkedIn integration ID for linkedin_post"
+                                      "description": "LinkedIn integration ID for linkedin_post and linkedin_video"
                                     },
                                     "facebookIntegration": {
                                       "type": "string",
-                                      "description": "Facebook integration ID for facebook_post"
+                                      "description": "Facebook integration ID for facebook_post and facebook_video"
                                     },
                                     "instagramIntegration": {
                                       "type": "string",
-                                      "description": "Instagram integration ID for instagram_post"
+                                      "description": "Instagram integration ID for instagram_post and instagram_reel"
                                     }
                                   },
                                   "description": "Channel-specific settings (auto-publish, integrations, etc.)"
@@ -41244,15 +41772,15 @@
                                     },
                                     "linkedinIntegration": {
                                       "type": "string",
-                                      "description": "LinkedIn integration ID for linkedin_post"
+                                      "description": "LinkedIn integration ID for linkedin_post and linkedin_video"
                                     },
                                     "facebookIntegration": {
                                       "type": "string",
-                                      "description": "Facebook integration ID for facebook_post"
+                                      "description": "Facebook integration ID for facebook_post and facebook_video"
                                     },
                                     "instagramIntegration": {
                                       "type": "string",
-                                      "description": "Instagram integration ID for instagram_post"
+                                      "description": "Instagram integration ID for instagram_post and instagram_reel"
                                     }
                                   },
                                   "description": "Channel-specific settings (auto-publish, integrations, etc.)"
@@ -41294,15 +41822,15 @@
                                     },
                                     "linkedinIntegration": {
                                       "type": "string",
-                                      "description": "LinkedIn integration ID for linkedin_post"
+                                      "description": "LinkedIn integration ID for linkedin_post and linkedin_video"
                                     },
                                     "facebookIntegration": {
                                       "type": "string",
-                                      "description": "Facebook integration ID for facebook_post"
+                                      "description": "Facebook integration ID for facebook_post and facebook_video"
                                     },
                                     "instagramIntegration": {
                                       "type": "string",
-                                      "description": "Instagram integration ID for instagram_post"
+                                      "description": "Instagram integration ID for instagram_post and instagram_reel"
                                     }
                                   },
                                   "description": "Channel-specific settings (auto-publish, integrations, etc.)"
@@ -41344,21 +41872,171 @@
                                     },
                                     "linkedinIntegration": {
                                       "type": "string",
-                                      "description": "LinkedIn integration ID for linkedin_post"
+                                      "description": "LinkedIn integration ID for linkedin_post and linkedin_video"
                                     },
                                     "facebookIntegration": {
                                       "type": "string",
-                                      "description": "Facebook integration ID for facebook_post"
+                                      "description": "Facebook integration ID for facebook_post and facebook_video"
                                     },
                                     "instagramIntegration": {
                                       "type": "string",
-                                      "description": "Instagram integration ID for instagram_post"
+                                      "description": "Instagram integration ID for instagram_post and instagram_reel"
                                     }
                                   },
                                   "description": "Channel-specific settings (auto-publish, integrations, etc.)"
                                 }
                               },
-                              "description": "TikTok video channel configuration"
+                              "description": "TikTok video channel configuration: a caption and a short vertical video made from it"
+                            },
+                            "facebook_video": {
+                              "type": "object",
+                              "properties": {
+                                "enabled": {
+                                  "type": "boolean",
+                                  "description": "Whether this channel is enabled for the campaign",
+                                  "default": false
+                                },
+                                "subSettings": {
+                                  "type": "object",
+                                  "properties": {
+                                    "generateImages": {
+                                      "type": "boolean",
+                                      "description": "Generate images for this content type; disable for text only",
+                                      "default": true
+                                    },
+                                    "autoPublish": {
+                                      "type": "boolean",
+                                      "description": "Enable auto-publishing to this channel"
+                                    },
+                                    "publishAsDraft": {
+                                      "type": "boolean",
+                                      "description": "Publish as draft instead of live"
+                                    },
+                                    "websiteUrl": {
+                                      "type": "string",
+                                      "description": "Website researched and written for by Auto SEO; defaults to the company website"
+                                    },
+                                    "wordpressIntegration": {
+                                      "type": "string",
+                                      "description": "WordPress/Blog integration ID for blog_post"
+                                    },
+                                    "linkedinIntegration": {
+                                      "type": "string",
+                                      "description": "LinkedIn integration ID for linkedin_post and linkedin_video"
+                                    },
+                                    "facebookIntegration": {
+                                      "type": "string",
+                                      "description": "Facebook integration ID for facebook_post and facebook_video"
+                                    },
+                                    "instagramIntegration": {
+                                      "type": "string",
+                                      "description": "Instagram integration ID for instagram_post and instagram_reel"
+                                    }
+                                  },
+                                  "description": "Channel-specific settings (auto-publish, integrations, etc.)"
+                                }
+                              },
+                              "description": "Facebook video channel configuration: a caption and a short vertical video made from it"
+                            },
+                            "instagram_reel": {
+                              "type": "object",
+                              "properties": {
+                                "enabled": {
+                                  "type": "boolean",
+                                  "description": "Whether this channel is enabled for the campaign",
+                                  "default": false
+                                },
+                                "subSettings": {
+                                  "type": "object",
+                                  "properties": {
+                                    "generateImages": {
+                                      "type": "boolean",
+                                      "description": "Generate images for this content type; disable for text only",
+                                      "default": true
+                                    },
+                                    "autoPublish": {
+                                      "type": "boolean",
+                                      "description": "Enable auto-publishing to this channel"
+                                    },
+                                    "publishAsDraft": {
+                                      "type": "boolean",
+                                      "description": "Publish as draft instead of live"
+                                    },
+                                    "websiteUrl": {
+                                      "type": "string",
+                                      "description": "Website researched and written for by Auto SEO; defaults to the company website"
+                                    },
+                                    "wordpressIntegration": {
+                                      "type": "string",
+                                      "description": "WordPress/Blog integration ID for blog_post"
+                                    },
+                                    "linkedinIntegration": {
+                                      "type": "string",
+                                      "description": "LinkedIn integration ID for linkedin_post and linkedin_video"
+                                    },
+                                    "facebookIntegration": {
+                                      "type": "string",
+                                      "description": "Facebook integration ID for facebook_post and facebook_video"
+                                    },
+                                    "instagramIntegration": {
+                                      "type": "string",
+                                      "description": "Instagram integration ID for instagram_post and instagram_reel"
+                                    }
+                                  },
+                                  "description": "Channel-specific settings (auto-publish, integrations, etc.)"
+                                }
+                              },
+                              "description": "Instagram Reel channel configuration: a caption and a short vertical video made from it"
+                            },
+                            "linkedin_video": {
+                              "type": "object",
+                              "properties": {
+                                "enabled": {
+                                  "type": "boolean",
+                                  "description": "Whether this channel is enabled for the campaign",
+                                  "default": false
+                                },
+                                "subSettings": {
+                                  "type": "object",
+                                  "properties": {
+                                    "generateImages": {
+                                      "type": "boolean",
+                                      "description": "Generate images for this content type; disable for text only",
+                                      "default": true
+                                    },
+                                    "autoPublish": {
+                                      "type": "boolean",
+                                      "description": "Enable auto-publishing to this channel"
+                                    },
+                                    "publishAsDraft": {
+                                      "type": "boolean",
+                                      "description": "Publish as draft instead of live"
+                                    },
+                                    "websiteUrl": {
+                                      "type": "string",
+                                      "description": "Website researched and written for by Auto SEO; defaults to the company website"
+                                    },
+                                    "wordpressIntegration": {
+                                      "type": "string",
+                                      "description": "WordPress/Blog integration ID for blog_post"
+                                    },
+                                    "linkedinIntegration": {
+                                      "type": "string",
+                                      "description": "LinkedIn integration ID for linkedin_post and linkedin_video"
+                                    },
+                                    "facebookIntegration": {
+                                      "type": "string",
+                                      "description": "Facebook integration ID for facebook_post and facebook_video"
+                                    },
+                                    "instagramIntegration": {
+                                      "type": "string",
+                                      "description": "Instagram integration ID for instagram_post and instagram_reel"
+                                    }
+                                  },
+                                  "description": "Channel-specific settings (auto-publish, integrations, etc.)"
+                                }
+                              },
+                              "description": "LinkedIn video channel configuration: a caption and a short vertical video made from it"
                             },
                             "email_newsletter": {
                               "type": "object",
@@ -41394,15 +42072,15 @@
                                     },
                                     "linkedinIntegration": {
                                       "type": "string",
-                                      "description": "LinkedIn integration ID for linkedin_post"
+                                      "description": "LinkedIn integration ID for linkedin_post and linkedin_video"
                                     },
                                     "facebookIntegration": {
                                       "type": "string",
-                                      "description": "Facebook integration ID for facebook_post"
+                                      "description": "Facebook integration ID for facebook_post and facebook_video"
                                     },
                                     "instagramIntegration": {
                                       "type": "string",
-                                      "description": "Instagram integration ID for instagram_post"
+                                      "description": "Instagram integration ID for instagram_post and instagram_reel"
                                     }
                                   },
                                   "description": "Channel-specific settings (auto-publish, integrations, etc.)"
@@ -41444,15 +42122,15 @@
                                     },
                                     "linkedinIntegration": {
                                       "type": "string",
-                                      "description": "LinkedIn integration ID for linkedin_post"
+                                      "description": "LinkedIn integration ID for linkedin_post and linkedin_video"
                                     },
                                     "facebookIntegration": {
                                       "type": "string",
-                                      "description": "Facebook integration ID for facebook_post"
+                                      "description": "Facebook integration ID for facebook_post and facebook_video"
                                     },
                                     "instagramIntegration": {
                                       "type": "string",
-                                      "description": "Instagram integration ID for instagram_post"
+                                      "description": "Instagram integration ID for instagram_post and instagram_reel"
                                     }
                                   },
                                   "description": "Channel-specific settings (auto-publish, integrations, etc.)"
@@ -41494,15 +42172,15 @@
                                     },
                                     "linkedinIntegration": {
                                       "type": "string",
-                                      "description": "LinkedIn integration ID for linkedin_post"
+                                      "description": "LinkedIn integration ID for linkedin_post and linkedin_video"
                                     },
                                     "facebookIntegration": {
                                       "type": "string",
-                                      "description": "Facebook integration ID for facebook_post"
+                                      "description": "Facebook integration ID for facebook_post and facebook_video"
                                     },
                                     "instagramIntegration": {
                                       "type": "string",
-                                      "description": "Instagram integration ID for instagram_post"
+                                      "description": "Instagram integration ID for instagram_post and instagram_reel"
                                     }
                                   },
                                   "description": "Channel-specific settings (auto-publish, integrations, etc.)"
@@ -41544,15 +42222,15 @@
                                     },
                                     "linkedinIntegration": {
                                       "type": "string",
-                                      "description": "LinkedIn integration ID for linkedin_post"
+                                      "description": "LinkedIn integration ID for linkedin_post and linkedin_video"
                                     },
                                     "facebookIntegration": {
                                       "type": "string",
-                                      "description": "Facebook integration ID for facebook_post"
+                                      "description": "Facebook integration ID for facebook_post and facebook_video"
                                     },
                                     "instagramIntegration": {
                                       "type": "string",
-                                      "description": "Instagram integration ID for instagram_post"
+                                      "description": "Instagram integration ID for instagram_post and instagram_reel"
                                     }
                                   },
                                   "description": "Channel-specific settings (auto-publish, integrations, etc.)"
@@ -41594,15 +42272,15 @@
                                     },
                                     "linkedinIntegration": {
                                       "type": "string",
-                                      "description": "LinkedIn integration ID for linkedin_post"
+                                      "description": "LinkedIn integration ID for linkedin_post and linkedin_video"
                                     },
                                     "facebookIntegration": {
                                       "type": "string",
-                                      "description": "Facebook integration ID for facebook_post"
+                                      "description": "Facebook integration ID for facebook_post and facebook_video"
                                     },
                                     "instagramIntegration": {
                                       "type": "string",
-                                      "description": "Instagram integration ID for instagram_post"
+                                      "description": "Instagram integration ID for instagram_post and instagram_reel"
                                     }
                                   },
                                   "description": "Channel-specific settings (auto-publish, integrations, etc.)"
@@ -41644,15 +42322,15 @@
                                     },
                                     "linkedinIntegration": {
                                       "type": "string",
-                                      "description": "LinkedIn integration ID for linkedin_post"
+                                      "description": "LinkedIn integration ID for linkedin_post and linkedin_video"
                                     },
                                     "facebookIntegration": {
                                       "type": "string",
-                                      "description": "Facebook integration ID for facebook_post"
+                                      "description": "Facebook integration ID for facebook_post and facebook_video"
                                     },
                                     "instagramIntegration": {
                                       "type": "string",
-                                      "description": "Instagram integration ID for instagram_post"
+                                      "description": "Instagram integration ID for instagram_post and instagram_reel"
                                     }
                                   },
                                   "description": "Channel-specific settings (auto-publish, integrations, etc.)"
@@ -41856,15 +42534,15 @@
                                   },
                                   "linkedinIntegration": {
                                     "type": "string",
-                                    "description": "LinkedIn integration ID for linkedin_post"
+                                    "description": "LinkedIn integration ID for linkedin_post and linkedin_video"
                                   },
                                   "facebookIntegration": {
                                     "type": "string",
-                                    "description": "Facebook integration ID for facebook_post"
+                                    "description": "Facebook integration ID for facebook_post and facebook_video"
                                   },
                                   "instagramIntegration": {
                                     "type": "string",
-                                    "description": "Instagram integration ID for instagram_post"
+                                    "description": "Instagram integration ID for instagram_post and instagram_reel"
                                   }
                                 },
                                 "description": "Channel-specific settings (auto-publish, integrations, etc.)"
@@ -41906,15 +42584,15 @@
                                   },
                                   "linkedinIntegration": {
                                     "type": "string",
-                                    "description": "LinkedIn integration ID for linkedin_post"
+                                    "description": "LinkedIn integration ID for linkedin_post and linkedin_video"
                                   },
                                   "facebookIntegration": {
                                     "type": "string",
-                                    "description": "Facebook integration ID for facebook_post"
+                                    "description": "Facebook integration ID for facebook_post and facebook_video"
                                   },
                                   "instagramIntegration": {
                                     "type": "string",
-                                    "description": "Instagram integration ID for instagram_post"
+                                    "description": "Instagram integration ID for instagram_post and instagram_reel"
                                   }
                                 },
                                 "description": "Channel-specific settings (auto-publish, integrations, etc.)"
@@ -41956,15 +42634,15 @@
                                   },
                                   "linkedinIntegration": {
                                     "type": "string",
-                                    "description": "LinkedIn integration ID for linkedin_post"
+                                    "description": "LinkedIn integration ID for linkedin_post and linkedin_video"
                                   },
                                   "facebookIntegration": {
                                     "type": "string",
-                                    "description": "Facebook integration ID for facebook_post"
+                                    "description": "Facebook integration ID for facebook_post and facebook_video"
                                   },
                                   "instagramIntegration": {
                                     "type": "string",
-                                    "description": "Instagram integration ID for instagram_post"
+                                    "description": "Instagram integration ID for instagram_post and instagram_reel"
                                   }
                                 },
                                 "description": "Channel-specific settings (auto-publish, integrations, etc.)"
@@ -42006,15 +42684,15 @@
                                   },
                                   "linkedinIntegration": {
                                     "type": "string",
-                                    "description": "LinkedIn integration ID for linkedin_post"
+                                    "description": "LinkedIn integration ID for linkedin_post and linkedin_video"
                                   },
                                   "facebookIntegration": {
                                     "type": "string",
-                                    "description": "Facebook integration ID for facebook_post"
+                                    "description": "Facebook integration ID for facebook_post and facebook_video"
                                   },
                                   "instagramIntegration": {
                                     "type": "string",
-                                    "description": "Instagram integration ID for instagram_post"
+                                    "description": "Instagram integration ID for instagram_post and instagram_reel"
                                   }
                                 },
                                 "description": "Channel-specific settings (auto-publish, integrations, etc.)"
@@ -42056,15 +42734,15 @@
                                   },
                                   "linkedinIntegration": {
                                     "type": "string",
-                                    "description": "LinkedIn integration ID for linkedin_post"
+                                    "description": "LinkedIn integration ID for linkedin_post and linkedin_video"
                                   },
                                   "facebookIntegration": {
                                     "type": "string",
-                                    "description": "Facebook integration ID for facebook_post"
+                                    "description": "Facebook integration ID for facebook_post and facebook_video"
                                   },
                                   "instagramIntegration": {
                                     "type": "string",
-                                    "description": "Instagram integration ID for instagram_post"
+                                    "description": "Instagram integration ID for instagram_post and instagram_reel"
                                   }
                                 },
                                 "description": "Channel-specific settings (auto-publish, integrations, etc.)"
@@ -42106,15 +42784,15 @@
                                   },
                                   "linkedinIntegration": {
                                     "type": "string",
-                                    "description": "LinkedIn integration ID for linkedin_post"
+                                    "description": "LinkedIn integration ID for linkedin_post and linkedin_video"
                                   },
                                   "facebookIntegration": {
                                     "type": "string",
-                                    "description": "Facebook integration ID for facebook_post"
+                                    "description": "Facebook integration ID for facebook_post and facebook_video"
                                   },
                                   "instagramIntegration": {
                                     "type": "string",
-                                    "description": "Instagram integration ID for instagram_post"
+                                    "description": "Instagram integration ID for instagram_post and instagram_reel"
                                   }
                                 },
                                 "description": "Channel-specific settings (auto-publish, integrations, etc.)"
@@ -42156,21 +42834,171 @@
                                   },
                                   "linkedinIntegration": {
                                     "type": "string",
-                                    "description": "LinkedIn integration ID for linkedin_post"
+                                    "description": "LinkedIn integration ID for linkedin_post and linkedin_video"
                                   },
                                   "facebookIntegration": {
                                     "type": "string",
-                                    "description": "Facebook integration ID for facebook_post"
+                                    "description": "Facebook integration ID for facebook_post and facebook_video"
                                   },
                                   "instagramIntegration": {
                                     "type": "string",
-                                    "description": "Instagram integration ID for instagram_post"
+                                    "description": "Instagram integration ID for instagram_post and instagram_reel"
                                   }
                                 },
                                 "description": "Channel-specific settings (auto-publish, integrations, etc.)"
                               }
                             },
-                            "description": "TikTok video channel configuration"
+                            "description": "TikTok video channel configuration: a caption and a short vertical video made from it"
+                          },
+                          "facebook_video": {
+                            "type": "object",
+                            "properties": {
+                              "enabled": {
+                                "type": "boolean",
+                                "description": "Whether this channel is enabled for the campaign",
+                                "default": false
+                              },
+                              "subSettings": {
+                                "type": "object",
+                                "properties": {
+                                  "generateImages": {
+                                    "type": "boolean",
+                                    "description": "Generate images for this content type; disable for text only",
+                                    "default": true
+                                  },
+                                  "autoPublish": {
+                                    "type": "boolean",
+                                    "description": "Enable auto-publishing to this channel"
+                                  },
+                                  "publishAsDraft": {
+                                    "type": "boolean",
+                                    "description": "Publish as draft instead of live"
+                                  },
+                                  "websiteUrl": {
+                                    "type": "string",
+                                    "description": "Website researched and written for by Auto SEO; defaults to the company website"
+                                  },
+                                  "wordpressIntegration": {
+                                    "type": "string",
+                                    "description": "WordPress/Blog integration ID for blog_post"
+                                  },
+                                  "linkedinIntegration": {
+                                    "type": "string",
+                                    "description": "LinkedIn integration ID for linkedin_post and linkedin_video"
+                                  },
+                                  "facebookIntegration": {
+                                    "type": "string",
+                                    "description": "Facebook integration ID for facebook_post and facebook_video"
+                                  },
+                                  "instagramIntegration": {
+                                    "type": "string",
+                                    "description": "Instagram integration ID for instagram_post and instagram_reel"
+                                  }
+                                },
+                                "description": "Channel-specific settings (auto-publish, integrations, etc.)"
+                              }
+                            },
+                            "description": "Facebook video channel configuration: a caption and a short vertical video made from it"
+                          },
+                          "instagram_reel": {
+                            "type": "object",
+                            "properties": {
+                              "enabled": {
+                                "type": "boolean",
+                                "description": "Whether this channel is enabled for the campaign",
+                                "default": false
+                              },
+                              "subSettings": {
+                                "type": "object",
+                                "properties": {
+                                  "generateImages": {
+                                    "type": "boolean",
+                                    "description": "Generate images for this content type; disable for text only",
+                                    "default": true
+                                  },
+                                  "autoPublish": {
+                                    "type": "boolean",
+                                    "description": "Enable auto-publishing to this channel"
+                                  },
+                                  "publishAsDraft": {
+                                    "type": "boolean",
+                                    "description": "Publish as draft instead of live"
+                                  },
+                                  "websiteUrl": {
+                                    "type": "string",
+                                    "description": "Website researched and written for by Auto SEO; defaults to the company website"
+                                  },
+                                  "wordpressIntegration": {
+                                    "type": "string",
+                                    "description": "WordPress/Blog integration ID for blog_post"
+                                  },
+                                  "linkedinIntegration": {
+                                    "type": "string",
+                                    "description": "LinkedIn integration ID for linkedin_post and linkedin_video"
+                                  },
+                                  "facebookIntegration": {
+                                    "type": "string",
+                                    "description": "Facebook integration ID for facebook_post and facebook_video"
+                                  },
+                                  "instagramIntegration": {
+                                    "type": "string",
+                                    "description": "Instagram integration ID for instagram_post and instagram_reel"
+                                  }
+                                },
+                                "description": "Channel-specific settings (auto-publish, integrations, etc.)"
+                              }
+                            },
+                            "description": "Instagram Reel channel configuration: a caption and a short vertical video made from it"
+                          },
+                          "linkedin_video": {
+                            "type": "object",
+                            "properties": {
+                              "enabled": {
+                                "type": "boolean",
+                                "description": "Whether this channel is enabled for the campaign",
+                                "default": false
+                              },
+                              "subSettings": {
+                                "type": "object",
+                                "properties": {
+                                  "generateImages": {
+                                    "type": "boolean",
+                                    "description": "Generate images for this content type; disable for text only",
+                                    "default": true
+                                  },
+                                  "autoPublish": {
+                                    "type": "boolean",
+                                    "description": "Enable auto-publishing to this channel"
+                                  },
+                                  "publishAsDraft": {
+                                    "type": "boolean",
+                                    "description": "Publish as draft instead of live"
+                                  },
+                                  "websiteUrl": {
+                                    "type": "string",
+                                    "description": "Website researched and written for by Auto SEO; defaults to the company website"
+                                  },
+                                  "wordpressIntegration": {
+                                    "type": "string",
+                                    "description": "WordPress/Blog integration ID for blog_post"
+                                  },
+                                  "linkedinIntegration": {
+                                    "type": "string",
+                                    "description": "LinkedIn integration ID for linkedin_post and linkedin_video"
+                                  },
+                                  "facebookIntegration": {
+                                    "type": "string",
+                                    "description": "Facebook integration ID for facebook_post and facebook_video"
+                                  },
+                                  "instagramIntegration": {
+                                    "type": "string",
+                                    "description": "Instagram integration ID for instagram_post and instagram_reel"
+                                  }
+                                },
+                                "description": "Channel-specific settings (auto-publish, integrations, etc.)"
+                              }
+                            },
+                            "description": "LinkedIn video channel configuration: a caption and a short vertical video made from it"
                           },
                           "email_newsletter": {
                             "type": "object",
@@ -42206,15 +43034,15 @@
                                   },
                                   "linkedinIntegration": {
                                     "type": "string",
-                                    "description": "LinkedIn integration ID for linkedin_post"
+                                    "description": "LinkedIn integration ID for linkedin_post and linkedin_video"
                                   },
                                   "facebookIntegration": {
                                     "type": "string",
-                                    "description": "Facebook integration ID for facebook_post"
+                                    "description": "Facebook integration ID for facebook_post and facebook_video"
                                   },
                                   "instagramIntegration": {
                                     "type": "string",
-                                    "description": "Instagram integration ID for instagram_post"
+                                    "description": "Instagram integration ID for instagram_post and instagram_reel"
                                   }
                                 },
                                 "description": "Channel-specific settings (auto-publish, integrations, etc.)"
@@ -42256,15 +43084,15 @@
                                   },
                                   "linkedinIntegration": {
                                     "type": "string",
-                                    "description": "LinkedIn integration ID for linkedin_post"
+                                    "description": "LinkedIn integration ID for linkedin_post and linkedin_video"
                                   },
                                   "facebookIntegration": {
                                     "type": "string",
-                                    "description": "Facebook integration ID for facebook_post"
+                                    "description": "Facebook integration ID for facebook_post and facebook_video"
                                   },
                                   "instagramIntegration": {
                                     "type": "string",
-                                    "description": "Instagram integration ID for instagram_post"
+                                    "description": "Instagram integration ID for instagram_post and instagram_reel"
                                   }
                                 },
                                 "description": "Channel-specific settings (auto-publish, integrations, etc.)"
@@ -42306,15 +43134,15 @@
                                   },
                                   "linkedinIntegration": {
                                     "type": "string",
-                                    "description": "LinkedIn integration ID for linkedin_post"
+                                    "description": "LinkedIn integration ID for linkedin_post and linkedin_video"
                                   },
                                   "facebookIntegration": {
                                     "type": "string",
-                                    "description": "Facebook integration ID for facebook_post"
+                                    "description": "Facebook integration ID for facebook_post and facebook_video"
                                   },
                                   "instagramIntegration": {
                                     "type": "string",
-                                    "description": "Instagram integration ID for instagram_post"
+                                    "description": "Instagram integration ID for instagram_post and instagram_reel"
                                   }
                                 },
                                 "description": "Channel-specific settings (auto-publish, integrations, etc.)"
@@ -42356,15 +43184,15 @@
                                   },
                                   "linkedinIntegration": {
                                     "type": "string",
-                                    "description": "LinkedIn integration ID for linkedin_post"
+                                    "description": "LinkedIn integration ID for linkedin_post and linkedin_video"
                                   },
                                   "facebookIntegration": {
                                     "type": "string",
-                                    "description": "Facebook integration ID for facebook_post"
+                                    "description": "Facebook integration ID for facebook_post and facebook_video"
                                   },
                                   "instagramIntegration": {
                                     "type": "string",
-                                    "description": "Instagram integration ID for instagram_post"
+                                    "description": "Instagram integration ID for instagram_post and instagram_reel"
                                   }
                                 },
                                 "description": "Channel-specific settings (auto-publish, integrations, etc.)"
@@ -42406,15 +43234,15 @@
                                   },
                                   "linkedinIntegration": {
                                     "type": "string",
-                                    "description": "LinkedIn integration ID for linkedin_post"
+                                    "description": "LinkedIn integration ID for linkedin_post and linkedin_video"
                                   },
                                   "facebookIntegration": {
                                     "type": "string",
-                                    "description": "Facebook integration ID for facebook_post"
+                                    "description": "Facebook integration ID for facebook_post and facebook_video"
                                   },
                                   "instagramIntegration": {
                                     "type": "string",
-                                    "description": "Instagram integration ID for instagram_post"
+                                    "description": "Instagram integration ID for instagram_post and instagram_reel"
                                   }
                                 },
                                 "description": "Channel-specific settings (auto-publish, integrations, etc.)"
@@ -42456,15 +43284,15 @@
                                   },
                                   "linkedinIntegration": {
                                     "type": "string",
-                                    "description": "LinkedIn integration ID for linkedin_post"
+                                    "description": "LinkedIn integration ID for linkedin_post and linkedin_video"
                                   },
                                   "facebookIntegration": {
                                     "type": "string",
-                                    "description": "Facebook integration ID for facebook_post"
+                                    "description": "Facebook integration ID for facebook_post and facebook_video"
                                   },
                                   "instagramIntegration": {
                                     "type": "string",
-                                    "description": "Instagram integration ID for instagram_post"
+                                    "description": "Instagram integration ID for instagram_post and instagram_reel"
                                   }
                                 },
                                 "description": "Channel-specific settings (auto-publish, integrations, etc.)"
@@ -45947,7 +46775,7 @@
         "operationId": "content_writeVideoScene",
         "parameters": [
           {
-            "name": "sceneId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -45955,7 +46783,7 @@
             }
           },
           {
-            "name": "canvasId",
+            "name": "sceneId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46551,7 +47379,7 @@
         "operationId": "content_getCanvasDesignMedia",
         "parameters": [
           {
-            "name": "videoId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46559,7 +47387,7 @@
             }
           },
           {
-            "name": "canvasId",
+            "name": "videoId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46659,7 +47487,7 @@
         "operationId": "content_useCanvasDesignMedia",
         "parameters": [
           {
-            "name": "videoId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -46667,7 +47495,7 @@
             }
           },
           {
-            "name": "canvasId",
+            "name": "videoId",
             "in": "path",
             "required": true,
             "schema": {
@@ -51896,7 +52724,7 @@
         "operationId": "leads_getStagedLeads",
         "parameters": [
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -51904,7 +52732,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -51999,7 +52827,7 @@
         "operationId": "leads_applyStagedLeads",
         "parameters": [
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -52007,7 +52835,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -60105,7 +60933,7 @@
         "operationId": "landing_pages_getLandingPageThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -60113,7 +60941,7 @@
             }
           },
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -60152,7 +60980,7 @@
         "operationId": "landing_pages_updateLandingPageThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -60160,7 +60988,7 @@
             }
           },
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -60238,7 +61066,7 @@
         "operationId": "landing_pages_deleteLandingPageThread",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -60246,7 +61074,7 @@
             }
           },
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -60287,7 +61115,7 @@
         "operationId": "landing_pages_stopLandingPageThreadRun",
         "parameters": [
           {
-            "name": "thread_id",
+            "name": "page_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -60295,7 +61123,7 @@
             }
           },
           {
-            "name": "page_id",
+            "name": "thread_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -75312,7 +76140,7 @@
         "operationId": "seo_projectLighthouseSnapshotRoute",
         "parameters": [
           {
-            "name": "snapshotId",
+            "name": "projectId",
             "in": "path",
             "required": true,
             "schema": {
@@ -75320,7 +76148,7 @@
             }
           },
           {
-            "name": "projectId",
+            "name": "snapshotId",
             "in": "path",
             "required": true,
             "schema": {
@@ -75470,7 +76298,7 @@
         "operationId": "seo_exportLighthouseRoute",
         "parameters": [
           {
-            "name": "snapshotId",
+            "name": "projectId",
             "in": "path",
             "required": true,
             "schema": {
@@ -75478,7 +76306,7 @@
             }
           },
           {
-            "name": "projectId",
+            "name": "snapshotId",
             "in": "path",
             "required": true,
             "schema": {
@@ -79052,7 +79880,7 @@
         "operationId": "marketing_campaigns_deleteCampaignRecipient",
         "parameters": [
           {
-            "name": "recipientId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -79060,7 +79888,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "recipientId",
             "in": "path",
             "required": true,
             "schema": {
@@ -79627,7 +80455,7 @@
         "operationId": "marketing_campaigns_getCampaignEmailBuilderThread",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -79635,7 +80463,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -79694,7 +80522,7 @@
         "operationId": "marketing_campaigns_updateCampaignEmailBuilderThread",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -79702,7 +80530,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -79790,7 +80618,7 @@
         "operationId": "marketing_campaigns_deleteCampaignEmailBuilderThread",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -79798,7 +80626,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -79859,7 +80687,7 @@
         "operationId": "marketing_campaigns_stopCampaignEmailBuilderThreadRun",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -79867,7 +80695,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -80247,7 +81075,7 @@
         "operationId": "marketing_campaigns_getTemplateEmailBuilderThread",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -80255,7 +81083,7 @@
             }
           },
           {
-            "name": "templateId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -80314,7 +81142,7 @@
         "operationId": "marketing_campaigns_updateTemplateEmailBuilderThread",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -80322,7 +81150,7 @@
             }
           },
           {
-            "name": "templateId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -80410,7 +81238,7 @@
         "operationId": "marketing_campaigns_deleteTemplateEmailBuilderThread",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -80418,7 +81246,7 @@
             }
           },
           {
-            "name": "templateId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -80479,7 +81307,7 @@
         "operationId": "marketing_campaigns_stopTemplateEmailBuilderThreadRun",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -80487,7 +81315,7 @@
             }
           },
           {
-            "name": "templateId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81597,7 +82425,7 @@
         "operationId": "marketing_campaigns_restoreTemplateVersion",
         "parameters": [
           {
-            "name": "versionId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81605,7 +82433,7 @@
             }
           },
           {
-            "name": "templateId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -82456,7 +83284,7 @@
         "operationId": "site_builder_getWebsiteThreadMessages",
         "parameters": [
           {
-            "name": "websiteId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -82464,7 +83292,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -82533,7 +83361,7 @@
         "operationId": "site_builder_patchWebsiteThread",
         "parameters": [
           {
-            "name": "websiteId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -82541,7 +83369,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -82657,7 +83485,7 @@
         "operationId": "site_builder_stopWebsiteThreadRun",
         "parameters": [
           {
-            "name": "websiteId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -82665,7 +83493,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
