@@ -2053,7 +2053,7 @@
         "operationId": "documents_getDocumentContents",
         "parameters": [
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -2061,7 +2061,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -2120,7 +2120,7 @@
         "operationId": "documents_getDocument",
         "parameters": [
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -2128,7 +2128,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -4328,7 +4328,7 @@
         "operationId": "keys_getApiKey",
         "parameters": [
           {
-            "name": "name",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -4336,7 +4336,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "name",
             "in": "path",
             "required": true,
             "schema": {
@@ -9265,7 +9265,7 @@
       }
     },
     "/api/v0/projects/{project_id}/files/{file_id}/export": {
-      "get": {
+      "post": {
         "tags": [
           "Projects"
         ],
@@ -9383,7 +9383,7 @@
           "description": "POST exports current editor content without saving; GET exports the saved file"
         }
       },
-      "post": {
+      "get": {
         "tags": [
           "Projects"
         ],
@@ -10107,7 +10107,7 @@
         "operationId": "memories_getMemory",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10115,7 +10115,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10213,7 +10213,7 @@
         "operationId": "memories_updateMemoryRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10221,7 +10221,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10349,7 +10349,7 @@
         "operationId": "memories_deleteMemoryRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10357,7 +10357,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10408,7 +10408,7 @@
         "operationId": "memories_toggleMemoryActiveRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10416,7 +10416,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -14660,7 +14660,7 @@
         "operationId": "organizations_updateOrganizationMember",
         "parameters": [
           {
-            "name": "memberUid",
+            "name": "orgId",
             "in": "path",
             "required": true,
             "schema": {
@@ -14668,7 +14668,7 @@
             }
           },
           {
-            "name": "orgId",
+            "name": "memberUid",
             "in": "path",
             "required": true,
             "schema": {
@@ -14795,7 +14795,7 @@
         "operationId": "organizations_removeOrganizationMember",
         "parameters": [
           {
-            "name": "memberUid",
+            "name": "orgId",
             "in": "path",
             "required": true,
             "schema": {
@@ -14803,7 +14803,7 @@
             }
           },
           {
-            "name": "orgId",
+            "name": "memberUid",
             "in": "path",
             "required": true,
             "schema": {
@@ -18975,7 +18975,7 @@
         "operationId": "agents_checkConversationActivity",
         "parameters": [
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -18983,7 +18983,7 @@
             }
           },
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19045,7 +19045,7 @@
         "operationId": "agents_getConversationDetails",
         "parameters": [
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19053,7 +19053,7 @@
             }
           },
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22206,7 +22206,7 @@
         "operationId": "lists_deleteTableAction",
         "parameters": [
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22214,7 +22214,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22312,7 +22312,7 @@
         "operationId": "lists_getActionSummary",
         "parameters": [
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22320,7 +22320,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22440,7 +22440,7 @@
         "operationId": "lists_getActionQueueStatus",
         "parameters": [
           {
-            "name": "actionId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22448,7 +22448,7 @@
             }
           },
           {
-            "name": "listId",
+            "name": "actionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22777,7 +22777,7 @@
         "operationId": "lists_getRowHistory",
         "parameters": [
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22785,7 +22785,7 @@
             }
           },
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22997,7 +22997,7 @@
         "operationId": "lists_deleteHeader",
         "parameters": [
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23005,7 +23005,7 @@
             }
           },
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23071,7 +23071,7 @@
         "operationId": "lists_editHeader",
         "parameters": [
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23079,7 +23079,7 @@
             }
           },
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27715,7 +27715,7 @@
         "operationId": "sequences_getSequenceMemberTimeline",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27723,7 +27723,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28121,7 +28121,7 @@
         "operationId": "sequences_triggerSequenceMember",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28129,7 +28129,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28197,7 +28197,7 @@
         "operationId": "sequences_removeSequenceMember",
         "parameters": [
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28205,7 +28205,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28997,7 +28997,7 @@
         "operationId": "sequences_editSequenceExecution",
         "parameters": [
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -29005,7 +29005,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -29104,7 +29104,7 @@
         "operationId": "sequences_previewSequenceExecution",
         "parameters": [
           {
-            "name": "executionId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -29112,7 +29112,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "executionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -40214,7 +40214,7 @@
         "operationId": "content_openContentImageCanvas",
         "parameters": [
           {
-            "name": "imageId",
+            "name": "contentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -40222,7 +40222,7 @@
             }
           },
           {
-            "name": "contentId",
+            "name": "imageId",
             "in": "path",
             "required": true,
             "schema": {
@@ -47400,7 +47400,7 @@
         "operationId": "content_getCanvasDesignMedia",
         "parameters": [
           {
-            "name": "videoId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -47408,7 +47408,7 @@
             }
           },
           {
-            "name": "canvasId",
+            "name": "videoId",
             "in": "path",
             "required": true,
             "schema": {
@@ -47508,7 +47508,7 @@
         "operationId": "content_useCanvasDesignMedia",
         "parameters": [
           {
-            "name": "videoId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -47516,7 +47516,7 @@
             }
           },
           {
-            "name": "canvasId",
+            "name": "videoId",
             "in": "path",
             "required": true,
             "schema": {
@@ -47823,7 +47823,7 @@
         "operationId": "content_getCanvasDesignThread",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -47831,7 +47831,7 @@
             }
           },
           {
-            "name": "canvasId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -47870,7 +47870,7 @@
         "operationId": "content_updateCanvasDesignThread",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -47878,7 +47878,7 @@
             }
           },
           {
-            "name": "canvasId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -47956,7 +47956,7 @@
         "operationId": "content_deleteCanvasDesignThread",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -47964,7 +47964,7 @@
             }
           },
           {
-            "name": "canvasId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -48005,7 +48005,7 @@
         "operationId": "content_stopCanvasDesignThreadRun",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "canvasId",
             "in": "path",
             "required": true,
             "schema": {
@@ -48013,7 +48013,7 @@
             }
           },
           {
-            "name": "canvasId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -52745,7 +52745,7 @@
         "operationId": "leads_getStagedLeads",
         "parameters": [
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -52753,7 +52753,7 @@
             }
           },
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -52848,7 +52848,7 @@
         "operationId": "leads_applyStagedLeads",
         "parameters": [
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -52856,7 +52856,7 @@
             }
           },
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -80592,7 +80592,7 @@
         "operationId": "marketing_campaigns_getCampaignEmailBuilderThread",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -80600,7 +80600,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -80659,7 +80659,7 @@
         "operationId": "marketing_campaigns_updateCampaignEmailBuilderThread",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -80667,7 +80667,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -80755,7 +80755,7 @@
         "operationId": "marketing_campaigns_deleteCampaignEmailBuilderThread",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -80763,7 +80763,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -80824,7 +80824,7 @@
         "operationId": "marketing_campaigns_stopCampaignEmailBuilderThreadRun",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -80832,7 +80832,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81212,7 +81212,7 @@
         "operationId": "marketing_campaigns_getTemplateEmailBuilderThread",
         "parameters": [
           {
-            "name": "templateId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81220,7 +81220,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81279,7 +81279,7 @@
         "operationId": "marketing_campaigns_updateTemplateEmailBuilderThread",
         "parameters": [
           {
-            "name": "templateId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81287,7 +81287,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81375,7 +81375,7 @@
         "operationId": "marketing_campaigns_deleteTemplateEmailBuilderThread",
         "parameters": [
           {
-            "name": "templateId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81383,7 +81383,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81444,7 +81444,7 @@
         "operationId": "marketing_campaigns_stopTemplateEmailBuilderThreadRun",
         "parameters": [
           {
-            "name": "templateId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81452,7 +81452,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -82562,7 +82562,7 @@
         "operationId": "marketing_campaigns_restoreTemplateVersion",
         "parameters": [
           {
-            "name": "templateId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -82570,7 +82570,7 @@
             }
           },
           {
-            "name": "versionId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -83421,7 +83421,7 @@
         "operationId": "site_builder_getWebsiteThreadMessages",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -83429,7 +83429,7 @@
             }
           },
           {
-            "name": "websiteId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -83498,7 +83498,7 @@
         "operationId": "site_builder_patchWebsiteThread",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -83506,7 +83506,7 @@
             }
           },
           {
-            "name": "websiteId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -83622,7 +83622,7 @@
         "operationId": "site_builder_stopWebsiteThreadRun",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -83630,7 +83630,7 @@
             }
           },
           {
-            "name": "websiteId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -83813,7 +83813,7 @@
         "operationId": "site_builder_mergeWebsiteBranch",
         "parameters": [
           {
-            "name": "websiteId",
+            "name": "branch",
             "in": "path",
             "required": true,
             "schema": {
@@ -83821,7 +83821,7 @@
             }
           },
           {
-            "name": "branch",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -83912,7 +83912,7 @@
         "operationId": "site_builder_discardWebsiteBranch",
         "parameters": [
           {
-            "name": "websiteId",
+            "name": "branch",
             "in": "path",
             "required": true,
             "schema": {
@@ -83920,7 +83920,7 @@
             }
           },
           {
-            "name": "branch",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -85152,7 +85152,7 @@
         "operationId": "site_builder_apiWebsiteBranchDiff",
         "parameters": [
           {
-            "name": "websiteId",
+            "name": "branch",
             "in": "path",
             "required": true,
             "schema": {
@@ -85160,7 +85160,7 @@
             }
           },
           {
-            "name": "branch",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
