@@ -1033,6 +1033,7 @@
             "pages": [
               "DELETE /api/v0/tags/{tag_id}",
               "GET /api/v0/tags",
+              "GET /api/v0/tags/{tagId}/usage",
               "POST /api/v0/tags",
               "PUT /api/v0/tags/{tag_id}"
             ]
