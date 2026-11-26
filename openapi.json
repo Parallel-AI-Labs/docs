@@ -2057,7 +2057,7 @@
         "operationId": "documents_getDocumentContents",
         "parameters": [
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -2065,7 +2065,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -2124,7 +2124,7 @@
         "operationId": "documents_getDocument",
         "parameters": [
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -2132,7 +2132,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -4332,7 +4332,7 @@
         "operationId": "keys_getApiKey",
         "parameters": [
           {
-            "name": "name",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -4340,7 +4340,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "name",
             "in": "path",
             "required": true,
             "schema": {
@@ -10159,7 +10159,7 @@
         "operationId": "memories_getMemory",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10167,7 +10167,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10265,7 +10265,7 @@
         "operationId": "memories_updateMemoryRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10273,7 +10273,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10401,7 +10401,7 @@
         "operationId": "memories_deleteMemoryRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10409,7 +10409,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10460,7 +10460,7 @@
         "operationId": "memories_toggleMemoryActiveRoute",
         "parameters": [
           {
-            "name": "memoryId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -10468,7 +10468,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "memoryId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19027,7 +19027,7 @@
         "operationId": "agents_checkConversationActivity",
         "parameters": [
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19035,7 +19035,7 @@
             }
           },
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19097,7 +19097,7 @@
         "operationId": "agents_getConversationDetails",
         "parameters": [
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19105,7 +19105,7 @@
             }
           },
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26729,7 +26729,7 @@
         "operationId": "sequences_updateSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26737,7 +26737,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27017,7 +27017,7 @@
         "operationId": "sequences_deleteSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27025,7 +27025,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30915,7 +30915,7 @@
         "operationId": "sequences_testSequenceStep",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30923,7 +30923,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30987,7 +30987,7 @@
         "operationId": "sequences_sendTestEmail",
         "parameters": [
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30995,7 +30995,7 @@
             }
           },
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -36228,7 +36228,7 @@
         "operationId": "inbox_sendDraft",
         "parameters": [
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -36236,7 +36236,7 @@
             }
           },
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -36339,7 +36339,7 @@
         "operationId": "inbox_deleteDraft",
         "parameters": [
           {
-            "name": "inboxId",
+            "name": "draftId",
             "in": "path",
             "required": true,
             "schema": {
@@ -36347,7 +36347,7 @@
             }
           },
           {
-            "name": "draftId",
+            "name": "inboxId",
             "in": "path",
             "required": true,
             "schema": {
@@ -40302,7 +40302,7 @@
         "operationId": "content_openContentImageCanvas",
         "parameters": [
           {
-            "name": "contentId",
+            "name": "imageId",
             "in": "path",
             "required": true,
             "schema": {
@@ -40310,7 +40310,7 @@
             }
           },
           {
-            "name": "imageId",
+            "name": "contentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -40466,7 +40466,7 @@
           }
         },
         "summary": "Create (or replace) the video of a video post from its caption.",
-        "description": "For a tiktok_video, or a facebook_post, instagram_post or linkedin_post whose `media` is \"video\". The video is a short\nvertical canvas video built from the caption, the post's image and the brand kit, saved to the company's\ncanvases (the content's `videoCanvasId`) where it can be edited. It is charged as a canvas video. It runs as a\nbackground task: the response is 202 with a taskId. Poll GET /api/v0/lists/tasks/{taskId} until `status` is\n\"completed\" (`result.videoUrl`, `result.videoCanvasId`) or \"failed\" (`errorMessage`).",
+        "description": "For a tiktok_video, or a facebook_post, instagram_post, linkedin_post, x_post or youtube_video whose `media` is\n\"video\". The video is a short vertical canvas video built from the caption, the post's image and the brand kit,\nsaved to the company's canvases (the content's `videoCanvasId`) where it can be edited. It is charged as a\ncanvas video. It runs as a background task: the response is 202 with a taskId. Poll\nGET /api/v0/lists/tasks/{taskId} until `status` is \"completed\" (`result.videoUrl`, `result.videoCanvasId`) or \"failed\" (`errorMessage`).",
         "requestBody": {
           "required": true,
           "content": {
@@ -40663,7 +40663,7 @@
                                       },
                                       "media": {
                                         "type": "string",
-                                        "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post and linkedin_post; tiktok_video is always a video) or \"none\" (text only)",
+                                        "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post, linkedin_post, x_post and youtube_video; tiktok_video is always a video) or \"none\" (text only)",
                                         "enum": [
                                           "image",
                                           "video",
@@ -40722,7 +40722,7 @@
                                       },
                                       "media": {
                                         "type": "string",
-                                        "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post and linkedin_post; tiktok_video is always a video) or \"none\" (text only)",
+                                        "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post, linkedin_post, x_post and youtube_video; tiktok_video is always a video) or \"none\" (text only)",
                                         "enum": [
                                           "image",
                                           "video",
@@ -40781,7 +40781,7 @@
                                       },
                                       "media": {
                                         "type": "string",
-                                        "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post and linkedin_post; tiktok_video is always a video) or \"none\" (text only)",
+                                        "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post, linkedin_post, x_post and youtube_video; tiktok_video is always a video) or \"none\" (text only)",
                                         "enum": [
                                           "image",
                                           "video",
@@ -40840,7 +40840,7 @@
                                       },
                                       "media": {
                                         "type": "string",
-                                        "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post and linkedin_post; tiktok_video is always a video) or \"none\" (text only)",
+                                        "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post, linkedin_post, x_post and youtube_video; tiktok_video is always a video) or \"none\" (text only)",
                                         "enum": [
                                           "image",
                                           "video",
@@ -40899,7 +40899,7 @@
                                       },
                                       "media": {
                                         "type": "string",
-                                        "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post and linkedin_post; tiktok_video is always a video) or \"none\" (text only)",
+                                        "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post, linkedin_post, x_post and youtube_video; tiktok_video is always a video) or \"none\" (text only)",
                                         "enum": [
                                           "image",
                                           "video",
@@ -40958,7 +40958,7 @@
                                       },
                                       "media": {
                                         "type": "string",
-                                        "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post and linkedin_post; tiktok_video is always a video) or \"none\" (text only)",
+                                        "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post, linkedin_post, x_post and youtube_video; tiktok_video is always a video) or \"none\" (text only)",
                                         "enum": [
                                           "image",
                                           "video",
@@ -41017,7 +41017,7 @@
                                       },
                                       "media": {
                                         "type": "string",
-                                        "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post and linkedin_post; tiktok_video is always a video) or \"none\" (text only)",
+                                        "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post, linkedin_post, x_post and youtube_video; tiktok_video is always a video) or \"none\" (text only)",
                                         "enum": [
                                           "image",
                                           "video",
@@ -41076,7 +41076,7 @@
                                       },
                                       "media": {
                                         "type": "string",
-                                        "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post and linkedin_post; tiktok_video is always a video) or \"none\" (text only)",
+                                        "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post, linkedin_post, x_post and youtube_video; tiktok_video is always a video) or \"none\" (text only)",
                                         "enum": [
                                           "image",
                                           "video",
@@ -41135,7 +41135,7 @@
                                       },
                                       "media": {
                                         "type": "string",
-                                        "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post and linkedin_post; tiktok_video is always a video) or \"none\" (text only)",
+                                        "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post, linkedin_post, x_post and youtube_video; tiktok_video is always a video) or \"none\" (text only)",
                                         "enum": [
                                           "image",
                                           "video",
@@ -41194,7 +41194,7 @@
                                       },
                                       "media": {
                                         "type": "string",
-                                        "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post and linkedin_post; tiktok_video is always a video) or \"none\" (text only)",
+                                        "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post, linkedin_post, x_post and youtube_video; tiktok_video is always a video) or \"none\" (text only)",
                                         "enum": [
                                           "image",
                                           "video",
@@ -41253,7 +41253,7 @@
                                       },
                                       "media": {
                                         "type": "string",
-                                        "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post and linkedin_post; tiktok_video is always a video) or \"none\" (text only)",
+                                        "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post, linkedin_post, x_post and youtube_video; tiktok_video is always a video) or \"none\" (text only)",
                                         "enum": [
                                           "image",
                                           "video",
@@ -41312,7 +41312,7 @@
                                       },
                                       "media": {
                                         "type": "string",
-                                        "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post and linkedin_post; tiktok_video is always a video) or \"none\" (text only)",
+                                        "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post, linkedin_post, x_post and youtube_video; tiktok_video is always a video) or \"none\" (text only)",
                                         "enum": [
                                           "image",
                                           "video",
@@ -41371,7 +41371,7 @@
                                       },
                                       "media": {
                                         "type": "string",
-                                        "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post and linkedin_post; tiktok_video is always a video) or \"none\" (text only)",
+                                        "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post, linkedin_post, x_post and youtube_video; tiktok_video is always a video) or \"none\" (text only)",
                                         "enum": [
                                           "image",
                                           "video",
@@ -41632,7 +41632,7 @@
                                     },
                                     "media": {
                                       "type": "string",
-                                      "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post and linkedin_post; tiktok_video is always a video) or \"none\" (text only)",
+                                      "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post, linkedin_post, x_post and youtube_video; tiktok_video is always a video) or \"none\" (text only)",
                                       "enum": [
                                         "image",
                                         "video",
@@ -41691,7 +41691,7 @@
                                     },
                                     "media": {
                                       "type": "string",
-                                      "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post and linkedin_post; tiktok_video is always a video) or \"none\" (text only)",
+                                      "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post, linkedin_post, x_post and youtube_video; tiktok_video is always a video) or \"none\" (text only)",
                                       "enum": [
                                         "image",
                                         "video",
@@ -41750,7 +41750,7 @@
                                     },
                                     "media": {
                                       "type": "string",
-                                      "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post and linkedin_post; tiktok_video is always a video) or \"none\" (text only)",
+                                      "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post, linkedin_post, x_post and youtube_video; tiktok_video is always a video) or \"none\" (text only)",
                                       "enum": [
                                         "image",
                                         "video",
@@ -41809,7 +41809,7 @@
                                     },
                                     "media": {
                                       "type": "string",
-                                      "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post and linkedin_post; tiktok_video is always a video) or \"none\" (text only)",
+                                      "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post, linkedin_post, x_post and youtube_video; tiktok_video is always a video) or \"none\" (text only)",
                                       "enum": [
                                         "image",
                                         "video",
@@ -41868,7 +41868,7 @@
                                     },
                                     "media": {
                                       "type": "string",
-                                      "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post and linkedin_post; tiktok_video is always a video) or \"none\" (text only)",
+                                      "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post, linkedin_post, x_post and youtube_video; tiktok_video is always a video) or \"none\" (text only)",
                                       "enum": [
                                         "image",
                                         "video",
@@ -41927,7 +41927,7 @@
                                     },
                                     "media": {
                                       "type": "string",
-                                      "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post and linkedin_post; tiktok_video is always a video) or \"none\" (text only)",
+                                      "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post, linkedin_post, x_post and youtube_video; tiktok_video is always a video) or \"none\" (text only)",
                                       "enum": [
                                         "image",
                                         "video",
@@ -41986,7 +41986,7 @@
                                     },
                                     "media": {
                                       "type": "string",
-                                      "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post and linkedin_post; tiktok_video is always a video) or \"none\" (text only)",
+                                      "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post, linkedin_post, x_post and youtube_video; tiktok_video is always a video) or \"none\" (text only)",
                                       "enum": [
                                         "image",
                                         "video",
@@ -42045,7 +42045,7 @@
                                     },
                                     "media": {
                                       "type": "string",
-                                      "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post and linkedin_post; tiktok_video is always a video) or \"none\" (text only)",
+                                      "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post, linkedin_post, x_post and youtube_video; tiktok_video is always a video) or \"none\" (text only)",
                                       "enum": [
                                         "image",
                                         "video",
@@ -42104,7 +42104,7 @@
                                     },
                                     "media": {
                                       "type": "string",
-                                      "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post and linkedin_post; tiktok_video is always a video) or \"none\" (text only)",
+                                      "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post, linkedin_post, x_post and youtube_video; tiktok_video is always a video) or \"none\" (text only)",
                                       "enum": [
                                         "image",
                                         "video",
@@ -42163,7 +42163,7 @@
                                     },
                                     "media": {
                                       "type": "string",
-                                      "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post and linkedin_post; tiktok_video is always a video) or \"none\" (text only)",
+                                      "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post, linkedin_post, x_post and youtube_video; tiktok_video is always a video) or \"none\" (text only)",
                                       "enum": [
                                         "image",
                                         "video",
@@ -42222,7 +42222,7 @@
                                     },
                                     "media": {
                                       "type": "string",
-                                      "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post and linkedin_post; tiktok_video is always a video) or \"none\" (text only)",
+                                      "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post, linkedin_post, x_post and youtube_video; tiktok_video is always a video) or \"none\" (text only)",
                                       "enum": [
                                         "image",
                                         "video",
@@ -42281,7 +42281,7 @@
                                     },
                                     "media": {
                                       "type": "string",
-                                      "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post and linkedin_post; tiktok_video is always a video) or \"none\" (text only)",
+                                      "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post, linkedin_post, x_post and youtube_video; tiktok_video is always a video) or \"none\" (text only)",
                                       "enum": [
                                         "image",
                                         "video",
@@ -42340,7 +42340,7 @@
                                     },
                                     "media": {
                                       "type": "string",
-                                      "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post and linkedin_post; tiktok_video is always a video) or \"none\" (text only)",
+                                      "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post, linkedin_post, x_post and youtube_video; tiktok_video is always a video) or \"none\" (text only)",
                                       "enum": [
                                         "image",
                                         "video",
@@ -42561,7 +42561,7 @@
                                   },
                                   "media": {
                                     "type": "string",
-                                    "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post and linkedin_post; tiktok_video is always a video) or \"none\" (text only)",
+                                    "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post, linkedin_post, x_post and youtube_video; tiktok_video is always a video) or \"none\" (text only)",
                                     "enum": [
                                       "image",
                                       "video",
@@ -42620,7 +42620,7 @@
                                   },
                                   "media": {
                                     "type": "string",
-                                    "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post and linkedin_post; tiktok_video is always a video) or \"none\" (text only)",
+                                    "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post, linkedin_post, x_post and youtube_video; tiktok_video is always a video) or \"none\" (text only)",
                                     "enum": [
                                       "image",
                                       "video",
@@ -42679,7 +42679,7 @@
                                   },
                                   "media": {
                                     "type": "string",
-                                    "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post and linkedin_post; tiktok_video is always a video) or \"none\" (text only)",
+                                    "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post, linkedin_post, x_post and youtube_video; tiktok_video is always a video) or \"none\" (text only)",
                                     "enum": [
                                       "image",
                                       "video",
@@ -42738,7 +42738,7 @@
                                   },
                                   "media": {
                                     "type": "string",
-                                    "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post and linkedin_post; tiktok_video is always a video) or \"none\" (text only)",
+                                    "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post, linkedin_post, x_post and youtube_video; tiktok_video is always a video) or \"none\" (text only)",
                                     "enum": [
                                       "image",
                                       "video",
@@ -42797,7 +42797,7 @@
                                   },
                                   "media": {
                                     "type": "string",
-                                    "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post and linkedin_post; tiktok_video is always a video) or \"none\" (text only)",
+                                    "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post, linkedin_post, x_post and youtube_video; tiktok_video is always a video) or \"none\" (text only)",
                                     "enum": [
                                       "image",
                                       "video",
@@ -42856,7 +42856,7 @@
                                   },
                                   "media": {
                                     "type": "string",
-                                    "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post and linkedin_post; tiktok_video is always a video) or \"none\" (text only)",
+                                    "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post, linkedin_post, x_post and youtube_video; tiktok_video is always a video) or \"none\" (text only)",
                                     "enum": [
                                       "image",
                                       "video",
@@ -42915,7 +42915,7 @@
                                   },
                                   "media": {
                                     "type": "string",
-                                    "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post and linkedin_post; tiktok_video is always a video) or \"none\" (text only)",
+                                    "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post, linkedin_post, x_post and youtube_video; tiktok_video is always a video) or \"none\" (text only)",
                                     "enum": [
                                       "image",
                                       "video",
@@ -42974,7 +42974,7 @@
                                   },
                                   "media": {
                                     "type": "string",
-                                    "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post and linkedin_post; tiktok_video is always a video) or \"none\" (text only)",
+                                    "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post, linkedin_post, x_post and youtube_video; tiktok_video is always a video) or \"none\" (text only)",
                                     "enum": [
                                       "image",
                                       "video",
@@ -43033,7 +43033,7 @@
                                   },
                                   "media": {
                                     "type": "string",
-                                    "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post and linkedin_post; tiktok_video is always a video) or \"none\" (text only)",
+                                    "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post, linkedin_post, x_post and youtube_video; tiktok_video is always a video) or \"none\" (text only)",
                                     "enum": [
                                       "image",
                                       "video",
@@ -43092,7 +43092,7 @@
                                   },
                                   "media": {
                                     "type": "string",
-                                    "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post and linkedin_post; tiktok_video is always a video) or \"none\" (text only)",
+                                    "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post, linkedin_post, x_post and youtube_video; tiktok_video is always a video) or \"none\" (text only)",
                                     "enum": [
                                       "image",
                                       "video",
@@ -43151,7 +43151,7 @@
                                   },
                                   "media": {
                                     "type": "string",
-                                    "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post and linkedin_post; tiktok_video is always a video) or \"none\" (text only)",
+                                    "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post, linkedin_post, x_post and youtube_video; tiktok_video is always a video) or \"none\" (text only)",
                                     "enum": [
                                       "image",
                                       "video",
@@ -43210,7 +43210,7 @@
                                   },
                                   "media": {
                                     "type": "string",
-                                    "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post and linkedin_post; tiktok_video is always a video) or \"none\" (text only)",
+                                    "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post, linkedin_post, x_post and youtube_video; tiktok_video is always a video) or \"none\" (text only)",
                                     "enum": [
                                       "image",
                                       "video",
@@ -43269,7 +43269,7 @@
                                   },
                                   "media": {
                                     "type": "string",
-                                    "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post and linkedin_post; tiktok_video is always a video) or \"none\" (text only)",
+                                    "description": "What each piece is made with besides its text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post, linkedin_post, x_post and youtube_video; tiktok_video is always a video) or \"none\" (text only)",
                                     "enum": [
                                       "image",
                                       "video",
@@ -43610,7 +43610,7 @@
                   },
                   "media": {
                     "type": "string",
-                    "description": "What is made besides the text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post and linkedin_post; a tiktok_video is always a video; other types get an image) or \"none\" (text only)",
+                    "description": "What is made besides the text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post, linkedin_post, x_post and youtube_video; a tiktok_video is always a video; other types get an image) or \"none\" (text only)",
                     "enum": [
                       "image",
                       "video",
@@ -70859,7 +70859,7 @@
                   },
                   "media": {
                     "type": "string",
-                    "description": "What is made besides the text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post and linkedin_post; a tiktok_video is always a video) or \"none\" (text only)",
+                    "description": "What is made besides the text: \"image\" (default), \"video\" (a short vertical video made from the caption and image; facebook_post, instagram_post, linkedin_post, x_post and youtube_video; a tiktok_video is always a video) or \"none\" (text only)",
                     "enum": [
                       "image",
                       "video",
@@ -77771,7 +77771,7 @@
         "operationId": "seo_projectLighthouseSnapshotRoute",
         "parameters": [
           {
-            "name": "snapshotId",
+            "name": "projectId",
             "in": "path",
             "required": true,
             "schema": {
@@ -77779,7 +77779,7 @@
             }
           },
           {
-            "name": "projectId",
+            "name": "snapshotId",
             "in": "path",
             "required": true,
             "schema": {
@@ -77929,7 +77929,7 @@
         "operationId": "seo_exportLighthouseRoute",
         "parameters": [
           {
-            "name": "snapshotId",
+            "name": "projectId",
             "in": "path",
             "required": true,
             "schema": {
@@ -77937,7 +77937,7 @@
             }
           },
           {
-            "name": "projectId",
+            "name": "snapshotId",
             "in": "path",
             "required": true,
             "schema": {
@@ -79946,7 +79946,7 @@
         "operationId": "marketing_campaigns_restoreCampaignVersion",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -79954,7 +79954,7 @@
             }
           },
           {
-            "name": "versionId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81511,7 +81511,7 @@
         "operationId": "marketing_campaigns_deleteCampaignRecipient",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "recipientId",
             "in": "path",
             "required": true,
             "schema": {
@@ -81519,7 +81519,7 @@
             }
           },
           {
-            "name": "recipientId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -82086,7 +82086,7 @@
         "operationId": "marketing_campaigns_getCampaignEmailBuilderThread",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -82094,7 +82094,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -82153,7 +82153,7 @@
         "operationId": "marketing_campaigns_updateCampaignEmailBuilderThread",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -82161,7 +82161,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -82249,7 +82249,7 @@
         "operationId": "marketing_campaigns_deleteCampaignEmailBuilderThread",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -82257,7 +82257,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -82318,7 +82318,7 @@
         "operationId": "marketing_campaigns_stopCampaignEmailBuilderThreadRun",
         "parameters": [
           {
-            "name": "campaignId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -82326,7 +82326,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -84056,7 +84056,7 @@
         "operationId": "marketing_campaigns_restoreTemplateVersion",
         "parameters": [
           {
-            "name": "templateId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -84064,7 +84064,7 @@
             }
           },
           {
-            "name": "versionId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -84915,7 +84915,7 @@
         "operationId": "site_builder_getWebsiteThreadMessages",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -84923,7 +84923,7 @@
             }
           },
           {
-            "name": "websiteId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -84992,7 +84992,7 @@
         "operationId": "site_builder_patchWebsiteThread",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -85000,7 +85000,7 @@
             }
           },
           {
-            "name": "websiteId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -85116,7 +85116,7 @@
         "operationId": "site_builder_stopWebsiteThreadRun",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -85124,7 +85124,7 @@
             }
           },
           {
-            "name": "websiteId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -85307,7 +85307,7 @@
         "operationId": "site_builder_mergeWebsiteBranch",
         "parameters": [
           {
-            "name": "branch",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -85315,7 +85315,7 @@
             }
           },
           {
-            "name": "websiteId",
+            "name": "branch",
             "in": "path",
             "required": true,
             "schema": {
@@ -85406,7 +85406,7 @@
         "operationId": "site_builder_discardWebsiteBranch",
         "parameters": [
           {
-            "name": "branch",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -85414,7 +85414,7 @@
             }
           },
           {
-            "name": "websiteId",
+            "name": "branch",
             "in": "path",
             "required": true,
             "schema": {
@@ -86646,7 +86646,7 @@
         "operationId": "site_builder_apiWebsiteBranchDiff",
         "parameters": [
           {
-            "name": "branch",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -86654,7 +86654,7 @@
             }
           },
           {
-            "name": "websiteId",
+            "name": "branch",
             "in": "path",
             "required": true,
             "schema": {
