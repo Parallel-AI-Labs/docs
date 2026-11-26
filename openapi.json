@@ -106,6 +106,10 @@
       ]
     },
     {
+      "name": "LinkedIn Signals",
+      "description": "Turn LinkedIn engagement into leads: watch profiles, company pages and keywords for new posts, collect the people who like or comment on them, keep the ones who fit an ideal customer description, and add them to a smart list and optionally a sequence. Runs on a schedule or on demand."
+    },
+    {
       "name": "Linkedin",
       "description": "Connected LinkedIn accounts, shared daily action counts, and asynchronous profile visits, connection requests, messages, likes and comments. Poll action tasks without resubmitting."
     },
@@ -2053,7 +2057,7 @@
         "operationId": "documents_getDocumentContents",
         "parameters": [
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -2061,7 +2065,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -2120,7 +2124,7 @@
         "operationId": "documents_getDocument",
         "parameters": [
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -2128,7 +2132,7 @@
             }
           },
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -8097,7 +8101,7 @@
         "operationId": "projects_getProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8105,7 +8109,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8240,7 +8244,7 @@
         "operationId": "projects_updateProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8248,7 +8252,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8413,7 +8417,7 @@
         "operationId": "projects_deleteProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -8421,7 +8425,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9313,14 +9317,14 @@
       }
     },
     "/api/v0/projects/{project_id}/files/{file_id}/export": {
-      "get": {
+      "post": {
         "tags": [
           "Projects"
         ],
         "operationId": "projects_exportProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9328,7 +9332,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9431,14 +9435,14 @@
           "description": "POST exports current editor content without saving; GET exports the saved file"
         }
       },
-      "post": {
+      "get": {
         "tags": [
           "Projects"
         ],
         "operationId": "projects_exportProjectFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9446,7 +9450,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9558,7 +9562,7 @@
         "operationId": "projects_publishFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9566,7 +9570,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9713,7 +9717,7 @@
         "operationId": "projects_unpublishFile",
         "parameters": [
           {
-            "name": "file_id",
+            "name": "project_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -9721,7 +9725,7 @@
             }
           },
           {
-            "name": "project_id",
+            "name": "file_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -14708,7 +14712,7 @@
         "operationId": "organizations_updateOrganizationMember",
         "parameters": [
           {
-            "name": "orgId",
+            "name": "memberUid",
             "in": "path",
             "required": true,
             "schema": {
@@ -14716,7 +14720,7 @@
             }
           },
           {
-            "name": "memberUid",
+            "name": "orgId",
             "in": "path",
             "required": true,
             "schema": {
@@ -14843,7 +14847,7 @@
         "operationId": "organizations_removeOrganizationMember",
         "parameters": [
           {
-            "name": "orgId",
+            "name": "memberUid",
             "in": "path",
             "required": true,
             "schema": {
@@ -14851,7 +14855,7 @@
             }
           },
           {
-            "name": "memberUid",
+            "name": "orgId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19023,7 +19027,7 @@
         "operationId": "agents_checkConversationActivity",
         "parameters": [
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19031,7 +19035,7 @@
             }
           },
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19093,7 +19097,7 @@
         "operationId": "agents_getConversationDetails",
         "parameters": [
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19101,7 +19105,7 @@
             }
           },
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22825,7 +22829,7 @@
         "operationId": "lists_getRowHistory",
         "parameters": [
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -22833,7 +22837,7 @@
             }
           },
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23045,7 +23049,7 @@
         "operationId": "lists_deleteHeader",
         "parameters": [
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23053,7 +23057,7 @@
             }
           },
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23119,7 +23123,7 @@
         "operationId": "lists_editHeader",
         "parameters": [
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23127,7 +23131,7 @@
             }
           },
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26725,7 +26729,7 @@
         "operationId": "sequences_updateSequenceStep",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26733,7 +26737,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27013,7 +27017,7 @@
         "operationId": "sequences_deleteSequenceStep",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27021,7 +27025,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27763,7 +27767,7 @@
         "operationId": "sequences_getSequenceMemberTimeline",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27771,7 +27775,7 @@
             }
           },
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28169,7 +28173,7 @@
         "operationId": "sequences_triggerSequenceMember",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28177,7 +28181,7 @@
             }
           },
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28245,7 +28249,7 @@
         "operationId": "sequences_removeSequenceMember",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28253,7 +28257,7 @@
             }
           },
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30911,7 +30915,7 @@
         "operationId": "sequences_testSequenceStep",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30919,7 +30923,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30983,7 +30987,7 @@
         "operationId": "sequences_sendTestEmail",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30991,7 +30995,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33164,7 +33168,7 @@
         "operationId": "people_updatePersonActivity",
         "parameters": [
           {
-            "name": "personId",
+            "name": "activityId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33172,7 +33176,7 @@
             }
           },
           {
-            "name": "activityId",
+            "name": "personId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33320,7 +33324,7 @@
         "operationId": "people_deletePersonActivity",
         "parameters": [
           {
-            "name": "personId",
+            "name": "activityId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33328,7 +33332,7 @@
             }
           },
           {
-            "name": "activityId",
+            "name": "personId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33892,7 +33896,7 @@
         "operationId": "crm_records_deleteNote",
         "parameters": [
           {
-            "name": "personId",
+            "name": "noteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -33900,7 +33904,7 @@
             }
           },
           {
-            "name": "noteId",
+            "name": "personId",
             "in": "path",
             "required": true,
             "schema": {
@@ -40298,7 +40302,7 @@
         "operationId": "content_openContentImageCanvas",
         "parameters": [
           {
-            "name": "imageId",
+            "name": "contentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -40306,7 +40310,7 @@
             }
           },
           {
-            "name": "contentId",
+            "name": "imageId",
             "in": "path",
             "required": true,
             "schema": {
@@ -50368,6 +50372,103 @@
         "summary": "List the color palette library offered in the brand kit color picker."
       }
     },
+    "/api/v0/brand-kits/fonts": {
+      "get": {
+        "tags": [
+          "Brand Kit"
+        ],
+        "operationId": "brand_kit_listFonts",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Page number (1-indexed)"
+            },
+            "description": "Page number (1-indexed)"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Items per page (max 100)"
+            },
+            "description": "Items per page (max 100)"
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Font family name, or part of it"
+            },
+            "description": "Font family name, or part of it"
+          },
+          {
+            "name": "category",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Sans serif, Serif, Display, Handwriting, Monospace or System"
+            },
+            "description": "Sans serif, Serif, Display, Handwriting, Monospace or System"
+          },
+          {
+            "name": "families",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Comma-separated families to look up exactly (ignores the other filters)"
+            },
+            "description": "Comma-separated families to look up exactly (ignores the other filters)"
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "A page of the font catalog",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "object"
+                      },
+                      "description": "Fonts: {family, category, weights, source (google or system), stack (system fonts)}"
+                    },
+                    "total": {
+                      "type": "integer",
+                      "description": "Total matching fonts"
+                    }
+                  },
+                  "description": "Fonts: every Google Fonts family plus system fonts, most popular first"
+                }
+              }
+            }
+          }
+        },
+        "summary": "List the fonts offered in the brand kit font picker (Google Fonts and system fonts)."
+      }
+    },
     "/api/v0/brand-kits/{brandKitId}": {
       "get": {
         "tags": [
@@ -52747,7 +52848,7 @@
         "operationId": "leads_getStagedLeads",
         "parameters": [
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -52755,7 +52856,7 @@
             }
           },
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -52850,7 +52951,7 @@
         "operationId": "leads_applyStagedLeads",
         "parameters": [
           {
-            "name": "listId",
+            "name": "rowId",
             "in": "path",
             "required": true,
             "schema": {
@@ -52858,7 +52959,7 @@
             }
           },
           {
-            "name": "rowId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -67332,6 +67433,1388 @@
         "description": "Returns a dense (zero-filled) series for the total and for each platform\nover the last N days (default 30), shaped for a stacked-area chart.\nOptionally filter to a specific monitor."
       }
     },
+    "/api/v0/linkedin-signals": {
+      "get": {
+        "tags": [
+          "LinkedIn Signals"
+        ],
+        "operationId": "linkedin_signals_listLinkedinSignals",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Page number, starting at 1.",
+              "default": 1
+            },
+            "description": "Page number, starting at 1."
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Results per page (max 100).",
+              "default": 25
+            },
+            "description": "Results per page (max 100)."
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid request parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Signals for the company, newest first",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "companyId": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "profileUrls": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "keywords": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "icpDescription": {
+                            "type": "string"
+                          },
+                          "includeLikers": {
+                            "type": "boolean"
+                          },
+                          "includeCommenters": {
+                            "type": "boolean"
+                          },
+                          "listId": {
+                            "type": "string"
+                          },
+                          "listName": {
+                            "type": "string"
+                          },
+                          "sequenceId": {
+                            "type": "string"
+                          },
+                          "sequenceName": {
+                            "type": "string"
+                          },
+                          "status": {
+                            "type": "string"
+                          },
+                          "checkFrequency": {
+                            "type": "string"
+                          },
+                          "running": {
+                            "type": "boolean",
+                            "description": "True while a run is in progress."
+                          },
+                          "lastRunAt": {
+                            "type": "string"
+                          },
+                          "lastRunStatus": {
+                            "type": "string",
+                            "description": "running, succeeded or failed."
+                          },
+                          "lastRunError": {
+                            "type": "string"
+                          },
+                          "lastRunSummary": {
+                            "type": "object",
+                            "description": "Counts from the last run: newPosts, postsChecked, newPeople, peopleChecked, peopleLookedUp, peopleAdded, peopleEnrolled."
+                          },
+                          "postsFound": {
+                            "type": "integer"
+                          },
+                          "peopleFound": {
+                            "type": "integer"
+                          },
+                          "peopleMatched": {
+                            "type": "integer",
+                            "description": "People added to the list so far."
+                          },
+                          "created_date": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "total": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "List LinkedIn signals.",
+        "description": "A LinkedIn signal watches LinkedIn profiles, company pages and keywords for new\nposts, collects the people who like or comment on them, keeps the ones who fit\nthe ideal customer description, and adds them to a list (and optionally a sequence)."
+      },
+      "post": {
+        "tags": [
+          "LinkedIn Signals"
+        ],
+        "operationId": "linkedin_signals_createLinkedinSignal",
+        "parameters": [],
+        "responses": {
+          "400": {
+            "description": "Invalid request parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "The created signal",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "signal": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "companyId": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "profileUrls": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "keywords": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "icpDescription": {
+                          "type": "string"
+                        },
+                        "includeLikers": {
+                          "type": "boolean"
+                        },
+                        "includeCommenters": {
+                          "type": "boolean"
+                        },
+                        "listId": {
+                          "type": "string"
+                        },
+                        "listName": {
+                          "type": "string"
+                        },
+                        "sequenceId": {
+                          "type": "string"
+                        },
+                        "sequenceName": {
+                          "type": "string"
+                        },
+                        "status": {
+                          "type": "string"
+                        },
+                        "checkFrequency": {
+                          "type": "string"
+                        },
+                        "running": {
+                          "type": "boolean",
+                          "description": "True while a run is in progress."
+                        },
+                        "lastRunAt": {
+                          "type": "string"
+                        },
+                        "lastRunStatus": {
+                          "type": "string",
+                          "description": "running, succeeded or failed."
+                        },
+                        "lastRunError": {
+                          "type": "string"
+                        },
+                        "lastRunSummary": {
+                          "type": "object",
+                          "description": "Counts from the last run: newPosts, postsChecked, newPeople, peopleChecked, peopleLookedUp, peopleAdded, peopleEnrolled."
+                        },
+                        "postsFound": {
+                          "type": "integer"
+                        },
+                        "peopleFound": {
+                          "type": "integer"
+                        },
+                        "peopleMatched": {
+                          "type": "integer",
+                          "description": "People added to the list so far."
+                        },
+                        "created_date": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Create a LinkedIn signal.",
+        "description": "Needs a name, a list, and at least one profile/company URL or keyword. The\nfirst check runs within the hour; use runLinkedinSignal to check now. Each\nrun costs 2 credits per watched profile or keyword, 10 credits per post\nwhose likers and commenters are read, 1 credit per person who fits but\nwhose profile has to be looked up, and AI credits for the ideal customer check.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "Display name. Required on create."
+                  },
+                  "profileUrls": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "LinkedIn profile (/in/...) or company page (/company/...) URLs whose new posts are watched. Up to 25. A signal needs at least one profile URL or keyword."
+                  },
+                  "keywords": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Phrases searched in recent LinkedIn posts, in addition to the watched profiles. Up to 10."
+                  },
+                  "icpDescription": {
+                    "type": "string",
+                    "description": "Who counts as a fit, in plain words (for example \"Owners of marketing agencies that resell software\"). Each engager is checked against it from their headline and comment. Empty adds everyone."
+                  },
+                  "includeLikers": {
+                    "type": "boolean",
+                    "description": "Collect people who reacted to the posts (default true)."
+                  },
+                  "includeCommenters": {
+                    "type": "boolean",
+                    "description": "Collect people who commented (default true)."
+                  },
+                  "listId": {
+                    "type": "string",
+                    "description": "Smart list that people who fit are added to. Required on create."
+                  },
+                  "sequenceId": {
+                    "type": "string",
+                    "description": "Optional sequence that people who fit are enrolled in after being added to the list."
+                  },
+                  "checkFrequency": {
+                    "type": "string",
+                    "description": "How often to check: 6h, 12h, daily (default) or weekly."
+                  },
+                  "status": {
+                    "type": "string",
+                    "description": "active or paused."
+                  }
+                },
+                "description": "LinkedIn signal settings. On update, include only the fields to change."
+              }
+            }
+          },
+          "description": "Signal settings"
+        }
+      }
+    },
+    "/api/v0/linkedin-signals/{signalId}": {
+      "get": {
+        "tags": [
+          "LinkedIn Signals"
+        ],
+        "operationId": "linkedin_signals_getLinkedinSignal",
+        "parameters": [
+          {
+            "name": "signalId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Signal not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "The signal",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "signal": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "companyId": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "profileUrls": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "keywords": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "icpDescription": {
+                          "type": "string"
+                        },
+                        "includeLikers": {
+                          "type": "boolean"
+                        },
+                        "includeCommenters": {
+                          "type": "boolean"
+                        },
+                        "listId": {
+                          "type": "string"
+                        },
+                        "listName": {
+                          "type": "string"
+                        },
+                        "sequenceId": {
+                          "type": "string"
+                        },
+                        "sequenceName": {
+                          "type": "string"
+                        },
+                        "status": {
+                          "type": "string"
+                        },
+                        "checkFrequency": {
+                          "type": "string"
+                        },
+                        "running": {
+                          "type": "boolean",
+                          "description": "True while a run is in progress."
+                        },
+                        "lastRunAt": {
+                          "type": "string"
+                        },
+                        "lastRunStatus": {
+                          "type": "string",
+                          "description": "running, succeeded or failed."
+                        },
+                        "lastRunError": {
+                          "type": "string"
+                        },
+                        "lastRunSummary": {
+                          "type": "object",
+                          "description": "Counts from the last run: newPosts, postsChecked, newPeople, peopleChecked, peopleLookedUp, peopleAdded, peopleEnrolled."
+                        },
+                        "postsFound": {
+                          "type": "integer"
+                        },
+                        "peopleFound": {
+                          "type": "integer"
+                        },
+                        "peopleMatched": {
+                          "type": "integer",
+                          "description": "People added to the list so far."
+                        },
+                        "created_date": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Get a LinkedIn signal with its last run's results."
+      },
+      "put": {
+        "tags": [
+          "LinkedIn Signals"
+        ],
+        "operationId": "linkedin_signals_updateLinkedinSignal",
+        "parameters": [
+          {
+            "name": "signalId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid request parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Signal not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "The updated signal",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "signal": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "companyId": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "profileUrls": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "keywords": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "icpDescription": {
+                          "type": "string"
+                        },
+                        "includeLikers": {
+                          "type": "boolean"
+                        },
+                        "includeCommenters": {
+                          "type": "boolean"
+                        },
+                        "listId": {
+                          "type": "string"
+                        },
+                        "listName": {
+                          "type": "string"
+                        },
+                        "sequenceId": {
+                          "type": "string"
+                        },
+                        "sequenceName": {
+                          "type": "string"
+                        },
+                        "status": {
+                          "type": "string"
+                        },
+                        "checkFrequency": {
+                          "type": "string"
+                        },
+                        "running": {
+                          "type": "boolean",
+                          "description": "True while a run is in progress."
+                        },
+                        "lastRunAt": {
+                          "type": "string"
+                        },
+                        "lastRunStatus": {
+                          "type": "string",
+                          "description": "running, succeeded or failed."
+                        },
+                        "lastRunError": {
+                          "type": "string"
+                        },
+                        "lastRunSummary": {
+                          "type": "object",
+                          "description": "Counts from the last run: newPosts, postsChecked, newPeople, peopleChecked, peopleLookedUp, peopleAdded, peopleEnrolled."
+                        },
+                        "postsFound": {
+                          "type": "integer"
+                        },
+                        "peopleFound": {
+                          "type": "integer"
+                        },
+                        "peopleMatched": {
+                          "type": "integer",
+                          "description": "People added to the list so far."
+                        },
+                        "created_date": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Update a LinkedIn signal. Set status to paused or active to pause or resume it.",
+        "description": "A changed ideal customer description applies to people found from then on.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "Display name. Required on create."
+                  },
+                  "profileUrls": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "LinkedIn profile (/in/...) or company page (/company/...) URLs whose new posts are watched. Up to 25. A signal needs at least one profile URL or keyword."
+                  },
+                  "keywords": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Phrases searched in recent LinkedIn posts, in addition to the watched profiles. Up to 10."
+                  },
+                  "icpDescription": {
+                    "type": "string",
+                    "description": "Who counts as a fit, in plain words (for example \"Owners of marketing agencies that resell software\"). Each engager is checked against it from their headline and comment. Empty adds everyone."
+                  },
+                  "includeLikers": {
+                    "type": "boolean",
+                    "description": "Collect people who reacted to the posts (default true)."
+                  },
+                  "includeCommenters": {
+                    "type": "boolean",
+                    "description": "Collect people who commented (default true)."
+                  },
+                  "listId": {
+                    "type": "string",
+                    "description": "Smart list that people who fit are added to. Required on create."
+                  },
+                  "sequenceId": {
+                    "type": "string",
+                    "description": "Optional sequence that people who fit are enrolled in after being added to the list."
+                  },
+                  "checkFrequency": {
+                    "type": "string",
+                    "description": "How often to check: 6h, 12h, daily (default) or weekly."
+                  },
+                  "status": {
+                    "type": "string",
+                    "description": "active or paused."
+                  }
+                },
+                "description": "LinkedIn signal settings. On update, include only the fields to change."
+              }
+            }
+          },
+          "description": "Fields to change"
+        }
+      },
+      "delete": {
+        "tags": [
+          "LinkedIn Signals"
+        ],
+        "operationId": "linkedin_signals_deleteLinkedinSignal",
+        "parameters": [
+          {
+            "name": "signalId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Signal not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Deleted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Delete a LinkedIn signal. People already added to the list stay there."
+      }
+    },
+    "/api/v0/linkedin-signals/{signalId}/run": {
+      "post": {
+        "tags": [
+          "LinkedIn Signals"
+        ],
+        "operationId": "linkedin_signals_runLinkedinSignal",
+        "parameters": [
+          {
+            "name": "signalId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Signal not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "The signal is already running",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "The run started in the background",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "signal": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "companyId": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "profileUrls": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "keywords": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "icpDescription": {
+                          "type": "string"
+                        },
+                        "includeLikers": {
+                          "type": "boolean"
+                        },
+                        "includeCommenters": {
+                          "type": "boolean"
+                        },
+                        "listId": {
+                          "type": "string"
+                        },
+                        "listName": {
+                          "type": "string"
+                        },
+                        "sequenceId": {
+                          "type": "string"
+                        },
+                        "sequenceName": {
+                          "type": "string"
+                        },
+                        "status": {
+                          "type": "string"
+                        },
+                        "checkFrequency": {
+                          "type": "string"
+                        },
+                        "running": {
+                          "type": "boolean",
+                          "description": "True while a run is in progress."
+                        },
+                        "lastRunAt": {
+                          "type": "string"
+                        },
+                        "lastRunStatus": {
+                          "type": "string",
+                          "description": "running, succeeded or failed."
+                        },
+                        "lastRunError": {
+                          "type": "string"
+                        },
+                        "lastRunSummary": {
+                          "type": "object",
+                          "description": "Counts from the last run: newPosts, postsChecked, newPeople, peopleChecked, peopleLookedUp, peopleAdded, peopleEnrolled."
+                        },
+                        "postsFound": {
+                          "type": "integer"
+                        },
+                        "peopleFound": {
+                          "type": "integer"
+                        },
+                        "peopleMatched": {
+                          "type": "integer",
+                          "description": "People added to the list so far."
+                        },
+                        "created_date": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Check a LinkedIn signal now.",
+        "description": "The run happens in the background and usually takes a few minutes; poll\ngetLinkedinSignal until running is false, then read lastRunSummary and the people."
+      }
+    },
+    "/api/v0/linkedin-signals/{signalId}/people": {
+      "get": {
+        "tags": [
+          "LinkedIn Signals"
+        ],
+        "operationId": "linkedin_signals_listLinkedinSignalPeople",
+        "parameters": [
+          {
+            "name": "signalId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Page number, starting at 1.",
+              "default": 1
+            },
+            "description": "Page number, starting at 1."
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Results per page (max 100).",
+              "default": 25
+            },
+            "description": "Results per page (max 100)."
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "matched (fit the ideal customer), not_matched, or all (default).",
+              "default": "all"
+            },
+            "description": "matched (fit the ideal customer), not_matched, or all (default)."
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "description": "Matches name or headline."
+            },
+            "description": "Matches name or headline."
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid request parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Signal not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "People found by the signal, newest first",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "headline": {
+                            "type": "string"
+                          },
+                          "photoUrl": {
+                            "type": "string"
+                          },
+                          "profileUrl": {
+                            "type": "string"
+                          },
+                          "engagementType": {
+                            "type": "string",
+                            "description": "commented, liked or commented_and_liked."
+                          },
+                          "commentText": {
+                            "type": "string"
+                          },
+                          "icpMatch": {
+                            "type": "boolean",
+                            "description": "Null until checked."
+                          },
+                          "icpScore": {
+                            "type": "number",
+                            "description": "0-10 fit score."
+                          },
+                          "icpReason": {
+                            "type": "string"
+                          },
+                          "listRowId": {
+                            "type": "string"
+                          },
+                          "addedToSequence": {
+                            "type": "boolean"
+                          },
+                          "postUrl": {
+                            "type": "string"
+                          },
+                          "postAuthor": {
+                            "type": "string"
+                          },
+                          "created_date": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "total": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "List the people a LinkedIn signal found, with their fit score and whether they were added."
+      }
+    },
+    "/api/v0/linkedin-signals/{signalId}/people/add": {
+      "post": {
+        "tags": [
+          "LinkedIn Signals"
+        ],
+        "operationId": "linkedin_signals_addLinkedinSignalPeople",
+        "parameters": [
+          {
+            "name": "signalId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid request parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Signal not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "The signal is checking LinkedIn; try again when it finishes",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "The people are being added in the background",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "queued": {
+                      "type": "integer",
+                      "description": "People being added (people already in the list are skipped)."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Add chosen people to a LinkedIn signal's list, and its sequence when it has one.",
+        "description": "Use it for people the fit check left out. People whose profile has to be\nlooked up cost 1 credit each. Poll listLinkedinSignalPeople to see them added.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "personIds": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Ids of people from listLinkedinSignalPeople to add to the signal's list (and sequence), for example people the fit check left out. Up to 100."
+                  }
+                },
+                "required": [
+                  "personIds"
+                ]
+              }
+            }
+          },
+          "description": "People to add"
+        }
+      }
+    },
+    "/api/v0/linkedin-signals/{signalId}/posts": {
+      "get": {
+        "tags": [
+          "LinkedIn Signals"
+        ],
+        "operationId": "linkedin_signals_listLinkedinSignalPosts",
+        "parameters": [
+          {
+            "name": "signalId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Page number, starting at 1.",
+              "default": 1
+            },
+            "description": "Page number, starting at 1."
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Results per page (max 100).",
+              "default": 25
+            },
+            "description": "Results per page (max 100)."
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid request parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Signal not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Posts the signal found, newest first",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "postUrl": {
+                            "type": "string"
+                          },
+                          "authorName": {
+                            "type": "string"
+                          },
+                          "content": {
+                            "type": "string"
+                          },
+                          "source": {
+                            "type": "string",
+                            "description": "The watched profile URL or keyword that found it."
+                          },
+                          "postedAt": {
+                            "type": "string"
+                          },
+                          "reactionCount": {
+                            "type": "integer"
+                          },
+                          "commentCount": {
+                            "type": "integer"
+                          },
+                          "checkCount": {
+                            "type": "integer"
+                          },
+                          "lastCheckedAt": {
+                            "type": "string"
+                          },
+                          "engagerCount": {
+                            "type": "integer"
+                          }
+                        }
+                      }
+                    },
+                    "total": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "List the posts a LinkedIn signal found and how many people engaged with each."
+      }
+    },
     "/api/v0/research/prefill": {
       "get": {
         "tags": [
@@ -76288,7 +77771,7 @@
         "operationId": "seo_projectLighthouseSnapshotRoute",
         "parameters": [
           {
-            "name": "snapshotId",
+            "name": "projectId",
             "in": "path",
             "required": true,
             "schema": {
@@ -76296,7 +77779,7 @@
             }
           },
           {
-            "name": "projectId",
+            "name": "snapshotId",
             "in": "path",
             "required": true,
             "schema": {
@@ -76446,7 +77929,7 @@
         "operationId": "seo_exportLighthouseRoute",
         "parameters": [
           {
-            "name": "snapshotId",
+            "name": "projectId",
             "in": "path",
             "required": true,
             "schema": {
@@ -76454,7 +77937,7 @@
             }
           },
           {
-            "name": "projectId",
+            "name": "snapshotId",
             "in": "path",
             "required": true,
             "schema": {
@@ -80603,7 +82086,7 @@
         "operationId": "marketing_campaigns_getCampaignEmailBuilderThread",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -80611,7 +82094,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -80670,7 +82153,7 @@
         "operationId": "marketing_campaigns_updateCampaignEmailBuilderThread",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -80678,7 +82161,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -80766,7 +82249,7 @@
         "operationId": "marketing_campaigns_deleteCampaignEmailBuilderThread",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -80774,7 +82257,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -80835,7 +82318,7 @@
         "operationId": "marketing_campaigns_stopCampaignEmailBuilderThreadRun",
         "parameters": [
           {
-            "name": "threadId",
+            "name": "campaignId",
             "in": "path",
             "required": true,
             "schema": {
@@ -80843,7 +82326,7 @@
             }
           },
           {
-            "name": "campaignId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -82573,7 +84056,7 @@
         "operationId": "marketing_campaigns_restoreTemplateVersion",
         "parameters": [
           {
-            "name": "versionId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -82581,7 +84064,7 @@
             }
           },
           {
-            "name": "templateId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -83824,7 +85307,7 @@
         "operationId": "site_builder_mergeWebsiteBranch",
         "parameters": [
           {
-            "name": "websiteId",
+            "name": "branch",
             "in": "path",
             "required": true,
             "schema": {
@@ -83832,7 +85315,7 @@
             }
           },
           {
-            "name": "branch",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -83923,7 +85406,7 @@
         "operationId": "site_builder_discardWebsiteBranch",
         "parameters": [
           {
-            "name": "websiteId",
+            "name": "branch",
             "in": "path",
             "required": true,
             "schema": {
@@ -83931,7 +85414,7 @@
             }
           },
           {
-            "name": "branch",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -85163,7 +86646,7 @@
         "operationId": "site_builder_apiWebsiteBranchDiff",
         "parameters": [
           {
-            "name": "websiteId",
+            "name": "branch",
             "in": "path",
             "required": true,
             "schema": {
@@ -85171,7 +86654,7 @@
             }
           },
           {
-            "name": "branch",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {

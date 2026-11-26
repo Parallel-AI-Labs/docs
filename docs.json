@@ -231,6 +231,7 @@
               "DELETE /api/v0/brand-kits/{brandKitId}",
               "GET /api/v0/brand-kits",
               "GET /api/v0/brand-kits/color-palettes",
+              "GET /api/v0/brand-kits/fonts",
               "GET /api/v0/brand-kits/{brandKitId}",
               "POST /api/v0/brand-kits",
               "POST /api/v0/brand-kits/build",
@@ -619,6 +620,21 @@
               "POST /api/v0/leads/people-search/export",
               "POST /api/v0/leads/people-search/lists/{listId}/import",
               "POST /api/v0/leads/people-search/sequences/{sequenceId}/import"
+            ]
+          },
+          {
+            "group": "LinkedIn Signals",
+            "expanded": false,
+            "pages": [
+              "DELETE /api/v0/linkedin-signals/{signalId}",
+              "GET /api/v0/linkedin-signals",
+              "GET /api/v0/linkedin-signals/{signalId}",
+              "GET /api/v0/linkedin-signals/{signalId}/people",
+              "GET /api/v0/linkedin-signals/{signalId}/posts",
+              "POST /api/v0/linkedin-signals",
+              "POST /api/v0/linkedin-signals/{signalId}/people/add",
+              "POST /api/v0/linkedin-signals/{signalId}/run",
+              "PUT /api/v0/linkedin-signals/{signalId}"
             ]
           },
           {
