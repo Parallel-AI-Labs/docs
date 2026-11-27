@@ -387,13 +387,16 @@
               "POST /api/v0/content/{contentId}",
               "POST /api/v0/content/{contentId}/assign",
               "POST /api/v0/content/{contentId}/canvas",
+              "POST /api/v0/content/{contentId}/images/generate",
               "POST /api/v0/content/{contentId}/images/{imageId}/canvas",
               "POST /api/v0/content/{contentId}/publish",
               "POST /api/v0/content/{contentId}/select-hook",
+              "POST /api/v0/content/{contentId}/update-published",
               "POST /api/v0/content/{contentId}/video",
               "PUT /api/v0/content/canvases/{canvasId}/html",
               "PUT /api/v0/content/canvases/{canvasId}/scenes/{sceneId}",
               "PUT /api/v0/content/{contentId}/assignment-status",
+              "PUT /api/v0/content/{contentId}/image",
               "PUT /api/v0/content/{contentId}/schedule",
               "PUT /api/v0/content/{contentId}/status"
             ]

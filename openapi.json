@@ -2057,7 +2057,7 @@
         "operationId": "documents_getDocumentContents",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -2065,7 +2065,7 @@
             }
           },
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -2124,7 +2124,7 @@
         "operationId": "documents_getDocument",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "documentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -2132,7 +2132,7 @@
             }
           },
           {
-            "name": "documentId",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -4332,7 +4332,7 @@
         "operationId": "keys_getApiKey",
         "parameters": [
           {
-            "name": "companyId",
+            "name": "name",
             "in": "path",
             "required": true,
             "schema": {
@@ -4340,7 +4340,7 @@
             }
           },
           {
-            "name": "name",
+            "name": "companyId",
             "in": "path",
             "required": true,
             "schema": {
@@ -14712,7 +14712,7 @@
         "operationId": "organizations_updateOrganizationMember",
         "parameters": [
           {
-            "name": "orgId",
+            "name": "memberUid",
             "in": "path",
             "required": true,
             "schema": {
@@ -14720,7 +14720,7 @@
             }
           },
           {
-            "name": "memberUid",
+            "name": "orgId",
             "in": "path",
             "required": true,
             "schema": {
@@ -14847,7 +14847,7 @@
         "operationId": "organizations_removeOrganizationMember",
         "parameters": [
           {
-            "name": "orgId",
+            "name": "memberUid",
             "in": "path",
             "required": true,
             "schema": {
@@ -14855,7 +14855,7 @@
             }
           },
           {
-            "name": "memberUid",
+            "name": "orgId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19027,7 +19027,7 @@
         "operationId": "agents_checkConversationActivity",
         "parameters": [
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19035,7 +19035,7 @@
             }
           },
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19097,7 +19097,7 @@
         "operationId": "agents_getConversationDetails",
         "parameters": [
           {
-            "name": "agentId",
+            "name": "sessionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -19105,7 +19105,7 @@
             }
           },
           {
-            "name": "sessionId",
+            "name": "agentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23049,7 +23049,7 @@
         "operationId": "lists_deleteHeader",
         "parameters": [
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23057,7 +23057,7 @@
             }
           },
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23123,7 +23123,7 @@
         "operationId": "lists_editHeader",
         "parameters": [
           {
-            "name": "listId",
+            "name": "headerId",
             "in": "path",
             "required": true,
             "schema": {
@@ -23131,7 +23131,7 @@
             }
           },
           {
-            "name": "headerId",
+            "name": "listId",
             "in": "path",
             "required": true,
             "schema": {
@@ -24797,6 +24797,10 @@
                         "updated_date": {
                           "type": "string",
                           "description": "Last update timestamp (ISO 8601)"
+                        },
+                        "company": {
+                          "type": "object",
+                          "description": "Company that shared the list: name and logoUrl"
                         }
                       },
                       "description": "Public list metadata"
@@ -26729,7 +26733,7 @@
         "operationId": "sequences_updateSequenceStep",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -26737,7 +26741,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27017,7 +27021,7 @@
         "operationId": "sequences_deleteSequenceStep",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27025,7 +27029,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27767,7 +27771,7 @@
         "operationId": "sequences_getSequenceMemberTimeline",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -27775,7 +27779,7 @@
             }
           },
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28173,7 +28177,7 @@
         "operationId": "sequences_triggerSequenceMember",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28181,7 +28185,7 @@
             }
           },
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28249,7 +28253,7 @@
         "operationId": "sequences_removeSequenceMember",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "sequenceMemberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -28257,7 +28261,7 @@
             }
           },
           {
-            "name": "sequenceMemberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30915,7 +30919,7 @@
         "operationId": "sequences_testSequenceStep",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30923,7 +30927,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30987,7 +30991,7 @@
         "operationId": "sequences_sendTestEmail",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "stepId",
             "in": "path",
             "required": true,
             "schema": {
@@ -30995,7 +30999,7 @@
             }
           },
           {
-            "name": "stepId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -31073,7 +31077,7 @@
         "operationId": "sequences_getMemberProfile",
         "parameters": [
           {
-            "name": "sequenceId",
+            "name": "memberId",
             "in": "path",
             "required": true,
             "schema": {
@@ -31081,7 +31085,7 @@
             }
           },
           {
-            "name": "memberId",
+            "name": "sequenceId",
             "in": "path",
             "required": true,
             "schema": {
@@ -40302,7 +40306,7 @@
         "operationId": "content_openContentImageCanvas",
         "parameters": [
           {
-            "name": "imageId",
+            "name": "contentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -40310,7 +40314,7 @@
             }
           },
           {
-            "name": "contentId",
+            "name": "imageId",
             "in": "path",
             "required": true,
             "schema": {
@@ -40369,6 +40373,388 @@
         },
         "summary": "Open a post's canvas-designed image as a canvas design, so it can be changed.",
         "description": "For a content image whose `canEdit` is true. Returns the canvas design to edit (ask for changes with\nPOST /api/v0/content/canvases/{canvasId}/chat, then render it with POST .../render): the post's image follows\nthe canvas's latest render. `imageId` is the content image's `id`.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID"
+                  }
+                },
+                "required": [
+                  "companyId"
+                ],
+                "description": "Request body for creating a post's video"
+              }
+            }
+          },
+          "description": "Company the content belongs to"
+        }
+      }
+    },
+    "/api/v0/content/{contentId}/images/generate": {
+      "post": {
+        "tags": [
+          "Content"
+        ],
+        "operationId": "content_generateContentImage",
+        "parameters": [
+          {
+            "name": "contentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Content not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "Image creation started",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "taskId": {
+                      "type": "string",
+                      "description": "Background task ID to poll"
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "Task status when the request returned: \"pending\""
+                    },
+                    "poll": {
+                      "type": "string",
+                      "description": "How to read the result"
+                    }
+                  },
+                  "description": "A background task was started. Poll GET /api/v0/lists/tasks/{taskId} until `status` is \"completed\" (read `result`) or \"failed\" (read `errorMessage`)."
+                }
+              }
+            }
+          }
+        },
+        "summary": "Make a new image for a post, in place of the one it has.",
+        "description": "Made from the post's brand kit and text; `description` steers what it shows. The post keeps its image until the\nnew one is made. It runs as a background task: the response is 202 with a taskId. Poll\nGET /api/v0/lists/tasks/{taskId} until `status` is \"completed\" (`result.images` is the post's images) or\n\"failed\" (`errorMessage`).",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID"
+                  },
+                  "description": {
+                    "type": "string",
+                    "description": "What the new image should show (optional)"
+                  }
+                },
+                "required": [
+                  "companyId"
+                ],
+                "description": "Request body for making a post a new image"
+              }
+            }
+          },
+          "description": "What the new image should show"
+        }
+      }
+    },
+    "/api/v0/content/{contentId}/image": {
+      "put": {
+        "tags": [
+          "Content"
+        ],
+        "operationId": "content_replaceContentImage",
+        "parameters": [
+          {
+            "name": "contentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Content or image not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "The post's images",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "images": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "description": "Content image ID"
+                          },
+                          "imageId": {
+                            "type": "string",
+                            "description": "Image ID"
+                          },
+                          "url": {
+                            "type": "string",
+                            "description": "Image URL"
+                          },
+                          "prompt": {
+                            "type": "string",
+                            "description": "Image prompt"
+                          },
+                          "provider": {
+                            "type": "string",
+                            "description": "Image provider"
+                          }
+                        },
+                        "description": "Content image object"
+                      },
+                      "description": "List of images"
+                    }
+                  },
+                  "description": "Content images response"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Make an image from the image library (uploaded, generated or a stock download) the post's image, in place of",
+        "description": "the one it has.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "companyId": {
+                    "type": "string",
+                    "description": "Company ID"
+                  },
+                  "imageId": {
+                    "type": "string",
+                    "description": "Image library id (from /images or /images/upload)"
+                  }
+                },
+                "required": [
+                  "companyId",
+                  "imageId"
+                ],
+                "description": "Request body for setting a post's image from the image library"
+              }
+            }
+          },
+          "description": "The library image to use"
+        }
+      }
+    },
+    "/api/v0/content/{contentId}/update-published": {
+      "post": {
+        "tags": [
+          "Content"
+        ],
+        "operationId": "content_updatePublishedContent",
+        "parameters": [
+          {
+            "name": "contentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Already being delivered",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "The updated content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation success status"
+                    },
+                    "content": {
+                      "type": "object",
+                      "properties": {
+                        "campaignIsAutopilot": {
+                          "type": "boolean",
+                          "description": "Uses the shared multicolor Autopilot campaign accent."
+                        },
+                        "id": {
+                          "type": "string",
+                          "description": "Content ID"
+                        },
+                        "title": {
+                          "type": "string",
+                          "description": "Content title"
+                        },
+                        "type": {
+                          "type": "string",
+                          "description": "Content type: blog_post, linkedin_post, facebook_post, instagram_post, twitter_post, ad_copy, email_template, tiktok_idea, newsletter, whitepaper"
+                        },
+                        "status": {
+                          "type": "string",
+                          "description": "Content status: ideated, queued, generating, draft, scheduled, published, archived"
+                        },
+                        "funnelStage": {
+                          "type": "string",
+                          "description": "Funnel stage: N/A, tofu, mofu, bofu"
+                        },
+                        "topicSummary": {
+                          "type": "string",
+                          "description": "Topic summary"
+                        },
+                        "hookOptions": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          },
+                          "description": "Hook options"
+                        },
+                        "selectedHook": {
+                          "type": "string",
+                          "description": "Selected hook"
+                        },
+                        "variants": {
+                          "type": "object",
+                          "description": "Content variants"
+                        },
+                        "media": {
+                          "type": "string",
+                          "description": "What the piece is made with besides its text: image, video or none"
+                        },
+                        "videoUrl": {
+                          "type": "string",
+                          "description": "Public MP4 of the post's video (posts whose media is video, and TikToks)"
+                        },
+                        "videoCanvasId": {
+                          "type": "string",
+                          "description": "Canvas design the video was made as; edit it there"
+                        },
+                        "publishDate": {
+                          "type": "string",
+                          "description": "Publish date"
+                        },
+                        "created": {
+                          "type": "number",
+                          "description": "Creation timestamp"
+                        }
+                      },
+                      "description": "The content object"
+                    }
+                  },
+                  "description": "Content operation success response"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Send a published post's current title, text, image and search details to the post it already made.",
+        "description": "For a post published to WordPress or a website collection (`platformType` \"wordpress\" or \"website\"). The live\npost keeps its address and its original publish date. Save the edits first (POST /api/v0/content/{contentId}).",
         "requestBody": {
           "required": true,
           "content": {
@@ -77771,7 +78157,7 @@
         "operationId": "seo_projectLighthouseSnapshotRoute",
         "parameters": [
           {
-            "name": "projectId",
+            "name": "snapshotId",
             "in": "path",
             "required": true,
             "schema": {
@@ -77779,7 +78165,7 @@
             }
           },
           {
-            "name": "snapshotId",
+            "name": "projectId",
             "in": "path",
             "required": true,
             "schema": {
@@ -77929,7 +78315,7 @@
         "operationId": "seo_exportLighthouseRoute",
         "parameters": [
           {
-            "name": "projectId",
+            "name": "snapshotId",
             "in": "path",
             "required": true,
             "schema": {
@@ -77937,7 +78323,7 @@
             }
           },
           {
-            "name": "snapshotId",
+            "name": "projectId",
             "in": "path",
             "required": true,
             "schema": {
@@ -84056,7 +84442,7 @@
         "operationId": "marketing_campaigns_restoreTemplateVersion",
         "parameters": [
           {
-            "name": "versionId",
+            "name": "templateId",
             "in": "path",
             "required": true,
             "schema": {
@@ -84064,7 +84450,7 @@
             }
           },
           {
-            "name": "templateId",
+            "name": "versionId",
             "in": "path",
             "required": true,
             "schema": {
@@ -84915,7 +85301,7 @@
         "operationId": "site_builder_getWebsiteThreadMessages",
         "parameters": [
           {
-            "name": "websiteId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -84923,7 +85309,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -84992,7 +85378,7 @@
         "operationId": "site_builder_patchWebsiteThread",
         "parameters": [
           {
-            "name": "websiteId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -85000,7 +85386,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -85116,7 +85502,7 @@
         "operationId": "site_builder_stopWebsiteThreadRun",
         "parameters": [
           {
-            "name": "websiteId",
+            "name": "threadId",
             "in": "path",
             "required": true,
             "schema": {
@@ -85124,7 +85510,7 @@
             }
           },
           {
-            "name": "threadId",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -85307,7 +85693,7 @@
         "operationId": "site_builder_mergeWebsiteBranch",
         "parameters": [
           {
-            "name": "websiteId",
+            "name": "branch",
             "in": "path",
             "required": true,
             "schema": {
@@ -85315,7 +85701,7 @@
             }
           },
           {
-            "name": "branch",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -85406,7 +85792,7 @@
         "operationId": "site_builder_discardWebsiteBranch",
         "parameters": [
           {
-            "name": "websiteId",
+            "name": "branch",
             "in": "path",
             "required": true,
             "schema": {
@@ -85414,7 +85800,7 @@
             }
           },
           {
-            "name": "branch",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
@@ -86646,7 +87032,7 @@
         "operationId": "site_builder_apiWebsiteBranchDiff",
         "parameters": [
           {
-            "name": "websiteId",
+            "name": "branch",
             "in": "path",
             "required": true,
             "schema": {
@@ -86654,7 +87040,7 @@
             }
           },
           {
-            "name": "branch",
+            "name": "websiteId",
             "in": "path",
             "required": true,
             "schema": {
